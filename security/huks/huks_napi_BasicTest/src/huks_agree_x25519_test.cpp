@@ -196,9 +196,12 @@ void HksX25519AgreeFreeBlob(struct OH_Huks_Blob *blob1, struct OH_Huks_Blob *blo
 }
 
 /**
- * @tc.name: HuksAgreeX25519Test.Security_HUKS_NAPI_Agree_X25519_0100
- * @tc.desc: alg-x25519, pur-AGREE
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Agree_X25519_0100
+ * @tc.number Security_HUKS_NAPI_Agree_X25519_0100
+ * @tc.desc   alg-x25519, pur-AGREE
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HuksAgreeX25519Test, Security_HUKS_NAPI_Agree_X25519_0100, TestSize.Level1)
 {

@@ -60,46 +60,40 @@ namespace {
 void HDRFuncNdkTest::SetUpTestCase()
 {
     cap_h263 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_H263, false, SOFTWARE);
-    if (cap_h263 == nullptr) {
-        return;
+    if (cap_h263 != nullptr) {
+        g_codecName263 = OH_AVCapability_GetName(cap_h263);
+        cout << "g_codecName263: " << g_codecName263 << endl;
     }
-    g_codecName263 = OH_AVCapability_GetName(cap_h263);
-    cout << "g_codecName263: " << g_codecName263 << endl;
 
     cap_h264 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, SOFTWARE);
-    if (cap_h264 == nullptr) {
-        return;
+    if (cap_h264 != nullptr) {
+        g_codecName264 = OH_AVCapability_GetName(cap_h264);
+        cout << "g_codecName264: " << g_codecName264 << endl;
     }
-    g_codecName264 = OH_AVCapability_GetName(cap_h264);
-    cout << "g_codecName264: " << g_codecName264 << endl;
 
     cap_mpeg2 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
-    if (cap_mpeg2 == nullptr) {
-        return;
+    if (cap_mpeg2 != nullptr) {
+        g_codecNameMpeg2 = OH_AVCapability_GetName(cap_mpeg2);
+        cout << "g_codecNameMpeg2: " << g_codecNameMpeg2 << endl;
     }
-    g_codecNameMpeg2 = OH_AVCapability_GetName(cap_mpeg2);
-    cout << "g_codecNameMpeg2: " << g_codecNameMpeg2 << endl;
 
     cap_mpeg4 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4_PART2, false, SOFTWARE);
-    if (cap_mpeg4 == nullptr) {
-        return;
+    if (cap_mpeg4 != nullptr) {
+        g_codecNameMpeg4 = OH_AVCapability_GetName(cap_mpeg4);
+        cout << "g_codecNameMpeg4: " << g_codecNameMpeg4 << endl;
     }
-    g_codecNameMpeg4 = OH_AVCapability_GetName(cap_mpeg4);
-    cout << "g_codecNameMpeg4: " << g_codecNameMpeg4 << endl;
 
     cap_sw265 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
-    if (cap_sw265 == nullptr) {
-        return;
+    if (cap_sw265 != nullptr) {
+        g_codecNameSw265 = OH_AVCapability_GetName(cap_sw265);
+        cout << "g_codecNameSw265: " << g_codecNameSw265 << endl;
     }
-    g_codecNameSw265 = OH_AVCapability_GetName(cap_sw265);
-    cout << "g_codecNameSw265: " << g_codecNameSw265 << endl;
 
     cap_h265 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap_h265 == nullptr) {
-        return;
+    if (cap_h265 != nullptr) {
+        g_codecNameHw265 = OH_AVCapability_GetName(cap_h265);
+        cout << "g_codecNameHw265: " << g_codecNameHw265 << endl;
     }
-    g_codecNameHw265 = OH_AVCapability_GetName(cap_h265);
-    cout << "g_codecNameHw265: " << g_codecNameHw265 << endl;
 }
 void HDRFuncNdkTest::TearDownTestCase() {}
 void HDRFuncNdkTest::SetUp() {}
@@ -108,9 +102,12 @@ void HDRFuncNdkTest::TearDown() {}
 } // namespace OHOS
 namespace {
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_009
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_009
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_009
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_009, TestSize.Level1)
 {
@@ -130,9 +127,12 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_009, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_010
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_010
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_010
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_010, TestSize.Level1)
 {
@@ -152,9 +152,12 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_011
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_011
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_011
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_011
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_011, TestSize.Level1)
 {
@@ -174,9 +177,12 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_011, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_012
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_012
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_012
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_012
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_012, TestSize.Level1)
 {
@@ -196,9 +202,12 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_012, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_013
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_013
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_013
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_013
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_013, TestSize.Level1)
 {

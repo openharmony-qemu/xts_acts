@@ -262,15 +262,12 @@ export default function imagePackToData() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0100
-      * @tc.desc    SUB_IMAGE_packToData_PixelMap_001
-      *                 1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0100
+     * @tc.desc   SUB_IMAGE_packToData_PixelMap_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -281,15 +278,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0200
-      * @tc.desc    SUB_IMAGE_packToData_PixelMap_002 - Promise - RGB565 quality 123
-      *                 1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0200
+     * @tc.desc   SUB_IMAGE_packToData_PixelMap_002 - Promise - RGB565 quality 123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -300,15 +294,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0500
-      * @tc.desc    SUB_IMAGE_packToData_PixelMap_005 - Promise - RGB565 wrong format
-      *                 1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0500
+     * @tc.desc   SUB_IMAGE_packToData_PixelMap_005 - Promise - RGB565 wrong format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -319,15 +310,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0600
-      * @tc.desc    SUB_IMAGE_packToData_PixelMap_006
-      *                 1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0600
+     * @tc.desc   SUB_IMAGE_packToData_PixelMap_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -338,15 +326,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0700
-      * @tc.desc    SUB_IMAGE_packToData_PixelMap_007 - Promise - RGB888 quality 123
-      *                 1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0700
+     * @tc.desc   SUB_IMAGE_packToData_PixelMap_007 - Promise - RGB888 quality 123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -357,15 +342,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_1000
-      * @tc.desc    SUB_IMAGE_packToData_PixelMap_010 - Promise - RGB888 wrong format
-      *                 1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_1000
+     * @tc.desc   SUB_IMAGE_packToData_PixelMap_010 - Promise - RGB888 wrong format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -376,14 +358,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0100
-      * @tc.desc    1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0100
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -395,14 +375,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0200
-      * @tc.desc    1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0200
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -415,15 +393,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300
-      * @tc.desc    SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300-over maxbufferSize
-      *                 1.create PixelMap
-      *                 2.create ImagePacker
-      *                 3.call packToData
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300-over maxbufferSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -435,15 +410,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0100
-      * @tc.desc    packToData ImageSource - promise
-      *                 1.create ImageSource
-      *                 2.call packToData
-      *                 3.return array
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0100
+     * @tc.desc   packToData ImageSource - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -453,19 +425,15 @@ export default function imagePackToData() {
       packToDataimgSourcePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0100", packOpts);
     });
 
-    /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0200
-      * @tc.desc    packToData ImageSource - promise - quality 123
-      *                 1.create ImageSource
-      *                 2.call packToData
-      *                 3.call return array
-      *                 4.call return 401
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0200
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
         format: "image/jpeg",
@@ -475,16 +443,12 @@ export default function imagePackToData() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0500
-      * @tc.desc    packToData ImageSource - promise - wrong format
-      *                 1.create ImageSource
-      *                 2.call packToData
-      *                 3.call return array
-      *                 4.call return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0500
+     * @tc.desc   packToData ImageSource - promise - wrong format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {

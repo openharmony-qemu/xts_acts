@@ -60,8 +60,10 @@ export default function requestVideoTest() {
             fs.unlinkSync(`${testContext.filesDir}/${files[i]}`);
           }
         }
+		await sleep(2000);
       } catch (error) {
         console.error(`requestVideoTest listFiles failed; error: ${error.code}  ${error.message}`)
+		await sleep(2000);
       }
     });
 
@@ -115,6 +117,7 @@ export default function requestVideoTest() {
 
         const handler = new MediaHandler();
         await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri, handler);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
         expect(false).assertTrue();
@@ -143,6 +146,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
         if (!isSupportHdr) {
@@ -171,6 +175,7 @@ export default function requestVideoTest() {
 
         const handler = new MediaHandler();
         await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri, handler);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -197,6 +202,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -222,6 +228,7 @@ export default function requestVideoTest() {
         };
         const handler = new MediaHandler();
         await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri, handler);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -251,6 +258,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -281,6 +289,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -308,6 +317,7 @@ export default function requestVideoTest() {
         };
         const handler = new MediaHandler();
         await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri, handler);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         expect(error.code).assertEqual(errCode);
@@ -339,6 +349,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         if (!isSupportHdr) {
@@ -375,6 +386,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         if (!isSupportHdr) {
@@ -400,12 +412,12 @@ export default function requestVideoTest() {
     }
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0000
-     * @tc.name      : request_video_000
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: originalMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_original
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0000
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_original', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_original';
@@ -417,12 +429,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0100
-     * @tc.name      : test requestVideo with hignQualityMode and sourceMode: originalMode
-     * @tc.desc      : request video with deliveryMode: hignQualityMode and sourceMode: originalMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_high_source_original
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0100
+     * @tc.desc   request video with deliveryMode: hignQualityMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_high_source_original', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_high_source_original';
@@ -434,12 +446,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0200
-     * @tc.name      : test requestVideo with balancedMode and sourceMode: originalMode
-     * @tc.desc      : request image with deliveryMode: balancedMode and sourceMode: originalMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_balance_source_original
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0200
+     * @tc.desc   request image with deliveryMode: balancedMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_balance_source_original', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_balance_source_original';
@@ -451,12 +463,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0300
-     * @tc.name      : test requestVideo with fastMode and sourceMode: editedMode
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: editedMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_edited
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0300
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_edited', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_edited';
@@ -468,12 +480,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0400
-     * @tc.name      : test requestVideo with hignQualityMode and sourceMode: editedMode
-     * @tc.desc      : request video with deliveryMode: hignQualityMode and sourceMode: editedMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_high_source_edited
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0400
+     * @tc.desc   request video with deliveryMode: hignQualityMode and sourceMode: editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_high_source_edited', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_high_source_edited';
@@ -485,12 +497,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0500
-     * @tc.name      : test requestVideo with balancedMode and sourceMode: editedMode
-     * @tc.desc      : request video with deliveryMode: balancedMode and sourceMode: editedMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_balance_source_edited
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0500
+     * @tc.desc   request video with deliveryMode: balancedMode and sourceMode: editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_balance_source_edited', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_balance_source_edited';
@@ -502,12 +514,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0600
-     * @tc.name      : test requestVideo with balancedMode and sourceMode: null
-     * @tc.desc      : request video with deliveryMode: balancedMode and sourceMode: null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_source_mode_null
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0600
+     * @tc.desc   request video with deliveryMode: balancedMode and sourceMode: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_source_mode_null', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_source_mode_null';
@@ -519,12 +531,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0700
-     * @tc.name      : test requestVideo with balancedMode and sourceMode: undefined
-     * @tc.desc      : request video with deliveryMode: balancedMode and sourceMode: undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_source_mode_undefined
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0700
+     * @tc.desc   request video with deliveryMode: balancedMode and sourceMode: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_source_mode_undefined', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_source_mode_undefined';
@@ -536,12 +548,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0800
-     * @tc.name      : test requestVideo with deliveryMode: balancedMode and sourceMode: -100
-     * @tc.desc      : request video with deliveryMode: balancedMode and sourceMode: -100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_source_mode_100
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0800
+     * @tc.desc   request video with deliveryMode: balancedMode and sourceMode: -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_source_mode_100', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_source_mode_100';
@@ -553,12 +565,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0900
-     * @tc.name      : test requestVideo with deliveryMode: null and sourceMode: EDITED_MODE
-     * @tc.desc      : request video with deliveryMode: null and sourceMode: EDITED_MODE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_mode_null
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_0900
+     * @tc.desc   request video with deliveryMode: null and sourceMode: EDITED_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_mode_null', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_mode_null';
@@ -570,12 +582,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1000
-     * @tc.name      : test requestVideo with deliveryMode: undefined and sourceMode: EDITED_MODE
-     * @tc.desc      : request video with deliveryMode: undefined and sourceMode: EDITED_MODE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_mode_undefined
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1000
+     * @tc.desc   request video with deliveryMode: undefined and sourceMode: EDITED_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_mode_undefined', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_mode_undefined';
@@ -587,12 +599,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1100
-     * @tc.name      : test requestVideo with deliveryMode: -100 and sourceMode: EDITED_MODE
-     * @tc.desc      : request video with deliveryMode: -100 and sourceMode: EDITED_MODE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_mode_100
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1100
+     * @tc.desc   request video with deliveryMode: -100 and sourceMode: EDITED_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_mode_100', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_mode_100';
@@ -604,12 +616,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1200
-     * @tc.name      : test requestVideo with photoAsset = null
-     * @tc.desc      : request video with photoAsset = null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_null
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1200
+     * @tc.desc   request video with photoAsset = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_null', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_null';
@@ -618,12 +630,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1300
-     * @tc.name      : test requestVideo with photoAsset = undefined
-     * @tc.desc      : request video with photoAsset = undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_undefined
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1300
+     * @tc.desc   request video with photoAsset = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_undefined', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_undefined';
@@ -632,12 +644,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1400
-     * @tc.name      : test requestVideo with photoAsset = 'test'
-     * @tc.desc      : request video with photoAsset = 'test'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_test_string
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1400
+     * @tc.desc   request video with photoAsset = 'test'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_test_string', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_test_string';
@@ -646,12 +658,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1500
-     * @tc.name      : test requestVideo with photoAsset = true
-     * @tc.desc      : request video with photoAsset = true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_true
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1500
+     * @tc.desc   request video with photoAsset = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_true', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_true';
@@ -660,12 +672,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1600
-     * @tc.name      : test requestVideo with photoAsset = {a: 10}
-     * @tc.desc      : request video with photoAsset = {a: 10}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_object
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1600
+     * @tc.desc   request video with photoAsset = {a: 10}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_object', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_object';
@@ -674,12 +686,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1700
-     * @tc.name      : test requestVideo with fileUri = null
-     * @tc.desc      : request video with fileUri = null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_null
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1700
+     * @tc.desc   request video with fileUri = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_null', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_null';
@@ -689,12 +701,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1800
-     * @tc.name      : test requestVideo with fileUri = undefined
-     * @tc.desc      : request video with fileUri = undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_undefined
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1800
+     * @tc.desc   request video with fileUri = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_undefined', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_undefined';
@@ -704,12 +716,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1900
-     * @tc.name      : test requestVideo with fileUri = true
-     * @tc.desc      : request video with fileUri = true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_true
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_1900
+     * @tc.desc   request video with fileUri = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_true', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_true';
@@ -719,12 +731,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2000
-     * @tc.name      : test requestVideo with fileUri = 'aaaaa.....mp4'(length = 384)
-     * @tc.desc      : request video with fileUri = 'aaaaa.....mp4'(length = 384)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_test_string
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2000
+     * @tc.desc   request video with fileUri = 'aaaaa.....mp4'(length = 384)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_test_string', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_test_string';
@@ -738,12 +750,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2100
-     * @tc.name      : test requestVideo with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
-     * @tc.desc      : request video with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_special_chat
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2100
+     * @tc.desc   request video with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_special_chat', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_special_chat';
@@ -753,12 +765,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2200
-     * @tc.name      : test requestVideo with fileUri = 'a...a'(length = 385)
-     * @tc.desc      : request video with fileUri = 'a...a'(length = 385)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_extr_long_string
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2200
+     * @tc.desc   request video with fileUri = 'a...a'(length = 385)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_extr_long_string', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_extr_long_string';
@@ -771,12 +783,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2300
-     * @tc.name      : test requestVideo with photoAsset : imageAsset
-     * @tc.desc      : request video with photoAsset : imageAsset
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photoAsset_imageAsset
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2300
+     * @tc.desc   request video with photoAsset : imageAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photoAsset_imageAsset', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photoAsset_imageAsset';
@@ -806,12 +818,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2400
-     * @tc.name      : test requestVideo fileUri : ***.jpg
-     * @tc.desc      : request video with fileUri : ***.jpg
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_image
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2400
+     * @tc.desc   request video with fileUri : ***.jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_image', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_image';
@@ -841,12 +853,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2500
-     * @tc.name      : test requestVideo with fileUri: ***.jpg, photoAsset: imageAsset
-     * @tc.desc      : request video with fileUri: ***.jpg, photoAsset: imageAsset
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_imageUri_photoAsset_imageAsset
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2500
+     * @tc.desc   request video with fileUri: ***.jpg, photoAsset: imageAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_imageUri_photoAsset_imageAsset', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_imageUri_photoAsset_imageAsset';
@@ -876,12 +888,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2600
-     * @tc.name      : test requestVideo with fileUri = 'test.mp4'
-     * @tc.desc      : request video with fileUri = 'test.mp4'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_empty_string
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2600
+     * @tc.desc   request video with fileUri = 'test.mp4'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_empty_string', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_empty_string';
@@ -891,12 +903,12 @@ export default function requestVideoTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2700
-     * @tc.name      : request_video_000
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: originalMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_original_moving_photo
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2700
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_original_moving_photo', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_original_moving_photo';
@@ -929,13 +941,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2800
-     * @tc.name      : request_video_delivery_fast_source_original_compatible
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: originalMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_original_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2800
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_original_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_original_compatible';
@@ -947,13 +958,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2900
-     * @tc.name      : request_video_delivery_fast_source_original_compatible_onprogress
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: originalMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and onProgress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_original_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_2900
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_original_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_original_compatible_onprogress';
@@ -966,14 +976,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3000
-     * @tc.name      : test requestVideo with hignQualityMode and sourceMode: originalMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE
-     * @tc.desc      : request video with deliveryMode: hignQualityMode and sourceMode: originalMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_high_source_original_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3000
+     * @tc.desc   request video with deliveryMode: hignQualityMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_high_source_original_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_high_source_original_compatible';
@@ -985,14 +993,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3100
-     * @tc.name      : test requestVideo with hignQualityMode and sourceMode: originalMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and onProgress
-     * @tc.desc      : request video with deliveryMode: hignQualityMode and sourceMode: originalMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and onProgress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_high_source_original_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3100
+     * @tc.desc   request video with deliveryMode: hignQualityMode and sourceMode: originalMode and transcoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_high_source_original_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_high_source_original_compatible_onprogress';
@@ -1005,14 +1011,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3200
-     * @tc.name      : test requestVideo with balancedMode and sourceMode: originalMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE
-     * @tc.desc      : request image with deliveryMode: balancedMode and sourceMode: originalMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_balance_source_original_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3200
+     * @tc.desc   request image with deliveryMode: balancedMode and sourceMode: originalMode and transcoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_balance_source_original_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_balance_source_original_compatible';
@@ -1024,14 +1028,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3300
-     * @tc.name      : test requestVideo with balancedMode and sourceMode: originalMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and onProgress
-     * @tc.desc      : request image with deliveryMode: balancedMode and sourceMode: originalMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and onProgress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_balance_source_original_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3300
+     * @tc.desc   request image with deliveryMode: balancedMode and sourceMode: originalMode and transcoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_balance_source_original_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_balance_source_original_compatible_onprogress';
@@ -1044,14 +1046,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3400
-     * @tc.name      : test requestVideo with fastMode and sourceMode: editedMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: editedMode and transcoding
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_edited_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3400
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: editedMode and transcoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_edited_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_edited_compatible';
@@ -1063,14 +1063,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3500
-     * @tc.name      : test requestVideo with fastMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_edited_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3500
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_edited_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_edited_compatible_onprogress';
@@ -1083,14 +1081,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3600
-     * @tc.name      : test requestVideo with hignQualityMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with deliveryMode: hignQualityMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_high_source_edited_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3600
+     * @tc.desc   request video with deliveryMode: hignQualityMode and sourceMode: editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_high_source_edited_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_high_source_edited_compatible';
@@ -1102,14 +1098,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3700
-     * @tc.name      : test requestVideo with hignQualityMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with deliveryMode: hignQualityMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_high_source_edited_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3700
+     * @tc.desc   request video with deliveryMode: hignQualityMode and sourceMode: editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_high_source_edited_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_high_source_edited_compatible_onprogress';
@@ -1122,14 +1116,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3800
-     * @tc.name      : test requestVideo with balancedMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with deliveryMode: balancedMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_balance_source_edited_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3800
+     * @tc.desc   request video with deliveryMode: balancedMode and sourceMode: editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_balance_source_edited_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_balance_source_edited_compatible';
@@ -1141,14 +1133,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3900
-     * @tc.name      : test requestVideo with balancedMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with deliveryMode: balancedMode and sourceMode: editedMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_balance_source_edited_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_3900
+     * @tc.desc   request video with deliveryMode: balancedMode and sourceMode: editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_balance_source_edited_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_balance_source_edited_compatible_onprogress';
@@ -1161,13 +1151,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4000
-     * @tc.name      : request_video_delivery_fast_source_original_compatible_moving_photo and transcoding
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: originalMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_original_compatible_moving_photo
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4000
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_original_compatible_moving_photo', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_original_compatible_moving_photo';
@@ -1203,14 +1192,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4100
-     * @tc.name      : request_video_delivery_fast_source_original_compatible_onprogress_moving_photo
-     *               : and transcoding and progress
-     * @tc.desc      : request video with deliveryMode: fastMode and sourceMode: originalMode
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_original_compatible_onprogress_moving_photo
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4100
+     * @tc.desc   request video with deliveryMode: fastMode and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_original_compatible_onprogress_moving_photo', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_original_compatible_onprogress_moving_photo';
@@ -1248,14 +1235,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4200
-     * @tc.name      : test requestVideo with deliveryMode: balancedMode and sourceMode: -100
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with deliveryMode: balancedMode and sourceMode: -100
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_source_mode_100_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4200
+     * @tc.desc   request video with deliveryMode: balancedMode and sourceMode: -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_source_mode_100_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_source_mode_100_compatible';
@@ -1267,14 +1252,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsErrorHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4300
-     * @tc.name      : test requestVideo with deliveryMode: balancedMode and sourceMode: -100
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with deliveryMode: balancedMode and sourceMode: -100
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_source_mode_100_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4300
+     * @tc.desc   request video with deliveryMode: balancedMode and sourceMode: -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_source_mode_100_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_source_mode_100_compatible_onprogress';
@@ -1287,14 +1270,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsErrorHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4400
-     * @tc.name      : test requestVideo with deliveryMode: -100 and sourceMode: EDITED_MODE
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with deliveryMode: -100 and sourceMode: EDITED_MODE
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_mode_100_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4400
+     * @tc.desc   request video with deliveryMode: -100 and sourceMode: EDITED_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_mode_100_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_mode_100_compatible';
@@ -1306,14 +1287,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsErrorHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4500
-     * @tc.name      : test requestVideo with deliveryMode: -100 and sourceMode: EDITED_MODE
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with deliveryMode: -100 and sourceMode: EDITED_MODE
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_mode_100_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4500
+     * @tc.desc   request video with deliveryMode: -100 and sourceMode: EDITED_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_mode_100_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_mode_100_compatible_onprogress';
@@ -1326,14 +1305,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsErrorHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4600
-     * @tc.name      : test requestVideo with photoAsset = null
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with photoAsset = null
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_null_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4600
+     * @tc.desc   request video with photoAsset = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_null_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_null_compatible';
@@ -1341,14 +1318,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatible(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4700
-     * @tc.name      : test requestVideo with photoAsset = null
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with photoAsset = null
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_null_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4700
+     * @tc.desc   request video with photoAsset = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_null_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_null_compatible_onprogress';
@@ -1356,14 +1331,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatibleOnprogress(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4800
-     * @tc.name      : test requestVideo with photoAsset = undefined
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with photoAsset = undefined
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_undefined_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4800
+     * @tc.desc   request video with photoAsset = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_undefined_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_undefined_compatible';
@@ -1371,14 +1344,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatible(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4900
-     * @tc.name      : test requestVideo with photoAsset = undefined
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with photoAsset = undefined
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_undefined_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_4900
+     * @tc.desc   request video with photoAsset = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_undefined_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_undefined_compatible_onprogress';
@@ -1386,14 +1357,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatibleOnprogress(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5000
-     * @tc.name      : test requestVideo with photoAsset = 'test'
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with photoAsset = 'test'
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_test_string_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5000
+     * @tc.desc   request video with photoAsset = 'test'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_test_string_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_test_string_compatible';
@@ -1401,14 +1370,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatible(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5100
-     * @tc.name      : test requestVideo with photoAsset = 'test'
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with photoAsset = 'test'
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_test_string_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5100
+     * @tc.desc   request video with photoAsset = 'test'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_test_string_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_test_string_compatible_onprogress';
@@ -1416,14 +1383,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatibleOnprogress(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5200
-     * @tc.name      : test requestVideo with photoAsset = true
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with photoAsset = true
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_true_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5200
+     * @tc.desc   request video with photoAsset = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_true_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_true_compatible';
@@ -1431,14 +1396,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatible(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5300
-     * @tc.name      : test requestVideo with photoAsset = true
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with photoAsset = true
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_true_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5300
+     * @tc.desc   request video with photoAsset = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_true_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_true_compatible_onprogress';
@@ -1446,14 +1409,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatibleOnprogress(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5400
-     * @tc.name      : test requestVideo with photoAsset = {a: 10}
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with photoAsset = {a: 10}
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_object_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5400
+     * @tc.desc   request video with photoAsset = {a: 10}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_object_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_object_compatible';
@@ -1463,14 +1424,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatible(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5500
-     * @tc.name      : test requestVideo with photoAsset = {a: 10}
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with photoAsset = {a: 10}
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photo_asset_object_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5500
+     * @tc.desc   request video with photoAsset = {a: 10}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photo_asset_object_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photo_asset_object_compatible_onprogress';
@@ -1480,14 +1439,12 @@ export default function requestVideoTest() {
       await requestVideoPhotoAssetErrorCompatibleOnprogress(testNum, done, photoAsset);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5600
-     * @tc.name      : test requestVideo with fileUri = null
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri = null
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_null_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5600
+     * @tc.desc   request video with fileUri = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_null_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_null_compatible';
@@ -1496,14 +1453,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatible(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5700
-     * @tc.name      : test requestVideo with fileUri = null
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri = null
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_null_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5700
+     * @tc.desc   request video with fileUri = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_null_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_null_compatible_onprogress';
@@ -1512,14 +1467,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatibleOnprogress(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5800
-     * @tc.name      : test requestVideo with fileUri = undefined
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri = undefined
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_undefined_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5800
+     * @tc.desc   request video with fileUri = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_undefined_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_undefined_compatible';
@@ -1528,14 +1481,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatible(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5900
-     * @tc.name      : test requestVideo with fileUri = undefined
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri = undefined
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_undefined_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_5900
+     * @tc.desc   request video with fileUri = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_undefined_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_undefined_compatible_onprogress';
@@ -1544,14 +1495,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatibleOnprogress(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6000
-     * @tc.name      : test requestVideo with fileUri = true
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri = true
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_true_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6000
+     * @tc.desc   request video with fileUri = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_true_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_true_compatible';
@@ -1560,14 +1509,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatible(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6100
-     * @tc.name      : test requestVideo with fileUri = true
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri = true
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_true_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6100
+     * @tc.desc   request video with fileUri = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_true_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_true_compatible_onprogress';
@@ -1576,14 +1523,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatibleOnprogress(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6200
-     * @tc.name      : test requestVideo with fileUri = 'aaaaa.....mp4'(length = 384)
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri = 'aaaaa.....mp4'(length = 384)
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_test_string_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6200
+     * @tc.desc   request video with fileUri = 'aaaaa.....mp4'(length = 384)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_test_string_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_test_string_compatible';
@@ -1596,14 +1541,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatible(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6300
-     * @tc.name      : test requestVideo with fileUri = 'aaaaa.....mp4'(length = 384)
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri = 'aaaaa.....mp4'(length = 384)
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_test_string_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6300
+     * @tc.desc   request video with fileUri = 'aaaaa.....mp4'(length = 384)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_test_string_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_test_string_compatible_onprogress';
@@ -1616,14 +1559,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatibleOnprogress(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6400
-     * @tc.name      : test requestVideo with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_special_chat_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6400
+     * @tc.desc   request video with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_special_chat_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_special_chat_compatible';
@@ -1632,14 +1573,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatible(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6500
-     * @tc.name      : test requestVideo with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_special_chat_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6500
+     * @tc.desc   request video with fileUri = '⛰ * ⛪ ⛩ ⛲ ⛺ ♨ ⛽ ⚓ '
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_special_chat_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_special_chat_compatible_onprogress';
@@ -1648,14 +1587,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatibleOnprogress(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6600
-     * @tc.name      : test requestVideo with fileUri = 'a...a'(length = 385)
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri = 'a...a'(length = 385)
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_extr_long_string_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6600
+     * @tc.desc   request video with fileUri = 'a...a'(length = 385)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_extr_long_string_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_extr_long_string_compatible';
@@ -1667,14 +1604,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatible(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6700
-     * @tc.name      : test requestVideo with fileUri = 'a...a'(length = 385)
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri = 'a...a'(length = 385)
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_extr_long_string_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6700
+     * @tc.desc   request video with fileUri = 'a...a'(length = 385)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_extr_long_string_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_extr_long_string_compatible_onprogress';
@@ -1686,14 +1621,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatibleOnprogress(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6800
-     * @tc.name      : test requestVideo with photoAsset : imageAsset
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with photoAsset : imageAsset
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photoAsset_imageAsset_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6800
+     * @tc.desc   request video with photoAsset : imageAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photoAsset_imageAsset_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photoAsset_imageAsset_compatible';
@@ -1730,14 +1663,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6900
-     * @tc.name      : test requestVideo with photoAsset : imageAsset
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with photoAsset : imageAsset
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_photoAsset_imageAsset_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_6900
+     * @tc.desc   request video with photoAsset : imageAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_photoAsset_imageAsset_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_photoAsset_imageAsset_compatible_onprogress';
@@ -1775,14 +1706,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7000
-     * @tc.name      : test requestVideo fileUri : ***.jpg
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri : ***.jpg
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_image_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7000
+     * @tc.desc   request video with fileUri : ***.jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_image_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_image_compatible';
@@ -1819,14 +1748,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7100
-     * @tc.name      : test requestVideo fileUri : ***.jpg
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri : ***.jpg
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_image_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7100
+     * @tc.desc   request video with fileUri : ***.jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_image_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_image_compatible_onprogress';
@@ -1864,14 +1791,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7200
-     * @tc.name      : test requestVideo with fileUri: ***.jpg, photoAsset: imageAsset
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri: ***.jpg, photoAsset: imageAsset
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_imageUri_photoAsset_imageAsset_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7200
+     * @tc.desc   request video with fileUri: ***.jpg, photoAsset: imageAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_imageUri_photoAsset_imageAsset_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_imageUri_photoAsset_imageAsset_compatible';
@@ -1908,14 +1833,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7300
-     * @tc.name      : test requestVideo with fileUri: ***.jpg, photoAsset: imageAsset
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri: ***.jpg, photoAsset: imageAsset
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_imageUri_photoAsset_imageAsset_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7300
+     * @tc.desc   request video with fileUri: ***.jpg, photoAsset: imageAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_imageUri_photoAsset_imageAsset_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_imageUri_photoAsset_imageAsset_compatible_onprogress';
@@ -1953,14 +1876,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7400
-     * @tc.name      : test requestVideo with fileUri = 'test.mp4'
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.desc      : request video with fileUri = 'test.mp4'
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_empty_string_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7400
+     * @tc.desc   request video with fileUri = 'test.mp4'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_empty_string_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_empty_string_compatible';
@@ -1969,14 +1890,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatible(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7500
-     * @tc.name      : test requestVideo with fileUri = 'test.mp4'
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.desc      : request video with fileUri = 'test.mp4'
-     *-              : and compatibleMode: COMPATIBLE_FORMAT_MODE and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_fileUri_empty_string_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7500
+     * @tc.desc   request video with fileUri = 'test.mp4'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_fileUri_empty_string_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_fileUri_empty_string_compatible_onprogress';
@@ -1985,14 +1904,12 @@ export default function requestVideoTest() {
       await requestVideoDestUriErrorCompatibleOnprogress(testNum, done, fileUri, errCode);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7600
-     * @tc.name      : test requestVideo with compatibleMode -100 and deliveryMode: BALANCE_MODE
-     *               : and sourceMode: originalMode
-     * @tc.desc      : request video with deliveryMode: BALANCE_MODE and sourceMode: originalMode
-     *-              : and compatibleMode: -100 and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_original_compatible_illegal_compatibleMode
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7600
+     * @tc.desc   request video with deliveryMode: BALANCE_MODE and sourceMode: originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_original_compatible_illegal_compatibleMode', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_original_compatible_illegal_compatibleMode';
@@ -2004,14 +1921,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsErrorHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7700
-     * @tc.name      : test requestVideo with compatibleMode -100 and deliveryMode: BALANCE_MODE
-     *               : and sourceMode: EDITED_MODE
-     * @tc.desc      : request video with deliveryMode: BALANCE_MODE and sourceMode: EDITED_MODE
-     *-              : and compatibleMode: -100 and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_video_delivery_fast_source_original_compatible_illegal_mode
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7700
+     * @tc.desc   request video with deliveryMode: BALANCE_MODE and sourceMode: EDITED_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_video_delivery_fast_source_original_compatible_illegal_mode', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_video_delivery_fast_source_original_compatible_illegal_mode';
@@ -2023,14 +1938,12 @@ export default function requestVideoTest() {
       await requestVideoRequestOptionsErrorHdr(testNum, done, requestOptions);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7800
-     * @tc.name      : test requestVideo with compatibleMode -100 and deliveryMode: BALANCE_MODE
-     *               : and sourceMode: EDITED_MODE
-     * @tc.desc      : request video with deliveryMode: BALANCE_MODE and sourceMode: EDITED_MODE
-     *-              : and compatibleMode: -100 and transcoding and progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_hdr_video_fileUri_imageUri_photoAsset_compatible_onprogress
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7800
+     * @tc.desc   request video with deliveryMode: BALANCE_MODE and sourceMode: EDITED_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_hdr_video_fileUri_imageUri_photoAsset_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_hdr_video_compatible_onprogress';
@@ -2074,14 +1987,12 @@ export default function requestVideoTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7900
-     * @tc.name      : test requestVideo with compatibleMode -100 and deliveryMode: BALANCE_MODE
-     *               : and sourceMode: EDITED_MODE
-     * @tc.desc      : request video with deliveryMode: BALANCE_MODE and sourceMode: EDITED_MODE
-     *-              : and compatibleMode: -100 and transcoding
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_hdr_video_fileUri_imageUri_photoAsset_compatible
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7900
+     * @tc.desc   request video with deliveryMode: BALANCE_MODE and sourceMode: EDITED_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_hdr_video_fileUri_imageUri_photoAsset_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_hdr_video_compatible';

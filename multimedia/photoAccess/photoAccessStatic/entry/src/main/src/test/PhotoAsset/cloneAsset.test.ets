@@ -48,12 +48,12 @@ export default function cloneAssetTest() {
 
 
     /**
-      * @tc.number  Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_001
-      * @tc.name    test_clone_image_static_001
-      * @tc.desc    clone image, expect success
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   test_clone_image_static_001
+     * @tc.number Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_001
+     * @tc.desc   clone image, expect success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_clone_image_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void):
       Promise<void> => {
@@ -96,12 +96,12 @@ export default function cloneAssetTest() {
     })
 
     /**
-      * @tc.number  Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_002
-      * @tc.name    test_clone_video_static_001
-      * @tc.desc    clone video, expect success
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   test_clone_video_static_001
+     * @tc.number Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_002
+     * @tc.desc   clone video, expect success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_clone_video_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void):
       Promise<void> => {
@@ -141,12 +141,12 @@ export default function cloneAssetTest() {
     })
 
     /**
-      * @tc.number  Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_003
-      * @tc.name    test_clone_moving_photo_static_001
-      * @tc.desc    clone moving photo, expect success
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   test_clone_moving_photo_static_001
+     * @tc.number Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_003
+     * @tc.desc   clone moving photo, expect success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_clone_moving_photo_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void):
@@ -189,12 +189,12 @@ export default function cloneAssetTest() {
       })
 
     /**
-      * @tc.number  Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_004
-      * @tc.name    test_clone_long_title_static_001
-      * @tc.desc    clone image with titile and suffix length <= 255 , expect success
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   test_clone_long_title_static_001
+     * @tc.number Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_004
+     * @tc.desc   clone image with titile and suffix length <= 255 , expect success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_clone_long_title_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void):
       Promise<void> => {
@@ -233,12 +233,12 @@ export default function cloneAssetTest() {
     })
 
     /**
-      * @tc.number  Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_005
-      * @tc.name    test_clone_long_title_static_002
-      * @tc.desc    clone image with titile and suffix length > 255 , expect failed and errCode is 401
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   test_clone_long_title_static_002
+     * @tc.number Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_005
+     * @tc.desc   clone image with titile and suffix length > 255 , expect failed and errCode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_clone_long_title_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void):
       Promise<void> => {
@@ -269,12 +269,12 @@ export default function cloneAssetTest() {
     })
 
     /**
-      * @tc.number  Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_006
-      * @tc.name    test_clone_with_suffix_static_001
-      * @tc.desc    clone image, titile with suffix, expect failed and errCode is 401
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   test_clone_with_suffix_static_001
+     * @tc.number Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_006
+     * @tc.desc   clone image, titile with suffix, expect failed and errCode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_clone_with_suffix_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void):
@@ -305,12 +305,12 @@ export default function cloneAssetTest() {
       })
 
     /**
-      * @tc.number  Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_007
-      * @tc.name    test_clone_with_illegal_str_static_001
-      * @tc.desc    clone image, titile with illegal str, expect failed and errCode is 401
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   test_clone_with_illegal_str_static_001
+     * @tc.number Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_007
+     * @tc.desc   clone image, titile with illegal str, expect failed and errCode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_clone_with_illegal_str_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void):
@@ -352,12 +352,12 @@ export default function cloneAssetTest() {
       })
 
     /**
-      * @tc.number  Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_008
-      * @tc.name    test_clone_with_empty_str_static_001
-      * @tc.desc    clone image, titile is empty str, expect failed and errCode is 401
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   test_clone_with_empty_str_static_001
+     * @tc.number Sub_MediaLibrary_PhotoAccessHelper_Clone_Test_Static_008
+     * @tc.desc   clone image, titile is empty str, expect failed and errCode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_clone_with_empty_str_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void):

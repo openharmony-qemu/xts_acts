@@ -266,15 +266,12 @@ export default function imageGetImageProperty() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100
-      * @tc.desc    getImageProperty(DateTimeOriginal)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(DateTimeOriginal)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100
+     * @tc.desc   getImageProperty(DateTimeOriginal)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = DATE_TIME_ORIGINAL;
@@ -283,15 +280,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200
-      * @tc.desc    getImageProperty(ExposureTime)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(ExposureTime)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200
+     * @tc.desc   getImageProperty(ExposureTime)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = EXPOSURE_TIME;
@@ -300,15 +294,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300
-      * @tc.desc    getImageProperty(FNumber)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(FNumber)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300
+     * @tc.desc   getImageProperty(FNumber)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = F_NUMBER;
@@ -317,15 +308,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400
-      * @tc.desc    getImageProperty(ISOSpeedRatings)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(ISOSpeedRatings)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400
+     * @tc.desc   getImageProperty(ISOSpeedRatings)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = ISO_SPEED_RATINGS;
@@ -334,15 +322,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500
-      * @tc.desc    getImageProperty(SceneType)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SceneType)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500
+     * @tc.desc   getImageProperty(SceneType)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = SCENE_TYPE;
@@ -351,15 +336,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0100
-      * @tc.desc    getImageProperty(DateTimeOriginal)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(DateTimeOriginal)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0100
+     * @tc.desc   getImageProperty(DateTimeOriginal)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = DATE_TIME_ORIGINAL;
@@ -368,15 +350,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0200
-      * @tc.desc    getImageProperty(ExposureTime)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(ExposureTime)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0200
+     * @tc.desc   getImageProperty(ExposureTime)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = EXPOSURE_TIME;
@@ -385,15 +364,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0300
-      * @tc.desc    getImageProperty(FNumber)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(FNumber)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0300
+     * @tc.desc   getImageProperty(FNumber)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = F_NUMBER;
@@ -402,15 +378,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0400
-      * @tc.desc    getImageProperty(ISOSpeedRatings)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(ISOSpeedRatings)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0400
+     * @tc.desc   getImageProperty(ISOSpeedRatings)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = ISO_SPEED_RATINGS;
@@ -419,15 +392,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0500
-      * @tc.desc    getImageProperty(SceneType)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SceneType)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0500
+     * @tc.desc   getImageProperty(SceneType)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_BUFFER_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key = SCENE_TYPE;
@@ -436,14 +406,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0100
-      * @tc.desc    test getImageProperties for jpg with multy key
-      *                 1.create jpg imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0100
+     * @tc.desc   test getImageProperties for jpg with multy key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -455,14 +423,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0200
-      * @tc.desc    test getImageProperties for png with multy key
-      *                 1.create png imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0200
+     * @tc.desc   test getImageProperties for png with multy key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -474,14 +440,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0300
-      * @tc.desc    test getImageProperties for jpg with single key
-      *                 1.create jpg imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0300
+     * @tc.desc   test getImageProperties for jpg with single key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -492,14 +456,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0400
-      * @tc.desc    test getImageProperties for png with single key
-      *                 1.create png imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0400
+     * @tc.desc   test getImageProperties for png with single key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -510,14 +472,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0700
-      * @tc.desc    test getImageProperties for jpg with partially null value
-      *                 1.create jpg imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0700
+     * @tc.desc   test getImageProperties for jpg with partially null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -530,14 +490,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0800
-      * @tc.desc    test getImageProperties for png with partially null value
-      *                 1.create png imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0800
+     * @tc.desc   test getImageProperties for png with partially null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -550,14 +508,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0900
-      * @tc.desc    test getImageProperties for private filed of jpg
-      *                 1.create jpg imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0900
+     * @tc.desc   test getImageProperties for private filed of jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -569,14 +525,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_1000
-      * @tc.desc    test getImageProperties for private filed of png
-      *                 1.create png imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_1000
+     * @tc.desc   test getImageProperties for private filed of png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -588,14 +542,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_ERROR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_ERROR_STATIC_0300
-      * @tc.desc    test getImageProperties for tiff with multy keys
-      *                 1.create tiff imagesource
-      *                 2.call getImageProperties
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_ERROR_STATIC_0300
+     * @tc.desc   test getImageProperties for tiff with multy keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PROMISE_ERROR_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: Array<image.PropertyKey> = [
@@ -607,14 +559,12 @@ export default function imageGetImageProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0100
-      * @tc.desc    test getImageProperty obtains the loop count 5 of gif
-      *                 1.getFd()
-      *                 2.getImageProperty()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0100
+     * @tc.desc   test getImageProperty obtains the loop count 5 of gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: image.PropertyKey = GIF_LOOP_COUNT;
@@ -622,14 +572,12 @@ export default function imageGetImageProperty() {
       await testGetGifLoopCount(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0100", LOOPCASE.LOOP_FIVE, key);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0200
-      * @tc.desc    test getImageProperty obtains the loop count 1 of gif
-      *                 1.getFd()
-      *                 2.getImageProperty()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0200
+     * @tc.desc   test getImageProperty obtains the loop count 1 of gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: image.PropertyKey = GIF_LOOP_COUNT;
@@ -637,14 +585,12 @@ export default function imageGetImageProperty() {
       await testGetGifLoopCount(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0200", LOOPCASE.LOOP_ONE, key);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0300
-      * @tc.desc    test getImageProperty obtains the loop count infinite of gif
-      *                 1.getFd()
-      *                 2.getImageProperty()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0300
+     * @tc.desc   test getImageProperty obtains the loop count infinite of gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: image.PropertyKey = GIF_LOOP_COUNT;
@@ -652,14 +598,12 @@ export default function imageGetImageProperty() {
       await testGetGifLoopCount(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0300", LOOPCASE.LOOP_ZERO, key);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0400
-      * @tc.desc    test getImageProperty obtains the loop count error of jpg
-      *                 1.getFd()
-      *                 2.getImageProperty()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0400
+     * @tc.desc   test getImageProperty obtains the loop count error of jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let key: image.PropertyKey = GIF_LOOP_COUNT;
@@ -667,14 +611,12 @@ export default function imageGetImageProperty() {
       await testGetGifLoopCount(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_STATIC_0400", LOOPCASE.LOOP_NO, key);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0100
-      * @tc.desc    test getImageProperties obtains the loop count 5 of gif
-      *                 1.getFd()
-      *                 2.getImageProperties()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0100
+     * @tc.desc   test getImageProperties obtains the loop count 5 of gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let keys: Array<image.PropertyKey> = [GIF_LOOP_COUNT];
@@ -682,14 +624,12 @@ export default function imageGetImageProperty() {
       await testGetGifLoopCountProperties(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0100", LOOPCASE.LOOP_FIVE, keys);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0200
-      * @tc.desc    test getImageProperties obtains the loop count 1 of gif
-      *                 1.getFd()
-      *                 2.getImageProperties()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0200
+     * @tc.desc   test getImageProperties obtains the loop count 1 of gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let keys: Array<image.PropertyKey> = [IMAGE_WIDTH, GIF_LOOP_COUNT];
@@ -697,14 +637,12 @@ export default function imageGetImageProperty() {
       await testGetGifLoopCountProperties(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0200", LOOPCASE.LOOP_ONE, keys);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0300
-      * @tc.desc    test getImageProperties obtains the loop count infinite of gif
-      *                 1.getFd()
-      *                 2.getImageProperties()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0300
+     * @tc.desc   test getImageProperties obtains the loop count infinite of gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let keys: Array<image.PropertyKey> = [IMAGE_WIDTH, GIF_LOOP_COUNT];
@@ -712,14 +650,12 @@ export default function imageGetImageProperty() {
       await testGetGifLoopCountProperties(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0300", LOOPCASE.LOOP_ZERO, keys);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0400
-      * @tc.desc    test getImageProperties obtains the loop count error of jpg
-      *                 1.getFd()
-      *                 2.getImageProperties()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0400
+     * @tc.desc   test getImageProperties obtains the loop count error of jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LOOPCOUNT_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let keys: Array<image.PropertyKey> = [IMAGE_WIDTH, GIF_LOOP_COUNT];

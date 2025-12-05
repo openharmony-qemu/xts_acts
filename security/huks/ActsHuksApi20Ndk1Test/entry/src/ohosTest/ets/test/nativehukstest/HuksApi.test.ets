@@ -26,12 +26,12 @@ export default function HuksApiTest() {
     });
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD_0100
-     * @tc.name    testOH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD0100
-     * @tc.desc    testing OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD_0100
+     * @tc.desc   testing OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -49,12 +49,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_0100
-     * @tc.name    testOH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL0100
-     * @tc.desc    testing OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_0100
+     * @tc.desc   testing OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -72,12 +72,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_AUTH_ACCESS_ALWAYS_VALID_0100
-     * @tc.name    testOH_HUKS_AUTH_ACCESS_ALWAYS_VALID0100
-     * @tc.desc    testing OH_HUKS_AUTH_ACCESS_ALWAYS_VALID interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_AUTH_ACCESS_ALWAYS_VALID0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_AUTH_ACCESS_ALWAYS_VALID_0100
+     * @tc.desc   testing OH_HUKS_AUTH_ACCESS_ALWAYS_VALID interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_AUTH_ACCESS_ALWAYS_VALID0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -95,12 +95,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_MODE_LOCAL_0100
-     * @tc.name    testOH_HUKS_USER_AUTH_MODE_LOCAL0100
-     * @tc.desc    testing OH_HUKS_USER_AUTH_MODE_LOCAL interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_USER_AUTH_MODE_LOCAL0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_MODE_LOCAL_0100
+     * @tc.desc   testing OH_HUKS_USER_AUTH_MODE_LOCAL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_USER_AUTH_MODE_LOCAL0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -118,12 +118,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_MODE_COAUTH_0100
-     * @tc.name    testOH_HUKS_USER_AUTH_MODE_COAUTH0100
-     * @tc.desc    testing OH_HUKS_USER_AUTH_MODE_COAUTH interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_USER_AUTH_MODE_COAUTH0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_MODE_COAUTH_0100
+     * @tc.desc   testing OH_HUKS_USER_AUTH_MODE_COAUTH interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_USER_AUTH_MODE_COAUTH0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -140,12 +140,12 @@ export default function HuksApiTest() {
         }
       })
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_NO_AUTH_REQUIRED_0100
-     * @tc.name    testOH_HUKS_TAG_NO_AUTH_REQUIRED0100
-     * @tc.desc    testing OH_HUKS_TAG_NO_AUTH_REQUIRED interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_NO_AUTH_REQUIRED0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_NO_AUTH_REQUIRED_0100
+     * @tc.desc   testing OH_HUKS_TAG_NO_AUTH_REQUIRED interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_NO_AUTH_REQUIRED0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -163,12 +163,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_USER_AUTH_TYPE_0100
-     * @tc.name    testOH_HUKS_TAG_USER_AUTH_TYPE0100
-     * @tc.desc    testing OH_HUKS_TAG_USER_AUTH_TYPE interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_USER_AUTH_TYPE0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_USER_AUTH_TYPE_0100
+     * @tc.desc   testing OH_HUKS_TAG_USER_AUTH_TYPE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_USER_AUTH_TYPE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -186,12 +186,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_AUTH_TIMEOUT_0100
-     * @tc.name    testOH_HUKS_TAG_AUTH_TIMEOUT0100
-     * @tc.desc    testing OH_HUKS_TAG_AUTH_TIMEOUT interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_AUTH_TIMEOUT0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_AUTH_TIMEOUT_0100
+     * @tc.desc   testing OH_HUKS_TAG_AUTH_TIMEOUT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_AUTH_TIMEOUT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -209,12 +209,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_AUTH_TOKEN_0100
-     * @tc.name    testOH_HUKS_TAG_AUTH_TOKEN0100
-     * @tc.desc    testing OH_HUKS_TAG_AUTH_TOKEN interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_AUTH_TOKEN0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_AUTH_TOKEN_0100
+     * @tc.desc   testing OH_HUKS_TAG_AUTH_TOKEN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_AUTH_TOKEN0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -232,12 +232,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE_0100
-     * @tc.name    testOH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE0100
-     * @tc.desc    testing OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE_0100
+     * @tc.desc   testing OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -255,12 +255,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_USER_AUTH_MODE_0100
-     * @tc.name    testOH_HUKS_TAG_USER_AUTH_MODE0100
-     * @tc.desc    testing OH_HUKS_TAG_USER_AUTH_MODE interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_USER_AUTH_MODE0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_USER_AUTH_MODE_0100
+     * @tc.desc   testing OH_HUKS_TAG_USER_AUTH_MODE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_USER_AUTH_MODE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -278,12 +278,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_KEY_AUTH_ID_0100
-     * @tc.name    testOH_HUKS_TAG_KEY_AUTH_ID0100
-     * @tc.desc    testing OH_HUKS_TAG_KEY_AUTH_ID interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_KEY_AUTH_ID0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_KEY_AUTH_ID_0100
+     * @tc.desc   testing OH_HUKS_TAG_KEY_AUTH_ID interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_KEY_AUTH_ID0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -301,12 +301,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE_0100
-     * @tc.name    testOH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE0100
-     * @tc.desc    testing OH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE_0100
+     * @tc.desc   testing OH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -323,12 +323,12 @@ export default function HuksApiTest() {
         }
       })
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_TAG_KEY_SECURE_SIGN_TYPE_0100
-     * @tc.name    testOH_HUKS_TAG_KEY_SECURE_SIGN_TYPE0100
-     * @tc.desc    testing OH_HUKS_TAG_KEY_SECURE_SIGN_TYPE interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_TAG_KEY_SECURE_SIGN_TYPE0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_TAG_KEY_SECURE_SIGN_TYPE_0100
+     * @tc.desc   testing OH_HUKS_TAG_KEY_SECURE_SIGN_TYPE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_TAG_KEY_SECURE_SIGN_TYPE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -346,12 +346,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_SECURE_SIGN_WITH_AUTHINFO_0100
-     * @tc.name    testOH_HUKS_SECURE_SIGN_WITH_AUTHINFO0100
-     * @tc.desc    testing OH_HUKS_SECURE_SIGN_WITH_AUTHINFO interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_SECURE_SIGN_WITH_AUTHINFO0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_SECURE_SIGN_WITH_AUTHINFO_0100
+     * @tc.desc   testing OH_HUKS_SECURE_SIGN_WITH_AUTHINFO interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_SECURE_SIGN_WITH_AUTHINFO0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -369,12 +369,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_TYPE_FINGERPRINT_0100
-     * @tc.name    testOH_HUKS_USER_AUTH_TYPE_FINGERPRINT0100
-     * @tc.desc    testing OH_HUKS_USER_AUTH_TYPE_FINGERPRINT interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_USER_AUTH_TYPE_FINGERPRINT0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_TYPE_FINGERPRINT_0100
+     * @tc.desc   testing OH_HUKS_USER_AUTH_TYPE_FINGERPRINT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_USER_AUTH_TYPE_FINGERPRINT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -392,12 +392,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_TYPE_FACE_0100
-     * @tc.name    testOH_HUKS_USER_AUTH_TYPE_FACE0100
-     * @tc.desc    testing OH_HUKS_USER_AUTH_TYPE_FACE interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_USER_AUTH_TYPE_FACE0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_TYPE_FACE_0100
+     * @tc.desc   testing OH_HUKS_USER_AUTH_TYPE_FACE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_USER_AUTH_TYPE_FACE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -415,12 +415,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_TYPE_PIN_0100
-     * @tc.name    testOH_HUKS_USER_AUTH_TYPE_PIN0100
-     * @tc.desc    testing OH_HUKS_USER_AUTH_TYPE_PIN interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_USER_AUTH_TYPE_PIN0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_TYPE_PIN_0100
+     * @tc.desc   testing OH_HUKS_USER_AUTH_TYPE_PIN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_USER_AUTH_TYPE_PIN0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -438,12 +438,12 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_TYPE_TUI_PIN_0100
-     * @tc.name    testOH_HUKS_USER_AUTH_TYPE_TUI_PIN0100
-     * @tc.desc    testing OH_HUKS_USER_AUTH_TYPE_TUI_PIN interface
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testOH_HUKS_USER_AUTH_TYPE_TUI_PIN0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_USER_AUTH_TYPE_TUI_PIN_0100
+     * @tc.desc   testing OH_HUKS_USER_AUTH_TYPE_TUI_PIN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_HUKS_USER_AUTH_TYPE_TUI_PIN0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

@@ -69,7 +69,6 @@ export default function NoPermissionCanIUseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDeviceManagerNoPerCanIUsek001
      * @tc.number SUB_Driver_Ext_DeviceManagerNoPerCanIUse_0100
      * @tc.desc   verify DeviceManagerCanIUse any device

@@ -51,7 +51,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD8_0100
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD8_0100
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD8.
@@ -73,7 +72,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD9_0200
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD9_0200
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD9.
@@ -95,7 +93,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeNUMPADDIVIDE_0300
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeNUMPADDIVIDE_0300
      * @tc.desc   Test HidCreateDeviceKeyCodeNUMPADDIVIDE.
@@ -117,7 +114,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADMULTIPLY_0400
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADMULTIPLY_0400
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPADMULTIPLY.
@@ -139,7 +135,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADADD_0500
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADADD_0500
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPADADD.
@@ -161,7 +156,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADDOT_0600
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADDOT_0600
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPADDOT.
@@ -183,7 +177,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADSYSRQ_0700
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADSYSRQ_0700
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPADSYSRQ.
@@ -205,7 +198,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADDELETE_0800
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADDELETE_0800
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPADDELETE.
@@ -227,7 +219,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADSUBTRACT_0900
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPADSUBTRACT_0900
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPADSUBTRACT.
@@ -249,7 +240,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMUTE_1000
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMUTE_1000
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYMUTE.
@@ -271,7 +261,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYVOLUMEDOWN_1100
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYVOLUMEDOWN_1100
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYVOLUMEDOWN.
@@ -293,7 +282,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYVOLUMEUP_1200
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYVOLUMEUP_1200
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYVOLUMEUP.
@@ -315,7 +303,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBRIGHTNESSDOWN_1300
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBRIGHTNESSDOWN_1300
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYBRIGHTNESSDOWN.
@@ -337,7 +324,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBRIGHTNESSUP_1400
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBRIGHTNESSUP_1400
      * @tc.desc   Test HidCreateDeviceKeyCodeKEYBRIGHTNESSUP.
@@ -359,7 +345,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN0_1500
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN0_1500
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN0.
@@ -381,7 +366,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN1_1600
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN1_1600
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN1.
@@ -403,7 +387,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN2_1700
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN2_1700
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN2.
@@ -426,7 +409,6 @@ export default function ActsHidEmitCodeTest2() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN3_1800
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN3_1800
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN3.
@@ -448,7 +430,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN4_1900
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN0_1900
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN4.
@@ -469,7 +450,6 @@ export default function ActsHidEmitCodeTest2() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN5_2000
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN5_2000
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN0.
@@ -492,7 +472,6 @@ export default function ActsHidEmitCodeTest2() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN6_2100
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN6_2100
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN6.
@@ -514,7 +493,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN7_2200
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN7_2200
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN7.
@@ -536,7 +514,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN8_2300
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN8_2300
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN8.
@@ -558,7 +535,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN9_2400
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBIN9_2400
      * @tc.desc   Test HidCreateDeviceKeyCodeBIN9.
@@ -580,7 +556,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINLEFT_2500
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINLEFT_2500
      * @tc.desc   Test HidCreateDeviceKeyCodeBINLEFT.
@@ -602,7 +577,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINMIDDLE_2600
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINMIDDLE_2600
      * @tc.desc   Test HidCreateDeviceKeyCodeBINMIDDLE.
@@ -624,7 +598,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINSIDE_2700
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINSIDE_2700
      * @tc.desc   Test HidCreateDeviceKeyCodeBINSIDE.
@@ -646,7 +619,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINEXTRA_2800
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINEXTRA_2800
      * @tc.desc   Test HidCreateDeviceKeyCodeBINEXTRA.
@@ -668,7 +640,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINFORWARD_2900
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINFORWARD_2900
      * @tc.desc   Test HidCreateDeviceKeyCodeBINFORWARD.
@@ -690,7 +661,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINBACKWARD_3000
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINBACKWARD_3000
      * @tc.desc   Test HidCreateDeviceKeyCodeBINBACKWARD.
@@ -712,7 +682,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINTASK_3100
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINTASK_3100
      * @tc.desc   Test HidCreateDeviceKeyCodeBINTASK.
@@ -734,7 +703,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINTOOLBRUSH_3200
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINTOOLBRUSH_3200
      * @tc.desc   Test HidCreateDeviceKeyCodeBINTOOLBRUSH.
@@ -756,7 +724,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINTOOLPENCIL_3300
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINTOOLPENCIL_3300
      * @tc.desc   Test HidCreateDeviceKeyCodeBINTOOLPENCIL.
@@ -778,7 +745,6 @@ export default function ActsHidEmitCodeTest2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeBINTOOLAIRBRUSH_3400
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeBINTOOLAIRBRUSH_3400
      * @tc.desc   Test HidCreateDeviceKeyCodeBINTOOLAIRBRUSH.

@@ -53,28 +53,28 @@ export default function webOnFirstMeaningfulPaint() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBONFIRSTMEANINGFULPAINT_0100
-    * @tc.name       : testWebOnFirstMeaningfulPaint001
-    * @tc.desc       : test WebOnFirstMeaningfulPaint
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   OnFirstMeaningfulPaint0100
+     * @tc.number SUB_WEB_WEBONFIRSTMEANINGFULPAINT_0100
+     * @tc.desc   test WebOnFirstMeaningfulPaint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('OnFirstMeaningfulPaint0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("OnFirstMeaningfulPaint0100", 151990)
       Utils.registerEvent("OnFirstMeaningfulPaint0100", true, 152000, done);
       waitAndClickComponent('WebOnFirstMeaningfulPaint',driver);
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBONFIRSTMEANINGFULPAINT_0200
-    * @tc.name       : testWebOnFirstMeaningfulPaint002
-    * @tc.desc       : test WebOnFirstMeaningfulPaint
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   OnFirstMeaningfulPaint0200
+     * @tc.number SUB_WEB_WEBONFIRSTMEANINGFULPAINT_0200
+     * @tc.desc   test WebOnFirstMeaningfulPaint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('OnFirstMeaningfulPaint0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("OnFirstMeaningfulPaint0200", 151990)
       Utils.registerEvent("OnFirstMeaningfulPaint0200", true, 152010, done);

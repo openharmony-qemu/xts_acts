@@ -39,7 +39,6 @@ describe('userAuthTestExecute', function () {
 
 
       /**
-       * @generated.time 2025-11-09 20:57:57
        * @tc.name   JSAPI_Function_Nopermission_2100
        * @tc.number JSAPI_Function_Execute_2100
        * @tc.desc   JSAPI_Function_Nopermission_2100
@@ -62,7 +61,6 @@ describe('userAuthTestExecute', function () {
     })
 
        /**
-        * @generated.time 2025-11-09 20:57:57
         * @tc.name   JSAPI_Function_Nopermission_1800
         * @tc.number JSAPI_Function_Execute_1800
         * @tc.desc   JSAPI_Function_Nopermission_1800
@@ -82,7 +80,6 @@ describe('userAuthTestExecute', function () {
     })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Nopermission_API8_Func_0101
          * @tc.number Security_IAM_Nopermission_API8_Func_0101
          * @tc.desc   Security_IAM_Nopermission_API8_Func_0101
@@ -106,7 +103,6 @@ describe('userAuthTestExecute', function () {
     })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Nopermission_API8_Func_0112
          * @tc.number Security_IAM_Nopermission_API8_Func_0112
          * @tc.desc   Security_IAM_Nopermission_API8_Func_0112
@@ -134,7 +130,6 @@ describe('userAuthTestExecute', function () {
     })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Nopermission_API8_Func_0103
          * @tc.number Security_IAM_Nopermission_API8_Func_0103
          * @tc.desc   Security_IAM_Nopermission_API8_Func_0103
@@ -182,7 +177,6 @@ describe('userAuthTestExecute', function () {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Nopermission_API9_Func_0104
          * @tc.number Security_IAM_Nopermission_API9_Func_0104
          * @tc.desc   Security_IAM_Nopermission_API9_Func_0104
@@ -208,7 +202,6 @@ describe('userAuthTestExecute', function () {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Nopermission_API9_Func_0110
          * @tc.number Security_IAM_Nopermission_API9_Func_0110
          * @tc.desc   Security_IAM_Nopermission_API9_Func_0110
@@ -234,7 +227,6 @@ describe('userAuthTestExecute', function () {
         })
 
          /**
-          * @generated.time 2025-11-09 20:57:57
           * @tc.name   Security_IAM_Nopermission_API9_Func_0103
           * @tc.number Security_IAM_Nopermission_API9_Func_0103
           * @tc.desc   Security_IAM_Nopermission_API9_Func_0103

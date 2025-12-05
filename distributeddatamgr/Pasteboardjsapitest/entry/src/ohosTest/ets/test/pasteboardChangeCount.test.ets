@@ -85,7 +85,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0100
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0100
      * @tc.desc   Pasteboard setData and getChangeCount.
@@ -115,7 +114,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0200
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0200
      * @tc.desc   Pasteboard setUnifiedData and getChangeCount.
@@ -152,7 +150,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0300
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0300
      * @tc.desc   Pasteboard setUnifiedData delay and getChangeCount.
@@ -194,7 +191,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0400
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0400
      * @tc.desc   Pasteboard setUnifiedDataSync and getChangeCount.
@@ -231,7 +227,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0500
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0500
      * @tc.desc   Pasteboard setUnifiedData text and getChangeCount.
@@ -266,7 +261,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0600
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0600
      * @tc.desc   Pasteboard setUnifiedData hyperlink and getChangeCount.
@@ -303,7 +297,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0700
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0700
      * @tc.desc   Pasteboard setUnifiedData html and getChangeCount.
@@ -340,7 +333,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0800
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0800
      * @tc.desc   Pasteboard setUnifiedData file and getChangeCount.
@@ -376,7 +368,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0900
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0900
      * @tc.desc   Pasteboard setUnifiedData folder and getChangeCount.
@@ -412,7 +403,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1000
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1000
      * @tc.desc   Pasteboard setUnifiedData image and getChangeCount.
@@ -448,7 +438,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1100
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1100
      * @tc.desc   Pasteboard setUnifiedData video and getChangeCount.
@@ -484,7 +473,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1200
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1200
      * @tc.desc   Pasteboard setUnifiedData audio and getChangeCount.
@@ -520,7 +508,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1300
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1300
      * @tc.desc   Pasteboard setUnifiedData sysForm and getChangeCount.
@@ -561,7 +548,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1400
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1400
      * @tc.desc   Pasteboard setUnifiedData sysAppItem and getChangeCount.
@@ -603,7 +589,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1500
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1500
      * @tc.desc   Pasteboard setUnifiedData appRecord and getChangeCount.
@@ -637,7 +622,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1600
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1600
      * @tc.desc   Pasteboard setUnifiedData want and getChangeCount.
@@ -672,7 +656,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1700
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1700
      * @tc.desc   Pasteboard setUnifiedData pixelMap and getChangeCount.
@@ -713,7 +696,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1800
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1800
      * @tc.desc   Pasteboard setData html and getChangeCount.
@@ -743,7 +725,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1900
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_1900
      * @tc.desc   Pasteboard setData uri and getChangeCount.
@@ -773,7 +754,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2000
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2000
      * @tc.desc   Pasteboard setData pixelMap and getChangeCount.
@@ -813,7 +793,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2100
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2100
      * @tc.desc   Pasteboard setData want and getChangeCount.
@@ -847,7 +826,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2200
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2200
      * @tc.desc   Pasteboard setData want and getChangeCount.
@@ -878,7 +856,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2300
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2300
      * @tc.desc   Pasteboard setUnifiedData multiple types and getChangeCount.
@@ -1035,7 +1012,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2400
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2400
      * @tc.desc   Pasteboard setUnifiedData delay text and getChangeCount.
@@ -1076,7 +1052,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2500
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2500
      * @tc.desc   Pasteboard setUnifiedData delay link and getChangeCount.
@@ -1118,7 +1093,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2600
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2600
      * @tc.desc   Pasteboard setUnifiedData delay html and getChangeCount.
@@ -1160,7 +1134,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2700
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2700
      * @tc.desc   Pasteboard setUnifiedData delay fileUri and getChangeCount.
@@ -1201,7 +1174,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2800
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2800
      * @tc.desc   Pasteboard setUnifiedData delay folder and getChangeCount.
@@ -1242,7 +1214,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2900
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_2900
      * @tc.desc   Pasteboard setUnifiedData delay image and getChangeCount.
@@ -1283,7 +1254,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3000
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3000
      * @tc.desc   Pasteboard setUnifiedData delay video and getChangeCount.
@@ -1324,7 +1294,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3100
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3100
      * @tc.desc   Pasteboard setUnifiedData delay audio and getChangeCount.
@@ -1365,7 +1334,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3200
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3200
      * @tc.desc   Pasteboard setUnifiedData delay sysForm and getChangeCount.
@@ -1411,7 +1379,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3300
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3300
      * @tc.desc   Pasteboard setUnifiedData delay appItem and getChangeCount.
@@ -1458,7 +1425,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3400
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3400
      * @tc.desc   Pasteboard setUnifiedData delay appRecord and getChangeCount.
@@ -1497,7 +1463,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3500
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3500
      * @tc.desc   Pasteboard setUnifiedData delay want and getChangeCount.
@@ -1537,7 +1502,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3600
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3600
      * @tc.desc   Pasteboard setUnifiedData delay pixelMap and getChangeCount.
@@ -1583,7 +1547,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3700
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3700
      * @tc.desc   Pasteboard clearDataSync and getChangeCount.
@@ -1611,7 +1574,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3800
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3700
      * @tc.desc   Pasteboard setData twice and getChangeCount.
@@ -1644,7 +1606,6 @@ export default function PasteboardChangeCountTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3900
      * @tc.number SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_3900
      * @tc.desc   Pasteboard getDataSync and getChangeCount.

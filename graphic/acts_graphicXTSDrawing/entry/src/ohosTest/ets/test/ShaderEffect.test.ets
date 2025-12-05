@@ -48,12 +48,12 @@ export default function shadowEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0200
-     * @tc.name      : testShaderEffectCreateColorShaderNormal
-     * @tc.desc      : Test for testShaderEffectCreateColorShaderNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateColorShaderNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0200
+     * @tc.desc   Test for testShaderEffectCreateColorShaderNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateColorShaderNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateColorShaderNormal';
@@ -76,12 +76,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0201
-     * @tc.name      : testShaderEffectCreateColorShaderMultipleCalls
-     * @tc.desc      : Test for testShaderEffectCreateColorShaderMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateColorShaderMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0201
+     * @tc.desc   Test for testShaderEffectCreateColorShaderMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateColorShaderMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateColorShaderMultipleCalls';
@@ -100,12 +100,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0202
-     * @tc.name      : testShaderEffectCreateColorShaderToNull
-     * @tc.desc      : Test for testShaderEffectCreateColorShaderToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateColorShaderToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0202
+     * @tc.desc   Test for testShaderEffectCreateColorShaderToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateColorShaderToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateColorShaderToNull';
@@ -128,12 +128,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0300
-     * @tc.name      : testShaderEffectCreateLinearGradientNormal
-     * @tc.desc      : Test for testShaderEffectCreateLinearGradientNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateLinearGradientNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0300
+     * @tc.desc   Test for testShaderEffectCreateLinearGradientNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateLinearGradientNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateLinearGradientNormal';
@@ -226,12 +226,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0301
-     * @tc.name      : testShaderEffectCreateLinearGradientMultipleCalls
-     * @tc.desc      : Test for testShaderEffectCreateLinearGradientMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateLinearGradientMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0301
+     * @tc.desc   Test for testShaderEffectCreateLinearGradientMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateLinearGradientMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateLinearGradientMultipleCalls';
@@ -254,12 +254,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0302
-     * @tc.name      : testShaderEffectCreateLinearGradientToNull
-     * @tc.desc      : Test for testShaderEffectCreateLinearGradientToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateLinearGradientToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0302
+     * @tc.desc   Test for testShaderEffectCreateLinearGradientToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateLinearGradientToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateLinearGradientToNull';
@@ -363,12 +363,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0304
-     * @tc.name      : testShaderEffectCreateLinearGradientAbnormal
-     * @tc.desc      : Test for testShaderEffectCreateLinearGradientAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateLinearGradientAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0304
+     * @tc.desc   Test for testShaderEffectCreateLinearGradientAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateLinearGradientAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateLinearGradientAbnormal';
@@ -399,12 +399,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0400
-     * @tc.name      : testShaderEffectCreateRadialGradientNormal
-     * @tc.desc      : Test for testShaderEffectCreateRadialGradientNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateRadialGradientNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0400
+     * @tc.desc   Test for testShaderEffectCreateRadialGradientNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateRadialGradientNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateRadialGradientNormal';
@@ -530,12 +530,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0401
-     * @tc.name      : testShaderEffectCreateRadialGradientMultipleCalls
-     * @tc.desc      : Test for testShaderEffectCreateRadialGradientMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateRadialGradientMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0401
+     * @tc.desc   Test for testShaderEffectCreateRadialGradientMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateRadialGradientMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateRadialGradientMultipleCalls';
@@ -555,12 +555,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0402
-     * @tc.name      : testShaderEffectCreateRadialGradientToNull
-     * @tc.desc      : Test for testShaderEffectCreateRadialGradientToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateRadialGradientToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0402
+     * @tc.desc   Test for testShaderEffectCreateRadialGradientToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateRadialGradientToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateRadialGradientToNull';
@@ -648,12 +648,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0403
-     * @tc.name      : testShaderEffectCreateRadialGradientAbnormal
-     * @tc.desc      : Test for testShaderEffectCreateRadialGradientAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateRadialGradientAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0403
+     * @tc.desc   Test for testShaderEffectCreateRadialGradientAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateRadialGradientAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateRadialGradientAbnormal';
@@ -668,12 +668,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0500
-     * @tc.name      : testShaderEffectCreateSweepGradientNormal
-     * @tc.desc      : Test for testShaderEffectCreateSweepGradientNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateSweepGradientNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0500
+     * @tc.desc   Test for testShaderEffectCreateSweepGradientNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateSweepGradientNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateSweepGradientNormal';
@@ -800,12 +800,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0501
-     * @tc.name      : testShaderEffectCreateSweepGradientMultipleCalls
-     * @tc.desc      : Test for testShaderEffectCreateSweepGradientMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateSweepGradientMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0501
+     * @tc.desc   Test for testShaderEffectCreateSweepGradientMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateSweepGradientMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateSweepGradientMultipleCalls';
@@ -827,12 +827,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0502
-     * @tc.name      : testShaderEffectCreateSweepGradientToNull
-     * @tc.desc      : Test for testShaderEffectCreateSweepGradientToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateSweepGradientToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0502
+     * @tc.desc   Test for testShaderEffectCreateSweepGradientToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateSweepGradientToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateSweepGradientToNull';
@@ -936,12 +936,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0504
-     * @tc.name      : testShaderEffectCreateSweepGradientAbnormal
-     * @tc.desc      : Test for testShaderEffectCreateSweepGradientAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateSweepGradientAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0504
+     * @tc.desc   Test for testShaderEffectCreateSweepGradientAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateSweepGradientAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateSweepGradientAbnormal';
@@ -956,12 +956,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0600
-     * @tc.name      : testShaderEffectCreateConicalGradientNormal
-     * @tc.desc      : Test for testShaderEffectCreateConicalGradientNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateConicalGradientNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0600
+     * @tc.desc   Test for testShaderEffectCreateConicalGradientNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateConicalGradientNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateConicalGradientNormal';
@@ -1081,12 +1081,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0601
-     * @tc.name      : testShaderEffectCreateConicalGradientMultipleCalls
-     * @tc.desc      : Test for testShaderEffectCreateConicalGradientMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateConicalGradientMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0601
+     * @tc.desc   Test for testShaderEffectCreateConicalGradientMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateConicalGradientMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateConicalGradientMultipleCalls';
@@ -1107,12 +1107,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0602
-     * @tc.name      : testShaderEffectCreateConicalGradientToNull
-     * @tc.desc      : Test for testShaderEffectCreateConicalGradientToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateConicalGradientToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0602
+     * @tc.desc   Test for testShaderEffectCreateConicalGradientToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateConicalGradientToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateConicalGradientToNull';
@@ -1234,12 +1234,12 @@ export default function shadowEffectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0603
-     * @tc.name      : testShaderEffectCreateConicalGradientAbnormal
-     * @tc.desc      : Test for testShaderEffectCreateConicalGradientAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateConicalGradientAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0603
+     * @tc.desc   Test for testShaderEffectCreateConicalGradientAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateConicalGradientAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateConicalGradientAbnormal';
@@ -1253,12 +1253,12 @@ export default function shadowEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0700
-     * @tc.name      : testShaderEffectCreateComposeShaderNormal
-     * @tc.desc      : Test for testShaderEffectCreateComposeShaderNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateComposeShaderNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0700
+     * @tc.desc   Test for testShaderEffectCreateComposeShaderNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateComposeShaderNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateComposeShaderNormal';
@@ -1329,12 +1329,12 @@ export default function shadowEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0701
-     * @tc.name      : testShaderEffectCreateComposeShaderMultipleCalls
-     * @tc.desc      : Test for testShaderEffectCreateComposeShaderMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testShaderEffectCreateComposeShaderMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0701
+     * @tc.desc   Test for testShaderEffectCreateComposeShaderMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testShaderEffectCreateComposeShaderMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testShaderEffectCreateComposeShaderMultipleCalls';
@@ -1352,12 +1352,12 @@ export default function shadowEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0702
-     * @tc.name      : testShaderEffectCreateComposeShaderToNull
-     * @tc.desc      : Test for testShaderEffectCreateComposeShaderToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShaderEffectCreateComposeShaderToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0702
+     * @tc.desc   Test for testShaderEffectCreateComposeShaderToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShaderEffectCreateComposeShaderToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShaderEffectCreateComposeShaderToNull';
@@ -1397,12 +1397,12 @@ export default function shadowEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0703
-     * @tc.name      : testShaderEffectCreateComposeShaderAbnormal
-     * @tc.desc      : Test for testShaderEffectCreateComposeShaderAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShaderEffectCreateComposeShaderAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0703
+     * @tc.desc   Test for testShaderEffectCreateComposeShaderAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShaderEffectCreateComposeShaderAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShaderEffectCreateComposeShaderAbnormal';
@@ -1418,12 +1418,12 @@ export default function shadowEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0800
-     * @tc.name      : testShaderEffectCreateImageShaderNormal
-     * @tc.desc      : Test for testShaderEffectCreateImageShaderNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShaderEffectCreateImageShaderNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0800
+     * @tc.desc   Test for testShaderEffectCreateImageShaderNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShaderEffectCreateImageShaderNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateImageShaderNormal';
@@ -1494,12 +1494,12 @@ export default function shadowEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0801
-     * @tc.name      : testShaderEffectCreateImageShaderMultipleCalls
-     * @tc.desc      : Test for testShaderEffectCreateImageShaderMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testShaderEffectCreateImageShaderMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0801
+     * @tc.desc   Test for testShaderEffectCreateImageShaderMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testShaderEffectCreateImageShaderMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testShaderEffectCreateImageShaderMultipleCalls';
@@ -1517,12 +1517,12 @@ export default function shadowEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0802
-     * @tc.name      : testShaderEffectCreateImageShaderToNull
-     * @tc.desc      : Test for testShaderEffectCreateImageShaderToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShaderEffectCreateImageShaderToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0802
+     * @tc.desc   Test for testShaderEffectCreateImageShaderToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShaderEffectCreateImageShaderToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShaderEffectCreateImageShaderToNull';
@@ -1602,12 +1602,12 @@ export default function shadowEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0803
-     * @tc.name      : testShaderEffectCreateImageShaderAbnormal
-     * @tc.desc      : Test for testShaderEffectCreateImageShaderAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShaderEffectCreateImageShaderAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADEREFFECT_0803
+     * @tc.desc   Test for testShaderEffectCreateImageShaderAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShaderEffectCreateImageShaderAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShaderEffectCreateImageShaderAbnormal';

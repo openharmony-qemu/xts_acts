@@ -25,12 +25,12 @@ export default function muslNameserNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NAMESER_NSGET16_0100
-     * @tc.name       : testMuslNameserNsGet16001
-     * @tc.desc       : ns_get16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNameserNsGet16001
+     * @tc.number SUB_THIRDPARTY_MUSL_NAMESER_NSGET16_0100
+     * @tc.desc   ns_get16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNameserNsGet16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = nameser.nsGet16();
@@ -39,12 +39,12 @@ export default function muslNameserNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NAMESER_NSGET32_0100
-     * @tc.name       : testMuslNameserNsGet32001
-     * @tc.desc       : ns_get32
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNameserNsGet32001
+     * @tc.number SUB_THIRDPARTY_MUSL_NAMESER_NSGET32_0100
+     * @tc.desc   ns_get32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNameserNsGet32001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = nameser.nsGet32();
@@ -53,12 +53,12 @@ export default function muslNameserNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NAMESER_NSPUT16_0100
-     * @tc.name       : testMuslNameserNsPut16001
-     * @tc.desc       : ns_put16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNameserNsPut16001
+     * @tc.number SUB_THIRDPARTY_MUSL_NAMESER_NSPUT16_0100
+     * @tc.desc   ns_put16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNameserNsPut16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = nameser.nsPut16();
@@ -67,12 +67,12 @@ export default function muslNameserNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NAMESER_NSINITPARSE_0100
-     * @tc.name       : testMuslNameserNsInitParse001
-     * @tc.desc       : ns_initparse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNameserNsInitParse001
+     * @tc.number SUB_THIRDPARTY_MUSL_NAMESER_NSINITPARSE_0100
+     * @tc.desc   ns_initparse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNameserNsInitParse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = nameser.nsInitParse();
@@ -81,12 +81,12 @@ export default function muslNameserNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NAMESER_NSNAMEUNCOMPRESS_0100
-     * @tc.name       : testMuslNameserNsNameUnCompress001
-     * @tc.desc       : ns_nameuncompress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNameserNsNameUnCompress001
+     * @tc.number SUB_THIRDPARTY_MUSL_NAMESER_NSNAMEUNCOMPRESS_0100
+     * @tc.desc   ns_nameuncompress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNameserNsNameUnCompress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = nameser.nsNameUnCompress();

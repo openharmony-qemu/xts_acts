@@ -60,7 +60,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0100
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0100
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0100
@@ -97,7 +96,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0200
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0200
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0200
@@ -134,7 +132,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0300
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0300
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0300
@@ -175,7 +172,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0400
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0400
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0400
@@ -216,7 +212,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0500
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0500
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0500
@@ -250,7 +245,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0600
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0600
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0600
@@ -287,7 +281,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0700
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0700
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0700
@@ -328,7 +321,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
@@ -365,7 +357,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
@@ -402,7 +393,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300
@@ -443,7 +433,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400
      * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400
@@ -484,7 +473,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500
      * @tc.number testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500
      * @tc.desc   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500
@@ -518,7 +506,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600
      * @tc.number testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600
      * @tc.desc   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600
@@ -555,7 +542,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700
      * @tc.number testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700
      * @tc.desc   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700

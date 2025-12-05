@@ -52,14 +52,14 @@ export default function WebElementTypeJsunit() {
       done();
     })
 
-    /*
-  * @tc.number      : SUB_WEB_WEBELEMENTTYPE_0100
-  * @tc.name        : WebElementType01
-  * @tc.desc        : WebElementType01
-  * @tc.size        : MediumTest
-  * @tc.type        : Function
-  * @tc.level       : Level 1
-  */
+    /**
+     * @tc.name   WebElementType01
+     * @tc.number SUB_WEB_WEBELEMENTTYPE_0100
+     * @tc.desc   WebElementType01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WebElementType01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;

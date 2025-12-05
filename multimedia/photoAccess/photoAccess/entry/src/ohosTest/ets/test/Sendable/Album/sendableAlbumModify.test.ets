@@ -37,12 +37,12 @@ export default function sendableAlbumModifyTest () {
       sleep(10);
     });
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Album_CommitModify_001
-     * @tc.name      : sendable_album_commitModify_promise_001
-     * @tc.desc      : album change new name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_album_commitModify_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Album_CommitModify_001
+     * @tc.desc   album change new name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_album_commitModify_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'sendable_album_commitModify_promise_001';

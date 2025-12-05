@@ -26,12 +26,12 @@ export default function TimerSetIntervalTest() {
     })
 
     /**
+     * @tc.name   TimerSetIntervalTest0100
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0100
-     * @tc.name TimerSetIntervalTest0100
-     * @tc.desc test SetInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test SetInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimerSetIntervalTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const a: undefined = undefined;
@@ -44,12 +44,12 @@ export default function TimerSetIntervalTest() {
 
 
     /**
+     * @tc.name   TimerSetIntervalTest0200
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0200
-     * @tc.name TimerSetIntervalTest0200
-     * @tc.desc test SetInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SetInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerSetIntervalTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let flag = false;
@@ -67,12 +67,12 @@ export default function TimerSetIntervalTest() {
 
 
     /**
+     * @tc.name   TimerSetIntervalTest0300
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0300
-     * @tc.name TimerSetIntervalTest0300
-     * @tc.desc test SetInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SetInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerSetIntervalTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const args: string = 'Hello, World!';
@@ -97,12 +97,12 @@ export default function TimerSetIntervalTest() {
 
 
     /**
+     * @tc.name   TimerSetIntervalTest0400
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0400
-     * @tc.name TimerSetIntervalTest0400
-     * @tc.desc test SetInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SetInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerSetIntervalTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const TimeID = setInterval(null, 200.1);
@@ -115,12 +115,12 @@ export default function TimerSetIntervalTest() {
 
 
     /**
+     * @tc.name   TimerSetIntervalTest0500
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0500
-     * @tc.name TimerSetIntervalTest0500
-     * @tc.desc test SetInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SetInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerSetIntervalTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const TimeID = setInterval('', null);
@@ -132,12 +132,12 @@ export default function TimerSetIntervalTest() {
 
 
     /**
+     * @tc.name   TimerSetIntervalTest0600
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0600
-     * @tc.name TimerSetIntervalTest0600
-     * @tc.desc test SetInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SetInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerSetIntervalTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let longRunningFunction: () => boolean = (): boolean => {
@@ -161,12 +161,12 @@ export default function TimerSetIntervalTest() {
 
 
     /**
+     * @tc.name   TimerSetIntervalTest0700
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0700
-     * @tc.name TimerSetIntervalTest0700
-     * @tc.desc test SetInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SetInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerSetIntervalTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let longRunningFunction: () => boolean = (): boolean => {
@@ -190,12 +190,12 @@ export default function TimerSetIntervalTest() {
 
 
     /**
+     * @tc.name   TimerSetIntervalTest0800
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0800
-     * @tc.name TimerSetIntervalTest0800
-     * @tc.desc test SetInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SetInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerSetIntervalTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let longRunningFunction: () => boolean = (): boolean => {

@@ -42,13 +42,13 @@ export default function webRegisterJavaScriptProxyJsunit() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_001
-     *@tc.name testRegisterJavaScriptProxyTestcase001
-     *@tc.desc Injects the JavaScript object into window and invoke the function in window
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   RegisterJavaScriptProxy
+     * @tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_001
+     * @tc.desc   Injects the JavaScript object into window and invoke the function in window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function)=>{
       Utils.emitEvent("emitRegisterJavaScriptProxy", 172950)
@@ -56,13 +56,13 @@ export default function webRegisterJavaScriptProxyJsunit() {
       sendEventByKey('webcomponent',10,'');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_002
-     *@tc.name testRunJavaScriptTestcase001
-     *@tc.desc Injects the JavaScript object into window and invoke the function in window
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   RunJavaScript
+     * @tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_002
+     * @tc.desc   Injects the JavaScript object into window and invoke the function in window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RunJavaScript',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
       Utils.emitEvent("emitRunJavaScript", 172950)
@@ -70,13 +70,13 @@ export default function webRegisterJavaScriptProxyJsunit() {
       sendEventByKey('webcomponent',10,'');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_003
-     *@tc.name testUnregisterJavaScriptProxyTestcase001
-     *@tc.desc Injects the JavaScript object into window and invoke the function in window
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   UnregisterJavaScriptProxy
+     * @tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_003
+     * @tc.desc   Injects the JavaScript object into window and invoke the function in window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UnregisterJavaScriptProxy',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
       Utils.emitEvent("emitUnregisterJavaScriptProxy", 172950)
@@ -84,13 +84,13 @@ export default function webRegisterJavaScriptProxyJsunit() {
       sendEventByKey('webcomponent',10,'');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_004
-     *@tc.name testSetJavaScriptProxyValidCallbackTestcase001
-     *@tc.desc Injects the JavaScript object into window and invoke the function in window
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   SetJavaScriptProxyValidCallback
+     * @tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_004
+     * @tc.desc   Injects the JavaScript object into window and invoke the function in window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetJavaScriptProxyValidCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
       Utils.emitEvent("emitSetJavaScriptProxyValidCallback", 172950)
@@ -99,13 +99,13 @@ export default function webRegisterJavaScriptProxyJsunit() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_005
-     *@tc.name testGetJavaScriptProxyValidCallbackTestcase001
-     *@tc.desc Injects the JavaScript object into window and invoke the function in window
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   GetJavaScriptProxyValidCallback
+     * @tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_005
+     * @tc.desc   Injects the JavaScript object into window and invoke the function in window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetJavaScriptProxyValidCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
       Utils.emitEvent("emitGetJavaScriptProxyValidCallback", 172950)
@@ -113,13 +113,13 @@ export default function webRegisterJavaScriptProxyJsunit() {
       sendEventByKey('webcomponent',10,'');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_006
-     *@tc.name testSetDestroyCallbackTestcase001
-     *@tc.desc Injects the JavaScript object into window and invoke the function in window
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   SetDestroyCallback
+     * @tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_006
+     * @tc.desc   Injects the JavaScript object into window and invoke the function in window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetDestroyCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
       Utils.emitEvent("emitSetDestroyCallback", 172950)
@@ -127,13 +127,13 @@ export default function webRegisterJavaScriptProxyJsunit() {
       sendEventByKey('webcomponent',10,'');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_007
-     *@tc.name testGetDestroyCallbackTestcase001
-     *@tc.desc Injects the JavaScript object into window and invoke the function in window
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   GetDestroyCallback
+     * @tc.number SUB_ACE_WEB_BASIC_ETS_NAPI_007
+     * @tc.desc   Injects the JavaScript object into window and invoke the function in window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetDestroyCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
       Utils.emitEvent("emitGetDestroyCallback", 172950)

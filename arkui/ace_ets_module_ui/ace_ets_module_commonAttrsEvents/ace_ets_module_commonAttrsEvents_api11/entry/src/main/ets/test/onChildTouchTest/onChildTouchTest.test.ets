@@ -64,8 +64,9 @@ export default function onChildTouchTest() {
      */
     it('onChildTouchTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('onChildTouchTest_0100 START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create()
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('onChild_list'));
       await button.click();
       await CommonFunc.sleep(1000);

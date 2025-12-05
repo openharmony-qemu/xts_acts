@@ -57,13 +57,13 @@ export default function webResourceHandlerTest() {
         done();
       })
 
-      /*
-       *@tc.number :SUB_ACE_WEB_didReceiveResponse_INVAILD_0100
-       *@tc.name :testWebView_didReceiveResponse_INVAILD
-       *@tc.desc :test WebView_didReceiveResponse_INVAILD
-       *@tc.size :MediumTest
-       *@tc.type :Function
-       *@tc.level :Level 1
+      /**
+       * @tc.name   testWebView_didReceiveResponse_INVAILD
+       * @tc.number SUB_ACE_WEB_didReceiveResponse_INVAILD_0100
+       * @tc.desc   test WebView_didReceiveResponse_INVAILD
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testWebView_didReceiveResponse_INVAILD', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_didReceiveResponse_INVAILD"
@@ -71,13 +71,13 @@ export default function webResourceHandlerTest() {
         Utils.registerEvent("testWebView_didReceiveResponse_INVAILD", "17100021", 115000, done);
         await Utils.waitAndClickComponent(driver, "webView");
       })
-      /*
-       *@tc.number  :SUB_ACE_WEB_didReceiveResponseBody_INVALID_0100
-       *@tc.name  :testWebView_didReceiveResponseBody_INVALID
-       *@tc.desc  :test WebView_didReceiveResponseBody_INVALID
-       *@tc.size  :MediumTest
-       *@tc.type  :Function
-       *@tc.level  :Level 1
+      /**
+       * @tc.name   testWebView_didReceiveResponseBody_INVALID
+       * @tc.number SUB_ACE_WEB_didReceiveResponseBody_INVALID_0100
+       * @tc.desc   test WebView_didReceiveResponseBody_INVALID
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testWebView_didReceiveResponseBody_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_didReceiveResponseBody_INVALID"
@@ -86,13 +86,13 @@ export default function webResourceHandlerTest() {
         await Utils.waitAndClickComponent(driver, "webView");
       })
 
-      /*
-       *@tc.number  :SUB_ACE_WEB_didFinish_INVALID_0100
-       *@tc.name  :testWebView_didFinish_INVALID
-       *@tc.desc  :test WebView_didFinish_INVALID
-       *@tc.size  :MediumTest
-       *@tc.type  :Function
-       *@tc.level  :Level 1
+      /**
+       * @tc.name   testWebView_didFinish_INVALID
+       * @tc.number SUB_ACE_WEB_didFinish_INVALID_0100
+       * @tc.desc   test WebView_didFinish_INVALID
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testWebView_didFinish_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_didFinish_INVALID"
@@ -101,56 +101,56 @@ export default function webResourceHandlerTest() {
         await Utils.waitAndClickComponent(driver, "webView");
       })
 
-      /*
-       *@tc.number :SUB_ACE_WEB_didFail_INVAILD_0100
-       *@tc.name :testWebView_didFail_INVALID
-       *@tc.desc :test WebView_didFail_INVALID
-       *@tc.size :MediumTest
-       *@tc.type :Function
-       *@tc.level :Level 1
-     */
+      /**
+       * @tc.name   testWebView_didFail_INVALID
+       * @tc.number SUB_ACE_WEB_didFail_INVAILD_0100
+       * @tc.desc   test WebView_didFail_INVALID
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('testWebView_didFail_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_didFail_INVALID"
         Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent("testWebView_didFail_INVALID", "17100021", 115030, done);
         await Utils.waitAndClickComponent(driver, "webView");
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBNAVIGATIONTYPE_0100
-    * @tc.name       : testWebNavigationType001
-    * @tc.desc       : test webNavigationType MAIN_FRAME_NEW_ENTRY
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebNavigationType001
+     * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0100
+     * @tc.desc   test webNavigationType MAIN_FRAME_NEW_ENTRY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebNavigationType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebNavigationType001", EVENT_ID_SET_EMIT_KEY)
       Utils.registerEvent("testWebNavigationType001", true, 115040, done);
       await Utils.waitAndClickComponent(driver, "webView");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBNAVIGATIONTYPE_0200
-    * @tc.name       : testWebNavigationType002
-    * @tc.desc       : test webNavigationType MAIN_FRAME_EXISTING_ENTRY
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebNavigationType002
+     * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0200
+     * @tc.desc   test webNavigationType MAIN_FRAME_EXISTING_ENTRY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebNavigationType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebNavigationType002", EVENT_ID_SET_EMIT_KEY)
       Utils.registerEvent("testWebNavigationType002", true, 115050, done);
       await Utils.waitAndClickComponent(driver, "webView");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBNAVIGATIONTYPE_0300
-    * @tc.name       : testWebNavigationType003
-    * @tc.desc       : test webNavigationType NAVIGATION_TYPE_NEW_SUBFRAME
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebNavigationType003
+     * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0300
+     * @tc.desc   test webNavigationType NAVIGATION_TYPE_NEW_SUBFRAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebNavigationType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebNavigationType003", EVENT_ID_SET_EMIT_KEY)
       Utils.registerEvent("testWebNavigationType003", true, 115060, done);

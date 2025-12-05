@@ -35,13 +35,12 @@ export default function FileManagementFileShare(){
     })
 
     /**
+     * @tc.name   FileShareErrCodeErrOk001
      * @tc.number SUB_FILESHARE_ERRCODE_ERR_OK_0100
-     * @tc.name FileShareErrCodeErrOk001
-     * @tc.desc test ERR_OK
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareErrCodeErrOk001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -56,13 +55,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareErrCodeErrEperm001
      * @tc.number SUB_FILESHARE_ERRCODE_ERR_EPERM_0100
-     * @tc.name FileShareErrCodeErrEperm001
-     * @tc.desc test ERR_EPERM
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_EPERM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareErrCodeErrEperm001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -77,13 +75,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareErrCodeErrDeviceNotSupport001
      * @tc.number SUB_FILESHARE_ERRCODE_ERR_DEVICENOTSUPPORTED_0100
-     * @tc.name FileShareErrCodeErrDeviceNotSupport001
-     * @tc.desc test ERR_DEVICE_NOT_SUPPORTED
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_DEVICE_NOT_SUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareErrCodeErrDeviceNotSupport001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -98,13 +95,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareErrCodeErrPermissionError001
      * @tc.number SUB_FILESHARE_ERRCODE_ERR_PERMISSIONERROR_0100
-     * @tc.name FileShareErrCodeErrPermissionError001
-     * @tc.desc test ERR_PERMISSION_ERROR
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_PERMISSION_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareErrCodeErrPermissionError001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -119,13 +115,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareErrCodeErrInvalidParameter001
      * @tc.number SUB_FILESHARE_ERRCODE_ERR_INVALIDPARAMETER_0100
-     * @tc.name FileShareErrCodeErrInvalidParameter001
-     * @tc.desc test ERR_INVALID_PARAMETER
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareErrCodeErrInvalidParameter001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -140,13 +135,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePolicyErrorCodePersistenceForbidden001
      * @tc.number SUB_FILESHARE_POLICYERRCODE_PERSISTENCE_FORBIDDEN_0100
-     * @tc.name FileSharePolicyErrorCodePersistenceForbidden001
-     * @tc.desc test PERSISTENCE_FORBIDDEN
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test PERSISTENCE_FORBIDDEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePolicyErrorCodePersistenceForbidden001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -161,13 +155,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePolicyErrorCodeInvalidMode001
      * @tc.number SUB_FILESHARE_POLICYERRCODE_INVALID_MODE_0100
-     * @tc.name FileSharePolicyErrorCodeInvalidMode001
-     * @tc.desc test INVALID_MODE
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test INVALID_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePolicyErrorCodeInvalidMode001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -182,13 +175,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePolicyErrorCodeInvalidPath001
      * @tc.number SUB_FILESHARE_POLICYERRCODE_INVALID_PATH_0100
-     * @tc.name FileSharePolicyErrorCodeInvalidPath001
-     * @tc.desc test INVALID_PATH
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test INVALID_PATH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePolicyErrorCodeInvalidPath001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -203,13 +195,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePolicyErrorCodePermissionNotPersisted001
      * @tc.number SUB_FILESHARE_POLICYERRCODE_PERMISSION_NOT_PERSISTED_0100
-     * @tc.name FileSharePolicyErrorCodePermissionNotPersisted001
-     * @tc.desc test PERMISSION_NOT_PERSISTED
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test PERMISSION_NOT_PERSISTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePolicyErrorCodePermissionNotPersisted001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -224,13 +215,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePolicyErrorResultUri001
      * @tc.number SUB_FILESHARE_POLICYERRORRESULT_URI_0100
-     * @tc.name FileSharePolicyErrorResultUri001
-     * @tc.desc test FileShare_PolicyErrorResult.uri
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test FileShare_PolicyErrorResult.uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePolicyErrorResultUri001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -245,13 +235,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePolicyErrorResultCode001
      * @tc.number SUB_FILESHARE_POLICYERRORRESULT_CODE_0100
-     * @tc.name FileSharePolicyErrorResultCode001
-     * @tc.desc test FileShare_PolicyErrorResult.code
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test FileShare_PolicyErrorResult.code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePolicyErrorResultCode001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -266,13 +255,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePolicyErrorResultMessage001
      * @tc.number SUB_FILESHARE_POLICYERRORRESULT_MESSAGE_0100
-     * @tc.name FileSharePolicyErrorResultMessage001
-     * @tc.desc test FileShare_PolicyErrorResult.message
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test FileShare_PolicyErrorResult.message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePolicyErrorResultMessage001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -287,13 +275,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePersistPermission001
      * @tc.number SUB_FILESHARE_PERSISTPERMISSION_0100
-     * @tc.name FileSharePersistPermission001
-     * @tc.desc test OH_FileShare_PersistPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_PersistPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePersistPermission001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -308,13 +295,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePersistPermission002
      * @tc.number SUB_FILESHARE_PERSISTPERMISSION_0200
-     * @tc.name FileSharePersistPermission002
-     * @tc.desc test OH_FileShare_PersistPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_PersistPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePersistPermission002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -329,13 +315,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePersistPermission003
      * @tc.number SUB_FILESHARE_PERSISTPERMISSION_0300
-     * @tc.name FileSharePersistPermission003
-     * @tc.desc test OH_FileShare_PersistPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_PersistPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePersistPermission003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -350,13 +335,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePersistPermission004
      * @tc.number SUB_FILESHARE_PERSISTPERMISSION_0400
-     * @tc.name FileSharePersistPermission004
-     * @tc.desc test OH_FileShare_PersistPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_PersistPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePersistPermission004', Level.LEVEL1, async (done: Function) => {
       try {
@@ -371,13 +355,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileSharePersistPermission005
      * @tc.number SUB_FILESHARE_PERSISTPERMISSION_0500
-     * @tc.name FileSharePersistPermission005
-     * @tc.desc test OH_FileShare_PersistPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_PersistPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileSharePersistPermission005', Level.LEVEL1, async (done: Function) => {
       try {
@@ -392,13 +375,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareRevokePermission001
      * @tc.number SUB_FILESHARE_REVOKEPERMISSION_0100
-     * @tc.name FileShareRevokePermission001
-     * @tc.desc test OH_FileShare_RevokePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_RevokePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareRevokePermission001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -413,13 +395,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareRevokePermission002
      * @tc.number SUB_FILESHARE_REVOKEPERMISSION_0200
-     * @tc.name FileShareRevokePermission002
-     * @tc.desc test OH_FileShare_RevokePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_RevokePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareRevokePermission002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -434,13 +415,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareRevokePermission003
      * @tc.number SUB_FILESHARE_REVOKEPERMISSION_0300
-     * @tc.name FileShareRevokePermission003
-     * @tc.desc test OH_FileShare_RevokePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_RevokePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareRevokePermission003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -455,13 +435,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareRevokePermission004
      * @tc.number SUB_FILESHARE_REVOKEPERMISSION_0400
-     * @tc.name FileShareRevokePermission004
-     * @tc.desc test OH_FileShare_RevokePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_RevokePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareRevokePermission004', Level.LEVEL1, async (done: Function) => {
       try {
@@ -476,13 +455,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareRevokePermission005
      * @tc.number SUB_FILESHARE_REVOKEPERMISSION_0500
-     * @tc.name FileShareRevokePermission005
-     * @tc.desc test OH_FileShare_RevokePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_RevokePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareRevokePermission005', Level.LEVEL1, async (done: Function) => {
       try {
@@ -497,13 +475,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareActivatePermission001
      * @tc.number SUB_FILESHARE_ACTIVATEPERMISSION_0100
-     * @tc.name FileShareActivatePermission001
-     * @tc.desc test OH_FileShare_ActivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_ActivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareActivatePermission001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -518,13 +495,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareActivatePermission002
      * @tc.number SUB_FILESHARE_ACTIVATEPERMISSION_0200
-     * @tc.name FileShareActivatePermission002
-     * @tc.desc test OH_FileShare_ActivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_ActivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareActivatePermission002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -539,13 +515,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareActivatePermission003
      * @tc.number SUB_FILESHARE_ACTIVATEPERMISSION_0300
-     * @tc.name FileShareActivatePermission003
-     * @tc.desc test OH_FileShare_ActivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_ActivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareActivatePermission003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -560,13 +535,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareActivatePermission004
      * @tc.number SUB_FILESHARE_ACTIVATEPERMISSION_0400
-     * @tc.name FileShareActivatePermission004
-     * @tc.desc test OH_FileShare_ActivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_ActivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareActivatePermission004', Level.LEVEL1, async (done: Function) => {
       try {
@@ -581,13 +555,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareActivatePermission005
      * @tc.number SUB_FILESHARE_ACTIVATEPERMISSION_0500
-     * @tc.name FileShareActivatePermission005
-     * @tc.desc test OH_FileShare_ActivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_ActivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareActivatePermission005', Level.LEVEL1, async (done: Function) => {
       try {
@@ -602,13 +575,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareDeactivatePermission001
      * @tc.number SUB_FILESHARE_DEACTIVATEPERMISSION_0100
-     * @tc.name FileShareDeactivatePermission001
-     * @tc.desc test OH_FileShare_DeactivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_DeactivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareDeactivatePermission001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -623,13 +595,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareDeactivatePermission002
      * @tc.number SUB_FILESHARE_DEACTIVATEPERMISSION_0200
-     * @tc.name FileShareDeactivatePermission002
-     * @tc.desc test OH_FileShare_DeactivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_DeactivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareDeactivatePermission002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -644,13 +615,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareDeactivatePermission003
      * @tc.number SUB_FILESHARE_DEACTIVATEPERMISSION_0300
-     * @tc.name FileShareDeactivatePermission003
-     * @tc.desc test OH_FileShare_DeactivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_DeactivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareDeactivatePermission003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -665,13 +635,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareDeactivatePermission004
      * @tc.number SUB_FILESHARE_DEACTIVATEPERMISSION_0400
-     * @tc.name FileShareDeactivatePermission004
-     * @tc.desc test OH_FileShare_DeactivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_DeactivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareDeactivatePermission004', Level.LEVEL1, async (done: Function) => {
       try {
@@ -686,13 +655,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareDeactivatePermission005
      * @tc.number SUB_FILESHARE_DEACTIVATEPERMISSION_0500
-     * @tc.name FileShareDeactivatePermission005
-     * @tc.desc test OH_FileShare_DeactivatePermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_DeactivatePermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareDeactivatePermission005', Level.LEVEL1, async (done: Function) => {
       try {
@@ -707,13 +675,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareCheckPersistentPermission001
      * @tc.number SUB_FILESHARE_CHECKPERSISTENTPERMISSSION_0100
-     * @tc.name FileShareCheckPersistentPermission001
-     * @tc.desc test OH_FileShare_CheckPersistentPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_CheckPersistentPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareCheckPersistentPermission001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -728,13 +695,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareCheckPersistentPermission002
      * @tc.number SUB_FILESHARE_CHECKPERSISTENTPERMISSSION_0200
-     * @tc.name FileShareCheckPersistentPermission002
-     * @tc.desc test OH_FileShare_CheckPersistentPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_CheckPersistentPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareCheckPersistentPermission002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -749,13 +715,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareCheckPersistentPermission003
      * @tc.number SUB_FILESHARE_CHECKPERSISTENTPERMISSSION_0300
-     * @tc.name FileShareCheckPersistentPermission003
-     * @tc.desc test OH_FileShare_CheckPersistentPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_CheckPersistentPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareCheckPersistentPermission003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -770,13 +735,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareCheckPersistentPermission004
      * @tc.number SUB_FILESHARE_CHECKPERSISTENTPERMISSSION_0400
-     * @tc.name FileShareCheckPersistentPermission004
-     * @tc.desc test OH_FileShare_CheckPersistentPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_CheckPersistentPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareCheckPersistentPermission004', Level.LEVEL1, async (done: Function) => {
       try {
@@ -791,13 +755,12 @@ export default function FileManagementFileShare(){
     });
 
     /**
+     * @tc.name   FileShareCheckPersistentPermission005
      * @tc.number SUB_FILESHARE_CHECKPERSISTENTPERMISSSION_0500
-     * @tc.name FileShareCheckPersistentPermission005
-     * @tc.desc test OH_FileShare_CheckPersistentPermission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileShare_CheckPersistentPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileShareCheckPersistentPermission005', Level.LEVEL1, async (done: Function) => {
       try {

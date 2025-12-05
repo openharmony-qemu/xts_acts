@@ -92,5 +92,28 @@ export default function WaterFlowFillPolicyTest(){
       expect(JSON.parse(strJson).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM2MD3LG5");
       done();
     });
+
+    /**
+     * @tc.number waterFlowFillPolicyTest004
+     * @tc.name   waterFlowFillPolicyTest004
+     * @tc.desc   Normal value testing of itemFillPolicy interface
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
+     */
+    it('waterFlowFillPolicyTest004', Level.LEVEL1, async (done: Function) => {
+      console.info('waterFlowFillPolicyTest004 START');
+      let PAGE_TAG = 'WaterFlowFillPolicyTest';
+      await Utils.pushPage(`waterFlow/${PAGE_TAG}`);
+      await Utils.sleep(1000);
+      let driver = await Driver.create()
+      let btn: Component = await driver.findComponent(ON.id('btn3'));
+      await btn.click();
+      await Utils.sleep(1500);
+      let strJson = getInspectorByKey('waterFlow');
+      console.info("[testWaterFlowFillPolicy004] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson).$attrs.itemFillPolicy));
+      expect(JSON.parse(strJson).$attrs.itemFillPolicy).assertEqual(undefined);
+      done();
+    });
   })
 }

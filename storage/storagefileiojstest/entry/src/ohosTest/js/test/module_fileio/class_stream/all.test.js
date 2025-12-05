@@ -23,13 +23,12 @@ export default function fileioStream() {
 describe('fileio_stream_1', function () {
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_000
    * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAMSYNC_0000
-   * @tc.name fileio_test_stream_create_stream_sync_000
-   * @tc.desc Test createStreamSync() interface, Open read-write file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createStreamSync() interface, Open read-write file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_000');
@@ -47,13 +46,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_001
    * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAMSYNC_0100
-   * @tc.name fileio_test_stream_create_stream_sync_001
-   * @tc.desc Test createStreamSync() interface, When file does not exist.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createStreamSync() interface, When file does not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_001');
@@ -67,13 +65,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_002
    * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAMSYNC_0200
-   * @tc.name fileio_test_stream_create_stream_sync_002
-   * @tc.desc Test createStreamSync() interface, When mode is invalid.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createStreamSync() interface, When mode is invalid.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_002');
@@ -89,13 +86,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_000
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0000
-   * @tc.name fileio_test_stream_read_sync_000
-   * @tc.desc Test readSync() interface, read data from stream file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readSync() interface, read data from stream file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_000');
@@ -115,13 +111,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_001
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0100
-   * @tc.name fileio_test_stream_read_sync_001
-   * @tc.desc Test the readSync method of class Stream,When offset equals buffer length..
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the readSync method of class Stream,When offset equals buffer length..
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_001');
@@ -142,13 +137,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_002
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0200
-   * @tc.name fileio_test_stream_read_sync_002
-   * @tc.desc Test the readSync method of class Stream,When the length is 1.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the readSync method of class Stream,When the length is 1.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_002');
@@ -169,13 +163,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_003
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0300
-   * @tc.name fileio_test_stream_read_sync_003
-   * @tc.desc Test the readSync method of class Stream,When the position is 1.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the readSync method of class Stream,When the position is 1.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_003');
@@ -196,13 +189,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_004
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0400
-   * @tc.name fileio_test_stream_read_sync_004
-   * @tc.desc Test the readSync method of class Stream,When the offset is greater than the buffer length.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the readSync method of class Stream,When the offset is greater than the buffer length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_sync_004', Level.LEVEL0, async function () {
     let ss;
@@ -223,13 +215,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_005
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0500
-   * @tc.name fileio_test_stream_read_sync_005
-   * @tc.desc Test the readSync method of class Stream, When the length is greater than the buffer length.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the readSync method of class Stream, When the length is greater than the buffer length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_sync_005', Level.LEVEL0, async function () {
     let ss;
@@ -250,14 +241,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_006
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0600
-   * @tc.name fileio_test_stream_read_sync_006
-   * @tc.desc Test the readSync method of class Stream.
-   * When position is equal to the length of the file content plus one.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the readSync method of class Stream.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_sync_006', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_006');
@@ -279,13 +268,12 @@ describe('fileio_stream_1', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_000
    * @tc.number SUB_DF_FILEIO_STREAM_WRITESYNC_0000
-   * @tc.name fileio_test_stream_write_sync_000
-   * @tc.desc Test writeSync() interface, Write data to stream file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test writeSync() interface, Write data to stream file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_write_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_000');

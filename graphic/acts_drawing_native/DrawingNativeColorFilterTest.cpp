@@ -63,13 +63,13 @@ class DrawingNativeColorFilterTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0100
- * @tc.name: testColorFilterCreateBlendModeNormal
- * @tc.desc: test for testColorFilterCreateBlendModeNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorFilterCreateBlendModeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0100
+ * @tc.desc   test for testColorFilterCreateBlendModeNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeNormal, Function | SmallTest | Level0) {
     // 1. Enumerate OH_Drawing_BlendMode values in OH_Drawing_ColorFilterCreateBlendMode interface
@@ -91,13 +91,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeNormal, Fun
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0101
- * @tc.name: testColorFilterCreateBlendModeNULL
- * @tc.desc: test for testColorFilterCreateBlendModeNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateBlendModeNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0101
+ * @tc.desc   test for testColorFilterCreateBlendModeNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeNULL, Function | SmallTest | Level3) {
     // 1. Pass an empty value as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
@@ -108,13 +108,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeNULL, Funct
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0102
- * @tc.name: testColorFilterCreateBlendModeMultipleCalls
- * @tc.desc: test for testColorFilterCreateBlendModeMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateBlendModeMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0102
+ * @tc.desc   test for testColorFilterCreateBlendModeMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ColorFilterCreateBlendMode, random value between 0x00000000 and 0xFFFFFFFF
@@ -151,13 +151,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeMultipleCal
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0103
- * @tc.name: testColorFilterCreateBlendModeAbnormal
- * @tc.desc: test for testColorFilterCreateBlendModeAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateBlendModeAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0103
+ * @tc.desc   test for testColorFilterCreateBlendModeAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeAbnormal, Function | SmallTest | Level3) {
     // 1. Pass a negative value as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
@@ -168,13 +168,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeAbnormal, F
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0104
- * @tc.name: testColorFilterCreateBlendModeMaximum
- * @tc.desc: test for testColorFilterCreateBlendModeMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateBlendModeMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0104
+ * @tc.desc   test for testColorFilterCreateBlendModeMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeMaximum, Function | SmallTest | Level3) {
     // 1. Pass 0xFFFFFFFF as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
@@ -185,13 +185,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateBlendModeMaximum, Fu
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0200
- * @tc.name: testColorFilterCreateComposeNormal
- * @tc.desc: test for testColorFilterCreateComposeNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorFilterCreateComposeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0200
+ * @tc.desc   test for testColorFilterCreateComposeNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateComposeNormal, Function | SmallTest | Level0) {
     // 1. Call OH_Drawing_ColorFilterCreateBlendMode to create colorFilter1 and colorFilter2
@@ -234,13 +234,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateComposeNormal, Funct
     OH_Drawing_ColorFilterDestroy(colorFilter5);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0201
- * @tc.name: testColorFilterCreateComposeNULL
- * @tc.desc: test for testColorFilterCreateComposeNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateComposeNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0201
+ * @tc.desc   test for testColorFilterCreateComposeNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateComposeNULL, Function | SmallTest | Level3) {
     // 1. Pass an empty value as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
@@ -251,13 +251,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateComposeNULL, Functio
     OH_Drawing_ColorFilterDestroy(colorFilter1);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0202
- * @tc.name: testColorFilterCreateComposeMultipleCalls
- * @tc.desc: test for testColorFilterCreateComposeMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateComposeMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0202
+ * @tc.desc   test for testColorFilterCreateComposeMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateComposeMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ColorFilterCreateBlendMode with a random value between 0x00000000 and 0xFFFFFFFF
@@ -306,13 +306,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateComposeMultipleCalls
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0300
- * @tc.name: testColorFilterCreateMatrixNormal
- * @tc.desc: test for testColorFilterCreateMatrixNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorFilterCreateMatrixNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0300
+ * @tc.desc   test for testColorFilterCreateMatrixNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateMatrixNormal, Function | SmallTest | Level0) {
     const float matrix[20] = {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0.5f, 0};
@@ -324,13 +324,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateMatrixNormal, Functi
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0301
- * @tc.name: testColorFilterCreateMatrixNULL
- * @tc.desc: test for testColorFilterCreateMatrixNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateMatrixNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0301
+ * @tc.desc   test for testColorFilterCreateMatrixNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateMatrixNULL, Function | SmallTest | Level3) {
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(nullptr);
@@ -344,13 +344,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateMatrixNULL, Function
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0302
- * @tc.name: testColorFilterCreateMatrixAbnormal
- * @tc.desc: test for testColorFilterCreateMatrixAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateMatrixAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0302
+ * @tc.desc   test for testColorFilterCreateMatrixAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateMatrixAbnormal, Function | SmallTest | Level3) {
     const float matrix[19] = {
@@ -373,13 +373,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateMatrixAbnormal, Func
     OH_Drawing_ColorFilterDestroy(colorFilter2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0303
- * @tc.name: testColorFilterCreateMatrixMultipleCalls
- * @tc.desc: test for testColorFilterCreateMatrixMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateMatrixMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0303
+ * @tc.desc   test for testColorFilterCreateMatrixMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateMatrixMultipleCalls, Function | SmallTest | Level3) {
     for (int i = 0; i < 10; i++) {
@@ -390,13 +390,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateMatrixMultipleCalls,
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0400
- * @tc.name: testColorFilterCreateLinearToSrgbGammaNormal
- * @tc.desc: test for testColorFilterCreateLinearToSrgbGammaNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorFilterCreateLinearToSrgbGammaNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0400
+ * @tc.desc   test for testColorFilterCreateLinearToSrgbGammaNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLinearToSrgbGammaNormal, Function | SmallTest | Level0) {
     // 1. Call OH_Drawing_ColorFilterCreateLinearToSrgbGamma
@@ -408,13 +408,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLinearToSrgbGammaNor
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0401
- * @tc.name: testColorFilterCreateLinearToSrgbGammaMultipleCalls
- * @tc.desc: test for testColorFilterCreateLinearToSrgbGammaMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateLinearToSrgbGammaMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0401
+ * @tc.desc   test for testColorFilterCreateLinearToSrgbGammaMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLinearToSrgbGammaMultipleCalls, Function | SmallTest | Level3) {
     // 1、OH_Drawing_ColorFilterCreateLinearToSrgbGamma 调用10次
@@ -425,13 +425,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLinearToSrgbGammaMul
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0500
- * @tc.name: testColorFilterCreateSrgbGammaToLinearNormal
- * @tc.desc: test for testColorFilterCreateSrgbGammaToLinearNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorFilterCreateSrgbGammaToLinearNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0500
+ * @tc.desc   test for testColorFilterCreateSrgbGammaToLinearNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateSrgbGammaToLinearNormal, Function | SmallTest | Level0) {
     // 1. Call OH_Drawing_ColorFilterCreateSrgbGammaToLinear
@@ -442,13 +442,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateSrgbGammaToLinearNor
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0501
- * @tc.name: testColorFilterCreateSrgbGammaToLinearMultipleCalls
- * @tc.desc: test for testColorFilterCreateSrgbGammaToLinearMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateSrgbGammaToLinearMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0501
+ * @tc.desc   test for testColorFilterCreateSrgbGammaToLinearMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateSrgbGammaToLinearMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ColorFilterCreateSrgbGammaToLinear 10 times
@@ -459,13 +459,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateSrgbGammaToLinearMul
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0600
- * @tc.name: testColorFilterCreateLumaNormal
- * @tc.desc: test for testColorFilterCreateLumaNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorFilterCreateLumaNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0600
+ * @tc.desc   test for testColorFilterCreateLumaNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLumaNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_ColorFilterCreateLuma
@@ -475,13 +475,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLumaNormal, Function
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0601
- * @tc.name: testColorFilterCreateLumaMultipleCalls
- * @tc.desc: test for testColorFilterCreateLumaMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateLumaMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0601
+ * @tc.desc   test for testColorFilterCreateLumaMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLumaMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ColorFilterCreateLuma 10 times
@@ -492,13 +492,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLumaMultipleCalls, F
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0700
- * @tc.name: testColorFilterDestroyNormal
- * @tc.desc: test for testColorFilterDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorFilterDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0700
+ * @tc.desc   test for testColorFilterDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterDestroyNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_ColorFilterCreateLuma
@@ -508,13 +508,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterDestroyNormal, Function | 
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0701
- * @tc.name: testColorFilterDestroyNULL
- * @tc.desc: test for testColorFilterDestroyNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterDestroyNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0701
+ * @tc.desc   test for testColorFilterDestroyNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterDestroyNULL, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ColorFilterDestroy with empty parameter
@@ -523,13 +523,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterDestroyNULL, Function | Sm
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0800
- * @tc.name: testColorFilterCreateLightingNormal
- * @tc.desc: test for testColorFilterCreateLightingNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorFilterCreateLightingNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0800
+ * @tc.desc   test for testColorFilterCreateLightingNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLightingNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_ColorFilterCreateLighting passes parameters normally.
@@ -539,13 +539,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLightingNormal, Func
     OH_Drawing_ColorFilterDestroy(colorFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0801
- * @tc.name: testColorFilterCreateLightingNULL
- * @tc.desc: test for testColorFilterCreateLightingNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateLightingNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0801
+ * @tc.desc   test for testColorFilterCreateLightingNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLightingNULL, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ColorFilterCreateLighting passes NULL.
@@ -559,13 +559,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLightingNULL, Functi
     OH_Drawing_ColorFilterDestroy(colorFilter2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0802
- * @tc.name: testColorFilterCreateLightingAbnormal
- * @tc.desc: test for testColorFilterCreateLightingAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateLightingAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0802
+ * @tc.desc   test for testColorFilterCreateLightingAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLightingAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ColorFilterCreateLighting passes maximum value.
@@ -579,13 +579,13 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLightingAbnormal, Fu
     OH_Drawing_ColorFilterDestroy(colorFilter2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0803
- * @tc.name: testColorFilterCreateLightingMultipleCalls
- * @tc.desc: test for testColorFilterCreateLightingMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorFilterCreateLightingMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0803
+ * @tc.desc   test for testColorFilterCreateLightingMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterCreateLightingMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ColorFilterCreateLighting is called multiple times.

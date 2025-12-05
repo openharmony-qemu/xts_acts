@@ -22,13 +22,12 @@ export default function ActsStorageFileUriNdkTest(){
   describe('ActsStorageFileUriNdkTest', async () => {
 
     /**
+     * @tc.name   geturifrompath_ndktest_001
      * @tc.number SUB_BASIC_FM_FileAPI_getfileuri_0100
-     * @tc.name geturifrompath_ndktest_001
-     * @tc.desc function of API, Test GetUriFromPath, normal function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test GetUriFromPath, normal function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('geturifrompath_ndktest_001', Level.LEVEL0, async (done: Function) => {
       try{
@@ -44,13 +43,12 @@ export default function ActsStorageFileUriNdkTest(){
     });
 
     /**
+     * @tc.name   getpathfromuri_ndktest_001
      * @tc.number SUB_BASIC_FM_FileAPI_getfileuri_0200
-     * @tc.name getpathfromuri_ndktest_001
-     * @tc.desc function of API, Test GetPathFromUri, normal function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test GetPathFromUri, normal function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getpathfromuri_ndktest_001', Level.LEVEL0, async (done: Function) => {
       try{
@@ -66,13 +64,12 @@ export default function ActsStorageFileUriNdkTest(){
     });
 
     /**
+     * @tc.name   getfulldirectory_ndktest_001
      * @tc.number SUB_BASIC_FM_FileAPI_getfileuri_0300
-     * @tc.name getfulldirectory_ndktest_001
-     * @tc.desc function of API, Test getfulldirectory, normal function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test getfulldirectory, normal function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getfulldirectory_ndktest_001', Level.LEVEL0, async (done: Function) => {
       try{
@@ -92,13 +89,12 @@ export default function ActsStorageFileUriNdkTest(){
     });
 
     /**
+     * @tc.name   isvaliduri_ndktest_001
      * @tc.number SUB_BASIC_FM_FileAPI_getfileuri_0400
-     * @tc.name isvaliduri_ndktest_001
-     * @tc.desc function of API, Test IsValidUri, normal function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test IsValidUri, normal function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isvaliduri_ndktest_001', Level.LEVEL0, async (done: Function) => {
       try{
@@ -117,14 +113,13 @@ export default function ActsStorageFileUriNdkTest(){
       }
     });
 
-    /**
+      /**
+       * @tc.name   getfilename_ndktest_001
        * @tc.number SUB_BASIC_FM_FileAPI_getfileuri_0500
-       * @tc.name getfilename_ndktest_001
-       * @tc.desc function of API, Test GetFileName, normal function
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level Level 0
-       * @tc.require
+       * @tc.desc   function of API, Test GetFileName, normal function
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getfilename_ndktest_001', Level.LEVEL0, async (done: Function) => {
          try{

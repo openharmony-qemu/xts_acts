@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
- import CommonFunc from '../../MainAbility/common/Common';
+import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import nativeNode from 'libnativerender.so'
 
 export default function XComponentNdkInterfaceTest() {
   describe('XComponentNdkInterfaceTest', () => {
@@ -84,7 +85,7 @@ export default function XComponentNdkInterfaceTest() {
     /**
      * @tc.name   XComponentNdkInterfaceTest_0200
      * @tc.number XComponentNdkInterfaceTest_0200
-     * @tc.desc   Test XComponentNdkInterface
+     * @tc.desc   Test OH_ArkUI_XComponent_SetNeedSoftKeyboard
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -94,110 +95,146 @@ export default function XComponentNdkInterfaceTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
+      // OH_ArkUI_XComponent_SetNeedSoftKeyboard is true
       let button = await driver.findComponent(ON.id('XComponent_setNeedSoftKeyboard'));
       await button.click();
-      console.info("[XComponentNdkInterfaceTest_0200] click XComponent_setNeedSoftKeyboard");
+      console.info("[XComponentNdkInterfaceTest_0200] setNeedSoftKeyboard is true");
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('XComponent_setNeedSoftKeyboardResult');
+      // OH_ArkUI_XComponent_SetNeedSoftKeyboard is false
+      button = await driver.findComponent(ON.id('XComponent_setNeedSoftKeyboard'));
+      await button.click();
+      console.info("[XComponentNdkInterfaceTest_0200] setNeedSoftKeyboard is false");
+      await CommonFunc.sleep(1000);
+
+      let strJson = getInspectorByKey('NdkInterfaceXComponent');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[XComponentNdkInterfaceTest_0200] setNeedSoftKeyboardResult is: " + obj.$attrs.content);
-      expect(obj.$attrs.content).assertEqual('0');
+      console.info("[XComponentNdkInterfaceTest_0200] NdkInterfaceXComponent is: " + obj.$type);
+      expect(obj.$type).assertEqual('XComponent');
 
       console.info('[XComponentNdkInterfaceTest_0200] END');
       done();
     });
 
     /**
-     * @tc.name   XComponentNdkInterfaceTest_0300
-     * @tc.number XComponentNdkInterfaceTest_0300
-     * @tc.desc   Test XComponentNdkInterface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number    XComponentNdkInterfaceTest_0300
+     * @tc.name      XComponentNdkInterfaceTest_0300
+     * @tc.desc      Test OH_ArkUI_XComponent_SetExpectedFrameRateRange ErrorCode: ARKUI_ERROR_CODE_NO_ERROR
+     * @tc.level     Level 1
      */
     it('XComponentNdkInterfaceTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentNdkInterfaceTest_0300] START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
 
-      let button = await driver.findComponent(ON.id('XComponent_setFrameRate'));
-      await button.click();
-      console.info("[XComponentNdkInterfaceTest_0300] click XComponent_setFrameRate");
-      await CommonFunc.sleep(1000);
-
-      let strJson = getInspectorByKey('XComponent_setFrameRateResult');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[XComponentNdkInterfaceTest_0300] setFrameRateResult is: " + obj.$attrs.content);
-      expect(obj.$attrs.content).assertEqual('0');
+      expect(nativeNode.TestSetExpectedFrameRateRangeErrorCode_001('NdkInterfaceXComponent')).assertEqual(0)
 
       console.info('[XComponentNdkInterfaceTest_0300] END');
       done();
     });
 
     /**
-     * @tc.name   XComponentNdkInterfaceTest_0400
-     * @tc.number XComponentNdkInterfaceTest_0400
-     * @tc.desc   Test XComponentNdkInterface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number    XComponentNdkInterfaceTest_0400
+     * @tc.name      XComponentNdkInterfaceTest_0400
+     * @tc.desc      Test OH_ArkUI_XComponent_SetExpectedFrameRateRange ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.level     Level 1
      */
     it('XComponentNdkInterfaceTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentNdkInterfaceTest_0400] START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-
-      let button = await driver.findComponent(ON.id('XComponent_setFrameRate'));
-      await button.click();
-      console.info("[XComponentNdkInterfaceTest_0400] click XComponent_setFrameRate");
-      await CommonFunc.sleep(1000);
-
-      let strJson = getInspectorByKey('XComponent_setFrameRateResult');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[XComponentNdkInterfaceTest_0400] setFrameRateResult is: " + obj.$attrs.content);
-      expect(obj.$attrs.content).assertEqual('0');
+      
+      expect(nativeNode.TestSetExpectedFrameRateRangeErrorCode_002('NdkInterfaceXComponent')).assertEqual(0)
 
       console.info('[XComponentNdkInterfaceTest_0400] END');
       done();
     });
 
+
     /**
-     * @tc.name   XComponentNdkInterfaceTest_0500
-     * @tc.number XComponentNdkInterfaceTest_0500
-     * @tc.desc   Test XComponentNdkInterface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number    XComponentNdkInterfaceTest_0500
+     * @tc.name      XComponentNdkInterfaceTest_0500
+     * @tc.desc      Test OH_ArkUI_XComponent_RegisterOnFrameCallback ErrorCode: ARKUI_ERROR_CODE_NO_ERROR
+     * @tc.level     Level 1
      */
     it('XComponentNdkInterfaceTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentNdkInterfaceTest_0500] START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
 
-      let button = await driver.findComponent(ON.id('XComponent_frameCallback'));
-      await button.click();
-      console.info("[XComponentNdkInterfaceTest_0500] unregisterFrameCallback");
-      await CommonFunc.sleep(1000);
+      expect(nativeNode.TestRegisterOnFrameCallbackErrorCode_001('NdkInterfaceXComponent')).assertEqual(0)
 
-      let strJson = getInspectorByKey('XComponent_unregisterFrameCallbackResult');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[XComponentNdkInterfaceTest_0500] unregisterFrameCallbackResult is: " + obj.$attrs.content);
-      expect(obj.$attrs.content).assertEqual('0');
-
-      await button.click();
-      console.info("[XComponentNdkInterfaceTest_0500] registerFrameCallback");
-      await CommonFunc.sleep(1000);
-
-      strJson = getInspectorByKey('XComponent_registerFrameCallbackResult');
-      obj = JSON.parse(strJson);
-      console.info("[XComponentNdkInterfaceTest_0500] registerFrameCallbackResult is: " + obj.$attrs.content);
-      expect(obj.$attrs.content).assertEqual('0');
-
-      await CommonFunc.sleep(1000);
       console.info('[XComponentNdkInterfaceTest_0500] END');
       done();
     });
 
+    /**
+     * @tc.number    XComponentNdkInterfaceTest_0600
+     * @tc.name      XComponentNdkInterfaceTest_0600
+     * @tc.desc      Test OH_ArkUI_XComponent_RegisterOnFrameCallback ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.level     Level 1
+     */
+    it('XComponentNdkInterfaceTest_0600', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentNdkInterfaceTest_0600] START');
+      
+      expect(nativeNode.TestRegisterOnFrameCallbackErrorCode_002('NdkInterfaceXComponent')).assertEqual(0)
+
+      console.info('[XComponentNdkInterfaceTest_0600] END');
+      done();
+    });
+
+    /**
+     * @tc.number    XComponentNdkInterfaceTest_0700
+     * @tc.name      XComponentNdkInterfaceTest_0700
+     * @tc.desc      Test OH_ArkUI_XComponent_UnregisterOnFrameCallback ErrorCode: ARKUI_ERROR_CODE_NO_ERROR
+     * @tc.level     Level 1
+     */
+    it('XComponentNdkInterfaceTest_0700', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentNdkInterfaceTest_0700] START');
+
+      expect(nativeNode.TestUnregisterOnFrameCallbackErrorCode_001('NdkInterfaceXComponent')).assertEqual(0)
+
+      console.info('[XComponentNdkInterfaceTest_0700] END');
+      done();
+    });
+
+    /**
+     * @tc.number    XComponentNdkInterfaceTest_0800
+     * @tc.name      XComponentNdkInterfaceTest_0800
+     * @tc.desc      Test OH_ArkUI_XComponent_UnregisterOnFrameCallback ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.level     Level 1
+     */
+    it('XComponentNdkInterfaceTest_0800', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentNdkInterfaceTest_0800] START');
+      
+      expect(nativeNode.TestUnregisterOnFrameCallbackErrorCode_002('NdkInterfaceXComponent')).assertEqual(0)
+
+      console.info('[XComponentNdkInterfaceTest_0800] END');
+      done();
+    });
+
+    /**
+     * @tc.number    XComponentNdkInterfaceTest_0900
+     * @tc.name      XComponentNdkInterfaceTest_0900
+     * @tc.desc      Test OH_ArkUI_XComponent_SetNeedSoftKeyboard ErrorCode: ARKUI_ERROR_CODE_NO_ERROR
+     * @tc.level     Level 1
+     */
+    it('XComponentNdkInterfaceTest_0900', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentNdkInterfaceTest_0900] START');
+
+      expect(nativeNode.TestSetNeedSoftKeyboardErrorCode_001('NdkInterfaceXComponent')).assertEqual(0)
+
+      console.info('[XComponentNdkInterfaceTest_0900] END');
+      done();
+    });
+
+    /**
+     * @tc.number    XComponentNdkInterfaceTest_1000
+     * @tc.name      XComponentNdkInterfaceTest_1000
+     * @tc.desc      Test OH_ArkUI_XComponent_SetNeedSoftKeyboard ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.level     Level 1
+     */
+    it('XComponentNdkInterfaceTest_1000', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentNdkInterfaceTest_1000] START');
+      
+      expect(nativeNode.TestSetNeedSoftKeyboardErrorCode_002('NdkInterfaceXComponent')).assertEqual(0)
+
+      console.info('[XComponentNdkInterfaceTest_1000] END');
+      done();
+    });
   })
 }

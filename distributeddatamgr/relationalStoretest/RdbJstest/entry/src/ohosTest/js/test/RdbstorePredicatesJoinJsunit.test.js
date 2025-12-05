@@ -113,7 +113,6 @@ describe('rdbStorePredicatesJoinTest', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbJoin001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0100
      * @tc.desc   sql query inner join test
@@ -140,7 +139,6 @@ describe('rdbStorePredicatesJoinTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbJoin002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0200
      * @tc.desc   sql query cross join test
@@ -169,7 +167,6 @@ describe('rdbStorePredicatesJoinTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbJoin003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0300
      * @tc.desc   sql query left outer join test

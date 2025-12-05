@@ -61,14 +61,14 @@ export default function webOnFullScreenExit() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONFULLSCREENEXIT_0100
-    * @tc.name        : testOnFullScreenExit001
-    * @tc.desc        : test onFullScreenExit
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testOnFullScreenExit001
+     * @tc.number SUB_WEB_ONFULLSCREENEXIT_0100
+     * @tc.desc   test onFullScreenExit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOnFullScreenExit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitOnFullScreenExit001", 300370)
       Utils.registerBaseEvent("testOnFullScreenExit001", "true_\"false\"", 300380, done,
@@ -78,14 +78,14 @@ export default function webOnFullScreenExit() {
       await Utils.waitAndClickComponent(driver,'OnFullScreenExitTestButton')
     })
 
-    /*
-    * @tc.number      : SUB_WEB_EXITFULLSCREEN_0100
-    * @tc.name        : testExitFullScreen001
-    * @tc.desc        : test FullScreenExitHandler.exitFullScreen
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testExitFullScreen001
+     * @tc.number SUB_WEB_EXITFULLSCREEN_0100
+     * @tc.desc   test FullScreenExitHandler.exitFullScreen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testExitFullScreen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitExitFullScreen001", 300370)
       Utils.registerBaseEvent("testExitFullScreen001", "true_\"false\"", 300390, done,

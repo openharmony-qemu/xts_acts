@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import commonEvent from '@ohos.commonEventManager';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 const domain = 0x0000;
 const TAG = 'ActsFAAbilityDisplayOrientationTest';
@@ -45,6 +46,18 @@ function sleep(time: number): Promise<void> {
 export default function actsFAAbilityDisplayOrientationTest() {
 
   describe('ActsAbilityTest', () => {
+
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0200

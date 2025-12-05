@@ -67,12 +67,12 @@ export default function MediaAlbumChangeRequestGetAlbumTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ALBUM_CHANGE_REQUEST_GET_ALBUM_001
-     * @tc.name      : mediaAlbumChangeRequest_getAlbum_promise_001
-     * @tc.desc      : getAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   mediaAlbumChangeRequest_getAlbum_promise_001
+     * @tc.number MEDIA_ALBUM_CHANGE_REQUEST_GET_ALBUM_001
+     * @tc.desc   getAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_getAlbum_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_getAlbum_promise_001';

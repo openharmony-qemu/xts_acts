@@ -39,7 +39,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSuccess0100
      * @tc.number SUB_GLOBAL_SUCCESS_0100
      * @tc.desc   overriding error code
@@ -61,7 +60,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetInvalidInputParameter0100
      * @tc.number SUB_GLOBAL_ERROR_CODE_INVALID_INPUT_PARAMETER_0100
      * @tc.desc   overriding error code
@@ -83,7 +81,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIdNotFound0100
      * @tc.number SUB_GLOBAL_ERROR_CODE_RES_ID_NOT_FOUND_0100
      * @tc.desc   overriding error code
@@ -105,7 +102,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetNotFoundById0100
      * @tc.number SUB_GLOBAL_ERROR_CODE_RES_NOT_FOUND_BY_ID_0100
      * @tc.desc   overriding error code
@@ -127,7 +123,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetNameNotFound0100
      * @tc.number SUB_GLOBAL_ERROR_CODE_RES_NAME_NOT_FOUND_0100
      * @tc.desc   overriding error code
@@ -149,7 +144,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetRefTooMuch0100
      * @tc.number SUB_GLOBAL_ERROR_CODE_RES_REF_TOO_MUCH_0100
      * @tc.desc   overriding error code
@@ -171,7 +165,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetResPathInvalid0100
      * @tc.number SUB_GLOBAL_ERROR_CODE_OVERLAY_RES_PATH_INVALID_0100
      * @tc.desc   overriding error code
@@ -193,7 +186,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDirectionVertical0100
      * @tc.number SUB_GLOBAL_DIRECTION_VERTICAL_0100
      * @tc.desc   overriding error code
@@ -216,7 +208,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColorModeLight0100
      * @tc.number SUB_GLOBAL_COLOR_MODE_LIGHT_0100
      * @tc.desc   overriding error code
@@ -238,7 +229,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDeviceType0100
      * @tc.number SUB_GLOBAL_DEVICE_TYPE_PHONE_0100
      * @tc.desc   overriding error code
@@ -260,7 +250,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDeviceType0200
      * @tc.number SUB_GLOBAL_DEVICE_TYPE_TABLET_0200
      * @tc.desc   overriding error code
@@ -282,7 +271,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDeviceType0300
      * @tc.number SUB_GLOBAL_DEVICE_TYPE_CAR_0300
      * @tc.desc   overriding error code
@@ -304,7 +292,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDeviceType0400
      * @tc.number SUB_GLOBAL_DEVICE_TYPE_PC_0400
      * @tc.desc   overriding error code
@@ -326,7 +313,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDeviceType0500
      * @tc.number SUB_GLOBAL_DEVICE_TYPE_TV_0500
      * @tc.desc   overriding error code
@@ -348,7 +334,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDeviceType0600
      * @tc.number SUB_GLOBAL_DEVICE_TYPE_WEARABLE_0600
      * @tc.desc   overriding error code
@@ -370,7 +355,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDeviceType0700
      * @tc.number SUB_GLOBAL_DEVICE_TYPE_2IN1_0700
      * @tc.desc   overriding error code
@@ -392,7 +376,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetScreenDensity0100
      * @tc.number SUB_GLOBAL_SCREEN_MDPI_0100
      * @tc.desc   overriding error code
@@ -414,7 +397,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetScreenDensity0200
      * @tc.number SUB_GLOBAL_SCREEN_SDPI_0200
      * @tc.desc   overriding error code
@@ -436,7 +418,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetScreenDensity0300
      * @tc.number SUB_GLOBAL_SCREEN_LDPI_0300
      * @tc.desc   overriding error code
@@ -458,7 +439,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetScreenDensity0400
      * @tc.number SUB_GLOBAL_SCREEN_XLDPI_0400
      * @tc.desc   overriding error code
@@ -480,7 +460,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetScreenDensity0500
      * @tc.number SUB_GLOBAL_SCREEN_XXLDPI_0500
      * @tc.desc   overriding error code
@@ -502,7 +481,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetScreenDensity0600
      * @tc.number SUB_GLOBAL_SCREEN_XXXLDPI_0600
      * @tc.desc   overriding error code
@@ -524,7 +502,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfigurations0100
      * @tc.number SUB_GLOBAL_DIRECTION_0100
      * @tc.desc   overriding error code
@@ -547,7 +524,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfigurations0200
      * @tc.number SUB_GLOBAL_DEVICETYPE_0200
      * @tc.desc   overriding error code
@@ -570,7 +546,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfigurations0300
      * @tc.number SUB_GLOBAL_SCREENDENSITY_0300
      * @tc.desc   overriding error code
@@ -592,7 +567,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfigurations0400
      * @tc.number SUB_GLOBAL_COLORMODE_0400
      * @tc.desc   overriding error code
@@ -614,7 +588,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfigurations0500
      * @tc.number SUB_GLOBAL_MCC_0500
      * @tc.desc   overriding error code
@@ -636,7 +609,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfigurations0600
      * @tc.number SUB_GLOBAL_MNC_0600
      * @tc.desc   overriding error code
@@ -658,7 +630,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfigurations0700
      * @tc.number SUB_GLOBAL_RESERVED_0700
      * @tc.desc   overriding error code
@@ -680,7 +651,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDirectionHorizontal0100
      * @tc.number SUB_GLOBAL_DIRECTION_HORIZONTAL_0100
      * @tc.desc   overriding error code
@@ -701,7 +671,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColorModeDark0100
      * @tc.number SUB_GLOBAL_COLOR_MODE_DARK_0100
      * @tc.desc   overriding error code
@@ -726,7 +695,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestAddResource0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0100
      * @tc.desc   overriding error code
@@ -750,7 +718,6 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestRemoveResource0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0100
      * @tc.desc   overriding error code

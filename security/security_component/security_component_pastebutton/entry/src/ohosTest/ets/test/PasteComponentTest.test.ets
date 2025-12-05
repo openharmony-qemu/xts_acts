@@ -64,13 +64,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0100
-     * @tc.name Test_Security_Button_Paste_0100
-     * @tc.desc Test SecurityComponent Default parameters and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent Default parameters and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Paste_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0100] START');
@@ -151,13 +150,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0200
-     * @tc.name Test_Security_Button_Paste_0200
-     * @tc.desc Test SecurityComponent layoutDirection attribute is VERTICAL and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent layoutDirection attribute is VERTICAL and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0200] START====');
@@ -252,14 +250,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0300
-     * @tc.name Test_Security_Button_Paste_0300
-     * @tc.desc Test SecurityComponent position.x is 150.00vp and position.y is 20.00vp
-     * markAnchor.x is 20.00vp and markAnchor.y is 20.00vp and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent position.x is 150.00vp and position.y is 20.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0300] START====');
@@ -357,13 +353,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0400
-     * @tc.name Test_Security_Button_Paste_0400
-     * @tc.desc Test SecurityComponent offset and markAnchor attribute is normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent offset and markAnchor attribute is normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0400] START====');
@@ -461,13 +456,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0500
-     * @tc.name Test_Security_Button_Paste_0500
-     * @tc.desc Test SecurityComponent FontStyle attribute is Italic and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontStyle attribute is Italic and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0500] START====');
@@ -562,13 +556,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0600
-     * @tc.name Test_Security_Button_Paste_0600
-     * @tc.desc Test SecurityComponent FontWeight attribute is Lighter and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Lighter and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0600] START====');
@@ -663,13 +656,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0700
-     * @tc.name Test_Security_Button_Paste_0700
-     * @tc.desc Test SecurityComponent FontWeight attribute is Normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0700] START====');
@@ -764,13 +756,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0800
-     * @tc.name Test_Security_Button_Paste_0800
-     * @tc.desc Test SecurityComponent FontWeight attribute is Regular and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Regular and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0800] START====');
@@ -865,13 +856,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_0900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_0900
-     * @tc.name Test_Security_Button_Paste_0900
-     * @tc.desc Test SecurityComponent FontWeight attribute is Bold and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Bold and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_0900] START====');
@@ -966,13 +956,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1000
-     * @tc.name Test_Security_Button_Paste_1000
-     * @tc.desc Test SecurityComponent FontWeight attribute is Bolder and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Bolder and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1000] START====');
@@ -1067,13 +1056,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1100
-     * @tc.name Test_Security_Button_Paste_1100
-     * @tc.desc Test SecurityComponent BorderStyle is Dotted , borderWidth , borderColor , borderRadius attribute is normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent BorderStyle is Dotted , borderWidth , borderColor , borderRadius attribute is normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1100] START====');
@@ -1171,13 +1159,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1200
-     * @tc.name Test_Security_Button_Paste_1200
-     * @tc.desc Test SecurityComponent BorderStyle attribute is Dashed and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent BorderStyle attribute is Dashed and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1200] START====');
@@ -1275,13 +1262,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1300
-     * @tc.name Test_Security_Button_Paste_1300
-     * @tc.desc Test SecurityComponent BorderStyle attribute is Solid and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent BorderStyle attribute is Solid and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1300] START====');
@@ -1379,13 +1365,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1400
-     * @tc.name Test_Security_Button_Paste_1400
-     * @tc.desc Test SecurityComponent offset.x attribute is 200.00vp result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent offset.x attribute is 200.00vp result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1400] START====');
@@ -1495,13 +1480,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1500
-     * @tc.name Test_Security_Button_Paste_1500
-     * @tc.desc Test SecurityComponent offset.x attribute is -200.00vp result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent offset.x attribute is -200.00vp result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1500] START====');
@@ -1610,13 +1594,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1600
-     * @tc.name Test_Security_Button_Paste_1600
-     * @tc.desc Test SecurityComponent Size excood displaysSize 10% result in Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent Size excood displaysSize 10% result in Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1600] START====');
@@ -1729,13 +1712,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1700
-     * @tc.name Test_Security_Button_Paste_1700
-     * @tc.desc Test SecurityComponent iconColor attribute is too light result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconColor attribute is too light result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1700] START====');
@@ -1830,15 +1812,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1800
-     * @tc.name Test_Security_Button_Paste_1800
-     * @tc.desc Test SecurityComponent buttonType is 0 , iconSize is 20.00vp
-     * , iconColor is #FFFA0050  and backgroundColor is #FFFF0000,
-     * Due to the similarity of the icon and background color result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent buttonType is 0 , iconSize is 20.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1800] START====');
@@ -1936,13 +1915,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_1900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_1900
-     * @tc.name Test_Security_Button_Paste_1900
-     * @tc.desc Test SecurityComponent iconSize attribute is too small result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconSize attribute is too small result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_1900] START====');
@@ -2038,13 +2016,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_2000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_2000
-     * @tc.name Test_Security_Button_Paste_2000
-     * @tc.desc Test SecurityComponent iconColor attribute is transparent result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_2000] START====');
@@ -2139,13 +2116,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_2100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_2100
-     * @tc.name Test_Security_Button_Paste_2100
-     * @tc.desc Test SecurityComponent fontColor attribute is transparent result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent fontColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_2100] START====');
@@ -2240,13 +2216,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_2200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_2200
-     * @tc.name Test_Security_Button_Paste_2200
-     * @tc.desc Test SecurityComponent backgroundColor attribute is transparent result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent backgroundColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_2200] START====');
@@ -2341,13 +2316,12 @@ export default function pasteComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Paste_2300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_2300
-     * @tc.name Test_Security_Button_Paste_2300
-     * @tc.desc Test SecurityComponent attr focusBox and result in PasteButton Authorization is passed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent attr focusBox and result in PasteButton Authorization is passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Paste_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Paste_2300] START====');

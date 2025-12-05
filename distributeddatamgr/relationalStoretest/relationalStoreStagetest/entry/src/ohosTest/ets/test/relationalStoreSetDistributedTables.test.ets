@@ -70,7 +70,6 @@ export default function relationalStoreSetDistributedTablesTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbSetDistributedTables001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_1000
      * @tc.desc   setDistributedTables with callback
@@ -110,7 +109,6 @@ export default function relationalStoreSetDistributedTablesTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbSetDistributedTables002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_1100
      * @tc.desc   setDistributedTables with callback

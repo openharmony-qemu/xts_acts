@@ -28,14 +28,14 @@ export default function webViewControllerPart2() {
   describe('WebViewControllerPart2TestSuite', () => {
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARHISTORY_0100
-    * @tc.name       : testClearHistoryStatic001
-    * @tc.desc       : test clearHistory
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testClearHistoryStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARHISTORY_0100
+     * @tc.desc   test clearHistory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testClearHistoryStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testClearHistory001", 10);

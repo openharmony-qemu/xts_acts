@@ -29,9 +29,12 @@ export default function DigestAlgorithmSm3Jsunit() {
         });
 
     /**
+     * @tc.name   Security_CryptoFramework_MDSM3_Func_0100
      * @tc.number Security_CryptoFramework_MDSM3_Func_0100
-     * @tc.name Summary Calculation scenario testing
-     * @tc.desc the asyAlgoName is "SM3", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM3", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_MDSM3_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await DigPromise.testMDDigestPromise("SM3")
@@ -48,9 +51,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_MDSM3_Func_0200
      * @tc.number Security_CryptoFramework_MDSM3_Func_0200
-     * @tc.name Summary Calculation scenario testing
-     * @tc.desc the asyAlgoName is "SM4", Use the async Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4", Use the async Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_MDSM3_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -64,11 +70,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
         /**
+         * @tc.name   Security_CryptoFramework_MDSM3_Func_0300
          * @tc.number Security_CryptoFramework_MDSM3_Func_0300
-         * @tc.name Summary Calculation scenario testing
-         * @tc.desc the asyAlgoName is "SM3", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz" take 10000 characters,
-         * Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz" take 10000 characters,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("Security_CryptoFramework_MDSM3_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let globalMd;
@@ -119,10 +126,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_MDSM3_Func_0400
      * @tc.number Security_CryptoFramework_MDSM3_Func_0400
-     * @tc.name Summary Calculation scenario testing
-     * @tc.desc Call it as a promise without passing in parameters
-     * @tc.desc Pass in an exception parameter null and call it as a Callback
+     * @tc.desc   Pass in an exception parameter null and call it as a Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_MDSM3_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let globalMd;
@@ -169,9 +178,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_MDSM3_Func_0500
      * @tc.number Security_CryptoFramework_MDSM3_Func_0500
-     * @tc.name Obtain summary calculation results scenario testing
-     * @tc.desc The md object was not initialized, and obtain calculation result sand call them as async
+     * @tc.desc   The md object was not initialized, and obtain calculation result sand call them as async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_MDSM3_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let globalMd;
@@ -207,9 +219,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_MDSM3_Func_0600
      * @tc.number Security_CryptoFramework_MDSM3_Func_0600
-     * @tc.name Obtain the summary calculation algorithm name
-     * @tc.desc the asyAlgoName is "SM3", Use the async Style of Interface
+     * @tc.desc   the asyAlgoName is "SM3", Use the async Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_MDSM3_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -223,9 +238,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HMACSM3_Func_0100
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0100
-     * @tc.name Calculate message authentication code scenario testing
-     * @tc.desc the asyAlgoName is "AES128", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "AES128", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HMACSM3_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await DigCallback.testHMACDigestCallback("SM3", "AES128")
@@ -240,9 +258,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HMACSM3_Func_0200
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0200
-     * @tc.name Calculate message authentication code scenario testing
-     * @tc.desc the asyAlgoName is "AES192", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "AES192", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HMACSM3_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await DigPromise.testHMACDigestPromise("SM3", "AES192")
@@ -257,9 +278,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HMACSM3_Func_0300
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0300
-     * @tc.name Calculate message authentication code scenario testing
-     * @tc.desc the asyAlgoName is "AES256", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "AES256", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HMACSM3_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await DigCallback.testHMACDigestCallback("SM3", "AES256")
@@ -274,9 +298,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HMACSM3_Func_0400
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0400
-     * @tc.name Calculate message authentication code scenario testing
-     * @tc.desc the asyAlgoName is "3DES192", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "3DES192", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HMACSM3_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await DigPromise.testHMACDigestPromise("SM3", "3DES192")
@@ -291,9 +318,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HMACSM3_Func_0500
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0500
-     * @tc.name Calculate message authentication code scenario testing
-     * @tc.desc the asyAlgoName is "SM4_128", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HMACSM3_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await DigCallback.testHMACDigestCallback("SM3", "SM4_128")
@@ -308,10 +338,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HMACSM3_Func_0600
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0600
-     * @tc.name Create a calculation message authentication code object scenario testing
-     * @tc.desc the asyAlgoName is "SHA5", Use the async Style of Interface
-     * @tc.desc the asyAlgoName is null, Use the async Style of Interface
+     * @tc.desc   the asyAlgoName is null, Use the async Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HMACSM3_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -333,11 +365,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
         /**
+         * @tc.name   Security_CryptoFramework_HMACSM3_Func_0700
          * @tc.number Security_CryptoFramework_HMACSM3_Func_0700
-         * @tc.name Calculate message authentication code scenario testing
-         * @tc.desc the asyAlgoName is "SM3", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz" take 10000 characters,
-         * Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz" take 10000 characters,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("Security_CryptoFramework_HMACSM3_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let globalHMAC;
@@ -389,11 +422,12 @@ export default function DigestAlgorithmSm3Jsunit() {
         });
 
     /**
+     * @tc.name   Security_CryptoFramework_HMACSM3_Func_0800
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0800
-     * @tc.name Initialize the calculation message authentication code object scenario testing
-     * @tc.desc Pass in an exception parameter null and call it as a Promise
-     * @tc.desc Pass in an exception parameter "sroundpriKey" and call it as a Promise
-     * @tc.desc Incoming rsa asymmetric key pair, and call them as Promise
+     * @tc.desc   Incoming rsa asymmetric key pair, and call them as Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HMACSM3_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let signGenerator = cryptoFramework.createSign("SM2_256|SM3");
@@ -431,14 +465,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
         /**
+         * @tc.name   Security_CryptoFramework_HMACSM3_Func_0900
          * @tc.number Security_CryptoFramework_HMACSM3_Func_0900
-         * @tc.name Calculate Message Authentication Code scenario testing
-         * @tc.desc The mac object was not initialized, and the data is "Mac test data"
-         * was passed in as a Callback to be called
-         * @tc.desc Call it as a promise without passing in parameters
-         * @tc.desc Pass in an exception parameter null and call it as a Callback
-         * @tc.desc Pass in two exception parameters "Mac test data" and "Mac test data"
-         * and call them as Callback
+         * @tc.desc   Pass in two exception parameters "Mac test data" and "Mac test data"
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("Security_CryptoFramework_HMACSM3_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let globalText = "Mac test data";
@@ -483,9 +515,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HMACSM3_Func_1000
      * @tc.number Security_CryptoFramework_HMACSM3_Func_1000
-     * @tc.name Obtain the calculate message authentication code algorithm name
-     * @tc.desc the asyAlgoName is "SM3", Use the async Style of Interface
+     * @tc.desc   the asyAlgoName is "SM3", Use the async Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HMACSM3_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {

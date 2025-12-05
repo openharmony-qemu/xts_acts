@@ -50,14 +50,14 @@ export default function webViewControllerPart3Test() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RESTOREWEBSTATE_0100
-    * @tc.name       : testRestoreWebStateStatic001
-    * @tc.desc       : test restoreWebState
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testRestoreWebStateStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RESTOREWEBSTATE_0100
+     * @tc.desc   test restoreWebState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRestoreWebStateStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       await Utils.msSleep(2000);
@@ -70,6 +70,14 @@ export default function webViewControllerPart3Test() {
       done();
     })
 
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage', 10);

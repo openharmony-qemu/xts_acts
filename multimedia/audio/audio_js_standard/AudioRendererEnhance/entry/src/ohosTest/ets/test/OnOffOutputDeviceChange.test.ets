@@ -132,12 +132,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0100
-     * @tc.name      : AudioRenderer -on "struct" - promise
-     * @tc.desc      : AudioRenderer - on "struct" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0100
+     * @tc.desc   AudioRenderer - on "struct" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -164,12 +164,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0200
-     * @tc.name      : AudioRenderer -on "struct" - promise
-     * @tc.desc      : AudioRenderer - on "struct" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0200
+     * @tc.desc   AudioRenderer - on "struct" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -196,12 +196,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0300
-     * @tc.name      : AudioRenderer -on "struct" - promise
-     * @tc.desc      : AudioRenderer - on "struct" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0300
+     * @tc.desc   AudioRenderer - on "struct" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_ON_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -229,12 +229,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0100
-     * @tc.name      : AudioRenderer -on "struct" - promise
-     * @tc.desc      : AudioRenderer - on "struct" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0100
+     * @tc.desc   AudioRenderer - on "struct" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -262,12 +262,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0200
-     * @tc.name      : AudioRenderer -on "struct" - promise
-     * @tc.desc      : AudioRenderer - on "struct" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0200
+     * @tc.desc   AudioRenderer - on "struct" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -295,12 +295,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0300
-     * @tc.name      : AudioRenderer -off "struct" - promise
-     * @tc.desc      : AudioRenderer - off "struct" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0300
+     * @tc.desc   AudioRenderer - off "struct" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_OFF_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

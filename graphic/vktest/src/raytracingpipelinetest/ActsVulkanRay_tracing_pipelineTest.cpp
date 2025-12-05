@@ -39,6 +39,14 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanRay_tracing_pipelineTestCase
+     * @tc.number TestVulkanRay_tracing_pipelineTestCase
+     * @tc.desc   TestVulkanRay_tracing_pipelineTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanRay_tracing_pipelineTest, TestVulkanRay_tracing_pipelineTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanRaytracingpipelineTest------\n");

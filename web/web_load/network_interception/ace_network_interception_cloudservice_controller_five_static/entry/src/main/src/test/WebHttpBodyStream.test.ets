@@ -35,13 +35,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       console.info('web beforeEach start');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_getSize_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getSize
-     *@tc.desc test getSize
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getSize
+     * @tc.number SUB_ACE_WEB_getSize_API_0001
+     * @tc.desc   test getSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_getSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -52,13 +52,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       await Utils.msSleep(4000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_getPosition_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getPosition
-     *@tc.desc test getPosition
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getPosition
+     * @tc.number SUB_ACE_WEB_getPosition_API_0001
+     * @tc.desc   test getPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_getPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewSdkSchemeHandler_getPosition', 10);
@@ -68,13 +68,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       await Utils.msSleep(4000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_isChunked_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_isChunked
-     *@tc.desc test isChunked
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isChunked
+     * @tc.number SUB_ACE_WEB_isChunked_API_0001
+     * @tc.desc   test isChunked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_isChunked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewSdkSchemeHandler_isChunked', 10);
@@ -84,13 +84,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       await Utils.msSleep(4000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_isOF_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_isOF
-     *@tc.desc test isOF
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isOF
+     * @tc.number SUB_ACE_WEB_isOF_API_0001
+     * @tc.desc   test isOF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_isOF', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewSdkSchemeHandler_isOF', 10);
@@ -100,13 +100,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       await Utils.msSleep(4000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_isInMemory_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_isInMemory
-     *@tc.desc test isInMemory
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isInMemory
+     * @tc.number SUB_ACE_WEB_isInMemory_API_0001
+     * @tc.desc   test isInMemory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_isInMemory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewSdkSchemeHandler_isInMemory', 10);

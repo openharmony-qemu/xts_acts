@@ -83,7 +83,6 @@ export default function RdbStoreDataChangeTest() {
         console.info(TAG + "*************Unit Test Begin*************");
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0100
          * @tc.desc   1. Register callback for local database
@@ -143,7 +142,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0200
          * @tc.desc   1. Register callback for local database
@@ -203,7 +201,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0300
          * @tc.desc   1. Register callback for local database
@@ -258,7 +255,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0400
          * @tc.desc   1. Register callback for local database
@@ -324,7 +320,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0500
          * @tc.desc   1. Register callback for local database
@@ -386,7 +381,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0600
          * @tc.desc   1. Register callback for local database
@@ -434,7 +428,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0700
          * @tc.desc   1.Register callback for local database, event is invalid
@@ -457,7 +450,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0800
          * @tc.desc   1.Register callback for local database, SubscribeType is invalid
@@ -481,7 +473,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0900
          * @tc.desc   1.Register callback for local database, SubscribeType is null
@@ -504,7 +495,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1000
          * @tc.desc   1.Register callback for local database, SubscribeType is undefined
@@ -527,7 +517,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1100
          * @tc.desc   1.unRegister callback for local database, event is invalid
@@ -550,7 +539,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1200
          * @tc.desc   1.unRegister callback for local database, SubscribeType is invalid
@@ -574,7 +562,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1300
          * @tc.desc   1.unRegister callback for local database, SubscribeType is null
@@ -597,7 +584,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1400
          * @tc.desc   1.unRegister callback for local database, SubscribeType is undefined
@@ -620,7 +606,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1500
          * @tc.desc   1. Register observer1 and observer2 for local database
@@ -690,7 +675,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1600
          * @tc.desc   1. Register observer1 and observer2 for local database
@@ -758,7 +742,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1700
          * @tc.desc   1. Register observer1 and observer2 for local database
@@ -820,7 +803,6 @@ export default function RdbStoreDataChangeTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1800
          * @tc.desc   1. Register observer1 and observer2 for local database
@@ -880,7 +862,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange1900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1900
          * @tc.desc   1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_REMOTE
@@ -938,7 +919,6 @@ export default function RdbStoreDataChangeTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange2000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_2000
          * @tc.desc   1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_CLOUD
@@ -993,7 +973,6 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreDataChange2100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_2100
          * @tc.desc   1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_CLOUD_DETAILS

@@ -100,13 +100,13 @@ void DrawingNativeGpuContextTest::TearDown()
     eglDisplay_ = EGL_NO_DISPLAY;
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0100
- * @tc.name: testGpuContextCreateFromGLDestroyNormal
- * @tc.desc: Test for creating and destroying GPU context with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testGpuContextCreateFromGLDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0100
+ * @tc.desc   Test for creating and destroying GPU context with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeGpuContextTest, testGpuContextCreateFromGLDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_GpuContextOptions options;
@@ -116,13 +116,13 @@ HWTEST_F(DrawingNativeGpuContextTest, testGpuContextCreateFromGLDestroyNormal, F
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0101
- * @tc.name: testGpuContextDestroyNULL
- * @tc.desc: Test for destroying GPU context with NULL parameter.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testGpuContextDestroyNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0101
+ * @tc.desc   Test for destroying GPU context with NULL parameter.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeGpuContextTest, testGpuContextDestroyNULL, Function | SmallTest | Level3) {
     OH_Drawing_GpuContextDestroy(nullptr);
@@ -130,13 +130,13 @@ HWTEST_F(DrawingNativeGpuContextTest, testGpuContextDestroyNULL, Function | Smal
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0102
- * @tc.name: testGpuContextCreateFromGLDestroyMultipleCalls
- * @tc.desc: Test for repeatedly creating and destroying GPU context.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testGpuContextCreateFromGLDestroyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0102
+ * @tc.desc   Test for repeatedly creating and destroying GPU context.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeGpuContextTest, testGpuContextCreateFromGLDestroyMultipleCalls, Function | SmallTest | Level3) {
     for (int i = 0; i < 10; i++) {
@@ -148,13 +148,13 @@ HWTEST_F(DrawingNativeGpuContextTest, testGpuContextCreateFromGLDestroyMultipleC
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0200
- * @tc.name: testGpuContextCreateNormal
- * @tc.desc: Test for creating GPU context with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testGpuContextCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0200
+ * @tc.desc   Test for creating GPU context with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeGpuContextTest, testGpuContextCreateNormal, Function | SmallTest | Level0) {
 

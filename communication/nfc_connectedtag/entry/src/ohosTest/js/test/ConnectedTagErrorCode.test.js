@@ -41,7 +41,6 @@ export default function ConnectedTagErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0100
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0100
          * @tc.desc   Test initialize connectedTag errorcode 201/801
@@ -75,7 +74,6 @@ export default function ConnectedTagErrorTest() {
             done();
         })
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0200
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0200
          * @tc.desc   Test uninitialize connectedTag errorcode 201/801
@@ -107,7 +105,6 @@ export default function ConnectedTagErrorTest() {
             done();
         })
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0300
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0300
          * @tc.desc   Reads the content of the active tag.
@@ -143,7 +140,6 @@ export default function ConnectedTagErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0400
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0400
          * @tc.desc   Write Content to Active Tags
@@ -188,7 +184,6 @@ export default function ConnectedTagErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0500
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0500
          * @tc.desc   Write Content to Active Tags
@@ -225,7 +220,6 @@ export default function ConnectedTagErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0600
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0600
          * @tc.desc   Write Content to Active Tags
@@ -271,7 +265,6 @@ export default function ConnectedTagErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0700
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0700
          * @tc.desc   Write Content to Active Tags
@@ -324,7 +317,6 @@ export default function ConnectedTagErrorTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:44
           * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0800
           * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0800
           * @tc.desc   Initializes the active label chip.
@@ -377,7 +369,6 @@ export default function ConnectedTagErrorTest() {
             done();
         })
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0900
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0900
          * @tc.desc   Init return false.
@@ -401,7 +392,6 @@ export default function ConnectedTagErrorTest() {
             done();
         })
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_1000
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_1000
          * @tc.desc   Initializes the active label chip.

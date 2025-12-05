@@ -58,14 +58,14 @@ export default function ActsWebKeyBoardAvoidModeTest() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBKEYBOARDAVOIDMODE_0100
-    * @tc.name       : testWebKeyBoardAvoidMode01
-    * @tc.desc       : WebKeyBoardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebKeyBoardAvoidMode01
+     * @tc.number SUB_WEB_WEBKEYBOARDAVOIDMODE_0100
+     * @tc.desc   WebKeyBoardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebKeyBoardAvoidMode01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="emitWebKeyBoardAvoidMode01";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);

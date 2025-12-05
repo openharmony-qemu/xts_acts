@@ -164,7 +164,6 @@ export default function rdbStoreSendableTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreSendable0001
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0100
      * @tc.desc   Normal test case of sendableRelationalStore
@@ -191,7 +190,6 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreSendable0002
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0200
      * @tc.desc   Normal test case of sendableRelationalStore
@@ -267,7 +265,6 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreSendable0003
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0300
      * @tc.desc   Normal test case of sendableRelationalStore
@@ -337,7 +334,6 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreSendable0004
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0400
      * @tc.desc   Normal test case of sendableRelationalStore
@@ -402,7 +398,6 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreSendable0005
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0500
      * @tc.desc   Normal test case of sendableRelationalStore
@@ -472,7 +467,6 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreSendable0006
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0600
      * @tc.desc   Normal test case of sendableRelationalStore
@@ -495,7 +489,6 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreSendable0007
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0700
      * @tc.desc   Normal test case of sendableRelationalStore
@@ -517,7 +510,6 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreSendable0008
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0800
      * @tc.desc   Normal test case of sendableRelationalStore

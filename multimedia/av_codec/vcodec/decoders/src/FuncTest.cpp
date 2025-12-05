@@ -66,29 +66,25 @@ constexpr uint32_t FRAMESIZE98 = 98;
 void DecFuncNdkTest::SetUpTestCase()
 {
     g_capVc1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    if (g_capVc1 == nullptr) {
-        return;
+    if (g_capVc1 != nullptr) {
+        g_codecNameVc1 = OH_AVCapability_GetName(g_capVc1);
+        cout << "g_codecNameVc1: " << g_codecNameVc1 << endl;
     }
-    g_codecNameVc1 = OH_AVCapability_GetName(g_capVc1);
-    cout << "g_codecNameVc1: " << g_codecNameVc1 << endl;
     g_capMjpeg = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MJPEG, false, SOFTWARE);
-    if (g_capMjpeg == nullptr) {
-        return;
+    if (g_capMjpeg != nullptr) {
+        g_codecNameMjpeg = OH_AVCapability_GetName(g_capMjpeg);
+        cout << "g_codecNameMjpeg: " << g_codecNameMjpeg << endl;
     }
-    g_codecNameMjpeg = OH_AVCapability_GetName(g_capMjpeg);
-    cout << "g_codecNameMjpeg: " << g_codecNameMjpeg << endl;
     g_capMsvideo1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MSVIDEO1, false, SOFTWARE);
-    if (g_capMsvideo1 == nullptr) {
-        return;
+    if (g_capMsvideo1 != nullptr) {
+        g_codecNameMsvideo1 = OH_AVCapability_GetName(g_capMsvideo1);
+        cout << "g_codecNameMsvideo1: " << g_codecNameMsvideo1 << endl;
     }
-    g_codecNameMsvideo1 = OH_AVCapability_GetName(g_capMsvideo1);
-    cout << "g_codecNameMsvideo1: " << g_codecNameMsvideo1 << endl;
     g_capWmv3 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false, SOFTWARE);
-    if (g_capWmv3 == nullptr) {
-        return;
+    if (g_capWmv3 != nullptr) {
+        g_codecNameWmv3 = OH_AVCapability_GetName(g_capWmv3);
+        cout << "g_codecNameWmv3: " << g_codecNameWmv3 << endl;
     }
-    g_codecNameWmv3 = OH_AVCapability_GetName(g_capWmv3);
-    cout << "g_codecNameWmv3: " << g_codecNameWmv3 << endl;
 }
 
 void DecFuncNdkTest::TearDownTestCase() {}
@@ -99,9 +95,12 @@ void DecFuncNdkTest::TearDown() {}
 
 namespace {
 /**
- * @tc.number    : VIDEO_VC1DEC_FUNCTION_0001
- * @tc.name      : VIDEO_VC1DEC_FUNCTION_0001
- * @tc.desc      : function test
+ * @tc.name   VIDEO_VC1DEC_FUNCTION_0001
+ * @tc.number VIDEO_VC1DEC_FUNCTION_0001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0001, TestSize.Level0)
 {
@@ -121,9 +120,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0001, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_FUNCTION_0002
- * @tc.name      : VIDEO_VC1DEC_FUNCTION_0002
- * @tc.desc      : function test
+ * @tc.name   VIDEO_VC1DEC_FUNCTION_0002
+ * @tc.number VIDEO_VC1DEC_FUNCTION_0002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0002, TestSize.Level0)
 {
@@ -141,9 +143,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0002, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_MJPEGDEC_FUNCTION_0003
- * @tc.name      : VIDEO_MJPEGDEC_FUNCTION_0003
- * @tc.desc      : function test
+ * @tc.name   VIDEO_MJPEGDEC_FUNCTION_0003
+ * @tc.number VIDEO_MJPEGDEC_FUNCTION_0003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0003, TestSize.Level0)
 {
@@ -163,9 +168,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0003, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_MJPEGDEC_FUNCTION_0004
- * @tc.name      : VIDEO_MJPEGDEC_FUNCTION_0004
- * @tc.desc      : function test
+ * @tc.name   VIDEO_MJPEGDEC_FUNCTION_0004
+ * @tc.number VIDEO_MJPEGDEC_FUNCTION_0004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0004, TestSize.Level0)
 {
@@ -183,9 +191,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0004, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_FUNCTION_0005
- * @tc.name      : VIDEO_MSVIDEO1DEC_FUNCTION_0005
- * @tc.desc      : function test
+ * @tc.name   VIDEO_MSVIDEO1DEC_FUNCTION_0005
+ * @tc.number VIDEO_MSVIDEO1DEC_FUNCTION_0005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0005, TestSize.Level0)
 {
@@ -205,9 +216,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0005, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_FUNCTION_0006
- * @tc.name      : VIDEO_MSVIDEO1DEC_FUNCTION_0006
- * @tc.desc      : function test
+ * @tc.name   VIDEO_MSVIDEO1DEC_FUNCTION_0006
+ * @tc.number VIDEO_MSVIDEO1DEC_FUNCTION_0006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0006, TestSize.Level0)
 {

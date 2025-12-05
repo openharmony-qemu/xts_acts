@@ -42,10 +42,13 @@ export default function webJsunit() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_029                                                                                                                                                                     
-     *tc.name StoreWebArchive                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   StoreWebArchive
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_029
+     * @tc.desc   StoreWebArchive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StoreWebArchive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitStoreWebArchive", 131970)

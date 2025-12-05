@@ -39,7 +39,6 @@ export default function UsbSceneEtsTest() {
     })
   
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0900
      * @tc.desc   connectDevice Interface testing

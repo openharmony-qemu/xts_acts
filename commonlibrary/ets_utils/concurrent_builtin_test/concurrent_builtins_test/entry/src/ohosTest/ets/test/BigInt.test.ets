@@ -51,12 +51,12 @@ export default function BigIntTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_0100
-     * @tc.name      : testBigIntAsIntN0001
-     * @tc.desc      : Test 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntAsIntN0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntAsIntN0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -85,12 +85,12 @@ export default function BigIntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_0200
-     * @tc.name      : testBigIntPrototypeToString0002
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntPrototypeToString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntPrototypeToString0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

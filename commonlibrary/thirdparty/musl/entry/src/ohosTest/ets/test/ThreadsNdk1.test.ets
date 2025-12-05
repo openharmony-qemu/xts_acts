@@ -25,12 +25,12 @@ export default function threadsNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_CALL_ONCE_0100
-     * @tc.name       : testMuslThreadsCallOnce001
-     * @tc.desc       : test call_once
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsCallOnce001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_CALL_ONCE_0100
+     * @tc.desc   test call_once
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsCallOnce001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.callOnce()).assertEqual(1);
@@ -38,12 +38,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_CND_BROADCAST_0100
-     * @tc.name       : testMuslThreadsCndBroadcast001
-     * @tc.desc       : test cnd_broadcast
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsCndBroadcast001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_CND_BROADCAST_0100
+     * @tc.desc   test cnd_broadcast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsCndBroadcast001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.cnd_broadcast()).assertEqual(0);
@@ -51,12 +51,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_CND_DESTROY_0100
-     * @tc.name       : testMuslThreadsCndDestroy001
-     * @tc.desc       : test cnd_destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsCndDestroy001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_CND_DESTROY_0100
+     * @tc.desc   test cnd_destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsCndDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.cnd_destroy()).assertEqual(0);
@@ -64,12 +64,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_CND_INIT_0100
-     * @tc.name       : testMuslThreadsCndInit001
-     * @tc.desc       : test cnd_init
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsCndInit001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_CND_INIT_0100
+     * @tc.desc   test cnd_init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsCndInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.cnd_init()).assertEqual(0);
@@ -77,12 +77,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_CND_SIGNAL_0100
-     * @tc.name       : testMuslThreadsCndSignal001
-     * @tc.desc       : test cnd_signal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsCndSignal001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_CND_SIGNAL_0100
+     * @tc.desc   test cnd_signal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsCndSignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.cnd_signal_One()).assertEqual(0);
@@ -90,12 +90,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_CND_SIGNAL_0200
-     * @tc.name       : testMuslThreadsCndSignal002
-     * @tc.desc       : test cnd_signal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsCndSignal002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_CND_SIGNAL_0200
+     * @tc.desc   test cnd_signal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsCndSignal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.cnd_signal_Two()).assertEqual(0);
@@ -103,12 +103,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXDESTORY_0100
-     * @tc.name       : testMuslThreadsMtxDestroy001
-     * @tc.desc       : test mtx_destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxDestroy001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXDESTORY_0100
+     * @tc.desc   test mtx_destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxDestroy()).assertEqual(0);
@@ -116,12 +116,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXINIT_0100
-     * @tc.name       : testMuslThreadsMtxInit001
-     * @tc.desc       : test mtx_init
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxInit001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXINIT_0100
+     * @tc.desc   test mtx_init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxInit_One()).assertEqual(0);
@@ -129,12 +129,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXINIT_0200
-     * @tc.name       : testMuslThreadsMtxInit002
-     * @tc.desc       : test mtx_init
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxInit002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXINIT_0200
+     * @tc.desc   test mtx_init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxInit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxInit_Two()).assertEqual(0);
@@ -142,12 +142,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXINIT_0300
-     * @tc.name       : testMuslThreadsMtxInit003
-     * @tc.desc       : test mtx_init
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxInit003
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXINIT_0300
+     * @tc.desc   test mtx_init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxInit003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxInit_Three()).assertEqual(0);
@@ -155,12 +155,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXINIT_0400
-     * @tc.name       : testMuslThreadsMtxInit004
-     * @tc.desc       : test mtx_init
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxInit004
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXINIT_0400
+     * @tc.desc   test mtx_init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxInit004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxInit_Four()).assertEqual(0);
@@ -168,12 +168,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXLOCK_0100
-     * @tc.name       : testMuslThreadsMtxLock001
-     * @tc.desc       : test mtx_lock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxLock001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXLOCK_0100
+     * @tc.desc   test mtx_lock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxLock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxLock_One()).assertEqual(0);
@@ -181,12 +181,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXLOCK_0200
-     * @tc.name       : testMuslThreadsMtxLock002
-     * @tc.desc       : test mtx_lock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxLock002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXLOCK_0200
+     * @tc.desc   test mtx_lock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxLock002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxLock_Two()).assertEqual(0);
@@ -194,12 +194,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXLOCK_0300
-     * @tc.name       : testMuslThreadsMtxLock003
-     * @tc.desc       : test mtx_lock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxLock003
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXLOCK_0300
+     * @tc.desc   test mtx_lock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxLock003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxLock_Three()).assertEqual(0);
@@ -207,12 +207,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXLOCK_0400
-     * @tc.name       : testMuslThreadsMtxLock004
-     * @tc.desc       : test mtx_lock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxLock004
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXLOCK_0400
+     * @tc.desc   test mtx_lock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxLock004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxLock_Four()).assertEqual(0);
@@ -220,12 +220,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXTIMEDLOCK_0100
-     * @tc.name       : testMuslThreadsMtxTimedLock001
-     * @tc.desc       : test mtx_timedlock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxTimedLock001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXTIMEDLOCK_0100
+     * @tc.desc   test mtx_timedlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxTimedLock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxTimedLock_One()).assertEqual(0);
@@ -233,12 +233,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXTIMEDLOCK_0200
-     * @tc.name       : testMuslThreadsMtxTimedLock002
-     * @tc.desc       : test mtx_timedlock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxTimedLock002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXTIMEDLOCK_0200
+     * @tc.desc   test mtx_timedlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxTimedLock002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxTimedLock_Two()).assertEqual(4);
@@ -246,12 +246,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXTRYLOCK_0100
-     * @tc.name       : testMuslThreadsMtxTryLock001
-     * @tc.desc       : test mtx_trylock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxTryLock001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXTRYLOCK_0100
+     * @tc.desc   test mtx_trylock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxTryLock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxTryLock_One()).assertEqual(0);
@@ -259,12 +259,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXTRYLOCK_0200
-     * @tc.name       : testMuslThreadsMtxTryLock002
-     * @tc.desc       : test mtx_trylock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxTryLock002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXTRYLOCK_0200
+     * @tc.desc   test mtx_trylock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxTryLock002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxTryLock_Two()).assertEqual(1);
@@ -272,12 +272,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXUNLOCK_0100
-     * @tc.name       : testMuslThreadsMtxUnLock001
-     * @tc.desc       : test mtx_unlock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxUnLock001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXUNLOCK_0100
+     * @tc.desc   test mtx_unlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxUnLock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxUnlock_One()).assertEqual(0);
@@ -285,12 +285,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_MTXUNLOCK_0200
-     * @tc.name       : testMuslThreadsMtxUnLock002
-     * @tc.desc       : test mtx_unlock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsMtxUnLock002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_MTXUNLOCK_0200
+     * @tc.desc   test mtx_unlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsMtxUnLock002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.mtxUnlock_Two()).assertEqual(0);
@@ -298,12 +298,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_CREATE_0100
-     * @tc.name       : testMuslThreadsThrdCreate001
-     * @tc.desc       : test thrd_create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdCreate001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_CREATE_0100
+     * @tc.desc   test thrd_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_create()).assertEqual(0);
@@ -311,12 +311,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_CURRENT_0100
-     * @tc.name       : testMuslThreadsThrdCurrent001
-     * @tc.desc       : test thrd_current
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdCurrent001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_CURRENT_0100
+     * @tc.desc   test thrd_current
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdCurrent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_current()).assertEqual(1);
@@ -324,12 +324,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_DETACH_0100
-     * @tc.name       : testMuslThreadsThrdDetach001
-     * @tc.desc       : test thrd_detach
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdDetach001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_DETACH_0100
+     * @tc.desc   test thrd_detach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdDetach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_detach_One()).assertEqual(0);
@@ -337,12 +337,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_DETACH_0200
-     * @tc.name       : testMuslThreadsThrdDetach002
-     * @tc.desc       : test thrd_detach
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdDetach002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_DETACH_0200
+     * @tc.desc   test thrd_detach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdDetach002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_detach_Two()).assertEqual(0);
@@ -350,12 +350,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_EQUAL_0100
-     * @tc.name       : testMuslThreadsThrdEqual001
-     * @tc.desc       : test thrd_equal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdEqual001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_EQUAL_0100
+     * @tc.desc   test thrd_equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdEqual001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_equal_One()).assertEqual(1);
@@ -363,12 +363,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_EQUAL_0200
-     * @tc.name       : testMuslThreadsThrdEqual002
-     * @tc.desc       : test thrd_equal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdEqual002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_EQUAL_0200
+     * @tc.desc   test thrd_equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdEqual002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_equal_Two()).assertEqual(0);
@@ -376,12 +376,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_EXIT_0100
-     * @tc.name       : testMuslThreadsThrdExit001
-     * @tc.desc       : test thrd_exit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdExit001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_EXIT_0100
+     * @tc.desc   test thrd_exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdExit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_exit()).assertEqual(0);
@@ -389,12 +389,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_JOIN_0100
-     * @tc.name       : testMuslThreadsThrdJoin001
-     * @tc.desc       : test thrd_join
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdJoin001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_JOIN_0100
+     * @tc.desc   test thrd_join
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdJoin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_join_One()).assertEqual(0);
@@ -402,12 +402,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_JOIN_0200
-     * @tc.name       : testMuslThreadsThrdJoin002
-     * @tc.desc       : test thrd_join
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdJoin002
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_JOIN_0200
+     * @tc.desc   test thrd_join
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdJoin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_join_Two()).assertEqual(0);
@@ -415,12 +415,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_SLEEP_0100
-     * @tc.name       : testMuslThreadsThrdSleep001
-     * @tc.desc       : test thrd_sleep
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdSleep001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_SLEEP_0100
+     * @tc.desc   test thrd_sleep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdSleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_sleep()).assertEqual(0);
@@ -428,12 +428,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_THRD_YIELD_0100
-     * @tc.name       : testMuslThreadsThrdYield001
-     * @tc.desc       : test thrd_yield
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsThrdYield001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_THRD_YIELD_0100
+     * @tc.desc   test thrd_yield
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsThrdYield001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.thrd_yield()).assertEqual(0);
@@ -441,12 +441,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_TSS_CREATE_0100
-     * @tc.name       : testMuslThreadsTssCreate001
-     * @tc.desc       : test tss_create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsTssCreate001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_TSS_CREATE_0100
+     * @tc.desc   test tss_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsTssCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.tss_create()).assertEqual(0);
@@ -454,12 +454,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_TSS_DELETE_0100
-     * @tc.name       : testMuslThreadsTssDelete001
-     * @tc.desc       : test tss_delete
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsTssDelete001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_TSS_DELETE_0100
+     * @tc.desc   test tss_delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsTssDelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.tss_delete()).assertEqual(0);
@@ -467,12 +467,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_TSS_GET_0100
-     * @tc.name       : testMuslThreadsTssGet001
-     * @tc.desc       : test tss_get
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsTssGet001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_TSS_GET_0100
+     * @tc.desc   test tss_get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsTssGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.tss_get()).assertEqual(0);
@@ -480,12 +480,12 @@ export default function threadsNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_TSS_SET_0100
-     * @tc.name       : testMuslThreadsTssSet001
-     * @tc.desc       : test tss_set
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslThreadsTssSet001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_TSS_SET_0100
+     * @tc.desc   test tss_set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsTssSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.tss_set()).assertEqual(0);

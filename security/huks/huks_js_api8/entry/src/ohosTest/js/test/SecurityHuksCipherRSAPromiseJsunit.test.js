@@ -124,6 +124,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             };
             resetOptions();
         });
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256NewKeyAlias101';
@@ -161,6 +169,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_102
+         * @tc.number Security_HUKS_Cipher_API8_RSA_102
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256NewKeyAlias101';
@@ -186,6 +202,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256KeyAlias103';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256NewKeyAlias103';
@@ -223,6 +247,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_104
+         * @tc.number Security_HUKS_Cipher_API8_RSA_104
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256KeyAlias104';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256NewKeyAlias104';
@@ -248,6 +280,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1015
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1015
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1015
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1015';
             HuksOptions.properties.splice(1, 0, HuksCipherRSA.HuksKeyPurposeENCRYPT);
@@ -257,6 +297,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1016
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1016
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1016
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             HuksOptions.properties.splice(1, 0, HuksCipherRSA.HuksKeyPurposeENCRYPT);
             await publicUpdateFunc(HuksOptions, -13);
@@ -264,18 +312,42 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1017
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1017
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1017
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             HuksOptions.properties.splice(1, 0, HuksCipherRSA.HuksKeyPurposeENCRYPT);
             await publicFinishAbortFunc(HuksOptions, 'finish', true, -13);
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1018
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1018
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1018
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             HuksOptions.properties.splice(1, 0, HuksCipherRSA.HuksKeyPurposeENCRYPT);
             await publicFinishAbortFunc(HuksOptions, 'abort', true, 0);
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1019
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1019
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1019
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1019';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1019';
@@ -298,6 +370,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1020
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1020
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1020
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1020';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1020';
@@ -317,6 +397,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1021
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1021
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1021
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1021';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1021';
@@ -333,6 +421,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1022
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1022
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1022
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1022';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1022';
@@ -350,6 +446,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1023
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1023
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1023
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1023';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1023';
@@ -367,6 +471,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1024
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1024
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1024
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1024';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1024';
@@ -384,6 +496,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1025
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1025
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1025
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1025';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1025';
@@ -400,6 +520,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1026
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1026
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1026
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1026';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1026';
@@ -417,6 +545,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1027
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1027
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1027
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1027';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1027';
@@ -434,6 +570,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1028
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1028
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1028
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1028';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1028';
@@ -451,6 +595,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1029
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1029
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1029
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1029';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1029';
@@ -466,6 +618,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1030
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1030
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1030
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1030';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1030';
@@ -481,6 +641,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1031
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1031
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1031
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1031';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1031';
@@ -497,6 +665,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1032
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1032
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1032
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1032';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1032';
@@ -513,6 +689,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1033
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1033
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1033
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1033';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1033';
@@ -529,6 +713,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1034
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1034
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1034
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1034';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1034';
@@ -545,6 +737,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1035
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1035
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1035
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1035';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1035';
@@ -565,6 +765,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1036
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1036
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1036
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1036';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1036';
@@ -585,6 +793,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1037
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1037
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1037
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1037';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1037';
@@ -606,6 +822,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1038
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1038
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1038
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1038';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1038';
@@ -623,6 +847,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1039
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1039
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1039
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1039';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1039';
@@ -639,6 +871,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1040
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1040
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1040
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1040';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1040';
@@ -654,6 +894,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1041
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1041
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1041
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1041';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1041';
@@ -668,6 +916,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1042
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1042
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1042
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1042';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1042';
@@ -682,6 +938,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1043
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1043
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1043
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1043';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1043';
@@ -698,6 +962,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1044
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1044
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1044
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1044';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1044';
@@ -715,6 +987,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1045
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1045
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1045
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1045';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1045';
@@ -730,6 +1010,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1046
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1046
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1046
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1046';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1046';
@@ -746,6 +1034,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1047
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1047
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1047
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1047';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1047';
@@ -762,6 +1058,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1048
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1048
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1048
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1048';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1048';
@@ -779,6 +1083,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1049
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1049
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1049
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1049';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1049';
@@ -795,6 +1107,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1050
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1050
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1050
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1050';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1050';
@@ -812,6 +1132,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1051
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1051
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1051
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1051';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1051';
@@ -829,6 +1157,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1052
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1052
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1052
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1052';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1052';
@@ -846,6 +1182,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1053
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1053
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1053
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1053';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1053';
@@ -860,6 +1204,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1054
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1054
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1054
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1054';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1054';
@@ -875,6 +1227,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1055
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1055
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1055
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1055';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1055';
@@ -890,6 +1250,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1056
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1056
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1056
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1056';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1056';
@@ -906,6 +1274,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1057
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1057
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1057
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1057';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1057';
@@ -921,6 +1297,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1058
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1058
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1058
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1058';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1058';
@@ -937,6 +1321,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1059
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1059
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1059
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1059';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1059';
@@ -954,6 +1346,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1060
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1060
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1060
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1060';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1060';
@@ -972,6 +1372,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1061
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1061
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1061
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1061';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1061';
@@ -990,6 +1398,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_abnormal_1062
+         * @tc.number Security_HUKS_Cipher_API8_abnormal_1062
+         * @tc.desc   Security_HUKS_Cipher_API8_abnormal_1062
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_abnormal_1062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_abnormal_1062';
             const newSrcKeyAlias = 'security_huks_third_abnormal_cipher_new_1062';
@@ -1006,6 +1422,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGNONESHA256NewKeyAlias101';
@@ -1032,6 +1456,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_102
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_102
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGNONESHA256NewKeyAlias101';
@@ -1050,6 +1482,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGNONESHA256NewKeyAlias101';
@@ -1076,6 +1516,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_104
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_104
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGNONESHA256_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGNONESHA256NewKeyAlias101';
@@ -1094,6 +1542,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGPKCS1_V1_5SHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGPKCS1_V1_5SHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGPKCS1_V1_5SHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGPKCS1_V1_5SHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -1120,6 +1576,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGPKCS1_V1_5SHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGPKCS1_V1_5SHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGPKCS1_V1_5SHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGPKCS1_V1_5SHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -1146,6 +1610,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA1_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA1_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA1_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA1_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGOAEPSHA1NewKeyAlias101';
@@ -1172,6 +1644,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA1_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA1_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGOAEPSHA1NewKeyAlias101';
@@ -1198,6 +1678,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA224_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA224_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA224_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA224_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGOAEPSHA224NewKeyAlias101';
@@ -1224,6 +1712,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA224_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA224_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size512PADDINGOAEPSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize512PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize512PADDINGOAEPSHA224NewKeyAlias101';
@@ -1249,6 +1745,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             }
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGNONESHA256NewKeyAlias101';
@@ -1278,6 +1782,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_102
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_102
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGNONESHA256NewKeyAlias101';
@@ -1299,6 +1811,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGNONESHA256NewKeyAlias101';
@@ -1329,6 +1849,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_104
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_104
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGNONESHA256_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGNONESHA256NewKeyAlias101';
@@ -1350,6 +1878,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGPKCS1_V1_5SHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGPKCS1_V1_5SHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGPKCS1_V1_5SHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGPKCS1_V1_5SHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -1379,6 +1915,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGPKCS1_V1_5SHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGPKCS1_V1_5SHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGPKCS1_V1_5SHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGPKCS1_V1_5SHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -1408,6 +1952,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA1_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA1_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA1_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA1_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA1NewKeyAlias101';
@@ -1437,6 +1989,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA1_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA1_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA1NewKeyAlias101';
@@ -1466,6 +2026,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA224_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA224_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA224_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA224_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA224NewKeyAlias101';
@@ -1495,6 +2063,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA224_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA224_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA224NewKeyAlias101';
@@ -1524,6 +2100,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA256NewKeyAlias101';
@@ -1553,6 +2137,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size768PADDINGOAEPSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize768PADDINGOAEPSHA256NewKeyAlias101';
@@ -1582,6 +2174,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGNONESHA256NewKeyAlias101';
@@ -1611,6 +2211,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_102
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_102
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGNONESHA256NewKeyAlias101';
@@ -1632,6 +2240,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGNONESHA256NewKeyAlias101';
@@ -1661,6 +2277,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_104
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_104
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGNONESHA256_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGNONESHA256NewKeyAlias101';
@@ -1678,6 +2302,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGPKCS1_V1_5SHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGPKCS1_V1_5SHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGPKCS1_V1_5SHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGPKCS1_V1_5SHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -1707,6 +2339,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGPKCS1_V1_5SHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGPKCS1_V1_5SHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGPKCS1_V1_5SHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGPKCS1_V1_5SHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -1736,6 +2376,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA1_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA1_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA1_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA1_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA1NewKeyAlias101';
@@ -1765,6 +2413,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA1_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA1_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA1NewKeyAlias101';
@@ -1794,6 +2450,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA224_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA224_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA224_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA224_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA224NewKeyAlias101';
@@ -1823,6 +2487,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA224_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA224_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA224NewKeyAlias101';
@@ -1852,6 +2524,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA256NewKeyAlias101';
@@ -1881,6 +2561,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size1024PADDINGOAEPSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize1024PADDINGOAEPSHA256NewKeyAlias101';
@@ -1910,6 +2598,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGNONESHA256NewKeyAlias101';
@@ -1937,6 +2633,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_102
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_102
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGNONESHA256NewKeyAlias101';
@@ -1956,6 +2660,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGNONESHA256NewKeyAlias101';
@@ -1983,6 +2695,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_104
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_104
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGNONESHA256_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGNONESHA256NewKeyAlias101';
@@ -2002,6 +2722,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGPKCS1_V1_5SHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGPKCS1_V1_5SHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGPKCS1_V1_5SHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGPKCS1_V1_5SHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -2029,6 +2757,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGPKCS1_V1_5SHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGPKCS1_V1_5SHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGPKCS1_V1_5SHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGPKCS1_V1_5SHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -2056,6 +2792,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA1_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA1_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA1_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA1_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA1NewKeyAlias101';
@@ -2085,6 +2829,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA1_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA1_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA1NewKeyAlias101';
@@ -2114,6 +2866,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA224_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA224_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA224_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA224_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA224NewKeyAlias101';
@@ -2143,6 +2903,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA224_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA224_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA224NewKeyAlias101';
@@ -2172,6 +2940,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA256NewKeyAlias101';
@@ -2199,6 +2975,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA256NewKeyAlias101';
@@ -2226,6 +3010,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA384_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA384_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA384_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA384_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA384KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA384NewKeyAlias101';
@@ -2253,6 +3045,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA384_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA384_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA384_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA384_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA384KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA384NewKeyAlias101';
@@ -2280,6 +3080,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA512_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA512_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA512_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA512_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA512KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA512NewKeyAlias101';
@@ -2307,6 +3115,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA512_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA512_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA512_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size2048PADDINGOAEPSHA512_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA512KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize2048PADDINGOAEPSHA512NewKeyAlias101';
@@ -2334,6 +3150,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGNONESHA256NewKeyAlias101';
@@ -2361,6 +3185,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_102
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_102
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGNONESHA256NewKeyAlias101';
@@ -2380,6 +3212,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGNONESHA256NewKeyAlias101';
@@ -2407,6 +3247,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_104
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_104
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGNONESHA256_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGNONESHA256NewKeyAlias101';
@@ -2426,6 +3274,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGPKCS1_V1_5SHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGPKCS1_V1_5SHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGPKCS1_V1_5SHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGPKCS1_V1_5SHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -2453,6 +3309,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGPKCS1_V1_5SHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGPKCS1_V1_5SHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGPKCS1_V1_5SHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGPKCS1_V1_5SHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -2480,6 +3344,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA1_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA1_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA1_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA1_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA1NewKeyAlias101';
@@ -2509,6 +3381,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA1_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA1_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA1NewKeyAlias101';
@@ -2538,6 +3418,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA224_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA224_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA224_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA224_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA224NewKeyAlias101';
@@ -2567,6 +3455,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA224_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA224_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA224NewKeyAlias101';
@@ -2596,6 +3492,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA256NewKeyAlias101';
@@ -2623,6 +3527,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA256NewKeyAlias101';
@@ -2650,6 +3562,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA384_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA384_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA384_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA384_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA384KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA384NewKeyAlias101';
@@ -2677,6 +3597,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA384_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA384_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA384_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA384_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA384KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA384NewKeyAlias101';
@@ -2705,6 +3633,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA512_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA512_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA512_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA512_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA512KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA512NewKeyAlias101';
@@ -2732,6 +3668,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA512_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA512_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA512_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size3072PADDINGOAEPSHA512_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA512KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize3072PADDINGOAEPSHA512NewKeyAlias101';
@@ -2759,6 +3703,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256NewKeyAlias101';
@@ -2786,6 +3738,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_102
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_102
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256NewKeyAlias101';
@@ -2807,6 +3767,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256NewKeyAlias101';
@@ -2834,6 +3802,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_104
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_104
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGNONESHA256_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256KeyAlias102';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGNONESHA256NewKeyAlias101';
@@ -2853,6 +3829,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGPKCS1_V1_5SHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGPKCS1_V1_5SHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGPKCS1_V1_5SHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGPKCS1_V1_5SHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -2880,6 +3864,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGPKCS1_V1_5SHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGPKCS1_V1_5SHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGPKCS1_V1_5SHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGPKCS1_V1_5SHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGPKCS1_V1_5SHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGPKCS1_V1_5SHA256NewKeyAlias101';
@@ -2907,6 +3899,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA1_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA1_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA1_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA1_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA1NewKeyAlias101';
@@ -2936,6 +3936,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA1_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA1_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA1KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA1NewKeyAlias101';
@@ -2965,6 +3973,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA224_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA224_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA224_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA224_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA224NewKeyAlias101';
@@ -2994,6 +4010,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA224_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA224_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA224KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA224NewKeyAlias101';
@@ -3023,6 +4047,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA256_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA256_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA256_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA256_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA256NewKeyAlias101';
@@ -3050,6 +4082,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA256_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA256_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA256KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA256NewKeyAlias101';
@@ -3077,6 +4117,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA384_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA384_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA384_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA384_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA384KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA384NewKeyAlias101';
@@ -3104,6 +4152,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA384_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA384_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA384_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA384_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA384KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA384NewKeyAlias101';
@@ -3131,6 +4187,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA512_101
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA512_101
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA512_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA512_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA512KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA512NewKeyAlias101';
@@ -3158,6 +4222,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA512_103
+         * @tc.number Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA512_103
+         * @tc.desc   Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA512_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_RSA_Size4096PADDINGOAEPSHA512_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA512KeyAlias101';
             const newSrcKeyAlias = 'testCipherRSASize4096PADDINGOAEPSHA512NewKeyAlias101';
@@ -3185,6 +4257,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_errorCode_API8_1007
+         * @tc.number Security_HUKS_errorCode_API8_1007
+         * @tc.desc   Security_HUKS_errorCode_API8_1007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_errorCode_API8_1007', TestType.FUNCTION| Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'testAgreeDHKeyAlias_01_007';
             let HuksOptions1 = {
@@ -3219,6 +4299,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_errorCode_API8_1014
+         * @tc.number Security_HUKS_errorCode_API8_1014
+         * @tc.desc   Security_HUKS_errorCode_API8_1014
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_errorCode_API8_1014', TestType.FUNCTION| Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'testAgreeDHKeyAlias_01_014';
             let HuksOptions1 = {
@@ -3253,6 +4341,14 @@ export default function SecurityHuksCipherRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_errorCode_API8_1019
+         * @tc.number Security_HUKS_errorCode_API8_1019
+         * @tc.desc   Security_HUKS_errorCode_API8_1019
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_errorCode_API8_1019', TestType.FUNCTION| Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'testAgreeDHKeyAlias_01_019';
             let HuksOptions1 = {

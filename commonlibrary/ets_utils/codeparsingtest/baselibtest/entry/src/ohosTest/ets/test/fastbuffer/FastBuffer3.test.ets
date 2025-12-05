@@ -38,12 +38,12 @@ export default function ActsFastBuffer3Test() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_STRINGDECODER_0700
-     * @tc.name       : testArrayScenarios0400
-     * @tc.desc       : Test ENCODER and DOCODER.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArrayScenarios0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_STRINGDECODER_0700
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayScenarios0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testArrayScenarios0400 == ';
@@ -91,12 +91,12 @@ export default function ActsFastBuffer3Test() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_STRINGDECODER_0800
-     * @tc.name       : testArrayScenarios0500
-     * @tc.desc       : Test ENCODER and DOCODER.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArrayScenarios0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_STRINGDECODER_0800
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayScenarios0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayScenarios0500 == ';

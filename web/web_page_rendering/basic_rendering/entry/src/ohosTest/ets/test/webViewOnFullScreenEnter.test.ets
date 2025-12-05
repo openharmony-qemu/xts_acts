@@ -73,10 +73,13 @@ export default function webViewOnFullScreenEnter() {
       await Utils.sleep(2000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWFULLSCREEN_API_0100
-     *tc.name testOnFullScreenEnter
-     *tc.desc test interface of onfullscreenenter with runjavascript handleFullScreen
+    /**
+     * @tc.name   testOnFullScreenEnter
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWFULLSCREEN_API_0100
+     * @tc.desc   test interface of onfullscreenenter with runjavascript handleFullScreen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnFullScreenEnter',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       sendEventByKey('TestwebViewOnFullScreenEnter',10,'');

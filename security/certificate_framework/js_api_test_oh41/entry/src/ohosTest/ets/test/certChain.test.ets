@@ -68,12 +68,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
       // This API supports only one parameter: clear action function.
     });
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0100
      * @tc.number SUB_Security_Cert_Framework_CertChain_Func_0100
-     * @tc.name check createX509CertChain with empty param
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const param: cert.EncodingBlob = {} as cert.EncodingBlob;
@@ -88,12 +88,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0200
      * @tc.number SUB_Security_Cert_Framework_CertChain_Func_0200
-     * @tc.name check createX509CertChain with empty data
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const param: cert.EncodingBlob = {
@@ -111,12 +111,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0300
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_0300
-     * @tc.name check createX509CertChain with abnormal encodingFormat
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const param: cert.EncodingBlob = {
@@ -134,12 +134,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0400
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_0400
-     * @tc.name check createX509CertChain with normal der param
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -153,12 +153,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0500
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_0500
-     * @tc.name check createX509CertChain with abnormal der param
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -171,12 +171,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0600
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_0600
-     * @tc.name check createX509CertChain with normal pem param
-     * @tc.desc Use Callback Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Callback Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -190,12 +190,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0700
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_0700
-     * @tc.name check createX509CertChain with abnormal pem param
-     * @tc.desc Use Callback Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Callback Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -208,12 +208,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0800
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_0800
-     * @tc.name check createX509CertChain with normal pkcs7 param
-     * @tc.desc Use Callback Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Callback Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -227,12 +227,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_0900
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_0900
-     * @tc.name check createX509CertChain with abnormal pkcs7 param
-     * @tc.desc Use Callback Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Callback Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -245,12 +245,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1000
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1000
-     * @tc.name check createX509CertChain with empty param
-     * @tc.desc createX509CertChain(certs: Array<X509Cert>)
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   createX509CertChain(certs: Array<X509Cert>)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -263,12 +263,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1100
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1100
-     * @tc.name check createX509CertChain with 1 cert(not CA)
-     * @tc.desc createX509CertChain(certs: Array<X509Cert>)
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   createX509CertChain(certs: Array<X509Cert>)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const cert1 = await certChainFunc.createCustomizedX509CertPromise('PEM', 0);
@@ -283,12 +283,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1200
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1200
-     * @tc.name check createX509CertChain with 2 same cert(not CA)
-     * @tc.desc createX509CertChain(certs: Array<X509Cert>)
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   createX509CertChain(certs: Array<X509Cert>)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const cert1 = await certChainFunc.createCustomizedX509CertPromise('PEM', 0);
@@ -303,12 +303,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1300
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1300
-     * @tc.name check createX509CertChain with 2 different certs(not CA)
-     * @tc.desc createX509CertChain(certs: Array<X509Cert>)
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   createX509CertChain(certs: Array<X509Cert>)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const cert1 = await certChainFunc.createCustomizedX509CertPromise('PEM', 0);
@@ -324,12 +324,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1400
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1400
-     * @tc.name check createX509CertChain with 257 certs
-     * @tc.desc createX509CertChain(certs: Array<X509Cert>)
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   createX509CertChain(certs: Array<X509Cert>)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const cert1 = await certChainFunc.createCustomizedX509CertPromise('PEM', 0);
@@ -347,12 +347,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1500
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1500
-     * @tc.name check createX509CertChain with 3 certs(CA and entity)
-     * @tc.desc createX509CertChain(certs: Array<X509Cert>)
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   createX509CertChain(certs: Array<X509Cert>)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const cert1 = await certChainFunc.createCustomizedX509CertPromise('PEM', 0);
@@ -369,12 +369,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1600
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1600
-     * @tc.name check getCertList() with 3 certs(CA and entity)
-     * @tc.desc X509CertChain.getCertList()
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   X509CertChain.getCertList()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const cert1 = await certChainFunc.createCustomizedX509CertPromise('PEM', 0);
@@ -395,12 +395,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1700
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1700
-     * @tc.name check getCertList() with 2 same certs
-     * @tc.desc X509CertChain.getCertList()
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   X509CertChain.getCertList()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const cert1 = await certChainFunc.createCustomizedX509CertPromise('PEM', 0);
@@ -419,12 +419,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1800
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1800
-     * @tc.name check X509CertChain validate with param null
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -437,12 +437,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_1900
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_1900
-     * @tc.name check X509CertChain validate with param undefined
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -455,12 +455,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2000
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2000
-     * @tc.name check X509CertChain validate with abnormal param date, 20231224000000Z-20241223235959Z
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -480,12 +480,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2100
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2100
-     * @tc.name check X509CertChain validate with abnormal param date, 20231224000000Z-20241223235959Z
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -505,12 +505,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2200
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2200
-     * @tc.name check X509CertChain validate with abnormal param date, between lower limit, 20231224000000Z-20241223235959Z
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -530,12 +530,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2300
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2300
-     * @tc.name check X509CertChain validate with normal param date, equal to lower limit, 20231224000000Z-20241223235959Z
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -557,12 +557,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2400
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2400
-     * @tc.name check X509CertChain validate with normal param date, between the limits, 20231224000000Z-20241223235959Z
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -600,12 +600,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2500
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2500
-     * @tc.name check X509CertChain validate with abnormal param date, equal to upper limit, 20231224000000Z-20241223235959Z
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -627,12 +627,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2600
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2600
-     * @tc.name check X509CertChain validate with abnormal param date, between the limits, 20231224000000Z-20241223235959Z
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -652,12 +652,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2700
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2700
-     * @tc.name check X509CertChain validate with abnormal param date, greater than upper limit, 20231224000000Z-20241223235959Z
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -677,12 +677,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2800
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2800
-     * @tc.name check X509CertChain validate with abnormal param empty
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -699,12 +699,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_2900
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_2900
-     * @tc.name check X509CertChain validate with abnormal param with no cert and no publicKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -723,12 +723,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3000
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3000
-     * @tc.name check X509CertChain validate with normal param trustAnchors cert
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -750,12 +750,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3100
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3100
-     * @tc.name check X509CertChain validate with normal param trustAnchors parent cert
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -776,12 +776,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3200
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3200
-     * @tc.name check X509CertChain validate with normal param trustAnchors parent cert (root)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let certChain2: cert.X509CertChain = {} as cert.X509CertChain;
@@ -820,12 +820,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3300
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3300
-     * @tc.name check X509CertChain validate with abnormal param trustAnchors grandparent nodes
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let grandparentCert: cert.X509Cert = {} as cert.X509Cert;
@@ -852,12 +852,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3400
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3400
-     * @tc.name check X509CertChain validate with abnormal param trustAnchors leaf cert
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -875,12 +875,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3500
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3500
-     * @tc.name check X509CertChain validate with abnormal param trustAnchors cert not in certChain
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -898,12 +898,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3600
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3600
-     * @tc.name check X509CertChain validate with normal param trustAnchors root cert
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let certChain3: cert.X509CertChain = {} as cert.X509CertChain;
@@ -942,12 +942,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3700
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3700
-     * @tc.name check X509CertChain validate with abnormal param trustAnchors not root cert
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let certChain3: cert.X509CertChain = {} as cert.X509CertChain;
@@ -974,12 +974,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3800
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3800
-     * @tc.name check X509CertChain validate with normal param trustAnchors one cert
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let oneCert: cert.X509Cert = {} as cert.X509Cert;
@@ -1017,12 +1017,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_3900
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_3900
-     * @tc.name check X509CertChain validate with normal param trustAnchors cert and abnormal pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1049,12 +1049,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4000
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4000
-     * @tc.name check X509CertChain validate with normal param root pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1079,12 +1079,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4100
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4100
-     * @tc.name check X509CertChain validate with normal param parent pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1109,12 +1109,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4200
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4200
-     * @tc.name check X509CertChain validate with abnormal param grandparent pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1132,12 +1132,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4300
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4300
-     * @tc.name check X509CertChain validate with abnormal param leaf pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1155,12 +1155,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4400
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4400
-     * @tc.name check X509CertChain validate with abnormal param other cert pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1178,12 +1178,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4500
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4500
-     * @tc.name check X509CertChain validate with abnormal param empty pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1201,12 +1201,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4600
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4600
-     * @tc.name check X509CertChain validate with abnormal param subject and no pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1224,12 +1224,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4700
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4700
-     * @tc.name check X509CertChain validate with normal param subject and pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1260,12 +1260,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4800
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4800
-     * @tc.name check X509CertChain validate with abnormal param subject and parent pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1286,12 +1286,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_4900
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_4900
-     * @tc.name check X509CertChain validate with normal param parent subject and pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1322,12 +1322,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5000
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5000
-     * @tc.name check X509CertChain validate with abnormal param grandparent subject and pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1348,12 +1348,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5100
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5100
-     * @tc.name check X509CertChain validate with abnormal param leaf subject and pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1374,12 +1374,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5200
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5200
-     * @tc.name check X509CertChain validate with abnormal param empty subject and pubKey
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1400,12 +1400,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5300
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5300
-     * @tc.name check X509CertChain validate with normal params root ca and other cert
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1433,12 +1433,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5400
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5400
-     * @tc.name check X509CertChain validate with normal params root ca and parent cert
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1466,12 +1466,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5500
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5500
-     * @tc.name check X509CertChain validate with abnormal param certCRLs root crl
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const crl = await certChainFunc.createX509CrlPromise(0);
@@ -1492,12 +1492,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5600
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5600
-     * @tc.name check X509CertChain validate with abnormal param certCRLs leaf crl
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const crl = await certChainFunc.createX509CrlPromise(1);
@@ -1518,12 +1518,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5700
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5700
-     * @tc.name check X509CertChain validate with normal param certCRLs crl
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const crl = await certChainFunc.createX509CrlPromise(2);
@@ -1547,12 +1547,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5800
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5800
-     * @tc.name check X509CertChain validate with abnormal param certCRLs crls
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const crl1 = await certChainFunc.createX509CrlPromise(1);
@@ -1574,12 +1574,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_5900
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_5900
-     * @tc.name check X509CertChain validate with abnormal param empty certCRLs
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let param: cert.CertChainValidationParameters = {
@@ -1598,12 +1598,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_6000
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_6000
-     * @tc.name check X509CertChain validate with normal param certCRLs with no crl
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_6000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let certCrl = cert.createCertCRLCollection([rootCaCert0]);
@@ -1626,12 +1626,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_6100
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_6100
-     * @tc.name check X509CertChain validate with normal param certCRLs with empty crl
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_6100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let certCrl = cert.createCertCRLCollection([rootCaCert0], []);
@@ -1654,12 +1654,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_6200
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_6200
-     * @tc.name check X509CertChain validate with normal param all right
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_6200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let certCrl = cert.createCertCRLCollection([rootCaCert0], []);
@@ -1696,12 +1696,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_6300
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_6300
-     * @tc.name check X509CertChain validate with normal param part right
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_6300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let certCrl = cert.createCertCRLCollection([rootCaCert0], []);
@@ -1726,12 +1726,12 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Func_6400
      * @tc.number SUB_Security_Cert_Framework_Certificate_Func_6400
-     * @tc.name check X509CertChain validate with abnormal param invalid certChain
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CertChain_Func_6400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let certChainInvalid: cert.X509CertChain = {} as cert.X509CertChain;

@@ -75,12 +75,12 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
     });
 
     /**
-     * @tc.number    : QUICK_IMAGE_DATA_HANDLER_ON_DATA_PREPARED_001
-     * @tc.name      : MediaAssetDataHandler_onDataPrepared_promise_001
-     * @tc.desc      : MediaAssetDataHandler_onDataPrepared
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetDataHandler_onDataPrepared_promise_001
+     * @tc.number QUICK_IMAGE_DATA_HANDLER_ON_DATA_PREPARED_001
+     * @tc.desc   MediaAssetDataHandler_onDataPrepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetDataHandler_onDataPrepared_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetDataHandler_onDataPrepared_promise_001';

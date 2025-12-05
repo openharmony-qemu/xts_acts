@@ -41,12 +41,12 @@ export default function roundRectTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0100
-     * @tc.name      : testRoundRectConstructorNormalStatic
-     * @tc.desc      : Test for testRoundRectConstructorNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRoundRectConstructorNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0100
+     * @tc.desc   Test for testRoundRectConstructorNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectConstructorNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
       const msg = 'testRoundRectConstructorNormalStatic';
@@ -133,12 +133,12 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0103
-     * @tc.name      : testRoundRectConstructorMultipleCallsStatic
-     * @tc.desc      : Test for testRoundRectConstructorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectConstructorMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0103
+     * @tc.desc   Test for testRoundRectConstructorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectConstructorMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
       const msg = 'testRoundRectConstructorMultipleCallsStatic';
@@ -157,12 +157,12 @@ export default function roundRectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0200
-     * @tc.name      : testRoundRectSetAndGetCornerNormalStatic
-     * @tc.desc      : Test for testRoundRectSetAndGetCornerNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRoundRectSetAndGetCornerNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0200
+     * @tc.desc   Test for testRoundRectSetAndGetCornerNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectSetAndGetCornerNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRoundRectSetAndGetCornerNormalStatic';
@@ -348,12 +348,12 @@ export default function roundRectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0203
-     * @tc.name      : testRoundRectSetAndGetCornerMultipleCallsStatic
-     * @tc.desc      : Test for testRoundRectSetAndGetCornerMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectSetAndGetCornerMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0203
+     * @tc.desc   Test for testRoundRectSetAndGetCornerMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectSetAndGetCornerMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRoundRectSetAndGetCornerMultipleCallsStatic';
@@ -407,12 +407,12 @@ export default function roundRectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0300
-     * @tc.name      : testRoundRectOffsetNormalStatic
-     * @tc.desc      : Test for testRoundRectOffsetNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRoundRectOffsetNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0300
+     * @tc.desc   Test for testRoundRectOffsetNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectOffsetNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRoundRectOffsetNormalStatic';
@@ -460,12 +460,12 @@ export default function roundRectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0303
-     * @tc.name      : testRoundRectOffsetMultipleCallsStatic
-     * @tc.desc      : Test for testRoundRectOffsetMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectOffsetMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0303
+     * @tc.desc   Test for testRoundRectOffsetMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectOffsetMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRoundRectOffsetMultipleCallsStatic';
@@ -488,12 +488,12 @@ export default function roundRectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0400
-     * @tc.name      : testRoundRectConstructor2NormalStatic
-     * @tc.desc      : Test for testRoundRectConstructor2NormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRoundRectConstructor2NormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0400
+     * @tc.desc   Test for testRoundRectConstructor2NormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectConstructor2NormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRoundRectConstructor2NormalStatic';
@@ -537,12 +537,12 @@ export default function roundRectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0401
-     * @tc.name      : testRoundRectConstructor2MultipleCallsStatic
-     * @tc.desc      : testRoundRectConstructor2MultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRoundRectConstructor2MultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0401
+     * @tc.desc   testRoundRectConstructor2MultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectConstructor2MultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRoundRectConstructor2MultipleCallsStatic';

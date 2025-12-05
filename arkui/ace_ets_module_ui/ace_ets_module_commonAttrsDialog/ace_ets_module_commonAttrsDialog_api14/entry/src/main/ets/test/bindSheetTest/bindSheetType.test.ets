@@ -79,15 +79,11 @@ export default function bindSheetType() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[bindSheetType_0100] component obj is: " + JSON.stringify(obj));
       console.info("[bindSheetType_0100] title: " + JSON.stringify(obj.$attrs.content));
-      if (px2vp(colWidth) - 840 >= 0) {
-        expect(obj.$attrs.content).assertEqual("value SheetType:2");
-        let button2 = await driver.findComponent(ON.id('close'));
-        await button2.click();
-        await CommonFunc.sleep(1000);
-        console.info('[bindSheetType_0100] END');
-        done();
-      } else if (px2vp(colWidth) - 840 < 0 && px2vp(colWidth) - 600 >= 0 && display.isFoldable() &&
-        (display.getFoldStatus() == 3 || display.getFoldStatus() == 1)) {
+      console.info("[bindSheetType_0100] px2vp(colWidth): " + px2vp(colWidth));
+      if (px2vp(colWidth) - 840 >= 0
+         || (px2vp(colWidth) - 840 < 0 && px2vp(colWidth) - 600 >= 0 && display.isFoldable() &&
+        (display.getFoldStatus() == 3 || display.getFoldStatus() == 1))
+         || (px2vp(colWidth) - 840 < 0 && px2vp(colWidth) - 600 >= 0 && !display.isFoldable())){
         expect(obj.$attrs.content).assertEqual("value SheetType:2");
         let button2 = await driver.findComponent(ON.id('close'));
         await button2.click();

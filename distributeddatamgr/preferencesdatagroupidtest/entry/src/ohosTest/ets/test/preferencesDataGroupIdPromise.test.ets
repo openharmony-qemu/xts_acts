@@ -35,7 +35,6 @@ export default function preferencesDataGroupIdPromise() {
       dataGroupId: null | undefined
      }
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0100
      * @tc.number SUB_DDM_Preferences_DataGroupId_Promise_0100
      * @tc.desc   SUB_DDM_Preferences_DataGroupId_Promise_0100
@@ -72,7 +71,6 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0200
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0600
      * @tc.desc   preferences getPreferences dataGroupId undefined promise test
@@ -109,7 +107,6 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0300
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1000
      * @tc.desc   preferences getPreferences dataGroupId promise test
@@ -149,7 +146,6 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0400
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1400
      * @tc.desc   preferences getPreferences dataGroupId null promise test
@@ -186,7 +182,6 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0500
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0700
      * @tc.desc   preferences removePreferencesFromCache dataGroupId undefined promise test
@@ -223,7 +218,6 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0600
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1100
      * @tc.desc   preferences removePreferencesFromCache dataGroupId promise test

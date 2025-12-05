@@ -39,6 +39,19 @@ export default function RenderNodeTest(){
     })
 
     /**
+     * @tc.name   testRenderNode009
+     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0900
+     * @tc.desc   Test InitModuleForArkTSEnv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRenderNode009', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNode009()).assertEqual(0)
+      done();
+    })
+
+    /**
      * @tc.name   testRenderNode002
      * @tc.number SUB_ARKUI_CAPI_testRenderNode_0200
      * @tc.desc   Test InitModuleForArkTSEnv
@@ -127,6 +140,6 @@ export default function RenderNodeTest(){
     it('testRenderNode008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode008()).assertEqual(0)
       done();
-    })    
+    })
   })
 }

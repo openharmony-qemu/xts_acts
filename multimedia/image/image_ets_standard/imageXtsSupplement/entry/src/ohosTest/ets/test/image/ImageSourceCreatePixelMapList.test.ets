@@ -61,12 +61,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_001
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_001
-     * @tc.desc       ImageSourceCreatePixelMapList cover pixelMapList.length>0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_001
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_001
+     * @tc.desc   ImageSourceCreatePixelMapList cover pixelMapList.length>0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_001';
@@ -89,12 +89,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_002
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_002
-     * @tc.desc       ImageSourceCreatePixelMapList cover pixelMapList.length>0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_002
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_002
+     * @tc.desc   ImageSourceCreatePixelMapList cover pixelMapList.length>0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_002';
@@ -117,12 +117,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_003
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_003
-     * @tc.desc       ImageSourceCreatePixelMapList cover pixelMapList.length>0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_003
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_003
+     * @tc.desc   ImageSourceCreatePixelMapList cover pixelMapList.length>0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_003';
@@ -139,12 +139,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_004
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_004
-     * @tc.desc       ImageSourceCreatePixelMapList cover pixelMapList.length>0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_004
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_004
+     * @tc.desc   ImageSourceCreatePixelMapList cover pixelMapList.length>0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_004', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_004';
@@ -167,12 +167,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_005
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_005
-     * @tc.desc       ImageSourceCreatePixelMapList cover pixelMapList.length>0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_005
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_005
+     * @tc.desc   ImageSourceCreatePixelMapList cover pixelMapList.length>0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_005', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_005';
@@ -196,12 +196,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_006
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_006
-     * @tc.desc       ImageSourceCreatePixelMapList cover pixelMapList.length>0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_006
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_006
+     * @tc.desc   ImageSourceCreatePixelMapList cover pixelMapList.length>0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_006';
@@ -225,12 +225,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_001
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_001
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_001
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_001
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_001';
@@ -246,12 +246,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_002
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_002
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_002
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_002
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_002';
@@ -268,12 +268,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_003
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_003
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_003
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_003
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_003';
@@ -289,12 +289,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004';
@@ -311,12 +311,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005';
@@ -332,12 +332,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_006
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_006
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_006
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_006
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_006';
@@ -354,12 +354,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_001
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_001
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_001
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_001
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_001';
@@ -384,12 +384,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_002
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_002
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_002
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_002
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_002';
@@ -414,12 +414,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_003
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_003
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_003
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_003
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_003';
@@ -444,12 +444,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_004
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_004
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_004
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_004
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_004', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_004';
@@ -474,12 +474,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_005
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_005
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_005
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_005
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_005', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_005';
@@ -504,12 +504,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_006
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_006
-     * @tc.desc       createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_006
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_006
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_DECODEOPTS_CALLBACK_006';

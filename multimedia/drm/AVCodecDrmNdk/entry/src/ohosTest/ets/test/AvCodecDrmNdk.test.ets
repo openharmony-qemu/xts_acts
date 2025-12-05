@@ -67,12 +67,12 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0100
-     * @tc.name       : test CencInfo_Destroy
-     * @tc.desc       : test OH_AVCencInfo_Destroy and create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0100
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0100
+     * @tc.desc   test OH_AVCencInfo_Destroy and create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0100', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_CencInfo_Destroy("ptr");
@@ -80,12 +80,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0200
-     * @tc.name       : test AVCencInfo_SetAlgorithm
-     * @tc.desc       : test OH_AVCencInfo_SetAlgorithm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0200
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0200
+     * @tc.desc   test OH_AVCencInfo_SetAlgorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0200', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetAlgorithm("ptr", DrmCencAlgo.DRM_ALG_CENC_UNENCRYPTED);
@@ -93,12 +93,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0300
-     * @tc.name       : test AVCencInfo_SetAlgorithm
-     * @tc.desc       : test OH_AVCencInfo_SetAlgorithm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0300
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0300
+     * @tc.desc   test OH_AVCencInfo_SetAlgorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0300', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetAlgorithm("ptr", DrmCencAlgo.DRM_ALG_CENC_AES_CTR);
@@ -106,12 +106,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0400
-     * @tc.name       : test AVCencInfo_SetAlgorithm
-     * @tc.desc       : test OH_AVCencInfo_SetAlgorithm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0400
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0400
+     * @tc.desc   test OH_AVCencInfo_SetAlgorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0400', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetAlgorithm("ptr", DrmCencAlgo.DRM_ALG_CENC_AES_WV);
@@ -119,12 +119,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0500
-     * @tc.name       : test AVCencInfo_SetAlgorithm
-     * @tc.desc       : test OH_AVCencInfo_SetAlgorithm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0500
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0500
+     * @tc.desc   test OH_AVCencInfo_SetAlgorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0500', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetAlgorithm("ptr", DrmCencAlgo.DRM_ALG_CENC_AES_CBC);
@@ -132,12 +132,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0600
-     * @tc.name       : test AVCencInfo_SetAlgorithm
-     * @tc.desc       : test OH_AVCencInfo_SetAlgorithm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0600
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0600
+     * @tc.desc   test OH_AVCencInfo_SetAlgorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0600', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetAlgorithm("ptr", DrmCencAlgo.DRM_ALG_CENC_SM4_CBC);
@@ -145,12 +145,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0700
-     * @tc.name       : test AVCencInfo_SetAlgorithm
-     * @tc.desc       : test OH_AVCencInfo_SetAlgorithm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0700
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0700
+     * @tc.desc   test OH_AVCencInfo_SetAlgorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0700', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetAlgorithm("ptr", DrmCencAlgo.DRM_ALG_CENC_SM4_CTR);
@@ -158,12 +158,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0800
-     * @tc.name       : test AVCencInfo_SetAlgorithm
-     * @tc.desc       : test OH_AVCencInfo_SetAlgorithm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0800
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0800
+     * @tc.desc   test OH_AVCencInfo_SetAlgorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0800', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetAlgorithm("ptr", -1);
@@ -171,14 +171,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_0900
-     * @tc.name       : test OH_AVCencInfo_SetKeyIdAndIv
-     * @tc.desc       : handle: string;
-     *                  keyid: string; keyidlen: number;
-     *                  iv:string, ivlen: number
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_0900
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_0900
+     * @tc.desc   handle: string;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_0900', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetKeyIdAndIv("ptr", "ptr", 16, "ptr", 16);
@@ -186,14 +184,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_1000
-     * @tc.name       : test OH_AVCencInfo_SetKeyIdAndIv
-     * @tc.desc       : handle: string;
-     *                  keyid: string; keyidlen: number;
-     *                  iv:string, ivlen: number
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_1000
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_1000
+     * @tc.desc   handle: string;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_1000', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetKeyIdAndIv("ptr", "ptr", 8, "ptr", 16);
@@ -201,14 +197,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_1100
-     * @tc.name       : test OH_AVCencInfo_SetKeyIdAndIv
-     * @tc.desc       : handle: string;
-     *                  keyid: string; keyidlen: number;
-     *                  iv:string, ivlen: number
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_1100
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_1100
+     * @tc.desc   handle: string;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_1100', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetKeyIdAndIv("ptr", "ptr", 16, "ptr", 7);
@@ -216,16 +210,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_1200
-     * @tc.name       : test AVCencInfo_SetSubsampleInfo
-     * @tc.desc       : handle: string;
-     *                  enblocknum: number;
-     *                  skipblocknum: number;
-     *                  fstenoffset:number;
-     *                  subsamplenum:number, subsample:string
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_1200
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_1200
+     * @tc.desc   handle: string;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_1200', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetSubsampleInfo("ptr", 10, 2, 0, 4, "ptr");
@@ -233,12 +223,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_1300
-     * @tc.name       : test AVCencInfo_SetMode
-     * @tc.desc       : handle: string;  mode: number
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_1300
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_1300
+     * @tc.desc   handle: string;  mode: number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_1300', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetMode("ptr", DrmCencInfoMode.DRM_CENC_INFO_KEY_IV_SUBSAMPLES_SET);
@@ -246,12 +236,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_1400
-     * @tc.name       : test AVCencInfo_SetMode
-     * @tc.desc       : handle: string;  mode: number
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_1400
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_1400
+     * @tc.desc   handle: string;  mode: number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_1400', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetMode("ptr", DrmCencInfoMode.DRM_CENC_INFO_KEY_IV_SUBSAMPLES_NOT_SET);
@@ -259,12 +249,12 @@ export default function abilityTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVCODEC_DRM_1500
-     * @tc.name       : test AVCencInfo_SetAVBuffer
-     * @tc.desc       : handle: string;  buff: string
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_1500
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_1500
+     * @tc.desc   handle: string;  buff: string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVCODEC_DRM_1500', Level.LEVEL0, async (done: Function) => {
       let result: number = avcodec.Test_AVCencInfo_SetAVBuffer("ptr", "ptr");

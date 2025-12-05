@@ -149,12 +149,12 @@ export default function createAssetTest() {
     }
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0000
-      * @tc.name    createImage_callback_static_000
-      * @tc.desc    createAsset
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   createImage_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0000
+     * @tc.desc   createAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImage_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -168,12 +168,12 @@ export default function createAssetTest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0100
-      * @tc.name    createImage_callback_static_001
-      * @tc.desc    createAsset without CreateOptions
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   createImage_callback_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0100
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImage_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -184,12 +184,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0200
-      * @tc.name    createImage_callback_static_002
-      * @tc.desc    createAsset with undefined photoType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_callback_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0200
+     * @tc.desc   createAsset with undefined photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_callback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -203,12 +203,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0300
-      * @tc.name    createImage_callback_static_003
-      * @tc.desc    createAsset with invalid extension
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_callback_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0300
+     * @tc.desc   createAsset with invalid extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_callback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -222,12 +222,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0400
-      * @tc.name    createImage_callback_static_004
-      * @tc.desc    createAsset with undefined extension
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_callback_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0400
+     * @tc.desc   createAsset with undefined extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_callback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -241,12 +241,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0500
-      * @tc.name    createImage_callback_static_005
-      * @tc.desc    createAsset with undefined title
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_callback_static_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0500
+     * @tc.desc   createAsset with undefined title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_callback_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -260,12 +260,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0600
-      * @tc.name    createImage_callback_static_006
-      * @tc.desc    createAsset with undefined CreateOptions
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_callback_static_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_STATIC_0600
+     * @tc.desc   createAsset with undefined CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_callback_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -277,12 +277,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0000
-      * @tc.name    createImage_promise_static_000
-      * @tc.desc    createAsset
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   createImage_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0000
+     * @tc.desc   createAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImage_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -296,12 +296,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0100
-      * @tc.name    createImage_promise_static_001
-      * @tc.desc    createAsset without CreateOptions
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   createImage_promise_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0100
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImage_promise_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -312,12 +312,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0200
-      * @tc.name    createImage_promise_static_002
-      * @tc.desc    createAsset with undefined photoType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_promise_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0200
+     * @tc.desc   createAsset with undefined photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_promise_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -331,12 +331,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0300
-      * @tc.name    createImage_promise_static_003
-      * @tc.desc    createAsset with invalid extension
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_promise_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0300
+     * @tc.desc   createAsset with invalid extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_promise_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -350,12 +350,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0400
-      * @tc.name    createImage_promise_static_004
-      * @tc.desc    createAsset with undefined extension
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_promise_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0400
+     * @tc.desc   createAsset with undefined extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_promise_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -369,12 +369,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0500
-      * @tc.name    createImage_promise_static_005
-      * @tc.desc    createAsset with undefined title
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_promise_static_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0500
+     * @tc.desc   createAsset with undefined title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_promise_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -388,12 +388,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0600
-      * @tc.name    createImage_promise_static_006
-      * @tc.desc    createAsset with undefined CreateOptions
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createImage_promise_static_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_STATIC_0600
+     * @tc.desc   createAsset with undefined CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_promise_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -405,12 +405,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0000
-      * @tc.name    createVideo_callback_static_000
-      * @tc.desc    createAsset
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   createVideo_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0000
+     * @tc.desc   createAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideo_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -424,12 +424,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0100
-      * @tc.name    createVideo_callback_static_001
-      * @tc.desc    createAsset without CreateOptions
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   createVideo_callback_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0100
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideo_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -440,12 +440,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0200
-      * @tc.name    createVideo_callback_static_002
-      * @tc.desc    createAsset with undefined photoType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_callback_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0200
+     * @tc.desc   createAsset with undefined photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_callback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -459,12 +459,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0300
-      * @tc.name    createVideo_callback_static_003
-      * @tc.desc    createAsset with invalid extension
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_callback_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0300
+     * @tc.desc   createAsset with invalid extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_callback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -478,12 +478,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0400
-      * @tc.name    createVideo_callback_static_004
-      * @tc.desc    createAsset with undefined extension
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_callback_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0400
+     * @tc.desc   createAsset with undefined extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_callback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -497,12 +497,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0500
-      * @tc.name    createVideo_callback_static_005
-      * @tc.desc    createAsset with undefined title
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_callback_static_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0500
+     * @tc.desc   createAsset with undefined title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_callback_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -516,12 +516,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0600
-      * @tc.name    createVideo_callback_static_006
-      * @tc.desc    createAsset with undefined CreateOptions
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_callback_static_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_STATIC_0600
+     * @tc.desc   createAsset with undefined CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_callback_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -533,12 +533,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0000
-      * @tc.name    createVideo_promise_static_000
-      * @tc.desc    createAsset
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   createVideo_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0000
+     * @tc.desc   createAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideo_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -552,12 +552,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0100
-      * @tc.name    createVideo_promise_static_001
-      * @tc.desc    createAsset without CreateOptions
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   createVideo_promise_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0100
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideo_promise_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -568,12 +568,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0200
-      * @tc.name    createVideo_promise_static_002
-      * @tc.desc    createAsset with undefined photoType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_promise_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0200
+     * @tc.desc   createAsset with undefined photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_promise_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -587,12 +587,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0300
-      * @tc.name    createVideo_promise_static_003
-      * @tc.desc    createAsset with invalid extension
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_promise_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0300
+     * @tc.desc   createAsset with invalid extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_promise_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -606,12 +606,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0400
-      * @tc.name    createVideo_promise_static_004
-      * @tc.desc    createAsset with undefined extension
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_promise_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0400
+     * @tc.desc   createAsset with undefined extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_promise_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -625,12 +625,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0500
-      * @tc.name    createVideo_promise_static_005
-      * @tc.desc    createAsset with undefined title
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_promise_static_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0500
+     * @tc.desc   createAsset with undefined title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_promise_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -644,12 +644,12 @@ export default function createAssetTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0600
-      * @tc.name    createVideo_promise_static_006
-      * @tc.desc    createAsset with undefined CreateOptions
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   createVideo_promise_static_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_VIDEO_STATIC_0600
+     * @tc.desc   createAsset with undefined CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_promise_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

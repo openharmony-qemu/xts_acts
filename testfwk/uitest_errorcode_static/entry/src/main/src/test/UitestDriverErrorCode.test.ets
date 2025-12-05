@@ -44,10 +44,13 @@ export default function uitestDriverErrorTest() {
       hilog.info(domain, tag, "uitestDriverErrorTest loadup over!!!!!")
     })
 
-    /*
-     * @tc.number: uitestDriverErrorTest_001
-     * @tc.name: test_assertComponentExist_17000003_static
-     * @tc.desc: assertComponentExist 17000003 test.
+    /**
+     * @tc.name   test_assertComponentExist_17000003_static
+     * @tc.number uitestDriverErrorTest_001
+     * @tc.desc   assertComponentExist 17000003 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_assertComponentExist_17000003_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_assertComponentExist_17000003_static start`);
@@ -64,10 +67,13 @@ export default function uitestDriverErrorTest() {
       console.log(`${TestTag}, test_assertComponentExist_17000003_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverErrorTest_002
-     * @tc.name: test_driver_inputTextMode_801_static
-     * @tc.desc: inputText 801 test.
+    /**
+     * @tc.name   test_driver_inputTextMode_801_static
+     * @tc.number uitestDriverErrorTest_002
+     * @tc.desc   inputText 801 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_driver_inputTextMode_801_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_driver_inputTextMode_801_static start`);
@@ -83,10 +89,13 @@ export default function uitestDriverErrorTest() {
       hilog.info(domain, tag, `test_driver_inputTextMode_801_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverErrorTest_003
-     * @tc.name: test_driver_pressBackWithId_17000007_static
-     * @tc.desc: mouseDrag 17000007 test.
+    /**
+     * @tc.name   test_driver_pressBackWithId_17000007_static
+     * @tc.number uitestDriverErrorTest_003
+     * @tc.desc   mouseDrag 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_driver_pressBackWithId_17000007_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 start`);
@@ -101,11 +110,14 @@ export default function uitestDriverErrorTest() {
       hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 end`);
     })
 
-    /*
-         * @tc.number: uitestDriverErrorTest_004
-         * @tc.name: test_driver_getDisplaySizeWithId_17000007_static
-         * @tc.desc: getDisplayRotation 17000007 test.
-         */
+    /**
+     * @tc.name   test_driver_getDisplaySizeWithId_17000007_static
+     * @tc.number uitestDriverErrorTest_004
+     * @tc.desc   getDisplayRotation 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_driver_getDisplaySizeWithId_17000007_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static start`);
       try {
@@ -119,10 +131,13 @@ export default function uitestDriverErrorTest() {
       hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverErrorTest_005
-     * @tc.name: test_driver_pressHome_static
-     * @tc.desc: pressHome 17000007 test.
+    /**
+     * @tc.name   test_driver_pressHome_static
+     * @tc.number uitestDriverErrorTest_005
+     * @tc.desc   pressHome 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_driver_pressHome_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_driver_pressHome_static start`);

@@ -21,35 +21,41 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
   onAdminEnabled() {
       console.log('EnterpriseAdminExtensionAbility onAdminEnabled');
   }
-  onAdminDisabled(){
+  onAdminDisabled() {
       console.log('EnterpriseAdminExtensionAbility onAdminDisabled');
   }
-  onBundleAdded(bundleName: string, accountId?: number){
+  onBundleAdded(bundleName: string, accountId?: number) {
     console.log(`EnterpriseAdminExtensionAbility onBundleAdded: ${bundleName}, accountId: ${accountId}`);
   }
-  onBundleRemoved(bundleName: string, accountId?: number){
+  onBundleRemoved(bundleName: string, accountId?: number) {
     console.log(`EnterpriseAdminExtensionAbility onBundleRemoved: ${bundleName}, accountId: ${accountId}`);
   }
-  onAppStart(bundleName: string){
+  onAppStart(bundleName: string) {
     console.log('EnterpriseAdminExtensionAbility onAppStart: ' + bundleName);
   }
-  onAppStop(bundleName: string){
+  onAppStop(bundleName: string) {
     console.log('EnterpriseAdminExtensionAbility onAppStop: ' + bundleName);
   }
-  onSystemUpdate(systemUpdateInfo: systemManager.SystemUpdateInfo){
+  onSystemUpdate(systemUpdateInfo: systemManager.SystemUpdateInfo) {
     console.log(`EnterpriseAdminExtensionAbility onSystemUpdate: versionName: ${systemUpdateInfo.versionName},
       firstReceivedTime: ${systemUpdateInfo.firstReceivedTime}, packageType: ${systemUpdateInfo.packageType}`);
   }
-  onAccountAdded(accountId: number){
+  onAccountAdded(accountId: number) {
     console.log(`EnterpriseAdminExtensionAbility onAccountAdded accountId: ${accountId}`);
   }
-  onAccountSwitched(accountId: number){
+  onAccountSwitched(accountId: number) {
     console.log(`EnterpriseAdminExtensionAbility onAccountSwitched accountId: ${accountId}`);
   }
-  onAccountRemoved(accountId: number){
+  onAccountRemoved(accountId: number) {
     console.log(`EnterpriseAdminExtensionAbility onAccountRemoved accountId: ${accountId}`);
   }
-  onStart(){
+  onDeviceAdminEnabled(bundleName: string): void {
+    console.log(`EnterpriseAdminExtensionAbility onDeviceAdminEnabled bundleName: ${bundleName}`);
+  }
+  onDeviceAdminDisabled(bundleName: string): void {
+    console.log(`EnterpriseAdminExtensionAbility onDeviceAdminDisabled bundleName: ${bundleName}`);
+  }
+  onStart() {
     console.log('EnterpriseAdminExtensionAbility onStart');
   }
 }

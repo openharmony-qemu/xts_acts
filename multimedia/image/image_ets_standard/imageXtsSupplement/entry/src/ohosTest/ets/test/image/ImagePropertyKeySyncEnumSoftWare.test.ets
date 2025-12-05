@@ -77,12 +77,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_001
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_001
-     * @tc.desc       PhotoAccessHelper_Photo:SOFTWARE
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_001
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_001
+     * @tc.desc   PhotoAccessHelper_Photo:SOFTWARE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_001', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -92,12 +92,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_002
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_002
-     * @tc.desc     PhotoAccessHelper_Photo:GPS_DEST_LONGITUDE
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_002
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_002
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_DEST_LONGITUDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_002', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -107,12 +107,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_003
-     * @tc.name      SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_003
-     * @tc.desc      PhotoAccessHelper_Photo:OFFSET_TIME_DIGITIZED
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_003
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_003
+     * @tc.desc   PhotoAccessHelper_Photo:OFFSET_TIME_DIGITIZED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_003', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -122,12 +122,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_004
-     * @tc.name      SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_004
-     * @tc.desc      PhotoAccessHelper_Photo:SUBJECT_LOCATION
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_004
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_004
+     * @tc.desc   PhotoAccessHelper_Photo:SUBJECT_LOCATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_004', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -137,12 +137,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_005
-     * @tc.name      SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_005
-     * @tc.desc      PhotoAccessHelper_Photo:F_NUMBER
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_005
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_005
+     * @tc.desc   PhotoAccessHelper_Photo:F_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_005', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -152,12 +152,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_006
-     * @tc.name      SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_006
-     * @tc.desc      PhotoAccessHelper_Photo:GPS_ALTITUDE_REF
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_006
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_006
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_ALTITUDE_REF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_006', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -167,12 +167,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_007
-     * @tc.name      SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_007
-     * @tc.desc      PhotoAccessHelper_Photo:NEW_SUBFILE_TYPE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_007
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_007
+     * @tc.desc   PhotoAccessHelper_Photo:NEW_SUBFILE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_007', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -182,12 +182,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_008
-     * @tc.name      SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_008
-     * @tc.desc      PhotoAccessHelper_Photo:XMAGE_TOP
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_008
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_008
+     * @tc.desc   PhotoAccessHelper_Photo:XMAGE_TOP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_008', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -203,12 +203,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_009
-     * @tc.name      SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_009
-     * @tc.desc      PhotoAccessHelper_Photo:CONTRAST
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_009
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_009
+     * @tc.desc   PhotoAccessHelper_Photo:CONTRAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_009', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -218,12 +218,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_010
-     * @tc.name      SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_010
-     * @tc.desc      PhotoAccessHelper_Photo:SUBJECT_AREA
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_010
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_010
+     * @tc.desc   PhotoAccessHelper_Photo:SUBJECT_AREA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_010', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -233,12 +233,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_011
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_011
-     * @tc.desc       PhotoAccessHelper_Photo:SOURCE_IMAGE_NUMBER_OF_COMPOSITE_IMAGE
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_011
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_011
+     * @tc.desc   PhotoAccessHelper_Photo:SOURCE_IMAGE_NUMBER_OF_COMPOSITE_IMAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_011', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -248,12 +248,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
     })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_012
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_012
-     * @tc.desc       PhotoAccessHelper_Photo:FOCAL_PLANE_Y_RESOLUTION
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_012
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_012
+     * @tc.desc   PhotoAccessHelper_Photo:FOCAL_PLANE_Y_RESOLUTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_012', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -263,12 +263,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
     })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_013
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_013
-     * @tc.desc       PhotoAccessHelper_Photo:GPS_ALTITUDE
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_013
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_013
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_ALTITUDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_013', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -278,12 +278,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
     })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_014
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_014
-     * @tc.desc       PhotoAccessHelper_Photo:WIND_SNAPSHOT_MODE
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_014
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_014
+     * @tc.desc   PhotoAccessHelper_Photo:WIND_SNAPSHOT_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_014', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -299,12 +299,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_015
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_015
-     * @tc.desc       PhotoAccessHelper_Photo:FACE_MOUTH_CENTER
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_015
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_015
+     * @tc.desc   PhotoAccessHelper_Photo:FACE_MOUTH_CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_015', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -320,12 +320,12 @@ export default function ImagePropertyKeySyncEnumSoftWare() {
         })
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_016
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_016
-     * @tc.desc       PhotoAccessHelper_Photo:OECF
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_016
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_016
+     * @tc.desc   PhotoAccessHelper_Photo:OECF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4B_016', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;

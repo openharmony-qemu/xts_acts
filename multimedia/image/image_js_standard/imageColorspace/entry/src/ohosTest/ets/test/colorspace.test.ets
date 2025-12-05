@@ -149,13 +149,12 @@ export default function imageColorSpace() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_0100
-         * @tc.name      : Decode 
-         * @tc.desc      : 1.create imagesource
-         *                 2.create pixelmap
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_0100', Level.LEVEL0, async (done: Function) => {
             let logger: ESObject = loger('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_0100')
@@ -180,13 +179,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_0100
-         * @tc.name      : Decode -callback
-         * @tc.desc      : 1.create imagesource
-         *                 2.create pixelmap
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             let logger: ESObject = loger('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_0100')
@@ -211,14 +209,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0100
-         * @tc.name      : Encode -callback
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             let logger: ESObject = loger('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0100')
@@ -260,14 +256,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0100
-         * @tc.name      : Encode -promise
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             let logger: ESObject = loger('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0100')
@@ -313,14 +307,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0200
-         * @tc.name      : Encode -callback-
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
             if (isSupportGifEncode) {
@@ -333,14 +325,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_0100
-         * @tc.name      : Encode -callback-wrong format
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_0100', Level.LEVEL0, async (done: Function) => {
             let packOpts: ESObject = { format: ["image/jpeg"], quality: 200 }
@@ -348,14 +338,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_NO_QUALITY_0100
-         * @tc.name      : Encode -callback-no quality
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_NO_QUALITY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_NO_QUALITY_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_NO_QUALITY_0100', Level.LEVEL0, async (done: Function) => {
             let packOpts: ESObject = { format: ["image/jpeg"] }
@@ -363,14 +351,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_NO_FORMAT_0100
-         * @tc.name      : Encode -callback-no format
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_NO_FORMAT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_NO_FORMAT_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_NO_FORMAT_0100', Level.LEVEL0, async (done: Function) => {
             let packOpts: ESObject = { quality: 50 }
@@ -378,14 +364,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0200
-         * @tc.name      : Encode -promise
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
             if (isSupportGifEncode) {
@@ -398,14 +382,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0300
-         * @tc.name      : Encode -promise
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
             let packOpts: ESObject = { format: ["image/jpeg"], quality: 101 }
@@ -413,14 +395,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_NO_QUALITY_0100
-         * @tc.name      : Encode -promise -no quality
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_NO_QUALITY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_NO_QUALITY_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_NO_QUALITY_0100', Level.LEVEL0, async (done: Function) => {
             let packOpts: ESObject = { format: ["image/jpeg"] }
@@ -428,14 +408,12 @@ export default function imageColorSpace() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_NO_FORMAT_0100
-         * @tc.name      : Encode -promise -no format
-         * @tc.desc      : 1.create imagesource
-         *                 2.createImagePacker
-         *                 3.packing
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_NO_FORMAT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_NO_FORMAT_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_NO_FORMAT_0100', Level.LEVEL0, async (done: Function) => {
             let packOpts: ESObject = { quality: 100 }

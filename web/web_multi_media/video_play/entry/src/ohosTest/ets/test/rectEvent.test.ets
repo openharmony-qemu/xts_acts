@@ -53,14 +53,14 @@ export default function rectEvent() {
       done();
     })
 
-    /*
-    * @tc.number     : rectEvent0100
-    * @tc.name       : rectEvent0100
-    * @tc.desc       : test rectEvent
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   rectEvent0100
+     * @tc.number rectEvent0100
+     * @tc.desc   test rectEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('rectEvent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("rectEvent0100", 10)
       await Utils.sleep(2000);

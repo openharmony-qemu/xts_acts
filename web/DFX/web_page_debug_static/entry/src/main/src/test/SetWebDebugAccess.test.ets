@@ -52,14 +52,14 @@ export default function SetWebDebugAccess() {
     });
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0001
-    * @tc.name       : testSetWebDebugAccessEnableDebugPortAllowedStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to 8888
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessEnableDebugPortAllowedStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0001
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to 8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessEnableDebugPortAllowedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000)
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortAllowed', 10)
@@ -71,14 +71,14 @@ export default function SetWebDebugAccess() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0002
-    * @tc.name       : testSetWebDebugAccessEnableDebugPortAllowedTwoStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to 99999999
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessEnableDebugPortAllowedTwoStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0002
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to 99999999
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessEnableDebugPortAllowedTwoStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortAllowedTwo', 10)
       await Utils.msSleep(2000)
@@ -89,14 +89,14 @@ export default function SetWebDebugAccess() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0003
-    * @tc.name       : testSetWebDebugAccessEnableDebugPortAllowedThreeStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to 65535
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessEnableDebugPortAllowedThreeStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0003
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to 65535
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessEnableDebugPortAllowedThreeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortAllowedThree', 10)
       await Utils.msSleep(2000)
@@ -108,14 +108,14 @@ export default function SetWebDebugAccess() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0004
-    * @tc.name       : testSetWebDebugAccessEnableDebugPortNotAllowedOneStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to 0 not allowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessEnableDebugPortNotAllowedOneStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0004
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to 0 not allowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedOneStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortNotAllowedOne', 10)
       await Utils.msSleep(2000)
@@ -127,14 +127,14 @@ export default function SetWebDebugAccess() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0005
-    * @tc.name       : testSetWebDebugAccessEnableDebugPortNotAllowedTwoStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to 1024 not allowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessEnableDebugPortNotAllowedTwoStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0005
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to 1024 not allowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedTwoStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortNotAllowedTwo', 10)
       await Utils.msSleep(2000)
@@ -145,14 +145,14 @@ export default function SetWebDebugAccess() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0006
-    * @tc.name       : testSetWebDebugAccessEnableDebugPortNotAllowedThreeStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to 888 not allowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessEnableDebugPortNotAllowedThreeStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0006
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to 888 not allowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedThreeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortNotAllowedThree', 10)
       await Utils.msSleep(2000)
@@ -163,14 +163,14 @@ export default function SetWebDebugAccess() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0007
-    * @tc.name       : testSetWebDebugAccessEnableDebugPortNegativeNumberStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to negative number
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessEnableDebugPortNegativeNumberStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0007
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to negative number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessEnableDebugPortNegativeNumberStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortNegativeNumber', 10)
       await Utils.msSleep(2000)
@@ -181,14 +181,14 @@ export default function SetWebDebugAccess() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0008
-    * @tc.name       : testSetWebDebugAccessEnableDebugPortEmptyStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to empty
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessEnableDebugPortEmptyStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0008
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessEnableDebugPortEmptyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortEmpty', 10)
       await Utils.msSleep(2000)
@@ -199,14 +199,14 @@ export default function SetWebDebugAccess() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0012
-    * @tc.name       : testSetWebDebugAccessNotEnableDebugPortAllowedStatic
-    * @tc.desc       : test SetWebDebugAccess not enables debugging . set the port   8888 to allowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessNotEnableDebugPortAllowedStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0012
+     * @tc.desc   test SetWebDebugAccess not enables debugging . set the port   8888 to allowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessNotEnableDebugPortAllowedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessNotEnableDebugPortAllowed', 10)
       await Utils.msSleep(2000)
@@ -217,14 +217,14 @@ export default function SetWebDebugAccess() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0013
-    * @tc.name       : testSetWebDebugAccessNotEnableDebugPortNotAllowedStatic
-    * @tc.desc       : test SetWebDebugAccess enables debugging . set the port number to 1024 not allowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetWebDebugAccessNotEnableDebugPortNotAllowedStatic
+     * @tc.number SUB_ACE_WEB_SETWEBDEBUGACCESS_API_0013
+     * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to 1024 not allowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetWebDebugAccessNotEnableDebugPortNotAllowedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessNotEnableDebugPortNotAllowed', 10)
       await Utils.msSleep(2000)

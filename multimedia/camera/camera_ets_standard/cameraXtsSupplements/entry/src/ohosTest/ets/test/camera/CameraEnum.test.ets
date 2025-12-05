@@ -317,12 +317,12 @@ export default function cameraEnumTestSupp() {
       await closeFd(fdNumber);
     });
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_ENUM_List_001
-     * @tc.name       SUB_MEDIA_CAMERA_ENUM_List_001
-     * @tc.desc       HdrMetadataType Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_ENUM_List_001
+     * @tc.number SUB_MEDIA_CAMERA_ENUM_List_001
+     * @tc.desc   HdrMetadataType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_ENUM_List_001', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_CAMERA_ENUM_List_001---------')
@@ -337,12 +337,12 @@ export default function cameraEnumTestSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_ENUM_List_002
-     * @tc.name       SUB_MEDIA_CAMERA_ENUM_List_002
-     * @tc.desc       HdrMetadataType Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_ENUM_List_002
+     * @tc.number SUB_MEDIA_CAMERA_ENUM_List_002
+     * @tc.desc   HdrMetadataType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_ENUM_List_002', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_CAMERA_ENUM_List_002---------')

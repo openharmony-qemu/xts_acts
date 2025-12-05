@@ -31,12 +31,12 @@ export default function createImageAssetRequestTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CREATE_IMAGE_ASSET_REQUEST_0000
-     * @tc.name      : create_image_asset_request_000
-     * @tc.desc      : create image asset request with invalid fileUri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   create_image_asset_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_IMAGE_ASSET_REQUEST_0000
+     * @tc.desc   create image asset request with invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('create_image_asset_request_000', Level.LEVEL2, async (done: Function) => {
       let testNum = 'create_image_asset_request_000';

@@ -20,7 +20,6 @@ export default function ActsInputmethodTwoTest() {
   describe('ActsInputmethodTwoTest', () => {
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_IsPreviewTextSupported_7100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_IsPreviewTextSupported_7100
      * @tc.desc   test OH_TextConfig_IsPreviewTextSupported Null Pointer
@@ -47,7 +46,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_IsPreviewTextSupported_7200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_IsPreviewTextSupported_7200
      * @tc.desc   test OH_TextConfig_IsPreviewTextSupported Ok
@@ -74,7 +72,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetCursorInfo_7300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetCursorInfo_7300
      * @tc.desc   test OH_TextConfig_GetCursorInfo Null Pointer
@@ -101,7 +98,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetCursorInfo_7400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetCursorInfo_7400
      * @tc.desc   test OH_TextConfig_GetCursorInfo Ok
@@ -128,7 +124,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetTextAvoidInfo_7500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetTextAvoidInfo_7500
      * @tc.desc   test OH_TextConfig_GetTextAvoidInfo Null Pointer
@@ -155,7 +150,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetTextAvoidInfo_7600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetTextAvoidInfo_7600
      * @tc.desc   test OH_TextConfig_GetTextAvoidInfo Ok
@@ -182,7 +176,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetSelection_7700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetSelection_7700
      * @tc.desc   test OH_TextConfig_GetSelection Null Pointer
@@ -209,7 +202,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetSelection_7800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetSelection_7800
      * @tc.desc   test OH_TextConfig_GetSelection Ok
@@ -236,7 +228,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetWindowId_7900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetWindowId_7900
      * @tc.desc   test OH_TextConfig_GetWindowId Null Pointer
@@ -263,7 +254,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetWindowId_8000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetWindowId_8000
      * @tc.desc   test OH_TextConfig_GetWindowId Ok
@@ -290,7 +280,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetPlaceholder_8100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetPlaceholder_8100
      * @tc.desc   test OH_TextConfig_GetPlaceholder Null Pointer
@@ -317,7 +306,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetPlaceholder_8200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetPlaceholder_8200
      * @tc.desc   test OH_TextConfig_GetPlaceholder Ok
@@ -344,7 +332,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetPlaceholder_8300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetPlaceholder_8300
      * @tc.desc   test OH_TextConfig_GetPlaceholder PARAMCHECK Error
@@ -371,7 +358,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetAbilityName_8400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetAbilityName_8400
      * @tc.desc   test OH_TextConfig_GetAbilityName Null Pointer
@@ -398,7 +384,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetAbilityName_8500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetAbilityName_8500
      * @tc.desc   test OH_TextConfig_GetAbilityName Ok
@@ -425,7 +410,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetAbilityName_8600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetAbilityName_8600
      * @tc.desc   test OH_TextConfig_GetAbilityName PARAMCHECK Error
@@ -452,7 +436,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetTextConfigFunc_8700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetTextConfigFunc_8700
      * @tc.desc   test OH_TextEditorProxy_SetGetTextConfigFunc Null Pointer
@@ -479,7 +462,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetTextConfigFunc_8800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetTextConfigFunc_8800
      * @tc.desc   test OH_TextEditorProxy_SetGetTextConfigFunc Ok
@@ -506,7 +488,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetInsertTextFunc_8900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetInsertTextFunc_8900
      * @tc.desc   test OH_TextEditorProxy_SetInsertTextFunc Null Pointer
@@ -533,7 +514,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetInsertTextFunc_9000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetInsertTextFunc_9000
      * @tc.desc   test OH_TextEditorProxy_SetInsertTextFunc Ok
@@ -560,7 +540,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetDeleteForwardFunc_9100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetDeleteForwardFunc_9100
      * @tc.desc   test OH_TextEditorProxy_SetDeleteForwardFunc Null Pointer
@@ -587,7 +566,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetDeleteForwardFunc_9200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetDeleteForwardFunc_9200
      * @tc.desc   test OH_TextEditorProxy_SetDeleteForwardFunc Ok
@@ -614,7 +592,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetDeleteBackwardFunc_9300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetDeleteBackwardFunc_9300
      * @tc.desc   test OH_TextEditorProxy_SetDeleteBackwardFunc Null Pointer
@@ -641,7 +618,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetDeleteBackwardFunc_9400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetDeleteBackwardFunc_9400
      * @tc.desc   test OH_TextEditorProxy_SetDeleteBackwardFunc Ok
@@ -668,7 +644,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSendKeyboardStatusFunc_9500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSendKeyboardStatusFunc_9500
      * @tc.desc   test OH_TextEditorProxy_SetSendKeyboardStatusFunc Null Pointer
@@ -695,7 +670,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSendKeyboardStatusFunc_9600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSendKeyboardStatusFunc_9600
      * @tc.desc   test OH_TextEditorProxy_SetSendKeyboardStatusFunc Ok
@@ -722,7 +696,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSendEnterKeyFunc_9700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSendEnterKeyFunc_9700
      * @tc.desc   test OH_TextEditorProxy_SetSendEnterKeyFunc Null Pointer
@@ -749,7 +722,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSendEnterKeyFunc_9800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSendEnterKeyFunc_9800
      * @tc.desc   test OH_TextEditorProxy_SetSendEnterKeyFunc Ok
@@ -776,7 +748,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetMoveCursorFunc_9900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetMoveCursorFunc_9900
      * @tc.desc   test OH_TextEditorProxy_SetMoveCursorFunc Null Pointer
@@ -803,7 +774,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetMoveCursorFunc_10000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetMoveCursorFunc_10000
      * @tc.desc   test OH_TextEditorProxy_SetMoveCursorFunc Ok
@@ -830,7 +800,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetHandleSetSelectionFunc_10100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetHandleSetSelectionFunc_10100
      * @tc.desc   test OH_TextEditorProxy_SetHandleSetSelectionFunc Null Pointer
@@ -857,7 +826,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetHandleSetSelectionFunc_10200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetHandleSetSelectionFunc_10200
      * @tc.desc   test OH_TextEditorProxy_SetHandleSetSelectionFunc Ok
@@ -884,7 +852,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetHandleExtendActionFunc_10300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetHandleExtendActionFunc_10300
      * @tc.desc   test OH_TextEditorProxy_SetHandleExtendActionFunc Null Pointer
@@ -911,7 +878,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetHandleExtendActionFunc_10400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetHandleExtendActionFunc_10400
      * @tc.desc   test OH_TextEditorProxy_SetHandleExtendActionFunc Ok
@@ -938,7 +904,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetLeftTextOfCursorFunc_10500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetLeftTextOfCursorFunc_10500
      * @tc.desc   test OH_TextEditorProxy_SetGetLeftTextOfCursorFunc Null Pointer
@@ -965,7 +930,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetLeftTextOfCursorFunc_10600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetLeftTextOfCursorFunc_10600
      * @tc.desc   test OH_TextEditorProxy_SetGetLeftTextOfCursorFunc Ok
@@ -992,7 +956,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetRightTextOfCursorFunc_10700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetRightTextOfCursorFunc_10700
      * @tc.desc   test OH_TextEditorProxy_SetGetRightTextOfCursorFunc Null Pointer
@@ -1019,7 +982,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetRightTextOfCursorFunc_10800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetRightTextOfCursorFunc_10800
      * @tc.desc   test OH_TextEditorProxy_SetGetRightTextOfCursorFunc Ok
@@ -1046,7 +1008,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetTextIndexAtCursorFunc_10900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetTextIndexAtCursorFunc_10900
      * @tc.desc   test OH_TextEditorProxy_SetGetTextIndexAtCursorFunc Null Pointer
@@ -1073,7 +1034,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetTextIndexAtCursorFunc_11000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetGetTextIndexAtCursorFunc_11000
      * @tc.desc   test OH_TextEditorProxy_SetGetTextIndexAtCursorFunc Ok
@@ -1100,7 +1060,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetReceivePrivateCommandFunc_11100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetReceivePrivateCommandFunc_11100
      * @tc.desc   test OH_TextEditorProxy_SetReceivePrivateCommandFunc Null Pointer
@@ -1127,7 +1086,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetReceivePrivateCommandFunc_11200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetReceivePrivateCommandFunc_11200
      * @tc.desc   test OH_TextEditorProxy_SetReceivePrivateCommandFunc Ok
@@ -1154,7 +1112,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSetPreviewTextFunc_11300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSetPreviewTextFunc_11300
      * @tc.desc   test OH_TextEditorProxy_SetSetPreviewTextFunc Null Pointer
@@ -1181,7 +1138,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSetPreviewTextFunc_11400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetSetPreviewTextFunc_11400
      * @tc.desc   test OH_TextEditorProxy_SetSetPreviewTextFunc Ok
@@ -1208,7 +1164,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetFinishTextPreviewFunc_11500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetFinishTextPreviewFunc_11500
      * @tc.desc   test OH_TextEditorProxy_SetFinishTextPreviewFunc Null Pointer
@@ -1235,7 +1190,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetFinishTextPreviewFunc_11600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_SetFinishTextPreviewFunc_11600
      * @tc.desc   test OH_TextEditorProxy_SetFinishTextPreviewFunc Ok
@@ -1262,7 +1216,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetTextConfigFunc_11700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetTextConfigFunc_11700
      * @tc.desc   test OH_TextEditorProxy_GetGetTextConfigFunc Null Pointer
@@ -1289,7 +1242,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetTextConfigFunc_11800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetTextConfigFunc_11800
      * @tc.desc   test OH_TextEditorProxy_GetGetTextConfigFunc Ok
@@ -1316,7 +1268,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetInsertTextFunc_11900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetInsertTextFunc_11900
      * @tc.desc   test OH_TextEditorProxy_GetInsertTextFunc Null Pointer
@@ -1343,7 +1294,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetInsertTextFunc_12000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetInsertTextFunc_12000
      * @tc.desc   test OH_TextEditorProxy_GetInsertTextFunc Ok
@@ -1370,7 +1320,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetDeleteForwardFunc_12100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetDeleteForwardFunc_12100
      * @tc.desc   test OH_TextEditorProxy_GetDeleteForwardFunc Null Pointer
@@ -1397,7 +1346,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetDeleteForwardFunc_12200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetDeleteForwardFunc_12200
      * @tc.desc   test OH_TextEditorProxy_GetDeleteForwardFunc Ok
@@ -1424,7 +1372,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetDeleteBackwardFunc_12300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetDeleteBackwardFunc_12300
      * @tc.desc   test OH_TextEditorProxy_GetDeleteBackwardFunc Null Pointer
@@ -1451,7 +1398,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetDeleteBackwardFunc_12400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetDeleteBackwardFunc_12400
      * @tc.desc   test OH_TextEditorProxy_GetDeleteBackwardFunc Ok
@@ -1478,7 +1424,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSendKeyboardStatusFunc_12500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSendKeyboardStatusFunc_12500
      * @tc.desc   test OH_TextEditorProxy_GetSendKeyboardStatusFunc Null Pointer
@@ -1505,7 +1450,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSendKeyboardStatusFunc_12600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSendKeyboardStatusFunc_12600
      * @tc.desc   test OH_TextEditorProxy_GetSendKeyboardStatusFunc Ok
@@ -1532,7 +1476,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSendEnterKeyFunc_12700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSendEnterKeyFunc_12700
      * @tc.desc   test OH_TextEditorProxy_GetSendEnterKeyFunc Null Pointer
@@ -1559,7 +1502,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSendEnterKeyFunc_12800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSendEnterKeyFunc_12800
      * @tc.desc   test OH_TextEditorProxy_GetSendEnterKeyFunc Ok
@@ -1586,7 +1528,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetMoveCursorFunc_12900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetMoveCursorFunc_12900
      * @tc.desc   test OH_TextEditorProxy_GetMoveCursorFunc Null Pointer
@@ -1613,7 +1554,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetMoveCursorFunc_13000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetMoveCursorFunc_13000
      * @tc.desc   test OH_TextEditorProxy_GetMoveCursorFunc Ok
@@ -1640,7 +1580,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetHandleSetSelectionFunc_13100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetHandleSetSelectionFunc_13100
      * @tc.desc   test OH_TextEditorProxy_GetHandleSetSelectionFunc Null Pointer
@@ -1667,7 +1606,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetHandleSetSelectionFunc_13200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetHandleSetSelectionFunc_13200
      * @tc.desc   test OH_TextEditorProxy_GetHandleSetSelectionFunc Ok
@@ -1694,7 +1632,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetHandleExtendActionFunc_13300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetHandleExtendActionFunc_13300
      * @tc.desc   test OH_TextEditorProxy_GetHandleExtendActionFunc Null Pointer
@@ -1721,7 +1658,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetHandleExtendActionFunc_13400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetHandleExtendActionFunc_13400
      * @tc.desc   test OH_TextEditorProxy_GetHandleExtendActionFunc Ok
@@ -1748,7 +1684,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetLeftTextOfCursorFunc_13500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetLeftTextOfCursorFunc_13500
      * @tc.desc   test OH_TextEditorProxy_GetGetLeftTextOfCursorFunc Null Pointer
@@ -1775,7 +1710,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetLeftTextOfCursorFunc_13600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetLeftTextOfCursorFunc_13600
      * @tc.desc   test OH_TextEditorProxy_GetGetLeftTextOfCursorFunc Ok
@@ -1802,7 +1736,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetRightTextOfCursorFunc_13700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetRightTextOfCursorFunc_13700
      * @tc.desc   test OH_TextEditorProxy_GetGetRightTextOfCursorFunc Null Pointer
@@ -1829,7 +1762,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetRightTextOfCursorFunc_13800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetRightTextOfCursorFunc_13800
      * @tc.desc   test OH_TextEditorProxy_GetGetRightTextOfCursorFunc Ok
@@ -1856,7 +1788,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetTextIndexAtCursorFunc_13900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetTextIndexAtCursorFunc_13900
      * @tc.desc   test OH_TextEditorProxy_GetGetTextIndexAtCursorFunc Null Pointer
@@ -1883,7 +1814,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetTextIndexAtCursorFunc_14000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetGetTextIndexAtCursorFunc_14000
      * @tc.desc   test OH_TextEditorProxy_GetGetTextIndexAtCursorFunc Ok
@@ -1910,7 +1840,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetReceivePrivateCommandFunc_14100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetReceivePrivateCommandFunc_14100
      * @tc.desc   test OH_TextEditorProxy_GetReceivePrivateCommandFunc Null Pointer
@@ -1937,7 +1866,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetReceivePrivateCommandFunc_14200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetReceivePrivateCommandFunc_14200
      * @tc.desc   test OH_TextEditorProxy_GetReceivePrivateCommandFunc Ok
@@ -1964,7 +1892,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSetPreviewTextFunc_14300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSetPreviewTextFunc_14300
      * @tc.desc   test OH_TextEditorProxy_GetSetPreviewTextFunc Null Pointer
@@ -1991,7 +1918,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSetPreviewTextFunc_14400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetSetPreviewTextFunc_14400
      * @tc.desc   test OH_TextEditorProxy_GetSetPreviewTextFunc Ok
@@ -2018,7 +1944,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetFinishTextPreviewFunc_14500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetFinishTextPreviewFunc_14500
      * @tc.desc   test OH_TextEditorProxy_GetFinishTextPreviewFunc Null Pointer
@@ -2045,7 +1970,6 @@ export default function ActsInputmethodTwoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetFinishTextPreviewFunc_14600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextEditorProxy_GetFinishTextPreviewFunc_14600
      * @tc.desc   test OH_TextEditorProxy_GetFinishTextPreviewFunc Ok

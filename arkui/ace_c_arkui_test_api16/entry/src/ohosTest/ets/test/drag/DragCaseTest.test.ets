@@ -20,7 +20,9 @@ import Utils from '../common/Utils'
 import nativeRender from 'libnativerender.so'
 
 async function panAndPinchGesture(id: string) {
+  await Utils.sleep(1000)
   let driver = Driver.create();
+  await Utils.sleep(1000)
   let refresh = await driver.findComponent(ON.id(id));
   let rect = await refresh.getBounds();
   let refresh2 = await driver.findComponent(ON.id('dragArea'));

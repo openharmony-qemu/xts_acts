@@ -57,14 +57,14 @@ export default function setAndClearServiceWorkerWebSchemeHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0100
-    * @tc.name       : setAndClearServiceWorkerWebSchemeHandler0100
-    * @tc.desc       : test setAndClearServiceWorkerWebSchemeHandler
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   setAndClearServiceWorkerWebSchemeHandler0100
+     * @tc.number SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0100
+     * @tc.desc   test setAndClearServiceWorkerWebSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('setAndClearServiceWorkerWebSchemeHandler0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("setAndClearServiceWorkerWebSchemeHandler0100", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -77,14 +77,14 @@ export default function setAndClearServiceWorkerWebSchemeHandler() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0200
-    * @tc.name       : setAndClearServiceWorkerWebSchemeHandler0200
-    * @tc.desc       : test setAndClearServiceWorkerWebSchemeHandler
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   setAndClearServiceWorkerWebSchemeHandler0200
+     * @tc.number SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0200
+     * @tc.desc   test setAndClearServiceWorkerWebSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('setAndClearServiceWorkerWebSchemeHandler0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("setAndClearServiceWorkerWebSchemeHandler0200", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

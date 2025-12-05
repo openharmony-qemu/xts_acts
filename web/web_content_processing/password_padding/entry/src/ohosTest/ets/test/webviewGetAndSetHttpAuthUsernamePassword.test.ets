@@ -74,14 +74,14 @@ export default function ActsAceWebviewGetAndSetHttpAuthUsernamePassword() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0001
-    * @tc.name        : testWebviewGetAndSetHttpAuthUsernamePassword
-    * @tc.desc        : test webviewGetAndSetHttpAuthUsernamePassword
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebviewGetAndSetHttpAuthUsernamePassword
+     * @tc.number SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0001
+     * @tc.desc   test webviewGetAndSetHttpAuthUsernamePassword
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebviewGetAndSetHttpAuthUsernamePassword', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebviewGetAndSetHttpAuthUsernamePassword";
       Utils.emitEvent(emitKey, 130000);
@@ -89,14 +89,14 @@ export default function ActsAceWebviewGetAndSetHttpAuthUsernamePassword() {
       sendEventByKey('webviewGetAndSetHttpAuthUsernamePasswordButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0002
-    * @tc.name        : testWebviewUpdateHttpAuthPassword
-    * @tc.desc        : test webviewUpdateHttpAuthPassword
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebviewUpdateHttpAuthPassword
+     * @tc.number SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0002
+     * @tc.desc   test webviewUpdateHttpAuthPassword
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebviewUpdateHttpAuthPassword', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebviewUpdateHttpAuthPassword";
       Utils.emitEvent(emitKey, 130000);
@@ -104,14 +104,14 @@ export default function ActsAceWebviewGetAndSetHttpAuthUsernamePassword() {
       sendEventByKey('webviewGetAndSetHttpAuthUsernamePasswordButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0003
-    * @tc.name        : testWebviewUpdateHttpAuthUsername
-    * @tc.desc        : test webviewUpdateHttpAuthUsername
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebviewUpdateHttpAuthUsername
+     * @tc.number SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0003
+     * @tc.desc   test webviewUpdateHttpAuthUsername
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebviewUpdateHttpAuthUsername', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebviewUpdateHttpAuthUsername";
       Utils.emitEvent(emitKey, 130000);
@@ -119,14 +119,14 @@ export default function ActsAceWebviewGetAndSetHttpAuthUsernamePassword() {
       sendEventByKey('webviewGetAndSetHttpAuthUsernamePasswordButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0004
-    * @tc.name        : testWebviewSetHttpAuthUsernameToNull
-    * @tc.desc        : test webviewSetHttpAuthUsernameToNull
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebviewSetHttpAuthUsernameToNull
+     * @tc.number SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0004
+     * @tc.desc   test webviewSetHttpAuthUsernameToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebviewSetHttpAuthUsernameToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebviewSetHttpAuthUsernameToNull";
       Utils.emitEvent(emitKey, 130000);
@@ -134,14 +134,14 @@ export default function ActsAceWebviewGetAndSetHttpAuthUsernamePassword() {
       sendEventByKey('webviewGetAndSetHttpAuthUsernamePasswordButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0005
-    * @tc.name        : testWebviewSetHttpAuthPasswordToNull
-    * @tc.desc        : test webviewSetHttpAuthPasswordToNull
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebviewSetHttpAuthPasswordToNull
+     * @tc.number SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0005
+     * @tc.desc   test webviewSetHttpAuthPasswordToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebviewSetHttpAuthPasswordToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebviewSetHttpAuthPasswordToNull";
       Utils.emitEvent(emitKey, 130000);
@@ -149,14 +149,14 @@ export default function ActsAceWebviewGetAndSetHttpAuthUsernamePassword() {
       sendEventByKey('webviewGetAndSetHttpAuthUsernamePasswordButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0006
-    * @tc.name        : testWebviewSetHttpAuthUsernamePasswordToNull
-    * @tc.desc        : test webviewSetHttpAuthUsernamePasswordToNull
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebviewSetHttpAuthUsernamePasswordToNull
+     * @tc.number SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0006
+     * @tc.desc   test webviewSetHttpAuthUsernamePasswordToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebviewSetHttpAuthUsernamePasswordToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebviewSetHttpAuthUsernamePasswordToNull";
       Utils.emitEvent(emitKey, 130000);
@@ -164,14 +164,14 @@ export default function ActsAceWebviewGetAndSetHttpAuthUsernamePassword() {
       sendEventByKey('webviewGetAndSetHttpAuthUsernamePasswordButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0007
-    * @tc.name        : testWebviewDeleteHttpAuthUsernamePassword
-    * @tc.desc        : test webviewDeleteHttpAuthUsernamePassword
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebviewDeleteHttpAuthUsernamePassword
+     * @tc.number SUB_ACE_WEBVIEW_GETANDSETHTTPAUTHUSERNAMEPASSWORD_API_0007
+     * @tc.desc   test webviewDeleteHttpAuthUsernamePassword
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebviewDeleteHttpAuthUsernamePassword', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebviewDeleteHttpAuthUsernamePassword";
       Utils.emitEvent(emitKey, 130000);

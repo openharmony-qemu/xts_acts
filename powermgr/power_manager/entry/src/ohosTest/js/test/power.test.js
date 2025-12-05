@@ -47,7 +47,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_IsScreenOn_Promise_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0010
      * @tc.desc   Checks whether the screen of a device is on or off (deprecated since 9)
@@ -74,7 +73,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_IsScreenOn_Callback_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0020
      * @tc.desc   Checks whether the screen of a device is on or off (deprecated since 9)
@@ -101,7 +99,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_IsActive_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0030
      * @tc.desc   On and Off Screen and get the current screen on and off
@@ -125,7 +122,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPower_GetPowerMode_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0040
      * @tc.desc   Gets and sets the power mode
@@ -148,7 +144,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_DevicePowerMode_MODENORMAL_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0050
      * @tc.desc   Get device power mode MODE_NORMAL
@@ -172,7 +167,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_DevicePowerMode_MODEPOWERSAVE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0060
      * @tc.desc   Get device power mode MODE_POWER_SAVE
@@ -196,7 +190,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_DevicePowerMode_MODEPERFORMANCE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0070
      * @tc.desc   Get device power mode MODE_PERFORMANCE
@@ -220,7 +213,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_DevicePowerMode_MODE_EXTREME_POWER_SAVE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0080
      * @tc.desc   Get device power mode MODE_EXTREME_POWER_SAVE
@@ -244,7 +236,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_DevicePowerMode_MODE_CUSTOM_POWER_SAVE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0081
      * @tc.desc   Get device power mode MODE_CUSTOM_POWER_SAVE
@@ -268,7 +259,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Power_IsStandby_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0090
      * @tc.desc   Device isStandby interface verification
@@ -291,7 +281,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0080
      * @tc.desc   Test the third-party application call reboot will be blocked
@@ -311,7 +300,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0090
      * @tc.desc   Test the third-party application call wakeup will be blocked
@@ -331,7 +319,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0100
      * @tc.desc   Test the third-party application call suspend will be blocked
@@ -351,7 +338,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0400
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0110
      * @tc.desc   Test the third-party application call suspend will be blocked
@@ -371,7 +357,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0500
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0110
      * @tc.desc   Test the third-party application call suspend will be blocked
@@ -391,7 +376,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0600
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0120
      * @tc.desc   Test the third-party application call setPowerMode will be blocked
@@ -421,7 +405,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0601
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0121
      * @tc.desc   Test the third-party application call setPowerMode will be blocked
@@ -451,7 +434,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0700
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0130
      * @tc.desc   Test the third-party application call setPowerMode will be blocked
@@ -481,7 +463,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0701
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0131
      * @tc.desc   Test the third-party application call setPowerMode will be blocked
@@ -511,7 +492,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0800
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0140
      * @tc.desc   Test the third-party application call setPowerMode will be blocked
@@ -541,7 +521,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_0900
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0150
      * @tc.desc   Test the third-party application call setScreenOffTime will be blocked
@@ -561,7 +540,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_Power_Manager_1000
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0160
      * @tc.desc   Test the third-party application call setScreenOffTime will be blocked
@@ -581,7 +559,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSystem_API_Test_Power_Manager_1100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0170
      * @tc.desc   Test the third-party application call setScreenOffTime will be blocked
@@ -601,7 +578,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSystem_API_Test_Power_Manager_1200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0180
      * @tc.desc   Test the third-party application call refreshActivity will be blocked
@@ -621,7 +597,6 @@ export default function PowerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSystem_API_Test_Power_Manager_1300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0190
      * @tc.desc   Test the third-party application call setPowerKeyFilteringStrategy will be blocked
@@ -642,7 +617,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0200
      * @tc.desc   Power Key Filtering Strategy
@@ -666,7 +640,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerKeyFilteringStrategy_LONG_PRESS_FILTERING_ONCE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0210
      * @tc.desc   Power Key Filtering Strategy

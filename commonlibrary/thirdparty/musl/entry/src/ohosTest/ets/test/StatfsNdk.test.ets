@@ -25,12 +25,12 @@ export default function statfsNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATFS_STATFS_0100
-     * @tc.name       : testMuslStatfsStatfs001
-     * @tc.desc       : test statfs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatfsStatfs001
+     * @tc.number SUB_THIRDPARTY_MUSL_STATFS_STATFS_0100
+     * @tc.desc   test statfs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatfsStatfs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1
@@ -40,12 +40,12 @@ export default function statfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATFS_STATFS_0200
-     * @tc.name       : testMuslStatfsStatfs002
-     * @tc.desc       : test statfs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatfsStatfs002
+     * @tc.number SUB_THIRDPARTY_MUSL_STATFS_STATFS_0200
+     * @tc.desc   test statfs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatfsStatfs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 2
@@ -55,12 +55,12 @@ export default function statfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATFS_STATFS64_0100
-     * @tc.name       : testMuslStatfsStatfs64001
-     * @tc.desc       : test statfs64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatfsStatfs64001
+     * @tc.number SUB_THIRDPARTY_MUSL_STATFS_STATFS64_0100
+     * @tc.desc   test statfs64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatfsStatfs64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1
@@ -70,12 +70,12 @@ export default function statfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATFS_STATFS64_0200
-     * @tc.name       : testMuslStatfsStatfs64002
-     * @tc.desc       : test statfs64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatfsStatfs64002
+     * @tc.number SUB_THIRDPARTY_MUSL_STATFS_STATFS64_0200
+     * @tc.desc   test statfs64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatfsStatfs64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 2
@@ -85,12 +85,12 @@ export default function statfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATS_FSTATFS_0100
-     * @tc.name       : testMuslStatfsFstatfs001
-     * @tc.desc       : test fstatfs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatfsFstatfs001
+     * @tc.number SUB_THIRDPARTY_MUSL_STATS_FSTATFS_0100
+     * @tc.desc   test fstatfs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatfsFstatfs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -100,12 +100,12 @@ export default function statfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATS_FSTATFS64_0100
-     * @tc.name       : testMuslStatfsFstatfs64001
-     * @tc.desc       : test fstatfs64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatfsFstatfs64001
+     * @tc.number SUB_THIRDPARTY_MUSL_STATS_FSTATFS64_0100
+     * @tc.desc   test fstatfs64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatfsFstatfs64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -115,12 +115,12 @@ export default function statfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATS_FSTATVFS_0100
-     * @tc.name       : testMuslStatfsFstatvfs001
-     * @tc.desc       : test fstatvfs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatfsFstatvfs001
+     * @tc.number SUB_THIRDPARTY_MUSL_STATS_FSTATVFS_0100
+     * @tc.desc   test fstatvfs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatfsFstatvfs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -130,12 +130,12 @@ export default function statfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATS_FSTATVFS64_0100
-     * @tc.name       : testMuslStatfsFstatvfs64001
-     * @tc.desc       : test fstatvfs64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatfsFstatvfs64001
+     * @tc.number SUB_THIRDPARTY_MUSL_STATS_FSTATVFS64_0100
+     * @tc.desc   test fstatvfs64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatfsFstatvfs64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;

@@ -91,7 +91,6 @@ export default function btBleNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStopAdvertisingNop
      * @tc.number testStopAdvertisingNop
      * @tc.desc   test stopAdvertising by promise without permission
@@ -111,7 +110,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStopAdvertisingAsyncCallbackNop
      * @tc.number testStopAdvertisingAsyncCallbackNop
      * @tc.desc   test stopAdvertising by async callback without permission
@@ -143,7 +141,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testEnableAdvertisingNop
      * @tc.number testEnableAdvertisingNop
      * @tc.desc   test enableAdvertising by promise without permission
@@ -166,7 +163,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testEnableAdvertisingAsyncCallbackNop
      * @tc.number testEnableAdvertisingAsyncCallbackNop
      * @tc.desc   test enableAdvertising by async callback without permission
@@ -201,7 +197,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStartAdvertisingNop
      * @tc.number testStartAdvertisingNop
      * @tc.desc   test startAdvertising by promise without permission
@@ -221,7 +216,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStartAdvertisingAsyncCallbackNop
      * @tc.number testStartAdvertisingAsyncCallbackNop
      * @tc.desc   test startAdvertising by async callback without permission
@@ -252,7 +246,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testDisableAdvertisingNop
      * @tc.number testDisableAdvertisingNop
      * @tc.desc   test disableAdvertising by promise without permission
@@ -276,7 +269,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testDisableAdvertisingAsyncCallbackNop
      * @tc.number testDisableAdvertisingAsyncCallbackNop
      * @tc.desc   test disableAdvertising by async callback without permission
@@ -311,7 +303,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStopBLEScanNop
      * @tc.number testStopBLEScanNop
      * @tc.desc   test stopBLEScan without permission
@@ -331,7 +322,6 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStartScanNop
      * @tc.number testStartScanNop
      * @tc.desc   test startScan without permission
@@ -362,7 +352,6 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStopScanNop
      * @tc.number testStopScanNop
      * @tc.desc   test stopScan without permission
@@ -393,7 +382,6 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGetConnectedBLEDevicesNop
      * @tc.number testGetConnectedBLEDevicesNop
      * @tc.desc   test getConnectedBLEDevices without permission
@@ -418,7 +406,6 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStartBleScanNop
      * @tc.number testStartBleScanNop
      * @tc.desc   test startBLEScan without permission
@@ -438,7 +425,6 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testStopAdvertisingNoParamNop
      * @tc.number testStopAdvertisingNoParamNop
      * @tc.desc   test stopAdvertising without permission
@@ -458,7 +444,6 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGetConnectedBLEDevicesBleProfileNop
      * @tc.number testGetConnectedBLEDevicesBleProfileNop
      * @tc.desc   test getConnectedBLEDevices BleProfile without permission
@@ -484,19 +469,19 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
+     * @tc.name   testGATTSERVER_GETCONNECTEDSTATE_NOP
      * @tc.number testGATTSERVER_GETCONNECTEDSTATE_NOP
-     * @tc.name testGATTSERVER_GETCONNECTEDSTATE_NOP
-     * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState 201 .
-     * @tc.type Method
-     * @tc.size MEDIUMTEST
-     * @tc.level Level 0
+     * @tc.desc   20251113API22用例覆盖GattServer-getConnectedState without permission .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGATTSERVER_GETCONNECTEDSTATE_NOP', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       try {
         let gattServer: ble.GattServer = ble.createGattServer();
         let return_status: ble.ProfileConnectionState = gattServer.getConnectedState('01:02:00:02:03:01');
         console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
-        expect(return_status).assertEqual(0);
+        expect().assertFail();
       } catch (error) {
         console.error(`[bt_arkts]server ProfileConnectionState 0100 is failed, code is ${error.code},message is ${error.message}`);
         expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
@@ -505,19 +490,19 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
+     * @tc.name   testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP
      * @tc.number testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP
-     * @tc.name testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP
-     * @tc.desc 20251113API22用例覆盖GattClientDevice-getConnectedState 201.
-     * @tc.type Method
-     * @tc.size MEDIUMTEST
-     * @tc.level Level 0
+     * @tc.desc   20251113API22用例覆盖GattClientDevice-getConnectedState without permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       try {
         let device:ble.GattClientDevice = ble.createGattClientDevice('00:11:22:33:44:55');
         let return_status=device.getConnectedState();
         console.info('[bt_arkts] client ProfileConnectionState 0100 is' + JSON.stringify(return_status))
-        expect(return_status).assertEqual(0);
+        expect().assertFail();
       } catch (error) {
         console.error(`[bt_arkts]getConnectedState status is failed, code is ${error.code},message is ${error.message}`);
         expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);

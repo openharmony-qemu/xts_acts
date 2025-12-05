@@ -56,10 +56,13 @@ export default function webTwoJsunit() {
       console.info('web beforeEach start');
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_005                                                                                                                                                             
-     *tc.name RegisterJavaScriptProxy                                                                                                                                                                                                                 
-     *tc.desic Sets allow the Web access overview mode
+    /**
+     * @tc.name   RegisterJavaScriptProxy
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_005
+     * @tc.desc   RegisterJavaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxyTwo", 172270)

@@ -22,7 +22,6 @@ const RDB_E_INVALID_ARGS = 14800001;
 export default function ActsValuesBucketTest() {
   describe('ActsValuesBucketTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0100
      * @tc.desc   test OH_VBucket_PutAsset Test Illegal Parameter Scene
@@ -46,7 +45,6 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0200
      * @tc.desc   test OH_VBucket_PutAsset Test Normal Scene
@@ -70,7 +68,6 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0300
      * @tc.desc   test OH_VBucket_PutAssets Test Illegal Parameter Scene
@@ -94,7 +91,6 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0400
      * @tc.desc   test OH_VBucket_PutAssets Test Normal Scene
@@ -118,7 +114,6 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutFloatVector_0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutFloatVector_0500
      * @tc.desc   test OH_VBucket_PutFloatVector Test Illegal Parameter Scene
@@ -145,7 +140,6 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutUnlimitedInt_0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutUnlimitedInt_0600
      * @tc.desc   test OH_VBucket_PutUnlimitedInt Test Illegal Parameter Scene

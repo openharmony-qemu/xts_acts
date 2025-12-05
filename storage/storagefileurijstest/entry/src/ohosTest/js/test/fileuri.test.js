@@ -28,12 +28,12 @@ describe('file_uri_test', function () {
 
   const CONTENT = "Hello World!";
   /**
+   * @tc.name   test_FileUri_GetUriFromPath_000
    * @tc.number SUB_STORAGE_FileUri_GetUriFromPath_0000
-   * @tc.name test_FileUri_GetUriFromPath_000
-   * @tc.desc Function of API, get Uri from Path. Test normal function.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
+   * @tc.desc   Function of API, get Uri from Path. Test normal function.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileUri_GetUriFromPath_000', Level.LEVEL0, async function () {
     try {
@@ -51,12 +51,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_GetUriFromPath_001
    * @tc.number SUB_STORAGE_FileUri_GetUriFromPath_0100
-   * @tc.name test_FileUri_GetUriFromPath_001
-   * @tc.desc Function of API, get Uri from Path. Test path is empty.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
+   * @tc.desc   Function of API, get Uri from Path. Test path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileUri_GetUriFromPath_001', Level.LEVEL0, async function () {
     try {
@@ -73,12 +73,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_GetUriFromPath_002
    * @tc.number SUB_STORAGE_FileUri_GetUriFromPath_0200
-   * @tc.name test_FileUri_GetUriFromPath_002
-   * @tc.desc Function of API, get Uri from Path. Test argument is empty.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
+   * @tc.desc   Function of API, get Uri from Path. Test argument is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileUri_GetUriFromPath_002', Level.LEVEL0, async function () {
     try {
@@ -91,12 +91,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_GetUriFromPath_003
    * @tc.number SUB_STORAGE_FileUri_GetUriFromPath_0300
-   * @tc.name test_FileUri_GetUriFromPath_003
-   * @tc.desc Function of API, get Uri from Path. Test argument is number.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
+   * @tc.desc   Function of API, get Uri from Path. Test argument is number.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileUri_GetUriFromPath_003', Level.LEVEL0, async function () {
     try {
@@ -109,13 +109,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_Parameter_Name_000
    * @tc.number SUB_STORAGE_FileUri_Parameter_0000
-   * @tc.name test_FileUri_Parameter_Name_000
-   * @tc.desc Get the FileURI object through 'path' and validates the properties of the FileURI object.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Get the FileURI object through 'path' and validates the properties of the FileURI object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileUri_Parameter_Name_000', Level.LEVEL0, async function () {
     try {
@@ -141,13 +140,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_Parameter_Name_001
    * @tc.number SUB_STORAGE_FileUri_Parameter_0100
-   * @tc.name test_FileUri_Parameter_Name_001
-   * @tc.desc Get the FileURI object through 'uri' and validates the properties of the FileURI object.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Get the FileURI object through 'uri' and validates the properties of the FileURI object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileUri_Parameter_Name_001', Level.LEVEL0, async function () {
     try {
@@ -175,13 +173,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_Parameter_Name_002
    * @tc.number SUB_STORAGE_FileUri_Parameter_0200
-   * @tc.name test_FileUri_Parameter_Name_002
-   * @tc.desc Get the FileURI object through an empty string or uri which has no suffix directories.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Get the FileURI object through an empty string or uri which has no suffix directories.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_FileUri_Parameter_Name_002', Level.LEVEL3, async function () {
     try {
@@ -201,13 +198,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_Parameter_Name_003
    * @tc.number SUB_STORAGE_FileUri_Parameter_0300
-   * @tc.name test_FileUri_Parameter_Name_003
-   * @tc.desc Enter the illegal parameter type.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Enter the illegal parameter type.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_FileUri_Parameter_Name_003', Level.LEVEL3, async function () {
     try {
@@ -219,14 +215,13 @@ describe('file_uri_test', function () {
     }
   });
 
-   /**
+  /**
+   * @tc.name   test_FileUri_Other_Function_000
    * @tc.number SUB_STORAGE_FileUri_Other_Function_0000
-   * @tc.name test_FileUri_Other_Function_000
-   * @tc.desc Get the FileURI object through 'uri' and validates the properties of the FileURI object.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Get the FileURI object through 'uri' and validates the properties of the FileURI object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileUri_Other_Function_000', Level.LEVEL0, async function () {
     try {
@@ -264,13 +259,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_EqualsTo_000
    * @tc.number SUB_STORAGE_EqualsTo_0000
-   * @tc.name test_FileUri_EqualsTo_000
-   * @tc.desc Enter the illegal parameter type.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Enter the illegal parameter type.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_FileUri_EqualsTo_000', Level.LEVEL3, async function () {
     try {
@@ -285,13 +279,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_EqualsTo_001
    * @tc.number SUB_STORAGE_EqualsTo_0100
-   * @tc.name test_FileUri_EqualsTo_001
-   * @tc.desc Enter the illegal parameter num.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Enter the illegal parameter num.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_FileUri_EqualsTo_001', Level.LEVEL3, async function () {
     try {
@@ -306,13 +299,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_Equals_000
    * @tc.number SUB_STORAGE_Equals_0000
-   * @tc.name test_FileUri_Equals_000
-   * @tc.desc Enter the illegal parameter type.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Enter the illegal parameter type.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_FileUri_Equals_000', Level.LEVEL3, async function () {
     try {
@@ -327,13 +319,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_Equals_001
    * @tc.number SUB_STORAGE_Equals_0100
-   * @tc.name test_FileUri_Equals_001
-   * @tc.desc Enter the illegal parameter num.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Enter the illegal parameter num.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_FileUri_Equals_001', Level.LEVEL3, async function () {
     try {
@@ -348,13 +339,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_CheckIsAbsolute_000
    * @tc.number SUB_STORAGE_CheckIsAbsolute_0000
-   * @tc.name test_FileUri_CheckIsAbsolute_000
-   * @tc.desc Enter the illegal parameter num.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Enter the illegal parameter num.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_FileUri_CheckIsAbsolute_000', Level.LEVEL3, async function () {
     try {
@@ -369,13 +359,12 @@ describe('file_uri_test', function () {
   });
 
   /**
+   * @tc.name   test_FileUri_Normalize_000
    * @tc.number SUB_STORAGE_FileUri_Normalize_0000
-   * @tc.name test_FileUri_Normalize_000
-   * @tc.desc Enter the illegal parameter num.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Enter the illegal parameter num.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_FileUri_Normalize_000', Level.LEVEL3, async function () {
     try {

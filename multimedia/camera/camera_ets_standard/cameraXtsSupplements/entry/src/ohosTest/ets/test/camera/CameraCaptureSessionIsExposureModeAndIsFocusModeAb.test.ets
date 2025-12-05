@@ -250,12 +250,12 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       AppStorage.delete('string1')
     });
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001
-     * @tc.desc      Create Photo session mode:EXPOSURE_MODE_LOCKED
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001
+     * @tc.desc   Create Photo session mode:EXPOSURE_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001';
@@ -268,12 +268,12 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002
-     * @tc.desc      Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002
+     * @tc.desc   Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002';
@@ -286,12 +286,12 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001
-     * @tc.desc      Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001
+     * @tc.desc   Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001';
@@ -303,12 +303,12 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002
-     * @tc.desc      Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002
+     * @tc.desc   Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002';
@@ -320,12 +320,12 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003
-     * @tc.desc      Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003
+     * @tc.desc   Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003';

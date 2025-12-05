@@ -64,7 +64,6 @@ export default function FivePointOne_resMgrStageTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_0100
      * @tc.number resourceManager_test_getIntPluralStringValueSync_static_0100
      * @tc.desc   getIntPluralStringValueSync with id
@@ -79,7 +78,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_static_0100
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_0310
      * @tc.desc   getDoublePluralStringByNameSync with name
@@ -94,7 +92,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_0970
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_0970
      * @tc.desc   error code 9001001 with id
@@ -113,7 +110,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDoublePluralStringValueSync_static_0990
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_0990
      * @tc.desc   error code 9001001 with id
@@ -132,7 +128,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
        
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringByNameSync_static_0100
      * @tc.number resourceManager_test_getIntPluralStringByNameSync_static_0100
      * @tc.desc   getIntPluralStringByNameSync with name
@@ -147,7 +142,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_1010
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1010
      * @tc.desc   error code 9001002 with id
@@ -165,7 +159,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDoublePluralStringValueSync_static_1030
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1030
      * @tc.desc   error code 9001002 with id
@@ -183,7 +176,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_1050
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1050
      * @tc.desc   error code 9001006 with id
@@ -201,7 +193,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDoublePluralStringValueSync_static_1070
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1070
      * @tc.desc   error code 9001006 with id
@@ -219,7 +210,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_1090
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1090
      * @tc.desc   error code 9001007 with id
@@ -237,7 +227,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDoublePluralStringValueSync_static_1110
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1110
      * @tc.desc   error code 9001007 with id
@@ -255,7 +244,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringByNameSync_static_1130
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1130
      * @tc.desc   error code 9001003 by name
@@ -274,7 +262,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_static_1140
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1140
      * @tc.desc   error code 9001003 by name
@@ -293,7 +280,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringByNameSync_static_1150
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1150
      * @tc.desc   error code 9001006 by name
@@ -311,7 +297,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_static_1160
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1160
      * @tc.desc   error code 9001006 by name
@@ -330,7 +315,6 @@ export default function FivePointOne_resMgrStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getIntPluralStringByNameSync_static_1170
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1170
      * @tc.desc   error code 9001008 by name
@@ -348,7 +332,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_static_1180
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1180
      * @tc.desc   error code 9001008 by name

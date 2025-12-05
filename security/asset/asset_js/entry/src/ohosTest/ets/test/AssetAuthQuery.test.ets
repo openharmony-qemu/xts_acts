@@ -41,12 +41,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Authentication_Func_0600
      * @tc.number Security_DataSecurity_Asset_Authentication_Func_0600
-     * @tc.name 打开超过16个session
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Security_DataSecurity_Asset_Authentication_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let attr: asset.AssetMap = new Map();
@@ -67,12 +67,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Authentication_Func_0700
      * @tc.number Security_DataSecurity_Asset_Authentication_Func_0700
-     * @tc.name 请求创建session时，指定0,11分钟有效期
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Authentication_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -88,12 +88,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Authentication_Func_1200
      * @tc.number Security_DataSecurity_Asset_Authentication_Func_1200
-     * @tc.name 二次访问控制接口传入异常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Authentication_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -121,12 +121,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Authentication_Func_1600
      * @tc.number Security_DataSecurity_Asset_Authentication_Func_1600
-     * @tc.name prequery与postquery接口测试正例
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Authentication_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -141,12 +141,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Authentication_Func_1500
      * @tc.number Security_DataSecurity_Asset_Authentication_Func_1500
-     * @tc.name 不使用二次访问控制查询需要锁屏密码的数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Authentication_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -162,12 +162,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0100
      * @tc.number SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0100
-     * @tc.name 未设置密码时，A类数据增删改查
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -177,12 +177,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0200
      * @tc.number SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0200
-     * @tc.name 未设置密码时，C类数据增删改查
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -192,12 +192,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0300
      * @tc.number SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0300
-     * @tc.name 未设置密码时，D类数据增删改查
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_LevelCtrl_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -207,12 +207,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Authentication_Func_1000
      * @tc.number Security_DataSecurity_Asset_Authentication_Func_1000
-     * @tc.name 未设置密码时，写入与删除二次访问控制数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Authentication_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();

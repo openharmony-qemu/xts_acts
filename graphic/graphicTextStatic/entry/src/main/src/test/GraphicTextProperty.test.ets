@@ -33,12 +33,12 @@ export default function GraphicTextProperty() {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
     })
     /**
-     * @tc.number     testPlaceholderSpanPropertyStatic
-     * @tc.name       testPlaceholderSpanPropertyStatic
-     * @tc.desc       To test the enum value of PlaceholderSpan.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testPlaceholderSpanPropertyStatic
+     * @tc.number testPlaceholderSpanPropertyStatic
+     * @tc.desc   To test the enum value of PlaceholderSpan.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPlaceholderSpanPropertyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -66,12 +66,12 @@ export default function GraphicTextProperty() {
       })
 
     /**
-     * @tc.number     testTextBoxStatic
-     * @tc.name       testTextBoxStatic
-     * @tc.desc       To test the enum value of TextBox.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testTextBoxStatic
+     * @tc.number testTextBoxStatic
+     * @tc.desc   To test the enum value of TextBox.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextBoxStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -101,12 +101,12 @@ export default function GraphicTextProperty() {
       })
 
     /**
-     * @tc.number     testPositionWithAffinityStatic
-     * @tc.name       testPositionWithAffinityStatic
-     * @tc.desc       To test the enum value of PositionWithAffinity.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testPositionWithAffinityStatic
+     * @tc.number testPositionWithAffinityStatic
+     * @tc.desc   To test the enum value of PositionWithAffinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPositionWithAffinityStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

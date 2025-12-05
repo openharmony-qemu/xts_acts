@@ -40,7 +40,6 @@ export default function DisplayPowerManagerServiceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   DisplayPowerManagerServiceTest_0100
      * @tc.number SUB_PowerSystem_DisplayPowerManagerServiceTest_JSTest_0010
      * @tc.desc   DisplayPowerManagerService stop test
@@ -61,7 +60,6 @@ export default function DisplayPowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   DisplayPowerManagerServiceTest_0200
      * @tc.number SUB_PowerSystem_DisplayPowerManagerServiceTest_JSTest_0020
      * @tc.desc   DisplayPowerManagerService stop test

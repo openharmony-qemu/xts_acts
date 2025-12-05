@@ -332,13 +332,12 @@ export default function ImagePackingNDKTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100
-     * @tc.name      : sub_multimedia_image_packerndk_native_release
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packingtestndk native release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -360,15 +359,12 @@ export default function ImagePackingNDKTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_RELEASE_0100
-     * @tc.name      : test release image receiver options
-     * @tc.desc      : 1.create image receiver options
-     *                 2.create image receiver
-     *                 3.release image receiver options
-     *                 4.recreate image receiver failed
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_RELEASE_0100
+     * @tc.desc   1.create image receiver options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100");

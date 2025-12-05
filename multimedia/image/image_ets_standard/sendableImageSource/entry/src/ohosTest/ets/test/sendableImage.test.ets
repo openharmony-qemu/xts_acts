@@ -288,12 +288,12 @@ export default function sendableImageSource() {
     }
 
     /**
-     * @tc.number    : testCreateImageSourceUri0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0100
-     * @tc.desc      : 1.create imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0100
+     * @tc.number testCreateImageSourceUri0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -317,12 +317,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testCreateImageSourceUri0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0200
-     * @tc.desc      : 1.create imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0200
+     * @tc.number testCreateImageSourceUri0200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0200', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -345,14 +345,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageSourceUri0300
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0300
-     * @tc.desc      : 1.create imageSource
-     *                 2.set uri is empty
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0300
+     * @tc.number testCreateImageSourceUri0300
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0300', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -375,12 +373,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageSourceFd0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0100
-     * @tc.desc      : 1.create imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0100
+     * @tc.number testCreateImageSourceFd0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -403,12 +401,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageSourceFd0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0200
-     * @tc.desc      : 1.create imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0200
+     * @tc.number testCreateImageSourceFd0200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0200', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -431,12 +429,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageSourceFd0300
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0300
-     * @tc.desc      : 1.create imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0300
+     * @tc.number testCreateImageSourceFd0300
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0300', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -459,14 +457,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageSourceFd0400
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0400
-     * @tc.desc      : 1.create imageSource
-     *                 2.set fd is -1
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0400
+     * @tc.number testCreateImageSourceFd0400
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0400', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -489,12 +485,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testCreateImageSourceBuf0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0100
-     * @tc.desc      : 1.create imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0100
+     * @tc.number testCreateImageSourceBuf0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -517,12 +513,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageSourceBuf0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0200
-     * @tc.desc      : 1.create imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0200
+     * @tc.number testCreateImageSourceBuf0200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0200', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -545,14 +541,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageSourceBuf0300
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0300
-     * @tc.desc      : 1.create imageSource
-     *                 2.set ArrayBuffer is 0
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0300
+     * @tc.number testCreateImageSourceBuf0300
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0300', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -576,13 +570,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testImageSourceCreatePixelMap0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0100
-     * @tc.desc      : 1.create imageSource
-     *                 2.create PixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0100
+     * @tc.number testImageSourceCreatePixelMap0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -608,15 +601,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceCreatePixelMap0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0200
-     * @tc.desc      : 1.create imageSource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0200
+     * @tc.number testImageSourceCreatePixelMap0200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0200', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -661,15 +651,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testImageSourceCreatePixelMap0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0300
-     * @tc.desc      : 1.create imageSource
-     *                 2.set sampleSize is 0
-     *                 3.create PixelMap
-     *                 4.return error
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0300
+     * @tc.number testImageSourceCreatePixelMap0300
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0300', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -696,13 +683,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testImageSourceCreatePixelMap0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0400
-     * @tc.desc      : 1.create imageSource
-     *                 2.create PixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0400
+     * @tc.number testImageSourceCreatePixelMap0300
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0400', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -743,13 +729,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testImageSourceRelease0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0100
-     * @tc.desc      : 1.create imageSource
-     *                 2.imageSource release
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0100
+     * @tc.number testImageSourceRelease0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -772,15 +757,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceRelease0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0200
-     * @tc.desc      : 1.create imageSource
-     *                 2.imageSource release
-     *                 3.create PixelMap
-     *                 4.return error
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0200
+     * @tc.number testImageSourceRelease0200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0200', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -807,12 +789,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageReceiver0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0100
-     * @tc.desc      : 1.create receiver
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0100
+     * @tc.number testCreateImageReceiver0100
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -828,13 +810,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageReceiver0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0200
-     * @tc.desc      : 1.create receiver
-     *                 2.set format
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0200
+     * @tc.number testCreateImageReceiver0200
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0200', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -857,14 +838,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testCreateImageReceiver0300
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0300
-     * @tc.desc      : 1.create receiver
-     *                 2.set format image.ImageFormat.YCBCR_422_SP
-     *                 3.return error code is 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0300
+     * @tc.number testCreateImageReceiver0300
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0300', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -886,14 +865,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testCreateImageReceiver0400
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0400
-     * @tc.desc      : 1.create receiver
-     *                 2.set capacity is -1
-     *                 3.return receiver
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0400
+     * @tc.number testCreateImageReceiver0400
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_0400', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -915,14 +892,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageReceiverOn0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_ON_0100
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_ON_0100
+     * @tc.number testImageReceiverOn0100
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_ON_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -944,13 +919,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testGetReceivingSurfaceId0100
-     * @tc.name      : SUB_MULTIMEDIA_GET_RECEIVING_SURFACES_0100
-     * @tc.desc      : 1.create receiver
-     *                 2.getReceivingSurfaceId
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_GET_RECEIVING_SURFACES_0100
+     * @tc.number testGetReceivingSurfaceId0100
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_GET_RECEIVING_SURFACES_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -973,15 +947,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testReadNextImage0100
-     * @tc.name      : SUB_MULTIMEDIA_RECEIVER_READ_NEXT_IMAGE_0100
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.readNextImage
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_RECEIVER_READ_NEXT_IMAGE_0100
+     * @tc.number testReadNextImage0100
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_RECEIVER_READ_NEXT_IMAGE_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1011,16 +982,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageGetComponent0100
-     * @tc.name      : SUB_MULTIMEDIA_IMG_GET_COMPONENT_0100
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.readNextImage
-     *                 5.getComponent
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMG_GET_COMPONENT_0100
+     * @tc.number testImageGetComponent0100
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMG_GET_COMPONENT_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1061,18 +1028,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageGetComponent0200
-     * @tc.name      : SUB_MULTIMEDIA_IMG_GET_COMPONENT_0200
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.readNextImage
-     *                 5.getComponent
-     *                 6.set componentType is 5
-     *                 7.return error
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMG_GET_COMPONENT_0200
+     * @tc.number testImageGetComponent0200
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMG_GET_COMPONENT_0200', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1102,16 +1063,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testImageGetComponent0300
-     * @tc.name      : SUB_MULTIMEDIA_IMG_GET_COMPONENT_0300
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.main thread create image
-     *                 5.child thread getComponent
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMG_GET_COMPONENT_0300
+     * @tc.number testImageGetComponent0300
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMG_GET_COMPONENT_0300', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1147,16 +1104,12 @@ export default function sendableImageSource() {
 
 
     /**
-     * @tc.number    : testImageGetComponent0400
-     * @tc.name      : SUB_MULTIMEDIA_IMG_GET_COMPONENT_0400
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.main thread create image
-     *                 5.child thread getComponent
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMG_GET_COMPONENT_0400
+     * @tc.number testImageGetComponent0400
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMG_GET_COMPONENT_0400', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1188,16 +1141,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testReceiverRelease0100
-     * @tc.name      : SUB_MULTIMEDIA_IMG_RELEASE_0100
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.readNextImage
-     *                 5.release
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMG_RELEASE_0100
+     * @tc.number testReceiverRelease0100
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMG_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1225,17 +1174,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testReceiverRelease0200
-     * @tc.name      : SUB_MULTIMEDIA_IMG_RELEASE_0200
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.readNextImage
-     *                 5.main thread create image
-     *                 6.child thread release
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMG_RELEASE_0200
+     * @tc.number testReceiverRelease0200
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMG_RELEASE_0200', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1277,17 +1221,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testReceiverRelease0300
-     * @tc.name      : SUB_MULTIMEDIA_IMG_RELEASE_0300
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.readNextImage
-     *                 5.main thread create image
-     *                 6.child thread releas
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMG_RELEASE_0300
+     * @tc.number testReceiverRelease0300
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMG_RELEASE_0300', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1332,15 +1271,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testReadLatestImage0100
-     * @tc.name      : SUB_MULTIMEDIA_RECEIVER_READ_LATEST_IMAGE_0100
-     * @tc.desc      : 1.create receiver
-     *                 2.createPreview
-     *                 3.receiver on
-     *                 4.readLatestImage
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_RECEIVER_READ_LATEST_IMAGE_0100
+     * @tc.number testReadLatestImage0100
+     * @tc.desc   1.create receiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_RECEIVER_READ_LATEST_IMAGE_0100', Level.LEVEL0, async (done: Function) => {
       if(!isSupportedCameras()){
@@ -1368,13 +1304,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceCreatePixelMapSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_Sync_0100
-     * @tc.desc      : 1.create imageSource
-     *                 2.create PixelMapSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_Sync_0100
+     * @tc.number testImageSourceCreatePixelMapSync0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_Sync_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_Sync_0100';
@@ -1399,13 +1334,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceCreatePixelMapSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_Sync_0200
-     * @tc.desc      : 1.create imageSource
-     *                 2.create PixelMapSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_Sync_0200
+     * @tc.number testImageSourceCreatePixelMapSync0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_Sync_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_Sync_0200';
@@ -1423,13 +1357,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceConvertFromPixelMap0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CONVERT_FROM_PIXEL_MAP_0100
-     * @tc.desc      : 1.create imageSource
-     *                 2.create PixelMapSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CONVERT_FROM_PIXEL_MAP_0100
+     * @tc.number testImageSourceConvertFromPixelMap0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CONVERT_FROM_PIXEL_MAP_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_SOURCE_CONVERT_FROM_PIXEL_MAP_0100';
@@ -1448,13 +1381,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceConvertFromPixelMap0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CONVERT_FROM_PIXEL_MAP_0200
-     * @tc.desc      : 1.create imageSource
-     *                 2.create PixelMapSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CONVERT_FROM_PIXEL_MAP_0200
+     * @tc.number testImageSourceConvertFromPixelMap0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CONVERT_FROM_PIXEL_MAP_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_SOURCE_CONVERT_FROM_PIXEL_MAP_0200';
@@ -1477,12 +1409,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceReadPixelsToBuffer0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_TO_BUFFER_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_TO_BUFFER_0100
+     * @tc.number testImageSourceReadPixelsToBuffer0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_TO_BUFFER_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_TO_BUFFER_0100"
@@ -1500,12 +1432,12 @@ export default function sendableImageSource() {
       })
     })
     /**
-     * @tc.number    : testImageSourceReadPixelsToBuffer0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_TO_BUFFER_0200
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_TO_BUFFER_0200
+     * @tc.number testImageSourceReadPixelsToBuffer0200
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_TO_BUFFER_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_TO_BUFFER_0200"
@@ -1533,12 +1465,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceReadPixels0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_0100
+     * @tc.number testImageSourceReadPixels0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_0100"
@@ -1567,13 +1499,13 @@ export default function sendableImageSource() {
       })
     })
 
-  /**
-     * @tc.number    : testImageSourcereadPixelsSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_SYNC_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_SYNC_0100
+     * @tc.number testImageSourcereadPixelsSync0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_READ_PIXELS_SYNC_0100"
@@ -1604,12 +1536,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceWritePixels0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_PIXELS_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_PIXELS_0100
+     * @tc.number testImageSourceWritePixels0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_PIXELS_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_PIXELS_0100"
@@ -1644,13 +1576,13 @@ export default function sendableImageSource() {
       }
   })
 
-  /**
-     * @tc.number    : testImageSourceWritePixelsSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_PIXELS_SYNC_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_PIXELS_SYNC_0100
+     * @tc.number testImageSourceWritePixelsSync0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_PIXELS_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_PIXELS_SYNC_0100"
@@ -1685,13 +1617,13 @@ export default function sendableImageSource() {
       }
   })
 
-  /**
-     * @tc.number    : testImageSourceWriteBufferToPixelsSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_BUFFER_TO_PIXELS_SYNC_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_BUFFER_TO_PIXELS_SYNC_0100
+     * @tc.number testImageSourceWriteBufferToPixelsSync0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_BUFFER_TO_PIXELS_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_WRITE_BUFFER_TO_PIXELS_SYNC_0100"
@@ -1719,13 +1651,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceCreatePixelMapFromParcel0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_FROM_PARCEL_0100
-     * @tc.desc      : 1.create imageSource
-     *                 2.create PixelMapSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_FROM_PARCEL_0100
+     * @tc.number testImageSourceCreatePixelMapFromParcel0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_FROM_PARCEL_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_FROM_PARCEL_0100';
@@ -1765,13 +1696,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceCreatePixelMapFromParcel0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_FROM_PARCEL_0200
-     * @tc.desc      : 1.create imageSource
-     *                 2.create PixelMapSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_FROM_PARCEL_0200
+     * @tc.number testImageSourceCreatePixelMapFromParcel0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_FROM_PARCEL_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_FROM_PARCEL_0200';
@@ -1787,12 +1717,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceGetImageInfoSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_0100
+     * @tc.number testImageSourceGetImageInfoSync0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_0100"
@@ -1819,12 +1749,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceGetBytesNumberPerRow0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_BYTES_NUMBER_PER_ROW_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_BYTES_NUMBER_PER_ROW_0100
+     * @tc.number testImageSourceGetBytesNumberPerRow0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_BYTES_NUMBER_PER_ROW_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_BYTES_NUMBER_PER_ROW_0100"
@@ -1855,12 +1785,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceGetPixelBytesNumber0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_PIXEL_BYTES_NUMBER_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_PIXEL_BYTES_NUMBER_0100
+     * @tc.number testImageSourceGetPixelBytesNumber0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_PIXEL_BYTES_NUMBER_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_PIXEL_BYTES_NUMBER_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_PIXEL_BYTES_NUMBER_0100"
@@ -1891,12 +1821,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceGetDensity0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_DENSITY_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_DENSITY_0100
+     * @tc.number testImageSourceGetDensity0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_DENSITY_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_DENSITY_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_DENSITY_0100"
@@ -1927,12 +1857,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceOpacity0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0100
+     * @tc.number testImageSourceOpacity0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0100"
@@ -1957,12 +1887,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceOpacity0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0200
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0200
+     * @tc.number testImageSourceOpacity0200
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0200"
@@ -1987,12 +1917,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceOpacity0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0300
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0300
+     * @tc.number testImageSourceOpacity0300
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_OPACTIY_0300"
@@ -2017,12 +1947,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceCreateAlphaPixelMap0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_ALPHA_PIXEL_MAP_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_ALPHA_PIXEL_MAP_0100
+     * @tc.number testImageSourceCreateAlphaPixelMap0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_ALPHA_PIXEL_MAP_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_ALPHA_PIXEL_MAP_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_ALPHA_PIXEL_MAP_0100"
@@ -2048,12 +1978,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceScaleSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0100
+     * @tc.number testImageSourceScaleSync0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0100"
@@ -2081,12 +2011,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceScaleSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0200
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0200
+     * @tc.number testImageSourceScaleSync0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_SCALE_SYNC_0200"
@@ -2114,12 +2044,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceCrop0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_0100
+     * @tc.number testImageSourceCrop0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_0100"
@@ -2144,12 +2074,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceCropSync0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_SYNC_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_SYNC_0100
+     * @tc.number testImageSourceCropSync0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_SYNC_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CROP_SYNC_0100"
@@ -2175,12 +2105,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceGetColorSpace0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0100
+     * @tc.number testImageSourceGetColorSpace0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0100"
@@ -2202,12 +2132,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceGetColorSpace0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0200
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0200
+     * @tc.number testImageSourceGetColorSpace0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0200"
@@ -2233,12 +2163,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceSetColorSpace0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0100
+     * @tc.number testImageSourceSetColorSpace0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0100"
@@ -2262,12 +2192,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceSetColorSpace0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0200
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0200
+     * @tc.number testImageSourceSetColorSpace0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0200"
@@ -2291,12 +2221,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceSetColorSpace0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0300
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0300
+     * @tc.number testImageSourceSetColorSpace0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_SET_COLOR_SPACE_0300"
@@ -2321,12 +2251,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceApplyColorSpace0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0100
+     * @tc.number testImageSourceApplyColorSpace0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0100"
@@ -2348,12 +2278,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceApplyColorSpace0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0200
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0200
+     * @tc.number testImageSourceApplyColorSpace0200
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0200"
@@ -2375,12 +2305,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceSizeHeight0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_HEIGHT_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_HEIGHT_AND_WIDTH_0100
+     * @tc.number testImageSourceSizeHeight0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_HEIGHT_AND_WIDTH_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_HEIGHT_AND_WIDTH_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_HEIGHT_0100"
@@ -2403,12 +2333,12 @@ export default function sendableImageSource() {
     })
     
     /**
-     * @tc.number    : testImageSourceSizeWidth0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_WIDTH_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_WIDTH_0100
+     * @tc.number testImageSourceSizeWidth0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_WIDTH_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_WIDTH_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_SIZE_WIDTH_0100"
@@ -2431,12 +2361,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceRegionSIZE0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0100
+     * @tc.number testImageSourceRegionSIZE0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0100"
@@ -2467,12 +2397,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceRegionSIZE0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0200
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0200
+     * @tc.number testImageSourceRegionSIZE0200
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_REGION_SIZE_0200"
@@ -2503,12 +2433,12 @@ export default function sendableImageSource() {
     })
     
     /**
-     * @tc.number    : testImageSourceIsStrideAlignment0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IS_STRIDE_ALIGNMENT_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IS_STRIDE_ALIGNMENT_0100
+     * @tc.number testImageSourceIsStrideAlignment0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_IS_STRIDE_ALIGNMENT_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_IS_STRIDE_ALIGNMENT_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_IS_STRIDE_ALIGNMENT_0100"
@@ -2538,12 +2468,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImagePixelMapRelease0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXELMAP_RELEASE_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_RELEASE_0100
+     * @tc.number testImagePixelMapRelease0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAP_RELEASE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PIXELMAP_RELEASE_0100"
@@ -2562,12 +2492,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageReceiverProperty0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_SIZE_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_SIZE_0100
+     * @tc.number testImageReceiverProperty0100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_RECEIVER_SIZE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVER_SIZE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_RECEIVER_SIZE_0100"
@@ -2584,12 +2514,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageReceiverProperty0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_FORMAT_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_FORMAT_0100
+     * @tc.number testImageReceiverProperty0200
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_RECEIVER_FORMAT_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVER_FORMAT_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_RECEIVER_FORMAT_0100"
@@ -2606,12 +2536,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageReceiverProperty0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_CAPACITY_0100
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CAPACITY_0100
+     * @tc.number testImageReceiverProperty0300
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_RECEIVER_CAPACITY_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVER_CAPACITY_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_RECEIVER_CAPACITY_0100"
@@ -2628,12 +2558,12 @@ export default function sendableImageSource() {
     })
  
     /**
-     * @tc.number    : testImageSourceReadLatestImage0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_READ_LATEST_IMAGE_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_READ_LATEST_IMAGE_0100
+     * @tc.number testImageSourceReadLatestImage0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_LATEST_IMAGE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_READ_LATEST_IMAGE_0100"
@@ -2654,12 +2584,12 @@ export default function sendableImageSource() {
     })
  
     /**
-     * @tc.number    : testImageSourceReadNextImage0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_READ_NEXT_IMAGE_0100
-     * @tc.desc      : 1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_READ_NEXT_IMAGE_0100
+     * @tc.number testImageSourceReadNextImage0100
+     * @tc.desc   1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_NEXT_IMAGE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_READ_NEXT_IMAGE_0100"
@@ -2680,12 +2610,12 @@ export default function sendableImageSource() {
     })
 
     /**
-     * @tc.number    : testImageSourceApplyColorSpace0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0300
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0300
+     * @tc.number testImageSourceApplyColorSpace0300
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_APPLY_COLOR_SPACE_0300"

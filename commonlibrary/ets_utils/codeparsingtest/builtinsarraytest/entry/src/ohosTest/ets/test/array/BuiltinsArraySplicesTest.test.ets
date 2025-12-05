@@ -39,12 +39,12 @@ export default function builtinsArraySpliceTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   builtinsArraySplice0100
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0100
-     * @tc.name builtinsArraySplice0100
-     * @tc.desc test [1, 2, 3, 4, 5]splice(2, 2, 'a', 'b')
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test [1, 2, 3, 4, 5]splice(2, 2, 'a', 'b')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArraySplice0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (Done: Function) => {
       const num: Array<number | string> = [1, 2, 3, 4, 5];
@@ -58,12 +58,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice0200
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0200
-     * @tc.name builtinsArraySplice0200
-     * @tc.desc test [1, 2, 3, 4, 5]splice(2, -1, 'a', 'b')
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test [1, 2, 3, 4, 5]splice(2, -1, 'a', 'b')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArraySplice0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (Done: Function) => {
       const num2: Array<number | string> = [1, 2, 3, 4, 5];
@@ -77,12 +77,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice0300
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0300
-     * @tc.name builtinsArraySplice0300
-     * @tc.desc test [2,3,4]splice(0,0,1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [2,3,4]splice(0,0,1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num3: Array<number | string> = [2, 3, 4];
@@ -96,12 +96,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice0400
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0400
-     * @tc.name builtinsArraySplice0400
-     * @tc.desc test [1,2]splice(2,0,3)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1,2]splice(2,0,3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num4: Array<number | string> = [1, 2];
@@ -115,12 +115,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice0500
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0500
-     * @tc.name builtinsArraySplice0500
-     * @tc.desc test []splice(0,0,1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test []splice(0,0,1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       let num5: Number[] = []
@@ -133,12 +133,12 @@ export default function builtinsArraySpliceTest() {
       Done()
     })
     /**
+     * @tc.name   builtinsArraySplice0600
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0600
-     * @tc.name builtinsArraySplice0600
-     * @tc.desc test [1,,3]splice(1,1,2);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1,,3]splice(1,1,2);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | undefined> = [1, , 3];
@@ -152,12 +152,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice0700
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0700
-     * @tc.name builtinsArraySplice0700
-     * @tc.desc test [1,2,3,4,5]splice(-2,1);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1,2,3,4,5]splice(-2,1);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | undefined> = [1, 2, 3, 4, 5];
@@ -171,12 +171,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice0800
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0800
-     * @tc.name builtinsArraySplice0800
-     * @tc.desc test [1,2,3,4,5]splice(1, 0,undefined);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1,2,3,4,5]splice(1, 0,undefined);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | undefined> = [1, 2, 3, 4, 5];
@@ -190,12 +190,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice0900
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0900
-     * @tc.name builtinsArraySplice0900
-     * @tc.desc test [1, 2, 3, 4, 5]splice(1, 0, null);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3, 4, 5]splice(1, 0, null);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | null> = [1, 2, 3, 4, 5];
@@ -209,12 +209,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1000
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1000
-     * @tc.name builtinsArraySplice1000
-     * @tc.desc test [1,2,3]splice(0, 3);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1,2,3]splice(0, 3);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | null> = [1, 2, 3];
@@ -228,12 +228,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1100
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1100
-     * @tc.name builtinsArraySplice1100
-     * @tc.desc test [1, 2, 3]splice(1, 0, 'a', 'b');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0, 'a', 'b');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string> = [1, 2, 3];
@@ -247,12 +247,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1200
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1200
-     * @tc.name builtinsArraySplice1200
-     * @tc.desc test [1, 2, 3]splice(1, 0, '#','$');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0, '#','$');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string> = [1, 2, 3];
@@ -266,12 +266,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1300
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1300
-     * @tc.name builtinsArraySplice1300
-     * @tc.desc test [1, 2, 3]splice(1, 0,undefined,'$');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0,undefined,'$');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string | undefined> = [1, 2, 3];
@@ -285,12 +285,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1400
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1400
-     * @tc.name builtinsArraySplice1400
-     * @tc.desc test [1, 2, 3]splice(1, 0,'€', '©');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0,'€', '©');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string | undefined> = [1, 2, 3];
@@ -304,12 +304,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1500
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1500
-     * @tc.name builtinsArraySplice1500
-     * @tc.desc test [1, 2, 3]splice(1, 0,'\udc04', '\ud83d');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0,'\udc04', '\ud83d');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string | undefined> = [1, 2, 3];
@@ -323,12 +323,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1600
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1600
-     * @tc.name builtinsArraySplice1600
-     * @tc.desc test [1, 2, 3]splice(1, 0,'\a', '\b');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0,'\a', '\b');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string | undefined> = [1, 2, 3];
@@ -342,12 +342,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1700
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1700
-     * @tc.name builtinsArraySplice1700
-     * @tc.desc test [1, 2, 3]splice(1, 0,Math.floor(1.5), NaN);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0,Math.floor(1.5), NaN);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string | undefined> = [1, 2, 3];
@@ -361,12 +361,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1800
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1800
-     * @tc.name builtinsArraySplice1800
-     * @tc.desc test [1, 2, 3]splice(1, 0,Number.EPSILON, 0xcafebabe);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0,Number.EPSILON, 0xcafebabe);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string | undefined> = [1, 2, 3];
@@ -380,12 +380,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice1900
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1900
-     * @tc.name builtinsArraySplice1900
-     * @tc.desc test [1, 2, 3]splice(1, 0,true, !'s');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0,true, !'s');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string | boolean> = [1, 2, 3];
@@ -399,12 +399,12 @@ export default function builtinsArraySpliceTest() {
     })
 
     /**
+     * @tc.name   builtinsArraySplice2000
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_2000
-     * @tc.name builtinsArraySplice2000
-     * @tc.desc test [1, 2, 3]splice(1, 0,true, !'s');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test [1, 2, 3]splice(1, 0,true, !'s');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArraySplice2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const num6: Array<number | string | boolean> = [1, 2, 3];

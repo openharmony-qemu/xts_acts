@@ -67,6 +67,7 @@ export default function panGestureDistanceTest() {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
           y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`)
         }, 5, 4000);
+      await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('distance1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[panGesture_panRecognizer_getDistance_0010] component obj is: " + JSON.stringify(obj));

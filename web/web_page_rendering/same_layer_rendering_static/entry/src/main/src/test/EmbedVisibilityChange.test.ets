@@ -52,14 +52,14 @@ export default function EmbedVisibilityChange() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_EMBEDVISIBILITYCHANGE_0100
-    * @tc.name       : emitEmbedVisibilityChange_static_001
-    * @tc.desc       : test EmbedVisibilityChange
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   emitEmbedVisibilityChange_static_001
+     * @tc.number SUB_WEB_EMBEDVISIBILITYCHANGE_0100
+     * @tc.desc   test EmbedVisibilityChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitEmbedVisibilityChange_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent('emitEmbedVisibilityChange001', 10)

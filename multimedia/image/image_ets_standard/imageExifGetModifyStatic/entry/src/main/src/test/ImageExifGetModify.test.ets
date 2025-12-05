@@ -526,15 +526,12 @@ export default function imageExifGetModifyTest() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0100
-      * @tc.desc    getImageProperty('BitsPerSample', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('BitsPerSample')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0100
+     * @tc.desc   getImageProperty('BitsPerSample', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0100'
@@ -562,15 +559,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0200
-      * @tc.desc    getImageProperty('Orientation', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Orientation')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0200
+     * @tc.desc   getImageProperty('Orientation', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0200'
@@ -597,15 +591,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0300
-      * @tc.desc    getImageProperty('ImageLength', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ImageLength')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0300
+     * @tc.desc   getImageProperty('ImageLength', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0300'
@@ -632,15 +623,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0400
-      * @tc.desc    getImageProperty('ImageWidth', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ImageWidth')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0400
+     * @tc.desc   getImageProperty('ImageWidth', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0400'
@@ -667,15 +655,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0500
-      * @tc.desc    getImageProperty('GPSLatitude', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSLatitude')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0500
+     * @tc.desc   getImageProperty('GPSLatitude', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0500'
@@ -702,15 +687,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0600
-      * @tc.desc    getImageProperty('GPSLongitude', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSLongitude')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0600
+     * @tc.desc   getImageProperty('GPSLongitude', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0600'
@@ -736,15 +718,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0700
-      * @tc.desc    getImageProperty('GPSLatitudeRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSLatitudeRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0700
+     * @tc.desc   getImageProperty('GPSLatitudeRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0700'
@@ -770,15 +749,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0800
-      * @tc.desc    getImageProperty('GPSLongitudeRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSLongitudeRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0800
+     * @tc.desc   getImageProperty('GPSLongitudeRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0800'
@@ -804,15 +780,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0900
-      * @tc.desc    getImageProperty('DateTimeOriginal', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('DateTimeOriginal')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0900
+     * @tc.desc   getImageProperty('DateTimeOriginal', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_0900'
@@ -838,15 +811,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01000
-      * @tc.desc    getImageProperty('ExposureTime', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ExposureTime')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01000
+     * @tc.desc   getImageProperty('ExposureTime', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01000'
@@ -873,15 +843,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01100
-      * @tc.desc    getImageProperty('SceneType', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SceneType')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01100
+     * @tc.desc   getImageProperty('SceneType', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01100'
@@ -907,15 +874,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01200
-      * @tc.desc    getImageProperty('ISOSpeedRatings', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ISOSpeedRatings')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01200
+     * @tc.desc   getImageProperty('ISOSpeedRatings', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01200'
@@ -941,15 +905,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01300
-      * @tc.desc    getImageProperty('FNumber', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FNumber')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01300
+     * @tc.desc   getImageProperty('FNumber', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01300'
@@ -975,15 +936,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01400
-      * @tc.desc    getImageProperty('DateTime', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('DateTime')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01400
+     * @tc.desc   getImageProperty('DateTime', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01400'
@@ -1009,15 +967,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01500
-      * @tc.desc    getImageProperty('GPSTimeStamp', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSTimeStamp')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01500
+     * @tc.desc   getImageProperty('GPSTimeStamp', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01500'
@@ -1043,15 +998,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01600
-      * @tc.desc    getImageProperty('GPSDateStamp', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDateStamp')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01600
+     * @tc.desc   getImageProperty('GPSDateStamp', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01600'
@@ -1077,15 +1029,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01700
-      * @tc.desc    getImageProperty('ImageDescription', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ImageDescription')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01700
+     * @tc.desc   getImageProperty('ImageDescription', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01700'
@@ -1111,15 +1060,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01800
-      * @tc.desc    getImageProperty('Make', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Make')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01800
+     * @tc.desc   getImageProperty('Make', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01800'
@@ -1145,15 +1091,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01900
-      * @tc.desc    getImageProperty('Model', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Model')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01900
+     * @tc.desc   getImageProperty('Model', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_01900'
@@ -1180,15 +1123,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02000
-      * @tc.desc    getImageProperty('PhotoMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('PhotoMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02000
+     * @tc.desc   getImageProperty('PhotoMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02000'
@@ -1215,15 +1155,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02100
-      * @tc.desc    getImageProperty('SensitivityType', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SensitivityType')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02100
+     * @tc.desc   getImageProperty('SensitivityType', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02100'
@@ -1250,15 +1187,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02200
-      * @tc.desc    getImageProperty('StandardOutputSensitivity', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('StandardOutputSensitivity')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02200
+     * @tc.desc   getImageProperty('StandardOutputSensitivity', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02200'
@@ -1284,15 +1218,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02300
-      * @tc.desc    getImageProperty('RecommendedExposureIndex', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('RecommendedExposureIndex')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02300
+     * @tc.desc   getImageProperty('RecommendedExposureIndex', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02300'
@@ -1318,15 +1249,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02400
-      * @tc.desc    getImageProperty('ApertureValue', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ApertureValue')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02400
+     * @tc.desc   getImageProperty('ApertureValue', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02400'
@@ -1353,15 +1281,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02500
-      * @tc.desc    getImageProperty('ExposureBiasValue', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ExposureBiasValue')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02500
+     * @tc.desc   getImageProperty('ExposureBiasValue', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02500'
@@ -1387,15 +1312,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02600
-      * @tc.desc    getImageProperty('MeteringMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('MeteringMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02600
+     * @tc.desc   getImageProperty('MeteringMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02600'
@@ -1421,15 +1343,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02700
-      * @tc.desc    getImageProperty('LightSource', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('LightSource')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02700
+     * @tc.desc   getImageProperty('LightSource', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02700'
@@ -1455,15 +1374,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02800
-      * @tc.desc    getImageProperty('Flash', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Flash')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02800
+     * @tc.desc   getImageProperty('Flash', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02800'
@@ -1490,15 +1406,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02900
-      * @tc.desc    getImageProperty('FocalLength', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FocalLength')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02900
+     * @tc.desc   getImageProperty('FocalLength', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_02900'
@@ -1524,15 +1437,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03000
-      * @tc.desc    getImageProperty('UserComment', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('UserComment')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03000
+     * @tc.desc   getImageProperty('UserComment', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03000'
@@ -1558,15 +1468,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03100
-      * @tc.desc    getImageProperty('PixelXDimension', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('PixelXDimension')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03100
+     * @tc.desc   getImageProperty('PixelXDimension', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03100'
@@ -1592,15 +1499,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03200
-      * @tc.desc    getImageProperty('PixelYDimension', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('PixelYDimension')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03200
+     * @tc.desc   getImageProperty('PixelYDimension', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03200'
@@ -1626,15 +1530,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03300
-      * @tc.desc    getImageProperty('WhiteBalance', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('WhiteBalance')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03300
+     * @tc.desc   getImageProperty('WhiteBalance', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03300'
@@ -1660,15 +1561,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03400
-      * @tc.desc    getImageProperty('FocalLengthIn35mmFilm', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FocalLengthIn35mmFilm')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03400
+     * @tc.desc   getImageProperty('FocalLengthIn35mmFilm', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03400'
@@ -1694,15 +1592,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03500
-      * @tc.desc    getImageProperty('Compression', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Compression')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03500
+     * @tc.desc   getImageProperty('Compression', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03500'
@@ -1728,15 +1623,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03600
-      * @tc.desc    getImageProperty('PhotometricInterpretation', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('PhotometricInterpretation')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03600
+     * @tc.desc   getImageProperty('PhotometricInterpretation', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03600'
@@ -1762,15 +1654,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03700
-      * @tc.desc    getImageProperty('StripOffsets', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('StripOffsets')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03700
+     * @tc.desc   getImageProperty('StripOffsets', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03700'
@@ -1796,15 +1685,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03800
-      * @tc.desc    getImageProperty('SamplesPerPixel', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SamplesPerPixel')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03800
+     * @tc.desc   getImageProperty('SamplesPerPixel', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03800'
@@ -1830,15 +1716,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03900
-      * @tc.desc    getImageProperty('RowsPerStrip', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('RowsPerStrip')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03900
+     * @tc.desc   getImageProperty('RowsPerStrip', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_03900'
@@ -1864,15 +1747,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04000
-      * @tc.desc    getImageProperty('StripByteCounts', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('StripByteCounts')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04000
+     * @tc.desc   getImageProperty('StripByteCounts', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04000'
@@ -1898,15 +1778,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04100
-      * @tc.desc    getImageProperty('XResolution', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('XResolution')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04100
+     * @tc.desc   getImageProperty('XResolution', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04100'
@@ -1932,15 +1809,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04200
-      * @tc.desc    getImageProperty('YResolution', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('YResolution')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04200
+     * @tc.desc   getImageProperty('YResolution', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04200'
@@ -1966,15 +1840,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04300
-      * @tc.desc    getImageProperty('PlanarConfiguration', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('PlanarConfiguration')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04300
+     * @tc.desc   getImageProperty('PlanarConfiguration', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04300'
@@ -2000,15 +1871,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04400
-      * @tc.desc    getImageProperty('ResolutionUnit', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ResolutionUnit')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04400
+     * @tc.desc   getImageProperty('ResolutionUnit', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04400'
@@ -2034,15 +1902,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04500
-      * @tc.desc    getImageProperty('TransferFunction', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('TransferFunction')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04500
+     * @tc.desc   getImageProperty('TransferFunction', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04500'
@@ -2069,15 +1934,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04600
-      * @tc.desc    getImageProperty('Software', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Software')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04600
+     * @tc.desc   getImageProperty('Software', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04600'
@@ -2104,15 +1966,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04700
-      * @tc.desc    getImageProperty('Artist', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Artist')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04700
+     * @tc.desc   getImageProperty('Artist', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04700'
@@ -2138,15 +1997,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04800
-      * @tc.desc    getImageProperty('WhitePoint', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('WhitePoint')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04800
+     * @tc.desc   getImageProperty('WhitePoint', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04800'
@@ -2172,15 +2028,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04900
-      * @tc.desc    getImageProperty('PrimaryChromaticities', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('PrimaryChromaticities')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04900
+     * @tc.desc   getImageProperty('PrimaryChromaticities', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_04900'
@@ -2206,15 +2059,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05000
-      * @tc.desc    getImageProperty('YCbCrCoefficients', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('YCbCrCoefficients')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05000
+     * @tc.desc   getImageProperty('YCbCrCoefficients', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05000'
@@ -2240,15 +2090,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05100
-      * @tc.desc    getImageProperty('YCbCrSubSampling', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('YCbCrSubSampling')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05100
+     * @tc.desc   getImageProperty('YCbCrSubSampling', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05100'
@@ -2274,15 +2121,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05200
-      * @tc.desc    getImageProperty('YCbCrPositioning', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('YCbCrPositioning')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05200
+     * @tc.desc   getImageProperty('YCbCrPositioning', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05200'
@@ -2308,15 +2152,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05300
-      * @tc.desc    getImageProperty('ReferenceBlackWhite', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ReferenceBlackWhite')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05300
+     * @tc.desc   getImageProperty('ReferenceBlackWhite', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05300'
@@ -2343,15 +2184,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05400
-      * @tc.desc    getImageProperty('Copyright', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Copyright')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05400
+     * @tc.desc   getImageProperty('Copyright', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05400'
@@ -2378,15 +2216,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05500
-      * @tc.desc    getImageProperty('JPEGInterchangeFormat', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('JPEGInterchangeFormat')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05500
+     * @tc.desc   getImageProperty('JPEGInterchangeFormat', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05500'
@@ -2412,15 +2247,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05600
-      * @tc.desc    getImageProperty('JPEGInterchangeFormatLength', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('JPEGInterchangeFormatLength')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05600
+     * @tc.desc   getImageProperty('JPEGInterchangeFormatLength', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05600'
@@ -2446,15 +2278,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05700
-      * @tc.desc    getImageProperty('ExposureProgram', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ExposureProgram')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05700
+     * @tc.desc   getImageProperty('ExposureProgram', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05700'
@@ -2480,15 +2309,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05800
-      * @tc.desc    getImageProperty('SpectralSensitivity', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SpectralSensitivity')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05800
+     * @tc.desc   getImageProperty('SpectralSensitivity', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05800'
@@ -2514,15 +2340,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05900
-      * @tc.desc    getImageProperty('OECF', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('OECF')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05900
+     * @tc.desc   getImageProperty('OECF', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_05900'
@@ -2548,15 +2371,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06000
-      * @tc.desc    getImageProperty('ExifVersion', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ExifVersion')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06000
+     * @tc.desc   getImageProperty('ExifVersion', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06000'
@@ -2582,15 +2402,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06100
-      * @tc.desc    getImageProperty('DateTimeDigitized', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('DateTimeDigitized')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06100
+     * @tc.desc   getImageProperty('DateTimeDigitized', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06100'
@@ -2616,15 +2433,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06200
-      * @tc.desc    getImageProperty('ComponentsConfiguration', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ComponentsConfiguration')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06200
+     * @tc.desc   getImageProperty('ComponentsConfiguration', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06200'
@@ -2650,15 +2464,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06300
-      * @tc.desc    getImageProperty('ShutterSpeedValue', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ShutterSpeedValue')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06300
+     * @tc.desc   getImageProperty('ShutterSpeedValue', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06300'
@@ -2684,15 +2495,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06400
-      * @tc.desc    getImageProperty('BrightnessValue', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('BrightnessValue')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06400
+     * @tc.desc   getImageProperty('BrightnessValue', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06400'
@@ -2718,15 +2526,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06500
-      * @tc.desc    getImageProperty('MaxApertureValue', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('MaxApertureValue')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06500
+     * @tc.desc   getImageProperty('MaxApertureValue', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06500'
@@ -2752,15 +2557,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06600
-      * @tc.desc    getImageProperty('SubjectDistance', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SubjectDistance')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06600
+     * @tc.desc   getImageProperty('SubjectDistance', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06600'
@@ -2786,15 +2588,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06700
-      * @tc.desc    getImageProperty('SubjectArea', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SubjectArea')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06700
+     * @tc.desc   getImageProperty('SubjectArea', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06700'
@@ -2822,15 +2621,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06800
-      * @tc.desc    getImageProperty('MakerNote', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('MakerNote')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06800
+     * @tc.desc   getImageProperty('MakerNote', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06800'
@@ -2899,15 +2695,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06900
-      * @tc.desc    getImageProperty('SubsecTime', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SubsecTime')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06900
+     * @tc.desc   getImageProperty('SubsecTime', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_06900'
@@ -2933,15 +2726,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07000
-      * @tc.desc    getImageProperty('SubsecTimeOriginal', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SubsecTimeOriginal')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07000
+     * @tc.desc   getImageProperty('SubsecTimeOriginal', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07000'
@@ -2967,15 +2757,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07100
-      * @tc.desc    getImageProperty('SubsecTimeDigitized', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SubsecTimeDigitized')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07100
+     * @tc.desc   getImageProperty('SubsecTimeDigitized', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07100'
@@ -3001,15 +2788,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07200
-      * @tc.desc    getImageProperty('FlashpixVersion', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FlashpixVersion')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07200
+     * @tc.desc   getImageProperty('FlashpixVersion', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07200'
@@ -3035,15 +2819,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07300
-      * @tc.desc    getImageProperty('ColorSpace', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ColorSpace')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07300
+     * @tc.desc   getImageProperty('ColorSpace', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07300'
@@ -3069,15 +2850,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07400
-      * @tc.desc    getImageProperty('RelatedSoundFile', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('RelatedSoundFile')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07400
+     * @tc.desc   getImageProperty('RelatedSoundFile', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07400'
@@ -3103,15 +2881,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07500
-      * @tc.desc    getImageProperty('FlashEnergy', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FlashEnergy')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07500
+     * @tc.desc   getImageProperty('FlashEnergy', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07500'
@@ -3137,15 +2912,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07600
-      * @tc.desc    getImageProperty('SpatialFrequencyResponse', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SpatialFrequencyResponse')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07600
+     * @tc.desc   getImageProperty('SpatialFrequencyResponse', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07600'
@@ -3171,15 +2943,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07700
-      * @tc.desc    getImageProperty('FocalPlaneXResolution', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FocalPlaneXResolution')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07700
+     * @tc.desc   getImageProperty('FocalPlaneXResolution', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07700'
@@ -3205,15 +2974,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07800
-      * @tc.desc    getImageProperty('FocalPlaneYResolution', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FocalPlaneYResolution')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07800
+     * @tc.desc   getImageProperty('FocalPlaneYResolution', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07800'
@@ -3239,15 +3005,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07900
-      * @tc.desc    getImageProperty('FocalPlaneResolutionUnit', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FocalPlaneResolutionUnit')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07900
+     * @tc.desc   getImageProperty('FocalPlaneResolutionUnit', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_07900'
@@ -3273,15 +3036,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08000
-      * @tc.desc    getImageProperty('SubjectLocation', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SubjectLocation')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08000
+     * @tc.desc   getImageProperty('SubjectLocation', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08000'
@@ -3307,15 +3067,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08100
-      * @tc.desc    getImageProperty('ExposureIndex', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ExposureIndex')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08100
+     * @tc.desc   getImageProperty('ExposureIndex', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08100'
@@ -3341,15 +3098,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08200
-      * @tc.desc    getImageProperty('SensingMethod', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SensingMethod')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08200
+     * @tc.desc   getImageProperty('SensingMethod', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08200'
@@ -3376,15 +3130,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08300
-      * @tc.desc    getImageProperty('FileSource', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('FileSource')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08300
+     * @tc.desc   getImageProperty('FileSource', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08300'
@@ -3410,15 +3161,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08400
-      * @tc.desc    getImageProperty('CFAPattern', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('CFAPattern')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08400
+     * @tc.desc   getImageProperty('CFAPattern', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08400'
@@ -3444,15 +3192,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08500
-      * @tc.desc    getImageProperty('CustomRendered', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('CustomRendered')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08500
+     * @tc.desc   getImageProperty('CustomRendered', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08500'
@@ -3478,15 +3223,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08600
-      * @tc.desc    getImageProperty('ExposureMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ExposureMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08600
+     * @tc.desc   getImageProperty('ExposureMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08600'
@@ -3512,15 +3254,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08700
-      * @tc.desc    getImageProperty('DigitalZoomRatio', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('DigitalZoomRatio')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08700
+     * @tc.desc   getImageProperty('DigitalZoomRatio', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08700'
@@ -3546,15 +3285,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08800
-      * @tc.desc    getImageProperty('SceneCaptureType', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SceneCaptureType')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08800
+     * @tc.desc   getImageProperty('SceneCaptureType', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08800'
@@ -3580,15 +3316,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08900
-      * @tc.desc    getImageProperty('GainControl', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GainControl')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08900
+     * @tc.desc   getImageProperty('GainControl', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_08900'
@@ -3614,15 +3347,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09000
-      * @tc.desc    getImageProperty('Contrast', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Contrast')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09000
+     * @tc.desc   getImageProperty('Contrast', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09000'
@@ -3648,15 +3378,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09100
-      * @tc.desc    getImageProperty('Saturation', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Saturation')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09100
+     * @tc.desc   getImageProperty('Saturation', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09100'
@@ -3682,15 +3409,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09200
-      * @tc.desc    getImageProperty('Sharpness', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Sharpness')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09200
+     * @tc.desc   getImageProperty('Sharpness', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09200'
@@ -3716,15 +3440,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09300
-      * @tc.desc    getImageProperty('DeviceSettingDescription', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('DeviceSettingDescription')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09300
+     * @tc.desc   getImageProperty('DeviceSettingDescription', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09300'
@@ -3750,15 +3471,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09400
-      * @tc.desc    getImageProperty('SubjectDistanceRange', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SubjectDistanceRange')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09400
+     * @tc.desc   getImageProperty('SubjectDistanceRange', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09400'
@@ -3784,15 +3502,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09500
-      * @tc.desc    getImageProperty('ImageUniqueID', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ImageUniqueID')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09500
+     * @tc.desc   getImageProperty('ImageUniqueID', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09500'
@@ -3818,15 +3533,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09600
-      * @tc.desc    getImageProperty('GPSVersionID', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSVersionID')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09600
+     * @tc.desc   getImageProperty('GPSVersionID', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09600'
@@ -3852,15 +3564,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09700
-      * @tc.desc    getImageProperty('GPSAltitudeRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSAltitudeRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09700
+     * @tc.desc   getImageProperty('GPSAltitudeRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09700'
@@ -3886,15 +3595,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09800
-      * @tc.desc    getImageProperty('GPSAltitude', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSAltitude')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09800
+     * @tc.desc   getImageProperty('GPSAltitude', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09800'
@@ -3920,15 +3626,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09900
-      * @tc.desc    getImageProperty('GPSSatellites', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSSatellites')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09900
+     * @tc.desc   getImageProperty('GPSSatellites', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_09900'
@@ -3954,15 +3657,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010000
-      * @tc.desc    getImageProperty('GPSStatus', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSStatus')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010000
+     * @tc.desc   getImageProperty('GPSStatus', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010000'
@@ -3988,15 +3688,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010100
-      * @tc.desc    getImageProperty('GPSMeasureMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSMeasureMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010100
+     * @tc.desc   getImageProperty('GPSMeasureMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010100'
@@ -4022,15 +3719,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010200
-      * @tc.desc    getImageProperty('GPSDOP', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDOP')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010200
+     * @tc.desc   getImageProperty('GPSDOP', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010200'
@@ -4056,15 +3750,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010300
-      * @tc.desc    getImageProperty('GPSSpeedRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSSpeedRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010300
+     * @tc.desc   getImageProperty('GPSSpeedRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010300'
@@ -4090,15 +3781,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010400
-      * @tc.desc    getImageProperty('GPSSpeed', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSSpeed')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010400
+     * @tc.desc   getImageProperty('GPSSpeed', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010400'
@@ -4124,15 +3812,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010500
-      * @tc.desc    getImageProperty('GPSTrackRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSTrackRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010500
+     * @tc.desc   getImageProperty('GPSTrackRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010500'
@@ -4158,15 +3843,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010600
-      * @tc.desc    getImageProperty('GPSTrack', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSTrack')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010600
+     * @tc.desc   getImageProperty('GPSTrack', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010600'
@@ -4192,15 +3874,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010700
-      * @tc.desc    getImageProperty('GPSImgDirectionRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSImgDirectionRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010700
+     * @tc.desc   getImageProperty('GPSImgDirectionRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010700'
@@ -4226,15 +3905,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010800
-      * @tc.desc    getImageProperty('GPSImgDirection', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSImgDirection')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010800
+     * @tc.desc   getImageProperty('GPSImgDirection', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010800'
@@ -4260,15 +3936,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010900
-      * @tc.desc    getImageProperty('GPSMapDatum', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSMapDatum')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010900
+     * @tc.desc   getImageProperty('GPSMapDatum', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_010900'
@@ -4294,15 +3967,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011000
-      * @tc.desc    getImageProperty('GPSDestLatitudeRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDestLatitudeRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011000
+     * @tc.desc   getImageProperty('GPSDestLatitudeRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011000'
@@ -4328,15 +3998,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011100
-      * @tc.desc    getImageProperty('GPSDestLatitude', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDestLatitude')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011100
+     * @tc.desc   getImageProperty('GPSDestLatitude', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011100'
@@ -4362,15 +4029,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011200
-      * @tc.desc    getImageProperty('GPSDestLongitudeRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDestLongitudeRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011200
+     * @tc.desc   getImageProperty('GPSDestLongitudeRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011200'
@@ -4396,15 +4060,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011300
-      * @tc.desc    getImageProperty('GPSDestLongitude', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDestLongitude')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011300
+     * @tc.desc   getImageProperty('GPSDestLongitude', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011300'
@@ -4430,15 +4091,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011400
-      * @tc.desc    getImageProperty('GPSDestBearingRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDestBearingRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011400
+     * @tc.desc   getImageProperty('GPSDestBearingRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011400'
@@ -4464,15 +4122,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011500
-      * @tc.desc    getImageProperty('GPSDestBearing', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDestBearing')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011500
+     * @tc.desc   getImageProperty('GPSDestBearing', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011500'
@@ -4498,15 +4153,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011600
-      * @tc.desc    getImageProperty('GPSDestDistanceRef', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDestDistanceRef')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011600
+     * @tc.desc   getImageProperty('GPSDestDistanceRef', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011600'
@@ -4532,15 +4184,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011700
-      * @tc.desc    getImageProperty('GPSDestDistance', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDestDistance')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011700
+     * @tc.desc   getImageProperty('GPSDestDistance', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011700'
@@ -4566,15 +4215,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011800
-      * @tc.desc    getImageProperty('GPSProcessingMethod', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSProcessingMethod')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011800
+     * @tc.desc   getImageProperty('GPSProcessingMethod', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011800'
@@ -4600,15 +4246,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011900
-      * @tc.desc    getImageProperty('GPSAreaInformation', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSAreaInformation')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011900
+     * @tc.desc   getImageProperty('GPSAreaInformation', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_011900'
@@ -4634,15 +4277,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012000
-      * @tc.desc    getImageProperty('GPSDifferential', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSDifferential')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012000
+     * @tc.desc   getImageProperty('GPSDifferential', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012000'
@@ -4668,15 +4308,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012100
-      * @tc.desc    getImageProperty('BodySerialNumber', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('BodySerialNumber')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012100
+     * @tc.desc   getImageProperty('BodySerialNumber', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012100'
@@ -4702,15 +4339,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012200
-      * @tc.desc    getImageProperty('CameraOwnerName', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('CameraOwnerName')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012200
+     * @tc.desc   getImageProperty('CameraOwnerName', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012200'
@@ -4736,15 +4370,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012300
-      * @tc.desc    getImageProperty('CompositeImage', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('CompositeImage')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012300
+     * @tc.desc   getImageProperty('CompositeImage', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012300'
@@ -4770,15 +4401,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012400
-      * @tc.desc    getImageProperty('CompressedBitsPerPixel', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('CompressedBitsPerPixel')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012400
+     * @tc.desc   getImageProperty('CompressedBitsPerPixel', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012400'
@@ -4804,15 +4432,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012500
-      * @tc.desc    getImageProperty('DNGVersion', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('DNGVersion')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012500
+     * @tc.desc   getImageProperty('DNGVersion', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012500'
@@ -4838,15 +4463,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012600
-      * @tc.desc    getImageProperty('DefaultCropSize', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('DefaultCropSize')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012600
+     * @tc.desc   getImageProperty('DefaultCropSize', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012600'
@@ -4872,15 +4494,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012700
-      * @tc.desc    getImageProperty('Gamma', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Gamma')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012700
+     * @tc.desc   getImageProperty('Gamma', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012700'
@@ -4906,15 +4525,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012800
-      * @tc.desc    getImageProperty('ISOSpeedLatitudeyyy', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ISOSpeedLatitudeyyy')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012800
+     * @tc.desc   getImageProperty('ISOSpeedLatitudeyyy', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012800'
@@ -4940,15 +4556,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012900
-      * @tc.desc    getImageProperty('ISOSpeedLatitudezzz', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('ISOSpeedLatitudezzz')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012900
+     * @tc.desc   getImageProperty('ISOSpeedLatitudezzz', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_012900'
@@ -4974,15 +4587,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013000
-      * @tc.desc    getImageProperty('LensMake', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('LensMake')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013000
+     * @tc.desc   getImageProperty('LensMake', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013000'
@@ -5008,15 +4618,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013100
-      * @tc.desc    getImageProperty('LensModel', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('LensModel')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013100
+     * @tc.desc   getImageProperty('LensModel', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013100'
@@ -5042,15 +4649,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013200
-      * @tc.desc    getImageProperty('LensSerialNumber', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('LensSerialNumber')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013200
+     * @tc.desc   getImageProperty('LensSerialNumber', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013200'
@@ -5076,15 +4680,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013300
-      * @tc.desc    getImageProperty('LensSpecification', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('LensSpecification')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013300
+     * @tc.desc   getImageProperty('LensSpecification', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013300'
@@ -5110,15 +4711,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013400
-      * @tc.desc    getImageProperty('NewSubfileType', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('NewSubfileType')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013400
+     * @tc.desc   getImageProperty('NewSubfileType', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013400'
@@ -5144,15 +4742,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013500
-      * @tc.desc    getImageProperty('OffsetTime', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('OffsetTime')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013500
+     * @tc.desc   getImageProperty('OffsetTime', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013500'
@@ -5178,15 +4773,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013600
-      * @tc.desc    getImageProperty('OffsetTimeDigitized', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('OffsetTimeDigitized')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013600
+     * @tc.desc   getImageProperty('OffsetTimeDigitized', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013600'
@@ -5212,15 +4804,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013700
-      * @tc.desc    getImageProperty('OffsetTimeOriginal', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('OffsetTimeOriginal')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013700
+     * @tc.desc   getImageProperty('OffsetTimeOriginal', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013700'
@@ -5246,15 +4835,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013800
-      * @tc.desc    getImageProperty('SourceExposureTimesOfCompositeImage', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SourceExposureTimesOfCompositeImage')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013800
+     * @tc.desc   getImageProperty('SourceExposureTimesOfCompositeImage', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013800'
@@ -5280,15 +4866,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013900
-      * @tc.desc    getImageProperty('SourceImageNumberOfCompositeImage', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SourceImageNumberOfCompositeImage')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013900
+     * @tc.desc   getImageProperty('SourceImageNumberOfCompositeImage', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_013900'
@@ -5314,15 +4897,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014000
-      * @tc.desc    getImageProperty('SubfileType', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('SubfileType')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014000
+     * @tc.desc   getImageProperty('SubfileType', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014000'
@@ -5348,15 +4928,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014100
-      * @tc.desc    getImageProperty('GPSHPositioningError', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('GPSHPositioningError')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014100
+     * @tc.desc   getImageProperty('GPSHPositioningError', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014100'
@@ -5382,15 +4959,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014200
-      * @tc.desc    getImageProperty('PhotographicSensitivity', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('PhotographicSensitivity')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014200
+     * @tc.desc   getImageProperty('PhotographicSensitivity', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014200'
@@ -5416,15 +4990,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014300
-      * @tc.desc    getImageProperty('HwMnoteCaptureMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteCaptureMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014300
+     * @tc.desc   getImageProperty('HwMnoteCaptureMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014300'
@@ -5450,15 +5021,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014400
-      * @tc.desc    getImageProperty('HwMnotePhysicalAperture', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnotePhysicalAperture')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014400
+     * @tc.desc   getImageProperty('HwMnotePhysicalAperture', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014400'
@@ -5484,15 +5052,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014500
-      * @tc.desc    getImageProperty('HwMnoteRollAngle', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteRollAngle')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014500
+     * @tc.desc   getImageProperty('HwMnoteRollAngle', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014500'
@@ -5518,15 +5083,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014600
-      * @tc.desc    getImageProperty('HwMnotePitchAngle', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnotePitchAngle')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014600
+     * @tc.desc   getImageProperty('HwMnotePitchAngle', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014600'
@@ -5552,15 +5114,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014700
-      * @tc.desc    getImageProperty('HwMnoteSceneFoodConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneFoodConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014700
+     * @tc.desc   getImageProperty('HwMnoteSceneFoodConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014700'
@@ -5586,15 +5145,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014800
-      * @tc.desc    getImageProperty('HwMnoteSceneStageConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneStageConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014800
+     * @tc.desc   getImageProperty('HwMnoteSceneStageConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014800'
@@ -5620,15 +5176,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014900
-      * @tc.desc    getImageProperty('HwMnoteSceneBlueSkyConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneBlueSkyConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014900
+     * @tc.desc   getImageProperty('HwMnoteSceneBlueSkyConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_014900'
@@ -5654,15 +5207,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015000
-      * @tc.desc    getImageProperty('HwMnoteSceneGreenPlantConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneGreenPlantConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015000
+     * @tc.desc   getImageProperty('HwMnoteSceneGreenPlantConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015000'
@@ -5688,15 +5238,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015100
-      * @tc.desc    getImageProperty('HwMnoteSceneBeachConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneBeachConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015100
+     * @tc.desc   getImageProperty('HwMnoteSceneBeachConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015100'
@@ -5722,15 +5269,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015200
-      * @tc.desc    getImageProperty('HwMnoteSceneSnowConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneSnowConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015200
+     * @tc.desc   getImageProperty('HwMnoteSceneSnowConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015200'
@@ -5756,15 +5300,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015300
-      * @tc.desc    getImageProperty('HwMnoteSceneSunsetConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneSunsetConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015300
+     * @tc.desc   getImageProperty('HwMnoteSceneSunsetConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015300'
@@ -5790,15 +5331,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015400
-      * @tc.desc    getImageProperty('HwMnoteSceneFlowersConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneFlowersConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015400
+     * @tc.desc   getImageProperty('HwMnoteSceneFlowersConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015400'
@@ -5824,15 +5362,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015500
-      * @tc.desc    getImageProperty('HwMnoteSceneNightConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneNightConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015500
+     * @tc.desc   getImageProperty('HwMnoteSceneNightConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015500'
@@ -5858,15 +5393,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015600
-      * @tc.desc    getImageProperty('HwMnoteSceneTextConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneTextConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015600
+     * @tc.desc   getImageProperty('HwMnoteSceneTextConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015600'
@@ -5892,15 +5424,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015700
-      * @tc.desc    getImageProperty('HwMnoteFaceCount', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceCount')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015700
+     * @tc.desc   getImageProperty('HwMnoteFaceCount', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015700'
@@ -5926,15 +5455,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015800
-      * @tc.desc    getImageProperty('HwMnoteFocusMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFocusMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015800
+     * @tc.desc   getImageProperty('HwMnoteFocusMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015800'
@@ -5960,15 +5486,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015900
-      * @tc.desc    getImageProperty('HwMnoteBurstNumber', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteBurstNumber')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015900
+     * @tc.desc   getImageProperty('HwMnoteBurstNumber', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_015900'
@@ -5994,15 +5517,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016000
-      * @tc.desc    getImageProperty('HwMnoteFaceConf', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceConf')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016000
+     * @tc.desc   getImageProperty('HwMnoteFaceConf', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016000'
@@ -6028,15 +5548,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016100
-      * @tc.desc    getImageProperty('HwMnoteFaceLeyeCenter', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceLeyeCenter')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016100
+     * @tc.desc   getImageProperty('HwMnoteFaceLeyeCenter', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016100'
@@ -6062,15 +5579,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016200
-      * @tc.desc    getImageProperty('HwMnoteFaceMouthCenter', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceMouthCenter')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016200
+     * @tc.desc   getImageProperty('HwMnoteFaceMouthCenter', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016200'
@@ -6096,15 +5610,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016300
-      * @tc.desc    getImageProperty('HwMnoteFacePointer', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFacePointer')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016300
+     * @tc.desc   getImageProperty('HwMnoteFacePointer', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016300'
@@ -6130,15 +5641,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016400
-      * @tc.desc    getImageProperty('HwMnoteFaceRect', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceRect')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016400
+     * @tc.desc   getImageProperty('HwMnoteFaceRect', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016400'
@@ -6165,15 +5673,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016500
-      * @tc.desc    getImageProperty('HwMnoteFaceReyeCenter', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceReyeCenter')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016500
+     * @tc.desc   getImageProperty('HwMnoteFaceReyeCenter', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016500'
@@ -6199,15 +5704,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016600
-      * @tc.desc    getImageProperty('HwMnoteFaceSmileScore', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceSmileScore')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016600
+     * @tc.desc   getImageProperty('HwMnoteFaceSmileScore', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016600'
@@ -6233,15 +5735,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016700
-      * @tc.desc    getImageProperty('HwMnoteFaceVersion', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceVersion')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016700
+     * @tc.desc   getImageProperty('HwMnoteFaceVersion', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016700'
@@ -6267,15 +5766,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016800
-      * @tc.desc    getImageProperty('HwMnoteFrontCamera', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFrontCamera')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016800
+     * @tc.desc   getImageProperty('HwMnoteFrontCamera', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016800'
@@ -6301,15 +5797,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016900
-      * @tc.desc    getImageProperty('HwMnoteScenePointer', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteScenePointer')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016900
+     * @tc.desc   getImageProperty('HwMnoteScenePointer', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_016900'
@@ -6335,15 +5828,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_017000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_017000
-      * @tc.desc    getImageProperty('HwMnoteSceneVersion', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteSceneVersion')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_017000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_017000
+     * @tc.desc   getImageProperty('HwMnoteSceneVersion', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_017000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_017000'
@@ -6370,15 +5860,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_018000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_018000
-      * @tc.desc    getImageProperty('HwMnoteIsXmageSupported', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteIsXmageSupported')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_018000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_018000
+     * @tc.desc   getImageProperty('HwMnoteIsXmageSupported', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_018000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_018000'
@@ -6403,15 +5890,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_019000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_019000
-      * @tc.desc    getImageProperty('HwMnoteXmageMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteXmageMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_019000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_019000
+     * @tc.desc   getImageProperty('HwMnoteXmageMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_019000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_019000'
@@ -6437,15 +5921,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_020000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_020000
-      * @tc.desc    getImageProperty('HwMnoteXmageLeft', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteXmageLeft')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_020000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_020000
+     * @tc.desc   getImageProperty('HwMnoteXmageLeft', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_020000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_020000'
@@ -6471,15 +5952,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_021000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_021000
-      * @tc.desc    getImageProperty('HwMnoteXmageTop', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteXmageTop')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_021000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_021000
+     * @tc.desc   getImageProperty('HwMnoteXmageTop', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_021000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_021000'
@@ -6504,15 +5982,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_022000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_022000
-      * @tc.desc    getImageProperty('HwMnoteXmageRight', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteXmageRight')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_022000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_022000
+     * @tc.desc   getImageProperty('HwMnoteXmageRight', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_022000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_022000'
@@ -6537,15 +6012,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_023000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_023000
-      * @tc.desc    getImageProperty('HwMnoteXmageBottom', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteXmageBottom')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_023000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_023000
+     * @tc.desc   getImageProperty('HwMnoteXmageBottom', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_023000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_023000'
@@ -6570,15 +6042,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_024000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_024000
-      * @tc.desc    getImageProperty('HwMnoteCloudEnhancementMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteCloudEnhancementMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_024000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_024000
+     * @tc.desc   getImageProperty('HwMnoteCloudEnhancementMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_024000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_024000'
@@ -6604,15 +6073,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_025000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_025000
-      * @tc.desc    getImageProperty('HwMnoteWindSnapshotMode', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteWindSnapshotMode')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_025000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_025000
+     * @tc.desc   getImageProperty('HwMnoteWindSnapshotMode', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_025000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_PROMISE_STATIC_025000'
@@ -6637,15 +6103,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0100
-      * @tc.desc    getImageProperty('HwMnoteFaceVersion', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceVersion')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0100
+     * @tc.desc   getImageProperty('HwMnoteFaceVersion', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0100'
@@ -6671,15 +6134,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0200
-      * @tc.desc    getImageProperty('HwMnoteFrontCamera', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFrontCamera')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0200
+     * @tc.desc   getImageProperty('HwMnoteFrontCamera', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0200'
@@ -6705,15 +6165,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0300
-      * @tc.desc    getImageProperty('Orientation', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Orientation')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0300
+     * @tc.desc   getImageProperty('Orientation', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0300'
@@ -6740,15 +6197,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0400
-      * @tc.desc    getImageProperty('BitsPerSample', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('BitsPerSample')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0400
+     * @tc.desc   getImageProperty('BitsPerSample', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_BUFFER_PROMISE_STATIC_0400'
@@ -6775,15 +6229,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0100
-      * @tc.desc    getImageProperty('HwMnoteFaceVersion', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFaceVersion')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0100
+     * @tc.desc   getImageProperty('HwMnoteFaceVersion', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0100'
@@ -6809,15 +6260,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0200
-      * @tc.desc    getImageProperty('HwMnoteFrontCamera', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('HwMnoteFrontCamera')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0200
+     * @tc.desc   getImageProperty('HwMnoteFrontCamera', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0200'
@@ -6843,15 +6291,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0300
-      * @tc.desc    getImageProperty('Orientation', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Orientation')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0300
+     * @tc.desc   getImageProperty('Orientation', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0300'
@@ -6878,15 +6323,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0400
-      * @tc.desc    getImageProperty('BitsPerSample', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('BitsPerSample')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0400
+     * @tc.desc   getImageProperty('BitsPerSample', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_URI_PROMISE_STATIC_0400'
@@ -6913,15 +6355,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETMODIFYIMAGEPROPERTY_PROMISE_RAWFILE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETMODIFYIMAGEPROPERTY_PROMISE_RAWFILE_PROMISE_STATIC_0100
-      * @tc.desc    getImageProperty('BitsPerSample', property)_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('BitsPerSample')_promise
-      *                 3.the getImageProperty value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETMODIFYIMAGEPROPERTY_PROMISE_RAWFILE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETMODIFYIMAGEPROPERTY_PROMISE_RAWFILE_PROMISE_STATIC_0100
+     * @tc.desc   getImageProperty('BitsPerSample', property)_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETMODIFYIMAGEPROPERTY_PROMISE_RAWFILE_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETMODIFYIMAGEPROPERTY_PROMISE_RAWFILE_PROMISE_STATIC_0100'
@@ -6960,15 +6399,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0100
-      * @tc.desc    modifyImageProperty('BitsPerSample')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('BitsPerSample', `1,1,1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0100
+     * @tc.desc   modifyImageProperty('BitsPerSample')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0100';
@@ -6992,15 +6428,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0200
-      * @tc.desc    modifyImageProperty('Orientation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Orientation', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0200
+     * @tc.desc   modifyImageProperty('Orientation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0200';
@@ -7024,15 +6457,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0300
-      * @tc.desc    modifyImageProperty('ImageLength')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ImageLength', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0300
+     * @tc.desc   modifyImageProperty('ImageLength')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0300';
@@ -7056,15 +6486,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0400
-      * @tc.desc    modifyImageProperty('ImageWidth')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ImageWidth', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0400
+     * @tc.desc   modifyImageProperty('ImageWidth')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0400';
@@ -7088,15 +6515,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0500
-      * @tc.desc    modifyImageProperty('GPSLatitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSLatitude', `39,54,20`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0500
+     * @tc.desc   modifyImageProperty('GPSLatitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0500';
@@ -7120,15 +6544,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0600
-      * @tc.desc    modifyImageProperty('GPSLongitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSLongitude', `120/1 52/1 26/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0600
+     * @tc.desc   modifyImageProperty('GPSLongitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0600';
@@ -7152,15 +6573,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0700
-      * @tc.desc    modifyImageProperty('GPSLatitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSLatitudeRef', `N`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0700
+     * @tc.desc   modifyImageProperty('GPSLatitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0700';
@@ -7184,15 +6602,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0800
-      * @tc.desc    modifyImageProperty('GPSLongitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSLongitudeRef', `E`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0800
+     * @tc.desc   modifyImageProperty('GPSLongitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0800';
@@ -7216,15 +6631,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0900
-      * @tc.desc    modifyImageProperty('DateTimeOriginal')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DateTimeOriginal', `2024:01:25 05:51:34`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0900
+     * @tc.desc   modifyImageProperty('DateTimeOriginal')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_0900';
@@ -7248,15 +6660,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01000
-      * @tc.desc    modifyImageProperty('ExposureTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureTime', `1/34`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01000
+     * @tc.desc   modifyImageProperty('ExposureTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01000';
@@ -7280,15 +6689,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01100
-      * @tc.desc    modifyImageProperty('SceneType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SceneType', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01100
+     * @tc.desc   modifyImageProperty('SceneType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01100';
@@ -7312,15 +6718,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01200
-      * @tc.desc    modifyImageProperty('ISOSpeedRatings')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ISOSpeedRatings', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01200
+     * @tc.desc   modifyImageProperty('ISOSpeedRatings')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01200';
@@ -7344,15 +6747,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01300
-      * @tc.desc    modifyImageProperty('FNumber')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FNumber', `1/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01300
+     * @tc.desc   modifyImageProperty('FNumber')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01300';
@@ -7376,15 +6776,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01400
-      * @tc.desc    modifyImageProperty('DateTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DateTime', `2024:12:31`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01400
+     * @tc.desc   modifyImageProperty('DateTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01400';
@@ -7408,15 +6805,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01500
-      * @tc.desc    modifyImageProperty('GPSTimeStamp')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSTimeStamp', `11/1 37/1 58/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01500
+     * @tc.desc   modifyImageProperty('GPSTimeStamp')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01500';
@@ -7440,15 +6834,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01600
-      * @tc.desc    modifyImageProperty('GPSDateStamp')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDateStamp', `2025:01:11`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01600
+     * @tc.desc   modifyImageProperty('GPSDateStamp')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01600';
@@ -7472,15 +6863,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01700
-      * @tc.desc    modifyImageProperty('ImageDescription')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ImageDescription', `_cuva%s\d`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01700
+     * @tc.desc   modifyImageProperty('ImageDescription')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01700';
@@ -7504,15 +6892,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01800
-      * @tc.desc    modifyImageProperty('Make')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Make', `华为`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01800
+     * @tc.desc   modifyImageProperty('Make')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01800';
@@ -7536,15 +6921,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01900
-      * @tc.desc    modifyImageProperty('Model')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Model', `TNY-AL00`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01900
+     * @tc.desc   modifyImageProperty('Model')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_01900';
@@ -7568,15 +6950,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02000
-      * @tc.desc    modifyImageProperty('PhotoMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PhotoMode', `252`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02000
+     * @tc.desc   modifyImageProperty('PhotoMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02000';
@@ -7600,15 +6979,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02100
-      * @tc.desc    modifyImageProperty('SensitivityType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SensitivityType', `5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02100
+     * @tc.desc   modifyImageProperty('SensitivityType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02100';
@@ -7632,15 +7008,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02200
-      * @tc.desc    modifyImageProperty('StandardOutputSensitivity')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('StandardOutputSensitivity', `5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02200
+     * @tc.desc   modifyImageProperty('StandardOutputSensitivity')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02200';
@@ -7664,15 +7037,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02300
-      * @tc.desc    modifyImageProperty('RecommendedExposureIndex')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('RecommendedExposureIndex', `123`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02300
+     * @tc.desc   modifyImageProperty('RecommendedExposureIndex')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02300';
@@ -7696,15 +7066,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02400
-      * @tc.desc    modifyImageProperty('ApertureValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ApertureValue', `4/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02400
+     * @tc.desc   modifyImageProperty('ApertureValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02400';
@@ -7728,15 +7095,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02500
-      * @tc.desc    modifyImageProperty('ExposureBiasValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureBiasValue', `23/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02500
+     * @tc.desc   modifyImageProperty('ExposureBiasValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02500';
@@ -7760,15 +7124,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02600
-      * @tc.desc    modifyImageProperty('MeteringMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('MeteringMode', `5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02600
+     * @tc.desc   modifyImageProperty('MeteringMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02600';
@@ -7792,15 +7153,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02700
-      * @tc.desc    modifyImageProperty('LightSource')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LightSource', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02700
+     * @tc.desc   modifyImageProperty('LightSource')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02700';
@@ -7824,15 +7182,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02800
-      * @tc.desc    modifyImageProperty('Flash')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Flash', `5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02800
+     * @tc.desc   modifyImageProperty('Flash')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02800';
@@ -7856,15 +7211,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02900
-      * @tc.desc    modifyImageProperty('FocalLength')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalLength', `0/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02900
+     * @tc.desc   modifyImageProperty('FocalLength')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_02900';
@@ -7888,15 +7240,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03000
-      * @tc.desc    modifyImageProperty('UserComment')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('UserComment', `place for user comments`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03000
+     * @tc.desc   modifyImageProperty('UserComment')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03000';
@@ -7920,15 +7269,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03100
-      * @tc.desc    modifyImageProperty('PixelXDimension')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PixelXDimension', `123`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03100
+     * @tc.desc   modifyImageProperty('PixelXDimension')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03100';
@@ -7952,15 +7298,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03200
-      * @tc.desc    modifyImageProperty('PixelYDimension')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PixelYDimension', `234`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03200
+     * @tc.desc   modifyImageProperty('PixelYDimension')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03200';
@@ -7984,15 +7327,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03300
-      * @tc.desc    modifyImageProperty('WhiteBalance')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('WhiteBalance', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03300
+     * @tc.desc   modifyImageProperty('WhiteBalance')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03300';
@@ -8016,15 +7356,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03400
-      * @tc.desc    modifyImageProperty('FocalLengthIn35mmFilm')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalLengthIn35mmFilm', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03400
+     * @tc.desc   modifyImageProperty('FocalLengthIn35mmFilm')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03400';
@@ -8048,15 +7385,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03500
-      * @tc.desc    modifyImageProperty('Compression')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Compression', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03500
+     * @tc.desc   modifyImageProperty('Compression')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03500';
@@ -8080,15 +7414,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03600
-      * @tc.desc    modifyImageProperty('PhotometricInterpretation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PhotometricInterpretation', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03600
+     * @tc.desc   modifyImageProperty('PhotometricInterpretation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03600';
@@ -8112,15 +7443,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03700
-      * @tc.desc    modifyImageProperty('StripOffsets')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('StripOffsets', `123`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03700
+     * @tc.desc   modifyImageProperty('StripOffsets')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03700';
@@ -8144,15 +7472,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03800
-      * @tc.desc    modifyImageProperty('SamplesPerPixel')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SamplesPerPixel', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03800
+     * @tc.desc   modifyImageProperty('SamplesPerPixel')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03800';
@@ -8176,15 +7501,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03900
-      * @tc.desc    modifyImageProperty('RowsPerStrip')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('RowsPerStrip', `123`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03900
+     * @tc.desc   modifyImageProperty('RowsPerStrip')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_03900';
@@ -8208,15 +7530,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04000
-      * @tc.desc    modifyImageProperty('StripByteCounts')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('StripByteCounts', `123`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04000
+     * @tc.desc   modifyImageProperty('StripByteCounts')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04000';
@@ -8240,15 +7559,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04100
-      * @tc.desc    modifyImageProperty('XResolution')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('XResolution', `0/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04100
+     * @tc.desc   modifyImageProperty('XResolution')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04100';
@@ -8272,15 +7588,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04200
-      * @tc.desc    modifyImageProperty('YResolution')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('YResolution', `0/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04200
+     * @tc.desc   modifyImageProperty('YResolution')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04200';
@@ -8304,15 +7617,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04300
-      * @tc.desc    modifyImageProperty('PlanarConfiguration')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PlanarConfiguration', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04300
+     * @tc.desc   modifyImageProperty('PlanarConfiguration')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04300';
@@ -8336,15 +7646,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04400
-      * @tc.desc    modifyImageProperty('ResolutionUnit')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ResolutionUnit', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04400
+     * @tc.desc   modifyImageProperty('ResolutionUnit')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04400';
@@ -8368,15 +7675,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04500
-      * @tc.desc    modifyImageProperty('TransferFunction')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('TransferFunction', `abc`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04500
+     * @tc.desc   modifyImageProperty('TransferFunction')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04500';
@@ -8400,15 +7704,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04600
-      * @tc.desc    modifyImageProperty('Software')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Software', `华为`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04600
+     * @tc.desc   modifyImageProperty('Software')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04600';
@@ -8432,15 +7733,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04700
-      * @tc.desc    modifyImageProperty('Artist')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Artist', `None`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04700
+     * @tc.desc   modifyImageProperty('Artist')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04700';
@@ -8464,15 +7762,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04800
-      * @tc.desc    modifyImageProperty('WhitePoint')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('WhitePoint', `252/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04800
+     * @tc.desc   modifyImageProperty('WhitePoint')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04800';
@@ -8496,15 +7791,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04900
-      * @tc.desc    modifyImageProperty('PrimaryChromaticities')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PrimaryChromaticities', `0/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04900
+     * @tc.desc   modifyImageProperty('PrimaryChromaticities')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_04900';
@@ -8528,15 +7820,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05000
-      * @tc.desc    modifyImageProperty('YCbCrCoefficients')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('YCbCrCoefficients', `299/1000 587/1000 114/1000`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05000
+     * @tc.desc   modifyImageProperty('YCbCrCoefficients')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05000';
@@ -8560,15 +7849,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05100
-      * @tc.desc    modifyImageProperty('YCbCrSubSampling')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('YCbCrSubSampling', `3 2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05100
+     * @tc.desc   modifyImageProperty('YCbCrSubSampling')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05100';
@@ -8592,15 +7878,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05200
-      * @tc.desc    modifyImageProperty('YCbCrPositioning')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('YCbCrPositioning', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05200
+     * @tc.desc   modifyImageProperty('YCbCrPositioning')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05200';
@@ -8624,15 +7907,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05300
-      * @tc.desc    modifyImageProperty('ReferenceBlackWhite')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ReferenceBlackWhite', `222 0 1.5 0 25.2 25.2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05300
+     * @tc.desc   modifyImageProperty('ReferenceBlackWhite')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05300';
@@ -8656,15 +7936,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05400
-      * @tc.desc    modifyImageProperty('Copyright')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Copyright', `undefined`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05400
+     * @tc.desc   modifyImageProperty('Copyright')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05400';
@@ -8688,15 +7965,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05700
-      * @tc.desc    modifyImageProperty('ExposureProgram')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureProgram', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05700
+     * @tc.desc   modifyImageProperty('ExposureProgram')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05700';
@@ -8720,15 +7994,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05800
-      * @tc.desc    modifyImageProperty('SpectralSensitivity')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SpectralSensitivity', `abc`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05800
+     * @tc.desc   modifyImageProperty('SpectralSensitivity')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05800';
@@ -8752,15 +8023,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05900
-      * @tc.desc    modifyImageProperty('OECF')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('OECF', `excc`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05900
+     * @tc.desc   modifyImageProperty('OECF')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_05900';
@@ -8784,15 +8052,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06000
-      * @tc.desc    modifyImageProperty('ExifVersion')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExifVersion', `0110`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06000
+     * @tc.desc   modifyImageProperty('ExifVersion')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06000';
@@ -8816,15 +8081,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06100
-      * @tc.desc    modifyImageProperty('DateTimeDigitized')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DateTimeDigitized', `2022:06:02 15:51:34`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06100
+     * @tc.desc   modifyImageProperty('DateTimeDigitized')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06100';
@@ -8848,15 +8110,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06200
-      * @tc.desc    modifyImageProperty('ComponentsConfiguration')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ComponentsConfiguration', `1456`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06200
+     * @tc.desc   modifyImageProperty('ComponentsConfiguration')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06200';
@@ -8880,15 +8139,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06300
-      * @tc.desc    modifyImageProperty('ShutterSpeedValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ShutterSpeedValue', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06300
+     * @tc.desc   modifyImageProperty('ShutterSpeedValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06300';
@@ -8912,15 +8168,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06400
-      * @tc.desc    modifyImageProperty('BrightnessValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('BrightnessValue', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06400
+     * @tc.desc   modifyImageProperty('BrightnessValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06400';
@@ -8944,15 +8197,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06500
-      * @tc.desc    modifyImageProperty('MaxApertureValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('MaxApertureValue', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06500
+     * @tc.desc   modifyImageProperty('MaxApertureValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06500';
@@ -8976,15 +8226,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06600
-      * @tc.desc    modifyImageProperty('SubjectDistance')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubjectDistance', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06600
+     * @tc.desc   modifyImageProperty('SubjectDistance')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06600';
@@ -9008,15 +8255,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06700
-      * @tc.desc    modifyImageProperty('SubjectArea')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubjectArea', `12 13`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06700
+     * @tc.desc   modifyImageProperty('SubjectArea')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06700';
@@ -9040,15 +8284,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06900
-      * @tc.desc    modifyImageProperty('SubsecTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubsecTime', `123456`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06900
+     * @tc.desc   modifyImageProperty('SubsecTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_06900';
@@ -9072,15 +8313,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07000
-      * @tc.desc    modifyImageProperty('SubsecTimeOriginal')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubsecTimeOriginal', `427000`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07000
+     * @tc.desc   modifyImageProperty('SubsecTimeOriginal')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07000';
@@ -9104,15 +8342,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07100
-      * @tc.desc    modifyImageProperty('SubsecTimeDigitized')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubsecTimeDigitized', `427000`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07100
+     * @tc.desc   modifyImageProperty('SubsecTimeDigitized')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07100';
@@ -9136,15 +8371,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07200
-      * @tc.desc    modifyImageProperty('FlashpixVersion')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FlashpixVersion', `0100`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07200
+     * @tc.desc   modifyImageProperty('FlashpixVersion')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07200';
@@ -9168,15 +8400,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07300
-      * @tc.desc    modifyImageProperty('ColorSpace')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ColorSpace', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07300
+     * @tc.desc   modifyImageProperty('ColorSpace')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07300';
@@ -9200,15 +8429,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07400
-      * @tc.desc    modifyImageProperty('RelatedSoundFile')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('RelatedSoundFile', `/usr/home`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07400
+     * @tc.desc   modifyImageProperty('RelatedSoundFile')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07400';
@@ -9232,15 +8458,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07500
-      * @tc.desc    modifyImageProperty('FlashEnergy')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FlashEnergy', `832/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07500
+     * @tc.desc   modifyImageProperty('FlashEnergy')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07500';
@@ -9264,15 +8487,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07600
-      * @tc.desc    modifyImageProperty('SpatialFrequencyResponse')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SpatialFrequencyResponse', `13`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07600
+     * @tc.desc   modifyImageProperty('SpatialFrequencyResponse')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07600';
@@ -9296,15 +8516,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07700
-      * @tc.desc    modifyImageProperty('FocalPlaneXResolution')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalPlaneXResolution', `1080/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07700
+     * @tc.desc   modifyImageProperty('FocalPlaneXResolution')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07700';
@@ -9328,15 +8545,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07800
-      * @tc.desc    modifyImageProperty('FocalPlaneYResolution')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalPlaneYResolution', `880/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07800
+     * @tc.desc   modifyImageProperty('FocalPlaneYResolution')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07800';
@@ -9360,15 +8574,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07900
-      * @tc.desc    modifyImageProperty('FocalPlaneResolutionUnit')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalPlaneResolutionUnit', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07900
+     * @tc.desc   modifyImageProperty('FocalPlaneResolutionUnit')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_07900';
@@ -9392,15 +8603,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08000
-      * @tc.desc    modifyImageProperty('SubjectLocation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubjectLocation', `0 1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08000
+     * @tc.desc   modifyImageProperty('SubjectLocation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08000';
@@ -9424,15 +8632,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08100
-      * @tc.desc    modifyImageProperty('ExposureIndex')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureIndex', `3/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08100
+     * @tc.desc   modifyImageProperty('ExposureIndex')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08100';
@@ -9456,15 +8661,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08200
-      * @tc.desc    modifyImageProperty('SensingMethod')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SensingMethod', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08200
+     * @tc.desc   modifyImageProperty('SensingMethod')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08200';
@@ -9488,15 +8690,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08300
-      * @tc.desc    modifyImageProperty('FileSource')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FileSource', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08300
+     * @tc.desc   modifyImageProperty('FileSource')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08300';
@@ -9520,15 +8719,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08400
-      * @tc.desc    modifyImageProperty('CFAPattern')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CFAPattern', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08400
+     * @tc.desc   modifyImageProperty('CFAPattern')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08400';
@@ -9552,15 +8748,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08500
-      * @tc.desc    modifyImageProperty('CustomRendered')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CustomRendered', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08500
+     * @tc.desc   modifyImageProperty('CustomRendered')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08500';
@@ -9584,15 +8777,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08600
-      * @tc.desc    modifyImageProperty('ExposureMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureMode', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08600
+     * @tc.desc   modifyImageProperty('ExposureMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08600';
@@ -9616,15 +8806,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08700
-      * @tc.desc    modifyImageProperty('DigitalZoomRatio')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DigitalZoomRatio', `321/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08700
+     * @tc.desc   modifyImageProperty('DigitalZoomRatio')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08700';
@@ -9648,15 +8835,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08800
-      * @tc.desc    modifyImageProperty('SceneCaptureType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SceneCaptureType', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08800
+     * @tc.desc   modifyImageProperty('SceneCaptureType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08800';
@@ -9680,15 +8864,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08900
-      * @tc.desc    modifyImageProperty('GainControl')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GainControl', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08900
+     * @tc.desc   modifyImageProperty('GainControl')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_08900';
@@ -9712,15 +8893,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09000
-      * @tc.desc    modifyImageProperty('Contrast')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Contrast', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09000
+     * @tc.desc   modifyImageProperty('Contrast')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09000';
@@ -9744,15 +8922,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09100
-      * @tc.desc    modifyImageProperty('Saturation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Saturation', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09100
+     * @tc.desc   modifyImageProperty('Saturation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09100';
@@ -9776,15 +8951,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09200
-      * @tc.desc    modifyImageProperty('Sharpness')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Sharpness', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09200
+     * @tc.desc   modifyImageProperty('Sharpness')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09200';
@@ -9808,15 +8980,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09300
-      * @tc.desc    modifyImageProperty('DeviceSettingDescription')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DeviceSettingDescription', `2xxx`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09300
+     * @tc.desc   modifyImageProperty('DeviceSettingDescription')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09300';
@@ -9840,15 +9009,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09400
-      * @tc.desc    modifyImageProperty('SubjectDistanceRange')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubjectDistanceRange', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09400
+     * @tc.desc   modifyImageProperty('SubjectDistanceRange')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09400';
@@ -9872,15 +9038,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09500
-      * @tc.desc    modifyImageProperty('ImageUniqueID')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ImageUniqueID', `FXIC012`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09500
+     * @tc.desc   modifyImageProperty('ImageUniqueID')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09500';
@@ -9904,15 +9067,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09600
-      * @tc.desc    modifyImageProperty('GPSVersionID')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSVersionID', `2.2.0.0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09600
+     * @tc.desc   modifyImageProperty('GPSVersionID')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09600';
@@ -9936,15 +9096,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09700
-      * @tc.desc    modifyImageProperty('GPSAltitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSAltitudeRef', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09700
+     * @tc.desc   modifyImageProperty('GPSAltitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09700';
@@ -9968,15 +9125,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09800
-      * @tc.desc    modifyImageProperty('GPSAltitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSAltitude', `0/100`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09800
+     * @tc.desc   modifyImageProperty('GPSAltitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09800';
@@ -10000,15 +9154,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09900
-      * @tc.desc    modifyImageProperty('GPSSatellites')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSSatellites', `xxx`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09900
+     * @tc.desc   modifyImageProperty('GPSSatellites')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_09900';
@@ -10032,15 +9183,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010000
-      * @tc.desc    modifyImageProperty('GPSStatus')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSStatus', `A`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010000
+     * @tc.desc   modifyImageProperty('GPSStatus')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010000';
@@ -10064,15 +9212,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010100
-      * @tc.desc    modifyImageProperty('GPSMeasureMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSMeasureMode', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010100
+     * @tc.desc   modifyImageProperty('GPSMeasureMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010100';
@@ -10096,15 +9241,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010200
-      * @tc.desc    modifyImageProperty('GPSDOP')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDOP', `182/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010200
+     * @tc.desc   modifyImageProperty('GPSDOP')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010200';
@@ -10128,15 +9270,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010300
-      * @tc.desc    modifyImageProperty('GPSSpeedRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSSpeedRef', `N`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010300
+     * @tc.desc   modifyImageProperty('GPSSpeedRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010300';
@@ -10160,15 +9299,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010400
-      * @tc.desc    modifyImageProperty('GPSSpeed')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSSpeed', `150/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010400
+     * @tc.desc   modifyImageProperty('GPSSpeed')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010400';
@@ -10192,15 +9328,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010500
-      * @tc.desc    modifyImageProperty('GPSTrackRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSTrackRef', `T`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010500
+     * @tc.desc   modifyImageProperty('GPSTrackRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010500';
@@ -10224,15 +9357,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010600
-      * @tc.desc    modifyImageProperty('GPSTrack')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSTrack', `114/3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010600
+     * @tc.desc   modifyImageProperty('GPSTrack')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010600';
@@ -10256,15 +9386,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010700
-      * @tc.desc    modifyImageProperty('GPSImgDirectionRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSImgDirectionRef', `M`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010700
+     * @tc.desc   modifyImageProperty('GPSImgDirectionRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010700';
@@ -10288,15 +9415,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010800
-      * @tc.desc    modifyImageProperty('GPSImgDirection')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSImgDirection', `125/56`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010800
+     * @tc.desc   modifyImageProperty('GPSImgDirection')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010800';
@@ -10320,15 +9444,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010900
-      * @tc.desc    modifyImageProperty('GPSMapDatum')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSMapDatum', `xxx`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010900
+     * @tc.desc   modifyImageProperty('GPSMapDatum')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_010900';
@@ -10352,15 +9473,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011000
-      * @tc.desc    modifyImageProperty('GPSDestLatitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestLatitudeRef', `N`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011000
+     * @tc.desc   modifyImageProperty('GPSDestLatitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011000';
@@ -10384,15 +9502,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011100
-      * @tc.desc    modifyImageProperty('GPSDestLatitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestLatitude', `33/1 22/1 11/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011100
+     * @tc.desc   modifyImageProperty('GPSDestLatitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011100';
@@ -10416,15 +9531,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011200
-      * @tc.desc    modifyImageProperty('GPSDestLongitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestLongitudeRef', `E`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011200
+     * @tc.desc   modifyImageProperty('GPSDestLongitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011200';
@@ -10448,15 +9560,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011300
-      * @tc.desc    modifyImageProperty('GPSDestLongitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestLongitude', `33/1 22/1 11/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011300
+     * @tc.desc   modifyImageProperty('GPSDestLongitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011300';
@@ -10480,15 +9589,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011400
-      * @tc.desc    modifyImageProperty('GPSDestBearingRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestBearingRef', `T`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011400
+     * @tc.desc   modifyImageProperty('GPSDestBearingRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011400';
@@ -10512,15 +9618,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011500
-      * @tc.desc    modifyImageProperty('GPSDestBearing')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestBearing', `22/11`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011500
+     * @tc.desc   modifyImageProperty('GPSDestBearing')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011500';
@@ -10544,15 +9647,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011600
-      * @tc.desc    modifyImageProperty('GPSDestDistanceRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestDistanceRef', `N`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011600
+     * @tc.desc   modifyImageProperty('GPSDestDistanceRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011600';
@@ -10576,15 +9676,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011700
-      * @tc.desc    modifyImageProperty('GPSDestDistance')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestDistance', `10/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011700
+     * @tc.desc   modifyImageProperty('GPSDestDistance')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011700';
@@ -10608,15 +9705,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011800
-      * @tc.desc    modifyImageProperty('GPSProcessingMethod')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSProcessingMethod', `CELLID`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011800
+     * @tc.desc   modifyImageProperty('GPSProcessingMethod')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011800';
@@ -10640,15 +9734,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011900
-      * @tc.desc    modifyImageProperty('GPSAreaInformation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSAreaInformation', `arexxx`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011900
+     * @tc.desc   modifyImageProperty('GPSAreaInformation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_011900';
@@ -10672,15 +9763,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012000
-      * @tc.desc    modifyImageProperty('GPSDifferential')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDifferential', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012000
+     * @tc.desc   modifyImageProperty('GPSDifferential')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012000';
@@ -10704,15 +9792,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012100
-      * @tc.desc    modifyImageProperty('BodySerialNumber')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('BodySerialNumber', `exoch`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012100
+     * @tc.desc   modifyImageProperty('BodySerialNumber')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012100';
@@ -10736,15 +9821,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012200
-      * @tc.desc    modifyImageProperty('CameraOwnerName')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CameraOwnerName', `c.uec`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012200
+     * @tc.desc   modifyImageProperty('CameraOwnerName')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012200';
@@ -10768,15 +9850,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012300
-      * @tc.desc    modifyImageProperty('CompositeImage')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CompositeImage', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012300
+     * @tc.desc   modifyImageProperty('CompositeImage')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012300';
@@ -10800,15 +9879,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012400
-      * @tc.desc    modifyImageProperty('CompressedBitsPerPixel')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CompressedBitsPerPixel', `24/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012400
+     * @tc.desc   modifyImageProperty('CompressedBitsPerPixel')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012400';
@@ -10832,15 +9908,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012500
-      * @tc.desc    modifyImageProperty('DNGVersion')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DNGVersion', `2 2 3 1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012500
+     * @tc.desc   modifyImageProperty('DNGVersion')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012500';
@@ -10864,15 +9937,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012600
-      * @tc.desc    modifyImageProperty('DefaultCropSize')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DefaultCropSize', `153 841`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012600
+     * @tc.desc   modifyImageProperty('DefaultCropSize')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012600';
@@ -10896,15 +9966,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012700
-      * @tc.desc    modifyImageProperty('Gamma')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Gamma', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012700
+     * @tc.desc   modifyImageProperty('Gamma')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012700';
@@ -10928,15 +9995,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012800
-      * @tc.desc    modifyImageProperty('ISOSpeedLatitudeyyy')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ISOSpeedLatitudeyyy', `1456`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012800
+     * @tc.desc   modifyImageProperty('ISOSpeedLatitudeyyy')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012800';
@@ -10960,15 +10024,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012900
-      * @tc.desc    modifyImageProperty('ISOSpeedLatitudezzz')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ISOSpeedLatitudezzz', `1456`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012900
+     * @tc.desc   modifyImageProperty('ISOSpeedLatitudezzz')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_012900';
@@ -10992,15 +10053,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013000
-      * @tc.desc    modifyImageProperty('LensMake')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LensMake', `xxwx`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013000
+     * @tc.desc   modifyImageProperty('LensMake')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013000';
@@ -11024,15 +10082,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013100
-      * @tc.desc    modifyImageProperty('LensModel')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LensModel', `txaw`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013100
+     * @tc.desc   modifyImageProperty('LensModel')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013100';
@@ -11056,15 +10111,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013200
-      * @tc.desc    modifyImageProperty('LensSerialNumber')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LensSerialNumber', `qxhc`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013200
+     * @tc.desc   modifyImageProperty('LensSerialNumber')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013200';
@@ -11088,15 +10140,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013300
-      * @tc.desc    modifyImageProperty('LensSpecification')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LensSpecification', `3/4 5/2 3/2 1/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013300
+     * @tc.desc   modifyImageProperty('LensSpecification')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013300';
@@ -11120,15 +10169,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013400
-      * @tc.desc    modifyImageProperty('NewSubfileType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('NewSubfileType', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013400
+     * @tc.desc   modifyImageProperty('NewSubfileType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013400';
@@ -11152,15 +10198,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013500
-      * @tc.desc    modifyImageProperty('OffsetTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('OffsetTime', `2024:01:25`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013500
+     * @tc.desc   modifyImageProperty('OffsetTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013500';
@@ -11184,15 +10227,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013600
-      * @tc.desc    modifyImageProperty('OffsetTimeDigitized')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('OffsetTimeDigitized', `cfh`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013600
+     * @tc.desc   modifyImageProperty('OffsetTimeDigitized')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013600';
@@ -11216,15 +10256,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013700
-      * @tc.desc    modifyImageProperty('OffsetTimeOriginal')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('OffsetTimeOriginal', `chex`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013700
+     * @tc.desc   modifyImageProperty('OffsetTimeOriginal')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013700';
@@ -11248,15 +10285,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013800
-      * @tc.desc    modifyImageProperty('SourceExposureTimesOfCompositeImage')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SourceExposureTimesOfCompositeImage', `xxxw`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013800
+     * @tc.desc   modifyImageProperty('SourceExposureTimesOfCompositeImage')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013800';
@@ -11280,15 +10314,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013900
-      * @tc.desc    modifyImageProperty('SourceImageNumberOfCompositeImage')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SourceImageNumberOfCompositeImage', `23 34`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013900
+     * @tc.desc   modifyImageProperty('SourceImageNumberOfCompositeImage')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_013900';
@@ -11312,15 +10343,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014000
-      * @tc.desc    modifyImageProperty('SubfileType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubfileType', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014000
+     * @tc.desc   modifyImageProperty('SubfileType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014000';
@@ -11344,15 +10372,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014100
-      * @tc.desc    modifyImageProperty('GPSHPositioningError')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSHPositioningError', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014100
+     * @tc.desc   modifyImageProperty('GPSHPositioningError')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014100';
@@ -11376,15 +10401,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014200
-      * @tc.desc    modifyImageProperty('PhotographicSensitivity')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PhotographicSensitivity', `50`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014200
+     * @tc.desc   modifyImageProperty('PhotographicSensitivity')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014200';
@@ -11408,15 +10430,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014500
-      * @tc.desc    modifyImageProperty('HwMnoteCaptureMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('HwMnoteCaptureMode', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014500
+     * @tc.desc   modifyImageProperty('HwMnoteCaptureMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014500';
@@ -11441,15 +10460,12 @@ export default function imageExifGetModifyTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0100
-      * @tc.desc    modifyImageProperty('SourceImageNumberOfCompositeImage')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SourceImageNumberOfCompositeImage', `23 34`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0100
+     * @tc.desc   modifyImageProperty('SourceImageNumberOfCompositeImage')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0100';
@@ -11473,15 +10489,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0200
-      * @tc.desc    modifyImageProperty('SubfileType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubfileType', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0200
+     * @tc.desc   modifyImageProperty('SubfileType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0200';
@@ -11505,15 +10518,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0300
-      * @tc.desc    modifyImageProperty('GPSHPositioningError')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSHPositioningError', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0300
+     * @tc.desc   modifyImageProperty('GPSHPositioningError')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0300';
@@ -11537,15 +10547,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0400
-      * @tc.desc    modifyImageProperty('PhotographicSensitivity')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PhotographicSensitivity', `50`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0400
+     * @tc.desc   modifyImageProperty('PhotographicSensitivity')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_URI_PROMISE_STATIC_0400';
@@ -11569,15 +10576,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0100
-      * @tc.desc    modifyImageProperty('BitsPerSample')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('BitsPerSample', `65535,65535,65535`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0100
+     * @tc.desc   modifyImageProperty('BitsPerSample')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0100';
@@ -11601,15 +10605,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0200
-      * @tc.desc    modifyImageProperty('Orientation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Orientation', `8`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0200
+     * @tc.desc   modifyImageProperty('Orientation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0200';
@@ -11633,15 +10634,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0300
-      * @tc.desc    modifyImageProperty('ImageLength')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ImageLength', `65535`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0300
+     * @tc.desc   modifyImageProperty('ImageLength')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0300';
@@ -11665,15 +10663,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0400
-      * @tc.desc    modifyImageProperty('ImageWidth')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ImageWidth', `65535`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0400
+     * @tc.desc   modifyImageProperty('ImageWidth')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0400';
@@ -11697,15 +10692,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0500
-      * @tc.desc    modifyImageProperty('GPSLatitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSLatitude', `114,3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0500
+     * @tc.desc   modifyImageProperty('GPSLatitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0500';
@@ -11729,15 +10721,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0600
-      * @tc.desc    modifyImageProperty('GPSLongitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSLongitude', `114,3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0600
+     * @tc.desc   modifyImageProperty('GPSLongitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0600';
@@ -11761,15 +10750,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0700
-      * @tc.desc    modifyImageProperty('GPSLatitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSLatitudeRef', `S`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0700
+     * @tc.desc   modifyImageProperty('GPSLatitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0700';
@@ -11793,15 +10779,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0800
-      * @tc.desc    modifyImageProperty('GPSLongitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSLongitudeRef', `W`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0800
+     * @tc.desc   modifyImageProperty('GPSLongitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0800';
@@ -11825,15 +10808,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0900
-      * @tc.desc    modifyImageProperty('DateTimeOriginal')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DateTimeOriginal', `1900:01:01 00:00:00`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0900
+     * @tc.desc   modifyImageProperty('DateTimeOriginal')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_0900';
@@ -11857,15 +10837,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01000
-      * @tc.desc    modifyImageProperty('ExposureTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureTime', `1/60`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01000
+     * @tc.desc   modifyImageProperty('ExposureTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01000';
@@ -11889,15 +10866,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01200
-      * @tc.desc    modifyImageProperty('ISOSpeedRatings')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ISOSpeedRatings', `65535`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01200
+     * @tc.desc   modifyImageProperty('ISOSpeedRatings')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01200';
@@ -11921,15 +10895,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01300
-      * @tc.desc    modifyImageProperty('FNumber')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FNumber', `1/30`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01300
+     * @tc.desc   modifyImageProperty('FNumber')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01300';
@@ -11953,15 +10924,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01400
-      * @tc.desc    modifyImageProperty('DateTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DateTime', `1900:01:01`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01400
+     * @tc.desc   modifyImageProperty('DateTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01400';
@@ -11985,15 +10953,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01500
-      * @tc.desc    modifyImageProperty('GPSTimeStamp')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSTimeStamp', `12 54 20`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01500
+     * @tc.desc   modifyImageProperty('GPSTimeStamp')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01500';
@@ -12017,15 +10982,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01600
-      * @tc.desc    modifyImageProperty('GPSDateStamp')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDateStamp', `1900:01:01`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01600
+     * @tc.desc   modifyImageProperty('GPSDateStamp')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01600';
@@ -12049,15 +11011,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01700
-      * @tc.desc    modifyImageProperty('ImageDescription')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ImageDescription', `@  @`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01700
+     * @tc.desc   modifyImageProperty('ImageDescription')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01700';
@@ -12081,15 +11040,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01800
-      * @tc.desc    modifyImageProperty('Make')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Make', `APPLE`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01800
+     * @tc.desc   modifyImageProperty('Make')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01800';
@@ -12113,15 +11069,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01900
-      * @tc.desc    modifyImageProperty('Model')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Model', `%s \0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01900
+     * @tc.desc   modifyImageProperty('Model')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01900';
@@ -12145,15 +11098,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02000
-      * @tc.desc    modifyImageProperty('PhotoMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PhotoMode', `13`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02000
+     * @tc.desc   modifyImageProperty('PhotoMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02000';
@@ -12177,15 +11127,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02100
-      * @tc.desc    modifyImageProperty('SensitivityType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SensitivityType', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02100
+     * @tc.desc   modifyImageProperty('SensitivityType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02100';
@@ -12209,15 +11156,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02200
-      * @tc.desc    modifyImageProperty('StandardOutputSensitivity')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('StandardOutputSensitivity', `1000`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02200
+     * @tc.desc   modifyImageProperty('StandardOutputSensitivity')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02200';
@@ -12241,15 +11185,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02300
-      * @tc.desc    modifyImageProperty('RecommendedExposureIndex')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('RecommendedExposureIndex', `2147483647`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02300
+     * @tc.desc   modifyImageProperty('RecommendedExposureIndex')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02300';
@@ -12273,15 +11214,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02400
-      * @tc.desc    modifyImageProperty('ApertureValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ApertureValue', `16`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02400
+     * @tc.desc   modifyImageProperty('ApertureValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02400';
@@ -12305,15 +11243,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02500
-      * @tc.desc    modifyImageProperty('ExposureBiasValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureBiasValue', `4`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02500
+     * @tc.desc   modifyImageProperty('ExposureBiasValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02500';
@@ -12337,15 +11272,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02600
-      * @tc.desc    modifyImageProperty('MeteringMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('MeteringMode', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02600
+     * @tc.desc   modifyImageProperty('MeteringMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02600';
@@ -12369,15 +11301,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02700
-      * @tc.desc    modifyImageProperty('LightSource')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LightSource', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02700
+     * @tc.desc   modifyImageProperty('LightSource')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02700';
@@ -12401,15 +11330,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02800
-      * @tc.desc    modifyImageProperty('Flash')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Flash', `95`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02800
+     * @tc.desc   modifyImageProperty('Flash')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02800';
@@ -12433,15 +11359,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02900
-      * @tc.desc    modifyImageProperty('FocalLength')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalLength', `31/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02900
+     * @tc.desc   modifyImageProperty('FocalLength')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_02900';
@@ -12465,15 +11388,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03000
-      * @tc.desc    modifyImageProperty('UserComment')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('UserComment', `%s \0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03000
+     * @tc.desc   modifyImageProperty('UserComment')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03000';
@@ -12497,15 +11417,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03100
-      * @tc.desc    modifyImageProperty('PixelXDimension')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PixelXDimension', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03100
+     * @tc.desc   modifyImageProperty('PixelXDimension')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03100';
@@ -12529,15 +11446,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03200
-      * @tc.desc    modifyImageProperty('PixelYDimension')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PixelYDimension', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03200
+     * @tc.desc   modifyImageProperty('PixelYDimension')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03200';
@@ -12561,15 +11475,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03300
-      * @tc.desc    modifyImageProperty('WhiteBalance')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('WhiteBalance', `0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03300
+     * @tc.desc   modifyImageProperty('WhiteBalance')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03300';
@@ -12593,15 +11504,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03400
-      * @tc.desc    modifyImageProperty('FocalLengthIn35mmFilm')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalLengthIn35mmFilm', `12`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03400
+     * @tc.desc   modifyImageProperty('FocalLengthIn35mmFilm')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03400';
@@ -12625,15 +11533,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03500
-      * @tc.desc    modifyImageProperty('Compression')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Compression', `32773`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03500
+     * @tc.desc   modifyImageProperty('Compression')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03500';
@@ -12657,15 +11562,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03600
-      * @tc.desc    modifyImageProperty('PhotometricInterpretation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PhotometricInterpretation', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03600
+     * @tc.desc   modifyImageProperty('PhotometricInterpretation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03600';
@@ -12689,15 +11591,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03700
-      * @tc.desc    modifyImageProperty('StripOffsets')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('StripOffsets', `456`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03700
+     * @tc.desc   modifyImageProperty('StripOffsets')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03700';
@@ -12721,15 +11620,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03800
-      * @tc.desc    modifyImageProperty('SamplesPerPixel')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SamplesPerPixel', `65535`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03800
+     * @tc.desc   modifyImageProperty('SamplesPerPixel')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03800';
@@ -12753,15 +11649,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03900
-      * @tc.desc    modifyImageProperty('RowsPerStrip')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('RowsPerStrip', `345`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03900
+     * @tc.desc   modifyImageProperty('RowsPerStrip')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_03900';
@@ -12785,15 +11678,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04000
-      * @tc.desc    modifyImageProperty('StripByteCounts')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('StripByteCounts', `345`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04000
+     * @tc.desc   modifyImageProperty('StripByteCounts')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04000';
@@ -12817,15 +11707,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04100
-      * @tc.desc    modifyImageProperty('XResolution')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('XResolution', `31/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04100
+     * @tc.desc   modifyImageProperty('XResolution')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04100';
@@ -12849,15 +11736,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04200
-      * @tc.desc    modifyImageProperty('YResolution')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('YResolution', `31/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04200
+     * @tc.desc   modifyImageProperty('YResolution')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04200';
@@ -12881,15 +11765,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04300
-      * @tc.desc    modifyImageProperty('PlanarConfiguration')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PlanarConfiguration', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04300
+     * @tc.desc   modifyImageProperty('PlanarConfiguration')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04300';
@@ -12913,15 +11794,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04400
-      * @tc.desc    modifyImageProperty('ResolutionUnit')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ResolutionUnit', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04400
+     * @tc.desc   modifyImageProperty('ResolutionUnit')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04400';
@@ -12945,15 +11823,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04500
-      * @tc.desc    modifyImageProperty('TransferFunction')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('TransferFunction', `123`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04500
+     * @tc.desc   modifyImageProperty('TransferFunction')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04500';
@@ -12977,15 +11852,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04600
-      * @tc.desc    modifyImageProperty('Software')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Software', `%s \0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04600
+     * @tc.desc   modifyImageProperty('Software')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04600';
@@ -13009,15 +11881,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04700
-      * @tc.desc    modifyImageProperty('Artist')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Artist', `%s \0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04700
+     * @tc.desc   modifyImageProperty('Artist')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04700';
@@ -13041,15 +11910,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04800
-      * @tc.desc    modifyImageProperty('WhitePoint')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('WhitePoint', `31/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04800
+     * @tc.desc   modifyImageProperty('WhitePoint')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04800';
@@ -13073,15 +11939,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04900
-      * @tc.desc    modifyImageProperty('PrimaryChromaticities')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PrimaryChromaticities', `31/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04900
+     * @tc.desc   modifyImageProperty('PrimaryChromaticities')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_04900';
@@ -13105,15 +11968,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05000
-      * @tc.desc    modifyImageProperty('YCbCrCoefficients')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('YCbCrCoefficients', `3/2 4/2 9/3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05000
+     * @tc.desc   modifyImageProperty('YCbCrCoefficients')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05000';
@@ -13137,15 +11997,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05100
-      * @tc.desc    modifyImageProperty('YCbCrSubSampling')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('YCbCrSubSampling', `4 5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05100
+     * @tc.desc   modifyImageProperty('YCbCrSubSampling')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05100';
@@ -13169,15 +12026,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05200
-      * @tc.desc    modifyImageProperty('YCbCrPositioning')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('YCbCrPositioning', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05200
+     * @tc.desc   modifyImageProperty('YCbCrPositioning')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05200';
@@ -13201,15 +12055,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05300
-      * @tc.desc    modifyImageProperty('ReferenceBlackWhite')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ReferenceBlackWhite', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05300
+     * @tc.desc   modifyImageProperty('ReferenceBlackWhite')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05300';
@@ -13233,15 +12084,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05400
-      * @tc.desc    modifyImageProperty('Copyright')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Copyright', `joseph`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05400
+     * @tc.desc   modifyImageProperty('Copyright')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05400';
@@ -13265,15 +12113,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05700
-      * @tc.desc    modifyImageProperty('ExposureProgram')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureProgram', `8`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05700
+     * @tc.desc   modifyImageProperty('ExposureProgram')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05700';
@@ -13297,15 +12142,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05800
-      * @tc.desc    modifyImageProperty('SpectralSensitivity')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SpectralSensitivity', `1234`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05800
+     * @tc.desc   modifyImageProperty('SpectralSensitivity')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05800';
@@ -13329,15 +12171,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05900
-      * @tc.desc    modifyImageProperty('OECF')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('OECF', `ab`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05900
+     * @tc.desc   modifyImageProperty('OECF')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_05900';
@@ -13361,15 +12200,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06000
-      * @tc.desc    modifyImageProperty('ExifVersion')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExifVersion', `0120`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06000
+     * @tc.desc   modifyImageProperty('ExifVersion')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06000';
@@ -13393,15 +12229,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06100
-      * @tc.desc    modifyImageProperty('DateTimeDigitized')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DateTimeDigitized', `1900:01:01 00:00:00`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06100
+     * @tc.desc   modifyImageProperty('DateTimeDigitized')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06100';
@@ -13425,15 +12258,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06200
-      * @tc.desc    modifyImageProperty('ComponentsConfiguration')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ComponentsConfiguration', `1256`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06200
+     * @tc.desc   modifyImageProperty('ComponentsConfiguration')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06200';
@@ -13457,15 +12287,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06300
-      * @tc.desc    modifyImageProperty('ShutterSpeedValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ShutterSpeedValue', `3/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06300
+     * @tc.desc   modifyImageProperty('ShutterSpeedValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06300';
@@ -13489,15 +12316,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06400
-      * @tc.desc    modifyImageProperty('BrightnessValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('BrightnessValue', `6/5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06400
+     * @tc.desc   modifyImageProperty('BrightnessValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06400';
@@ -13521,15 +12345,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06500
-      * @tc.desc    modifyImageProperty('MaxApertureValue')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('MaxApertureValue', `8/5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06500
+     * @tc.desc   modifyImageProperty('MaxApertureValue')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06500';
@@ -13553,15 +12374,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06600
-      * @tc.desc    modifyImageProperty('SubjectDistance')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubjectDistance', `1/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06600
+     * @tc.desc   modifyImageProperty('SubjectDistance')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06600';
@@ -13585,15 +12403,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06700
-      * @tc.desc    modifyImageProperty('SubjectArea')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubjectArea', `45 23`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06700
+     * @tc.desc   modifyImageProperty('SubjectArea')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06700';
@@ -13617,15 +12432,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06900
-      * @tc.desc    modifyImageProperty('SubsecTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubsecTime', `427000`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06900
+     * @tc.desc   modifyImageProperty('SubsecTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_06900';
@@ -13649,15 +12461,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07000
-      * @tc.desc    modifyImageProperty('SubsecTimeOriginal')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubsecTimeOriginal', `123456`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07000
+     * @tc.desc   modifyImageProperty('SubsecTimeOriginal')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07000';
@@ -13681,15 +12490,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07100
-      * @tc.desc    modifyImageProperty('SubsecTimeDigitized')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubsecTimeDigitized', `999999`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07100
+     * @tc.desc   modifyImageProperty('SubsecTimeDigitized')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07100';
@@ -13713,15 +12519,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07200
-      * @tc.desc    modifyImageProperty('FlashpixVersion')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FlashpixVersion', `0101`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07200
+     * @tc.desc   modifyImageProperty('FlashpixVersion')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07200';
@@ -13745,15 +12548,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07300
-      * @tc.desc    modifyImageProperty('ColorSpace')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ColorSpace', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07300
+     * @tc.desc   modifyImageProperty('ColorSpace')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07300';
@@ -13777,15 +12577,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07400
-      * @tc.desc    modifyImageProperty('RelatedSoundFile')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('RelatedSoundFile', `abc`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07400
+     * @tc.desc   modifyImageProperty('RelatedSoundFile')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07400';
@@ -13809,15 +12606,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07500
-      * @tc.desc    modifyImageProperty('FlashEnergy')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FlashEnergy', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07500
+     * @tc.desc   modifyImageProperty('FlashEnergy')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07500';
@@ -13841,15 +12635,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07600
-      * @tc.desc    modifyImageProperty('SpatialFrequencyResponse')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SpatialFrequencyResponse', `corn`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07600
+     * @tc.desc   modifyImageProperty('SpatialFrequencyResponse')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07600';
@@ -13873,15 +12664,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07700
-      * @tc.desc    modifyImageProperty('FocalPlaneXResolution')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalPlaneXResolution', `102/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07700
+     * @tc.desc   modifyImageProperty('FocalPlaneXResolution')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07700';
@@ -13905,15 +12693,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07800
-      * @tc.desc    modifyImageProperty('FocalPlaneYResolution')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalPlaneYResolution', `81/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07800
+     * @tc.desc   modifyImageProperty('FocalPlaneYResolution')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07800';
@@ -13937,15 +12722,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07900
-      * @tc.desc    modifyImageProperty('FocalPlaneResolutionUnit')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FocalPlaneResolutionUnit', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07900
+     * @tc.desc   modifyImageProperty('FocalPlaneResolutionUnit')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_07900';
@@ -13969,15 +12751,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08000
-      * @tc.desc    modifyImageProperty('SubjectLocation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubjectLocation', `23 112`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08000
+     * @tc.desc   modifyImageProperty('SubjectLocation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08000';
@@ -14001,15 +12780,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08100
-      * @tc.desc    modifyImageProperty('ExposureIndex')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureIndex', `5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08100
+     * @tc.desc   modifyImageProperty('ExposureIndex')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08100';
@@ -14033,15 +12809,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08200
-      * @tc.desc    modifyImageProperty('SensingMethod')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SensingMethod', `8`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08200
+     * @tc.desc   modifyImageProperty('SensingMethod')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08200';
@@ -14065,15 +12838,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08300
-      * @tc.desc    modifyImageProperty('FileSource')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('FileSource', `4`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08300
+     * @tc.desc   modifyImageProperty('FileSource')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08300';
@@ -14097,15 +12867,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08400
-      * @tc.desc    modifyImageProperty('CFAPattern')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CFAPattern', `ab`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08400
+     * @tc.desc   modifyImageProperty('CFAPattern')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08400';
@@ -14129,15 +12896,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08500
-      * @tc.desc    modifyImageProperty('CustomRendered')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CustomRendered', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08500
+     * @tc.desc   modifyImageProperty('CustomRendered')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08500';
@@ -14161,15 +12925,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08600
-      * @tc.desc    modifyImageProperty('ExposureMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureMode', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08600
+     * @tc.desc   modifyImageProperty('ExposureMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08600';
@@ -14193,15 +12954,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08700
-      * @tc.desc    modifyImageProperty('DigitalZoomRatio')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DigitalZoomRatio', `23/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08700
+     * @tc.desc   modifyImageProperty('DigitalZoomRatio')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08700';
@@ -14225,15 +12983,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08800
-      * @tc.desc    modifyImageProperty('SceneCaptureType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SceneCaptureType', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08800
+     * @tc.desc   modifyImageProperty('SceneCaptureType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08800';
@@ -14257,15 +13012,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08900
-      * @tc.desc    modifyImageProperty('GainControl')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GainControl', `4`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08900
+     * @tc.desc   modifyImageProperty('GainControl')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_08900';
@@ -14289,15 +13041,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09000
-      * @tc.desc    modifyImageProperty('Contrast')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Contrast', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09000
+     * @tc.desc   modifyImageProperty('Contrast')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09000';
@@ -14321,15 +13070,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09100
-      * @tc.desc    modifyImageProperty('Saturation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Saturation', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09100
+     * @tc.desc   modifyImageProperty('Saturation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09100';
@@ -14353,15 +13099,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09200
-      * @tc.desc    modifyImageProperty('Sharpness')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Sharpness', `2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09200
+     * @tc.desc   modifyImageProperty('Sharpness')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09200';
@@ -14385,15 +13128,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09300
-      * @tc.desc    modifyImageProperty('DeviceSettingDescription')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DeviceSettingDescription', `coxex`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09300
+     * @tc.desc   modifyImageProperty('DeviceSettingDescription')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09300';
@@ -14417,15 +13157,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09400
-      * @tc.desc    modifyImageProperty('SubjectDistanceRange')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubjectDistanceRange', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09400
+     * @tc.desc   modifyImageProperty('SubjectDistanceRange')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09400';
@@ -14449,15 +13186,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09500
-      * @tc.desc    modifyImageProperty('ImageUniqueID')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ImageUniqueID', `xxx`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09500
+     * @tc.desc   modifyImageProperty('ImageUniqueID')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09500';
@@ -14481,15 +13215,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09600
-      * @tc.desc    modifyImageProperty('GPSVersionID')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSVersionID', `2.2.0.1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09600
+     * @tc.desc   modifyImageProperty('GPSVersionID')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09600';
@@ -14513,15 +13244,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09700
-      * @tc.desc    modifyImageProperty('GPSAltitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSAltitudeRef', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09700
+     * @tc.desc   modifyImageProperty('GPSAltitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09700';
@@ -14545,15 +13273,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09800
-      * @tc.desc    modifyImageProperty('GPSAltitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSAltitude', `100/100`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09800
+     * @tc.desc   modifyImageProperty('GPSAltitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09800';
@@ -14577,15 +13302,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09900
-      * @tc.desc    modifyImageProperty('GPSSatellites')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSSatellites', `a b c`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09900
+     * @tc.desc   modifyImageProperty('GPSSatellites')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_09900';
@@ -14609,15 +13331,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010000
-      * @tc.desc    modifyImageProperty('GPSStatus')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSStatus', `V`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010000
+     * @tc.desc   modifyImageProperty('GPSStatus')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010000';
@@ -14641,15 +13360,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010100
-      * @tc.desc    modifyImageProperty('GPSMeasureMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSMeasureMode', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010100
+     * @tc.desc   modifyImageProperty('GPSMeasureMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010100';
@@ -14673,15 +13389,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010200
-      * @tc.desc    modifyImageProperty('GPSDOP')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDOP', `100/100`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010200
+     * @tc.desc   modifyImageProperty('GPSDOP')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010200';
@@ -14705,15 +13418,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010300
-      * @tc.desc    modifyImageProperty('GPSSpeedRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSSpeedRef', `K`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010300
+     * @tc.desc   modifyImageProperty('GPSSpeedRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010300';
@@ -14737,15 +13447,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010400
-      * @tc.desc    modifyImageProperty('GPSSpeed')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSSpeed', `0/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010400
+     * @tc.desc   modifyImageProperty('GPSSpeed')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010400';
@@ -14769,15 +13476,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010500
-      * @tc.desc    modifyImageProperty('GPSTrackRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSTrackRef', `M`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010500
+     * @tc.desc   modifyImageProperty('GPSTrackRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010500';
@@ -14801,15 +13505,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010600
-      * @tc.desc    modifyImageProperty('GPSTrack')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSTrack', `3.5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010600
+     * @tc.desc   modifyImageProperty('GPSTrack')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010600';
@@ -14833,15 +13534,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010700
-      * @tc.desc    modifyImageProperty('GPSImgDirectionRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSImgDirectionRef', `T`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010700
+     * @tc.desc   modifyImageProperty('GPSImgDirectionRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010700';
@@ -14865,15 +13563,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010800
-      * @tc.desc    modifyImageProperty('GPSImgDirection')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSImgDirection', `2.5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010800
+     * @tc.desc   modifyImageProperty('GPSImgDirection')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010800';
@@ -14897,15 +13592,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010900
-      * @tc.desc    modifyImageProperty('GPSMapDatum')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSMapDatum', `%s\0`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010900
+     * @tc.desc   modifyImageProperty('GPSMapDatum')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_010900';
@@ -14929,15 +13621,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011000
-      * @tc.desc    modifyImageProperty('GPSDestLatitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestLatitudeRef', `S`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011000
+     * @tc.desc   modifyImageProperty('GPSDestLatitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011000';
@@ -14961,15 +13650,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011100
-      * @tc.desc    modifyImageProperty('GPSDestLatitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestLatitude', `0/1 0/1 0/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011100
+     * @tc.desc   modifyImageProperty('GPSDestLatitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011100';
@@ -14993,15 +13679,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011200
-      * @tc.desc    modifyImageProperty('GPSDestLongitudeRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestLongitudeRef', `W`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011200
+     * @tc.desc   modifyImageProperty('GPSDestLongitudeRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011200';
@@ -15025,15 +13708,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011300
-      * @tc.desc    modifyImageProperty('GPSDestLongitude')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestLongitude', `0/1 0/1 0/1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011300
+     * @tc.desc   modifyImageProperty('GPSDestLongitude')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011300';
@@ -15057,15 +13737,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011400
-      * @tc.desc    modifyImageProperty('GPSDestBearingRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestBearingRef', `C`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011400
+     * @tc.desc   modifyImageProperty('GPSDestBearingRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011400';
@@ -15089,15 +13766,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011500
-      * @tc.desc    modifyImageProperty('GPSDestBearing')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestBearing', `2.5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011500
+     * @tc.desc   modifyImageProperty('GPSDestBearing')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011500';
@@ -15121,15 +13795,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011600
-      * @tc.desc    modifyImageProperty('GPSDestDistanceRef')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestDistanceRef', `K`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011600
+     * @tc.desc   modifyImageProperty('GPSDestDistanceRef')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011600';
@@ -15153,15 +13824,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011700
-      * @tc.desc    modifyImageProperty('GPSDestDistance')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDestDistance', `2.5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011700
+     * @tc.desc   modifyImageProperty('GPSDestDistance')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011700';
@@ -15185,15 +13853,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011800
-      * @tc.desc    modifyImageProperty('GPSProcessingMethod')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSProcessingMethod', `XXX`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011800
+     * @tc.desc   modifyImageProperty('GPSProcessingMethod')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011800';
@@ -15217,15 +13882,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011900
-      * @tc.desc    modifyImageProperty('GPSAreaInformation')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSAreaInformation', `client`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011900
+     * @tc.desc   modifyImageProperty('GPSAreaInformation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_011900';
@@ -15249,15 +13911,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012000
-      * @tc.desc    modifyImageProperty('GPSDifferential')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSDifferential', `1`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012000
+     * @tc.desc   modifyImageProperty('GPSDifferential')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012000';
@@ -15281,15 +13940,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012100
-      * @tc.desc    modifyImageProperty('BodySerialNumber')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('BodySerialNumber', `xoinc`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012100
+     * @tc.desc   modifyImageProperty('BodySerialNumber')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012100';
@@ -15313,15 +13969,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012200
-      * @tc.desc    modifyImageProperty('CameraOwnerName')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CameraOwnerName', `joseph`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012200
+     * @tc.desc   modifyImageProperty('CameraOwnerName')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012200';
@@ -15345,15 +13998,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012300
-      * @tc.desc    modifyImageProperty('CompositeImage')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CompositeImage', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012300
+     * @tc.desc   modifyImageProperty('CompositeImage')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012300';
@@ -15377,15 +14027,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012400
-      * @tc.desc    modifyImageProperty('CompressedBitsPerPixel')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('CompressedBitsPerPixel', `25`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012400
+     * @tc.desc   modifyImageProperty('CompressedBitsPerPixel')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012400';
@@ -15409,15 +14056,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012500
-      * @tc.desc    modifyImageProperty('DNGVersion')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DNGVersion', `2 2 3 2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012500
+     * @tc.desc   modifyImageProperty('DNGVersion')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012500';
@@ -15441,15 +14085,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012600
-      * @tc.desc    modifyImageProperty('DefaultCropSize')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('DefaultCropSize', `123 654`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012600
+     * @tc.desc   modifyImageProperty('DefaultCropSize')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012600';
@@ -15473,15 +14114,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012700
-      * @tc.desc    modifyImageProperty('Gamma')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('Gamma', `3/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012700
+     * @tc.desc   modifyImageProperty('Gamma')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012700';
@@ -15505,15 +14143,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012800
-      * @tc.desc    modifyImageProperty('ISOSpeedLatitudeyyy')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ISOSpeedLatitudeyyy', `123`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012800
+     * @tc.desc   modifyImageProperty('ISOSpeedLatitudeyyy')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012800';
@@ -15537,15 +14172,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012900
-      * @tc.desc    modifyImageProperty('ISOSpeedLatitudezzz')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ISOSpeedLatitudezzz', `123`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012900
+     * @tc.desc   modifyImageProperty('ISOSpeedLatitudezzz')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_012900';
@@ -15569,15 +14201,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013000
-      * @tc.desc    modifyImageProperty('LensMake')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LensMake', `plex`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013000
+     * @tc.desc   modifyImageProperty('LensMake')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013000';
@@ -15601,15 +14230,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013100
-      * @tc.desc    modifyImageProperty('LensModel')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LensModel', `world`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013100
+     * @tc.desc   modifyImageProperty('LensModel')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013100';
@@ -15633,15 +14259,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013200
-      * @tc.desc    modifyImageProperty('LensSerialNumber')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LensSerialNumber', `root`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013200
+     * @tc.desc   modifyImageProperty('LensSerialNumber')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013200';
@@ -15665,15 +14288,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013300
-      * @tc.desc    modifyImageProperty('LensSpecification')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LensSpecification', `3/4 5/2 3/2 5/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013300
+     * @tc.desc   modifyImageProperty('LensSpecification')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013300';
@@ -15697,15 +14317,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013400
-      * @tc.desc    modifyImageProperty('NewSubfileType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('NewSubfileType', `5`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013400
+     * @tc.desc   modifyImageProperty('NewSubfileType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013400';
@@ -15729,15 +14346,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013500
-      * @tc.desc    modifyImageProperty('OffsetTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('OffsetTime', `2023:01:25`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013500
+     * @tc.desc   modifyImageProperty('OffsetTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013500';
@@ -15761,15 +14375,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013600
-      * @tc.desc    modifyImageProperty('OffsetTimeDigitized')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('OffsetTimeDigitized', `cirtize`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013600
+     * @tc.desc   modifyImageProperty('OffsetTimeDigitized')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013600';
@@ -15793,15 +14404,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013700
-      * @tc.desc    modifyImageProperty('OffsetTimeOriginal')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('OffsetTimeOriginal', `ject`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013700
+     * @tc.desc   modifyImageProperty('OffsetTimeOriginal')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013700';
@@ -15825,15 +14433,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013800
-      * @tc.desc    modifyImageProperty('SourceExposureTimesOfCompositeImage')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SourceExposureTimesOfCompositeImage', `xixe`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013800
+     * @tc.desc   modifyImageProperty('SourceExposureTimesOfCompositeImage')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013800';
@@ -15857,15 +14462,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013900
-      * @tc.desc    modifyImageProperty('SourceImageNumberOfCompositeImage')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SourceImageNumberOfCompositeImage', `11 23`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013900
+     * @tc.desc   modifyImageProperty('SourceImageNumberOfCompositeImage')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_013900';
@@ -15889,15 +14491,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014000
-      * @tc.desc    modifyImageProperty('SubfileType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubfileType', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014000
+     * @tc.desc   modifyImageProperty('SubfileType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014000';
@@ -15921,15 +14520,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014100
-      * @tc.desc    modifyImageProperty('GPSHPositioningError')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSHPositioningError', `1/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014100
+     * @tc.desc   modifyImageProperty('GPSHPositioningError')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014100';
@@ -15953,15 +14549,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014200
-      * @tc.desc    modifyImageProperty('PhotographicSensitivity')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PhotographicSensitivity', `12800`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014200
+     * @tc.desc   modifyImageProperty('PhotographicSensitivity')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014200';
@@ -15985,15 +14578,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014500
-      * @tc.desc    modifyImageProperty('HwMnoteCaptureMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('HwMnoteCaptureMode', `123456789`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014500
+     * @tc.desc   modifyImageProperty('HwMnoteCaptureMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014500';
@@ -16018,15 +14608,12 @@ export default function imageExifGetModifyTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0100
-      * @tc.desc    modifyImageProperty('SubfileType')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('SubfileType', `3`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0100
+     * @tc.desc   modifyImageProperty('SubfileType')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0100';
@@ -16050,15 +14637,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0200
-      * @tc.desc    modifyImageProperty('GPSHPositioningError')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('GPSHPositioningError', `1/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0200
+     * @tc.desc   modifyImageProperty('GPSHPositioningError')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0200';
@@ -16082,15 +14666,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0300
-      * @tc.desc    modifyImageProperty('PhotographicSensitivity')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('PhotographicSensitivity', `12800`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0300
+     * @tc.desc   modifyImageProperty('PhotographicSensitivity')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0300';
@@ -16114,15 +14695,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0400
-      * @tc.desc    modifyImageProperty('HwMnoteCaptureMode')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('HwMnoteCaptureMode', `123456789`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0400
+     * @tc.desc   modifyImageProperty('HwMnoteCaptureMode')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_URI_PROMISE_STATIC_0400';
@@ -16146,15 +14724,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0100
-      * @tc.desc    modifyImageProperty('BitsPerSample', `8,8`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('BitsPerSample', `8,8`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0100
+     * @tc.desc   modifyImageProperty('BitsPerSample', `8,8`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0100';
@@ -16182,15 +14757,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0200
-      * @tc.desc    modifyImageProperty('Orientation', `0`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('Orientation', `0`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0200
+     * @tc.desc   modifyImageProperty('Orientation', `0`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0200';
@@ -16218,15 +14790,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0300
-      * @tc.desc    modifyImageProperty('ImageLength', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ImageLength', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0300
+     * @tc.desc   modifyImageProperty('ImageLength', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0300';
@@ -16254,15 +14823,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0400
-      * @tc.desc    modifyImageProperty('ImageWidth', `@@@`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ImageWidth', `@@@`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0400
+     * @tc.desc   modifyImageProperty('ImageWidth', `@@@`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0400';
@@ -16290,15 +14856,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0500
-      * @tc.desc    modifyImageProperty('GPSLatitude', `abc,3`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSLatitude', `abc,3`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0500
+     * @tc.desc   modifyImageProperty('GPSLatitude', `abc,3`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0500';
@@ -16326,15 +14889,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0600
-      * @tc.desc    modifyImageProperty('GPSLongitude', `12,a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSLongitude', `12,a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0600
+     * @tc.desc   modifyImageProperty('GPSLongitude', `12,a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0600';
@@ -16362,15 +14922,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0700
-      * @tc.desc    modifyImageProperty('GPSLatitudeRef', `W`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSLatitudeRef', `W`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0700
+     * @tc.desc   modifyImageProperty('GPSLatitudeRef', `W`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0700';
@@ -16398,15 +14955,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0800
-      * @tc.desc    modifyImageProperty('GPSLongitudeRef', `S`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSLongitudeRef', `S`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0800
+     * @tc.desc   modifyImageProperty('GPSLongitudeRef', `S`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0800';
@@ -16434,15 +14988,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0900
-      * @tc.desc    modifyImageProperty('PhotoMode', `05:61:34`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('DateTimeOriginal', `05:61:34`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0900
+     * @tc.desc   modifyImageProperty('PhotoMode', `05:61:34`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_0900';
@@ -16470,15 +15021,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01000
-      * @tc.desc    modifyImageProperty('ExposureTime', `1/0`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ExposureTime', `1/0`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01000
+     * @tc.desc   modifyImageProperty('ExposureTime', `1/0`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01000';
@@ -16506,15 +15054,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01200
-      * @tc.desc    modifyImageProperty('ISOSpeedRatings', `-1`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ISOSpeedRatings', `-1`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01200
+     * @tc.desc   modifyImageProperty('ISOSpeedRatings', `-1`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01200';
@@ -16542,15 +15087,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01300
-      * @tc.desc    modifyImageProperty('FNumber', `1/0`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('FNumber', `1/0`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01300
+     * @tc.desc   modifyImageProperty('FNumber', `1/0`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01300';
@@ -16578,15 +15120,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01400
-      * @tc.desc    modifyImageProperty('DateTime', `2024:13:01`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('DateTime', `2024:13:01`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01400
+     * @tc.desc   modifyImageProperty('DateTime', `2024:13:01`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01400';
@@ -16614,15 +15153,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01500
-      * @tc.desc    modifyImageProperty('GPSTimeStamp', `37/0,58/0`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSTimeStamp', `37/0,58/0`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01500
+     * @tc.desc   modifyImageProperty('GPSTimeStamp', `37/0,58/0`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01500';
@@ -16650,15 +15186,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01600
-      * @tc.desc    modifyImageProperty('GPSDateStamp', `2023:01`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDateStamp', `2023:01`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01600
+     * @tc.desc   modifyImageProperty('GPSDateStamp', `2023:01`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01600';
@@ -16686,15 +15219,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02000
-      * @tc.desc    modifyImageProperty('PhotoMode', `Unknown`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('PhotoMode', `Unknown`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02000
+     * @tc.desc   modifyImageProperty('PhotoMode', `Unknown`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02000';
@@ -16722,15 +15252,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02100
-      * @tc.desc    modifyImageProperty('SensitivityType', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SensitivityType', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02100
+     * @tc.desc   modifyImageProperty('SensitivityType', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02100';
@@ -16758,15 +15285,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02200
-      * @tc.desc    modifyImageProperty('StandardOutputSensitivity', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('StandardOutputSensitivity', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02200
+     * @tc.desc   modifyImageProperty('StandardOutputSensitivity', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02200';
@@ -16794,15 +15318,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02300
-      * @tc.desc    modifyImageProperty('RecommendedExposureIndex', `-123`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('RecommendedExposureIndex', `-123`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02300
+     * @tc.desc   modifyImageProperty('RecommendedExposureIndex', `-123`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02300';
@@ -16830,15 +15351,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02400
-      * @tc.desc    modifyImageProperty('ApertureValue', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ApertureValue', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02400
+     * @tc.desc   modifyImageProperty('ApertureValue', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02400';
@@ -16866,15 +15384,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02500
-      * @tc.desc    modifyImageProperty('ExposureBiasValue', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ExposureBiasValue', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02500
+     * @tc.desc   modifyImageProperty('ExposureBiasValue', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02500';
@@ -16902,15 +15417,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02600
-      * @tc.desc    modifyImageProperty('MeteringMode', `256`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('MeteringMode', `256`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02600
+     * @tc.desc   modifyImageProperty('MeteringMode', `256`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02600';
@@ -16938,15 +15450,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02700
-      * @tc.desc    modifyImageProperty('LightSource', `256`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('LightSource', `256`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02700
+     * @tc.desc   modifyImageProperty('LightSource', `256`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02700';
@@ -16974,15 +15483,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02800
-      * @tc.desc    modifyImageProperty('Flash', `999`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('Flash', `999`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02800
+     * @tc.desc   modifyImageProperty('Flash', `999`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02800';
@@ -17014,15 +15520,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02900
-      * @tc.desc    modifyImageProperty('FocalLength', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('FocalLength', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02900
+     * @tc.desc   modifyImageProperty('FocalLength', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_02900';
@@ -17050,15 +15553,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03100
-      * @tc.desc    modifyImageProperty('PixelXDimension', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('PixelXDimension', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03100
+     * @tc.desc   modifyImageProperty('PixelXDimension', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03100';
@@ -17086,15 +15586,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03200
-      * @tc.desc    modifyImageProperty('PixelYDimension', `!!!`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('PixelYDimension', `!!!`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03200
+     * @tc.desc   modifyImageProperty('PixelYDimension', `!!!`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03200';
@@ -17122,15 +15619,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03300
-      * @tc.desc    modifyImageProperty('WhiteBalance', `2`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('WhiteBalance', `2`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03300
+     * @tc.desc   modifyImageProperty('WhiteBalance', `2`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03300';
@@ -17158,15 +15652,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03400
-      * @tc.desc    modifyImageProperty('FocalLengthIn35mmFilm', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('FocalLengthIn35mmFilm', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03400
+     * @tc.desc   modifyImageProperty('FocalLengthIn35mmFilm', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03400';
@@ -17194,15 +15685,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03500
-      * @tc.desc    modifyImageProperty('Compression', `11`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('Compression', `11`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03500
+     * @tc.desc   modifyImageProperty('Compression', `11`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03500';
@@ -17230,15 +15718,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03600
-      * @tc.desc    modifyImageProperty('PhotometricInterpretation', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('PhotometricInterpretation', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03600
+     * @tc.desc   modifyImageProperty('PhotometricInterpretation', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03600';
@@ -17266,15 +15751,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03700
-      * @tc.desc    modifyImageProperty('StripOffsets', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('StripOffsets', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03700
+     * @tc.desc   modifyImageProperty('StripOffsets', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03700';
@@ -17302,15 +15784,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03800
-      * @tc.desc    modifyImageProperty('SamplesPerPixel', `-1`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SamplesPerPixel', `-1`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03800
+     * @tc.desc   modifyImageProperty('SamplesPerPixel', `-1`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03800';
@@ -17338,15 +15817,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03900
-      * @tc.desc    modifyImageProperty('RowsPerStrip', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('RowsPerStrip', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03900
+     * @tc.desc   modifyImageProperty('RowsPerStrip', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_03900';
@@ -17374,15 +15850,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04000
-      * @tc.desc    modifyImageProperty('StripByteCounts', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('StripByteCounts', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04000
+     * @tc.desc   modifyImageProperty('StripByteCounts', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04000';
@@ -17410,15 +15883,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04100
-      * @tc.desc    modifyImageProperty('XResolution', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('XResolution', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04100
+     * @tc.desc   modifyImageProperty('XResolution', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04100';
@@ -17446,15 +15916,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04200
-      * @tc.desc    modifyImageProperty('YResolution', `b`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('YResolution', `b`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04200
+     * @tc.desc   modifyImageProperty('YResolution', `b`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04200';
@@ -17482,15 +15949,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04300
-      * @tc.desc    modifyImageProperty('PlanarConfiguration', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('PlanarConfiguration', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04300
+     * @tc.desc   modifyImageProperty('PlanarConfiguration', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04300';
@@ -17518,15 +15982,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04400
-      * @tc.desc    modifyImageProperty('ResolutionUnit', `4`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ResolutionUnit', `4`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04400
+     * @tc.desc   modifyImageProperty('ResolutionUnit', `4`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04400';
@@ -17554,15 +16015,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04800
-      * @tc.desc    modifyImageProperty('WhitePoint', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('WhitePoint', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04800
+     * @tc.desc   modifyImageProperty('WhitePoint', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04800';
@@ -17590,15 +16048,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04900
-      * @tc.desc    modifyImageProperty('PrimaryChromaticities', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('PrimaryChromaticities', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04900
+     * @tc.desc   modifyImageProperty('PrimaryChromaticities', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_04900';
@@ -17626,15 +16081,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05000
-      * @tc.desc    modifyImageProperty('YCbCrCoefficients', `123,345`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('YCbCrCoefficients', `123,345`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05000
+     * @tc.desc   modifyImageProperty('YCbCrCoefficients', `123,345`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05000';
@@ -17662,15 +16114,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05100
-      * @tc.desc    modifyImageProperty('YCbCrSubSampling', `4`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('YCbCrSubSampling', `4`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05100
+     * @tc.desc   modifyImageProperty('YCbCrSubSampling', `4`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05100';
@@ -17698,15 +16147,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05200
-      * @tc.desc    modifyImageProperty('YCbCrPositioning', `3`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('YCbCrPositioning', `3`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05200
+     * @tc.desc   modifyImageProperty('YCbCrPositioning', `3`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05200';
@@ -17734,15 +16180,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05300
-      * @tc.desc    modifyImageProperty('ReferenceBlackWhite', `undefined`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ReferenceBlackWhite', `undefined`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05300
+     * @tc.desc   modifyImageProperty('ReferenceBlackWhite', `undefined`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05300';
@@ -17770,15 +16213,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05700
-      * @tc.desc    modifyImageProperty('ExposureProgram', `-1`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ExposureProgram', `-1`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05700
+     * @tc.desc   modifyImageProperty('ExposureProgram', `-1`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_05700';
@@ -17810,15 +16250,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06000
-      * @tc.desc    modifyImageProperty('ExifVersion', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ExifVersion', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06000
+     * @tc.desc   modifyImageProperty('ExifVersion', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06000';
@@ -17846,15 +16283,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06100
-      * @tc.desc    modifyImageProperty('DateTimeDigitized', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('DateTimeDigitized', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06100
+     * @tc.desc   modifyImageProperty('DateTimeDigitized', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06100';
@@ -17882,15 +16316,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06200
-      * @tc.desc    modifyImageProperty('ComponentsConfiguration', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ComponentsConfiguration', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06200
+     * @tc.desc   modifyImageProperty('ComponentsConfiguration', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06200';
@@ -17918,15 +16349,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06300
-      * @tc.desc    modifyImageProperty('ShutterSpeedValue', `0/0`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ShutterSpeedValue', `0/0`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06300
+     * @tc.desc   modifyImageProperty('ShutterSpeedValue', `0/0`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06300';
@@ -17954,15 +16382,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06400
-      * @tc.desc    modifyImageProperty('BrightnessValue', `12000000/0`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('BrightnessValue', `12000000/0`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06400
+     * @tc.desc   modifyImageProperty('BrightnessValue', `12000000/0`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06400';
@@ -17990,15 +16415,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06500
-      * @tc.desc    modifyImageProperty('MaxApertureValue', `-1/0`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('MaxApertureValue', `-1/0`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06500
+     * @tc.desc   modifyImageProperty('MaxApertureValue', `-1/0`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06500';
@@ -18026,15 +16448,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06600
-      * @tc.desc    modifyImageProperty('SubjectDistance', `meter`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SubjectDistance', `meter`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06600
+     * @tc.desc   modifyImageProperty('SubjectDistance', `meter`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06600';
@@ -18062,15 +16481,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06700
-      * @tc.desc    modifyImageProperty('SubjectArea', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SubjectArea', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06700
+     * @tc.desc   modifyImageProperty('SubjectArea', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_06700';
@@ -18098,15 +16514,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07200
-      * @tc.desc    modifyImageProperty('FlashpixVersion', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('FlashpixVersion', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07200
+     * @tc.desc   modifyImageProperty('FlashpixVersion', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07200';
@@ -18134,15 +16547,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07300
-      * @tc.desc    modifyImageProperty('ColorSpace', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ColorSpace', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07300
+     * @tc.desc   modifyImageProperty('ColorSpace', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07300';
@@ -18170,15 +16580,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07500
-      * @tc.desc    modifyImageProperty('FlashEnergy', `华为`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('FlashEnergy', `华为`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07500
+     * @tc.desc   modifyImageProperty('FlashEnergy', `华为`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07500';
@@ -18206,15 +16613,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07700
-      * @tc.desc    modifyImageProperty('FocalPlaneXResolution', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('FocalPlaneXResolution', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07700
+     * @tc.desc   modifyImageProperty('FocalPlaneXResolution', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07700';
@@ -18242,15 +16646,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07800
-      * @tc.desc    modifyImageProperty('FocalPlaneYResolution', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('FocalPlaneYResolution', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07800
+     * @tc.desc   modifyImageProperty('FocalPlaneYResolution', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07800';
@@ -18278,15 +16679,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07900
-      * @tc.desc    modifyImageProperty('FocalPlaneResolutionUnit', `255`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('FocalPlaneResolutionUnit', `255`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07900
+     * @tc.desc   modifyImageProperty('FocalPlaneResolutionUnit', `255`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_07900';
@@ -18314,15 +16712,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08000
-      * @tc.desc    modifyImageProperty('SubjectLocation', `beijing`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SubjectLocation', `beijing`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08000
+     * @tc.desc   modifyImageProperty('SubjectLocation', `beijing`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08000';
@@ -18350,15 +16745,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08100
-      * @tc.desc    modifyImageProperty('ExposureIndex', `-1/1`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ExposureIndex', `-1/1`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08100
+     * @tc.desc   modifyImageProperty('ExposureIndex', `-1/1`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08100';
@@ -18386,15 +16778,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08200
-      * @tc.desc    modifyImageProperty('SensingMethod', `9`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SensingMethod', `9`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08200
+     * @tc.desc   modifyImageProperty('SensingMethod', `9`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08200';
@@ -18422,15 +16811,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08500
-      * @tc.desc    modifyImageProperty('CustomRendered', `2`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('CustomRendered', `2`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08500
+     * @tc.desc   modifyImageProperty('CustomRendered', `2`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08500';
@@ -18458,15 +16844,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08600
-      * @tc.desc    modifyImageProperty('ExposureMode', `3`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ExposureMode', `3`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08600
+     * @tc.desc   modifyImageProperty('ExposureMode', `3`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08600';
@@ -18494,15 +16877,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08700
-      * @tc.desc    modifyImageProperty('DigitalZoomRatio', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('DigitalZoomRatio', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08700
+     * @tc.desc   modifyImageProperty('DigitalZoomRatio', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08700';
@@ -18530,15 +16910,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08800
-      * @tc.desc    modifyImageProperty('SceneCaptureType', `4`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SceneCaptureType', `4`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08800
+     * @tc.desc   modifyImageProperty('SceneCaptureType', `4`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08800';
@@ -18566,15 +16943,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08900
-      * @tc.desc    modifyImageProperty('GainControl', `5`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GainControl', `5`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08900
+     * @tc.desc   modifyImageProperty('GainControl', `5`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_08900';
@@ -18602,15 +16976,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09000
-      * @tc.desc    modifyImageProperty('Contrast', `3`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('Contrast', `3`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09000
+     * @tc.desc   modifyImageProperty('Contrast', `3`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09000';
@@ -18638,15 +17009,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09100
-      * @tc.desc    modifyImageProperty('Saturation', `65536`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('Saturation', `65536`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09100
+     * @tc.desc   modifyImageProperty('Saturation', `65536`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09100';
@@ -18674,15 +17042,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09200
-      * @tc.desc    modifyImageProperty('Sharpness', `65535`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('Sharpness', `65535`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09200
+     * @tc.desc   modifyImageProperty('Sharpness', `65535`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09200';
@@ -18710,15 +17075,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09400
-      * @tc.desc    modifyImageProperty('SubjectDistanceRange', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SubjectDistanceRange', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09400
+     * @tc.desc   modifyImageProperty('SubjectDistanceRange', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09400';
@@ -18746,15 +17108,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09600
-      * @tc.desc    modifyImageProperty('GPSVersionID', `23`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSVersionID', `23`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09600
+     * @tc.desc   modifyImageProperty('GPSVersionID', `23`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09600';
@@ -18782,15 +17141,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09700
-      * @tc.desc    modifyImageProperty('GPSAltitudeRef', `2`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSAltitudeRef', `2`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09700
+     * @tc.desc   modifyImageProperty('GPSAltitudeRef', `2`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09700';
@@ -18818,15 +17174,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09800
-      * @tc.desc    modifyImageProperty('GPSAltitude', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSAltitude', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09800
+     * @tc.desc   modifyImageProperty('GPSAltitude', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_09800';
@@ -18854,15 +17207,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010000
-      * @tc.desc    modifyImageProperty('GPSStatus', `C`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSStatus', `C`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010000
+     * @tc.desc   modifyImageProperty('GPSStatus', `C`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010000';
@@ -18890,15 +17240,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010100
-      * @tc.desc    modifyImageProperty('GPSMeasureMode', `4`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSMeasureMode', `4`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010100
+     * @tc.desc   modifyImageProperty('GPSMeasureMode', `4`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010100';
@@ -18926,15 +17273,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010200
-      * @tc.desc    modifyImageProperty('GPSDOP', `-1`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDOP', `-1`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010200
+     * @tc.desc   modifyImageProperty('GPSDOP', `-1`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010200';
@@ -18962,15 +17306,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010300
-      * @tc.desc    modifyImageProperty('GPSSpeedRef', `AA`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSSpeedRef', `AA`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010300
+     * @tc.desc   modifyImageProperty('GPSSpeedRef', `AA`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010300';
@@ -18998,15 +17339,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010400
-      * @tc.desc    modifyImageProperty('GPSSpeed', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSSpeed', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010400
+     * @tc.desc   modifyImageProperty('GPSSpeed', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010400';
@@ -19034,15 +17372,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010500
-      * @tc.desc    modifyImageProperty('GPSTrackRef', `C`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSTrackRef', `C`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010500
+     * @tc.desc   modifyImageProperty('GPSTrackRef', `C`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010500';
@@ -19070,15 +17405,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010600
-      * @tc.desc    modifyImageProperty('GPSTrack', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSTrack', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010600
+     * @tc.desc   modifyImageProperty('GPSTrack', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010600';
@@ -19106,15 +17438,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010700
-      * @tc.desc    modifyImageProperty('GPSImgDirectionRef', `C`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSImgDirectionRef', `C`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010700
+     * @tc.desc   modifyImageProperty('GPSImgDirectionRef', `C`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010700';
@@ -19142,15 +17471,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010800
-      * @tc.desc    modifyImageProperty('GPSImgDirection', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSImgDirection', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010800
+     * @tc.desc   modifyImageProperty('GPSImgDirection', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_010800';
@@ -19178,15 +17504,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011000
-      * @tc.desc    modifyImageProperty('GPSDestLatitudeRef', `W`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDestLatitudeRef', `W`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011000
+     * @tc.desc   modifyImageProperty('GPSDestLatitudeRef', `W`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011000';
@@ -19214,15 +17537,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011100
-      * @tc.desc    modifyImageProperty('GPSDestLatitude', `abc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDestLatitude', `abc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011100
+     * @tc.desc   modifyImageProperty('GPSDestLatitude', `abc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011100';
@@ -19250,15 +17570,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011200
-      * @tc.desc    modifyImageProperty('GPSDestLongitudeRef', `S`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDestLongitudeRef', `S`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011200
+     * @tc.desc   modifyImageProperty('GPSDestLongitudeRef', `S`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011200';
@@ -19286,15 +17603,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011300
-      * @tc.desc    modifyImageProperty('GPSDestLongitude', `none`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDestLongitude', `none`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011300
+     * @tc.desc   modifyImageProperty('GPSDestLongitude', `none`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011300';
@@ -19322,15 +17636,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011500
-      * @tc.desc    modifyImageProperty('GPSDestBearing', `x`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDestBearing', `x`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011500
+     * @tc.desc   modifyImageProperty('GPSDestBearing', `x`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011500';
@@ -19358,15 +17669,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011600
-      * @tc.desc    modifyImageProperty('GPSDestDistanceRef', `C`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDestDistanceRef', `C`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011600
+     * @tc.desc   modifyImageProperty('GPSDestDistanceRef', `C`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011600';
@@ -19394,15 +17702,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011700
-      * @tc.desc    modifyImageProperty('GPSDestDistance', `B`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDestDistance', `B`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011700
+     * @tc.desc   modifyImageProperty('GPSDestDistance', `B`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_011700';
@@ -19430,15 +17735,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012000
-      * @tc.desc    modifyImageProperty('GPSDifferential', `4`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSDifferential', `4`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012000
+     * @tc.desc   modifyImageProperty('GPSDifferential', `4`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012000';
@@ -19466,15 +17768,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012300
-      * @tc.desc    modifyImageProperty('CompositeImage', `5`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('CompositeImage', `5`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012300
+     * @tc.desc   modifyImageProperty('CompositeImage', `5`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012300';
@@ -19502,15 +17801,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012400
-      * @tc.desc    modifyImageProperty('CompressedBitsPerPixel', `diry`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('CompressedBitsPerPixel', `diry`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012400
+     * @tc.desc   modifyImageProperty('CompressedBitsPerPixel', `diry`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012400';
@@ -19538,15 +17834,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012500
-      * @tc.desc    modifyImageProperty('DNGVersion', `2 3`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('DNGVersion', `2 3`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012500
+     * @tc.desc   modifyImageProperty('DNGVersion', `2 3`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012500';
@@ -19574,15 +17867,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012600
-      * @tc.desc    modifyImageProperty('DefaultCropSize', `hi xic`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('DefaultCropSize', `hi xic`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012600
+     * @tc.desc   modifyImageProperty('DefaultCropSize', `hi xic`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012600';
@@ -19610,15 +17900,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012700
-      * @tc.desc    modifyImageProperty('Gamma', `rat`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('Gamma', `rat`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012700
+     * @tc.desc   modifyImageProperty('Gamma', `rat`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012700';
@@ -19646,15 +17933,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012800
-      * @tc.desc    modifyImageProperty('ISOSpeedLatitudeyyy', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ISOSpeedLatitudeyyy', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012800
+     * @tc.desc   modifyImageProperty('ISOSpeedLatitudeyyy', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012800';
@@ -19682,15 +17966,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012900
-      * @tc.desc    modifyImageProperty('ISOSpeedLatitudezzz', `bc`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('ISOSpeedLatitudezzz', `bc`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012900
+     * @tc.desc   modifyImageProperty('ISOSpeedLatitudezzz', `bc`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_012900';
@@ -19718,15 +17999,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013300
-      * @tc.desc    modifyImageProperty('LensSpecification', `a b c`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('LensSpecification', `a b c`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013300
+     * @tc.desc   modifyImageProperty('LensSpecification', `a b c`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013300';
@@ -19754,15 +18032,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013400
-      * @tc.desc    modifyImageProperty('NewSubfileType', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('NewSubfileType', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013400
+     * @tc.desc   modifyImageProperty('NewSubfileType', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013400';
@@ -19790,15 +18065,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013500
-      * @tc.desc    modifyImageProperty('OffsetTime', `2023:01`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('OffsetTime', `2023:01`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013500
+     * @tc.desc   modifyImageProperty('OffsetTime', `2023:01`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013500';
@@ -19826,15 +18098,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013900
-      * @tc.desc    modifyImageProperty('SourceImageNumberOfCompositeImage', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SourceImageNumberOfCompositeImage', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013900
+     * @tc.desc   modifyImageProperty('SourceImageNumberOfCompositeImage', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_013900';
@@ -19862,15 +18131,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014000
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014000
-      * @tc.desc    modifyImageProperty('SubfileType', `5`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SubfileType', `5`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014000
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014000
+     * @tc.desc   modifyImageProperty('SubfileType', `5`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014000';
@@ -19898,15 +18164,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014100
-      * @tc.desc    modifyImageProperty('GPSHPositioningError', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSHPositioningError', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014100
+     * @tc.desc   modifyImageProperty('GPSHPositioningError', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014100';
@@ -19934,15 +18197,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014200
-      * @tc.desc    modifyImageProperty('PhotographicSensitivity', `华为`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('PhotographicSensitivity', `华为`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014200
+     * @tc.desc   modifyImageProperty('PhotographicSensitivity', `华为`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014200';
@@ -19970,15 +18230,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014500
-      * @tc.desc    modifyImageProperty('HwMnoteCaptureMode', `á`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('HwMnoteCaptureMode', `á`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014500
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014500
+     * @tc.desc   modifyImageProperty('HwMnoteCaptureMode', `á`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014500';
@@ -20006,15 +18263,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0100
-      * @tc.desc    modifyImageProperty('SubfileType', `5`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('SubfileType', `5`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0100
+     * @tc.desc   modifyImageProperty('SubfileType', `5`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0100';
@@ -20042,15 +18296,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0200
-      * @tc.desc    modifyImageProperty('GPSHPositioningError', `a`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('GPSHPositioningError', `a`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0200
+     * @tc.desc   modifyImageProperty('GPSHPositioningError', `a`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0200';
@@ -20078,15 +18329,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0300
-      * @tc.desc    modifyImageProperty('PhotographicSensitivity', `华为`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('PhotographicSensitivity', `华为`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0300
+     * @tc.desc   modifyImageProperty('PhotographicSensitivity', `华为`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0300';
@@ -20114,15 +18362,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0400
-      * @tc.desc    modifyImageProperty('HwMnoteCaptureMode', `á`)-promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('HwMnoteCaptureMode', `á`)_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0400
+     * @tc.desc   modifyImageProperty('HwMnoteCaptureMode', `á`)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_URI_ERROR_STATIC_0400';
@@ -20150,15 +18395,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_ERROR_STATIC_0100
-      * @tc.desc    getImageProperty('BitsPerSample')_promise
-      *                 1.create imagesource
-      *                 2.getImageProperty('BitsPerSample')_promise
-      *                 3.getImageProperty_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_ERROR_STATIC_0100
+     * @tc.desc   getImageProperty('BitsPerSample')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_ERROR_STATIC_0100';
@@ -20192,15 +18434,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014600
-      * @tc.desc    getImageProperty('HwMnoteFaceMouthCenter')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('HwMnoteFaceMouthCenter', '987654321')_promise
-      *                 3.getImageProperty('HwMnoteFaceMouthCenter')_promise error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014600
+     * @tc.desc   getImageProperty('HwMnoteFaceMouthCenter')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014600';
@@ -20232,15 +18471,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014700
-      * @tc.desc    getImageProperty('HwMnoteFaceMouthCenter')_promise
-      *                 1.create imagesource
-      *                 2.modifyImageProperty('HwMnoteFaceMouthCenter', '987654321')_promise
-      *                 3.getImageProperty('HwMnoteFaceMouthCenter') error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014700
+     * @tc.desc   getImageProperty('HwMnoteFaceMouthCenter')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014700';
@@ -20272,15 +18508,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014800
-      * @tc.desc    getImageProperty('MakerNote')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('MakerNote', 'abc')_promise
-      *                 3.getImageProperty('MakerNote') error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014800
+     * @tc.desc   getImageProperty('MakerNote')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014800';
@@ -20336,14 +18569,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014900
-      * @tc.desc    getImageProperty('BitsPerSample')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('BitsPerSample', null)_promise
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014900
+     * @tc.desc   getImageProperty('BitsPerSample')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_014900';
@@ -20375,15 +18606,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014600
-      * @tc.desc    getImageProperty('LightSource')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('LightSource', '1')_promise
-      *                 3.getImageProperty('MakerNote') error code is the expected code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014600
+     * @tc.desc   getImageProperty('LightSource')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014600';
@@ -20407,16 +18635,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014700
-      * @tc.desc    getImageProperty('Orientation')_promise
-      *                 1.create imageSource
-      *                 2.getImageProperty('Orientation')
-      *                 3.modifyImageProperty('Orientation', 2)_promise
-      *                 4.getImageProperty('Orientation')
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014700
+     * @tc.desc   getImageProperty('Orientation')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014700';
@@ -20461,15 +18685,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0100
-      * @tc.desc    getImageProperties_promise
-      *                 1.create imageSource
-      *                 2.getImageProperties_promise
-      *                 3.getImageProperties_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0100
+     * @tc.desc   getImageProperties_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20513,15 +18734,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0200
-      * @tc.desc    getImageProperties_promise
-      *                 1.create imageSource
-      *                 2.getImageProperties_promise
-      *                 3.getImageProperties_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0200
+     * @tc.desc   getImageProperties_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20555,15 +18773,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0500
-      * @tc.desc    getImageProperties_promise
-      *                 1.create imageSource
-      *                 2.getImageProperties_promise
-      *                 3.getImageProperties_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0500
+     * @tc.desc   getImageProperties_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20598,15 +18813,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0100
-      * @tc.desc    getImageProperties_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperties_promise
-      *                 3.getImageProperties_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0100
+     * @tc.desc   getImageProperties_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20652,15 +18864,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0200
-      * @tc.desc    getImageProperties_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperties_promise
-      *                 3.getImageProperties_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0200
+     * @tc.desc   getImageProperties_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20704,15 +18913,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0300
-      * @tc.desc    getImageProperties_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperties_promise
-      *                 3.getImageProperties_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0300
+     * @tc.desc   getImageProperties_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20748,15 +18954,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0400
-      * @tc.desc    getImageProperties_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperties_promise
-      *                 3.getImageProperties_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0400
+     * @tc.desc   getImageProperties_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20792,15 +18995,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0700
-      * @tc.desc    getImageProperties_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperties_promise
-      *                 3.getImageProperties_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0700
+     * @tc.desc   getImageProperties_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20844,15 +19044,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014800
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014800
-      * @tc.desc    modifyImageProperty('ExposureTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureTime', `16/10`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014800
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014800
+     * @tc.desc   modifyImageProperty('ExposureTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20877,15 +19074,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014900
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014900
-      * @tc.desc    modifyImageProperty('ExposureTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureTime', `12/2`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014900
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014900
+     * @tc.desc   modifyImageProperty('ExposureTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20910,15 +19104,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014600
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014600
-      * @tc.desc    modifyImageProperty('ExposureTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureTime', `1696000/1000000000`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014600
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014600
+     * @tc.desc   modifyImageProperty('ExposureTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)
@@ -20943,15 +19134,12 @@ export default function imageExifGetModifyTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014700
-      * @tc.name    SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014700
-      * @tc.desc    modifyImageProperty('ExposureTime')_promise
-      *                 1.create imageSource
-      *                 2.modifyImageProperty('ExposureTime', `4000000000/1000000000`)_promise
-      *                 3.getImageProperty_promise value is the expected value
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014700
+     * @tc.number SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014700
+     * @tc.desc   modifyImageProperty('ExposureTime')_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await sleep(1000)

@@ -158,8 +158,7 @@ struct XtsFormHost {
     emitter.once(this.formHostTestController.getTestEvent(EventIdMap.DeleteFormWithCallback),
       (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DeleteFormWithCallback start event triggered.');
-        const result = await formHost.addForm(this.createWant());
-        const formId = result.formId;
+        const formId = this.getFormComponentId();
         this.runDeleteFormWithCallback(formId);
       })
 
@@ -172,8 +171,7 @@ struct XtsFormHost {
     emitter.once(this.formHostTestController.getTestEvent(EventIdMap.DeleteFormWithPromise),
       (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DeleteFormWithPromise start event triggered.');
-        const result = await formHost.addForm(this.createWant());
-        const formId = result.formId;
+        const formId = this.getFormComponentId();
         this.runDeleteFormWithPromise(formId);
       })
 
@@ -655,6 +653,12 @@ struct XtsFormHost {
         this.runAcquireFormDataWithPromise(formId);
       })
 
+    emitter.once(this.formHostTestController.getFalseTestEvent(EventIdMap.AcquireFormDataWithPromise),
+      (eventData: emitter.EventData) => {
+        hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromise start event triggered.');
+        this.runAcquireFormDataWithPromise(this.emptyFormId);
+      })
+
     emitter.once(this.formHostTestController.getTestEvent(EventIdMap.SetRouterProxyWithPromise),
       (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromise start event triggered.');
@@ -723,11 +727,8 @@ struct XtsFormHost {
           message: 'Form published!'
         };
         try {
-          formProvider.requestPublishForm(this.createWant()).then((formId: string) => {
-            this.runSetPublishFormResult(formId, publishResult);
-          }).catch((error: Error) => {
-            hilog.error(DOMAIN, TAG, `requestPublishForm->SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
-          });
+          const formId = this.getFormComponentId();
+          this.runSetPublishFormResult(formId, publishResult);
         } catch (error: Error) {
           hilog.error(DOMAIN, TAG, `SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
         }
@@ -823,8 +824,7 @@ struct XtsFormHost {
     emitter.once(this.formHostTestController.getTestEvent(EventIdMap.UpdateFormLockedStateWithPromise),
       (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromise start event triggered.');
-        const result = await formHost.addForm(this.createWant());
-        const formId = result.formId;
+        const formId = this.getFormComponentId();
         this.runUpdateFormLockedStateWithPromise(formId, false);
       })
 
@@ -1882,14 +1882,14 @@ struct XtsFormHost {
           })
           Button('OnFormUninstallWithoutString').fontSize(10).onClick((e: ClickEvent) => {
             this.runOnFormUninstallWithoutString((formId: string) => {
-              hilog.info(DOMAIN, TAG, 'Form runOnFormUninstallWithoutString:', formId);
+            hilog.info(DOMAIN, TAG, `Form onFormUninstallWithoutString: ${formId}` );
             });
-          })
-          Button('OffFormUninstallWithoutString').fontSize(10).onClick((e: ClickEvent) => {
+           })
+           Button('OffFormUninstallWithoutString').fontSize(10).onClick((e: ClickEvent) => {
             this.runOffFormUninstallWithoutString((formId: string) => {
-              hilog.info(DOMAIN, TAG, 'Form OffFormUninstallWithoutString:', formId);
+            hilog.info(DOMAIN, TAG, `Form OffFormUninstallWithoutString: ${formId}` );
             });
-          })
+           })
           Button('NotifyFormsVisibleWithCallback').fontSize(10).onClick((e: ClickEvent) => {
             const formIds = [this.getFormComponentId()];
             this.runNotifyFormsVisibleWithCallback(formIds, true);

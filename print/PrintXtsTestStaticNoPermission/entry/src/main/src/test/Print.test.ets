@@ -52,12 +52,12 @@ export default function printTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
+     * @tc.name   print_function_0100
      * @tc.number print_function_0100
-     * @tc.name print_function_0100
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0100 start');
@@ -85,12 +85,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0200
      * @tc.number print_function_0200
-     * @tc.name print_function_0200
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0200 start');
@@ -122,12 +122,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0300
      * @tc.number print_function_0300
-     * @tc.name print_function_0300
-     * @tc.desc check stopDiscoverPrinter api (promise)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check stopDiscoverPrinter api (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0300 start');
@@ -151,12 +151,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0400
      * @tc.number print_function_0400
-     * @tc.name print_function_0400
-     * @tc.desc check stopDiscoverPrinter api (callback)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check stopDiscoverPrinter api (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0400 start');
@@ -179,12 +179,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0500
      * @tc.number print_function_0500
-     * @tc.name print_function_0500
-     * @tc.desc check connectPrinter api (promise)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check connectPrinter api (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0500 start');
@@ -209,12 +209,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0600
      * @tc.number print_function_0600
-     * @tc.name print_function_0600
-     * @tc.desc check connectPrinter api (callback)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check connectPrinter api (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0600 start');
@@ -238,12 +238,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0700
      * @tc.number print_function_0700
-     * @tc.name print_function_0700
-     * @tc.desc check getAddedPrinters api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check getAddedPrinters api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0700 start');
@@ -267,12 +267,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0800
      * @tc.number print_function_0800
-     * @tc.name print_function_0800
-     * @tc.desc check addPrinterToDiscovery api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check addPrinterToDiscovery api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0800 start');
@@ -301,12 +301,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0900
      * @tc.number print_function_0900
-     * @tc.name print_function_0900
-     * @tc.desc check updatePrinterInDiscovery api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check updatePrinterInDiscovery api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0900 start');
@@ -335,12 +335,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1000
      * @tc.number print_function_1000
-     * @tc.name print_function_1000
-     * @tc.desc check removePrinterFromDiscovery api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check removePrinterFromDiscovery api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1000 start');
@@ -365,12 +365,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1100
      * @tc.number print_function_1100
-     * @tc.name print_function_1100
-     * @tc.desc check getPrinterInformationById api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check getPrinterInformationById api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1100 start');
@@ -395,12 +395,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1200
      * @tc.number print_function_1200
-     * @tc.name print_function_1200
-     * @tc.desc check on printerChange api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check on printerChange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1200', Level.LEVEL0, (): void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1200 start');
@@ -422,12 +422,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1300
      * @tc.number print_function_1300
-     * @tc.name print_function_1300
-     * @tc.desc check off printerChange api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check off printerChange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1300', Level.LEVEL0, (): void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1300 start');
@@ -449,12 +449,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1400
      * @tc.number print_function_1400
-     * @tc.name print_function_1400
-     * @tc.desc check print function with context without permission (promise)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check print function with context without permission (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1400 start');
@@ -483,12 +483,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1500
      * @tc.number print_function_1500
-     * @tc.name print_function_1500
-     * @tc.desc check print function with context without permission (callback)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check print function with context without permission (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1500 start');
@@ -514,12 +514,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1600
      * @tc.number print_function_1600
-     * @tc.name print_function_1600
-     * @tc.desc check print function without permission (promise)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check print function without permission (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1600 start');
@@ -545,12 +545,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1700
      * @tc.number print_function_1700
-     * @tc.name print_function_1700
-     * @tc.desc check print function without permission (callback)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check print function without permission (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1700 start');
@@ -573,12 +573,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1800
      * @tc.number print_function_1800
-     * @tc.name print_function_1800
-     * @tc.desc check the print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1800', Level.LEVEL0, () => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1800 start');
@@ -629,12 +629,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1900
      * @tc.number print_function_1900
-     * @tc.name print_function_1900
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1900 start');

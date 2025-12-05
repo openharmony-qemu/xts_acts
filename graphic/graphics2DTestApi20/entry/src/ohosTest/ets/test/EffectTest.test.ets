@@ -18,12 +18,12 @@ import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
 export default function EffectTest() {
   describe('EffectTest', () => {
     /**
-     * @tc.number  : SUB_OH_Filter_CreateEffect_0200,
-     * @tc.name    : SUB_OH_Filter_CreateEffect_0200
-     * @tc.desc    : test SUB_OH_Filter_CreateEffect fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Filter_CreateEffect_0200
+     * @tc.number SUB_OH_Filter_CreateEffect_0200,
+     * @tc.desc   test SUB_OH_Filter_CreateEffect fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Filter_CreateEffect_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -40,12 +40,12 @@ export default function EffectTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Filter_Release_0200
-     * @tc.name    : SUB_OH_Filter_Release_0200
-     * @tc.desc    : test SUB_OH_Filter_Release_0200 success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Filter_Release_0200
+     * @tc.number SUB_OH_Filter_Release_0200
+     * @tc.desc   test SUB_OH_Filter_Release_0200 success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Filter_Release_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -62,12 +62,12 @@ export default function EffectTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Filter_BlurWithTileMode_0100
-     * @tc.name    : SUB_OH_Filter_BlurWithTileMode_0100
-     * @tc.desc    : test SUB_OH_Filter_BlurWithTileMode success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Filter_BlurWithTileMode_0100
+     * @tc.number SUB_OH_Filter_BlurWithTileMode_0100
+     * @tc.desc   test SUB_OH_Filter_BlurWithTileMode success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Filter_BlurWithTileMode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -83,12 +83,12 @@ export default function EffectTest() {
         }
       })
     /**
-     * @tc.number  : SUB_OH_Filter_BlurWithTileMode_0200
-     * @tc.name    : SUB_OH_Filter_BlurWithTileMode_0200
-     * @tc.desc    : test SUB_OH_Filter_BlurWithTileMode fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Filter_BlurWithTileMode_0200
+     * @tc.number SUB_OH_Filter_BlurWithTileMode_0200
+     * @tc.desc   test SUB_OH_Filter_BlurWithTileMode fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Filter_BlurWithTileMode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -104,12 +104,12 @@ export default function EffectTest() {
         }
       })
     /**
-     * @tc.number  : SUB_OH_Filter_GetEffectPixelMap_0200
-     * @tc.name    : SUB_OH_Filter_GetEffectPixelMap_0200
-     * @tc.desc    : test SUB_OH_Filter_GetEffectPixelMap fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Filter_GetEffectPixelMap_0200
+     * @tc.number SUB_OH_Filter_GetEffectPixelMap_0200
+     * @tc.desc   test SUB_OH_Filter_GetEffectPixelMap fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Filter_GetEffectPixelMap_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -126,12 +126,12 @@ export default function EffectTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeImage_GetTransformMatrixV2_0100
-     * @tc.name    : SUB_OH_NativeImage_GetTransformMatrixV2_0100
-     * @tc.desc    : test SUB_OH_NativeImage_GetTransformMatrixV2 success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeImage_GetTransformMatrixV2_0100
+     * @tc.number SUB_OH_NativeImage_GetTransformMatrixV2_0100
+     * @tc.desc   test SUB_OH_NativeImage_GetTransformMatrixV2 success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeImage_GetTransformMatrixV2_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -148,12 +148,12 @@ export default function EffectTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeImage_AcquireNativeWindowBuffer_0100
-     * @tc.name    : SUB_OH_NativeImage_AcquireNativeWindowBuffer_0100
-     * @tc.desc    : test SUB_OH_NativeImage_AcquireNativeWindowBuffer success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeImage_AcquireNativeWindowBuffer_0100
+     * @tc.number SUB_OH_NativeImage_AcquireNativeWindowBuffer_0100
+     * @tc.desc   test SUB_OH_NativeImage_AcquireNativeWindowBuffer success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeImage_AcquireNativeWindowBuffer_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -169,12 +169,12 @@ export default function EffectTest() {
         }
       })
     /**
-     * @tc.number  : SUB_OH_NativeImage_AcquireNativeWindowBuffer_0200
-     * @tc.name    : SUB_OH_NativeImage_AcquireNativeWindowBuffer_0200
-     * @tc.desc    : test SUB_OH_NativeImage_AcquireNativeWindowBuffer success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeImage_AcquireNativeWindowBuffer_0200
+     * @tc.number SUB_OH_NativeImage_AcquireNativeWindowBuffer_0200
+     * @tc.desc   test SUB_OH_NativeImage_AcquireNativeWindowBuffer success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeImage_AcquireNativeWindowBuffer_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -191,12 +191,12 @@ export default function EffectTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeImage_ReleaseNativeWindowBuffer_0200
-     * @tc.name    : SUB_OH_NativeImage_ReleaseNativeWindowBuffer_0200
-     * @tc.desc    : test SUB_OH_NativeImage_ReleaseNativeWindowBuffer fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeImage_ReleaseNativeWindowBuffer_0200
+     * @tc.number SUB_OH_NativeImage_ReleaseNativeWindowBuffer_0200
+     * @tc.desc   test SUB_OH_NativeImage_ReleaseNativeWindowBuffer fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeImage_ReleaseNativeWindowBuffer_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -213,12 +213,12 @@ export default function EffectTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeImage_SetDropBufferMode_0100
-     * @tc.name    : SUB_OH_NativeImage_SetDropBufferMode_0100
-     * @tc.desc    : test SUB_OH_NativeImage_SetDropBufferMode success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeImage_SetDropBufferMode_0100
+     * @tc.number SUB_OH_NativeImage_SetDropBufferMode_0100
+     * @tc.desc   test SUB_OH_NativeImage_SetDropBufferMode success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeImage_SetDropBufferMode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

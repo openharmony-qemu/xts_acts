@@ -28,12 +28,12 @@ export default function releaseTest () {
       await sleep(1000);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_RELEASE_0000
-     * @tc.name      : release_callback_000
-     * @tc.desc      : release photoAccessHelper instance
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_RELEASE_0000
+     * @tc.desc   release photoAccessHelper instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'release_callback_000'
@@ -54,12 +54,12 @@ export default function releaseTest () {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_RELEASE_0000
-     * @tc.name      : release_promise_000
-     * @tc.desc      : release photoAccessHelper instance
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_RELEASE_0000
+     * @tc.desc   release photoAccessHelper instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'release_promise_000'

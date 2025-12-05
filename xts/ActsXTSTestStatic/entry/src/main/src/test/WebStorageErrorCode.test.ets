@@ -39,7 +39,6 @@ export default function webTwoJsunit() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testClearMatchesError001
      * @tc.number SUB_WEB_ERRORCODE_CLEARMATCHES_0100
      * @tc.desc   test ClearMatches error
@@ -58,7 +57,6 @@ export default function webTwoJsunit() {
       done()
     })
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testCreateWebMessagePortsError001
      * @tc.number SUB_WEB_ERRORCODE_CREATEWEBMESSAGEPORTS_0100
      * @tc.desc   test CreateWebMessagePorts error
@@ -75,7 +73,6 @@ export default function webTwoJsunit() {
       done()
     })
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testPrepareForPageLoadError001
      * @tc.number SUB_WEB_ERRORECODE_PREPAREFORPAGELOAD_0100
      * @tc.desc   test prepareForPageLoad error
@@ -92,7 +89,6 @@ export default function webTwoJsunit() {
       done()
     })
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testCloseErrorStatic001
      * @tc.number SUB_WEB_ERRORCODE_CLOSE_0100
      * @tc.desc   test close error
@@ -110,7 +106,6 @@ export default function webTwoJsunit() {
         done()
       })
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebMessagePortError002
      * @tc.number SUB_WEB_ERRORCODE_POSTMESSAGE_0200
      * @tc.desc   test PostMessage error
@@ -128,7 +123,6 @@ export default function webTwoJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SwitchNextPageStatic
      * @tc.number SUB_WEB_ERRORCODE_POSTMESSAGE_0300
      * @tc.desc   test PAGE_REDIRECT

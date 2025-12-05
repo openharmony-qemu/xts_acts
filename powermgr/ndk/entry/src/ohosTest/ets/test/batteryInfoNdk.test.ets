@@ -40,7 +40,6 @@ export default function batteryInfoNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0100
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0100
      * @tc.desc   Test testNapi BatteryInfo.
@@ -64,7 +63,6 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0200
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0200
      * @tc.desc   Test testNapi BatteryInfo.
@@ -90,7 +88,6 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0300
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0300
      * @tc.desc   Test testNapi BatteryInfo.
@@ -114,7 +111,6 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0400
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0400
      * @tc.desc   Test testNapi BatteryInfo.
@@ -138,7 +134,6 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0500
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0500
      * @tc.desc   Test testNapi BatteryInfo.
@@ -162,7 +157,6 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0600
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0600
      * @tc.desc   Test testNapi BatteryInfo.
@@ -186,7 +180,6 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0700
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0700
      * @tc.desc   Test testNapi BatteryInfo.
@@ -210,7 +203,6 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0800
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0800
      * @tc.desc   Test testNapi BatteryInfo.
@@ -234,7 +226,6 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0900
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0900
      * @tc.desc   Test testNapi BatteryInfo.

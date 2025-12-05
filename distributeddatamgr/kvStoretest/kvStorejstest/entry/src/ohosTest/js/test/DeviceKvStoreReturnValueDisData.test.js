@@ -151,7 +151,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0100
      * @tc.desc   getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
@@ -178,7 +177,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0101
      * @tc.desc   getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
@@ -208,7 +206,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0200
      * @tc.desc   getAllKVStoreId(appId: string): Promise<string[]>
@@ -239,7 +236,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0201
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0201
      * @tc.desc   getAllKVStoreId(appId: string): Promise<string[]>
@@ -274,7 +270,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0500
      * @tc.desc   getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>): void
@@ -319,7 +314,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0501
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0501
      * @tc.desc   getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>): void
@@ -347,7 +341,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0600
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0600
      * @tc.desc   getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
@@ -393,7 +386,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0601
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0601
      * @tc.desc   getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
@@ -425,7 +417,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0700
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0700
      * @tc.desc   getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
@@ -472,7 +463,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0701
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0701
      * @tc.desc   getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
@@ -502,7 +492,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0800
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0800
      * @tc.desc   getEntries(query: Query): Promise<Entry[]>
@@ -549,7 +538,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0801
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0801
      * @tc.desc   getEntries(query: Query): Promise<Entry[]>
@@ -582,7 +570,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0900
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0900
      * @tc.desc   getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
@@ -629,7 +616,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_0901
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_0901
      * @tc.desc   getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
@@ -659,7 +645,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1000
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1000
      * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
@@ -706,7 +691,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1001
      * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
@@ -739,7 +723,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1300
      * @tc.desc   get(deviceId:string, key:string, callback:AsyncCallback<boolean|string| number|Uint8Array>):void--true
@@ -768,7 +751,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1301
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1301
      * @tc.desc   get(deviceId:string, key:string, callback:AsyncCallback<boolean|string| number|Uint8Array>)---false
@@ -797,7 +779,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1400
      * @tc.desc   get(deviceId: string, key: string): Promise<boolean | string | number | Uint8Array>---true
@@ -829,7 +810,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1401
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1401
      * @tc.desc   get(deviceId: string, key: string): Promise<boolean | string | number | Uint8Array>---false
@@ -862,7 +842,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1500
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1500
      * @tc.desc   FieldNode.appendChild(child: FieldNode): boolean---true
@@ -890,7 +869,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1501
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1501
      * @tc.desc   FieldNode.appendChild(child: FieldNode): boolean---false
@@ -915,7 +893,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1600
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1600
      * @tc.desc   getResultSize(query: Query, callback: AsyncCallback<number>): void---number = 10
@@ -948,7 +925,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1601
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1601
      * @tc.desc   getResultSize(query: Query, callback: AsyncCallback<number>): void---number = 0
@@ -979,7 +955,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1700
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1700
      * @tc.desc   getResultSize(localDeviceId, query: Query, callback: AsyncCallback<number>): void---number = 10
@@ -1012,7 +987,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1701
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1701
      * @tc.desc   getResultSize(query: Query, callback: AsyncCallback<number>): void---number = 0
@@ -1043,7 +1017,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1800
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1800
      * @tc.desc   getResultSize(query: Query): Promise<Entry[]>---number = 10
@@ -1077,7 +1050,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1801
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1801
      * @tc.desc   getResultSize(query: Query): Promise<Entry[]>---number = 0
@@ -1110,7 +1082,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1900
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1900
      * @tc.desc   getResultSize(localDeviceId, query: Query): Promise<Entry[]>---number = 10
@@ -1144,7 +1115,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_1901
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_1901
      * @tc.desc   getResultSize(localDeviceId, query: Query): Promise<Entry[]>---number = 0
@@ -1177,7 +1147,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2100
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void---result != null
@@ -1215,7 +1184,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2101
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void---result == null
@@ -1248,7 +1216,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2300
      * @tc.desc   getResultSet(localDeviceId, keyPrefix: string): Promise<KVStoreResultSet>
@@ -1282,7 +1249,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2301
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2301
      * @tc.desc   getResultSet(localDeviceId, keyPrefix: string): Promise<KVStoreResultSet>
@@ -1314,7 +1280,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2400
      * @tc.desc   getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
@@ -1352,7 +1317,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2401
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2401
      * @tc.desc   getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
@@ -1387,7 +1351,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2500
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2500
      * @tc.desc   getResultSet(localDeviceId, query: Query, callback:AsyncCallback<KVStoreResultSet>): void
@@ -1425,7 +1388,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2501
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2501
      * @tc.desc   getResultSet(localDeviceId, query: Query, callback:AsyncCallback<KVStoreResultSet>): void
@@ -1459,7 +1421,6 @@ export default function DeviceKvStoreReturnValueDisData(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2600
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2600
      * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>
@@ -1495,7 +1456,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2601
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2601
      * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>
@@ -1530,7 +1490,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2700
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2700
      * @tc.desc   getResultSet(localDeviceId, query: Query): Promise<KVStoreResultSet>
@@ -1566,7 +1525,6 @@ export default function DeviceKvStoreReturnValueDisData(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_DKV_ReturnValue_2701
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueDisDataTest_2701
      * @tc.desc   getResultSet(localDeviceId, query: Query): Promise<KVStoreResultSet>

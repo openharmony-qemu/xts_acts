@@ -59,10 +59,13 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_SCTOLL_BY_TO__API_001
-     *tc.name scrollByTo01
-     *tc.desic test blurMode01 interface when choose callback mode.
+    /**
+     * @tc.name   scrollByTo01
+     * @tc.number SUB_SCTOLL_BY_TO__API_001
+     * @tc.desc   scrollByTo01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scrollByTo01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("scrollByTo01", EVENT_ID_SET_SUITE_KEY)

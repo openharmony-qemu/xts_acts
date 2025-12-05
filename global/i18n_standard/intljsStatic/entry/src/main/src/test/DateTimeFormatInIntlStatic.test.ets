@@ -53,7 +53,6 @@ export default function DateTimeFormatInIntlTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0100
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0100
      * @tc.desc   format the datetime with en-GB locale
@@ -67,7 +66,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0120
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0120
      * @tc.desc   format the datetime with en-GB locale
@@ -81,7 +79,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0200
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0200
      * @tc.desc   format the date with zh locale
@@ -97,7 +94,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0220
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0220
      * @tc.desc   format the date with zh locale and undefined options
@@ -113,7 +109,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0240
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0240
      * @tc.desc   format the date with zh locale and null options
@@ -129,7 +124,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0300
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0300
      * @tc.desc   format the date with en locale
@@ -145,7 +139,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0310
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0310
      * @tc.desc   format the date with en-US locale
@@ -161,7 +154,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0320
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0320
      * @tc.desc   format the date with en-GB locale
@@ -177,7 +169,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0400
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0400
      * @tc.desc   format the date with aa locale
@@ -194,7 +185,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0500
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0500
      * @tc.desc   format the hour with ban and zh locale
@@ -213,7 +203,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0600
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0600
      * @tc.desc   format the hour with en and zh locale
@@ -232,7 +221,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0700
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0700
      * @tc.desc   format the hour with en and ban locale
@@ -251,7 +239,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0800
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0800
      * @tc.desc   format the hour without correct locale
@@ -270,7 +257,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_0900
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_0900
      * @tc.desc   format the date with full datestyle and mediu timestyle
@@ -289,7 +275,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1000
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1000
      * @tc.desc   format the date dateStyle with long style
@@ -309,7 +294,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1100
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1100
      * @tc.desc   format the date dateStyle with medium style
@@ -329,7 +313,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1200
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1200
      * @tc.desc   format the date dateStyle with short style
@@ -349,7 +332,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1300
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1300
      * @tc.desc   format the date with daterange
@@ -366,12 +348,11 @@ export default function DateTimeFormatInIntlTest() {
       if (devType == '2in1') {
         expect(datefmt.formatRange(startdate, enddate)).assertEqual('20–21 Dec 2020');
       } else {
-        expect(datefmt.formatRange(startdate, enddate)).assertEqual('20/12/2020 – 21/12/2020');
+        expect(datefmt.formatRange(startdate, enddate)).assertEqual('20/12/2020 – 21/12/2020');
       }
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1400
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1400
      * @tc.desc   format the date with daterange when the start and end date is equal
@@ -393,7 +374,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1500
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1500
      * @tc.desc   format the year、month、day、weekday
@@ -415,7 +395,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1600
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1600
      * @tc.desc   format the timerange with year、month、day、weekday
@@ -434,11 +413,10 @@ export default function DateTimeFormatInIntlTest() {
       };
       let datefmt = new intl.DateTimeFormat('en', option);
       console.log('dateTimeFormat_test_static_1600 ' + datefmt.formatRange(startdate, enddate));
-      expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, December 20, 2020 – Wednesday, May 5, 2021');
+      expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, December 20, 2020 – Wednesday, May 5, 2021');
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1700
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1700
      * @tc.desc   format the hour&minute&second
@@ -456,7 +434,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1800
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1800
      * @tc.desc   format the timeZone
@@ -473,7 +450,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_1900
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_1900
      * @tc.desc   format the America/Los_Angeles timeZone
@@ -489,7 +465,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_2000
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_2000
      * @tc.desc   format the America/Los_Angeles timeZoneName
@@ -505,7 +480,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_2100
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_2100
      * @tc.desc   format the year
@@ -522,7 +496,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_2200
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_2200
      * @tc.desc   format the weekday
@@ -539,7 +512,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_2300
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_2300
      * @tc.desc   format the hour in zh-CN-u-hc-h12
@@ -556,7 +528,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_2400
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_2400
      * @tc.desc   format the hour in fr-Latn-FR-u-nu-mong
@@ -573,7 +544,6 @@ export default function DateTimeFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_static_2500
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_static_2500
      * @tc.desc   format the hour in zh-CN-u-hc-h12 with matcher

@@ -59,12 +59,12 @@ export default function ActsWebCookieManagerCookieTest() {
 
 
     /**
+     * @tc.name   testIncognitoExistCookieSetUndefined
      * @tc.number SUB_ACE_WEB_INCOGNITO_EXISTCOOKIE_SetUndefined
-     * @tc.name testIncognitoExistCookieSetUndefined
-     * @tc.desc test ExistCookie set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test ExistCookie set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIncognitoExistCookieSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testIncognitoExistCookieSetUndefined", 251121)
@@ -75,12 +75,12 @@ export default function ActsWebCookieManagerCookieTest() {
     });
 
     /**
+     * @tc.name   testIncognitoExistCookieSetNull
      * @tc.number SUB_ACE_WEB_INCOGNITO_EXISTCOOKIE_SetNull
-     * @tc.name testIncognitoExistCookieSetNull
-     * @tc.desc test ExistCookie set Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test ExistCookie set Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIncognitoExistCookieSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testIncognitoExistCookieSetNull", 251121)
@@ -92,12 +92,12 @@ export default function ActsWebCookieManagerCookieTest() {
 
 
     /**
+     * @tc.name   testIncognitoClearAllCookiesSyncSetUndefined
      * @tc.number SUB_ACE_WEB_INCOGNITO_CLEARALLCOOKIESSYNC_SetUndefined
-     * @tc.name testIncognitoClearAllCookiesSyncSetUndefined
-     * @tc.desc test ClearAllCookiesSync set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test ClearAllCookiesSync set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIncognitoClearAllCookiesSyncSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testIncognitoClearAllCookiesSyncSetUndefined", 251121)
@@ -108,12 +108,12 @@ export default function ActsWebCookieManagerCookieTest() {
     });
 
     /**
+     * @tc.name   testIncognitoClearAllCookiesSyncSetNull
      * @tc.number SUB_ACE_WEB_INCOGNITO_CLEARALLCOOKIESSYNC_SetNull
-     * @tc.name testIncognitoClearAllCookiesSyncSetNull
-     * @tc.desc test ClearAllCookiesSync set Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test ClearAllCookiesSync set Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIncognitoClearAllCookiesSyncSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testIncognitoClearAllCookiesSyncSetNull", 251121)

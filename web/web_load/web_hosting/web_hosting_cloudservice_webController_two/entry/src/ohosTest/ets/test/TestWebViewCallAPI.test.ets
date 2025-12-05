@@ -54,12 +54,12 @@ export default function ActsWebViewTest6() {
       // This API supports only one parameter: clear action function.
     });
     /**
+     * @tc.name   SUB_ACE_WEB_setUrl_0100
      * @tc.number SUB_ACE_WEB_setUrl_0100
-     * @tc.name testWebView_setUrl0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_WEB_setUrl_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("response", 147021);

@@ -57,7 +57,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0100
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0100
      * @tc.desc   check the current result
@@ -75,7 +74,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0200
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0200
      * @tc.desc   check the first
@@ -93,7 +91,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0300
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0300
      * @tc.desc   check the last interface
@@ -111,7 +108,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0400
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0400
      * @tc.desc   check the next interface
@@ -129,7 +125,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0500
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0500
      * @tc.desc   check the next interface with param
@@ -147,7 +142,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0600
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0600
      * @tc.desc   check the previous interface
@@ -165,7 +159,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0700
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0700
      * @tc.desc   check the following interface
@@ -183,7 +176,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0800
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0800
      * @tc.desc   check the getLineBreakText interface
@@ -201,7 +193,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_0900
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0900
      * @tc.desc   check the isBoundary interface
@@ -223,7 +214,6 @@ describe('BreakIteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_1000
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_1000
      * @tc.desc   check the iterator interface

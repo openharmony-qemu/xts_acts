@@ -63,12 +63,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager0100
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_0100
-     * @tc.name testOnCreatWebCookieManager0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'getCookie10114';
@@ -90,12 +90,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager0200
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_0200
-     * @tc.name testOnCreatWebCookieManager0200
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'fetchCookieSync10115';
@@ -117,12 +117,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager0300
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_0300
-     * @tc.name testOnCreatWebCookieManager0300
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'fetchCookieCallback10116';
@@ -144,12 +144,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager0400
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_0400
-     * @tc.name testOnCreatWebCookieManager0400
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'fetchCookiePromise10117';
@@ -171,12 +171,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager0500
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_0500
-     * @tc.name testOnCreatWebCookieManager0500
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'configCookieSync10118';
@@ -198,12 +198,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager0600
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_0600
-     * @tc.name testOnCreatWebCookieManager0600
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'configCookieCallback10119';
@@ -225,12 +225,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager0700
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_0700
-     * @tc.name testOnCreatWebCookieManager0700
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'configCookiePromise10120';
@@ -252,12 +252,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager1000
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_1000
-     * @tc.name testOnCreatWebCookieManager1000
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'putAcceptCookieEnabled10123';
@@ -279,12 +279,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager1100
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_1100
-     * @tc.name testOnCreatWebCookieManager1100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'putAcceptThirdPartyCookieEnabled10124';
@@ -306,12 +306,12 @@ export default function ActsAceCookieTest() {
     });
 
     /**
+     * @tc.name   testOnCreatWebCookieManager1200
      * @tc.number SUB_WEB_ONCREATWEBCOOKIEMANAGER_1200
-     * @tc.name testOnCreatWebCookieManager1200
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnCreatWebCookieManager1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const key = 'existCookie10125';

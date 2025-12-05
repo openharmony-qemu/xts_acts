@@ -106,12 +106,12 @@ export default function ActsMediaLibraryTwoTest() {
       await getPhotoReceiverSurface();
     })
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_2600
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_2600
-     * @tc.desc    : test OH_MediaAssetChangeRequest_GetWriteCacheHandler No authority.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_2600
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_2600
+     * @tc.desc   test OH_MediaAssetChangeRequest_GetWriteCacheHandler No authority.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_2600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -134,12 +134,12 @@ export default function ActsMediaLibraryTwoTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600
-     * @tc.desc    : test MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600
+     * @tc.desc   test MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

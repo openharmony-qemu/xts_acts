@@ -66,12 +66,12 @@ export default function PhotoAccessHelperSetTestSupp() {
     });
 
     /**
-     * @tc.number    Photo_Assets_Set_001
-     * @tc.name      Photo_Assets_Set_001
-     * @tc.desc      Set value is undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_001
+     * @tc.number Photo_Assets_Set_001
+     * @tc.desc   Set value is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_001';
@@ -85,12 +85,12 @@ export default function PhotoAccessHelperSetTestSupp() {
     })
 
     /**
-     * @tc.number    Photo_Assets_Set_002
-     * @tc.name      Photo_Assets_Set_002
-     * @tc.desc      Set value is null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_002
+     * @tc.number Photo_Assets_Set_002
+     * @tc.desc   Set value is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_002';
@@ -103,12 +103,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_003
-     * @tc.name      Photo_Assets_Set_003
-     * @tc.desc      Set value is ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_003
+     * @tc.number Photo_Assets_Set_003
+     * @tc.desc   Set value is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_003';
@@ -123,12 +123,12 @@ export default function PhotoAccessHelperSetTestSupp() {
     })
 
     /**
-     * @tc.number    Photo_Assets_Set_004
-     * @tc.name      Photo_Assets_Set_004
-     * @tc.desc      Set title length is 1,value is" "
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_004
+     * @tc.number Photo_Assets_Set_004
+     * @tc.desc   Set title length is 1,value is" "
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_004';
@@ -140,12 +140,12 @@ export default function PhotoAccessHelperSetTestSupp() {
     })
 
     /**
-     * @tc.number    Photo_Assets_Set_005
-     * @tc.name      Photo_Assets_Set_005
-     * @tc.desc      Set title value is "#"
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_005
+     * @tc.number Photo_Assets_Set_005
+     * @tc.desc   Set title value is "#"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_005';
@@ -156,12 +156,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_006
-     * @tc.name      Photo_Assets_Set_006
-     * @tc.desc      Set title value is "< >"
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_006
+     * @tc.number Photo_Assets_Set_006
+     * @tc.desc   Set title value is "< >"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_006';
@@ -173,12 +173,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_007
-     * @tc.name      Photo_Assets_Set_007
-     * @tc.desc      Set title value is 1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_007
+     * @tc.number Photo_Assets_Set_007
+     * @tc.desc   Set title value is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_007';
@@ -190,12 +190,12 @@ export default function PhotoAccessHelperSetTestSupp() {
     })
 
     /**
-     * @tc.number    Photo_Assets_Set_008
-     * @tc.name      Photo_Assets_Set_008
-     * @tc.desc      Set title value length is 255
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_008
+     * @tc.number Photo_Assets_Set_008
+     * @tc.desc   Set title value length is 255
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_008';
@@ -206,12 +206,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_009
-     * @tc.name      Photo_Assets_Set_009
-     * @tc.desc      Set title value length is 256
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_009
+     * @tc.number Photo_Assets_Set_009
+     * @tc.desc   Set title value length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_009';
@@ -222,12 +222,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_010
-     * @tc.name      Photo_Assets_Set_010
-     * @tc.desc      Set title is PhotoKeys.URI
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_010
+     * @tc.number Photo_Assets_Set_010
+     * @tc.desc   Set title is PhotoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_010';
@@ -241,12 +241,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_011
-     * @tc.name      Photo_Assets_Set_011
-     * @tc.desc      Set title is PhotoKeys.PHOTO_TYPE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_011
+     * @tc.number Photo_Assets_Set_011
+     * @tc.desc   Set title is PhotoKeys.PHOTO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_011';
@@ -260,12 +260,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_012
-     * @tc.name      Photo_Assets_Set_012
-     * @tc.desc      Set title is PhotoKeys.DISPLAY_NAME
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_012
+     * @tc.number Photo_Assets_Set_012
+     * @tc.desc   Set title is PhotoKeys.DISPLAY_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_012';
@@ -279,12 +279,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_013
-     * @tc.name      Photo_Assets_Set_013
-     * @tc.desc      Set title is PhotoKeys.SIZE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_013
+     * @tc.number Photo_Assets_Set_013
+     * @tc.desc   Set title is PhotoKeys.SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_013';
@@ -298,12 +298,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_014
-     * @tc.name      Photo_Assets_Set_014
-     * @tc.desc      Set title is PhotoKeys.DATE_ADDED
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_014
+     * @tc.number Photo_Assets_Set_014
+     * @tc.desc   Set title is PhotoKeys.DATE_ADDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_014';
@@ -317,12 +317,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_015
-     * @tc.name      Photo_Assets_Set_015
-     * @tc.desc      Set title is PhotoKeys.DATE_MODIFIED
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_015
+     * @tc.number Photo_Assets_Set_015
+     * @tc.desc   Set title is PhotoKeys.DATE_MODIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_015';
@@ -336,12 +336,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_016
-     * @tc.name      Photo_Assets_Set_016
-     * @tc.desc      Set title is PhotoKeys.DURATION
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_016
+     * @tc.number Photo_Assets_Set_016
+     * @tc.desc   Set title is PhotoKeys.DURATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_016';
@@ -355,12 +355,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_017
-     * @tc.name      Photo_Assets_Set_017
-     * @tc.desc      Set title is PhotoKeys.WIDTH
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_017
+     * @tc.number Photo_Assets_Set_017
+     * @tc.desc   Set title is PhotoKeys.WIDTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_017';
@@ -374,12 +374,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_018
-     * @tc.name      Photo_Assets_Set_018
-     * @tc.desc      Set title is PhotoKeys.HEIGHT
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_018
+     * @tc.number Photo_Assets_Set_018
+     * @tc.desc   Set title is PhotoKeys.HEIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_018';
@@ -394,12 +394,12 @@ export default function PhotoAccessHelperSetTestSupp() {
     })
 
     /**
-     * @tc.number    Photo_Assets_Set_019
-     * @tc.name      Photo_Assets_Set_019
-     * @tc.desc      Set title is PhotoKeys.ORIENTATION
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_019
+     * @tc.number Photo_Assets_Set_019
+     * @tc.desc   Set title is PhotoKeys.ORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_019';
@@ -413,12 +413,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_020
-     * @tc.name      Photo_Assets_Set_020
-     * @tc.desc      Set title is PhotoKeys.FAVORITE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_020
+     * @tc.number Photo_Assets_Set_020
+     * @tc.desc   Set title is PhotoKeys.FAVORITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_020';
@@ -432,12 +432,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_021
-     * @tc.name      Photo_Assets_Set_021
-     * @tc.desc      Set title is PhotoKeys.DATE_ADDED_MS
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_021
+     * @tc.number Photo_Assets_Set_021
+     * @tc.desc   Set title is PhotoKeys.DATE_ADDED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_021';
@@ -451,12 +451,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_022
-     * @tc.name      Photo_Assets_Set_022
-     * @tc.desc      Set title is PhotoKeys.DATE_MODIFIED_MS
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_022
+     * @tc.number Photo_Assets_Set_022
+     * @tc.desc   Set title is PhotoKeys.DATE_MODIFIED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_022';
@@ -470,12 +470,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_023
-     * @tc.name      Photo_Assets_Set_023
-     * @tc.desc      Set title is PhotoKeys.PHOTO_SUBTYPE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_023
+     * @tc.number Photo_Assets_Set_023
+     * @tc.desc   Set title is PhotoKeys.PHOTO_SUBTYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_023';
@@ -489,12 +489,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_024
-     * @tc.name      Photo_Assets_Set_024
-     * @tc.desc      Set title is PhotoKeys.DYNAMIC_RANGE_TYPE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_024
+     * @tc.number Photo_Assets_Set_024
+     * @tc.desc   Set title is PhotoKeys.DYNAMIC_RANGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_024';
@@ -508,12 +508,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_025
-     * @tc.name      Photo_Assets_Set_025
-     * @tc.desc      Set title is PhotoKeys.COVER_POSITION
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_025
+     * @tc.number Photo_Assets_Set_025
+     * @tc.desc   Set title is PhotoKeys.COVER_POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_025';
@@ -528,12 +528,12 @@ export default function PhotoAccessHelperSetTestSupp() {
     })
 
     /**
-     * @tc.number    Photo_Assets_Set_026
-     * @tc.name      Photo_Assets_Set_026
-     * @tc.desc      Set title is PhotoKeys.BURST_KEY
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_026
+     * @tc.number Photo_Assets_Set_026
+     * @tc.desc   Set title is PhotoKeys.BURST_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_026';
@@ -547,12 +547,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_027
-     * @tc.name      Photo_Assets_Set_027
-     * @tc.desc      Set title is PhotoKeys.LCD_SIZE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_027
+     * @tc.number Photo_Assets_Set_027
+     * @tc.desc   Set title is PhotoKeys.LCD_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_027';
@@ -566,12 +566,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_028
-     * @tc.name      Photo_Assets_Set_028
-     * @tc.desc      Set title is PhotoKeys.THM_SIZE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_028
+     * @tc.number Photo_Assets_Set_028
+     * @tc.desc   Set title is PhotoKeys.THM_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_028';
@@ -585,12 +585,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_029
-     * @tc.name      Photo_Assets_Set_029
-     * @tc.desc      Set title is PhotoKeys.DETAIL_TIME
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_029
+     * @tc.number Photo_Assets_Set_029
+     * @tc.desc   Set title is PhotoKeys.DETAIL_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_029';
@@ -604,12 +604,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_030
-     * @tc.name      Photo_Assets_Set_030
-     * @tc.desc      Set title is PhotoKeys.DATE_TAKEN_MS
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_030
+     * @tc.number Photo_Assets_Set_030
+     * @tc.desc   Set title is PhotoKeys.DATE_TAKEN_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_030';
@@ -623,12 +623,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_031
-     * @tc.name      Photo_Assets_Set_031
-     * @tc.desc      Set title is PhotoKeys.POSITION
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_031
+     * @tc.number Photo_Assets_Set_031
+     * @tc.desc   Set title is PhotoKeys.POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_031', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_031';
@@ -642,12 +642,12 @@ export default function PhotoAccessHelperSetTestSupp() {
       done();
     })
     /**
-     * @tc.number    Photo_Assets_Set_032
-     * @tc.name      Photo_Assets_Set_032
-     * @tc.desc      Set title is PhotoKeys.MEDIA_SUFFIX
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Assets_Set_032
+     * @tc.number Photo_Assets_Set_032
+     * @tc.desc   Set title is PhotoKeys.MEDIA_SUFFIX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Assets_Set_032', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Assets_Set_032';

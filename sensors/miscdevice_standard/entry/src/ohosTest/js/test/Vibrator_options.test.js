@@ -79,14 +79,14 @@ describe("VibratorJsTest_misc_7", function () {
     let TAG = ""
     let INVALID = -1;
 
-    /*
-    * @tc.name:VibratorJsTest076
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0860
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest076
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0860
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest076"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -111,14 +111,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest077
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0870
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest077
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0870
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest077"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -143,14 +143,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest078
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0880
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest078
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0880
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest078"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -175,14 +175,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest079
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0890
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest079
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0890
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest079"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -239,14 +239,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest080
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0900
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest080
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0900
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest080"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -303,14 +303,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest081
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0910
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest081
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0910
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest081"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -367,14 +367,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest082
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0920
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest082
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0920
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest082"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -390,14 +390,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest083
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0930
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest083
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0930
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest083"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -413,14 +413,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest084
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0940
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest084
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0940
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest084"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -436,14 +436,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest085
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0950
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest085
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0950
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest085"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -465,14 +465,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest086
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0960
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest086
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0960
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest086"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -494,14 +494,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest087
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0970‘
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest087
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0970‘
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest087"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -523,14 +523,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest088
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0980
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest088
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0980
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest088"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -602,14 +602,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest089
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0990
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest089
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0990
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest089"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -681,14 +681,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest090
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1000
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest090
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1000
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest090"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -760,14 +760,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest091
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1010
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest091
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest091"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -798,14 +798,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest092
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1020
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest092
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest092"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -879,14 +879,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest093
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1030
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest093
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest093"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -964,14 +964,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest094
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1040
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest094
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest094"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1049,14 +1049,14 @@ describe("VibratorJsTest_misc_7", function () {
             done();
         }
     })
-    /*
-    * @tc.name:VibratorJsTest095
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1050
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest095
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest095"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1129,14 +1129,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest096
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1060
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest096
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest096"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1177,14 +1177,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest097
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1070
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest097
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest097"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1225,14 +1225,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest098
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1080
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest098
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest098"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1273,14 +1273,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest099
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1090
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest099
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest099"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1353,14 +1353,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest100
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1100
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest100
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest100"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1433,14 +1433,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest101
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1110
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest101
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest101"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1491,14 +1491,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest102
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1120
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest102
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest102"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1517,14 +1517,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest103
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1130
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest103
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest103"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1544,14 +1544,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest104
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1130
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest104
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest104"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1571,14 +1571,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest105
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1130
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest105
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest105"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1599,14 +1599,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest106
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1150
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest106
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1150
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest106"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1628,14 +1628,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest107
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1150
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest107
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1150
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest107"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1656,14 +1656,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest108
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1160
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest108
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1160
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest108"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1685,14 +1685,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name:VibratorJsTest109
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_1140
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   VibratorJsTest109
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest109"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1729,11 +1729,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name: VibratorJsTest110
-    * @tc.desc: Test for getting the vibrator list.
-    * @tc.number: SUB_SensorSystem_Vibrator_JsTest_1100
-    */
+    /**
+     * @tc.name   VibratorJsTest110
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1100
+     * @tc.desc   Test for getting the vibrator list.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest110"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1764,11 +1767,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name: VibratorJsTest111
-    * @tc.desc: Test to get a vibrator information.
-    * @tc.number: SUB_SensorSystem_Vibrator_JsTest_1110
-    */
+    /**
+     * @tc.name   VibratorJsTest111
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1110
+     * @tc.desc   Test to get a vibrator information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest111"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1801,11 +1807,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name: VibratorJsTest112
-    * @tc.desc: Test the on function for VIBRATOR_DEVICE_STATE_CHANGE with valid and invalid parameters.
-    * @tc.number: SUB_SensorSystem_Vibrator_JsTest_1120
-    */
+    /**
+     * @tc.name   VibratorJsTest112
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1120
+     * @tc.desc   Test the on function for VIBRATOR_DEVICE_STATE_CHANGE with valid and invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest112"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1835,11 +1844,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name: VibratorJsTest113
-    * @tc.desc: Test stop the motor vibration in all modes.
-    * @tc.number: SUB_SensorSystem_Vibrator_JsTest_1130
-    */
+    /**
+     * @tc.name   VibratorJsTest113
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1130
+     * @tc.desc   Test stop the motor vibration in all modes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest113"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1877,11 +1889,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name: VibratorJsTest114
-    * @tc.desc: Test single motor stop vibration.
-    * @tc.number: SUB_SensorSystem_Vibrator_JsTest_1140
-    */
+    /**
+     * @tc.name   VibratorJsTest114
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1140
+     * @tc.desc   Test single motor stop vibration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest114"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1923,11 +1938,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name: VibratorJsTest115
-    * @tc.desc: Test the function of obtaining the effect information through the device ID and vibratorId.
-    * @tc.number: SUB_SensorSystem_Vibrator_JsTest_1150
-    */
+    /**
+     * @tc.name   VibratorJsTest115
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1150
+     * @tc.desc   Test the function of obtaining the effect information through the device ID and vibratorId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest115"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1960,11 +1978,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name: VibratorJsTest116
-    * @tc.desc: Test the function of obtaining the effect information through the vibratorId.
-    * @tc.number: SUB_SensorSystem_Vibrator_JsTest_1160
-    */
+    /**
+     * @tc.name   VibratorJsTest116
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1160
+     * @tc.desc   Test the function of obtaining the effect information through the vibratorId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest116"
         console.info(TAG + ' isAvailable ' + isAvailable);
@@ -1991,11 +2012,14 @@ describe("VibratorJsTest_misc_7", function () {
         }
     })
 
-    /*
-    * @tc.name: VibratorJsTest117
-    * @tc.desc: Test Motor vibration time-out
-    * @tc.number: SUB_SensorSystem_Vibrator_JsTest_1170
-    */
+    /**
+     * @tc.name   VibratorJsTest117
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1170
+     * @tc.desc   Test Motor vibration time-out
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("VibratorJsTest117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "VibratorJsTest117"
         console.info(TAG + ' isAvailable ' + isAvailable);

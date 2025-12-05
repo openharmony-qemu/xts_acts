@@ -63,14 +63,14 @@ export default function geolocationPermissions() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DELETEALLGEOLOCATION_STATIC_0100
-    * @tc.name       : testDeleteAllGeolocationStatic001
-    * @tc.desc       : test deleteAllGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testDeleteAllGeolocationStatic001
+     * @tc.number SUB_WEB_DELETEALLGEOLOCATION_STATIC_0100
+     * @tc.desc   test deleteAllGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeleteAllGeolocationStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testDeleteAllGeolocation001', 10)
@@ -86,14 +86,14 @@ export default function geolocationPermissions() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0300
-    * @tc.name       : testGetStoredGeolocationStatic003
-    * @tc.desc       : test getStoredGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testGetStoredGeolocationStatic003
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0300
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetStoredGeolocationStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testGetStoredGeolocation003', 10)
@@ -109,14 +109,14 @@ export default function geolocationPermissions() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0400
-    * @tc.name       : testGetStoredGeolocationStatic004
-    * @tc.desc       : test getStoredGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testGetStoredGeolocationStatic004
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0400
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetStoredGeolocationStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testGetStoredGeolocation004', 10)
@@ -132,14 +132,14 @@ export default function geolocationPermissions() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0100
-    * @tc.name       : testGetStoredGeolocationStatic001
-    * @tc.desc       : test getStoredGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testGetStoredGeolocationStatic001
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0100
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetStoredGeolocationStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testGetStoredGeolocation001', 10)
@@ -155,14 +155,14 @@ export default function geolocationPermissions() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0200
-    * @tc.name       : testGetStoredGeolocationStatic002
-    * @tc.desc       : test getStoredGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testGetStoredGeolocationStatic002
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0200
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetStoredGeolocationStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testGetStoredGeolocation002', 10)
@@ -179,14 +179,14 @@ export default function geolocationPermissions() {
       })
 
 
-    /*
-    * @tc.number     : SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0100
-    * @tc.name       : testGetAccessibleGeolocationStatic001
-    * @tc.desc       : test getAccessibleGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testGetAccessibleGeolocationStatic001
+     * @tc.number SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0100
+     * @tc.desc   test getAccessibleGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetAccessibleGeolocationStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testGetAccessibleGeolocation001', 10)
@@ -202,14 +202,14 @@ export default function geolocationPermissions() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0200
-    * @tc.name       : testGetAccessibleGeolocationStatic002
-    * @tc.desc       : test getAccessibleGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testGetAccessibleGeolocationStatic002
+     * @tc.number SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0200
+     * @tc.desc   test getAccessibleGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetAccessibleGeolocationStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testGetAccessibleGeolocation002', 10)
@@ -225,6 +225,14 @@ export default function geolocationPermissions() {
         done();
       })
 
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SwitchNextPageStatic
+     * @tc.desc   SwitchNextPageStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);

@@ -51,12 +51,12 @@ export default function stringDecoderTest() {
       'euc-jp', 'iso-2022-jp', 'shift_jis', 'euc-kr']
 
     /**
+     * @tc.name   test_Decode_Test_001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0100
-     * @tc.name test_Decode_Test_001
-     * @tc.desc Test ENCODER and DOCODER.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Decode_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       newArr.forEach(item => {
@@ -89,12 +89,12 @@ export default function stringDecoderTest() {
     })
 
     /**
+     * @tc.name   test_Decode_Test_002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0200
-     * @tc.name test_Decode_Test_002
-     * @tc.desc Test ENCODER and DOCODER.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Decode_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let that = new util.TextEncoder('utf-16be')
@@ -105,12 +105,12 @@ export default function stringDecoderTest() {
     })
 
     /**
+     * @tc.name   test_Decode_Test_003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0300
-     * @tc.name test_Decode_Test_003
-     * @tc.desc Test ENCODER and DOCODER.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Decode_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let that = new util.TextEncoder('utf-16le')
@@ -121,12 +121,12 @@ export default function stringDecoderTest() {
     })
 
     /**
+     * @tc.name   testArrayScenarios0100
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0400
-     * @tc.name testArrayScenarios0100
-     * @tc.desc Test ENCODER and DOCODER.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayScenarios0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayScenarios0100 == ';
@@ -168,12 +168,12 @@ export default function stringDecoderTest() {
     })
 
     /**
+     * @tc.name   testArrayScenarios0400
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0700
-     * @tc.name testArrayScenarios0400
-     * @tc.desc Test ENCODER and DOCODER.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayScenarios0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -222,12 +222,12 @@ export default function stringDecoderTest() {
       })
 
     /**
+     * @tc.name   testArrayScenarios0600
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0900
-     * @tc.name testArrayScenarios0600
-     * @tc.desc Test ENCODER and DOCODER.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayScenarios0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -266,12 +266,12 @@ export default function stringDecoderTest() {
       })
 
     /**
+     * @tc.name   testArrayScenarios0700
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_1000
-     * @tc.name testArrayScenarios0700
-     * @tc.desc Test ENCODER and DOCODER.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayScenarios0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

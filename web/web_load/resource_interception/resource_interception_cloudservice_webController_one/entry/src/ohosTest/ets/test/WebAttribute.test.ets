@@ -58,14 +58,14 @@ export default function webAttribute() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GEOLOCATIONACCESS_0100
-    * @tc.name       : testGeolocationAccess001
-    * @tc.desc       : test geolocationAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGeolocationAccess001
+     * @tc.number SUB_WEB_GEOLOCATIONACCESS_0100
+     * @tc.desc   test geolocationAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGeolocationAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGeolocationAccess001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -76,14 +76,14 @@ export default function webAttribute() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONRESOURCELOAD_0100
-    * @tc.name       : testOnResourceLoad001
-    * @tc.desc       : test onResourceLoad
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnResourceLoad001
+     * @tc.number SUB_WEB_ONRESOURCELOAD_0100
+     * @tc.desc   test onResourceLoad
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnResourceLoad001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnResourceLoad001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -94,14 +94,14 @@ export default function webAttribute() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONWINDOWNEW_0100
-    * @tc.name       : testOnWindowNew001
-    * @tc.desc       : test onWindowNew
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnWindowNew001
+     * @tc.number SUB_WEB_ONWINDOWNEW_0100
+     * @tc.desc   test onWindowNew
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnWindowNew001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnWindowNew001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -112,14 +112,14 @@ export default function webAttribute() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONWINDOWNEW_0200
-    * @tc.name       : testOnWindowNew002
-    * @tc.desc       : test onWindowNew
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnWindowNew002
+     * @tc.number SUB_WEB_ONWINDOWNEW_0200
+     * @tc.desc   test onWindowNew
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnWindowNew002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnWindowNew002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -130,14 +130,14 @@ export default function webAttribute() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONWINDOWNEW_0300
-    * @tc.name       : testOnWindowNew003
-    * @tc.desc       : test onWindowNew
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnWindowNew003
+     * @tc.number SUB_WEB_ONWINDOWNEW_0300
+     * @tc.desc   test onWindowNew
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnWindowNew003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnWindowNew003", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -148,14 +148,14 @@ export default function webAttribute() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MULTIWINDOWACCESS_0100
-    * @tc.name       : testMultiWindowAccess001
-    * @tc.desc       : test multiWindowAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMultiWindowAccess001
+     * @tc.number SUB_WEB_MULTIWINDOWACCESS_0100
+     * @tc.desc   test multiWindowAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMultiWindowAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testMultiWindowAccess001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -166,14 +166,14 @@ export default function webAttribute() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JAVASCRIPTACCESS_0100
-    * @tc.name       : testJavaScriptAccess001
-    * @tc.desc       : test javaScriptAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testJavaScriptAccess001
+     * @tc.number SUB_WEB_JAVASCRIPTACCESS_0100
+     * @tc.desc   test javaScriptAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJavaScriptAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptAccess001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

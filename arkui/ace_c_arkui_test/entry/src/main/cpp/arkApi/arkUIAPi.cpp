@@ -545,7 +545,7 @@ static napi_value testArkUI066(napi_env env, napi_callback_info info) {
 static napi_value testArkUI067(napi_env env, napi_callback_info info) {
     auto ret = OH_ArkUI_CreateOpacityTransitionEffect(1.0f);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager","testArkUI067-ret %{public}p", ret);
-    
+    ASSERT_NOTNULL(ret);
     if(ret == nullptr){
         napi_value result = nullptr;
         napi_create_int32(env,1,&result);
@@ -581,7 +581,7 @@ static napi_value testArkUI070(napi_env env, napi_callback_info info) {
 static napi_value testArkUI071(napi_env env, napi_callback_info info) {
     auto ret = OH_ArkUI_CreateMovementTransitionEffect(ARKUI_TRANSITION_EDGE_START);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager","testArkUI071-ret %{public}p", ret);
-    
+    ASSERT_NOTNULL(ret);
     if(ret == nullptr){
         napi_value result = nullptr;
         napi_create_int32(env,1,&result);

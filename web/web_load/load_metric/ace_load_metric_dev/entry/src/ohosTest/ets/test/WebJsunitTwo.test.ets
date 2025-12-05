@@ -61,13 +61,13 @@ export default function webJsunitTwo() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_GETPROGRESS_API_0100
-     * @tc.name       : testWebviewGetProgress001
-     * @tc.desc       : test onPageBegin getProgress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebviewGetProgress001
+     * @tc.number SUB_WEB_GETPROGRESS_API_0100
+     * @tc.desc   test onPageBegin getProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebviewGetProgress001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebviewGetProgress001", 140011);
@@ -80,13 +80,13 @@ export default function webJsunitTwo() {
       await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
       done();
     })
-    /*
-     * @tc.number     : SUB_WEB_GETPROGRESS_API_0200
-     * @tc.name       : testWebviewGetProgress002
-     * @tc.desc       : test onPageEnd getProgress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebviewGetProgress002
+     * @tc.number SUB_WEB_GETPROGRESS_API_0200
+     * @tc.desc   test onPageEnd getProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebviewGetProgress002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebviewGetProgress002", 140011);
@@ -99,13 +99,13 @@ export default function webJsunitTwo() {
       await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
       done();
     })
-    /*
-     * @tc.number     : SUB_WEB_GETPROGRESS_API_0300
-     * @tc.name       : testWebviewGetProgress003
-     * @tc.desc       : test onProgressChange getProgress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebviewGetProgress003
+     * @tc.number SUB_WEB_GETPROGRESS_API_0300
+     * @tc.desc   test onProgressChange getProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebviewGetProgress003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebviewGetProgress003", 140011);
@@ -118,13 +118,13 @@ export default function webJsunitTwo() {
       await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
       done();
     })
-    /*
-     * @tc.number     : SUB_WEB_GETPROGRESS_API_0400
-     * @tc.name       : testWebviewGetProgress004
-     * @tc.desc       : test onControllerAttached getProgress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebviewGetProgress004
+     * @tc.number SUB_WEB_GETPROGRESS_API_0400
+     * @tc.desc   test onControllerAttached getProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebviewGetProgress004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebviewGetProgress004", 140011);
@@ -137,13 +137,13 @@ export default function webJsunitTwo() {
       await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
       done();
     })
-    /*
-     * @tc.number     : SUB_WEB_GETPROGRESS_API_0500
-     * @tc.name       : testWebviewGetProgress005
-     * @tc.desc       : test onPageVisible getProgress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebviewGetProgress005
+     * @tc.number SUB_WEB_GETPROGRESS_API_0500
+     * @tc.desc   test onPageVisible getProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebviewGetProgress005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebviewGetProgress005", 140011);
@@ -156,13 +156,13 @@ export default function webJsunitTwo() {
       await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
       done();
     })
-    /*
-     * @tc.number     : SUB_WEB_GETPROGRESS_API_0600
-     * @tc.name       : testWebviewGetProgress006
-     * @tc.desc       : test onDisAppear getProgress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebviewGetProgress006
+     * @tc.number SUB_WEB_GETPROGRESS_API_0600
+     * @tc.desc   test onDisAppear getProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebviewGetProgress006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebviewGetProgress006", 140011);

@@ -68,7 +68,6 @@ export default function HidEmitEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidCreateDevice0100
      * @tc.number SUB_Driver_Ext_HIDDDK_0100
      * @tc.desc   OH_Hid_CreateDevice Interface testing
@@ -85,7 +84,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidCreateDevice0200
      * @tc.number SUB_Driver_Ext_HIDDDK_0800
      * @tc.desc   OH_Hid_CreateDevice Interface testing
@@ -102,7 +100,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidCreateDevice0300
      * @tc.number SUB_Driver_Ext_HIDDDK_0900
      * @tc.desc   OH_Hid_CreateDevice Interface testing
@@ -119,7 +116,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidEmitEventOne0100
      * @tc.number SUB_Driver_Ext_HIDDDK_0200
      * @tc.desc   OH_Hid_EmitEvent Interface testing
@@ -136,7 +132,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidEmitEventTwo0200
      * @tc.number SUB_Driver_Ext_HIDDDK_0300
      * @tc.desc   OH_Hid_EmitEvent Interface testing
@@ -153,7 +148,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidEmitEventThree0300
      * @tc.number SUB_Driver_Ext_HIDDDK_0400
      * @tc.desc   OH_Hid_EmitEvent Interface testing
@@ -170,7 +164,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidDestroyDeviceOne0100
      * @tc.number SUB_Driver_Ext_HIDDDK_0500
      * @tc.desc   OH_Hid_DestroyDevice Interface testing
@@ -187,7 +180,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidDestroyDeviceTwo0200
      * @tc.number SUB_Driver_Ext_HIDDDK_0600
      * @tc.desc   OH_Hid_DestroyDevice Interface testing
@@ -204,7 +196,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidDestroyDeviceThree0300
      * @tc.number SUB_Driver_Ext_HIDDDK_0700
      * @tc.desc   OH_Hid_DestroyDevice Interface testing
@@ -221,7 +212,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidInit001
      * @tc.number SUB_Driver_Ext_HID_DDK_0100
      * @tc.desc   OH_Hid_Init Interface testing
@@ -244,7 +234,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidRelease001
      * @tc.number SUB_Driver_Ext_HID_DDK_0200
      * @tc.desc   OH_Hid_Release Interface testing
@@ -267,7 +256,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidRelease002
      * @tc.number SUB_Driver_Ext_HID_DDK_0300
      * @tc.desc   OH_Hid_Release Interface testing
@@ -290,7 +278,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidOpen001
      * @tc.number SUB_Driver_Ext_HID_DDK_0400
      * @tc.desc   OH_Hid_Open Interface testing
@@ -320,7 +307,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidOpen002
      * @tc.number SUB_Driver_Ext_HID_DDK_0500
      * @tc.desc   OH_Hid_Open Interface testing
@@ -350,7 +336,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidOpen003
      * @tc.number SUB_Driver_Ext_HID_DDK_0600
      * @tc.desc   OH_Hid_Open Interface testing
@@ -380,7 +365,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidOpen004
      * @tc.number SUB_Driver_Ext_HID_DDK_0700
      * @tc.desc   OH_Hid_Open Interface testing
@@ -410,7 +394,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidClose001
      * @tc.number SUB_Driver_Ext_HID_DDK_0800
      * @tc.desc   OH_Hid_Close Interface testing
@@ -440,7 +423,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidClose002
      * @tc.number SUB_Driver_Ext_HID_DDK_0900
      * @tc.desc   OH_Hid_Close Interface testing
@@ -470,7 +452,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidClose003
      * @tc.number SUB_Driver_Ext_HID_DDK_1000
      * @tc.desc   OH_Hid_Close Interface testing
@@ -500,7 +481,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidWrite001
      * @tc.number SUB_Driver_Ext_HID_DDK_1100
      * @tc.desc   OH_Hid_Write Interface testing
@@ -530,7 +510,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidWrite002
      * @tc.number SUB_Driver_Ext_HID_DDK_1200
      * @tc.desc   OH_Hid_Write Interface testing
@@ -560,7 +539,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidWrite003
      * @tc.number SUB_Driver_Ext_HID_DDK_1300
      * @tc.desc   OH_Hid_Write Interface testing
@@ -590,7 +568,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidReadTimeout001
      * @tc.number SUB_Driver_Ext_HID_DDK_1400
      * @tc.desc   OH_Hid_ReadTimeout Interface testing
@@ -620,7 +597,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidReadTimeout002
      * @tc.number SUB_Driver_Ext_HID_DDK_1500
      * @tc.desc   OH_Hid_ReadTimeout Interface testing
@@ -650,7 +626,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidReadTimeout003
      * @tc.number SUB_Driver_Ext_HID_DDK_1600
      * @tc.desc   OH_Hid_ReadTimeout Interface testing
@@ -680,7 +655,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidReadTimeout004
      * @tc.number SUB_Driver_Ext_HID_DDK_1700
      * @tc.desc   OH_Hid_ReadTimeout Interface testing
@@ -710,7 +684,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidRead001
      * @tc.number SUB_Driver_Ext_HID_DDK_1800
      * @tc.desc   OH_Hid_Read Interface testing
@@ -740,7 +713,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidRead002
      * @tc.number SUB_Driver_Ext_HID_DDK_1900
      * @tc.desc   OH_Hid_Read Interface testing
@@ -770,7 +742,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidRead003
      * @tc.number SUB_Driver_Ext_HID_DDK_2000
      * @tc.desc   OH_Hid_Read Interface testing
@@ -800,7 +771,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidRead004
      * @tc.number SUB_Driver_Ext_HID_DDK_2100
      * @tc.desc   OH_Hid_Read Interface testing
@@ -830,7 +800,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidSetNonBlocking001
      * @tc.number SUB_Driver_Ext_HID_DDK_2200
      * @tc.desc   OH_Hid_SetNonBlocking Interface testing
@@ -860,7 +829,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidSetNonBlocking002
      * @tc.number SUB_Driver_Ext_HID_DDK_2300
      * @tc.desc   OH_Hid_SetNonBlocking Interface testing
@@ -890,7 +858,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidSetNonBlocking003
      * @tc.number SUB_Driver_Ext_HID_DDK_2400
      * @tc.desc   OH_Hid_SetNonBlocking Interface testing
@@ -920,7 +887,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawInfo001
      * @tc.number SUB_Driver_Ext_HID_DDK_2500
      * @tc.desc   OH_Hid_GetRawInfo Interface testing
@@ -950,7 +916,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawInfo002
      * @tc.number SUB_Driver_Ext_HID_DDK_2600
      * @tc.desc   OH_Hid_GetRawInfo Interface testing
@@ -980,7 +945,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawInfo003
      * @tc.number SUB_Driver_Ext_HID_DDK_2700
      * @tc.desc   OH_Hid_GetRawInfo Interface testing
@@ -1010,7 +974,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawName001
      * @tc.number SUB_Driver_Ext_HID_DDK_2800
      * @tc.desc   OH_Hid_GetRawName Interface testing
@@ -1040,7 +1003,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawName002
      * @tc.number SUB_Driver_Ext_HID_DDK_2900
      * @tc.desc   OH_Hid_GetRawName Interface testing
@@ -1070,7 +1032,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawName003
      * @tc.number SUB_Driver_Ext_HID_DDK_3000
      * @tc.desc   OH_Hid_GetRawName Interface testing
@@ -1100,7 +1061,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetPhysicalAddress001
      * @tc.number SUB_Driver_Ext_HID_DDK_3100
      * @tc.desc   OH_Hid_GetPhysicalAddress Interface testing
@@ -1130,7 +1090,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetPhysicalAddress002
      * @tc.number SUB_Driver_Ext_HID_DDK_3200
      * @tc.desc   OH_Hid_GetPhysicalAddress Interface testing
@@ -1159,7 +1118,6 @@ export default function HidEmitEventTest() {
       }
     });
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetPhysicalAddress003
      * @tc.number SUB_Driver_Ext_HID_DDK_3300
      * @tc.desc   OH_Hid_GetPhysicalAddress Interface testing
@@ -1189,7 +1147,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawUniqueId001
      * @tc.number SUB_Driver_Ext_HID_DDK_3400
      * @tc.desc   OH_Hid_GetRawUniqueId Interface testing
@@ -1219,7 +1176,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawUniqueId002
      * @tc.number SUB_Driver_Ext_HID_DDK_3500
      * @tc.desc   OH_Hid_GetRawUniqueId Interface testing
@@ -1249,7 +1205,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetRawUniqueId003
      * @tc.number SUB_Driver_Ext_HID_DDK_3600
      * @tc.desc   OH_Hid_GetRawUniqueId Interface testing
@@ -1279,7 +1234,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidSendReport001
      * @tc.number SUB_Driver_Ext_HID_DDK_3700
      * @tc.desc   OH_Hid_SendReport Interface testing
@@ -1309,7 +1263,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidSendReport002
      * @tc.number SUB_Driver_Ext_HID_DDK_3800
      * @tc.desc   OH_Hid_SendReport Interface testing
@@ -1339,7 +1292,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidSendReport003
      * @tc.number SUB_Driver_Ext_HID_DDK_3900
      * @tc.desc   OH_Hid_SendReport Interface testing
@@ -1368,7 +1320,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidSendReport004
      * @tc.number SUB_Driver_Ext_HID_DDK_4000
      * @tc.desc   OH_Hid_SendReport Interface testing
@@ -1397,7 +1348,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidSendReport005
      * @tc.number SUB_Driver_Ext_HID_DDK_4100
      * @tc.desc   OH_Hid_SendReport Interface testing
@@ -1427,7 +1377,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetReport001
      * @tc.number SUB_Driver_Ext_HID_DDK_4200
      * @tc.desc   OH_Hid_GetReport Interface testing
@@ -1457,7 +1406,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetReport002
      * @tc.number SUB_Driver_Ext_HID_DDK_4300
      * @tc.desc   OH_Hid_GetReport Interface testing
@@ -1487,7 +1435,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetReport003
      * @tc.number SUB_Driver_Ext_HID_DDK_4400
      * @tc.desc   OH_Hid_GetReport Interface testing
@@ -1516,7 +1463,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetReport004
      * @tc.number SUB_Driver_Ext_HID_DDK_4500
      * @tc.desc   OH_Hid_GetReport Interface testing
@@ -1546,7 +1492,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetReport005
      * @tc.number SUB_Driver_Ext_HID_DDK_4600
      * @tc.desc   OH_Hid_GetReport Interface testing
@@ -1575,7 +1520,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetReportDescriptor001
      * @tc.number SUB_Driver_Ext_HID_DDK_4700
      * @tc.desc   OH_Hid_GetReportDescriptor Interface testing
@@ -1605,7 +1549,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetReportDescriptor002
      * @tc.number SUB_Driver_Ext_HID_DDK_4800
      * @tc.desc   OH_Hid_GetReportDescriptor Interface testing
@@ -1635,7 +1578,6 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHidGetReportDescriptor003
      * @tc.number SUB_Driver_Ext_HID_DDK_4900
      * @tc.desc   OH_Hid_GetReportDescriptor Interface testing

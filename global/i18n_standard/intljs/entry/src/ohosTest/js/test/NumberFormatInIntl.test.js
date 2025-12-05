@@ -58,7 +58,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0100
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0100
      * @tc.desc   check the number in zh
@@ -73,7 +72,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0120
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0120
      * @tc.desc   check the number with default locale
@@ -87,7 +85,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0140
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0140
      * @tc.desc   check the number in zh
@@ -102,7 +99,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0160
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0160
      * @tc.desc   check the number in zh
@@ -117,7 +113,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0200
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0200
      * @tc.desc   check the number in zh-u-nu-latn
@@ -132,7 +127,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0300
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0300
      * @tc.desc   check the number in zh-u-nu-arab
@@ -147,7 +141,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0400
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0400
      * @tc.desc   check the number in en
@@ -162,7 +155,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0500
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0500
      * @tc.desc   check the number in en-u-nu-thai
@@ -177,7 +169,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0600
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0600
      * @tc.desc   check the number in en-GB
@@ -192,7 +183,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0700
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0700
      * @tc.desc   check the number in en-US
@@ -207,7 +197,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0800
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0800
      * @tc.desc   check the number in aa
@@ -225,7 +214,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_0900
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_0900
      * @tc.desc   check the number in zh and en list
@@ -240,7 +228,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1000
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1000
      * @tc.desc   check the number in en and zh list
@@ -255,7 +242,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1100
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1100
      * @tc.desc   check the number in en and aa list
@@ -270,7 +256,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1200
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1200
      * @tc.desc   check the number in aa and zh list
@@ -285,7 +270,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1300
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1300
      * @tc.desc   check the number in aa and bb list
@@ -303,7 +287,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1400
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1400
      * @tc.desc   check the number in aa  bb and es list
@@ -318,7 +301,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1500
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1500
      * @tc.desc   check the number in aa it and bb list
@@ -333,7 +315,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1600
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1600
      * @tc.desc   check the number with scientific
@@ -350,7 +331,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1700
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1700
      * @tc.desc   check the number with currency EUR
@@ -372,7 +352,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1800
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1800
      * @tc.desc   check the number with currency USD
@@ -389,7 +368,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_1900
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_1900
      * @tc.desc   check the number with currency CNY
@@ -405,7 +383,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2000
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2000
      * @tc.desc   check the number with currency JPY
@@ -421,7 +398,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2100
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2100
      * @tc.desc   check the number with signDisplay
@@ -446,7 +422,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2200
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2200
      * @tc.desc   check the number with meter unit
@@ -465,7 +440,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2250
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2250
      * @tc.desc   check the number with unitUsage
@@ -482,7 +456,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2260
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2260
      * @tc.desc   check the number with unitUsage
@@ -499,7 +472,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2270
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2270
      * @tc.desc   check the number with unitUsage
@@ -516,7 +488,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2280
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2280
      * @tc.desc   check the number with unitUsage
@@ -533,7 +504,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2290
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2290
      * @tc.desc   check the number with unitUsage
@@ -550,7 +520,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2300
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2300
      * @tc.desc   check the number with percetn style
@@ -566,7 +535,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2400
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2400
      * @tc.desc   check the number with numberingSystem
@@ -582,7 +550,6 @@ describe('NumberFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_2500
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_2500
      * @tc.desc   check the number with style

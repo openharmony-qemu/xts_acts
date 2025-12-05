@@ -53,6 +53,14 @@ export default function SimManagerTest() {
       }
     });
 
+    /**
+     * @tc.name   Telephony_Sim_getDefaultVoiceSlotId_0100
+     * @tc.number Telephony_Sim_getDefaultVoiceSlotId_0100
+     * @tc.desc   Telephony_Sim_getDefaultVoiceSlotId_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Telephony_Sim_getDefaultVoiceSlotId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       sim.getDefaultVoiceSlotId((err, data) => {
         expect(data === null).assertFalse();
@@ -60,6 +68,14 @@ export default function SimManagerTest() {
       });
     });
 
+    /**
+     * @tc.name   Telephony_Sim_getDefaultVoiceSlotId_0200
+     * @tc.number Telephony_Sim_getDefaultVoiceSlotId_0200
+     * @tc.desc   Telephony_Sim_getDefaultVoiceSlotId_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Telephony_Sim_getDefaultVoiceSlotId_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       let promise = sim.getDefaultVoiceSlotId();
       promise.then(data => {
@@ -72,9 +88,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_constantValidate_0100
-     * @tc.name    SIM card constant validation
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_constantValidate_0100
+     * @tc.number Telephony_Sim_constantValidate_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_constantValidate_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(`Telephony_Sim_constantValidate_0100 start`);
@@ -99,10 +118,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getISOCountryCodeForSim_Async_0200
-     * @tc.name    Enter exception parameters to test whether the getISOCountryCodeForSim interface function
-     *             can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getISOCountryCodeForSim_Async_0200
+     * @tc.number Telephony_Sim_getISOCountryCodeForSim_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getISOCountryCodeForSim_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       const CASE_NAME = 'Telephony_Sim_getISOCountryCodeForSim_Async_0200';
@@ -120,10 +141,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getISOCountryCodeForSim_Promise_0200
-     * @tc.name    Enter exception parameters to test whether the getISOCountryCodeForSim interface function
-     *             can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getISOCountryCodeForSim_Promise_0200
+     * @tc.number Telephony_Sim_getISOCountryCodeForSim_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getISOCountryCodeForSim_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       const CASE_NAME = 'Telephony_Sim_getISOCountryCodeForSim_Promise_0200';
@@ -141,10 +164,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getSimOperatorNumeric_Async_0200
-     * @tc.name    Enter exception parameters to test whether the getSimOperatorNumeric interface function
-     *             can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getSimOperatorNumeric_Async_0200
+     * @tc.number Telephony_Sim_getSimOperatorNumeric_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_getSimOperatorNumeric_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       const CASE_NAME = 'Telephony_Sim_getSimOperatorNumeric_Async_0200';
@@ -162,10 +187,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getSimOperatorNumeric_Promise_0200
-     * @tc.name    Enter exception parameters to test whether the getSimOperatorNumeric interface function
-     *             can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getSimOperatorNumeric_Promise_0200
+     * @tc.number Telephony_Sim_getSimOperatorNumeric_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_getSimOperatorNumeric_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       const CASE_NAME = 'Telephony_Sim_getSimOperatorNumeric_Promise_0200';
@@ -183,9 +210,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getSimSpn_Async_0200
-     * @tc.name    Enter exception parameters to test whether the getSimSpn interface function can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getSimSpn_Async_0200
+     * @tc.number Telephony_Sim_getSimSpn_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getSimSpn_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       const CASE_NAME = 'Telephony_Sim_getSimSpn_Async_0200';
@@ -203,9 +233,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getSimSpn_Promise_0200
-     * @tc.name    Enter exception parameters to test whether the getSimSpn interface function can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getSimSpn_Promise_0200
+     * @tc.number Telephony_Sim_getSimSpn_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getSimSpn_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       const CASE_NAME = 'Telephony_Sim_getSimSpn_Promise_0200';
@@ -223,9 +256,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getSimState_Async_0200
-     * @tc.name    Enter exception parameters to test whether the getSimState interface function can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getSimState_Async_0200
+     * @tc.number Telephony_Sim_getSimState_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getSimState_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       sim.getSimState(env.SLOTID_INVALID, (err, data) => {
@@ -243,9 +279,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getSimState_Promise_0200
-     * @tc.name    Enter exception parameters to test whether the getSimState interface function can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getSimState_Promise_0200
+     * @tc.number Telephony_Sim_getSimState_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_getSimState_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       const CASE_NAME = 'Telephony_Sim_getSimState_Promise_0200';
@@ -263,10 +302,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_isSimActive_Async_0700
-     * @tc.name    Test the slotId exception input parameter 2 during isSimActive interface card activation,
-     *             check the callback value, and expect the callback result flase
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_isSimActive_Async_0700
+     * @tc.number Telephony_Sim_isSimActive_Async_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_isSimActive_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       sim.isSimActive(env.SLOTID_INVALID, (err, data) => {
@@ -277,10 +318,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_isSimActive_Promise_0700
-     * @tc.name    Test the slotId exception input parameter 2 during isSimActive interface card activation,
-     *             check the callback value, and expect the callback result flase
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_isSimActive_Promise_0700
+     * @tc.number Telephony_Sim_isSimActive_Promise_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_isSimActive_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let promise = sim.isSimActive(env.SLOTID_INVALID);
@@ -296,10 +339,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_hasSimCard_Async_0600
-     * @tc.name    Test the slotId exception input parameter 2 of the hasSimCard interface,
-     *             check the callback value, and expect the callback result flase
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_hasSimCard_Async_0600
+     * @tc.number Telephony_Sim_hasSimCard_Async_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_hasSimCard_Async_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       const CASE_NAME = 'Telephony_Sim_hasSimCard_Async_0600';
@@ -315,10 +360,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_hasSimCard_Promise_0600
-     * @tc.name    Test the slotId exception input parameter 2 of the hasSimCard interface,
-     *             check the callback value, and expect the callback result flase
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_hasSimCard_Promise_0600
+     * @tc.number Telephony_Sim_hasSimCard_Promise_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_hasSimCard_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       const CASE_NAME = 'Telephony_Sim_hasSimCard_Promise_0600';
@@ -334,9 +381,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_getMaxSimCount_0100
      * @tc.number Telephony_Sim_getMaxSimCount_0100
-     * @tc.name   Test the getMaxSimCount interface and view the callback result
      * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getMaxSimCount_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       const CASE_NAME = 'Telephony_Sim_getMaxSimCount_0100';
@@ -347,10 +397,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_GetCardType_Async_0400
      * @tc.number Telephony_Sim_GetCardType_Async_0400
-     * @tc.name   Verify that the slotId of the GetCardType async callback interface is abnormal
-     *            and enter parameter 2, and check the callback value
      * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_GetCardType_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       const CASE_NAME = 'Telephony_Sim_GetCardType_Async_0400';
@@ -368,10 +420,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_GetCardType_Promise_0400
      * @tc.number Telephony_Sim_GetCardType_Promise_0400
-     * @tc.name   Verify that the slotId of the GetCardType promise interface is abnormal
-     *            and enter parameter 2, and check the callback value
      * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_GetCardType_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       const CASE_NAME = 'Telephony_Sim_GetCardType_Promise_0400';
@@ -386,10 +440,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_hasOperatorPrivileges_Async_0400
      * @tc.number Telephony_Sim_hasOperatorPrivileges_Async_0400
-     * @tc.name   Test hasOperatorPrivileges interface slotId exception enter parameter 2,
-     *            check the callback result
      * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_hasOperatorPrivileges_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function (done) {
       const CASE_NAME = 'Telephony_Sim_hasOperatorPrivileges_Async_0400';
@@ -407,10 +463,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_hasOperatorPrivileges_Promise_0400
      * @tc.number Telephony_Sim_hasOperatorPrivileges_Promise_0400
-     * @tc.name   Test hasOperatorPrivileges interface slotId exception enter parameter 2,
-     *            check the returned result
      * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_hasOperatorPrivileges_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       const CASE_NAME = 'Telephony_Sim_hasOperatorPrivileges_Promise_0400';
@@ -427,10 +485,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_getOpKey_CallBack_0100
      * @tc.number Telephony_Sim_getOpKey_CallBack_0100
-     * @tc.name   Test getOpKey interface
      * @tc.desc   Obtains the opkey of the SIM card in a specified slot.Returns the opkey;
-     *            returns "-1" if no SIM card is inserted or no opkey matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getOpKey_CallBack_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       sim.getOpKey(0, (err, data) => {
@@ -445,10 +505,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_getOpKey_Promise_0100
      * @tc.number Telephony_Sim_getOpKey_Promise_0100
-     * @tc.name   Test getOpKey interface
      * @tc.desc   Obtains the opkey of the SIM card in a specified slot.Returns the opkey;
-     *            returns "-1" if no SIM card is inserted or no opkey matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getOpKey_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       let promise = sim.getOpKey(0);
@@ -463,10 +525,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_getOpName_CallBack_0100
      * @tc.number Telephony_Sim_getOpName_CallBack_0100
-     * @tc.name   Test getOpName interface
      * @tc.desc   Obtains the opname of the SIM card in a specified slot.
-     *            returns null if no SIM card is inserted or no opname matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getOpName_CallBack_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       sim.getOpName(0, (err, data) => {
@@ -481,10 +545,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_getOpName_Promise_0100
      * @tc.number Telephony_Sim_getOpName_Promise_0100
-     * @tc.name   Test getOpName interface
      * @tc.desc   Obtains the opname of the SIM card in a specified slot.
-     *            returns null if no SIM card is inserted or no opname matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getOpName_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       let promise = sim.getOpName(0);
@@ -498,9 +564,12 @@ export default function SimManagerTest() {
       });
     });
     /**
+     * @tc.name   Telephony_Sim_getSimAccountInfo_CallBack_0100
      * @tc.number Telephony_Sim_getSimAccountInfo_CallBack_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getSimAccountInfo_CallBack_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_getSimAccountInfo_CallBack_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       sim.getSimAccountInfo(0, (err, data) => {
@@ -523,9 +592,12 @@ export default function SimManagerTest() {
       });
     });
     /**
+     * @tc.name   Telephony_Sim_getSimAccountInfo_Promise_0100
      * @tc.number Telephony_Sim_getSimAccountInfo_Promise_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getSimAccountInfo_Promise_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_getSimAccountInfo_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let promise = sim.getSimAccountInfo(0);
@@ -543,9 +615,12 @@ export default function SimManagerTest() {
       });
     });
     /**
+     * @tc.name   Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100
      * @tc.number Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       sim.getActiveSimAccountInfoList((err, data) => {
@@ -564,9 +639,12 @@ export default function SimManagerTest() {
       });
     });
     /**
+     * @tc.name   Telephony_Sim_getActiveSimAccountInfoList_Promise_0100
      * @tc.number Telephony_Sim_getActiveSimAccountInfoList_Promise_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getActiveSimAccountInfoList_Promise_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getActiveSimAccountInfoList_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       let promise = sim.getActiveSimAccountInfoList();
@@ -585,9 +663,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_getDefaultVoiceSimId_CallBack_0100
      * @tc.number Telephony_Sim_getDefaultVoiceSimId_CallBack_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getDefaultVoiceSimId_CallBack_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getDefaultVoiceSimId_CallBack_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       let simState = await sim.getSimStateSync(0);
@@ -613,9 +694,12 @@ export default function SimManagerTest() {
       });
     });
     /**
+     * @tc.name   Telephony_Sim_getDefaultVoiceSimId_Promise_0100
      * @tc.number Telephony_Sim_getDefaultVoiceSimId_Promise_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getDefaultVoiceSimId_Promise_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getDefaultVoiceSimId_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       let promise = sim.getDefaultVoiceSimId();

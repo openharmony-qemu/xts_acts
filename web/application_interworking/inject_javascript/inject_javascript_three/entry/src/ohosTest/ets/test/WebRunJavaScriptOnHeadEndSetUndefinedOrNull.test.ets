@@ -55,14 +55,14 @@ export default function ActsWebRunJavaScriptHeadEndSetUndefinedOrNullTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_SetUndefined
-    * @tc.name       : testRunJavaScriptOnHeadEndSetUndefined
-    * @tc.desc       : test runJavaScriptOnHeadEnd set undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRunJavaScriptOnHeadEndSetUndefined
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_SetUndefined
+     * @tc.desc   test runJavaScriptOnHeadEnd set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRunJavaScriptOnHeadEndSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testRunJavaScriptOnHeadEndSetUndefined", 2511253)
       Utils.registerBaseEvent('testRunJavaScriptOnHeadEndSetUndefined', '"msg"', 25112531, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -71,14 +71,14 @@ export default function ActsWebRunJavaScriptHeadEndSetUndefinedOrNullTest() {
       sendEventByKey('RunJavaScriptOnHeadEndSetUndefinedOrNull', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_SetNull
-    * @tc.name       : testRunJavaScriptOnHeadEndSetNull
-    * @tc.desc       : test runJavaScriptOnHeadEnd set null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRunJavaScriptOnHeadEndSetNull
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_SetNull
+     * @tc.desc   test runJavaScriptOnHeadEnd set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRunJavaScriptOnHeadEndSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testRunJavaScriptOnHeadEndSetNull", 2511253)
       Utils.registerBaseEvent('testRunJavaScriptOnHeadEndSetNull', '"msg"', 25112532, done, (backData: events_emitter.EventData, expected: Object) => {

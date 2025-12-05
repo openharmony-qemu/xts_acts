@@ -46,13 +46,13 @@ export default function publishReminderNopTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_publishReminderNop001
-     * @tc.name: publishReminderNop001
-     * @tc.desc:Using the publishReminder callback method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   publishReminderNop001
+     * @tc.number SUB_publishReminderNop001
+     * @tc.desc   Using the publishReminder callback method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("publishReminderNop001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------publishReminderNop001----before----');
@@ -73,13 +73,13 @@ export default function publishReminderNopTest() {
       console.info('--------publishReminderNop001----after----');
     })
 
-    /*
-     * @tc.number:SUB_publishReminderNop002
-     * @tc.name: publishReminderNop002
-     * @tc.desc:Using the publishReminder then method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   publishReminderNop002
+     * @tc.number SUB_publishReminderNop002
+     * @tc.desc   Using the publishReminder then method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("publishReminderNop002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------publishReminderNop002----before----');
@@ -98,13 +98,13 @@ export default function publishReminderNopTest() {
       console.info('--------publishReminderNop002----after----');
     })
 
-    /*
-     * @tc.number:SUB_getAllValidReminders001
-     * @tc.name: SUB_getAllValidReminders001
-     * @tc.desc:Using the publishReminder then method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_getAllValidReminders001
+     * @tc.number SUB_getAllValidReminders001
+     * @tc.desc   Using the publishReminder then method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_getAllValidReminders001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------SUB_getAllValidReminders001----before----');
@@ -127,13 +127,13 @@ export default function publishReminderNopTest() {
         console.info('--------SUB_getAllValidReminders001----after----');
     })
 
-    /*
-     * @tc.number:SUB_addExcludeDate001
-     * @tc.name: SUB_addExcludeDate001
-     * @tc.desc:Using the publishReminder then method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_addExcludeDate001
+     * @tc.number SUB_addExcludeDate001
+     * @tc.desc   Using the publishReminder then method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_addExcludeDate001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------SUB_getAllValidSUB_addExcludeDate001Reminders001----before----');
@@ -149,13 +149,13 @@ export default function publishReminderNopTest() {
         console.info('--------SUB_addExcludeDate001----after----');
     })
 
-    /*
-     * @tc.number:SUB_getExcludeDates001
-     * @tc.name: SUB_getExcludeDates001
-     * @tc.desc:Using the publishReminder then method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_getExcludeDates001
+     * @tc.number SUB_getExcludeDates001
+     * @tc.desc   Using the publishReminder then method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_getExcludeDates001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------SUB_getAllValidSUB_getExcludeDatese001Reminders001----before----');
@@ -173,13 +173,13 @@ export default function publishReminderNopTest() {
         console.info('--------SUB_getExcludeDates001----after----');
     })
 
-    /*
-     * @tc.number:SUB_deleteExcludeDates001
-     * @tc.name: SUB_deleteExcludeDates001
-     * @tc.desc:Using the deleteExcludeDates then method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_deleteExcludeDates001
+     * @tc.number SUB_deleteExcludeDates001
+     * @tc.desc   Using the deleteExcludeDates then method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_deleteExcludeDates001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------SUB_deleteExcludeDates001----before----');
@@ -194,13 +194,13 @@ export default function publishReminderNopTest() {
         console.info('--------SUB_deleteExcludeDates001----after----');
     })
 
-    /*
-     * @tc.number:SUB_updateReminder001
-     * @tc.name: SUB_updateReminder001
-     * @tc.desc:Using the updateReminder then method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_updateReminder001
+     * @tc.number SUB_updateReminder001
+     * @tc.desc   Using the updateReminder then method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_updateReminder001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------SUB_updateReminder001----before----');

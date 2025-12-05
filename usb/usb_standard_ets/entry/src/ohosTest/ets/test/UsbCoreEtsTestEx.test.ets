@@ -119,7 +119,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice002
      * @tc.number SUB_USB_HostManager_JS_Compatibility_0100
      * @tc.desc   Negative test: open device, error devAddress 2+10000
@@ -146,7 +145,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice003
      * @tc.number SUB_USB_HostManager_JS_Compatibility_0200
      * @tc.desc   Negative test: open device, error busNum 2+1000
@@ -175,7 +173,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice004
      * @tc.number SUB_USB_HostManager_JS_Compatibility_0300
      * @tc.desc   Negative test: open device, error serial 'asdfsd'
@@ -204,7 +201,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice007
      * @tc.number SUB_USB_HostManager_JS_Compatibility_0600
      * @tc.desc   Negative test: open device, error productName 'sdfsdfe'
@@ -233,7 +229,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice008
      * @tc.number SUB_USB_HostManager_JS_Compatibility_0700
      * @tc.desc   Negative test: open device, error version 'gwefsdf'
@@ -262,7 +257,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice009
      * @tc.number SUB_USB_HostManager_JS_Compatibility_0800
      * @tc.desc   Negative test: open device, error vendorId 2+10000
@@ -291,7 +285,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice010
      * @tc.number SUB_USB_HostManager_JS_Compatibility_0900
      * @tc.desc   Negative test: open device, error productId 2+10000
@@ -320,7 +313,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice011
      * @tc.number SUB_USB_HostManager_JS_Compatibility_1000
      * @tc.desc   Negative test: open device, error clazz 2+10000
@@ -349,7 +341,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice012
      * @tc.number SUB_USB_HostManager_JS_Compatibility_1100
      * @tc.desc   Negative test: open device, error subClass 2+10000
@@ -378,7 +369,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice013
      * @tc.number SUB_USB_HostManager_JS_Compatibility_1200
      * @tc.desc   Negative test: open device, error protocol 2+10000
@@ -407,7 +397,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasRight002
      * @tc.number SUB_USB_HostManager_JS_Compatibility_3400
      * @tc.desc   Negative test: parameters exception, error deviceName add '$#'
@@ -432,7 +421,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasRight003
      * @tc.number SUB_USB_HostManager_JS_Compatibility_3500
      * @tc.desc   Negative test: parameters exception, the device add 'abcdg'
@@ -457,7 +445,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestRight002
      * @tc.number SUB_USB_HostManager_JS_Compatibility_3200
      * @tc.desc   Negative test: Request permission, error deviceName add '@#'
@@ -487,7 +474,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestRight003
      * @tc.number SUB_USB_HostManager_JS_Compatibility_3300
      * @tc.desc   Negative test: Request permission, the device name is a number
@@ -518,7 +504,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testResetUsbDevice
      * @tc.number SUB_USB_HostManager_JS_Reset_0100
      * @tc.desc   Negative test: Reset device
@@ -553,7 +538,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:57:56
       * @tc.name   testResetUsbDeviceErrorCode
       * @tc.number SUB_USB_HostManager_JS_Reset_0200
       * @tc.desc   Negative test: resetUsbDevice error code 14400008 overwrite
@@ -591,7 +575,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:57:56
       * @tc.name   testResetUsbDeviceErrorCode001
       * @tc.number SUB_USB_HostManager_JS_Reset_0300
       * @tc.desc   Negative test: resetUsbDevice error code 14400013 overwrite
@@ -625,7 +608,6 @@ export default function UsbCoreEtsTestEx() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:57:56
       * @tc.name   testResetUsbDeviceErrorCode002
       * @tc.number SUB_USB_HostManager_JS_Reset_0400
       * @tc.desc   Negative test: resetUsbDevice error code 14400001 overwrite

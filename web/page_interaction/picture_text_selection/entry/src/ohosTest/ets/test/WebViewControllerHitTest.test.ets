@@ -61,14 +61,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_0100
-    * @tc.name        : testGetHitTestValue001
-    * @tc.desc        : test HitTestValue.type is webView.WebHitTestType.EditText
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue001
+     * @tc.number SUB_WEB_GETHITTESTVALUE_0100
+     * @tc.desc   test HitTestValue.type is webView.WebHitTestType.EditText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue001';
       tcName = 'testGetHitTestValue001'
@@ -80,14 +80,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_0200
-    * @tc.name        : testGetHitTestValue002
-    * @tc.desc        : test HitTestValue.type is webView.WebHitTestType.Email
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue002
+     * @tc.number SUB_WEB_GETHITTESTVALUE_0200
+     * @tc.desc   test HitTestValue.type is webView.WebHitTestType.Email
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue002';
       tcName = 'testGetHitTestValue002'
@@ -99,14 +99,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_0300
-    * @tc.name        : testGetHitTestValue003
-    * @tc.desc        : test HitTestValue.type is webView.WebHitTestType.HttpAnchor
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue003
+     * @tc.number SUB_WEB_GETHITTESTVALUE_0300
+     * @tc.desc   test HitTestValue.type is webView.WebHitTestType.HttpAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue003';
       tcName = 'testGetHitTestValue003'
@@ -118,14 +118,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_0400
-    * @tc.name        : testGetHitTestValue004
-    * @tc.desc        : test HitTestValue.type is webView.WebHitTestType.HttpAnchorImg
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue004
+     * @tc.number SUB_WEB_GETHITTESTVALUE_0400
+     * @tc.desc   test HitTestValue.type is webView.WebHitTestType.HttpAnchorImg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue004';
       tcName = 'testGetHitTestValue004'
@@ -137,14 +137,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_0500
-    * @tc.name        : testGetHitTestValue005
-    * @tc.desc        : test HitTestValue.type is webView.WebHitTestType.Img
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue005
+     * @tc.number SUB_WEB_GETHITTESTVALUE_0500
+     * @tc.desc   test HitTestValue.type is webView.WebHitTestType.Img
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue005';
       tcName = 'testGetHitTestValue005'
@@ -156,14 +156,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_0700
-    * @tc.name        : testGetHitTestValue007
-    * @tc.desc        : test HitTestValue.type is webView.WebHitTestType.Phone
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue007
+     * @tc.number SUB_WEB_GETHITTESTVALUE_0700
+     * @tc.desc   test HitTestValue.type is webView.WebHitTestType.Phone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue007';
       tcName = 'testGetHitTestValue007'
@@ -175,14 +175,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_0800
-    * @tc.name        : testGetHitTestValue008
-    * @tc.desc        : test HitTestValue.type is webView.WebHitTestType.Unknown
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue008
+     * @tc.number SUB_WEB_GETHITTESTVALUE_0800
+     * @tc.desc   test HitTestValue.type is webView.WebHitTestType.Unknown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue008';
       tcName = 'testGetHitTestValue008'
@@ -194,14 +194,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_0900
-    * @tc.name        : testGetHitTestValue009
-    * @tc.desc        : test HitTestValue.value is url of Email
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue009
+     * @tc.number SUB_WEB_GETHITTESTVALUE_0900
+     * @tc.desc   test HitTestValue.value is url of Email
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue009';
       tcName = 'testGetHitTestValue009'
@@ -213,14 +213,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_1000
-    * @tc.name        : testGetHitTestValue010
-    * @tc.desc        : test HitTestValue.value is url of HttpAnchor
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue010
+     * @tc.number SUB_WEB_GETHITTESTVALUE_1000
+     * @tc.desc   test HitTestValue.value is url of HttpAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue010';
       tcName = 'testGetHitTestValue010'
@@ -232,14 +232,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_1100
-    * @tc.name        : testGetHitTestValue011
-    * @tc.desc        : test HitTestValue.value is url of HttpAnchorImg
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue011
+     * @tc.number SUB_WEB_GETHITTESTVALUE_1100
+     * @tc.desc   test HitTestValue.value is url of HttpAnchorImg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue011';
       tcName = 'testGetHitTestValue011'
@@ -251,14 +251,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_1200
-    * @tc.name        : testGetHitTestValue012
-    * @tc.desc        : test HitTestValue.value is url of Img
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue012
+     * @tc.number SUB_WEB_GETHITTESTVALUE_1200
+     * @tc.desc   test HitTestValue.value is url of Img
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue012';
       tcName = 'testGetHitTestValue012'
@@ -270,14 +270,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTESTVALUE_1300
-    * @tc.name        : testGetHitTestValue013
-    * @tc.desc        : test HitTestValue.value is url of phone
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTestValue013
+     * @tc.number SUB_WEB_GETHITTESTVALUE_1300
+     * @tc.desc   test HitTestValue.value is url of phone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTestValue013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTestValue013';
       tcName = 'testGetHitTestValue013'
@@ -289,14 +289,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTEST_0100
-    * @tc.name        : testGetHitTest001
-    * @tc.desc        : test getHitTest return webView.WebHitTestType.EditText
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTest001
+     * @tc.number SUB_WEB_GETHITTEST_0100
+     * @tc.desc   test getHitTest return webView.WebHitTestType.EditText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTest001';
       tcName = 'testGetHitTest001'
@@ -308,14 +308,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTEST_0200
-    * @tc.name        : testGetHitTest002
-    * @tc.desc        : test getHitTest return webView.WebHitTestType.Email
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTest002
+     * @tc.number SUB_WEB_GETHITTEST_0200
+     * @tc.desc   test getHitTest return webView.WebHitTestType.Email
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTest002';
       tcName = 'testGetHitTest002'
@@ -327,14 +327,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTEST_0300
-    * @tc.name        : testGetHitTest003
-    * @tc.desc        : test getHitTest return webView.WebHitTestType.HttpAnchor
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTest003
+     * @tc.number SUB_WEB_GETHITTEST_0300
+     * @tc.desc   test getHitTest return webView.WebHitTestType.HttpAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTest003';
       tcName = 'testGetHitTest003'
@@ -346,14 +346,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTEST_0400
-    * @tc.name        : testGetHitTest004
-    * @tc.desc        : test getHitTest return webView.WebHitTestType.HttpAnchorImg
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTest004
+     * @tc.number SUB_WEB_GETHITTEST_0400
+     * @tc.desc   test getHitTest return webView.WebHitTestType.HttpAnchorImg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTest004';
       tcName = 'testGetHitTest004'
@@ -365,14 +365,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTEST_0500
-    * @tc.name        : testGetHitTest005
-    * @tc.desc        : test getHitTest return webView.WebHitTestType.Img
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTest005
+     * @tc.number SUB_WEB_GETHITTEST_0500
+     * @tc.desc   test getHitTest return webView.WebHitTestType.Img
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTest005';
       tcName = 'testGetHitTest005'
@@ -384,14 +384,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTEST_0700
-    * @tc.name        : testGetHitTest007
-    * @tc.desc        : test getHitTest return webView.WebHitTestType.Phone
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTest007
+     * @tc.number SUB_WEB_GETHITTEST_0700
+     * @tc.desc   test getHitTest return webView.WebHitTestType.Phone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTest007';
       tcName = 'testGetHitTest007'
@@ -403,14 +403,14 @@ export default function webViewControllerHitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETHITTEST_0800
-    * @tc.name        : testGetHitTest008
-    * @tc.desc        : test getHitTest return webView.WebHitTestType.Unknown
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetHitTest008
+     * @tc.number SUB_WEB_GETHITTEST_0800
+     * @tc.desc   test getHitTest return webView.WebHitTestType.Unknown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHitTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitGetHitTest008';
       tcName = 'testGetHitTest008'

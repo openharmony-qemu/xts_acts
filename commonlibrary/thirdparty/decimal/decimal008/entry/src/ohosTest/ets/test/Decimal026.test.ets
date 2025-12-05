@@ -33,12 +33,12 @@ export default function DecimalTest026() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_dividedToIntegerBy_Func_001
-     * @tc.desc      : Test dividedToIntegerBy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_dividedToIntegerBy_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test dividedToIntegerBy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_dividedToIntegerBy_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -1051,12 +1051,12 @@ export default function DecimalTest026() {
         test_dividedToIntegerBy_001('2.2858509075765580228170996569682255', '7.024E-8', '3.2543435e+7');
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_dividedToIntegerBy_Func_002
-     * @tc.desc      : Test dividedToIntegerBy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_dividedToIntegerBy_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test dividedToIntegerBy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_dividedToIntegerBy_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({

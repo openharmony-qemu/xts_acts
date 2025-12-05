@@ -42,12 +42,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0100
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0100
-     * @tc.name createCertCRLCollection with null
-     * @tc.desc crl not set
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   crl not set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -60,12 +60,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0200
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0200
-     * @tc.name createCertCRLCollection with null,null
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -78,12 +78,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0300
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0300
-     * @tc.name createCertCRLCollection with empty certs
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -96,12 +96,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0400
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0400
-     * @tc.name createCertCRLCollection with 0 certs, 2 crl
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -117,12 +117,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0500
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0500
-     * @tc.name createCertCRLCollection with one pem cert
-     * @tc.desc crl not set
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   crl not set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -136,12 +136,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0600
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0600
-     * @tc.name createCertCRLCollection with one pem cert,null
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -155,12 +155,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0700
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0700
-     * @tc.name createCertCRLCollection with one pem cert,0 crl
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -174,12 +174,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0800
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0800
-     * @tc.name createCertCRLCollection with one pem cert,one pem crl
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -194,12 +194,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_0900
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0900
-     * @tc.name createCertCRLCollection with one pem cert,two pem crls
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -216,12 +216,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_1000
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_1000
-     * @tc.name createCertCRLCollection with one der cert,one der crl
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -236,12 +236,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_1100
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_1100
-     * @tc.name createCertCRLCollection with one der cert,two der crls
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -258,12 +258,12 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Create_Collection_Func_1200
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_1200
-     * @tc.name createCertCRLCollection with two pem certs and two der certs,two pem crls and two der crls
-     * @tc.desc set crl
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   set crl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Create_Collection_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

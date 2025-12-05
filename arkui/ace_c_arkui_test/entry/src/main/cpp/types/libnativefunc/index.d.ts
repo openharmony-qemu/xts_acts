@@ -1387,6 +1387,10 @@ export const testImageDynamicRangeMode003: () => number;
 
 export const testImageDynamicRangeMode004: () => number;
 
+export const testImageDynamicRangeMode005: () => number;
+
+export const testImageDynamicRangeMode006: () => number;
+
 export const testImageHdrBrightness001: () => number;
 
 export const testImageHdrBrightness002: () => number;
@@ -1663,6 +1667,8 @@ export const testImageObjectFit017: () => number;
 
 export const testImageObjectFit018: () => number;
 
+export const testImageObjectFit019: () => number;
+
 export const testImageObjectRepeat001: () => number;
 
 export const testImageObjectRepeat002: () => number;
@@ -1710,6 +1716,30 @@ export const testImageRotate002: () => number;
 export const testImageRotate003: () => number;
 
 export const testImageRotate004: () => number;
+
+export const testImageRotateOrientation001: () => number;
+
+export const testImageRotateOrientation002: () => number;
+
+export const testImageRotateOrientation003: () => number;
+
+export const testImageRotateOrientation004: () => number;
+
+export const testImageRotateOrientation005: () => number;
+
+export const testImageRotateOrientation006: () => number;
+
+export const testImageRotateOrientation007: () => number;
+
+export const testImageRotateOrientation008: () => number;
+
+export const testImageRotateOrientation009: () => number;
+
+export const testImageRotateOrientation010: () => number;
+
+export const testImageRotateOrientation011: () => number;
+
+export const testImageRotateOrientation012: () => number;
 
 export const testImageSaturate001: () => number;
 
@@ -6172,6 +6202,14 @@ export const testDrawableDescriptorCreate001: () => number;
 export const testDrawableDescriptorCreate002: () => number;
 
 export const testDrawableDescriptorCreate003: () => number;
+
+export const testDrawableDescriptorCreate004: () => number;
+
+export const testDrawableDescriptorCreate005: () => number;
+
+export const testDrawableDescriptorCreate006: () => number;
+
+export const testDrawableDescriptorCreate007: () => number;
 
 export const testNodeContent001: () => number;
 

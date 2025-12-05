@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
+import StartTestAbility7 from '../testability/StartTestAbility7';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -172,12 +173,12 @@ export default function windowImmersiveTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_LANSCAPE_SHOW_STATUS_BAR_0100
-     * @tc.name      : test_LANSCAPE_SHOW_STATUS_BAR_0100
-     * @tc.desc      : test_LANSCAPE_SHOW_STATUS_BAR_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_LANSCAPE_SHOW_STATUS_BAR_0100
+     * @tc.number SUB_BASIC_WMS_LANSCAPE_SHOW_STATUS_BAR_0100
+     * @tc.desc   test_LANSCAPE_SHOW_STATUS_BAR_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_LANSCAPE_SHOW_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_SHOW_STATUS_BAR_0100';
@@ -218,12 +219,12 @@ export default function windowImmersiveTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_LANSCAPE_HIDE_STATUS_BAR_0100
-     * @tc.name      : test_LANSCAPE_HIDE_STATUS_BAR_0100
-     * @tc.desc      : test_LANSCAPE_HIDE_STATUS_BAR_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_LANSCAPE_HIDE_STATUS_BAR_0100
+     * @tc.number SUB_BASIC_WMS_LANSCAPE_HIDE_STATUS_BAR_0100
+     * @tc.desc   test_LANSCAPE_HIDE_STATUS_BAR_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_LANSCAPE_HIDE_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_HIDE_STATUS_BAR_0100';
@@ -266,12 +267,12 @@ export default function windowImmersiveTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
-     * @tc.name      : testIsImmersiveLayoutwithMainwindowDefaultState
-     * @tc.desc      : 验证主窗创建后默认为非沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithMainwindowDefaultState
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
+     * @tc.desc   验证主窗创建后默认为非沉浸式状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithMainwindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithMainwindowDefaultState';
@@ -295,12 +296,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0900
-     * @tc.name      : testIsImmersiveLayoutwithMaximize
-     * @tc.desc      : 验证maximize后调用IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithMaximize
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0900
+     * @tc.desc   验证maximize后调用IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithMaximize';
@@ -348,12 +349,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OnavoidAreaChange_0100
-     * @tc.name      : testOnavoidAreaChangeInLandScape
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testOnavoidAreaChangeInLandScape
+     * @tc.number SUB_BASIC_WMS_OnavoidAreaChange_0100
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOnavoidAreaChangeInLandScape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInLandScape';
@@ -402,12 +403,12 @@ export default function windowImmersiveTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_OnavoidAreaChange_0200
-     * @tc.name      : testOnavoidAreaChangeInPORTRAIT
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testOnavoidAreaChangeInPORTRAIT
+     * @tc.number SUB_BASIC_WMS_OnavoidAreaChange_0200
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOnavoidAreaChangeInPORTRAIT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInPORTRAIT';
@@ -458,12 +459,12 @@ export default function windowImmersiveTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_OnavoidAreaChange_0300
-     * @tc.name      : testOnavoidAreaChangeInLANDSCAPE_INVERTED
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testOnavoidAreaChangeInLANDSCAPE_INVERTED
+     * @tc.number SUB_BASIC_WMS_OnavoidAreaChange_0300
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOnavoidAreaChangeInLANDSCAPE_INVERTED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInLANDSCAPE_INVERTED';
@@ -511,15 +512,15 @@ export default function windowImmersiveTest() {
       }
 
     })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100
-     * @tc.name      : test_setImmersiveModeEnabledState_true
-     * @tc.desc      : test_setImmersiveModeEnabledState_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
-     */
 
+    /**
+     * @tc.name   SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100
+     * @tc.desc   SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100";
       console.log(msgStr + "begin");
@@ -544,15 +545,15 @@ export default function windowImmersiveTest() {
         done();
       }
     })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200
-     * @tc.name      : test_setImmersiveModeEnabledState_false
-     * @tc.desc      : test_setImmersiveModeEnabledState_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
-     */
 
+    /**
+     * @tc.name   SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200
+     * @tc.desc   SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200";
       console.log(msgStr + "begin");
@@ -572,12 +573,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-     * @tc.name      : testGetWindowAvoidAreaTypeSystem
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testGetWindowAvoidAreaTypeSystem
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeSystem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystem';
@@ -598,12 +599,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
-     * @tc.name      : testGetWindowAvoidAreaTypeCutout
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeCutOut
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeCutOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeCutOut';
@@ -624,12 +625,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
-     * @tc.name      : testGetWindowAvoidAreaTypeSystemGesture
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeSystemGesture
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeSystemGesture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystemGesture';
@@ -650,12 +651,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
-     * @tc.name      : testGetWindowAvoidAreaTypeKeyBoard
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeKeyBoard
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeKeyBoard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeKeyBoard';
@@ -676,12 +677,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
-     * @tc.name      : testGetWindowAvoidAreaTypeNavigationIndicator
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeNavigationIndicator
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeNavigationIndicator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeNavigationIndicator';
@@ -702,12 +703,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
-     * @tc.name      : testGetWindowAvoidAreaTypeSystemInLandScape
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeSystemInLandScape
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeSystemInLandScape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystemInLandScape';
@@ -731,12 +732,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
-     * @tc.name      : testGetWindowAvoidAreaTypeSystemInPortraitInverted
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeSystemInPortraitInverted
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeSystemInPortraitInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystemInPortraitInverted';
@@ -760,12 +761,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
-     * @tc.name      : testGetWindowAvoidAreaTypeCutOutInPortraitInverted
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeCutOutInPortraitInverted
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeCutOutInPortraitInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeCutOutInPortraitInverted';
@@ -789,12 +790,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
-     * @tc.name      : testGetWindowAvoidAreaTypeSystemInLandScapeInverted
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeSystemInLandScapeInverted
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeSystemInLandScapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystemInLandScapeInverted';
@@ -818,12 +819,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
-     * @tc.name      : testGetWindowAvoidAreaTypeCutOutInLandScapeInverted
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidAreaTypeCutOutInLandScapeInverted
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidAreaTypeCutOutInLandScapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeCutOutInLandScapeInverted';
@@ -848,12 +849,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1100
-     * @tc.name      : testGetAvoidAreaTypeSystem
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetAvoidAreaTypeSystem
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1100
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAvoidAreaTypeSystem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeSystem';
@@ -897,12 +898,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
-     * @tc.name      : testGetAvoidAreaTypeCutOut
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetAvoidAreaTypeCutOut
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAvoidAreaTypeCutOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeCutOut';
@@ -939,12 +940,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1300
-     * @tc.name      : testGetAvoidAreaTypeSystemGesture
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetAvoidAreaTypeSystemGesture
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1300
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAvoidAreaTypeSystemGesture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeSystemGesture';
@@ -981,12 +982,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1400
-     * @tc.name      : testGetAvoidAreaTypeKeyBoard
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetAvoidAreaTypeKeyBoard
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1400
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAvoidAreaTypeKeyBoard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeKeyBoard';
@@ -1023,12 +1024,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1500
-     * @tc.name      : testGetAvoidAreaTypeNavigationIndicator
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetAvoidAreaTypeNavigationIndicator
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1500
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAvoidAreaTypeNavigationIndicator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeNavigationIndicator';
@@ -1050,12 +1051,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1600
-     * @tc.name      : testOnSystemAvoidAreaChange
-     * @tc.desc      : listen system avoid area change
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testOnSystemAvoidAreaChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1600
+     * @tc.desc   listen system avoid area change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOnSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestOnSystemAvoidAreaChange';
@@ -1087,12 +1088,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1700
-     * @tc.name      : testOnRepeatSystemAvoidAreaChange
-     * @tc.desc      : listen system avoid area change
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnRepeatSystemAvoidAreaChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1700
+     * @tc.desc   listen system avoid area change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnRepeatSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnRepeatSystemAvoidAreaChange';
@@ -1133,12 +1134,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1800
-     * @tc.name      : testOffRepeatSystemAvoidAreaChange
-     * @tc.desc      : listen system avoid area change
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testOffRepeatSystemAvoidAreaChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1800
+     * @tc.desc   listen system avoid area change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOffRepeatSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestOffRepeatSystemAvoidAreaChange';
@@ -1174,12 +1175,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1900
-     * @tc.name      : testOnAvoidAreaChange
-     * @tc.desc      : listen avoid area change
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnAvoidAreaChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1900
+     * @tc.desc   listen avoid area change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnAvoidAreaChange';
@@ -1213,12 +1214,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2000
-     * @tc.name      : testGetAvoidAreaTypeSystemInFreeWindowMode
-     * @tc.desc      : 验证自由多窗且窗口最大化，状态栏显示避让区域为0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetAvoidAreaTypeSystemInFreeWindowMode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2000
+     * @tc.desc   验证自由多窗且窗口最大化，状态栏显示避让区域为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAvoidAreaTypeSystemInFreeWindowMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetAvoidAreaTypeSystemInFreeWindowMode';
@@ -1258,12 +1259,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2100
-     * @tc.name      : testOffRepeatAvoidAreaChange
-     * @tc.desc      : listen system avoid area change
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOffRepeatAvoidAreaChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2100
+     * @tc.desc   listen system avoid area change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffRepeatAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOffRepeatAvoidAreaChange';
@@ -1294,12 +1295,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2200
-     * @tc.name      : testSetWindowSystemBarEnableStatusInvisiblePromise
-     * @tc.desc      : set window system bar isVisible
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowSystemBarEnableStatusInvisiblePromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2200
+     * @tc.desc   set window system bar isVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowSystemBarEnableStatusInvisiblePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableStatusInvisiblePromise';
@@ -1326,12 +1327,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2300
-     * @tc.name      : testSetWindowSystemBarEnableStatusVisiblePromise
-     * @tc.desc      : set window system bar isVisible
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowSystemBarEnableStatusVisiblePromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2300
+     * @tc.desc   set window system bar isVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowSystemBarEnableStatusVisiblePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableStatusVisiblePromise';
@@ -1358,12 +1359,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
-     * @tc.name      : testSetWindowSystemBarEnableInVisiblePromise
-     * @tc.desc      : set window system bar isVisible
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowSystemBarEnableInVisiblePromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
+     * @tc.desc   set window system bar isVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowSystemBarEnableInVisiblePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableInVisiblePromise';
@@ -1390,12 +1391,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2500
-     * @tc.name      : testSetWindowSystemBarEnableStatusVisibleCallback
-     * @tc.desc      : set window system bar isVisible
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testSetWindowSystemBarEnableStatusVisibleCallback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2500
+     * @tc.desc   set window system bar isVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetWindowSystemBarEnableStatusVisibleCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableStatusVisibleCallback';
@@ -1424,12 +1425,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2600
-     * @tc.name      : testSetWindowSystemBarEnableStatusInVisibleCallback
-     * @tc.desc      : set window system bar isVisible
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowSystemBarEnableStatusInVisibleCallback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2600
+     * @tc.desc   set window system bar isVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarEnableStatusInVisibleCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableStatusInVisibleCallback';
@@ -1458,12 +1459,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2700
-     * @tc.name      : testSetSystemBarEnableStatusPromise
-     * @tc.desc      : set system bar isVisible
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testSetSystemBarEnableStatusPromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2700
+     * @tc.desc   set system bar isVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSystemBarEnableStatusPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetSystemBarEnableStatusPromise';
@@ -1492,12 +1493,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2800
-     * @tc.name      : testSetSystemBarEnablePromise
-     * @tc.desc      : set system bar isVisible
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnablePromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2800
+     * @tc.desc   set system bar isVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnablePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetSystemBarEnablePromise';
@@ -1526,12 +1527,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2900
-     * @tc.name      : testGetWindowSystemBarProperties
-     * @tc.desc      : get window system bar properties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testGetWindowSystemBarProperties
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2900
+     * @tc.desc   get window system bar properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowSystemBarProperties', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowSystemBarProperties';
@@ -1548,12 +1549,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3000
-     * @tc.name      : testSetSystemBarPropertiesPromise
-     * @tc.desc      : set window system bar properties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetSystemBarPropertiesPromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3000
+     * @tc.desc   set window system bar properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSystemBarPropertiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestSetSystemBarPropertiesPromise';
@@ -1585,12 +1586,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3100
-     * @tc.name      : testSetWindowSystemBarPropertiesCallback
-     * @tc.desc      : set window system bar properties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testSetWindowSystemBarPropertiesCallback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3100
+     * @tc.desc   set window system bar properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetWindowSystemBarPropertiesCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName = 'TestSetWindowSystemBarPropertiesCallback';
@@ -1625,12 +1626,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3200
-     * @tc.name      : testSetWindowSystemBarPropertiesPromise
-     * @tc.desc      : set window system bar properties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testSetWindowSystemBarPropertiesPromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3200
+     * @tc.desc   set window system bar properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetWindowSystemBarPropertiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName = 'TestSetWindowSystemBarPropertiesPromise';
@@ -1662,12 +1663,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3300
-     * @tc.name      : testSetImmersive
-     * @tc.desc      : set immersive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetImmersive
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3300
+     * @tc.desc   set immersive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetImmersive';
@@ -1705,12 +1706,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3400
-     * @tc.name      : testSetFullScreenInImmersiveMode
-     * @tc.desc      : set immersive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetFullScreenInImmersiveMode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3400
+     * @tc.desc   set immersive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetFullScreenInImmersiveMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetFullScreenInImmersiveMode';
@@ -1744,12 +1745,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3500
-     * @tc.name      : testSetMaximizeInImmersiveMode
-     * @tc.desc      : set immersive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetMaximizeInImmersiveMode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3500
+     * @tc.desc   set immersive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetMaximizeInImmersiveMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetMaximizeInImmersiveMode';
@@ -1791,12 +1792,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3600
-     * @tc.name      : testSetLayoutFullScreenFalseCallback
-     * @tc.desc      : set layout full screen false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetLayoutFullScreenFalseCallback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3600
+     * @tc.desc   set layout full screen false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetLayoutFullScreenFalseCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetLayoutFullScreenFalseCallback';
@@ -1823,12 +1824,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3700
-     * @tc.name      : testSetLayoutFullScreenTrueCallback
-     * @tc.desc      : set layout full screen true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetLayoutFullScreenTrueCallback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3700
+     * @tc.desc   set layout full screen true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetLayoutFullScreenTrueCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetLayoutFullScreenTrueCallback';
@@ -1855,12 +1856,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3800
-     * @tc.name      : testSetLayoutFullScreenFalsePromise
-     * @tc.desc      : set layout full screen false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetLayoutFullScreenFalsePromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3800
+     * @tc.desc   set layout full screen false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetLayoutFullScreenFalsePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetLayoutFullScreenFalsePromise';
@@ -1884,12 +1885,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3900
-     * @tc.name      : testSetLayoutFullScreenTruePromise
-     * @tc.desc      : set layout full screen true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testSetLayoutFullScreenTruePromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3900
+     * @tc.desc   set layout full screen true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetLayoutFullScreenTruePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetLayoutFullScreenTruePromise';
@@ -1913,12 +1914,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4000
-     * @tc.name      : testSetFullScreenFalseCallback
-     * @tc.desc      : set full screen false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetFullScreenFalseCallback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4000
+     * @tc.desc   set full screen false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetFullScreenFalseCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetFullScreenFalseCallback';
@@ -1945,12 +1946,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4100
-     * @tc.name      : testSetFullScreenTrueCallback
-     * @tc.desc      : set full screen true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetFullScreenTrueCallback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4100
+     * @tc.desc   set full screen true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetFullScreenTrueCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetFullScreenTrueCallback';
@@ -1977,12 +1978,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4200
-     * @tc.name      : testSetFullScreenFalsePromise
-     * @tc.desc      : set full screen false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetFullScreenFalsePromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4200
+     * @tc.desc   set full screen false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetFullScreenFalsePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetFullScreenFalseCallback';
@@ -2006,12 +2007,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4300
-     * @tc.name      : testSetFullScreenTruePromise
-     * @tc.desc      : set full screen true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testSetFullScreenTruePromise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4300
+     * @tc.desc   set full screen true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetFullScreenTruePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetFullScreenTruePromise';
@@ -2035,12 +2036,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4400
-     * @tc.name      : testSetSpecificSystemBarStatus
-     * @tc.desc      : Test the function of setSpecificSystemBarEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetSpecificSystemBarStatus
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4400
+     * @tc.desc   Test the function of setSpecificSystemBarEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSpecificSystemBarStatus',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetSpecificSystemBarStatus';
@@ -2067,12 +2068,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4500
-     * @tc.name      : test_set_WindowSystemBarProperties_statusBar
-     * @tc.desc      : test_set_WindowSystemBarProperties_statusBar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_set_WindowSystemBarProperties_statusBar
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4500
+     * @tc.desc   test_set_WindowSystemBarProperties_statusBar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_set_WindowSystemBarProperties_statusBar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'test_set_WindowSystemBarProperties_statusBar';
@@ -2117,12 +2118,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4600
-     * @tc.name      : test_set_WindowSystemBarProperties_isStatusBarLightIcon
-     * @tc.desc      : test_set_WindowSystemBarProperties_isStatusBarLightIcon
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_set_WindowSystemBarProperties_isStatusBarLightIcon
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4600
+     * @tc.desc   test_set_WindowSystemBarProperties_isStatusBarLightIcon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_set_WindowSystemBarProperties_isStatusBarLightIcon', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'test_set_WindowSystemBarProperties_isStatusBarLightIcon';
@@ -2162,12 +2163,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4700
-     * @tc.name      : test_set_WindowSystemBarProperties_NavigationBar
-     * @tc.desc      : test_set_WindowSystemBarProperties_NavigationBar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_set_WindowSystemBarProperties_NavigationBar
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4700
+     * @tc.desc   test_set_WindowSystemBarProperties_NavigationBar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_set_WindowSystemBarProperties_NavigationBar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'test_set_WindowSystemBarProperties_NavigationBar';
@@ -2212,12 +2213,12 @@ export default function windowImmersiveTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4800
-     * @tc.name      : test_set_WindowSystemBarProperties_isNavigationBarLightIcon
-     * @tc.desc      : test_set_WindowSystemBarProperties_isNavigationBarLightIcon
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_set_WindowSystemBarProperties_isNavigationBarLightIcon
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4800
+     * @tc.desc   test_set_WindowSystemBarProperties_isNavigationBarLightIcon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_set_WindowSystemBarProperties_isNavigationBarLightIcon', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'test_set_WindowSystemBarProperties_isNavigationBarLightIcon';
@@ -2258,9 +2259,12 @@ export default function windowImmersiveTest() {
     })
 
     /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0400
-     * @tc.name      testOnOff_WindowSizeChange_Callback
-     * @tc.desc      To verify the function of enabling and disabling lawful interception in the system and window
+     * @tc.name   testOnOff_WindowSizeChange_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0400
+     * @tc.desc   To verify the function of enabling and disabling lawful interception in the system and window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnOff_WindowSizeChange_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = 'testOnOff_WindowSizeChange_Callback';
@@ -2328,12 +2332,12 @@ export default function windowImmersiveTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_SPECIFIC_SYSTEMBAR_ENABLE_0100
-     * @tc.name      : test_setSpecificSystemBarEnabled_enableAnimation
-     * @tc.desc      : test_setSpecificSystemBarEnabled_enableAnimation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setSpecificSystemBarEnabled_enableAnimation
+     * @tc.number SUB_BASIC_WMS_SET_SPECIFIC_SYSTEMBAR_ENABLE_0100
+     * @tc.desc   test_setSpecificSystemBarEnabled_enableAnimation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setSpecificSystemBarEnabled_enableAnimation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_setSpecificSystemBarEnabled_enableAnimation';
@@ -2365,12 +2369,12 @@ export default function windowImmersiveTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0100
-     * @tc.name       : test_setSystemAvoidAreaEnabled_ErrorCode_401
-     * @tc.desc       : setSystemAvoidAreaEnabled接口验证401
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setSystemAvoidAreaEnabled_ErrorCode_401
+     * @tc.number SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0100
+     * @tc.desc   setSystemAvoidAreaEnabled接口验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSystemAvoidAreaEnabled_ErrorCode_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_setSystemAvoidAreaEnabled_ErrorCode_401!'
@@ -2423,12 +2427,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0200
-     * @tc.name       : test_setSystemAvoidAreaEnabled_ErrorCode_801
-     * @tc.desc       : setSystemAvoidAreaEnabled接口验证801
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setSystemAvoidAreaEnabled_ErrorCode_801
+     * @tc.number SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0200
+     * @tc.desc   setSystemAvoidAreaEnabled接口验证801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSystemAvoidAreaEnabled_ErrorCode_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_setSystemAvoidAreaEnabled_ErrorCode_801!'
@@ -2481,12 +2485,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0300
-     * @tc.name       : test_setSystemAvoidAreaEnabled_ErrorCode_1300002
-     * @tc.desc       : setSystemAvoidAreaEnabled接口验证1300002
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setSystemAvoidAreaEnabled_ErrorCode_1300002
+     * @tc.number SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0300
+     * @tc.desc   setSystemAvoidAreaEnabled接口验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSystemAvoidAreaEnabled_ErrorCode_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_setSystemAvoidAreaEnabled_ErrorCode_1300002!'
@@ -2535,12 +2539,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0400
-     * @tc.name       : test_setSystemAvoidAreaEnabled_ErrorCode_1300004
-     * @tc.desc       : setSystemAvoidAreaEnabled接口验证1300004
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setSystemAvoidAreaEnabled_ErrorCode_1300004
+     * @tc.number SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0400
+     * @tc.desc   setSystemAvoidAreaEnabled接口验证1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSystemAvoidAreaEnabled_ErrorCode_1300004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_setSystemAvoidAreaEnabled_ErrorCode_1300004!'
@@ -2588,12 +2592,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setSystemAvoidAreaEnabled_0100
-     * @tc.name       : test_setSystemAvoidAreaEnabled_dialog
-     * @tc.desc       : dialog调用setSystemAvoidAreaEnabled接口
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setSystemAvoidAreaEnabled_dialog
+     * @tc.number SUB_BASIC_WMS_setSystemAvoidAreaEnabled_0100
+     * @tc.desc   dialog调用setSystemAvoidAreaEnabled接口
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSystemAvoidAreaEnabled_dialog', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_setSystemAvoidAreaEnabled_dialog!'
@@ -2648,12 +2652,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_isSystemAvoidAreaEnabled_ErrorCode_0100
-     * @tc.name       : test_isSystemAvoidAreaEnabled_801
-     * @tc.desc       : isSystemAvoidAreaEnabled接口验证801
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_isSystemAvoidAreaEnabled_801
+     * @tc.number SUB_BASIC_WMS_isSystemAvoidAreaEnabled_ErrorCode_0100
+     * @tc.desc   isSystemAvoidAreaEnabled接口验证801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_isSystemAvoidAreaEnabled_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_isSystemAvoidAreaEnabled_801!'
@@ -2696,12 +2700,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_isSystemAvoidAreaEnabled_ErrorCode_0200
-     * @tc.name       : test_isSystemAvoidAreaEnabled_1300004
-     * @tc.desc       : isSystemAvoidAreaEnabled接口验证1300004
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_isSystemAvoidAreaEnabled_1300004
+     * @tc.number SUB_BASIC_WMS_isSystemAvoidAreaEnabled_ErrorCode_0200
+     * @tc.desc   isSystemAvoidAreaEnabled接口验证1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_isSystemAvoidAreaEnabled_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_isSystemAvoidAreaEnabled_1300004!'
@@ -2742,12 +2746,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_isSystemAvoidAreaEnabled_ErrorCode_0300
-     * @tc.name       : test_isSystemAvoidAreaEnabled_1300002
-     * @tc.desc       : isSystemAvoidAreaEnabled接口验证1300002
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_isSystemAvoidAreaEnabled_1300002
+     * @tc.number SUB_BASIC_WMS_isSystemAvoidAreaEnabled_ErrorCode_0300
+     * @tc.desc   isSystemAvoidAreaEnabled接口验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_isSystemAvoidAreaEnabled_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_isSystemAvoidAreaEnabled_1300002!'
@@ -2789,12 +2793,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
-     * @tc.name      : testIsImmersiveLayoutwithSubWindowDefaultState
-     * @tc.desc      : 验证子窗创建后默认为沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithSubWindowDefaultState
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
+     * @tc.desc   验证子窗创建后默认为沉浸式状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithSubWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithSubWindowDefaultState';
@@ -2821,12 +2825,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0300
-     * @tc.name      : testIsImmersiveLayoutwithFloatWindowDefaultState
-     * @tc.desc      : 验证悬浮窗创建后默认为非沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testIsImmersiveLayoutwithFloatWindowDefaultState1
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0300
+     * @tc.desc   验证悬浮窗创建后默认为非沉浸式状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithFloatWindowDefaultState1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithFloatWindowDefaultState1';
@@ -2864,12 +2868,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0400
-     * @tc.name      : testIsImmersiveLayoutwithDialogWindowDefaultState
-     * @tc.desc      : 验证dialog窗创建后默认为非沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testIsImmersiveLayoutwithDialogWindowDefaultState
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0400
+     * @tc.desc   验证dialog窗创建后默认为非沉浸式状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithDialogWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDialogWindowDefaultState';
@@ -2911,12 +2915,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0500
-     * @tc.name      : testIsImmersiveLayoutwithImmersiveMode
-     * @tc.desc      : 验证非2in1设备setImmersiveModeEnabledState后IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithImmersiveMode
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0500
+     * @tc.desc   验证非2in1设备setImmersiveModeEnabledState后IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithImmersiveMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithImmersiveMode';
@@ -2947,12 +2951,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0600
-     * @tc.name      : testIsImmersiveLayoutwithWindowLayoutFullScreen
-     * @tc.desc      : 验证非2in1setWindowLayoutFullScreen后IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithWindowLayoutFullScreen
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0600
+     * @tc.desc   验证非2in1setWindowLayoutFullScreen后IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithWindowLayoutFullScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithWindowLayoutFullScreen';
@@ -2984,6 +2988,14 @@ export default function windowImmersiveTest() {
       }
     });
 
+    /**
+     * @tc.name   testIsImmersiveLayoutwithMiniMize
+     * @tc.number testIsImmersiveLayoutwithMiniMize
+     * @tc.desc   testIsImmersiveLayoutwithMiniMize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('testIsImmersiveLayoutwithMiniMize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
     //   let caseName = 'testIsImmersiveLayoutwithMiniMize';
     //   // 1、拉起另一个Abllity主窗
@@ -3011,12 +3023,12 @@ export default function windowImmersiveTest() {
     // });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0800
-     * @tc.name      : testIsImmersiveLayoutwithDestroySubWindow
-     * @tc.desc      : 验证销毁后调用IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testIsImmersiveLayoutwithDestroySubWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0800
+     * @tc.desc   验证销毁后调用IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsImmersiveLayoutwithDestroySubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDestroySubWindow';
@@ -3035,12 +3047,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1100
-     * @tc.name      : testIsImmersiveLayoutwithDisableWindowDecor
-     * @tc.desc      : 验证2in1设备和pad自由多窗下，子窗创建标题栏装饰后调用IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithDisableWindowDecor
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1100
+     * @tc.desc   验证2in1设备和pad自由多窗下，子窗创建标题栏装饰后调用IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithDisableWindowDecor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDisableWindowDecor';
@@ -3090,12 +3102,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1200
-     * @tc.name      : testIsImmersiveLayoutwithDisableWindowDecor2
-     * @tc.desc      : 验证2in1设备和pad自由多窗下，子窗创建无标题栏装饰后调用IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithDisableWindowDecor2
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1200
+     * @tc.desc   验证2in1设备和pad自由多窗下，子窗创建无标题栏装饰后调用IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithDisableWindowDecor2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDisableWindowDecor2';
@@ -3141,12 +3153,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1300
-     * @tc.name      : testIsImmersiveLayoutwithImmersiveMode2
-     * @tc.desc      : 验证非2in1设备和pad自由多窗下，子窗setImmersiveModeEnabledState后IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testIsImmersiveLayoutwithImmersiveMode2
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1300
+     * @tc.desc   验证非2in1设备和pad自由多窗下，子窗setImmersiveModeEnabledState后IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsImmersiveLayoutwithImmersiveMode2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithImmersiveMode2';
@@ -3195,12 +3207,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1400
-     * @tc.name      : testIsImmersiveLayoutwithWindowLayoutFullScreen2
-     * @tc.desc      : 验证非2in1设备和pad自由多窗下，子窗setWindowLayoutFullScreen后IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testIsImmersiveLayoutwithWindowLayoutFullScreen2
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1400
+     * @tc.desc   验证非2in1设备和pad自由多窗下，子窗setWindowLayoutFullScreen后IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsImmersiveLayoutwithWindowLayoutFullScreen2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithWindowLayoutFullScreen2';
@@ -3265,12 +3277,12 @@ export default function windowImmersiveTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
-     * @tc.name      : testIsImmersiveLayoutwithSubWindowDefaultState
-     * @tc.desc      : 验证子窗创建后默认为沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithSubWindowDefaultState
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
+     * @tc.desc   验证子窗创建后默认为沉浸式状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithSubWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithSubWindowDefaultState';
@@ -3297,12 +3309,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0300
-     * @tc.name      : testIsImmersiveLayoutwithFloatWindowDefaultState
-     * @tc.desc      : 验证悬浮窗创建后默认为非沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testIsImmersiveLayoutwithFloatWindowDefaultState
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0300
+     * @tc.desc   验证悬浮窗创建后默认为非沉浸式状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithFloatWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithFloatWindowDefaultState';
@@ -3340,12 +3352,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0400
-     * @tc.name      : testIsImmersiveLayoutwithDialogWindowDefaultState
-     * @tc.desc      : 验证dialog窗创建后默认为非沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testIsImmersiveLayoutwithDialogWindowDefaultState
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0400
+     * @tc.desc   验证dialog窗创建后默认为非沉浸式状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsImmersiveLayoutwithDialogWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDialogWindowDefaultState';
@@ -3387,12 +3399,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0500
-     * @tc.name      : testIsImmersiveLayoutwithImmersiveMode
-     * @tc.desc      : 验证非2in1设备setImmersiveModeEnabledState后IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithImmersiveMode
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0500
+     * @tc.desc   验证非2in1设备setImmersiveModeEnabledState后IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithImmersiveMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithImmersiveMode';
@@ -3423,12 +3435,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0600
-     * @tc.name      : testIsImmersiveLayoutwithWindowLayoutFullScreen
-     * @tc.desc      : 验证非2in1setWindowLayoutFullScreen后IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsImmersiveLayoutwithWindowLayoutFullScreen
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0600
+     * @tc.desc   验证非2in1setWindowLayoutFullScreen后IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsImmersiveLayoutwithWindowLayoutFullScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithWindowLayoutFullScreen';
@@ -3460,6 +3472,14 @@ export default function windowImmersiveTest() {
       }
     });
 
+    /**
+     * @tc.name   testIsImmersiveLayoutwithMiniMize
+     * @tc.number testIsImmersiveLayoutwithMiniMize
+     * @tc.desc   testIsImmersiveLayoutwithMiniMize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('testIsImmersiveLayoutwithMiniMize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
     //   let caseName = 'testIsImmersiveLayoutwithMiniMize';
     //   // 1、拉起另一个Abllity主窗
@@ -3487,12 +3507,12 @@ export default function windowImmersiveTest() {
     // });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0800
-     * @tc.name      : testIsImmersiveLayoutwithDestroySubWindow
-     * @tc.desc      : 验证销毁后调用IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testIsImmersiveLayoutwithDestroySubWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0800
+     * @tc.desc   验证销毁后调用IsImmersiveLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsImmersiveLayoutwithDestroySubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDestroySubWindow';
@@ -3510,55 +3530,52 @@ export default function windowImmersiveTest() {
       }
     });
 
+    
     /**
-     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0100
-     * @tc.name      : testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility
-     * @tc.desc      : 横验证在自由多窗模式下全屏窗口调用getWindowAvoidAreaIgnoringVisibility接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_ROTATION_AVOIDAREACHANGE_1000
+     * @tc.name       testWindowAvoidareaChangeCutout_0100
+     * @tc.desc       横屏冷启动旋转窗口，正确获取挖孔避让区域
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility';
-      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-      let windowStageStart = await startAbility7(caseName, context);
-      let windowClass = windowStageStart.getMainWindowSync();
-      let isInFreeWindowMode = windowClass.isInFreeWindowMode();
-      console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
-      try {
+    it('testWindowAvoidareaChangeCutout_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testWindowAvoidareaChangeCutout_0100';
+      if (isSupportRotate) {
+        let windowStageStart = await startAbility7(caseName, context);
+        let windowClass = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+        console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
         if (isInFreeWindowMode) {
-          await windowClass.maximize();
-          const mainWindowProperties = windowClass.getWindowProperties();
-          const mainWindowRect = mainWindowProperties.windowRect;
-          console.info(caseName + ' Main window rect: ' + JSON.stringify(mainWindowRect));
-          let subWindow = await windowStageStart.createSubWindow(caseName);
-          await subWindow.resize(mainWindowRect.width, mainWindowRect.height);
-          await subWindow.moveWindowTo(mainWindowRect.left, mainWindowRect.top);
-          console.info(caseName + ' Sub window resized and moved to match main window');
-          await subWindow.setUIContent("testability/pages/First/index2");
-          await subWindow.showWindow();
-          let avoidArea = subWindow.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
-          console.info(caseName + ' avoidArea: ' + JSON.stringify(avoidArea));
-          expect(avoidArea.leftRect.width).assertEqual(0);
-          expect(avoidArea.leftRect.height).assertEqual(0);
-          expect(avoidArea.rightRect.width).assertEqual(0);
-          expect(avoidArea.rightRect.height).assertEqual(0);
-          expect(avoidArea.topRect.width).assertEqual(0);
-          expect(avoidArea.topRect.height).assertEqual(0);
-          expect(avoidArea.bottomRect.width).assertEqual(0);
-          expect(avoidArea.bottomRect.height).assertEqual(0);
-          await subWindow.destroyWindow();
-          await terminateAbility7(caseName);
-          done()
-        } else {
           await terminateAbility7(caseName);
           done();
+        } else {
+          let displayClass = display.getDefaultDisplaySync();
+          let cutoutInfo = await displayClass.getCutoutInfo();
+          let arrayRect = cutoutInfo.boundingRects;
+          console.info(caseName + ' arrayRect: ' + JSON.stringify(arrayRect));
+          if (arrayRect.length == 0) {
+            await terminateAbility7(caseName);
+            done();
+          } else {
+            windowClass.on('avoidAreaChange', async (data) => {
+              console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
+            ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
+              if(data.type == window.AvoidAreaType.TYPE_CUTOUT) {
+                expect(data.area!= null).assertTrue();
+                windowClass.off('avoidAreaChange');
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                await sleep(1000);
+                await terminateAbility7(caseName);
+                done();
+              } else {
+                await sleep(3000)
+              }
+            });
+            await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
+          }
         }
-      } catch (err) {
-        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        expect().assertFail();
-        await terminateAbility7(caseName);
+      } else {
         done();
       }
     });

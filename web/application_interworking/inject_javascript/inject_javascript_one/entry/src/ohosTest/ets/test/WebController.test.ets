@@ -57,28 +57,28 @@ export default function webController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_REGISTERJAVASCRIPTPROXY_0100
-    * @tc.name       : testRegisterJavaScriptProxy001
-    * @tc.desc       : test registerJavaScriptProxy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRegisterJavaScriptProxy001
+     * @tc.number SUB_WEB_REGISTERJAVASCRIPTPROXY_0100
+     * @tc.desc   test registerJavaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRegisterJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRegisterJavaScriptProxy001", 172180)
       Utils.registerEvent("testRegisterJavaScriptProxy001", "backToEts", 172190, done);
       await Utils.waitAndClickComponent(driver, 'WebControllerButton');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DELETEJAVASCRIPTREGISTER_0100
-    * @tc.name       : testDeleteJavaScriptRegister001
-    * @tc.desc       : test deleteJavaScriptRegister
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDeleteJavaScriptRegister001
+     * @tc.number SUB_WEB_DELETEJAVASCRIPTREGISTER_0100
+     * @tc.desc   test deleteJavaScriptRegister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDeleteJavaScriptRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDeleteJavaScriptRegister001", 172180)
       Utils.registerEvent("testDeleteJavaScriptRegister001", true, 172200, done);

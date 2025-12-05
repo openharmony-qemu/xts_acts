@@ -19,7 +19,6 @@ import { SyscapChecker } from './SyscapChecker.test';
 export default function CApiGamePadEventTest() {
   describe('CApiGamePadEventTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetDeviceId01
      * @tc.number OH_GamePad_ButtonEvent_GetDeviceId01
      * @tc.desc   GetDeviceId success
@@ -35,7 +34,6 @@ export default function CApiGamePadEventTest() {
       expect(ret).assertEqual(0);
     });
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetDeviceId02
      * @tc.number OH_GamePad_ButtonEvent_GetDeviceId02
      * @tc.desc   GetDeviceId failed when buttonEvent is null
@@ -52,7 +50,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetDeviceId03
      * @tc.number OH_GamePad_ButtonEvent_GetDeviceId03
      * @tc.desc   GetDeviceId failed when deviceId is nullptr
@@ -69,7 +66,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetButtonAction01
      * @tc.number OH_GamePad_ButtonEvent_GetButtonAction01
      * @tc.desc   GetButtonAction success
@@ -86,7 +82,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetButtonAction02
      * @tc.number OH_GamePad_ButtonEvent_GetButtonAction02
      * @tc.desc   GetButtonAction failed when buttonEvent is null
@@ -103,7 +98,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetButtonCode01
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCode01
      * @tc.desc   GetButtonCode success
@@ -120,7 +114,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetButtonCode02
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCode02
      * @tc.desc   GetButtonCode failed when buttonEvent is null
@@ -137,7 +130,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetButtonCodeName01
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCodeName01
      * @tc.desc   GetButtonCodeName success
@@ -154,7 +146,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetButtonCodeName02
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCodeName02
      * @tc.desc   GetButtonCodeName failed when buttonEvent is null
@@ -171,7 +162,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetButtonCodeName03
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCodeName03
      * @tc.desc   GetButtonCodeName failed when codeName is null
@@ -188,7 +178,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButtons_GetCount01
      * @tc.number OH_GamePad_PressedButtons_GetCount01
      * @tc.desc   PressedButtons_GetCount success
@@ -205,7 +194,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButtons_GetCount02
      * @tc.number OH_GamePad_PressedButtons_GetCount02
      * @tc.desc   PressedButtons_GetCount failed when buttonEvent is null
@@ -222,7 +210,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo01
      * @tc.number OH_GamePad_PressedButtons_GetButtonInfo01
      * @tc.desc   GetButtonInfo success
@@ -239,7 +226,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo02
      * @tc.number OH_GamePad_PressedButtons_GetButtonInfo02
      * @tc.desc   GetButtonInfo failed when buttonEvent is null
@@ -256,7 +242,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo03
      * @tc.number OH_GamePad_PressedButtons_GetButtonInfo03
      * @tc.desc   GetButtonInfo failed when index is more than count
@@ -273,7 +258,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo04
      * @tc.number OH_GamePad_PressedButtons_GetButtonInfo04
      * @tc.desc   GetButtonInfo failed when index is less than 0
@@ -290,7 +274,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_DestroyPressedButton01
      * @tc.number OH_GamePad_DestroyPressedButton01
      * @tc.desc   DestroyPressedButton success
@@ -307,7 +290,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_DestroyPressedButton02
      * @tc.number OH_GamePad_DestroyPressedButton02
      * @tc.desc   DestroyPressedButton failed when pressedButton is null
@@ -324,7 +306,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButton_GetButtonCode01
      * @tc.number OH_GamePad_PressedButton_GetButtonCode01
      * @tc.desc   PressedButton_GetButtonCode success
@@ -341,7 +322,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButton_GetButtonCode02
      * @tc.number OH_GamePad_PressedButton_GetButtonCode02
      * @tc.desc   PressedButton_GetButtonCode failed when pressedButton is null
@@ -358,7 +338,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButton_GetButtonCodeName01
      * @tc.number OH_GamePad_PressedButton_GetButtonCodeName01
      * @tc.desc   PressedButton_GetButtonCodeName success
@@ -376,7 +355,6 @@ export default function CApiGamePadEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButton_GetButtonCodeName02
      * @tc.number OH_GamePad_PressedButton_GetButtonCodeName02
      * @tc.desc   PressedButton_GetButtonCodeName failed when pressedButton is null
@@ -394,7 +372,6 @@ export default function CApiGamePadEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_PressedButton_GetButtonCodeName03
      * @tc.number OH_GamePad_PressedButton_GetButtonCodeName03
      * @tc.desc   PressedButton_GetButtonCodeName failed when codeName is null
@@ -412,7 +389,6 @@ export default function CApiGamePadEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetActionTime01
      * @tc.number OH_GamePad_ButtonEvent_GetActionTime01
      * @tc.desc   ButtonEvent_GetActionTime success
@@ -429,7 +405,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_ButtonEvent_GetActionTime02
      * @tc.number OH_GamePad_ButtonEvent_GetActionTime02
      * @tc.desc   ButtonEvent_GetActionTime failed when buttonEvent is null
@@ -446,7 +421,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetDeviceId01
      * @tc.number OH_GamePad_AxisEvent_GetDeviceId01
      * @tc.desc   GetDeviceId success
@@ -463,7 +437,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetDeviceId02
      * @tc.number OH_GamePad_AxisEvent_GetDeviceId02
      * @tc.desc   GetDeviceId failed when axisEvent is null
@@ -480,7 +453,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetDeviceId03
      * @tc.number OH_GamePad_AxisEvent_GetDeviceId03
      * @tc.desc   GetDeviceId failed when deviceId is null
@@ -497,7 +469,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetAxisSourceType01
      * @tc.number OH_GamePad_AxisEvent_GetAxisSourceType01
      * @tc.desc   AxisEvent_GetAxisSourceType sucess
@@ -514,7 +485,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetAxisSourceType02
      * @tc.number OH_GamePad_AxisEvent_GetAxisSourceType02
      * @tc.desc   AxisEvent_GetAxisSourceType failed when axisEvent is null
@@ -531,7 +501,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetXAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetXAxisValue01
      * @tc.desc   AxisEvent_GetXAxisValue success
@@ -548,7 +517,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetXAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetXAxisValue02
      * @tc.desc   AxisEvent_GetXAxisValue failed when axisEvent is null
@@ -565,7 +533,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetYAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetYAxisValue01
      * @tc.desc   AxisEvent_GetYAxisValue success
@@ -582,7 +549,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetYAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetYAxisValue02
      * @tc.desc   AxisEvent_GetYAxisValue failed when axisEvent is null
@@ -599,7 +565,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetZAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetZAxisValue01
      * @tc.desc   AxisEvent_GetZAxisValue success
@@ -616,7 +581,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetZAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetZAxisValue02
      * @tc.desc   AxisEvent_GetZAxisValue failed when axisEvent is null
@@ -633,7 +597,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetRZAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetRZAxisValue01
      * @tc.desc   AxisEvent_GetRZAxisValue success
@@ -650,7 +613,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetRZAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetRZAxisValue02
      * @tc.desc   AxisEvent_GetRZAxisValue failed when axisEvent is null
@@ -667,7 +629,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetHatXAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetHatXAxisValue01
      * @tc.desc   AxisEvent_GetHatXAxisValue success
@@ -684,7 +645,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetHatXAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetHatXAxisValue02
      * @tc.desc   AxisEvent_GetHatXAxisValue failed when axisEvent is null
@@ -701,7 +661,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetHatYAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetHatYAxisValue01
      * @tc.desc   AxisEvent_GetHatYAxisValue success
@@ -718,7 +677,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetHatYAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetHatYAxisValue02
      * @tc.desc   AxisEvent_GetHatYAxisValue failed when axisEvent is null
@@ -735,7 +693,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetBrakeAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetBrakeAxisValue01
      * @tc.desc   AxisEvent_GetBrakeAxisValue success
@@ -752,7 +709,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetBrakeAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetBrakeAxisValue02
      * @tc.desc   AxisEvent_GetBrakeAxisValue failed when axisEvent is null
@@ -769,7 +725,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetGasAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetGasAxisValue01
      * @tc.desc   AxisEvent_GetGasAxisValue success
@@ -786,7 +741,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetGasAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetGasAxisValue02
      * @tc.desc   AxisEvent_GetGasAxisValue failed when axisEvent is null
@@ -803,7 +757,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetActionTime01
      * @tc.number OH_GamePad_AxisEvent_GetActionTime01
      * @tc.desc   AxisEvent_GetActionTime success
@@ -820,7 +773,6 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GamePad_AxisEvent_GetActionTime02
      * @tc.number OH_GamePad_AxisEvent_GetActionTime02
      * @tc.desc   AxisEvent_GetActionTime failed when axisEvent is null

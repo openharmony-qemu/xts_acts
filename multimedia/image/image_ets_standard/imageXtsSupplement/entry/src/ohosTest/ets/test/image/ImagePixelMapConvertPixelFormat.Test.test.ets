@@ -42,12 +42,12 @@ export default function ImagePixelMapConvertPixelFormatTest() {
 
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_001
-     * @tc.name       IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_001
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_001
+     * @tc.number IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_001
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_001';
@@ -72,12 +72,12 @@ export default function ImagePixelMapConvertPixelFormatTest() {
 
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_002
-     * @tc.name       IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_002
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_002
+     * @tc.number IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_002
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_002';
@@ -100,12 +100,12 @@ export default function ImagePixelMapConvertPixelFormatTest() {
     })
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_003
-     * @tc.name       IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_003
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_003
+     * @tc.number IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_003
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_003';
@@ -126,15 +126,15 @@ export default function ImagePixelMapConvertPixelFormatTest() {
         done();
       }
     })
-    /**
-     * @tc.number     IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_004
-     * @tc.name       IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_004
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_004
+     * @tc.number IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_004
+     * @tc.desc   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_004';
       const path = 'test8.png';
@@ -155,15 +155,15 @@ export default function ImagePixelMapConvertPixelFormatTest() {
       }
     })
 
-    /**
-     * @tc.number     IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_005
-     * @tc.name       IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_005
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_005
+     * @tc.number IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_005
+     * @tc.desc   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_005';
       const path = 'test8.png';
@@ -185,15 +185,15 @@ export default function ImagePixelMapConvertPixelFormatTest() {
     })
 
 
-    /**
-     * @tc.number     IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_006
-     * @tc.name       IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_006
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_006
+     * @tc.number IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_006
+     * @tc.desc   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_006';
       const path = 'test8.png';
@@ -214,15 +214,15 @@ export default function ImagePixelMapConvertPixelFormatTest() {
       }
     })
 
-    /**
-     * @tc.number     IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_007
-     * @tc.name       IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_007
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_007
+     * @tc.number IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_007
+     * @tc.desc   IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CONVERT_PIXEL_FORMAT_007';
       const path = 'test8.png';

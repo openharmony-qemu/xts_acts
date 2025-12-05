@@ -52,14 +52,14 @@ export default function ActsAceWebViewGetSecurityLevel() {
     });
 
 
-    /*
-       *@tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0001
-       *@tc.name testWebViewGetSecurityLevelNoneStatic
-       *@tc.desc test getSecurityLevel NONE 0
-       *@tc.size MediumTest
-       *@tc.type Function
-       *@tc.level Level 0
-       */
+    /**
+     * @tc.name   testWebViewGetSecurityLevelNoneStatic
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0001
+     * @tc.desc   test getSecurityLevel NONE 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebViewGetSecurityLevelNoneStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       emitKey = 'emitWebViewGetSecurityLevel01'

@@ -59,12 +59,12 @@ export default function httpJsunit() {
     let ttl_undefined = undefined;
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_CreateHttp_0100
-     * @tc.name: testNetworkMgrHttpCreateHttp0100
-     * @tc.desc: Test Create HTTP authentication.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpCreateHttp0100
+     * @tc.number SUB_NetworkMgr_Http_CreateHttp_0100
+     * @tc.desc   Test Create HTTP authentication.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpCreateHttp0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let  caseName: string = 'testNetworkMgrHttpCreateHttp0100';
@@ -83,12 +83,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_GetDefaultNetSync_0100
-     * @tc.name: testNetworkMgrHttpGetDefaultNetSync0100
-     * @tc.desc: Test getDefaultNetSync() to check return value
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpGetDefaultNetSync0100
+     * @tc.number SUB_NetworkMgr_Http_GetDefaultNetSync_0100
+     * @tc.desc   Test getDefaultNetSync() to check return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpGetDefaultNetSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpGetDefaultNetSync0100';
@@ -113,12 +113,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_IsDefaultNetMetered_Async_0100
-     * @tc.name: testNetworkMgrIsDefaultNetMeteredAsync0100
-     * @tc.desc: Test isDefaultNetMetered() to check return value
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrIsDefaultNetMeteredAsync0100
+     * @tc.number SUB_NetworkMgr_IsDefaultNetMetered_Async_0100
+     * @tc.desc   Test isDefaultNetMetered() to check return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrIsDefaultNetMeteredAsync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrIsDefaultNetMeteredAsync0100';
@@ -145,12 +145,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_IsDefaultNetMetered_Promise_0100
-     * @tc.name: testNetworkMgrIsDefaultNetMeteredPromise0100
-     * @tc.desc: Test isDefaultNetMetered() to check return value
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrIsDefaultNetMeteredPromise0100
+     * @tc.number SUB_NetworkMgr_IsDefaultNetMetered_Promise_0100
+     * @tc.desc   Test isDefaultNetMetered() to check return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrIsDefaultNetMeteredPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrIsDefaultNetMeteredPromise0100';
@@ -175,12 +175,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_GetDefaultHttpProxy_Async_0100
-     * @tc.name: testNetworkMgrGetDefaultHttpProxyAsync0100
-     * @tc.desc: Test getDefaultHttpProxy() to check return value
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrGetDefaultHttpProxyAsync0100
+     * @tc.number SUB_NetworkMgr_GetDefaultHttpProxy_Async_0100
+     * @tc.desc   Test getDefaultHttpProxy() to check return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrGetDefaultHttpProxyAsync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrGetDefaultHttpProxyAsync0100';
@@ -207,12 +207,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_GetDefaultHttpProxy_Promise_0100
-     * @tc.name: testNetworkMgrGetDefaultHttpProxyPromise0100
-     * @tc.desc: Test getDefaultHttpProxy() to check return value
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrGetDefaultHttpProxyPromise0100
+     * @tc.number SUB_NetworkMgr_GetDefaultHttpProxy_Promise_0100
+     * @tc.desc   Test getDefaultHttpProxy() to check return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrGetDefaultHttpProxyPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrGetDefaultHttpProxyPromise0100';
@@ -239,12 +239,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_GetDefaultHttpProxy_Async_0200
-     * @tc.name: testNetworkMgrGetDefaultHttpProxyAsync0200
-     * @tc.desc: Test getDefaultHttpProxy() to check return value
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrGetDefaultHttpProxyAsync0200
+     * @tc.number SUB_NetworkMgr_GetDefaultHttpProxy_Async_0200
+     * @tc.desc   Test getDefaultHttpProxy() to check return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrGetDefaultHttpProxyAsync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrGetDefaultHttpProxyAsync0200';
@@ -288,12 +288,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_GetDefaultHttpProxy_Promise_0200
-     * @tc.name: testNetworkMgrGetDefaultHttpProxyPromise0200
-     * @tc.desc: Test getDefaultHttpProxy() to check return value
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrGetDefaultHttpProxyPromise0200
+     * @tc.number SUB_NetworkMgr_GetDefaultHttpProxy_Promise_0200
+     * @tc.desc   Test getDefaultHttpProxy() to check return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrGetDefaultHttpProxyPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrGetDefaultHttpProxyPromise0200';
@@ -335,12 +335,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Connection_Request_Socket_0100
-     * @tc.name: testNetworkMgrConnectionRequestSocket0100
-     * @tc.desc: Create socket and HttpRequest success
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrConnectionRequestSocket0100
+     * @tc.number SUB_NetworkMgr_Connection_Request_Socket_0100
+     * @tc.desc   Create socket and HttpRequest success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionRequestSocket0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrConnectionRequestSocket0100';
@@ -366,12 +366,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0100
-     * @tc.name: testNetworkMgrUDPSocketAddMembershipPromise0100
-     * @tc.desc: Test addMembership property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketAddMembershipPromise0100
+     * @tc.number SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0100
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketAddMembershipPromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketAddMembershipPromise0100";
@@ -396,12 +396,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0200
-     * @tc.name: testNetworkMgrUDPSocketAddMembershipPromise0200
-     * @tc.desc: Test addMembership property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketAddMembershipPromise0200
+     * @tc.number SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0200
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketAddMembershipPromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketAddMembershipPromise0200";
@@ -426,12 +426,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0300
-     * @tc.name: testNetworkMgrUDPSocketAddMembershipPromise0300
-     * @tc.desc: Test addMembership property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketAddMembershipPromise0300
+     * @tc.number SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0300
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketAddMembershipPromise0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketAddMembershipPromise0300";
@@ -456,12 +456,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0400
-     * @tc.name: testNetworkMgrUDPSocketAddMembershipPromise0400
-     * @tc.desc: Test addMembership property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketAddMembershipPromise0400
+     * @tc.number SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0400
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketAddMembershipPromise0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketAddMembershipPromise0400";
@@ -486,12 +486,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0100
-     * @tc.name: testNetworkMgrUDPSocketSetMulticastTTLPromise0100
-     * @tc.desc: Test setMulticastTTL property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0100
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0100
+     * @tc.desc   Test setMulticastTTL property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketSetMulticastTTLPromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketSetMulticastTTLPromise0100";
@@ -516,12 +516,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0200
-     * @tc.name: testNetworkMgrUDPSocketSetMulticastTTLPromise0200
-     * @tc.desc: Test setMulticastTTL property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0200
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0200
+     * @tc.desc   Test setMulticastTTL property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketSetMulticastTTLPromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketSetMulticastTTLPromise0200";
@@ -546,12 +546,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0300
-     * @tc.name: testNetworkMgrUDPSocketSetMulticastTTLPromise0300
-     * @tc.desc: Test setMulticastTTL401 property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0300
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0300
+     * @tc.desc   Test setMulticastTTL401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketSetMulticastTTLPromise0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketSetMulticastTTLPromise0300";
@@ -576,12 +576,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_GetMulticastTTL_Promise_0100
-     * @tc.name: testNetworkMgrUDPSocketGetMulticastTTLPromise0100
-     * @tc.desc: Test getMulticastTTL property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketGetMulticastTTLPromise0100
+     * @tc.number SUB_NetworkMgr_UDPSocket_GetMulticastTTL_Promise_0100
+     * @tc.desc   Test getMulticastTTL property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketGetMulticastTTLPromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketGetMulticastTTLPromise0100";
@@ -606,12 +606,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0100
-     * @tc.name: testNetworkMgrUDPSocketSetLoopbackModePromise0100
-     * @tc.desc: Test setLoopbackMode property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0100
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0100
+     * @tc.desc   Test setLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketSetLoopbackModePromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketSetLoopbackModePromise0100";
@@ -636,12 +636,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0200
-     * @tc.name: testNetworkMgrUDPSocketSetLoopbackModePromise0200
-     * @tc.desc: Test setLoopbackMode property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0200
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0200
+     * @tc.desc   Test setLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketSetLoopbackModePromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketSetLoopbackModePromise0200";
@@ -666,12 +666,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0300
-     * @tc.name: testNetworkMgrUDPSocketSetLoopbackModePromise0300
-     * @tc.desc: Test setLoopbackMode401 property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0300
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0300
+     * @tc.desc   Test setLoopbackMode401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketSetLoopbackModePromise0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketSetLoopbackModePromise0300";
@@ -696,12 +696,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_GetLoopbackMode_Promise_0100
-     * @tc.name: testNetworkMgrUDPSocketGetLoopbackModePromise0100
-     * @tc.desc: Test getLoopbackMode property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketGetLoopbackModePromise0100
+     * @tc.number SUB_NetworkMgr_UDPSocket_GetLoopbackMode_Promise_0100
+     * @tc.desc   Test getLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketGetLoopbackModePromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketGetLoopbackModePromise0100";
@@ -735,12 +735,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_GetLoopbackMode_Promise_0200
-     * @tc.name: testNetworkMgrUDPSocketGetLoopbackModePromise0200
-     * @tc.desc: Test getLoopbackMode property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketGetLoopbackModePromise0200
+     * @tc.number SUB_NetworkMgr_UDPSocket_GetLoopbackMode_Promise_0200
+     * @tc.desc   Test getLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketGetLoopbackModePromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketGetLoopbackModePromise0200";
@@ -774,12 +774,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0100
-     * @tc.name: testNetworkMgrUDPSocketDropMembershipPromise0100
-     * @tc.desc: Test dropMembership property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketDropMembershipPromise0100
+     * @tc.number SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0100
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketDropMembershipPromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketDropMembershipPromise0100";
@@ -806,12 +806,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0200
-     * @tc.name: testNetworkMgrUDPSocketDropMembershipPromise0200
-     * @tc.desc: Test dropMembership property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketDropMembershipPromise0200
+     * @tc.number SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0200
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketDropMembershipPromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketDropMembershipPromise0200";
@@ -836,12 +836,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0300
-     * @tc.name: testNetworkMgrUDPSocketDropMembershipPromise0300
-     * @tc.desc: Test dropMembership property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketDropMembershipPromise0300
+     * @tc.number SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0300
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketDropMembershipPromise0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketDropMembershipPromise0300";
@@ -866,12 +866,12 @@ export default function httpJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0400
-     * @tc.name: testNetworkMgrUDPSocketDropMembershipPromise0400
-     * @tc.desc: Test dropMembership401 property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrUDPSocketDropMembershipPromise0400
+     * @tc.number SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0400
+     * @tc.desc   Test dropMembership401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrUDPSocketDropMembershipPromise0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrUDPSocketDropMembershipPromise0400";

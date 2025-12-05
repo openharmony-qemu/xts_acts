@@ -204,12 +204,12 @@ export default function QueryKeyTest() {
     };
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0100
-     * @tc.name       : testTelephonyContactQueryKey0100
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryKey0100
+     * @tc.number SUB_Telephony_Contact_QueryKey_0100
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryKey0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0100";
@@ -247,12 +247,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0200
-     * @tc.name       : testTelephonyContactQueryKey0200
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey0200
+     * @tc.number SUB_Telephony_Contact_QueryKey_0200
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0200";
@@ -279,12 +279,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0300
-     * @tc.name       : testTelephonyContactQueryKey0300
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey0300
+     * @tc.number SUB_Telephony_Contact_QueryKey_0300
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0300";
@@ -311,12 +311,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0400
-     * @tc.name       : testTelephonyContactQueryKey0400
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey0400
+     * @tc.number SUB_Telephony_Contact_QueryKey_0400
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0400";
@@ -343,12 +343,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0500
-     * @tc.name       : testTelephonyContactQueryKey0500
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryKey0500
+     * @tc.number SUB_Telephony_Contact_QueryKey_0500
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryKey0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0500";
@@ -385,12 +385,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0600
-     * @tc.name       : testTelephonyContactQueryKey0600
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey0600
+     * @tc.number SUB_Telephony_Contact_QueryKey_0600
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0600";
@@ -431,12 +431,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0700
-     * @tc.name       : testTelephonyContactQueryKey0700
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey0700
+     * @tc.number SUB_Telephony_Contact_QueryKey_0700
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0700";
@@ -478,12 +478,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0800
-     * @tc.name       : testTelephonyContactQueryKey0800
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey0800
+     * @tc.number SUB_Telephony_Contact_QueryKey_0800
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0800";
@@ -510,12 +510,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_0900
-     * @tc.name       : testTelephonyContactQueryKey0900
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey0900
+     * @tc.number SUB_Telephony_Contact_QueryKey_0900
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey0900";
@@ -542,12 +542,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1000
-     * @tc.name       : testTelephonyContactQueryKey1000
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1000
+     * @tc.number SUB_Telephony_Contact_QueryKey_1000
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1000";
@@ -574,12 +574,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1100
-     * @tc.name       : testTelephonyContactQueryKey1100
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1100
+     * @tc.number SUB_Telephony_Contact_QueryKey_1100
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1100";
@@ -610,12 +610,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1200
-     * @tc.name       : testTelephonyContactQueryKey1200
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1200
+     * @tc.number SUB_Telephony_Contact_QueryKey_1200
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1200";
@@ -642,12 +642,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1300
-     * @tc.name       : testTelephonyContactQueryKey1300
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1300
+     * @tc.number SUB_Telephony_Contact_QueryKey_1300
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1300";
@@ -688,12 +688,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1400
-     * @tc.name       : testTelephonyContactQueryKey1400
-     * @tc.desc       : Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1400
+     * @tc.number SUB_Telephony_Contact_QueryKey_1400
+     * @tc.desc   Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1400";
@@ -730,12 +730,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1500
-     * @tc.name       : testTelephonyContactQueryKey1500
-     * @tc.desc       : Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1500
+     * @tc.number SUB_Telephony_Contact_QueryKey_1500
+     * @tc.desc   Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1500";
@@ -776,12 +776,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1600
-     * @tc.name       : testTelephonyContactQueryKey1600
-     * @tc.desc       : Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1600
+     * @tc.number SUB_Telephony_Contact_QueryKey_1600
+     * @tc.desc   Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1600";
@@ -822,12 +822,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1700
-     * @tc.name       : testTelephonyContactQueryKey1700
-     * @tc.desc       : Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1700
+     * @tc.number SUB_Telephony_Contact_QueryKey_1700
+     * @tc.desc   Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1700";
@@ -853,12 +853,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1800
-     * @tc.name       : testTelephonyContactQueryKey1800
-     * @tc.desc       : Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1800
+     * @tc.number SUB_Telephony_Contact_QueryKey_1800
+     * @tc.desc   Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1800";
@@ -884,12 +884,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_1900
-     * @tc.name       : testTelephonyContactQueryKey1900
-     * @tc.desc       : Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey1900
+     * @tc.number SUB_Telephony_Contact_QueryKey_1900
+     * @tc.desc   Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey1900";
@@ -915,12 +915,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_2000
-     * @tc.name       : testTelephonyContactQueryKey2000
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey2000
+     * @tc.number SUB_Telephony_Contact_QueryKey_2000
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey2000";
@@ -951,12 +951,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_2100
-     * @tc.name       : testTelephonyContactQueryKey2100
-     * @tc.desc       : Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey2100
+     * @tc.number SUB_Telephony_Contact_QueryKey_2100
+     * @tc.desc   Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey2100";
@@ -982,12 +982,12 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_2200
-     * @tc.name       : testTelephonyContactQueryKey2200
-     * @tc.desc       : Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryKey2200
+     * @tc.number SUB_Telephony_Contact_QueryKey_2200
+     * @tc.desc   Query the key of a contact based on their ID and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryKey2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey2200";
@@ -1029,12 +1029,12 @@ export default function QueryKeyTest() {
     });
     // 7版本
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryKey_2300
-     * @tc.name       : testTelephonyContactQueryKey2300
-     * @tc.desc       : Query the key of a contact based on their ID and use the callback method as an asynchronous method. (deprecated)7+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryKey2300
+     * @tc.number SUB_Telephony_Contact_QueryKey_2300
+     * @tc.desc   Query the key of a contact based on their ID and use the callback method as an asynchronous method. (deprecated)7+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryKey2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryKey2300";

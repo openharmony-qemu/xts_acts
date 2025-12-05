@@ -26,12 +26,12 @@ export default function timesNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIMES_TIMES_0100
-     * @tc.name       : testMuslTimesTimes001
-     * @tc.desc       : test timess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimesTimes001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMES_TIMES_0100
+     * @tc.desc   test timess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimesTimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = times.times();

@@ -60,14 +60,14 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
     })
 
 
-    /*
- * @tc.number      : SUB_ACE_WEB_SdkSchemeHandler_isEof_false_API_0001
- * @tc.name        : testWebViewSdkSchemeHandler_isEof_false_Static
- * @tc.desc        : test SdkSchemeHandler_isEof_false
- * @tc.size        : MediumTest
- * @tc.type        : Function
- * @tc.level       : Level 3
- */
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isEof_false_Static
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isEof_false_API_0001
+     * @tc.desc   test SdkSchemeHandler_isEof_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebViewSdkSchemeHandler_isEof_false_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       emitKey = 'emitWebViewSdkSchemeHandler_isEof_false'
       Utils.emitEvent(emitKey, 10);

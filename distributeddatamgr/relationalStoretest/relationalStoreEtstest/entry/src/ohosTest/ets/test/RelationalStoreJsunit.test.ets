@@ -56,7 +56,6 @@ export default function relationalStoreTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_0900
      * @tc.desc   RelationalStore store getRdbStore test
@@ -80,7 +79,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1000
      * @tc.desc   RelationalStore store getRdbStore and create table
@@ -106,7 +104,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1100
      * @tc.desc   RelationalStore store getRdbStore with wrong path
@@ -138,7 +135,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1200
      * @tc.desc   RelationalStore store deleteRdbStore
@@ -160,7 +156,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1300
      * @tc.desc   RelationalStore store deleteRdbStore
@@ -183,7 +178,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1400
      * @tc.desc   RelationalStore store getRdbStore test
@@ -213,7 +207,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1500
      * @tc.desc   RelationalStore store getRdbStore test
@@ -243,7 +236,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1600
      * @tc.desc   RelationalStore store deleteRdbStore test
@@ -265,7 +257,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1700
      * @tc.desc   RelationalStore store deleteRdbStore test
@@ -287,7 +278,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1800
      * @tc.desc   relational version
@@ -321,7 +311,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_1900
      * @tc.desc   relational version
@@ -361,7 +350,6 @@ export default function relationalStoreTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2000
      * @tc.desc   relational version
@@ -399,7 +387,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2100
      * @tc.desc   relational version
@@ -437,7 +424,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2200
      * @tc.desc   relational version
@@ -475,7 +461,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2300
      * @tc.desc   relational version
@@ -514,7 +499,6 @@ export default function relationalStoreTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2400
      * @tc.desc   relational version
@@ -553,7 +537,6 @@ export default function relationalStoreTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2500
      * @tc.desc   relational version
@@ -593,7 +576,6 @@ export default function relationalStoreTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2600
      * @tc.desc   relational version
@@ -632,7 +614,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2700
      * @tc.desc   relational version
@@ -664,7 +645,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2800
      * @tc.desc   relational version
@@ -704,7 +684,6 @@ export default function relationalStoreTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_2900
      * @tc.desc   relational version
@@ -742,7 +721,6 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_3000
      * @tc.desc   relational version
@@ -779,7 +757,6 @@ export default function relationalStoreTest() {
       console.info(TAG + "************* testRdbStore0022 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_3100
      * @tc.desc   relational version

@@ -92,7 +92,6 @@ export default function geolocationTest_6() {
         })
     
      /**
-      * @generated.time 2025-11-09 20:53:27
       * @tc.name   SUB_HSS_LocationSystem_CountryCode_0400
       * @tc.number SUB_HSS_LocationSystem_CountryCode_0400
       * @tc.desc   Obtaining Country Code Information
@@ -125,7 +124,6 @@ export default function geolocationTest_6() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_CountryCode_0500
      * @tc.number SUB_HSS_LocationSystem_CountryCode_0500
      * @tc.desc   Obtaining Country Code Information
@@ -157,7 +155,6 @@ export default function geolocationTest_6() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_CountryCode_0600
      * @tc.number SUB_HSS_LocationSystem_CountryCode_0600
      * @tc.desc   The interception country code is changed.

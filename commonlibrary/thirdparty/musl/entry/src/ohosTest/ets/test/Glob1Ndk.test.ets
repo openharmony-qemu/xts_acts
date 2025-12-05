@@ -25,13 +25,13 @@ export default function muslGlobd1NdkTest() {
       await Utils.sleep(50)
     })
 
-    /**getopt
-     * @tc.number   : SUB_THIRDPARTY_MUSL_GLOB_GLOB_0200
-     * @tc.name     : testMuslGlobGlob002
-     * @tc.desc     : test glob
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+    /**
+     * @tc.name   testMuslGloGlob002
+     * @tc.number SUB_THIRDPARTY_MUSL_GLOB_GLOB_0200
+     * @tc.desc   test glob
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGloGlob002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = glob.glob();

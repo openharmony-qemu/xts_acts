@@ -21,12 +21,12 @@ export default function ffrtTypeDefTest() {
     let TAG = '';
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00100
      * @tc.name   ActsFfrtTypeDefTest00100
+     * @tc.number SUB_FFRT_TYPE_DEF_00100
      * @tc.desc   Test ffrt_fiber_init api
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00100';
@@ -43,12 +43,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00200
      * @tc.name   ActsFfrtTypeDefTest00200
+     * @tc.number SUB_FFRT_TYPE_DEF_00200
      * @tc.desc   Test ffrt_rwlockattr_t api
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00200';
@@ -65,12 +65,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00300
      * @tc.name   ActsFfrtTypeDefTest00300
+     * @tc.number SUB_FFRT_TYPE_DEF_00300
      * @tc.desc   Test ffrt ffrt_function_header_t reserve
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00300';
@@ -87,12 +87,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00400
      * @tc.name   ActsFfrtTypeDefTest00400
+     * @tc.number SUB_FFRT_TYPE_DEF_00400
      * @tc.desc   Test ffrt ffrt_task_attr_t storage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00400';
@@ -109,12 +109,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00500
      * @tc.name   ActsFfrtTypeDefTest00500
+     * @tc.number SUB_FFRT_TYPE_DEF_00500
      * @tc.desc   Test ffrt ffrt_queue_attr_t storage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00500';
@@ -131,12 +131,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00600
      * @tc.name   ActsFfrtTypeDefTest00600
+     * @tc.number SUB_FFRT_TYPE_DEF_00600
      * @tc.desc   Test ffrt ffrt_condattr_t storage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00600';
@@ -153,12 +153,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00700
      * @tc.name   ActsFfrtTypeDefTest00700
+     * @tc.number SUB_FFRT_TYPE_DEF_00700
      * @tc.desc   Test ffrt ffrt_mutexattr_t storage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00700';
@@ -175,12 +175,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00800
      * @tc.name   ActsFfrtTypeDefTest00800
+     * @tc.number SUB_FFRT_TYPE_DEF_00800
      * @tc.desc   Test ffrt ffrt_rwlockattr_t storage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00800';
@@ -197,12 +197,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_00900
      * @tc.name   ActsFfrtTypeDefTest00900
+     * @tc.number SUB_FFRT_TYPE_DEF_00900
      * @tc.desc   Test ffrt ffrt_mutex_type ffrt_mutex_normal
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest00900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest00900';
@@ -219,12 +219,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_01000
      * @tc.name   ActsFfrtTypeDefTest01000
+     * @tc.number SUB_FFRT_TYPE_DEF_01000
      * @tc.desc   Test ffrt ffrt_mutex_type ffrt_mutex_default
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest01000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest01000';
@@ -241,12 +241,12 @@ export default function ffrtTypeDefTest() {
     })
 
     /**
-     * @tc.number SUB_FFRT_TYPE_DEF_01100
      * @tc.name   ActsFfrtTypeDefTest01100
+     * @tc.number SUB_FFRT_TYPE_DEF_01100
      * @tc.desc   Test ffrt ffrt_fiber_t storage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsFfrtTypeDefTest01100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'ActsFfrtTypeDefTest01100';

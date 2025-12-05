@@ -82,7 +82,6 @@ export default function rdbStoreReadOnlyEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   readOnlyEtsTest0100
      * @tc.number readOnlyEtsTest0100
      * @tc.desc   readOnlyEtsTest0100
@@ -118,7 +117,6 @@ export default function rdbStoreReadOnlyEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   readOnlyEtsTest0200
      * @tc.number readOnlyEtsTest0200
      * @tc.desc   readOnlyEtsTest0200
@@ -154,7 +152,6 @@ export default function rdbStoreReadOnlyEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   readOnlyEtsTest0300
      * @tc.number readOnlyEtsTest0300
      * @tc.desc   readOnlyEtsTest0300
@@ -190,7 +187,6 @@ export default function rdbStoreReadOnlyEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   readOnlyEtsTest0400
      * @tc.number readOnlyEtsTest0400
      * @tc.desc   readOnlyEtsTest0400
@@ -226,7 +222,6 @@ export default function rdbStoreReadOnlyEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   readOnlyEtsTest0500
      * @tc.number readOnlyEtsTest0500
      * @tc.desc   readOnlyEtsTest0500
@@ -262,7 +257,6 @@ export default function rdbStoreReadOnlyEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   readOnlyEtsTest0600
      * @tc.number readOnlyEtsTest0600
      * @tc.desc   readOnlyEtsTest0600

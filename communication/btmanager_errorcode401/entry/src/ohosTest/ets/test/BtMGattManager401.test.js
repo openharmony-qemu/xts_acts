@@ -107,7 +107,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0200
          * @tc.desc   Test api 401 - Invalid null parameters.
@@ -127,7 +126,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0300
          * @tc.desc   Test api 401 -error type.
@@ -147,7 +145,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0100
          * @tc.desc   Test 401 - Invalid null parameters.
@@ -178,7 +175,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0200
          * @tc.desc   Test 401 - Invalid null parameters.
@@ -205,7 +201,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0300
          * @tc.desc   Test 401 - null serviceUuid.
@@ -247,7 +242,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0400
          * @tc.desc   Test 401 - if serviceUuid type is error.
@@ -289,7 +283,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0500
          * @tc.desc   Test 401 - null characteristicUuid.
@@ -330,7 +323,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0600
          * @tc.desc   Test 401 - if characteristicUuid is error type.
@@ -372,7 +364,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0700
          * @tc.desc   Test 401 - null characteristicValue.
@@ -410,7 +401,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0800
          * @tc.desc   Test 401 - if characteristicValue is error type.
@@ -449,7 +439,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0900
          * @tc.desc   Test 401 - null descriptors.
@@ -481,7 +470,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1000
          * @tc.desc   Test 401 - if descriptors type is error.
@@ -514,7 +502,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1100
          * @tc.desc   Test 401 - if serviceUuid of descriptors is null.
@@ -556,7 +543,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1200
          * @tc.desc   Test 401 - if serviceUuid of descriptors is error type.
@@ -598,7 +584,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1300
          * @tc.desc   Test 401 - if descriptorUuid of descriptors is null.
@@ -639,7 +624,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1400
          * @tc.desc   Test 401 - if descriptorUuid of descriptors is error type.
@@ -681,7 +665,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1500
          * @tc.desc   Test 401 - if descriptorValue of descriptors is null.
@@ -722,7 +705,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1600
          * @tc.desc   Test 401 - if descriptorValue of descriptors is error type.
@@ -761,7 +743,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1700
          * @tc.desc   Test 401 -null api by callback.
@@ -783,7 +764,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1800
          * @tc.desc   Test 401 -null readCharacteristicValue by callback.
@@ -815,7 +795,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0100
          * @tc.desc   Test 401 - null descriptor.
@@ -845,7 +824,6 @@ export default function btManagerMError401Test() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0200
          * @tc.desc   Test 401 - descriptor is null.
@@ -878,7 +856,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0300
          * @tc.desc   Test 401 - serviceUuid of descriptor is null.
@@ -918,7 +895,6 @@ export default function btManagerMError401Test() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0400
          * @tc.desc   Test 401 - serviceUuid of descriptor is error type.
@@ -958,7 +934,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0500
          * @tc.desc   Test 401 - characteristicUuid of descriptor is null.
@@ -997,7 +972,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0600
          * @tc.desc   Test 401 - characteristicUuid of descriptor is error type.
@@ -1037,7 +1011,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0700
          * @tc.desc   Test 401 - descriptorUuid of descriptor is null.
@@ -1076,7 +1049,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0800
          * @tc.desc   Test 401 - descriptorUuid of descriptor is error type.
@@ -1116,7 +1088,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0900
          * @tc.desc   Test 401 - descriptorValue of descriptor is null.
@@ -1152,7 +1123,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1000
          * @tc.desc   Test 401 - descriptorValue of descriptor is error type.
@@ -1192,7 +1162,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1100
          * @tc.desc   Test 401 -null readDescriptorValue by callback.
@@ -1214,7 +1183,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1200
          * @tc.desc   Test 401 -null readDescriptorValue by callback.
@@ -1246,7 +1214,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0100
          * @tc.desc   Test 401 - api of null parameter.
@@ -1266,7 +1233,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0200
          * @tc.desc   Test 401 -  api of error parameter.
@@ -1286,7 +1252,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0300
          * @tc.desc   Test 401 -null serviceUuid.
@@ -1320,7 +1285,6 @@ export default function btManagerMError401Test() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0400
          * @tc.desc   Test 401 -serviceUuid is error type.
@@ -1354,7 +1318,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0500
          * @tc.desc   Test 401 - null characteristicUuid.
@@ -1387,7 +1350,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0600
          * @tc.desc   Test 401 - characteristicUuid is error type.
@@ -1421,7 +1383,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0700
          * @tc.desc   Test 401 - null characteristicValue.
@@ -1452,7 +1413,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0800
          * @tc.desc   Test 401 - characteristicValue is error type.
@@ -1483,7 +1443,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0900
          * @tc.desc   Test 401 - null descriptors.
@@ -1509,7 +1468,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1000
          * @tc.desc   Test 401 -descriptors is error type.
@@ -1535,7 +1493,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1100
          * @tc.desc   Test 401 -null serviceUuid of descriptors.
@@ -1569,7 +1526,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1200
          * @tc.desc   Test 401 -serviceUuid of descriptors is error type.
@@ -1603,7 +1559,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1300
          * @tc.desc   Test 401 -characteristicUuid of descriptors is null.
@@ -1636,7 +1591,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1400
          * @tc.desc   Test 401 -characteristicUuid of descriptors is error type.
@@ -1670,7 +1624,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1500
          * @tc.desc   Test 401 -descriptorUuid of descriptors is null.
@@ -1704,7 +1657,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1600
          * @tc.desc   Test 401 -descriptorUuid of descriptors is error type.
@@ -1738,7 +1690,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1700
          * @tc.desc   Test 401 -descriptorValue of descriptors is null.
@@ -1772,7 +1723,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1800
          * @tc.desc   Test 401 -descriptorValue of descriptors is error type.
@@ -1803,7 +1753,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0100
          * @tc.desc   Test 401 - api is null parameter.
@@ -1823,7 +1772,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0200
          * @tc.desc   Test 401 -  api is error parameter.
@@ -1843,7 +1791,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0300
          * @tc.desc   Test 401 -  null serviceUuid.
@@ -1869,7 +1816,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0400
          * @tc.desc   Test 401 - serviceUuid is error type.
@@ -1895,7 +1841,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0500
          * @tc.desc   Test 401 -  characteristicUuid is null.
@@ -1920,7 +1865,6 @@ export default function btManagerMError401Test() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0600
          * @tc.desc   Test 401 - characteristicUuid is error type.
@@ -1946,7 +1890,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0700
          * @tc.desc   Test 401 - descriptorUuid is null.
@@ -1971,7 +1914,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0800
          * @tc.desc   Test 401 - descriptorUuid is error type.
@@ -1997,7 +1939,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0900
          * @tc.desc   Test 401 - descriptorValue is null.
@@ -2020,7 +1961,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_1000
          * @tc.desc   Test 401 - descriptorValue is error type.
@@ -2043,7 +1983,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0100
          * @tc.desc   Test 401 - parameter of api is null.
@@ -2063,7 +2002,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0200
          * @tc.desc   Test 401 - first parameter of api is error type .
@@ -2083,7 +2021,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0300
          * @tc.desc   Test 401 - second parameter of api is null .
@@ -2118,7 +2055,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0400
          * @tc.desc   Test 401 - serviceUuid is null .
@@ -2153,7 +2089,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0500
          * @tc.desc   Test 401 - serviceUuid is error type .
@@ -2188,7 +2123,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0600
          * @tc.desc   Test 401 - characteristicUuid is null .
@@ -2222,7 +2156,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0700
          * @tc.desc   Test 401 - characteristicUuid is error type .
@@ -2257,7 +2190,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0800
          * @tc.desc   Test 401 - characteristicValue is null .
@@ -2291,7 +2223,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0900
          * @tc.desc   Test 401 - characteristicValue is error type .
@@ -2323,7 +2254,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1000
          * @tc.desc   Test 401 - descriptors is null.
@@ -2349,7 +2279,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1100
          * @tc.desc   Test 401 - descriptors is error type.
@@ -2375,7 +2304,6 @@ export default function btManagerMError401Test() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0100
          * @tc.desc   Test createGattClientDevice 401.
@@ -2398,7 +2326,6 @@ export default function btManagerMError401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0200
          * @tc.desc   Test createGattClientDevice 401.

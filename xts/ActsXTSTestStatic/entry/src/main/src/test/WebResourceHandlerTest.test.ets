@@ -57,7 +57,6 @@ export default function webResourceHandlerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebNavigationTypeStatic001
      * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0100
      * @tc.desc   test webNavigationType MAIN_FRAME_NEW_ENTRY
@@ -76,7 +75,6 @@ export default function webResourceHandlerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebNavigationTypeStatic002
      * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0200
      * @tc.desc   test webNavigationType MAIN_FRAME_EXISTING_ENTRY
@@ -95,7 +93,6 @@ export default function webResourceHandlerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebNavigationTypeStatic003
      * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0300
      * @tc.desc   test webNavigationType NAVIGATION_TYPE_NEW_SUBFRAME
@@ -114,7 +111,6 @@ export default function webResourceHandlerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SwitchNextPageStatic
      * @tc.number SwitchNextPageStatic
      * @tc.desc   SwitchNextPageStatic

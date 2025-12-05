@@ -25,12 +25,12 @@ export default function xattrNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_XATTR_FSETXATTR_0100
-     * @tc.name       : testMuslXattrFsetxattr001
-     * @tc.desc       : test fsetxattr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslXattrFsetxattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_FSETXATTR_0100
+     * @tc.desc   test fsetxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXattrFsetxattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -40,12 +40,12 @@ export default function xattrNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_XATTR_FREMOVEXATTR_0100
-     * @tc.name       : testMuslXattrFremovexattr001
-     * @tc.desc       : test fremovexattr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslXattrFremovexattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_FREMOVEXATTR_0100
+     * @tc.desc   test fremovexattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXattrFremovexattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -54,12 +54,12 @@ export default function xattrNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_XATTR_LGETXATTR_0100
-     * @tc.name     : testMuslXattrLgetxattr001
-     * @tc.desc     : test getxattr
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslXattrLgetxattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_LGETXATTR_0100
+     * @tc.desc   test getxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXattrLgetxattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = xattr.lgetxattr();
@@ -67,12 +67,12 @@ export default function xattrNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_XATTR_LSETXATTR_0100
-     * @tc.name     : testMuslXattrLsetxattr001
-     * @tc.desc     : test lsetxattr
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslXattrLsetxattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_LSETXATTR_0100
+     * @tc.desc   test lsetxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXattrLsetxattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = xattr.lsetxattr();
@@ -80,12 +80,12 @@ export default function xattrNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_XATTR_GETXATTR_0100
-     * @tc.name     : testMuslXattrGetxattr001
-     * @tc.desc     : test getxattr
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslXattrGetxattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_GETXATTR_0100
+     * @tc.desc   test getxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXattrGetxattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = xattr.getxattr();
@@ -94,12 +94,12 @@ export default function xattrNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_XATTR_LLISTXATTR_0100
-     * @tc.name     : testMuslXattrllistxattr001
-     * @tc.desc     : test getxattr
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslXattrllistxattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_LLISTXATTR_0100
+     * @tc.desc   test getxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXattrllistxattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = xattr.llistxattr();
@@ -108,12 +108,12 @@ export default function xattrNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_XATTR_LISTXATTR_0100
-     * @tc.name     : testMuslXattrlistxattr001
-     * @tc.desc     : test listxattr
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslXattrlistxattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_LISTXATTR_0100
+     * @tc.desc   test listxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXattrlistxattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = xattr.listxattr();
@@ -122,13 +122,13 @@ export default function xattrNdkTest() {
     });
 
     /**
-    * @tc.number   : SUB_THIRDPARTY_MUSL_XATTR_LREMOVXATTR_0100
-    * @tc.name     : testMuslXattrLremovexattr001
-    * @tc.desc     : test lremovexattr
-    * @tc.size     : MediumTest
-    * @tc.type     : Function
-    * @tc.level    : Level 1
-    */
+     * @tc.name   testMuslXattrLremovexattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_LREMOVXATTR_0100
+     * @tc.desc   test lremovexattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMuslXattrLremovexattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = xattr.lremovexattr();
       expect(result).assertEqual(0)
@@ -136,12 +136,12 @@ export default function xattrNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_XATTR_REMOVXATTR_0100
-     * @tc.name     : testMuslXattrRemovexattr001
-     * @tc.desc     : test removexattr
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslXattrRemovexattr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_REMOVXATTR_0100
+     * @tc.desc   test removexattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXattrRemovexattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = xattr.removexattr();
@@ -149,13 +149,13 @@ export default function xattrNdkTest() {
       done()
     });
 
-        /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_XATTR_FLISTXATTR_0100
-     * @tc.name       : testMuslXAttrFListXAttr001
-     * @tc.desc       : test flistxattr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testMuslXAttrFListXAttr001
+     * @tc.number SUB_THIRDPARTY_MUSL_XATTR_FLISTXATTR_0100
+     * @tc.desc   test flistxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslXAttrFListXAttr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = false;

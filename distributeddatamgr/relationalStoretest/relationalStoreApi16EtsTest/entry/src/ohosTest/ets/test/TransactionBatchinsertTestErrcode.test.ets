@@ -51,7 +51,6 @@ export default function TransactionBatchinsertTestErrcode() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0100
      * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0100
      * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0100
@@ -90,7 +89,6 @@ export default function TransactionBatchinsertTestErrcode() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0200
      * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0200
      * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0200
@@ -134,7 +132,6 @@ export default function TransactionBatchinsertTestErrcode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0300
      * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0300
      * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0300
@@ -173,7 +170,6 @@ export default function TransactionBatchinsertTestErrcode() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0400
      * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0400
      * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0400
@@ -213,7 +209,6 @@ export default function TransactionBatchinsertTestErrcode() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0500
      * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0500
      * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0500

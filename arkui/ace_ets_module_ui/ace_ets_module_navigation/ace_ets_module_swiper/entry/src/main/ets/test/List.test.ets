@@ -121,6 +121,8 @@ import arcDotIndicator from './ArcSwiperTest/arcDotIndicator.test';
 import arcSwiperEvent from './ArcSwiperTest/arcSwiperEvent.test';
 import arcSwiperShow from './ArcSwiperTest/arcSwiperShow.test';
 import arcSwiperContent from './ArcSwiperTest/arcSwiperContent.test';
+import SwiperContentUpdateOne from './SwiperTest/SwiperContentUpdate/SwiperContentUpdateOne.test';
+import SwiperContentUpdateTwo from './SwiperTest/SwiperContentUpdate/SwiperContentUpdateTwo.test';
 
 export default function testsuite() {
   Swiper07Test();
@@ -228,4 +230,6 @@ export default function testsuite() {
   arcSwiperEvent();
   arcSwiperShow();
   arcSwiperContent();
-  } 
+  SwiperContentUpdateOne();
+  SwiperContentUpdateTwo();
+} 

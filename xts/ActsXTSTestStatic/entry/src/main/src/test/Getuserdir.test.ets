@@ -57,11 +57,13 @@ export default function getUserDir() {
             console.info('%{public}s', 'beforeAll end');
         })
 		
-        /*
-         * @tc.number  inputMethod_test_switchCurrentInputMethodSubtype_static_001
-         * @tc.name    inputMethod_test_switchCurrentInputMethodSubtype_static_001
-         * @tc.desc    Switch current input method subtype.
-         * @tc.level   2
+        /**
+         * @tc.name   inputMethod_test_switchCurrentInputMethodSubtype_static_001
+         * @tc.number inputMethod_test_switchCurrentInputMethodSubtype_static_001
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputMethod_test_switchCurrentInputMethodSubtype_static_001', Level.LEVEL2, async (done: () => void) => {
             hilog.info(domain, tag, "====>************* inputMethod_test_switchCurrentInputMethodSubtype_static_001 Test start*************");
@@ -88,9 +90,12 @@ export default function getUserDir() {
 
 		
         /**
+         * @tc.name   SUB_Misc_inputMethod_switchInputMethod__static_0100
          * @tc.number SUB_Misc_inputMethod_switchInputMethod__static_0100
-         * @tc.name SUB_Misc_inputMethod_switchInputMethod__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_switchInputMethod__static_0100', Level.LEVEL2, async (done: () => void)  => {
             hilog.info(domain, tag, "====>************* SUB_Misc_inputMethod_switchInputMethod__static_0100 Test start*************");
@@ -111,13 +116,12 @@ export default function getUserDir() {
         })
 
     /**
+     * @tc.name   environment_test_getUserDesktopDir_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDesktopDir_0100
-     * @tc.name environment_test_getUserDesktopDir_Static_001
-     * @tc.desc Test getDesktopDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getDesktopDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_test_getUserDesktopDir_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDesktopDir_Static_001 start');
@@ -135,11 +139,13 @@ export default function getUserDir() {
       }
     });
 	
-        /*
-         * @tc.number  inputMethod_test_switchCurrentInputMethodSubtype_static_002
-         * @tc.name    inputMethod_test_switchCurrentInputMethodSubtype_static_002
-         * @tc.desc    Switch current input method subtype.
-         * @tc.level   2
+        /**
+         * @tc.name   inputMethod_test_switchCurrentInputMethodSubtype_static_002
+         * @tc.number inputMethod_test_switchCurrentInputMethodSubtype_static_002
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputMethod_test_switchCurrentInputMethodSubtype_static_002', Level.LEVEL2, async (done: () => void) => {
             hilog.info(domain, tag, "====>************* inputMethod_test_switchCurrentInputMethodSubtype_static_002 Test start*************");
@@ -179,6 +185,14 @@ export default function getUserDir() {
          * @tc.name SUB_Misc_inputMethod_switchInputMethod__static_0200
          * @tc.desc Function test
          */
+        /**
+         * @tc.name   SUB_Misc_inputMethod_switchInputMethod__static_0200
+         * @tc.number SUB_Misc_inputMethod_switchInputMethod__static_0200
+         * @tc.desc   SUB_Misc_inputMethod_switchInputMethod__static_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Misc_inputMethod_switchInputMethod__static_0200', Level.LEVEL2, async (done: () => void)  => {
             hilog.info(domain, tag, "====>************* SUB_Misc_inputMethod_switchInputMethod__static_0200 Test start*************");
             let inputM = inputMethod.getCurrentInputMethod()
@@ -204,13 +218,12 @@ export default function getUserDir() {
         });
 
     /**
+     * @tc.name   environment_test_getUserDocumentDir_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDocumentDir_0100
-     * @tc.name environment_test_getUserDocumentDir_Static_001
-     * @tc.desc Test getUserDocumentDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getUserDocumentDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_test_getUserDocumentDir_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDocumentDir_Static_001 start');
@@ -228,13 +241,13 @@ export default function getUserDir() {
       }
     });
 	
-        /*
-         * @tc.number  inputmethodNomal_test_hideSoftKeyboard_static_001
-         * @tc.name    inputmethodNomal_test_hideSoftKeyboard_static_001
-         * @tc.desc    Test Indicates the input method which will hide softboard with calback.
-         * @tc.size    MediumTest
-         * @tc.type    Function
-         * @tc.level   Level2
+        /**
+         * @tc.name   inputmethodNomal_test_hideSoftKeyboard_static_001
+         * @tc.number inputmethodNomal_test_hideSoftKeyboard_static_001
+         * @tc.desc   Test Indicates the input method which will hide softboard with calback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL2, async (done: () => void)  => {
             hilog.info(domain, tag, "====>*********inputmethodNomal_test_hideSoftKeyboard_static_001 start************");
@@ -275,13 +288,12 @@ export default function getUserDir() {
         });
 
     /**
+     * @tc.name   environment_test_getUserDownloadDir_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDownloadDir_0100
-     * @tc.name environment_test_getUserDownloadDir_Static_001
-     * @tc.desc Test getUserDownloadDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getUserDownloadDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_test_getUserDownloadDir_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDownloadDir_Static_001 start');
@@ -299,13 +311,13 @@ export default function getUserDir() {
       }
     });
 	
-        /*
-         * @tc.number  inputmethodNomal_test_hideSoftKeyboard_static_002
-         * @tc.name    inputmethodNomal_test_hideSoftKeyboard_static_002
-         * @tc.desc    Test Indicates the input method which will hide softboard with Promise.
-         * @tc.size    MediumTest
-         * @tc.type    Function
-         * @tc.level   Level2
+        /**
+         * @tc.name   inputmethodNomal_test_hideSoftKeyboard_static_002
+         * @tc.number inputmethodNomal_test_hideSoftKeyboard_static_002
+         * @tc.desc   Test Indicates the input method which will hide softboard with Promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputmethodNomal_test_hideSoftKeyboard_static_002', Level.LEVEL2, async (done: () => void)  => {
             hilog.info(domain, tag, "====>*********inputmethodNomal_test_hideSoftKeyboard_static_002 start************");

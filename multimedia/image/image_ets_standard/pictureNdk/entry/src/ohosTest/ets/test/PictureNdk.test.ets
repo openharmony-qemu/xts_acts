@@ -943,13 +943,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_CREATEPICTUREDECODINGOPTIONS_0100
-     * @tc.name      : testImageSourceCreatePictureDecodingOptions
-     * @tc.desc      : Test create default picture decoding options.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_CREATEPICTUREDECODINGOPTIONS_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_CREATEPICTUREDECODINGOPTIONS_0100
+     * @tc.desc   Test create default picture decoding options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_CREATEPICTUREDECODINGOPTIONS_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -968,13 +968,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_CREATEPICTURE_0100
-     * @tc.name      : testImageSourceCreatePicture
-     * @tc.desc      : Test create default picture by ImageSource.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_CREATEPICTURE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_CREATEPICTURE_0100
+     * @tc.desc   Test create default picture by ImageSource.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_CREATEPICTURE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -993,13 +993,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_SETDESIREDAUXILIARYPICTURES_0100
-     * @tc.name      : testImageSourceSetDesiredAuxiliaryPictures
-     * @tc.desc      : Test set desired auxiliary pictures to decoding options.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_SETDESIREDAUXILIARYPICTURES_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_SETDESIREDAUXILIARYPICTURES_0100
+     * @tc.desc   Test set desired auxiliary pictures to decoding options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_SETDESIREDAUXILIARYPICTURES_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1018,13 +1018,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_GETDESIREDAUXILIARYPICTURES_0100
-     * @tc.name      : testImageSourceGetDesiredAuxiliaryPictures
-     * @tc.desc      : Test get desired AuxiliaryPicture from DecodingOptions.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_GETDESIREDAUXILIARYPICTURES_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_GETDESIREDAUXILIARYPICTURES_0100
+     * @tc.desc   Test get desired AuxiliaryPicture from DecodingOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_GETDESIREDAUXILIARYPICTURES_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1045,13 +1045,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_RELEASE_0100
-     * @tc.name      : testImageSourceReleasePictureDecodingOptions
-     * @tc.desc      : Test release the created DecodingOptionsForPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_RELEASE_0100
+     * @tc.desc   Test release the created DecodingOptionsForPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_IMAGESOURCE_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1073,13 +1073,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0100
-     * @tc.name      : testSetAuxiliaryPicture
-     * @tc.desc      : Test inserting AuxiliaryPicture with GAIN_MAP type into Picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0100
+     * @tc.desc   Test inserting AuxiliaryPicture with GAIN_MAP type into Picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1087,13 +1087,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0100`)
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0200
-     * @tc.name      : testSetAuxiliaryPicture
-     * @tc.desc      : Test inserting AuxiliaryPicture with DEPTH_MAP type into Picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0200
+     * @tc.desc   Test inserting AuxiliaryPicture with DEPTH_MAP type into Picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1101,13 +1101,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0200`)
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0300
-     * @tc.name      : testSetAuxiliaryPicture
-     * @tc.desc      : Test inserting AuxiliaryPicture with UNREFOCUS_MAP type into Picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0300
+     * @tc.desc   Test inserting AuxiliaryPicture with UNREFOCUS_MAP type into Picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1115,13 +1115,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0300`)
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0400
-     * @tc.name      : testSetAuxiliaryPicture
-     * @tc.desc      : Test inserting AuxiliaryPicture with LINEAR_MAP type into Picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0400
+     * @tc.desc   Test inserting AuxiliaryPicture with LINEAR_MAP type into Picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1129,13 +1129,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0400`)
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0500
-     * @tc.name      : testSetAuxiliaryPicture
-     * @tc.desc      : Test inserting AuxiliaryPicture with FRAGMENT_MAP type into Picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0500
+     * @tc.desc   Test inserting AuxiliaryPicture with FRAGMENT_MAP type into Picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1143,13 +1143,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_0500`)
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_ERROR_0600
-     * @tc.name      : testPictureSetAuxiliaryPicture
-     * @tc.desc      : Test set AuxiliaryPicture to picture. Type error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_ERROR_0600
+     * @tc.desc   Test set AuxiliaryPicture to picture. Type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_ERROR_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1171,13 +1171,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_ERROR_0700
-     * @tc.name      : testPictureSetAuxiliaryPicture
-     * @tc.desc      : Test set AuxiliaryPicture to picture. The AuxiliaryPicture object is empty.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_ERROR_0700
+     * @tc.desc   Test set AuxiliaryPicture to picture. The AuxiliaryPicture object is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETAUXILIARYPICTURE_ERROR_0700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1197,13 +1197,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0200
-     * @tc.name      : testPictureGetAuxiliaryPicture
-     * @tc.desc      : Test get AuxiliaryPicture from picture failed Unable to get the correct type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0200
+     * @tc.desc   Test get AuxiliaryPicture from picture failed Unable to get the correct type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1228,13 +1228,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0400
-     * @tc.name      : testPictureGetAuxiliaryPicture
-     * @tc.desc      : Test get  AuxiliaryPicture from picture failed Unable to get the correct type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0400
+     * @tc.desc   Test get  AuxiliaryPicture from picture failed Unable to get the correct type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1259,13 +1259,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_0500
-     * @tc.name      : testGetAuxiliaryPicture
-     * @tc.desc      : Test get AuxiliaryPicture from Picture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_0500
+     * @tc.desc   Test get AuxiliaryPicture from Picture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1287,14 +1287,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0600
-     * @tc.name      : testPictureGetAuxiliaryPicture
-     * @tc.desc      : Prerequisite: Create an picture from PixelMap.
-     *                 Test get AuxiliaryPicture from picture. there is no AuxiliaryPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0600
+     * @tc.desc   Prerequisite: Create an picture from PixelMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETAUXILIARYPICTURE_ERROR_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1313,13 +1312,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_CREATE_0100
-     * @tc.name      : testMetadataCreate
-     * @tc.desc      : Test create exif metadata.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_CREATE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_CREATE_0100
+     * @tc.desc   Test create exif metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_CREATE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1335,13 +1334,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_CREATE_0200
-     * @tc.name      : testMetadataCreate
-     * @tc.desc      : Test create fragment metadata.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_CREATE_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_CREATE_0200
+     * @tc.desc   Test create fragment metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_CREATE_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1357,13 +1356,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_0100
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set ptoperty to exif metadata.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_0100
+     * @tc.desc   Test set ptoperty to exif metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1383,13 +1382,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_0200
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set ptoperty to fragment metadata.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_0200
+     * @tc.desc   Test set ptoperty to fragment metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1412,13 +1411,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0300
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set property to exif metadata with illegal.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0300
+     * @tc.desc   Test set property to exif metadata with illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1441,13 +1440,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0400
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set property to exif metadata with illegal.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0400
+     * @tc.desc   Test set property to exif metadata with illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1470,13 +1469,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0500
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set property to exif metadata with illegal.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0500
+     * @tc.desc   Test set property to exif metadata with illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1499,13 +1498,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0600
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set property to exif metadata with illegal.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0600
+     * @tc.desc   Test set property to exif metadata with illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1528,13 +1527,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0700
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set property to fragment metadata with illegal.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0700
+     * @tc.desc   Test set property to fragment metadata with illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1559,13 +1558,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0800
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set property to fragment metadata with illegal.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0800
+     * @tc.desc   Test set property to fragment metadata with illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_SETPROPERTY_ERROR_0800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1589,13 +1588,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_GETPROPERTY_0100
-     * @tc.name      : testMetadataGetProperty
-     * @tc.desc      : Test get ptoperty from metadata.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_GETPROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_GETPROPERTY_0100
+     * @tc.desc   Test get ptoperty from metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_GETPROPERTY_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1614,13 +1613,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETMETADATA_0100
-     * @tc.name      : testPictureSetMetadata
-     * @tc.desc      : Test set exif metadata to picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETMETADATA_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETMETADATA_0100
+     * @tc.desc   Test set exif metadata to picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETMETADATA_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1641,13 +1640,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETMETADATA_0200
-     * @tc.name      : testPictureSetMetadata
-     * @tc.desc      : Test set fragment metadata to picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETMETADATA_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETMETADATA_0200
+     * @tc.desc   Test set fragment metadata to picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SETMETADATA_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1668,13 +1667,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMETADATA_0100
-     * @tc.name      : testPictureGetMetadata
-     * @tc.desc      : Test get exif metadata from picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMETADATA_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMETADATA_0100
+     * @tc.desc   Test get exif metadata from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMETADATA_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1699,13 +1698,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMETADATA_ERROR_0200
-     * @tc.name      : testPictureGetMetadata
-     * @tc.desc      : Test get metadata from picture with illegal type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMETADATA_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMETADATA_ERROR_0200
+     * @tc.desc   Test get metadata from picture with illegal type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMETADATA_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1729,13 +1728,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMAINPIXELMAP_0100
-     * @tc.name      : testGetMainPixelmap
-     * @tc.desc      : Test get MainPixelmap from Picture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMAINPIXELMAP_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMAINPIXELMAP_0100
+     * @tc.desc   Test get MainPixelmap from Picture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETMAINPIXELMAP_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1761,13 +1760,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETGAINMAPPIXELMAP_0100
-     * @tc.name      : testGetGainmapPixelmap
-     * @tc.desc      : Test get GainmapPixelmap from Picture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETGAINMAPPIXELMAP_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETGAINMAPPIXELMAP_0100
+     * @tc.desc   Test get GainmapPixelmap from Picture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GETGAINMAPPIXELMAP_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1795,13 +1794,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_RELEASE_0100
-     * @tc.name      : testPictureRelease
-     * @tc.desc      : Test release the created picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_RELEASE_0100
+     * @tc.desc   Test release the created picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1819,13 +1818,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_RELEASE_0100
-     * @tc.name      : testMetadataRelease
-     * @tc.desc      : Test release the EXIF metadata.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_RELEASE_0100
+     * @tc.desc   Test release the EXIF metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1843,13 +1842,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_METADATA_RELEASE_0200
-     * @tc.name      : testMetadataRelease
-     * @tc.desc      : Test release the FRAGMENT metadata.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_METADATA_RELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_METADATA_RELEASE_0200
+     * @tc.desc   Test release the FRAGMENT metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_METADATA_RELEASE_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1867,13 +1866,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0100
-     * @tc.name      : testCreateAuxiliaryPicture
-     * @tc.desc      : Test the creation of AuxiliaryPicture with GAIN_MAP type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0100
+     * @tc.desc   Test the creation of AuxiliaryPicture with GAIN_MAP type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1881,13 +1880,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0100')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0200
-     * @tc.name      : testCreateAuxiliaryPicture
-     * @tc.desc      : Test the creation of AuxiliaryPicture with DEPTH_MAP type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0200
+     * @tc.desc   Test the creation of AuxiliaryPicture with DEPTH_MAP type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1895,13 +1894,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0200')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0300
-     * @tc.name      : testCreateAuxiliaryPicture
-     * @tc.desc      : Test the creation of AuxiliaryPicture with UNREFOCUS_MAP type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0300
+     * @tc.desc   Test the creation of AuxiliaryPicture with UNREFOCUS_MAP type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1909,13 +1908,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0300')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0400
-     * @tc.name      : testCreateAuxiliaryPicture
-     * @tc.desc      : Test the creation of AuxiliaryPicture with LINEAR_MAP type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0400
+     * @tc.desc   Test the creation of AuxiliaryPicture with LINEAR_MAP type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1923,13 +1922,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0400')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0500
-     * @tc.name      : testCreateAuxiliaryPicture
-     * @tc.desc      : Test the creation of AuxiliaryPicture with FRAGMENT_MAP type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0500
+     * @tc.desc   Test the creation of AuxiliaryPicture with FRAGMENT_MAP type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1937,13 +1936,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_0500')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_ERROR_0600
-     * @tc.name      : testCreateAuxiliaryPicture
-     * @tc.desc      : Test the creation of AuxiliaryPicture with illegal type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_ERROR_0600
+     * @tc.desc   Test the creation of AuxiliaryPicture with illegal type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_CREATE_ERROR_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1964,13 +1963,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETMETADATA_0100
-     * @tc.name      : testAuxiliaryPictureSetMetadata
-     * @tc.desc      : Test set fragment metadata to auxiliary picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETMETADATA_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETMETADATA_0100
+     * @tc.desc   Test set fragment metadata to auxiliary picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETMETADATA_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1992,13 +1991,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETMETADATA_0100
-     * @tc.name      : testAuxiliaryPictureGetMetadata
-     * @tc.desc      : Test get metadata from fragment auxiliary picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETMETADATA_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETMETADATA_0100
+     * @tc.desc   Test get metadata from fragment auxiliary picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETMETADATA_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2021,13 +2020,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETMETADATA_ERROR_0200
-     * @tc.name      : testAuxiliaryPictureGetMetadata
-     * @tc.desc      : Test get metadata from fragment auxiliary picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETMETADATA_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETMETADATA_ERROR_0200
+     * @tc.desc   Test get metadata from fragment auxiliary picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETMETADATA_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2051,13 +2050,13 @@ export default function pictureNdkTest() {
        }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_WRITEPIXELS_0100
-     * @tc.name      : testAuxiliaryPictureWritePixels
-     * @tc.desc      : Test write pixels to AuxiliaryPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_WRITEPIXELS_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_WRITEPIXELS_0100
+     * @tc.desc   Test write pixels to AuxiliaryPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_WRITEPIXELS_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2077,13 +2076,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_WRITEPIXELS_ERROR_0200
-     * @tc.name      : testAuxiliaryPictureWritePixels
-     * @tc.desc      : Test write pixels to AuxiliaryPicture.The pixel data buffer size is abnormal.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_WRITEPIXELS_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_WRITEPIXELS_ERROR_0200
+     * @tc.desc   Test write pixels to AuxiliaryPicture.The pixel data buffer size is abnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_WRITEPIXELS_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2103,13 +2102,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0100
-     * @tc.name      : testAuxiliaryPictureReadPixels
-     * @tc.desc      : Test read pixels from AuxiliaryPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0100
+     * @tc.desc   Test read pixels from AuxiliaryPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2133,13 +2132,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0200
-     * @tc.name      : testAuxiliaryPictureReadPixels
-     * @tc.desc      : Test read pixels from AuxiliaryPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0200
+     * @tc.desc   Test read pixels from AuxiliaryPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2165,13 +2164,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0300
-     * @tc.name      : testAuxiliaryPictureReadPixels
-     * @tc.desc      : Test read pixels from AuxiliaryPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0300
+     * @tc.desc   Test read pixels from AuxiliaryPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2197,13 +2196,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0400
-     * @tc.name      : testAuxiliaryPictureReadPixels
-     * @tc.desc      : Test read pixels from AuxiliaryPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0400
+     * @tc.desc   Test read pixels from AuxiliaryPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_READPIXELS_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2229,14 +2228,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0100
-     * @tc.name      : testAuxiliaryPictureSetInfo
-     * @tc.desc      : Test set type to AuxiliaryPictureInfo,then set AuxiliaryPictureInfo to 
-                       AuxiliaryPicture which get from Picture created by ImageSource.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0100
+     * @tc.desc   Test set type to AuxiliaryPictureInfo,then set AuxiliaryPictureInfo to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2272,14 +2270,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0200
-     * @tc.name      : testAuxiliaryPictureSetInfo
-     * @tc.desc      : Test set size to AuxiliaryPictureInfo,then set AuxiliaryPictureInfo to 
-                       AuxiliaryPicture which get from Picture created by ImageSource.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0200
+     * @tc.desc   Test set size to AuxiliaryPictureInfo,then set AuxiliaryPictureInfo to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2315,14 +2312,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0300
-     * @tc.name      : testAuxiliaryPictureSetInfo
-     * @tc.desc      : Test set rowStride to AuxiliaryPictureInfo,then set AuxiliaryPictureInfo to 
-                       AuxiliaryPicture which get from Picture created by ImageSource.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0300
+     * @tc.desc   Test set rowStride to AuxiliaryPictureInfo,then set AuxiliaryPictureInfo to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2357,14 +2353,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0400
-     * @tc.name      : testAuxiliaryPictureSetInfo
-     * @tc.desc      : Test set pixelFormat to AuxiliaryPictureInfo,then set AuxiliaryPictureInfo to 
-                       AuxiliaryPicture which get from Picture created by ImageSource.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0400
+     * @tc.desc   Test set pixelFormat to AuxiliaryPictureInfo,then set AuxiliaryPictureInfo to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2399,13 +2394,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0500
-     * @tc.name      : testAuxiliaryPictureSetInfo
-     * @tc.desc      : Test set auxiliaryPictureInfo to auxiliaryPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0500
+     * @tc.desc   Test set auxiliaryPictureInfo to auxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_SETINFO_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2430,13 +2425,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETINFO_0100
-     * @tc.name      : testAuxiliaryPictureGetInfo
-     * @tc.desc      : Test get auxiliaryPictureInfo from auxiliaryPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETINFO_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETINFO_0100
+     * @tc.desc   Test get auxiliaryPictureInfo from auxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_GETINFO_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2467,13 +2462,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_RELEASE_0100
-     * @tc.name      : testAuxiliaryPictureRelease
-     * @tc.desc      : Test release the created (GAINMAP/DEPTH_MAP/UNREFOCUS_MAP/LINEAR_MAP/FRAGMENT_MAP) object.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_RELEASE_0100
+     * @tc.desc   Test release the created (GAINMAP/DEPTH_MAP/UNREFOCUS_MAP/LINEAR_MAP/FRAGMENT_MAP) object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2508,13 +2503,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_RELEASE_0200
-     * @tc.name      : testAuxiliaryPictureRelease
-     * @tc.desc      : Test release the AuxiliaryPicture added to picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_RELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_RELEASE_0200
+     * @tc.desc   Test release the AuxiliaryPicture added to picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTURE_RELEASE_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2551,13 +2546,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_CREATE_0100
-     * @tc.name      : testAuxiliaryPictureInfoCrerate
-     * @tc.desc      : Test create auxiliaryPictureInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_CREATE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_CREATE_0100
+     * @tc.desc   Test create auxiliaryPictureInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_CREATE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2573,13 +2568,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0100
-     * @tc.name      : testAuxiliaryPictureInfoSetTypeGetType
-     * @tc.desc      : Test set and get type from auxiliaryPictureInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0100
+     * @tc.desc   Test set and get type from auxiliaryPictureInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2587,13 +2582,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0100');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0200
-     * @tc.name      : testAuxiliaryPictureInfoSetTypeGetType
-     * @tc.desc      : Test set and get type from auxiliaryPictureInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0200
+     * @tc.desc   Test set and get type from auxiliaryPictureInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2601,13 +2596,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0200');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0300
-     * @tc.name      : testAuxiliaryPictureInfoSetTypeGetType
-     * @tc.desc      : Test set and get type from auxiliaryPictureInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0300
+     * @tc.desc   Test set and get type from auxiliaryPictureInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2615,13 +2610,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0300');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0400
-     * @tc.name      : testAuxiliaryPictureInfoSetTypeGetType
-     * @tc.desc      : Test set and get type from auxiliaryPictureInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0400
+     * @tc.desc   Test set and get type from auxiliaryPictureInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2629,13 +2624,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0400');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0500
-     * @tc.name      : testAuxiliaryPictureInfoSetTypeGetType
-     * @tc.desc      : Test set and get type from auxiliaryPictureInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0500
+     * @tc.desc   Test set and get type from auxiliaryPictureInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_GETTYPE_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2644,13 +2639,13 @@ export default function pictureNdkTest() {
     })
 
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_ERROR_0600
-     * @tc.name      : testAuxiliaryPictureInfoSetType
-     * @tc.desc      : Test set illegal type to AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_ERROR_0600
+     * @tc.desc   Test set illegal type to AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETTYPE_ERROR_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2669,13 +2664,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETSIZE_GETSIZE_0100
-     * @tc.name      : testAuxiliaryPictureInfoSetSizeGetSize
-     * @tc.desc      : Test set and get normal size about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETSIZE_GETSIZE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETSIZE_GETSIZE_0100
+     * @tc.desc   Test set and get normal size about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETSIZE_GETSIZE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2697,13 +2692,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETROWSTRIDE_GETROWSTRIDE_0100
-     * @tc.name      : testAuxiliaryPictureInfoSetRowStrideGetRowStride
-     * @tc.desc      : Test set and get normal rowStride about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETROWSTRIDE_GETROWSTRIDE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETROWSTRIDE_GETROWSTRIDE_0100
+     * @tc.desc   Test set and get normal rowStride about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETROWSTRIDE_GETROWSTRIDE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2723,13 +2718,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_RELEASE_0100
-     * @tc.name      : testAuxiliaryPictureInfoRelease
-     * @tc.desc      : Test release AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_RELEASE_0100
+     * @tc.desc   Test release AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2747,13 +2742,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_0100
-     * @tc.name      : testMetadataGetProperty
-     * @tc.desc      : Test get exif metadata property from PictureMetadata that contains some wrong key values
-     * @tc.size      : MediumTest
-     * @tc.type      : Reliability
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_0100
+     * @tc.desc   Test get exif metadata property from PictureMetadata that contains some wrong key values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2778,13 +2773,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_ERROR_0200
-     * @tc.name      : testMetadataGetProperty
-     * @tc.desc      : Test get exif metadata property from PictureMetadata that contains all wrong key values
-     * @tc.size      : MediumTest
-     * @tc.type      : Reliability
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_ERROR_0200
+     * @tc.desc   Test get exif metadata property from PictureMetadata that contains all wrong key values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2811,13 +2806,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_0300
-     * @tc.name      : testMetadataGetProperty
-     * @tc.desc      : Test get fragment metadata property from PictureMetadata that contains some wrong key values
-     * @tc.size      : MediumTest
-     * @tc.type      : Reliability
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_0300
+     * @tc.desc   Test get fragment metadata property from PictureMetadata that contains some wrong key values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2847,13 +2842,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_ERROR_0400
-     * @tc.name      : testMetadataGetProperty
-     * @tc.desc      : Test get fragment metadata property from PictureMetadata that contains all wrong key values
-     * @tc.size      : MediumTest
-     * @tc.type      : Reliability
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_ERROR_0400
+     * @tc.desc   Test get fragment metadata property from PictureMetadata that contains all wrong key values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_GETPROPERTY_ERROR_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2885,13 +2880,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_CLONE_0100
-     * @tc.name      : testPictureMetadataClone
-     * @tc.desc      : Test clone PictureMetadata
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_CLONE_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_CLONE_0100
+     * @tc.desc   Test clone PictureMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTUREMETADATA_CLONE_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -2913,13 +2908,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0100
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get UNKNOWN pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0100
+     * @tc.desc   Test set and get UNKNOWN pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0100', Level.LEVEL0,
       async (done: Function) => {
@@ -2928,13 +2923,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0100');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0200
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get RGB_565 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0200
+     * @tc.desc   Test set and get RGB_565 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0200', Level.LEVEL0,
       async (done: Function) => {
@@ -2943,13 +2938,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0200');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0300
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get RGBA_8888 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0300
+     * @tc.desc   Test set and get RGBA_8888 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0300', Level.LEVEL0,
       async (done: Function) => {
@@ -2958,13 +2953,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0300');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0400
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get BGRA_8888 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0400
+     * @tc.desc   Test set and get BGRA_8888 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0400', Level.LEVEL0,
       async (done: Function) => {
@@ -2973,13 +2968,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0400');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0500
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get RGB_888 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0500
+     * @tc.desc   Test set and get RGB_888 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0500', Level.LEVEL0,
       async (done: Function) => {
@@ -2988,13 +2983,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0500');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0600
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get ALPHA_8 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0600
+     * @tc.desc   Test set and get ALPHA_8 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0600', Level.LEVEL0,
       async (done: Function) => {
@@ -3003,13 +2998,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0600');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0700
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get RGBA_F16 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0700
+     * @tc.desc   Test set and get RGBA_F16 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0700', Level.LEVEL0,
       async (done: Function) => {
@@ -3018,13 +3013,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0700');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0800
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get NV21 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0800
+     * @tc.desc   Test set and get NV21 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0800', Level.LEVEL0,
       async (done: Function) => {
@@ -3033,13 +3028,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0800');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0900
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get NV12 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0900
+     * @tc.desc   Test set and get NV12 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0900', Level.LEVEL0,
       async (done: Function) => {
@@ -3048,13 +3043,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_0900');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1000
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get RGBA_1010102 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1000
+     * @tc.desc   Test set and get RGBA_1010102 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1000', Level.LEVEL0,
       async (done: Function) => {
@@ -3063,13 +3058,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1000');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1100
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get YCBCR_P010 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1100
+     * @tc.desc   Test set and get YCBCR_P010 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1100', Level.LEVEL0,
       async (done: Function) => {
@@ -3078,13 +3073,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1100');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1200
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get YCRCB_P010 pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1200
+     * @tc.desc   Test set and get YCRCB_P010 pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1200', Level.LEVEL0,
       async (done: Function) => {
@@ -3093,13 +3088,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1200');
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1300
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1300
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3107,13 +3102,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1300')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1400
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1400
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3121,13 +3116,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1400')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1500
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1500
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3135,13 +3130,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1500')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1600
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1600
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3149,13 +3144,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1600')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1700
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1700
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3163,13 +3158,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1700')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1800
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1800
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3177,13 +3172,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1800')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1900
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1900
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1900', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3191,13 +3186,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_1900')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2000
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2000
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3205,13 +3200,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2000')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2100
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2100
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3219,13 +3214,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2100')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2200
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2200
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3233,13 +3228,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2200')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2300
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2300
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3247,13 +3242,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2300')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2400
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2400
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3261,13 +3256,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2400')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2500
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2500
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3275,13 +3270,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2500')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2600
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2600
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3289,13 +3284,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2600')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2700
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2700
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3303,13 +3298,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2700')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2800
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2800
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3317,13 +3312,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2800')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2900
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2900
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2900', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3331,13 +3326,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_2900')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3000
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3000
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3345,13 +3340,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3000')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3100
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3100
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3359,13 +3354,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3100')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3200
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3200
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3373,13 +3368,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3200')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3300
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3300
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3387,13 +3382,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3300')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3400
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3400
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3401,13 +3396,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3400')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3500
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3500
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3415,13 +3410,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3500')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3600
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3600
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3429,13 +3424,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3600')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3700
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3700
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3443,13 +3438,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3700')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3800
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3800
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3457,13 +3452,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3800')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3900
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3900
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3900', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3471,13 +3466,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_3900')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4000
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4000
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3485,13 +3480,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4000')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4100
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4100
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3499,13 +3494,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4100')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4200
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4200
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3513,13 +3508,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4200')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4300
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4300
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3527,13 +3522,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4300')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4400
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4400
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3541,13 +3536,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4400')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4500
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4500
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3555,13 +3550,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4500')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4600
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4600
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3569,13 +3564,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4600')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4700
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4700
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3583,13 +3578,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4700')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4800
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4800
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3597,13 +3592,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4800')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4900
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4900
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4900', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3611,13 +3606,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_4900')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5000
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5000
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3625,13 +3620,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5000')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5100
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5100
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3639,13 +3634,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5100')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5200
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5200
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3653,13 +3648,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5200')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5300
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5300
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3667,13 +3662,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5300')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5400
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5400
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3681,13 +3676,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5400')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5500
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5500
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3695,13 +3690,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5500')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5600
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5600
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3709,13 +3704,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5600')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5700
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5700
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3723,13 +3718,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5700')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5800
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5800
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3737,13 +3732,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5800')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5900
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5900
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5900', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3751,13 +3746,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_5900')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6000
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6000
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3765,13 +3760,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6000')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6100
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6100
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3779,13 +3774,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6100')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6200
-     * @tc.name      : testAuxiliaryPictureInfoSetPixelFormatGetPixelFormat
-     * @tc.desc      : Test set and get pixelFormat about AuxiliaryPictureInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6200
+     * @tc.desc   Test set and get pixelFormat about AuxiliaryPictureInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3793,13 +3788,13 @@ export default function pictureNdkTest() {
         'SUB_MULTIMEDIA_PICTURE_NDK_AUXILIARYPICTUREINFO_SETPIXELFORMAT_GETPIXELFORMAT_6200')
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0100
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0100
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3807,13 +3802,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0100`);
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0200
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0200
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3826,13 +3821,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0300
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0300
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3840,13 +3835,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0300`);
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0400
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0400
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3859,13 +3854,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0500
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0500
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3873,13 +3868,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0500`);
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0600
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0600
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3892,13 +3887,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0700
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0700
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3906,13 +3901,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0700`);
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0800
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0800
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_0800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3925,13 +3920,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_1900
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_1900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_1900
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_1900', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3939,13 +3934,13 @@ export default function pictureNdkTest() {
         `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_1900`);
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_2000
-     * @tc.name      : testCreatePictureByPixelmap
-     * @tc.desc      : Test create picture by pixelmap with different pixelMapFormat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_2000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_2000
+     * @tc.desc   Test create picture by pixelmap with different pixelMapFormat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_CREATEPICTUREBYPIXELMAP_2000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3958,14 +3953,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_IMAGESOURCE_SETDESIREDAUXILIARYPICTURES_ERROR_0100
-     * @tc.name      : testImageSourceGetDesiredAuxiliaryPictures
-     * @tc.desc      : Test get desired AuxiliaryPicture from DecodingOptions. 
-     *                 Added AuxiliaryPicture type array length abnormal.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_IMAGESOURCE_SETDESIREDAUXILIARYPICTURES_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_IMAGESOURCE_SETDESIREDAUXILIARYPICTURES_ERROR_0100
+     * @tc.desc   Test get desired AuxiliaryPicture from DecodingOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_IMAGESOURCE_SETDESIREDAUXILIARYPICTURES_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -3983,13 +3977,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_METADATA_SETPROPERTY_ERROR_0900
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set property to fragment metadata with illegal value.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_METADATA_SETPROPERTY_ERROR_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_METADATA_SETPROPERTY_ERROR_0900
+     * @tc.desc   Test set property to fragment metadata with illegal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_METADATA_SETPROPERTY_ERROR_0900', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4009,13 +4003,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_METADATA_SETPROPERTY_ERROR_1000
-     * @tc.name      : testMetadataSetProperty
-     * @tc.desc      : Test set property to fragment metadata with illegal value.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_METADATA_SETPROPERTY_ERROR_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_METADATA_SETPROPERTY_ERROR_1000
+     * @tc.desc   Test set property to fragment metadata with illegal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_METADATA_SETPROPERTY_ERROR_1000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4035,13 +4029,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0100
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0100
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4068,13 +4062,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0200
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0200
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4101,13 +4095,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0300
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0300
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4134,13 +4128,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0400
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0400
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4167,13 +4161,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0500
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0500
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4197,13 +4191,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0600
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0600
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4233,13 +4227,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0700
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0700
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0700', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4271,13 +4265,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0800
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0800
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4307,13 +4301,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0900
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0900
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_0900', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4345,13 +4339,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_ERROR_1000
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from jpg.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_ERROR_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_ERROR_1000
+     * @tc.desc   Test decode picture from jpg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_ERROR_1000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4368,13 +4362,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_ERROR_1100
-     * @tc.name      : testDecodePictureFromJpg
-     * @tc.desc      : Test decode picture from png.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_ERROR_1100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_ERROR_1100
+     * @tc.desc   Test decode picture from png.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_JPG_ERROR_1100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -4392,14 +4386,14 @@ export default function pictureNdkTest() {
       }
     })
 
-        /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0100
-     * @tc.name      : testDecodePictureFromHeif
-     * @tc.desc      : Test decode picture from heif.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0100
+         * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0100
+         * @tc.desc   Test decode picture from heif.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0100', Level.LEVEL0, async (done: Function) => {
           await sleep(1000);
           if (!isSupportHdr) {
@@ -4426,13 +4420,13 @@ export default function pictureNdkTest() {
           }
         })
     
-        /*
-         * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0200
-         * @tc.name      : testDecodePictureFromHeif
-         * @tc.desc      : Test decode picture from heif.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0200
+         * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0200
+         * @tc.desc   Test decode picture from heif.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0200', Level.LEVEL0, async (done: Function) => {
           await sleep(1000);
@@ -4460,13 +4454,13 @@ export default function pictureNdkTest() {
           }
         })
     
-        /*
-         * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0300
-         * @tc.name      : testDecodePictureFromHeif
-         * @tc.desc      : Test decode picture from heif.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0300
+         * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0300
+         * @tc.desc   Test decode picture from heif.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0300', Level.LEVEL0, async (done: Function) => {
           await sleep(1000);
@@ -4494,13 +4488,13 @@ export default function pictureNdkTest() {
           }
         })
     
-        /*
-         * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0400
-         * @tc.name      : testDecodePictureFromHeif
-         * @tc.desc      : Test decode picture from heif.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0400
+         * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0400
+         * @tc.desc   Test decode picture from heif.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0400', Level.LEVEL0, async (done: Function) => {
           await sleep(1000);
@@ -4528,13 +4522,13 @@ export default function pictureNdkTest() {
           }
         })
     
-        /*
-         * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0500
-         * @tc.name      : testDecodePictureFromHeif
-         * @tc.desc      : Test decode picture from heif.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0500
+         * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0500
+         * @tc.desc   Test decode picture from heif.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0500', Level.LEVEL0, async (done: Function) => {
           await sleep(1000);
@@ -4562,13 +4556,13 @@ export default function pictureNdkTest() {
           }
         })
     
-        /*
-         * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0600
-         * @tc.name      : testDecodePictureFromHeif
-         * @tc.desc      : Test decode picture from heif.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0600
+         * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0600
+         * @tc.desc   Test decode picture from heif.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0600', Level.LEVEL0, async (done: Function) => {
           await sleep(1000);
@@ -4598,13 +4592,13 @@ export default function pictureNdkTest() {
           }
         })
     
-        /*
-         * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0700
-         * @tc.name      : testDecodePictureFromHeif
-         * @tc.desc      : Test decode picture from heif.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0700
+         * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0700
+         * @tc.desc   Test decode picture from heif.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_0700', Level.LEVEL0, async (done: Function) => {
           await sleep(1000);
@@ -4636,13 +4630,13 @@ export default function pictureNdkTest() {
           }
         })
     
-        /*
-         * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_ERROR_0800
-         * @tc.name      : testDecodePictureFromHeif
-         * @tc.desc      : Test decode picture from heif.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_ERROR_0800
+         * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_ERROR_0800
+         * @tc.desc   Test decode picture from heif.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_PICTURE_NATIVE_PICTURE_DECODE_HEIF_ERROR_0800', Level.LEVEL0, async (done: Function) => {
           if (!isSupportHdr) {
@@ -4664,13 +4658,13 @@ export default function pictureNdkTest() {
           }
         })
 	
-	  /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0100
-     * @tc.name      : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0100
-     * @tc.desc      : Test get exif metadata from picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0100
+     * @tc.desc   Test get exif metadata from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0100', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0100`;
@@ -4700,13 +4694,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0200
-     * @tc.name      : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0200
-     * @tc.desc      : Test get exif metadata from picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0200
+     * @tc.desc   Test get exif metadata from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0200', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0200`;
@@ -4736,13 +4730,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0300
-     * @tc.name      : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0300
-     * @tc.desc      : Test get exif metadata from picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0300
+     * @tc.desc   Test get exif metadata from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0300', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0300`;
@@ -4772,13 +4766,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0400
-     * @tc.name      : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0400
-     * @tc.desc      : Test get exif metadata from picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0400
+     * @tc.desc   Test get exif metadata from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0400', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_GET_EXIF_METADATA_0400`;
@@ -4808,13 +4802,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0100
-     * @tc.name      : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0100
-     * @tc.desc      : Test get exif metadata from picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0100
+     * @tc.desc   Test get exif metadata from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0100', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0100`;
@@ -4842,13 +4836,13 @@ export default function pictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0200
-     * @tc.name      : SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0200
-     * @tc.desc      : Test get exif metadata from picture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0200
+     * @tc.desc   Test get exif metadata from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0200', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_NDK_PICTURE_SET_EXIF_METADATA_0200`;

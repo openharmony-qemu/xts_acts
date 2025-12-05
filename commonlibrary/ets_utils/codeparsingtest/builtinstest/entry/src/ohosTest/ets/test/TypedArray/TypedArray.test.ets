@@ -36,12 +36,12 @@ export default function TypedArrayTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0100
-     * @tc.name       : testTypedArrayFrom0001
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0100
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0001";
@@ -56,12 +56,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0200
-     * @tc.name       : testTypedArrayFrom0002
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0200
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0002";
@@ -76,12 +76,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0300
-     * @tc.name       : testTypedArrayFrom0003
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0300
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0003";
@@ -96,12 +96,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0400
-     * @tc.name       : testTypedArrayFrom0004
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0400
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0004";
@@ -116,12 +116,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0500
-     * @tc.name       : testTypedArrayFrom0005
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0500
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0005";
@@ -136,12 +136,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0600
-     * @tc.name       : testTypedArrayFrom0006
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0600
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0006";
@@ -156,12 +156,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0700
-     * @tc.name       : testTypedArrayFrom0007
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0700
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0007";
@@ -176,12 +176,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0800
-     * @tc.name       : testTypedArrayFrom0008
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0800
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0008";
@@ -196,12 +196,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0900
-     * @tc.name       : testTypedArrayFrom0009
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0900
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0009";
@@ -216,12 +216,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1000
-     * @tc.name       : testTypedArrayFrom0010
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1000
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0010";
@@ -237,12 +237,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1100
-     * @tc.name       : testTypedArrayFrom0011
-     * @tc.desc       : Test the function of the interface TypedArray.from().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayFrom0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1100
+     * @tc.desc   Test the function of the interface TypedArray.from().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayFrom0011";
@@ -258,12 +258,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1200
-     * @tc.name       : testTypedArrayOf0001
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1200
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayOf0001";
@@ -277,12 +277,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1300
-     * @tc.name       : testTypedArrayOf0002
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1300
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayOf0002";
@@ -296,12 +296,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1400
-     * @tc.name       : testTypedArrayOf0003
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTypedArrayOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1400
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testTypedArrayOf0003";
@@ -315,12 +315,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1500
-     * @tc.name       : testTypedArrayOf0004
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1500
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayOf0004";
@@ -334,12 +334,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1600
-     * @tc.name       : testTypedArrayOf0005
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayOf0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1600
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayOf0005";
@@ -353,12 +353,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1700
-     * @tc.name       : testTypedArrayOf0006
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayOf0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1700
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayOf0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayOf0006";
@@ -372,12 +372,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1800
-     * @tc.name       : testTypedArrayOf0007
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayOf0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1800
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayOf0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayOf0007";
@@ -391,12 +391,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1900
-     * @tc.name       : testTypedArrayOf0008
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayOf0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1900
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayOf0008";
@@ -410,12 +410,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2000
-     * @tc.name       : testTypedArrayOf0009
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayOf0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2000
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayOf0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayOf0009";
@@ -429,12 +429,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2100
-     * @tc.name       : testTypedArrayOf0010
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayOf0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2100
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayOf0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayOf0010";
@@ -448,12 +448,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2200
-     * @tc.name       : testTypedArrayOf0011
-     * @tc.desc       : Test the function of the interface TypedArray.of().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayOf0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2200
+     * @tc.desc   Test the function of the interface TypedArray.of().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayOf0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayOf0011";
@@ -467,12 +467,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2300
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0001
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0001";
@@ -489,12 +489,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2400
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0002
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0002";
@@ -511,12 +511,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2500
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0003
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0003";
@@ -533,12 +533,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2600
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0004
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0004";
@@ -555,12 +555,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2700
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0005
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0005";
@@ -577,12 +577,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2800
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0006
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0006";
@@ -599,12 +599,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2900
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0007
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0007";
@@ -621,12 +621,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3000
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0008
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0008";
@@ -643,12 +643,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3100
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0009
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0009";
@@ -665,12 +665,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3200
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0010
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3200
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0010";
@@ -687,12 +687,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3300
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0011
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0011";
@@ -709,12 +709,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3400
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0012
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0012";
@@ -731,12 +731,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3500
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0013
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0013";
@@ -753,12 +753,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3600
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0014
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0014";
@@ -775,12 +775,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3700
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0015
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0015";
@@ -797,12 +797,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3800
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0016
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0016";
@@ -819,12 +819,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3900
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0017
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0017";
@@ -841,12 +841,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4000
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0018
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0018";
@@ -863,12 +863,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4100
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0019
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0019";
@@ -885,12 +885,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4200
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0020
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4200
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0020";
@@ -907,12 +907,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4300
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0021
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0021";
@@ -929,12 +929,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4400
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0022
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0022";
@@ -951,12 +951,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4500
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0023
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0023";
@@ -973,12 +973,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4600
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0024
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0024";
@@ -995,12 +995,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4700
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0025
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0025";
@@ -1017,12 +1017,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4800
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0026
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0026";
@@ -1039,12 +1039,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4900
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0027
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0027";
@@ -1061,12 +1061,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5000
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0028
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0028";
@@ -1083,12 +1083,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5100
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0029
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0029";
@@ -1105,12 +1105,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5200
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0030
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5200
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0030";
@@ -1127,12 +1127,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5300
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0031
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0031";
@@ -1149,12 +1149,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5400
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0032
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0032";
@@ -1171,12 +1171,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5500
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0033
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0033";
@@ -1193,12 +1193,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5600
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0034
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0034";
@@ -1215,12 +1215,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5700
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0035
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0035";
@@ -1237,12 +1237,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5800
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0036
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0036";
@@ -1259,12 +1259,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5900
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0037
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0037";
@@ -1281,12 +1281,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6000
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0038
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0038";
@@ -1303,12 +1303,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6100
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0039
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0039";
@@ -1325,12 +1325,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6200
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0040
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6200
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0040";
@@ -1347,12 +1347,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6300
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0041
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0041";
@@ -1369,12 +1369,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6400
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0042
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0042";
@@ -1391,12 +1391,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6500
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0043
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0043";
@@ -1413,12 +1413,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6600
-     * @tc.name       : testTypedArrayPrototypeCopyWithin0044
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.copyWithin().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeCopyWithin0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.copyWithin().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeCopyWithin0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeCopyWithin0044";
@@ -1435,12 +1435,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6700
-     * @tc.name       : testTypedArrayPrototypeEntries0001
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0001";
@@ -1457,12 +1457,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6800
-     * @tc.name       : testTypedArrayPrototypeEntries0002
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0002";
@@ -1479,12 +1479,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6900
-     * @tc.name       : testTypedArrayPrototypeEntries0003
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0003";
@@ -1501,12 +1501,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7000
-     * @tc.name       : testTypedArrayPrototypeEntries0004
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0004";
@@ -1523,12 +1523,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7100
-     * @tc.name       : testTypedArrayPrototypeEntries0005
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0005";
@@ -1545,12 +1545,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7200
-     * @tc.name       : testTypedArrayPrototypeEntries0006
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7200
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0006";
@@ -1567,12 +1567,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7300
-     * @tc.name       : testTypedArrayPrototypeEntries0007
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0007";
@@ -1589,12 +1589,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7400
-     * @tc.name       : testTypedArrayPrototypeEntries0008
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0008";
@@ -1611,12 +1611,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7500
-     * @tc.name       : testTypedArrayPrototypeEntries0009
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0009";
@@ -1633,12 +1633,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7600
-     * @tc.name       : testTypedArrayPrototypeEntries0010
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0010";
@@ -1658,12 +1658,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7700
-     * @tc.name       : testTypedArrayPrototypeEntries0011
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.entries().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeEntries0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.entries().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeEntries0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeEntries0011";
@@ -1683,12 +1683,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7800
-     * @tc.name       : testTypedArrayPrototypeFill0001
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0001";
@@ -1703,12 +1703,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7900
-     * @tc.name       : testTypedArrayPrototypeFill0002
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0002";
@@ -1723,12 +1723,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8000
-     * @tc.name       : testTypedArrayPrototypeFill0003
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0003";
@@ -1743,12 +1743,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8100
-     * @tc.name       : testTypedArrayPrototypeFill0004
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0004";
@@ -1762,12 +1762,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8200
-     * @tc.name       : testTypedArrayPrototypeFill0005
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8200
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0005";
@@ -1782,12 +1782,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8300
-     * @tc.name       : testTypedArrayPrototypeFill0006
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0006";
@@ -1802,12 +1802,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8400
-     * @tc.name       : testTypedArrayPrototypeFill0007
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0007";
@@ -1822,12 +1822,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8500
-     * @tc.name       : testTypedArrayPrototypeFill0008
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0008";
@@ -1842,12 +1842,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8600
-     * @tc.name       : testTypedArrayPrototypeFill0009
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0009";
@@ -1862,12 +1862,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8700
-     * @tc.name       : testTypedArrayPrototypeFill0010
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0010";
@@ -1882,12 +1882,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8800
-     * @tc.name       : testTypedArrayPrototypeFill0011
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0011";
@@ -1902,12 +1902,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8900
-     * @tc.name       : testTypedArrayPrototypeFill0012
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_8900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0012";
@@ -1922,12 +1922,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9000
-     * @tc.name       : testTypedArrayPrototypeFill0013
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0013";
@@ -1942,12 +1942,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9100
-     * @tc.name       : testTypedArrayPrototypeFill0014
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0014";
@@ -1962,12 +1962,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9200
-     * @tc.name       : testTypedArrayPrototypeFill0015
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9200
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0015";
@@ -1982,12 +1982,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9300
-     * @tc.name       : testTypedArrayPrototypeFill0016
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.fill().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFill0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.fill().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFill0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFill0016";
@@ -2002,12 +2002,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9400
-     * @tc.name       : testTypedArrayPrototypeFilter0001
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0001";
@@ -2022,12 +2022,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9500
-     * @tc.name       : testTypedArrayPrototypeFilter0002
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0002";
@@ -2042,12 +2042,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9600
-     * @tc.name       : testTypedArrayPrototypeFilter0003
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0003";
@@ -2062,12 +2062,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9700
-     * @tc.name       : testTypedArrayPrototypeFilter0004
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0004";
@@ -2082,12 +2082,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9800
-     * @tc.name       : testTypedArrayPrototypeFilter0005
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0005";
@@ -2102,12 +2102,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9900
-     * @tc.name       : testTypedArrayPrototypeFilter0006
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_9900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0006";
@@ -2122,12 +2122,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10000
-     * @tc.name       : testTypedArrayPrototypeFilter0007
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0007";
@@ -2142,12 +2142,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10100
-     * @tc.name       : testTypedArrayPrototypeFilter0008
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0008";
@@ -2162,12 +2162,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10200
-     * @tc.name       : testTypedArrayPrototypeFilter0009
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10200
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0009";
@@ -2182,12 +2182,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10300
-     * @tc.name       : testTypedArrayPrototypeFilter0010
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10300
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0010";
@@ -2202,12 +2202,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10400
-     * @tc.name       : testTypedArrayPrototypeFilter0011
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.filter().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeFilter0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_10400
+     * @tc.desc   Test the function of the interface TypedArray.prototype.filter().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeFilter0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeFilter0011";
@@ -2221,12 +2221,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0100
-     * @tc.name       : testPrototypeFind0001
-     * @tc.desc       : Test the function of the interface PrototypeFind.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFind0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0100
+     * @tc.desc   Test the function of the interface PrototypeFind.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFind0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFind0001"
@@ -2242,12 +2242,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0200
-     * @tc.name       : testPrototypeFind0002
-     * @tc.desc       : Test the function of the interface PrototypeFind.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFind0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0200
+     * @tc.desc   Test the function of the interface PrototypeFind.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFind0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFind0002"
@@ -2269,12 +2269,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0300
-     * @tc.name       : testPrototypeFind0003
-     * @tc.desc       : Test the function of the interface PrototypeFind.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFind0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0300
+     * @tc.desc   Test the function of the interface PrototypeFind.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFind0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFind0003"
@@ -2290,12 +2290,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0400
-     * @tc.name       : testPrototypeFind0004
-     * @tc.desc       : Test the function of the interface PrototypeFind.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFind0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0400
+     * @tc.desc   Test the function of the interface PrototypeFind.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFind0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFind0004"
@@ -2311,12 +2311,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0500
-     * @tc.name       : testPrototypeFind0005
-     * @tc.desc       : Test the function of the interface PrototypeFind.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFind0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0500
+     * @tc.desc   Test the function of the interface PrototypeFind.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFind0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFind0005"
@@ -2333,12 +2333,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0600
-     * @tc.name       : testPrototypeFindIndex0001
-     * @tc.desc       : Test the function of the interface PrototypeFindIndex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFindIndex0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0600
+     * @tc.desc   Test the function of the interface PrototypeFindIndex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFindIndex0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFindIndex0001"
@@ -2354,12 +2354,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0700
-     * @tc.name       : testPrototypeFindIndex0002
-     * @tc.desc       : Test the function of the interface PrototypeFindIndex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFindIndex0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0700
+     * @tc.desc   Test the function of the interface PrototypeFindIndex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFindIndex0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFindIndex0002"
@@ -2382,12 +2382,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0800
-     * @tc.name       : testPrototypeFindIndex0003
-     * @tc.desc       : Test the function of the interface PrototypeFindIndex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFindIndex0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0800
+     * @tc.desc   Test the function of the interface PrototypeFindIndex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFindIndex0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFindIndex0003"
@@ -2403,12 +2403,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0900
-     * @tc.name       : testPrototypeFindIndex0004
-     * @tc.desc       : Test the function of the interface PrototypeFindIndex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFindIndex0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0900
+     * @tc.desc   Test the function of the interface PrototypeFindIndex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFindIndex0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFindIndex0004"
@@ -2424,12 +2424,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1000
-     * @tc.name       : testPrototypeFindIndex0005
-     * @tc.desc       : Test the function of the interface PrototypeFindIndex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFindIndex0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1000
+     * @tc.desc   Test the function of the interface PrototypeFindIndex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFindIndex0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFindIndex0005"
@@ -2446,12 +2446,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1100
-     * @tc.name       : testPrototypeFindForEach0001
-     * @tc.desc       : Test the function of the interface PrototypeFindForEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFindForEach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1100
+     * @tc.desc   Test the function of the interface PrototypeFindForEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFindForEach0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFindForEach0001"
@@ -2469,12 +2469,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1200
-     * @tc.name       : testPrototypeFindForEach0002
-     * @tc.desc       : Test the function of the interface PrototypeFindForEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeFindForEach0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1200
+     * @tc.desc   Test the function of the interface PrototypeFindForEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeFindForEach0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeFindForEach0002"
@@ -2492,12 +2492,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1300
-     * @tc.name       : testPrototypeIncludes0001
-     * @tc.desc       : Test the function of the interface PrototypeIncludes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIncludes0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1300
+     * @tc.desc   Test the function of the interface PrototypeIncludes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIncludes0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIncludes0001"
@@ -2510,12 +2510,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1400
-     * @tc.name       : testPrototypeIncludes0002
-     * @tc.desc       : Test the function of the interface PrototypeIncludes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIncludes0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1400
+     * @tc.desc   Test the function of the interface PrototypeIncludes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIncludes0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIncludes0002"
@@ -2528,12 +2528,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1500
-     * @tc.name       : testPrototypeIncludes0003
-     * @tc.desc       : Test the function of the interface PrototypeIncludes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIncludes0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1500
+     * @tc.desc   Test the function of the interface PrototypeIncludes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIncludes0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIncludes0003"
@@ -2546,12 +2546,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1600
-     * @tc.name       : testPrototypeIncludes0004
-     * @tc.desc       : Test the function of the interface PrototypeIncludes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIncludes0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1600
+     * @tc.desc   Test the function of the interface PrototypeIncludes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIncludes0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIncludes0004"
@@ -2564,12 +2564,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1700
-     * @tc.name       : testPrototypeIncludes0005
-     * @tc.desc       : Test the function of the interface PrototypeIncludes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIncludes0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1700
+     * @tc.desc   Test the function of the interface PrototypeIncludes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIncludes0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIncludes0005"
@@ -2582,12 +2582,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1800
-     * @tc.name       : testPrototypeIncludes0006
-     * @tc.desc       : Test the function of the interface PrototypeIncludes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIncludes0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1800
+     * @tc.desc   Test the function of the interface PrototypeIncludes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIncludes0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIncludes0006"
@@ -2600,12 +2600,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1900
-     * @tc.name       : testPrototypeIncludes0007
-     * @tc.desc       : Test the function of the interface PrototypeIncludes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIncludes0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1900
+     * @tc.desc   Test the function of the interface PrototypeIncludes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIncludes0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIncludes0007"
@@ -2618,12 +2618,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2000
-     * @tc.name       : testPrototypeIncludes0008
-     * @tc.desc       : Test the function of the interface PrototypeIncludes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIncludes0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2000
+     * @tc.desc   Test the function of the interface PrototypeIncludes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIncludes0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIncludes0008"
@@ -2637,12 +2637,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2100
-     * @tc.name       : testPrototypeIndexOf0001
-     * @tc.desc       : Test the function of the interface PrototypeIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2100
+     * @tc.desc   Test the function of the interface PrototypeIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIndexOf0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIndexOf0001"
@@ -2655,12 +2655,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2200
-     * @tc.name       : testPrototypeIndexOf0002
-     * @tc.desc       : Test the function of the interface PrototypeIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2200
+     * @tc.desc   Test the function of the interface PrototypeIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIndexOf0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIndexOf0002"
@@ -2673,12 +2673,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2300
-     * @tc.name       : testPrototypeIndexOf0003
-     * @tc.desc       : Test the function of the interface PrototypeIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2300
+     * @tc.desc   Test the function of the interface PrototypeIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIndexOf0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIndexOf0003"
@@ -2691,12 +2691,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2400
-     * @tc.name       : testPrototypeIndexOf0004
-     * @tc.desc       : Test the function of the interface PrototypeIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2400
+     * @tc.desc   Test the function of the interface PrototypeIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIndexOf0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIndexOf0004"
@@ -2709,12 +2709,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2500
-     * @tc.name       : testPrototypeIndexOf0005
-     * @tc.desc       : Test the function of the interface PrototypeIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIndexOf0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2500
+     * @tc.desc   Test the function of the interface PrototypeIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIndexOf0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIndexOf0005"
@@ -2727,12 +2727,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2600
-     * @tc.name       : testPrototypeIndexOf0006
-     * @tc.desc       : Test the function of the interface PrototypeIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIndexOf0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2600
+     * @tc.desc   Test the function of the interface PrototypeIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIndexOf0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIndexOf0006"
@@ -2745,12 +2745,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2700
-     * @tc.name       : testPrototypeIndexOf0007
-     * @tc.desc       : Test the function of the interface PrototypeIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIndexOf0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2700
+     * @tc.desc   Test the function of the interface PrototypeIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIndexOf0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIndexOf0007"
@@ -2763,12 +2763,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2800
-     * @tc.name       : testPrototypeIndexOf0008
-     * @tc.desc       : Test the function of the interface PrototypeIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeIndexOf0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2800
+     * @tc.desc   Test the function of the interface PrototypeIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeIndexOf0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeIndexOf0008"
@@ -2783,12 +2783,12 @@ export default function TypedArrayTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2900
-     * @tc.name       : testPrototypeJoin0001
-     * @tc.desc       : Test the function of the interface PrototypeJoin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeJoin0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2900
+     * @tc.desc   Test the function of the interface PrototypeJoin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeJoin0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeJoin0001"
@@ -2801,12 +2801,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3000
-     * @tc.name       : testPrototypeJoin0002
-     * @tc.desc       : Test the function of the interface PrototypeJoin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeJoin0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3000
+     * @tc.desc   Test the function of the interface PrototypeJoin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeJoin0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeJoin0002"
@@ -2819,12 +2819,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3100
-     * @tc.name       : testPrototypeJoin0003
-     * @tc.desc       : Test the function of the interface PrototypeJoin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeJoin0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3100
+     * @tc.desc   Test the function of the interface PrototypeJoin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeJoin0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeJoin0003"
@@ -2837,12 +2837,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3200
-     * @tc.name       : testPrototypeJoin0004
-     * @tc.desc       : Test the function of the interface PrototypeJoin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeJoin0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3200
+     * @tc.desc   Test the function of the interface PrototypeJoin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeJoin0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeJoin0004"
@@ -2856,12 +2856,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3300
-     * @tc.name       : testPrototypeKeys0001
-     * @tc.desc       : Test the function of the interface PrototypeKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeKeys0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3300
+     * @tc.desc   Test the function of the interface PrototypeKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeKeys0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeKeys0001"
@@ -2874,12 +2874,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3400
-     * @tc.name       : testPrototypeKeys0002
-     * @tc.desc       : Test the function of the interface PrototypeKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeKeys0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3400
+     * @tc.desc   Test the function of the interface PrototypeKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeKeys0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeKeys0002"
@@ -2894,12 +2894,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3500
-     * @tc.name       : testPrototypeKeys0003
-     * @tc.desc       : Test the function of the interface PrototypeKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeKeys0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3500
+     * @tc.desc   Test the function of the interface PrototypeKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeKeys0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeKeys0003"
@@ -2916,12 +2916,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3600
-     * @tc.name       : testPrototypeLastIndexOf0001
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3600
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0001"
@@ -2934,12 +2934,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3700
-     * @tc.name       : testPrototypeLastIndexOf0002
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3700
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0002"
@@ -2952,12 +2952,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3800
-     * @tc.name       : testPrototypeLastIndexOf0003
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3800
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0003"
@@ -2970,12 +2970,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3900
-     * @tc.name       : testPrototypeLastIndexOf0004
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_3900
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0004"
@@ -2988,12 +2988,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4000
-     * @tc.name       : testPrototypeLastIndexOf0005
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4000
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0005"
@@ -3006,12 +3006,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4100
-     * @tc.name       : testPrototypeLastIndexOf0006
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4100
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0006"
@@ -3024,12 +3024,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4200
-     * @tc.name       : testPrototypeLastIndexOf0007
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4200
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0007"
@@ -3042,12 +3042,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4300
-     * @tc.name       : testPrototypeLastIndexOf0008
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4300
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0008"
@@ -3060,12 +3060,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4400
-     * @tc.name       : testPrototypeLastIndexOf0009
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4400
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0009"
@@ -3078,12 +3078,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4500
-     * @tc.name       : testPrototypeLastIndexOf0010
-     * @tc.desc       : Test the function of the interface PrototypeLastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeLastIndexOf0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4500
+     * @tc.desc   Test the function of the interface PrototypeLastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeLastIndexOf0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeLastIndexOf0010"
@@ -3096,12 +3096,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4600
-     * @tc.name       : testPrototypeMap0001
-     * @tc.desc       : Test the function of the interface PrototypeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeMap0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4600
+     * @tc.desc   Test the function of the interface PrototypeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeMap0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeMap0001"
@@ -3114,12 +3114,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4700
-     * @tc.name       : testPrototypeMap0002
-     * @tc.desc       : Test the function of the interface PrototypeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeMap0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4700
+     * @tc.desc   Test the function of the interface PrototypeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeMap0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeMap0002"
@@ -3135,12 +3135,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4800
-     * @tc.name       : testPrototypeReduce0001
-     * @tc.desc       : Test the function of the interface PrototypeReduce.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeReduce0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4800
+     * @tc.desc   Test the function of the interface PrototypeReduce.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeReduce0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeReduce0001"
@@ -3156,12 +3156,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4900
-     * @tc.name       : testPrototypeReduce0002
-     * @tc.desc       : Test the function of the interface PrototypeReduce.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeReduce0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_4900
+     * @tc.desc   Test the function of the interface PrototypeReduce.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeReduce0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeReduce0002"
@@ -3175,12 +3175,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5000
-     * @tc.name       : testPrototypeReduceRight0001
-     * @tc.desc       : Test the function of the interface PrototypeReduceRight.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeReduceRight0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5000
+     * @tc.desc   Test the function of the interface PrototypeReduceRight.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeReduceRight0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeReduceRight0001";
@@ -3198,12 +3198,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5100
-     * @tc.name       : testPrototypeReduceRight0002
-     * @tc.desc       : Test the function of the interface PrototypeReduceRight.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeReduceRight0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5100
+     * @tc.desc   Test the function of the interface PrototypeReduceRight.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeReduceRight0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeReduceRight0002"
@@ -3217,12 +3217,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5200
-     * @tc.name       : testPrototypeReverse0001
-     * @tc.desc       : Test the function of the interface PrototypeReverse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeReverse0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5200
+     * @tc.desc   Test the function of the interface PrototypeReverse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeReverse0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeReverse0001"
@@ -3236,12 +3236,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5300
-     * @tc.name       : testPrototypeSet0001
-     * @tc.desc       : Test the function of the interface PrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5300
+     * @tc.desc   Test the function of the interface PrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSet0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSet0001"
@@ -3258,12 +3258,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5400
-     * @tc.name       : testPrototypeSlice0001
-     * @tc.desc       : Test the function of the interface PrototypeSlice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSlice0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5400
+     * @tc.desc   Test the function of the interface PrototypeSlice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSlice0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSlice0001"
@@ -3277,12 +3277,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5500
-     * @tc.name       : testPrototypeSlice0002
-     * @tc.desc       : Test the function of the interface PrototypeSlice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSlice0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5500
+     * @tc.desc   Test the function of the interface PrototypeSlice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSlice0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSlice0002"
@@ -3295,12 +3295,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5600
-     * @tc.name       : testPrototypeSlice0003
-     * @tc.desc       : Test the function of the interface PrototypeSlice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSlice0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5600
+     * @tc.desc   Test the function of the interface PrototypeSlice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSlice0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSlice0003"
@@ -3314,12 +3314,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5700
-     * @tc.name       : testPrototypeSlice0004
-     * @tc.desc       : Test the function of the interface PrototypeSlice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSlice0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5700
+     * @tc.desc   Test the function of the interface PrototypeSlice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSlice0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSlice0004"
@@ -3333,12 +3333,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5800
-     * @tc.name       : testPrototypeSlice0005
-     * @tc.desc       : Test the function of the interface PrototypeSlice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSlice0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5800
+     * @tc.desc   Test the function of the interface PrototypeSlice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSlice0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSlice0005"
@@ -3352,12 +3352,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5900
-     * @tc.name       : testPrototypeSlice0006
-     * @tc.desc       : Test the function of the interface PrototypeSlice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSlice0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_5900
+     * @tc.desc   Test the function of the interface PrototypeSlice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSlice0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSlice0006"
@@ -3372,12 +3372,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6000
-     * @tc.name       : testPrototypeSome0001
-     * @tc.desc       : Test the function of the interface PrototypeSome.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSome0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6000
+     * @tc.desc   Test the function of the interface PrototypeSome.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSome0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSome0001"
@@ -3393,12 +3393,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6100
-     * @tc.name       : testPrototypeSome0002
-     * @tc.desc       : Test the function of the interface PrototypeSome.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSome0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6100
+     * @tc.desc   Test the function of the interface PrototypeSome.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSome0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSome0002"
@@ -3414,12 +3414,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6200
-     * @tc.name       : testPrototypeSome0003
-     * @tc.desc       : Test the function of the interface PrototypeSome.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSome0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6200
+     * @tc.desc   Test the function of the interface PrototypeSome.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSome0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSome0003"
@@ -3435,12 +3435,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6300
-     * @tc.name       : testPrototypeSome0004
-     * @tc.desc       : Test the function of the interface PrototypeSome.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSome0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6300
+     * @tc.desc   Test the function of the interface PrototypeSome.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSome0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSome0004"
@@ -3455,12 +3455,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6400
-     * @tc.name       : testPrototypeSort0001
-     * @tc.desc       : Test the function of the interface PrototypeSort.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSort0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6400
+     * @tc.desc   Test the function of the interface PrototypeSort.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSort0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSort0001"
@@ -3475,12 +3475,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6500
-     * @tc.name       : testPrototypeSort0002
-     * @tc.desc       : Test the function of the interface PrototypeSort.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSort0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6500
+     * @tc.desc   Test the function of the interface PrototypeSort.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSort0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSort0002"
@@ -3495,12 +3495,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6600
-     * @tc.name       : testPrototypeSort0003
-     * @tc.desc       : Test the function of the interface PrototypeSort.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSort0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6600
+     * @tc.desc   Test the function of the interface PrototypeSort.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSort0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSort0003"
@@ -3515,12 +3515,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6700
-     * @tc.name       : testPrototypeSort0004
-     * @tc.desc       : Test the function of the interface PrototypeSort.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSort0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6700
+     * @tc.desc   Test the function of the interface PrototypeSort.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSort0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSort0004"
@@ -3535,12 +3535,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6800
-     * @tc.name       : testPrototypeSubarray0001
-     * @tc.desc       : Test the function of the interface PrototypeSubarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSubarray0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6800
+     * @tc.desc   Test the function of the interface PrototypeSubarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSubarray0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSubarray0001"
@@ -3554,12 +3554,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6900
-     * @tc.name       : testPrototypeSubarray0002
-     * @tc.desc       : Test the function of the interface PrototypeSubarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSubarray0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_6900
+     * @tc.desc   Test the function of the interface PrototypeSubarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSubarray0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSubarray0002"
@@ -3573,12 +3573,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7000
-     * @tc.name       : testPrototypeSubarray0003
-     * @tc.desc       : Test the function of the interface PrototypeSubarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSubarray0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7000
+     * @tc.desc   Test the function of the interface PrototypeSubarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSubarray0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSubarray0003"
@@ -3593,12 +3593,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7100
-     * @tc.name       : testPrototypeSubarray0004
-     * @tc.desc       : Test the function of the interface PrototypeSubarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSubarray0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7100
+     * @tc.desc   Test the function of the interface PrototypeSubarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSubarray0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSubarray0004"
@@ -3614,12 +3614,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7200
-     * @tc.name       : testPrototypeSubarray0005
-     * @tc.desc       : Test the function of the interface PrototypeSubarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeSubarray0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_7200
+     * @tc.desc   Test the function of the interface PrototypeSubarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPrototypeSubarray0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeSubarray0005"
@@ -3635,12 +3635,12 @@ export default function TypedArrayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0100
-     * @tc.name       : testTypedArrayPrototypeSymbolIterator0001
-     * @tc.desc       : Test the function of the interface TypedArray.prototype[Symbol.iterator]().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeSymbolIterator0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0100
+     * @tc.desc   Test the function of the interface TypedArray.prototype[Symbol.iterator]().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeSymbolIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeSymbolIterator0001";
@@ -3664,12 +3664,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0200
-     * @tc.name       : testTypedArrayPrototypeSymbolIterator0002
-     * @tc.desc       : Test the function of the interface TypedArray.prototype[Symbol.iterator]().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeSymbolIterator0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0200
+     * @tc.desc   Test the function of the interface TypedArray.prototype[Symbol.iterator]().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeSymbolIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeSymbolIterator0002";
@@ -3683,12 +3683,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0300
-     * @tc.name       : testTypedArrayPrototypeSymbolIterator0003
-     * @tc.desc       : Test the function of the interface TypedArray.prototype[Symbol.iterator]().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeSymbolIterator0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0300
+     * @tc.desc   Test the function of the interface TypedArray.prototype[Symbol.iterator]().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeSymbolIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeSymbolIterator0003";
@@ -3707,12 +3707,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0400
-     * @tc.name       : testTypedArrayPrototypeSymbolIterator0004
-     * @tc.desc       : Test the function of the interface TypedArray.prototype[Symbol.iterator]().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeSymbolIterator0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0400
+     * @tc.desc   Test the function of the interface TypedArray.prototype[Symbol.iterator]().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeSymbolIterator0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeSymbolIterator0004";
@@ -3727,12 +3727,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0500
-     * @tc.name       : testTypedArrayPrototypeToLocaleString0001
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.toLocaleString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeToLocaleString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0500
+     * @tc.desc   Test the function of the interface TypedArray.prototype.toLocaleString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeToLocaleString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeToLocaleString0001";
@@ -3747,12 +3747,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0600
-     * @tc.name       : testTypedArrayPrototypeToLocaleString0002
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.toLocaleString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeToLocaleString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0600
+     * @tc.desc   Test the function of the interface TypedArray.prototype.toLocaleString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeToLocaleString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeToLocaleString0002";
@@ -3767,12 +3767,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0700
-     * @tc.name       : testTypedArrayPrototypeToString0001
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeToString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0700
+     * @tc.desc   Test the function of the interface TypedArray.prototype.toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeToString0001";
@@ -3787,12 +3787,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0800
-     * @tc.name       : testTypedArrayPrototypeToString0002
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeToString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0800
+     * @tc.desc   Test the function of the interface TypedArray.prototype.toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeToString0002";
@@ -3807,12 +3807,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0900
-     * @tc.name       : testTypedArrayPrototypeValues0001
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.values().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeValues0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0900
+     * @tc.desc   Test the function of the interface TypedArray.prototype.values().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeValues0001";
@@ -3831,12 +3831,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1000
-     * @tc.name       : testTypedArrayPrototypeValues0002
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.values().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeValues0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1000
+     * @tc.desc   Test the function of the interface TypedArray.prototype.values().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeValues0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeValues0002";
@@ -3860,12 +3860,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1100
-     * @tc.name       : testTypedArrayPrototypeValues0003
-     * @tc.desc       : Test the function of the interface TypedArray.prototype.values().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTypedArrayPrototypeValues0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1100
+     * @tc.desc   Test the function of the interface TypedArray.prototype.values().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypedArrayPrototypeValues0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTypedArrayPrototypeValues0003";

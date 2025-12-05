@@ -16,7 +16,6 @@ import {describe, it, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('callback', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   callbackDemo
      * @tc.number callbackDemo
      * @tc.desc   callbackDemo

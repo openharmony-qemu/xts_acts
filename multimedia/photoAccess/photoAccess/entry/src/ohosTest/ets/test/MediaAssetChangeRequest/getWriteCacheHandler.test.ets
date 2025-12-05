@@ -32,12 +32,12 @@ export default function getWriteCacheHandlerTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_WRITE_CACHE_HANDLER_0000
-     * @tc.name      : get_write_cache_handler_000
-     * @tc.desc      : get write cache handler of image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_write_cache_handler_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_WRITE_CACHE_HANDLER_0000
+     * @tc.desc   get write cache handler of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_write_cache_handler_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'get_write_cache_handler_000';
@@ -67,12 +67,12 @@ export default function getWriteCacheHandlerTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_WRITE_CACHE_HANDLER_0100
-     * @tc.name      : get_write_cache_handler_001
-     * @tc.desc      : get write cache handler of video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_write_cache_handler_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_WRITE_CACHE_HANDLER_0100
+     * @tc.desc   get write cache handler of video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_write_cache_handler_001', Level.LEVEL2, async (done: Function) => {
       let testNum = 'get_write_cache_handler_001';

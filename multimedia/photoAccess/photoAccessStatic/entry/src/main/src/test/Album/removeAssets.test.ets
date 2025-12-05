@@ -33,12 +33,12 @@ export default function removeAssetsTest() {
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext)
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_STATIC_0300
-      * @tc.name    removeAssets_promise_static_003
-      * @tc.desc    user album remove empty array
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   removeAssets_promise_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_STATIC_0300
+     * @tc.desc   user album remove empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('removeAssets_promise_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

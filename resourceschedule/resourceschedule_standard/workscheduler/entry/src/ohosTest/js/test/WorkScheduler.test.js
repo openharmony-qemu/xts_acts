@@ -79,10 +79,13 @@ describe("WorkSchedulerJsTest", function () {
          console.info('afterEach caled')
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest001
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_001
-     * @tc.name: WorkSchedulerJsTest001
-     * @tc.desc: test work scheduler work id < 0
+     * @tc.desc   test work scheduler work id < 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest001", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest001---------------------------');
@@ -100,10 +103,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest002
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_002
-     * @tc.name: WorkSchedulerJsTest002
-     * @tc.desc: test work scheduler work id = 0
+     * @tc.desc   test work scheduler work id = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest002", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest002---------------------------');
@@ -121,10 +127,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest003
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_003
-     * @tc.name: WorkSchedulerJsTest003
-     * @tc.desc: test work scheduler without bundle name.
+     * @tc.desc   test work scheduler without bundle name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest003", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest003---------------------------');
@@ -142,10 +151,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest004
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_004
-     * @tc.name: WorkSchedulerJsTest004
-     * @tc.desc: test work scheduler without ability name.
+     * @tc.desc   test work scheduler without ability name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest004", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest004---------------------------');
@@ -163,10 +175,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest005
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_005
-     * @tc.name: WorkSchedulerJsTest005
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest005", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest005---------------------------');
@@ -184,10 +199,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest006
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_006
-     * @tc.name: WorkSchedulerJsTest006
-     * @tc.desc: test work scheduler success.
+     * @tc.desc   test work scheduler success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest006", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest006---------------------------');
@@ -205,10 +223,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest007
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_007
-     * @tc.name: WorkSchedulerJsTest007
-     * @tc.desc: test stopWork.
+     * @tc.desc   test stopWork.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest007", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest007---------------------------');
@@ -228,10 +249,13 @@ describe("WorkSchedulerJsTest", function () {
         };
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest008
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_008
-     * @tc.name: WorkSchedulerJsTest008
-     * @tc.desc: test stopWork.
+     * @tc.desc   test stopWork.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest008", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest008---------------------------');
@@ -250,10 +274,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest009
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_009
-     * @tc.name: WorkSchedulerJsTest009
-     * @tc.desc: test getWorkStatus callback.
+     * @tc.desc   test getWorkStatus callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest009", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest009---------------------------');
@@ -284,10 +311,13 @@ describe("WorkSchedulerJsTest", function () {
         }, 500);
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest010
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0010
-     * @tc.name: WorkSchedulerJsTest010
-     * @tc.desc: test getWorkStatus promise.
+     * @tc.desc   test getWorkStatus promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest010", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest010---------------------------');
@@ -318,10 +348,13 @@ describe("WorkSchedulerJsTest", function () {
         }, 500);
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest011
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0011
-     * @tc.name: WorkSchedulerJsTest011
-     * @tc.desc: test obtainAllWorks callback.
+     * @tc.desc   test obtainAllWorks callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest011", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest011---------------------------');
@@ -351,10 +384,13 @@ describe("WorkSchedulerJsTest", function () {
         }, 500);
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest012
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0012
-     * @tc.name: WorkSchedulerJsTest012
-     * @tc.desc: test obtainAllWorks promise.
+     * @tc.desc   test obtainAllWorks promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest012", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest012---------------------------');
@@ -384,10 +420,13 @@ describe("WorkSchedulerJsTest", function () {
         }, 500);
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest013
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0013
-     * @tc.name: WorkSchedulerJsTest013
-     * @tc.desc: test stopAndClearWorks.
+     * @tc.desc   test stopAndClearWorks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest013", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest013---------------------------');
@@ -407,10 +446,13 @@ describe("WorkSchedulerJsTest", function () {
         done()
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest014
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0014
-     * @tc.name: WorkSchedulerJsTest014
-     * @tc.desc: test isLastWorkTimeOut callback.
+     * @tc.desc   test isLastWorkTimeOut callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest014", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest014---------------------------');
@@ -425,10 +467,13 @@ describe("WorkSchedulerJsTest", function () {
         });
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest015
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0015
-     * @tc.name: WorkSchedulerJsTest015
-     * @tc.desc: test isLastWorkTimeOut promise.
+     * @tc.desc   test isLastWorkTimeOut promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest015", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest015---------------------------');
@@ -443,10 +488,13 @@ describe("WorkSchedulerJsTest", function () {
         });
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest016
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0016
-     * @tc.name: WorkSchedulerJsTest016
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest016", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest016---------------------------');
@@ -455,10 +503,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest017
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0017
-     * @tc.name: WorkSchedulerJsTest017
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest017", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest017---------------------------');
@@ -467,10 +518,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest018
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0018
-     * @tc.name: WorkSchedulerJsTest018
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest018", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest018---------------------------');
@@ -479,10 +533,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest019
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0019
-     * @tc.name: WorkSchedulerJsTest019
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest019", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest019---------------------------');
@@ -491,10 +548,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest020
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0020
-     * @tc.name: WorkSchedulerJsTest020
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest020", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest020---------------------------');
@@ -503,10 +563,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest021
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0021
-     * @tc.name: WorkSchedulerJsTest021
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest021", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest021---------------------------');
@@ -515,11 +578,14 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
-     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0022
-     * @tc.name: WorkSchedulerJsTest022
-     * @tc.desc: test work scheduler constant
-     */
+   /**
+    * @tc.name   WorkSchedulerJsTest022
+    * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0022
+    * @tc.desc   test work scheduler constant
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it("WorkSchedulerJsTest022", Level.LEVEL0, function (done) {
     console.info('----------------------WorkSchedulerJsTest022---------------------------');
     let value1 = workScheduler.ChargingType.CHARGING_PLUGGED_ANY;
@@ -527,10 +593,13 @@ describe("WorkSchedulerJsTest", function () {
     done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest023
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0023
-     * @tc.name: WorkSchedulerJsTest023
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest023", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest023---------------------------');
@@ -539,10 +608,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest024
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0024
-     * @tc.name: WorkSchedulerJsTest024
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest024", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest024---------------------------');
@@ -551,10 +623,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest025
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0025
-     * @tc.name: WorkSchedulerJsTest025
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest025", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest025---------------------------');
@@ -563,10 +638,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest026
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0026
-     * @tc.name: WorkSchedulerJsTest026
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest026", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest026---------------------------');
@@ -575,10 +653,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest027
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0027
-     * @tc.name: WorkSchedulerJsTest027
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest027", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest027---------------------------');
@@ -587,10 +668,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest028
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0028
-     * @tc.name: WorkSchedulerJsTest028
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest028", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest028---------------------------');
@@ -599,10 +683,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest029
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0029
-     * @tc.name: WorkSchedulerJsTest029
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest029", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest029---------------------------');
@@ -611,10 +698,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest030
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0030
-     * @tc.name: WorkSchedulerJsTest030
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest030", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest030---------------------------');
@@ -623,10 +713,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest031
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0031
-     * @tc.name: WorkSchedulerJsTest031
-     * @tc.desc: test work scheduler constant
+     * @tc.desc   test work scheduler constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest031", Level.LEVEL0, function (done) {
         console.info('----------------------WorkSchedulerJsTest031---------------------------');
@@ -635,10 +728,13 @@ describe("WorkSchedulerJsTest", function () {
         done();
     })
 	
-    /*
+    /**
+     * @tc.name   WorkSchedulerJsTest032
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0032
-     * @tc.name: WorkSchedulerJsTest032
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest032", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest032---------------------------');
@@ -657,10 +753,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest033
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0033
-     * @tc.name: WorkSchedulerJsTest033
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest033", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest033---------------------------');
@@ -679,10 +778,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest034
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0034
-     * @tc.name: WorkSchedulerJsTest034
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest034", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest034---------------------------');
@@ -700,10 +802,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest035
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0035
-     * @tc.name: WorkSchedulerJsTest035
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest035", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest035---------------------------');
@@ -722,10 +827,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest036
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0036
-     * @tc.name: WorkSchedulerJsTest036
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest036", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest036---------------------------');
@@ -744,10 +852,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest037
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0037
-     * @tc.name: WorkSchedulerJsTest037
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest037", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest037---------------------------');
@@ -766,10 +877,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest038
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0038
-     * @tc.name: WorkSchedulerJsTest038
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest038", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest038---------------------------');
@@ -788,10 +902,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest039
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0039
-     * @tc.name: WorkSchedulerJsTest039
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest039", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest039---------------------------');
@@ -810,10 +927,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest040
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0040
-     * @tc.name: WorkSchedulerJsTest040
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest040", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest040---------------------------');
@@ -832,10 +952,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest041
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0041
-     * @tc.name: WorkSchedulerJsTest041
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest041", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest041---------------------------');
@@ -854,10 +977,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest042
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0042
-     * @tc.name: WorkSchedulerJsTest042
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest042", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest042---------------------------');
@@ -876,10 +1002,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest043
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0043
-     * @tc.name: WorkSchedulerJsTest043
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest043", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest043---------------------------');
@@ -900,10 +1029,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest044
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0044
-     * @tc.name: WorkSchedulerJsTest044
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest044", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest044---------------------------');
@@ -924,10 +1056,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest045
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0045
-     * @tc.name: WorkSchedulerJsTest045
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest045", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest045---------------------------');
@@ -946,10 +1081,13 @@ describe("WorkSchedulerJsTest", function () {
         }  
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest046
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0046
-     * @tc.name: WorkSchedulerJsTest046
-     * @tc.desc: test workScheduler workInfo networkType
+     * @tc.desc   test workScheduler workInfo networkType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest046", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest046---------------------------');
@@ -968,10 +1106,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest047
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0047
-     * @tc.name: WorkSchedulerJsTest047
-     * @tc.desc: test workScheduler workInfo ChargingType
+     * @tc.desc   test workScheduler workInfo ChargingType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest047", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest047---------------------------');
@@ -990,10 +1131,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest048
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0048
-     * @tc.name: WorkSchedulerJsTest048
-     * @tc.desc: test workScheduler workInfo BatteryStatus
+     * @tc.desc   test workScheduler workInfo BatteryStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest048", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest048---------------------------');
@@ -1012,11 +1156,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name     WorkSchedulerJsTest051
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0051
-     * @tc.name:  WorkSchedulerJsTest051
-     * @tc.desc: test workScheduler bundleName
- 
+     * @tc.desc   test workScheduler bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("  WorkSchedulerJsTest051", Level.LEVEL0, async function (done) {
         console.info('----------------------  WorkSchedulerJsTest051---------------------------');
@@ -1034,10 +1180,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest052
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0052
-     * @tc.name: WorkSchedulerJsTest052
-     * @tc.desc: test workScheduler workInfo abilityName
+     * @tc.desc   test workScheduler workInfo abilityName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest052", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest052---------------------------');
@@ -1055,10 +1204,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest053
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0053
-     * @tc.name: WorkSchedulerJsTest053
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest053", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest053---------------------------');
@@ -1077,10 +1229,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest054
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0054
-     * @tc.name: WorkSchedulerJsTest054
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest054", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest054---------------------------');
@@ -1099,10 +1254,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest055
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0055
-     * @tc.name: WorkSchedulerJsTest055
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest055", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest055---------------------------');
@@ -1121,10 +1279,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest056
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0056
-     * @tc.name: WorkSchedulerJsTest056
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest056", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest056---------------------------');
@@ -1143,10 +1304,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest057
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0057
-     * @tc.name: WorkSchedulerJsTest057
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest057", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest057---------------------------');
@@ -1165,10 +1329,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest058
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0058
-     * @tc.name: WorkSchedulerJsTest058
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest058", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest058---------------------------');
@@ -1187,10 +1354,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest059
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0059
-     * @tc.name: WorkSchedulerJsTest059
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest059", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest059---------------------------');
@@ -1209,10 +1379,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest060
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0060
-     * @tc.name: WorkSchedulerJsTest060
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest060", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest060---------------------------');
@@ -1232,10 +1405,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest061
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0061
-     * @tc.name: WorkSchedulerJsTest061
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest061", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest061---------------------------');
@@ -1255,10 +1431,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest062
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0062
-     * @tc.name: WorkSchedulerJsTest062
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest062", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest062---------------------------');
@@ -1278,10 +1457,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest063
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0063
-     * @tc.name: WorkSchedulerJsTest063
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest063", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest063---------------------------');
@@ -1301,10 +1483,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest064
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0064
-     * @tc.name: WorkSchedulerJsTest064
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest064", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest064---------------------------');
@@ -1324,10 +1509,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest065
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0065
-     * @tc.name: WorkSchedulerJsTest065
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest065", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest065---------------------------');
@@ -1347,10 +1535,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest066
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0066
-     * @tc.name: WorkSchedulerJsTest066
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest066", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest066---------------------------');
@@ -1370,10 +1561,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest067
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0067
-     * @tc.name: WorkSchedulerJsTest067
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest067", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest067---------------------------');
@@ -1393,10 +1587,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest068
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0068
-     * @tc.name: WorkSchedulerJsTest068
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest068", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest068---------------------------');
@@ -1415,10 +1612,13 @@ describe("WorkSchedulerJsTest", function () {
             done();
         }
     })
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest069
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0069
-     * @tc.name: WorkSchedulerJsTest069
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest069", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest069---------------------------');
@@ -1438,10 +1638,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest070
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0070
-     * @tc.name: WorkSchedulerJsTest070
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest070", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest070---------------------------');
@@ -1461,10 +1664,13 @@ describe("WorkSchedulerJsTest", function () {
         }
     })
 	
-	/*
+    /**
+     * @tc.name   WorkSchedulerJsTest071
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0071
-     * @tc.name: WorkSchedulerJsTest071
-     * @tc.desc: test work scheduler without conditions.
+     * @tc.desc   test work scheduler without conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("WorkSchedulerJsTest071", Level.LEVEL0, async function (done) {
         console.info('----------------------WorkSchedulerJsTest071---------------------------');

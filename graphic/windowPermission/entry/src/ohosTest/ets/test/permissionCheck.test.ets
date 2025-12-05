@@ -84,12 +84,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0010
-     * @tc.name      : testCreateFloatWindowPermission_Promise
-     * @tc.desc      : create Floating window permission check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCreateFloatWindowPermission_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0010
+     * @tc.desc   create Floating window permission check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateFloatWindowPermission_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testCreateFloatWindowPermission_Promise';
@@ -114,13 +114,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       }
     })
     /**
-     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0020
-     * @tc.name      : testCreateFloatWindowPermission_Callback
-     * @tc.desc      : create Floating window permission check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateFloatWindowPermission_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0020
+     * @tc.desc   create Floating window permission check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateFloatWindowPermission_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testCreateFloatWindowPermission_Callback';
@@ -151,12 +150,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0030
-     * @tc.name      : testSetWindowPrivacyModePermission_Callback
-     * @tc.desc      : Sets whether the window is in private mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetWindowPrivacyModePermission_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0030
+     * @tc.desc   Sets whether the window is in private mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowPrivacyModePermission_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSetWindowPrivacyModePermission_Callback';
@@ -198,12 +197,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0040
-     * @tc.name      : testSetWindowPrivacyModePermission_Promise
-     * @tc.desc      : Sets whether the window is in private mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetWindowPrivacyModePermission_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0040
+     * @tc.desc   Sets whether the window is in private mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowPrivacyModePermission_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testSetWindowPrivacyModePermission_Promise';
@@ -239,12 +238,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_0200
-     * @tc.name      : test_GET_VISIBLEWINDOWINFO_0200
-     * @tc.desc      : test_GET_VISIBLEWINDOWINFO_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_GET_VISIBLEWINDOWINFO_0200
+     * @tc.number SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_0200
+     * @tc.desc   test_GET_VISIBLEWINDOWINFO_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_GET_VISIBLEWINDOWINFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_GET_VISIBLEWINDOWINFO_0200 ';
@@ -277,12 +276,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0200
-     * @tc.name       : testSetWindowShadowEnabledwithoutPermission
-     * @tc.desc       : testSetWindowShadowEnabledwithoutPermission
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testSetWindowShadowEnabledwithoutPermission
+     * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0200
+     * @tc.desc   testSetWindowShadowEnabledwithoutPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowShadowEnabledwithoutPermission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testSetWindowShadowEnabledwithoutPermission";
@@ -311,12 +310,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0700
-     * @tc.name      : testMainwindowSetWindowContainerColorNoPermissonCorrectParam
-     * @tc.desc      : testMainwindowSetWindowContainerColorNoPermissonCorrectParam
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainwindowSetWindowContainerColorNoPermissonCorrectParam
+     * @tc.number SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0700
+     * @tc.desc   testMainwindowSetWindowContainerColorNoPermissonCorrectParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainwindowSetWindowContainerColorNoPermissonCorrectParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainwindowSetWindowContainerColorNoPermissonCorrectParam ';
@@ -341,12 +340,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_0100
-     * @tc.name      : testGetAllMainWindowInfo_0100
-     * @tc.desc      : ±±ÏògetAllMainWindowInfo²âÊÔ´íÎóÂëÐ£Ñé801¡¢201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGetAllMainWindowInfo_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_0100
+     * @tc.desc   ±±ÏògetAllMainWindowInfo²âÊÔ´íÎóÂëÐ£Ñé801¡¢201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAllMainWindowInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetAllMainWindowInfo_0100 ';
@@ -368,12 +367,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0100
-     * @tc.name      : testGetMainWindowSnapshot_0100
-     * @tc.desc      : ±±ÏògetMainWindowSnapshot²âÊÔ´íÎóÂëÐ£Ñé801¡¢201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGetMainWindowSnapshot_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0100
+     * @tc.desc   ±±ÏògetMainWindowSnapshot²âÊÔ´íÎóÂëÐ£Ñé801¡¢201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetMainWindowSnapshot_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetMainWindowSnapshot_0100 ';

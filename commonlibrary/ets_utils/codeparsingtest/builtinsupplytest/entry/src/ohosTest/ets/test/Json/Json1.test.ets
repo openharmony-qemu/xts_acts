@@ -43,12 +43,12 @@ export default function Json1Test() {
     })
 
     /**
+     * @tc.name   Json1Test001
      * @tc.number SUB_BUILTINS_Json1_TEST_0100
-     * @tc.name Json1Test001
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "{}";
@@ -56,12 +56,12 @@ export default function Json1Test() {
       expect(JSON.stringify(result)).assertEqual(JSON.stringify({}));
     });
     /**
+     * @tc.name   Json1Test002
      * @tc.number SUB_BUILTINS_Json1_TEST_0200
-     * @tc.name Json1Test002
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "true";
@@ -69,12 +69,12 @@ export default function Json1Test() {
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Json1Test003
      * @tc.number SUB_BUILTINS_Json1_TEST_0300
-     * @tc.name Json1Test003
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"typescript"';
@@ -83,12 +83,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test004
      * @tc.number SUB_BUILTINS_Json1_TEST_0400
-     * @tc.name Json1Test004
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "[10, 20, 30.5]";
@@ -97,12 +97,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test005
      * @tc.number SUB_BUILTINS_Json1_TEST_0500
-     * @tc.name Json1Test005
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "null";
@@ -111,12 +111,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test006
      * @tc.number SUB_BUILTINS_Json1_TEST_0600
-     * @tc.name Json1Test006
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface Info {
@@ -135,12 +135,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test007
      * @tc.number SUB_BUILTINS_Json1_TEST_0700
-     * @tc.name Json1Test007
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface NegNumData {
@@ -154,12 +154,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test008
      * @tc.number SUB_BUILTINS_Json1_TEST_0800
-     * @tc.name Json1Test008
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"a":1, "b":{"c":2, "d":{"e":3}}}';
@@ -172,12 +172,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test009
      * @tc.number SUB_BUILTINS_Json1_TEST_0900
-     * @tc.name Json1Test009
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "[1, 2, 3, ]";
@@ -191,12 +191,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test010
      * @tc.number SUB_BUILTINS_Json1_TEST_1000
-     * @tc.name Json1Test010
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"key": "value", }';
@@ -210,12 +210,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test011
      * @tc.number SUB_BUILTINS_Json1_TEST_1100
-     * @tc.name Json1Test011
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"line1\\nline2"';
@@ -224,12 +224,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test012
      * @tc.number SUB_BUILTINS_Json1_TEST_1200
-     * @tc.name Json1Test012
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "[]";
@@ -238,12 +238,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test013
      * @tc.number SUB_BUILTINS_Json1_TEST_1300
-     * @tc.name Json1Test013
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "false";
@@ -252,12 +252,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test014
      * @tc.number SUB_BUILTINS_Json1_TEST_1400
-     * @tc.name Json1Test014
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ChineseData {
@@ -271,12 +271,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test015
      * @tc.number SUB_BUILTINS_Json1_TEST_1500
-     * @tc.name Json1Test015
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "123";
@@ -285,12 +285,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test016
      * @tc.number SUB_BUILTINS_Json1_TEST_1600
-     * @tc.name Json1Test016
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface FloatData {
@@ -303,12 +303,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test017
      * @tc.number SUB_BUILTINS_Json1_TEST_1700
-     * @tc.name Json1Test017
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "[1, 2, 3, ]";
@@ -322,12 +322,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test018
      * @tc.number SUB_BUILTINS_Json1_TEST_1800
-     * @tc.name Json1Test018
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "false";
@@ -336,12 +336,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test019
      * @tc.number SUB_BUILTINS_Json1_TEST_1900
-     * @tc.name Json1Test019
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface SciData {
@@ -354,12 +354,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test020
      * @tc.number SUB_BUILTINS_Json1_TEST_2000
-     * @tc.name Json1Test020
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[null, "a", "b"]';
@@ -368,12 +368,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test021
      * @tc.number SUB_BUILTINS_Json1_TEST_2100
-     * @tc.name Json1Test021
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[-1, -3, -5]';
@@ -382,12 +382,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test022
      * @tc.number SUB_BUILTINS_Json1_TEST_2200
-     * @tc.name Json1Test022
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{key: "value"}';
@@ -400,12 +400,12 @@ export default function Json1Test() {
       expect(isSyntaxError).assertEqual(true);
     });
     /**
+     * @tc.name   Json1Test023
      * @tc.number SUB_BUILTINS_Json1_TEST_2300
-     * @tc.name Json1Test023
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"He said \\"JSON\\""';
@@ -414,12 +414,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test024
      * @tc.number SUB_BUILTINS_Json1_TEST_2400
-     * @tc.name Json1Test024
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[Infinity]';
@@ -433,12 +433,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test025
      * @tc.number SUB_BUILTINS_Json1_TEST_2500
-     * @tc.name Json1Test025
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface LongNum {
@@ -451,12 +451,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test026
      * @tc.number SUB_BUILTINS_Json1_TEST_2600
-     * @tc.name Json1Test026
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"a": 1 "b": 2}';
@@ -470,12 +470,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test027
      * @tc.number SUB_BUILTINS_Json1_TEST_2700
-     * @tc.name Json1Test027
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface NoReturn {
@@ -489,12 +489,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test028
      * @tc.number SUB_BUILTINS_Json1_TEST_2800
-     * @tc.name Json1Test028
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface Key {
@@ -507,12 +507,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test029
      * @tc.number SUB_BUILTINS_Json1_TEST_2900
-     * @tc.name Json1Test029
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "123";
@@ -521,12 +521,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test030
      * @tc.number SUB_BUILTINS_Json1_TEST_3000
-     * @tc.name Json1Test030
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ArrWithObj {
@@ -540,12 +540,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test031
      * @tc.number SUB_BUILTINS_Json1_TEST_3100
-     * @tc.name Json1Test031
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[5, 10]';
@@ -560,12 +560,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test032
      * @tc.number SUB_BUILTINS_Json1_TEST_3200
-     * @tc.name Json1Test032
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "{'key': 'value'}";
@@ -579,12 +579,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test033
      * @tc.number SUB_BUILTINS_Json1_TEST_3300
-     * @tc.name Json1Test033
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ObjToArr {
@@ -602,12 +602,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test034
      * @tc.number SUB_BUILTINS_Json1_TEST_3400
-     * @tc.name Json1Test034
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"C:\\\\Program Files"';
@@ -616,12 +616,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test035
      * @tc.number SUB_BUILTINS_Json1_TEST_3500
-     * @tc.name Json1Test035
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ZeroVal {
@@ -635,12 +635,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test036
      * @tc.number SUB_BUILTINS_Json1_TEST_3600
-     * @tc.name Json1Test036
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"col1\\tcol2\\tcol3"';
@@ -649,12 +649,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test037
      * @tc.number SUB_BUILTINS_Json1_TEST_3700
-     * @tc.name Json1Test037
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"a": {"b": 1}}';
@@ -667,12 +667,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test038
      * @tc.number SUB_BUILTINS_Json1_TEST_3800
-     * @tc.name Json1Test038
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[-1.5, -2.5, -3.5]';
@@ -681,12 +681,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test039
      * @tc.number SUB_BUILTINS_Json1_TEST_3900
-     * @tc.name Json1Test039
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface BoolToNum {
@@ -699,12 +699,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test040
      * @tc.number SUB_BUILTINS_Json1_TEST_4000
-     * @tc.name Json1Test040
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface EmptyStr {
@@ -717,12 +717,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test041
      * @tc.number SUB_BUILTINS_Json1_TEST_4100
-     * @tc.name Json1Test041
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "true";
@@ -731,12 +731,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test042
      * @tc.number SUB_BUILTINS_Json1_TEST_4200
-     * @tc.name Json1Test042
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface Level1 {
@@ -757,12 +757,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test043
      * @tc.number SUB_BUILTINS_Json1_TEST_4300
-     * @tc.name Json1Test043
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"\\u4F60\\u597D"';
@@ -771,12 +771,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test044
      * @tc.number SUB_BUILTINS_Json1_TEST_4400
-     * @tc.name Json1Test044
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface InfStr {
@@ -789,12 +789,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test045
      * @tc.number SUB_BUILTINS_Json1_TEST_4500
-     * @tc.name Json1Test045
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"key": "value"';
@@ -808,12 +808,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test046
      * @tc.number SUB_BUILTINS_Json1_TEST_4600
-     * @tc.name Json1Test046
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[0, 0, 0]';
@@ -822,12 +822,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test047
      * @tc.number SUB_BUILTINS_Json1_TEST_4700
-     * @tc.name Json1Test047
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"line1\\nline2\\nline3"';
@@ -836,12 +836,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test048
      * @tc.number SUB_BUILTINS_Json1_TEST_4800
-     * @tc.name Json1Test048
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface FuncStr {
@@ -854,12 +854,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test049
      * @tc.number SUB_BUILTINS_Json1_TEST_4900
-     * @tc.name Json1Test049
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ObjWithEmptyArr {
@@ -872,12 +872,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test050
      * @tc.number SUB_BUILTINS_Json1_TEST_5000
-     * @tc.name Json1Test050
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface NullVal {
@@ -889,12 +889,12 @@ export default function Json1Test() {
       expect(result.data).assertEqual(null);
     });
     /**
+     * @tc.name   Json1Test051
      * @tc.number SUB_BUILTINS_Json1_TEST_5100
-     * @tc.name Json1Test051
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"a": 1, "b": 2, }'; // 对象末尾多余逗号
@@ -908,12 +908,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test052
      * @tc.number SUB_BUILTINS_Json1_TEST_5200
-     * @tc.name Json1Test052
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"\\t\\n\\rtest"';
@@ -922,12 +922,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test053
      * @tc.number SUB_BUILTINS_Json1_TEST_5300
-     * @tc.name Json1Test053
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{key: "value", num: 123}';
@@ -941,12 +941,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test054
      * @tc.number SUB_BUILTINS_Json1_TEST_5400
-     * @tc.name Json1Test054
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[[[1], [2]], [[3], [4]]]';
@@ -955,12 +955,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test055
      * @tc.number SUB_BUILTINS_Json1_TEST_5500
-     * @tc.name Json1Test055
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"\\u263A\\u270C"';
@@ -969,12 +969,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test056
      * @tc.number SUB_BUILTINS_Json1_TEST_5600
-     * @tc.name Json1Test056
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface NaNStr {
@@ -987,12 +987,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test057
      * @tc.number SUB_BUILTINS_Json1_TEST_5700
-     * @tc.name Json1Test057
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface B {}
@@ -1011,12 +1011,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test058
      * @tc.number SUB_BUILTINS_Json1_TEST_5800
-     * @tc.name Json1Test058
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[1, 2, 3';
@@ -1030,12 +1030,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test059
      * @tc.number SUB_BUILTINS_Json1_TEST_5900
-     * @tc.name Json1Test059
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[-0, 0, -0]';
@@ -1044,12 +1044,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test060
      * @tc.number SUB_BUILTINS_Json1_TEST_6000
-     * @tc.name Json1Test060
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"line1\\rline2"';
@@ -1058,12 +1058,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test061
      * @tc.number SUB_BUILTINS_Json1_TEST_6100
-     * @tc.name Json1Test061
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '["function a(){}", "function b(){}"]';
@@ -1072,12 +1072,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test062
      * @tc.number SUB_BUILTINS_Json1_TEST_6200
-     * @tc.name Json1Test062
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[1, [], [2, 3]]';
@@ -1086,12 +1086,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test063
      * @tc.number SUB_BUILTINS_Json1_TEST_6300
-     * @tc.name Json1Test063
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface A {
@@ -1108,12 +1108,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test064
      * @tc.number SUB_BUILTINS_Json1_TEST_6400
-     * @tc.name Json1Test064
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '["a", "b", "c"]';
@@ -1128,12 +1128,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test065
      * @tc.number SUB_BUILTINS_Json1_TEST_6500
-     * @tc.name Json1Test065
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"\\u4E2D\\u6587\\u6D4B\\u8BD5"'; // 中文测试
@@ -1142,12 +1142,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test066
      * @tc.number SUB_BUILTINS_Json1_TEST_6600
-     * @tc.name Json1Test066
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"C:\\\\\\\\Users\\\\\\\\test"';
@@ -1156,12 +1156,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test067
      * @tc.number SUB_BUILTINS_Json1_TEST_6700
-     * @tc.name Json1Test067
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"line1\\u000bline2"';
@@ -1170,12 +1170,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test068
      * @tc.number SUB_BUILTINS_Json1_TEST_6800
-     * @tc.name Json1Test068
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface RegexStr {
@@ -1188,12 +1188,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test069
      * @tc.number SUB_BUILTINS_Json1_TEST_6900
-     * @tc.name Json1Test069
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface A {
@@ -1210,12 +1210,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test070
      * @tc.number SUB_BUILTINS_Json1_TEST_7000
-     * @tc.name Json1Test070
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[1, null, 3, null, 5]';
@@ -1224,12 +1224,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test071
      * @tc.number SUB_BUILTINS_Json1_TEST_7100
-     * @tc.name Json1Test071
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"\\t\\u000b\\r\\ntest"';
@@ -1238,12 +1238,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test072
      * @tc.number SUB_BUILTINS_Json1_TEST_7200
-     * @tc.name Json1Test072
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[1, 2, 3, 4, 5, 6]';
@@ -1257,12 +1257,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test073
      * @tc.number SUB_BUILTINS_Json1_TEST_7300
-     * @tc.name Json1Test073
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface CurrencyStr {
@@ -1280,12 +1280,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test074
      * @tc.number SUB_BUILTINS_Json1_TEST_7400
-     * @tc.name Json1Test074
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface LongChineseStr {
@@ -1300,12 +1300,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test075
      * @tc.number SUB_BUILTINS_Json1_TEST_7500
-     * @tc.name Json1Test075
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface Obj {
@@ -1327,12 +1327,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test076
      * @tc.number SUB_BUILTINS_Json1_TEST_7600
-     * @tc.name Json1Test076
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"He said: \'Hello!\'"';
@@ -1341,12 +1341,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test077
      * @tc.number SUB_BUILTINS_Json1_TEST_7700
-     * @tc.name Json1Test077
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[3, 1, 2]';
@@ -1360,12 +1360,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test078
      * @tc.number SUB_BUILTINS_Json1_TEST_7800
-     * @tc.name Json1Test078
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{user@id: "u123", price#tag: 99}';
@@ -1379,12 +1379,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test079
      * @tc.number SUB_BUILTINS_Json1_TEST_7900
-     * @tc.name Json1Test079
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[[[[[10], 20], 30], 40], 50]';
@@ -1393,12 +1393,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test080
      * @tc.number SUB_BUILTINS_Json1_TEST_8000
-     * @tc.name Json1Test080
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"\\u2603\\u2600"';
@@ -1406,12 +1406,12 @@ export default function Json1Test() {
       expect(result).assertEqual("☃☀");
     });
     /**
+     * @tc.name   Json1Test081
      * @tc.number SUB_BUILTINS_Json1_TEST_8100
-     * @tc.name Json1Test081
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '["NaN", "123", "456"]';
@@ -1420,12 +1420,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test082
      * @tc.number SUB_BUILTINS_Json1_TEST_8200
-     * @tc.name Json1Test082
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '["-Infinity", "0", "Infinity"]';
@@ -1434,12 +1434,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test083
      * @tc.number SUB_BUILTINS_Json1_TEST_8300
-     * @tc.name Json1Test083
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[[1, -0], [2, 3]]';
@@ -1448,12 +1448,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test084
      * @tc.number SUB_BUILTINS_Json1_TEST_8400
-     * @tc.name Json1Test084
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"page1\\fpage2"';
@@ -1462,12 +1462,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test085
      * @tc.number SUB_BUILTINS_Json1_TEST_8500
-     * @tc.name Json1Test085
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[[], [1, []], [2, [3, []]]]';
@@ -1476,12 +1476,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test086
      * @tc.number SUB_BUILTINS_Json1_TEST_8600
-     * @tc.name Json1Test086
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"\\u5E26\\u7B26\\u53F7\\u7684\\u5B57\\u7B26\\u4E32：!@#"';
@@ -1490,12 +1490,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test087
      * @tc.number SUB_BUILTINS_Json1_TEST_8700
-     * @tc.name Json1Test087
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"He said: \\"\\\\test\\""';
@@ -1504,12 +1504,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test088
      * @tc.number SUB_BUILTINS_Json1_TEST_8800
-     * @tc.name Json1Test088
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"test"';
@@ -1518,12 +1518,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test089
      * @tc.number SUB_BUILTINS_Json1_TEST_8900
-     * @tc.name Json1Test089
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "123";
@@ -1532,12 +1532,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test090
      * @tc.number SUB_BUILTINS_Json1_TEST_9000
-     * @tc.name Json1Test090
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"hello"';
@@ -1546,12 +1546,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test091
      * @tc.number SUB_BUILTINS_Json1_TEST_9100
-     * @tc.name Json1Test091
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "[1,2,3]";
@@ -1560,12 +1560,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test092
      * @tc.number SUB_BUILTINS_Json1_TEST_9200
-     * @tc.name Json1Test092
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "3.14";
@@ -1574,12 +1574,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test093
      * @tc.number SUB_BUILTINS_Json1_TEST_9300
-     * @tc.name Json1Test093
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "3.14";
@@ -1588,12 +1588,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test094
      * @tc.number SUB_BUILTINS_Json1_TEST_9400
-     * @tc.name Json1Test094
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "-7";
@@ -1602,12 +1602,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test095
      * @tc.number SUB_BUILTINS_Json1_TEST_9500
-     * @tc.name Json1Test095
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"a\\nb"';
@@ -1616,12 +1616,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test096
      * @tc.number SUB_BUILTINS_Json1_TEST_9600
-     * @tc.name Json1Test096
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"a\\nb"';
@@ -1631,12 +1631,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test097
      * @tc.number SUB_BUILTINS_Json1_TEST_9700
-     * @tc.name Json1Test097
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface Result {
@@ -1649,12 +1649,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test098
      * @tc.number SUB_BUILTINS_Json1_TEST_9800
-     * @tc.name Json1Test098
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "1e3";
@@ -1663,12 +1663,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test099
      * @tc.number SUB_BUILTINS_Json1_TEST_9900
-     * @tc.name Json1Test099
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "1e3";
@@ -1677,12 +1677,12 @@ export default function Json1Test() {
     });
 
     /**
+     * @tc.name   Json1Test100
      * @tc.number SUB_BUILTINS_Json1_TEST_10000
-     * @tc.name Json1Test100
-     * @tc.desc test Json parse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json parse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"中文"';

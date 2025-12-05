@@ -44,12 +44,12 @@ export default function ArrayBuffer4Test() {
     })
 
     /**
+     * @tc.name   arraybuffer4Test001
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0100
-     * @tc.name arraybuffer4Test001
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicBuffer = new ArrayBuffer(8);
@@ -58,12 +58,12 @@ export default function ArrayBuffer4Test() {
 
     });
     /**
+     * @tc.name   arraybuffer4Test002
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0200
-     * @tc.name arraybuffer4Test002
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const noEndBuffer = new ArrayBuffer(8);
@@ -71,12 +71,12 @@ export default function ArrayBuffer4Test() {
       expect(noEndSliced.byteLength).assertEqual(5);
     });
     /**
+     * @tc.name   arraybuffer4Test003
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0300
-     * @tc.name arraybuffer4Test003
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fullSliceBuffer = new ArrayBuffer(8);
@@ -85,12 +85,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test004
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0400
-     * @tc.name arraybuffer4Test004
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negativeStartBuffer = new ArrayBuffer(8);
@@ -99,12 +99,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test005
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0500
-     * @tc.name arraybuffer4Test005
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negativeEndBuffer = new ArrayBuffer(8);
@@ -113,12 +113,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test006
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0600
-     * @tc.name arraybuffer4Test006
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startTooSmallBuffer = new ArrayBuffer(8);
@@ -127,12 +127,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test007
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0700
-     * @tc.name arraybuffer4Test007
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endTooSmallBuffer = new ArrayBuffer(8);
@@ -141,12 +141,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test008
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0800
-     * @tc.name arraybuffer4Test008
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startTooBigBuffer = new ArrayBuffer(8);
@@ -155,12 +155,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test009
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_0900
-     * @tc.name arraybuffer4Test009
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endTooBigBuffer = new ArrayBuffer(8);
@@ -169,12 +169,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test010
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1000
-     * @tc.name arraybuffer4Test010
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endBeforeStartBuffer = new ArrayBuffer(8);
@@ -182,15 +182,15 @@ export default function ArrayBuffer4Test() {
       expect(endBeforeStartSliced.byteLength).assertEqual(0);
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1100
-     * @tc.name arraybuffer4Test011
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
     //todo slice不能传空置
+    /**
+     * @tc.name   arraybuffer4Test011
+     * @tc.number arraybuffer4Test011
+     * @tc.desc   arraybuffer4Test011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('arraybuffer4Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const independentBuffer = new ArrayBuffer(4);
       const independentView = new Uint8Array(independentBuffer);
@@ -202,12 +202,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test012
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1200
-     * @tc.name arraybuffer4Test012
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyBuffer = new ArrayBuffer(0);
@@ -216,12 +216,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test013
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1300
-     * @tc.name arraybuffer4Test013
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const zeroRangeBuffer = new ArrayBuffer(8);
@@ -230,12 +230,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test014
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1400
-     * @tc.name arraybuffer4Test014
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const comboIndexBuffer = new ArrayBuffer(8);
@@ -244,12 +244,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test015
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1500
-     * @tc.name arraybuffer4Test015
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const oneByteBuffer = new ArrayBuffer(1);
@@ -258,12 +258,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test016
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1600
-     * @tc.name arraybuffer4Test016
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigBuffer = new ArrayBuffer(1024);
@@ -272,12 +272,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test017
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1700
-     * @tc.name arraybuffer4Test017
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const viewBuffer = new ArrayBuffer(4);
@@ -288,12 +288,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test018
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1800
-     * @tc.name arraybuffer4Test018
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dataViewBuffer = new ArrayBuffer(8);
@@ -304,12 +304,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test019
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_1900
-     * @tc.name arraybuffer4Test019
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const floatStartBuffer = new ArrayBuffer(8);
@@ -319,12 +319,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test020
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2000
-     * @tc.name arraybuffer4Test020
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const floatEndBuffer = new ArrayBuffer(8);
@@ -332,12 +332,12 @@ export default function ArrayBuffer4Test() {
       expect(floatEndSliced.byteLength).assertEqual(4);
     });
     /**
+     * @tc.name   arraybuffer4Test021
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2100
-     * @tc.name arraybuffer4Test021
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const resizableBuffer = new ArrayBuffer(8);
@@ -346,12 +346,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test022
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2200
-     * @tc.name arraybuffer4Test022
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const detachedCheckBuffer = new ArrayBuffer(8);
@@ -360,12 +360,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test023
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2300
-     * @tc.name arraybuffer4Test023
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sourceBuffer = new ArrayBuffer(8);
@@ -374,12 +374,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test024
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2400
-     * @tc.name arraybuffer4Test024
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fullRangeBuffer = new ArrayBuffer(8);
@@ -388,12 +388,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test025
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2500
-     * @tc.name arraybuffer4Test025
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startZeroNegEndBuffer = new ArrayBuffer(8);
@@ -402,12 +402,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test026
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2600
-     * @tc.name arraybuffer4Test026
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negStartPosEndBuffer = new ArrayBuffer(8);
@@ -416,12 +416,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test027
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2700
-     * @tc.name arraybuffer4Test027
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const maxLenCheckBuffer = new ArrayBuffer(8);
@@ -430,12 +430,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test028
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2800
-     * @tc.name arraybuffer4Test028
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const oneMBBuffer = new ArrayBuffer(1024 * 1024);
@@ -444,12 +444,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test029
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_2900
-     * @tc.name arraybuffer4Test029
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const syncCheckBuffer = new ArrayBuffer(4);
@@ -464,12 +464,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test030
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3000
-     * @tc.name arraybuffer4Test030
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startEqualNegLenBuffer = new ArrayBuffer(8);
@@ -478,12 +478,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test031
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3100
-     * @tc.name arraybuffer4Test031
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startEqualNegLenBuffer = new ArrayBuffer(8);
@@ -492,12 +492,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test032
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3200
-     * @tc.name arraybuffer4Test032
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endEqualNegLenBuffer = new ArrayBuffer(8);
@@ -506,12 +506,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test033
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3300
-     * @tc.name arraybuffer4Test033
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigUintBuffer = new ArrayBuffer(8);
@@ -522,12 +522,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test034
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3400
-     * @tc.name arraybuffer4Test034
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dataSourceBuffer = new ArrayBuffer(4);
@@ -539,12 +539,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test035
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3500
-     * @tc.name arraybuffer4Test035
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const halfLenBuffer = new ArrayBuffer(8);
@@ -553,12 +553,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test036
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3600
-     * @tc.name arraybuffer4Test036
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const latterHalfBuffer = new ArrayBuffer(8);
@@ -567,12 +567,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test037
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3700
-     * @tc.name arraybuffer4Test037
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const floatBuffer = new ArrayBuffer(4);
@@ -583,12 +583,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test038
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3800
-     * @tc.name arraybuffer4Test038
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startZeroNoEndBuffer = new ArrayBuffer(12);
@@ -597,12 +597,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test039
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_3900
-     * @tc.name arraybuffer4Test039
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endNegOverBuffer = new ArrayBuffer(8);
@@ -612,12 +612,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test040
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4000
-     * @tc.name arraybuffer4Test040
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nineByteNegRangeBuffer = new ArrayBuffer(9);
@@ -626,12 +626,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test041
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4100
-     * @tc.name arraybuffer4Test041
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const twoByteBuffer = new ArrayBuffer(2);
@@ -640,12 +640,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test042
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4200
-     * @tc.name arraybuffer4Test042
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int16Buffer = new ArrayBuffer(4);
@@ -656,12 +656,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test043
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4300
-     * @tc.name arraybuffer4Test043
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negStartPosEndBuffer = new ArrayBuffer(8);
@@ -670,12 +670,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test044
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4400
-     * @tc.name arraybuffer4Test044
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const minValStart5EndBuffer = new ArrayBuffer(8);
@@ -684,12 +684,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test045
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4500
-     * @tc.name arraybuffer4Test045
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sixteenByteBuffer = new ArrayBuffer(16);
@@ -698,12 +698,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test046
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4600
-     * @tc.name arraybuffer4Test046
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const multiTypeBuffer = new ArrayBuffer(8);
@@ -716,12 +716,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test047
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4700
-     * @tc.name arraybuffer4Test047
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const lastByteBuffer = new ArrayBuffer(8);
@@ -730,12 +730,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test048
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4800
-     * @tc.name arraybuffer4Test048
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int16EndianBuffer = new ArrayBuffer(4);
@@ -746,12 +746,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test049
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_4900
-     * @tc.name arraybuffer4Test049
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const thirtyTwoByteBuffer = new ArrayBuffer(32);
@@ -760,12 +760,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test050
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5000
-     * @tc.name arraybuffer4Test050
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const clampedBuffer = new ArrayBuffer(4);
@@ -776,12 +776,12 @@ export default function ArrayBuffer4Test() {
 
     });
     /**
+     * @tc.name   arraybuffer4Test051
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5100
-     * @tc.name arraybuffer4Test051
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const oneByteZeroEndBuffer = new ArrayBuffer(1);
@@ -790,12 +790,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test052
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5200
-     * @tc.name arraybuffer4Test052
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigIntNegBuffer = new ArrayBuffer(8);
@@ -806,12 +806,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test053
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5300
-     * @tc.name arraybuffer4Test053
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const floatNegStartBuffer = new ArrayBuffer(8);
@@ -820,12 +820,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test054
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5400
-     * @tc.name arraybuffer4Test054
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nestedSliceBuffer = new ArrayBuffer(8);
@@ -836,12 +836,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test055
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5500
-     * @tc.name arraybuffer4Test055
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sixtyFourByteBuffer = new ArrayBuffer(64);
@@ -850,12 +850,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test056
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5600
-     * @tc.name arraybuffer4Test056
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const viewBufferPropBuffer = new ArrayBuffer(8);
@@ -865,12 +865,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test057
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5700
-     * @tc.name arraybuffer4Test057
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const minSafeStartBuffer = new ArrayBuffer(8);
@@ -879,12 +879,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test058
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5800
-     * @tc.name arraybuffer4Test058
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fiveTwelveKBBuffer = new ArrayBuffer(524288);
@@ -893,12 +893,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test059
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_5900
-     * @tc.name arraybuffer4Test059
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const oneTwentyEightBuffer = new ArrayBuffer(128);
@@ -907,12 +907,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test060
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6000
-     * @tc.name arraybuffer4Test060
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigUintToStringBuffer = new ArrayBuffer(8);
@@ -923,12 +923,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test061
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6100
-     * @tc.name arraybuffer4Test061
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const start1EndNeg1Buffer = new ArrayBuffer(8);
@@ -937,12 +937,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test062
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6200
-     * @tc.name arraybuffer4Test062
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const uint32LenBuffer = new ArrayBuffer(8);
@@ -952,12 +952,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test063
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6300
-     * @tc.name arraybuffer4Test063
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negLenPlus2Buffer = new ArrayBuffer(8);
@@ -966,12 +966,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test064
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6400
-     * @tc.name arraybuffer4Test064
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const forEachBuffer = new ArrayBuffer(4);
@@ -984,12 +984,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test065
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6500
-     * @tc.name arraybuffer4Test065
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startEqualLenBuffer = new ArrayBuffer(8);
@@ -998,12 +998,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test066
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6600
-     * @tc.name arraybuffer4Test066
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const eightByteNeg8End3Buffer = new ArrayBuffer(8);
@@ -1012,12 +1012,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test067
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6700
-     * @tc.name arraybuffer4Test067
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const twoFiftySixBuffer = new ArrayBuffer(256);
@@ -1026,12 +1026,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test068
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6800
-     * @tc.name arraybuffer4Test068
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigUintByteLenBuffer = new ArrayBuffer(16);
@@ -1041,12 +1041,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test069
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_6900
-     * @tc.name arraybuffer4Test069
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const maxSafeEndBuffer = new ArrayBuffer(8);
@@ -1055,12 +1055,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test070
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7000
-     * @tc.name arraybuffer4Test070
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const findBuffer = new ArrayBuffer(4);
@@ -1072,12 +1072,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test071
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7100
-     * @tc.name arraybuffer4Test071
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startEndEqualBuffer = new ArrayBuffer(8);
@@ -1086,12 +1086,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test072
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7200
-     * @tc.name arraybuffer4Test072
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const tenByteStart4EndNeg2Buffer = new ArrayBuffer(10);
@@ -1100,12 +1100,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test073
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7300
-     * @tc.name arraybuffer4Test073
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const lastByteNegStartBuffer = new ArrayBuffer(8);
@@ -1114,12 +1114,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test074
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7400
-     * @tc.name arraybuffer4Test074
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const doubleSliceBuffer = new ArrayBuffer(8);
@@ -1130,12 +1130,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test075
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7500
-     * @tc.name arraybuffer4Test075
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const minValStartBuffer = new ArrayBuffer(8);
@@ -1144,12 +1144,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test076
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7600
-     * @tc.name arraybuffer4Test076
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const reduceBuffer = new ArrayBuffer(4);
@@ -1163,12 +1163,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test077
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7700
-     * @tc.name arraybuffer4Test077
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const startGtNegEndBuffer = new ArrayBuffer(8);
@@ -1177,12 +1177,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test078
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7800
-     * @tc.name arraybuffer4Test078
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int8NegBuffer = new ArrayBuffer(4);
@@ -1193,12 +1193,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test079
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_7900
-     * @tc.name arraybuffer4Test079
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fiveTwelveBuffer = new ArrayBuffer(512);
@@ -1207,12 +1207,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test080
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8000
-     * @tc.name arraybuffer4Test080
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const oneMBBuffer = new ArrayBuffer(1048576);
@@ -1220,12 +1220,12 @@ export default function ArrayBuffer4Test() {
       expect(oneMBSliced.byteLength).assertEqual(131072);
     });
     /**
+     * @tc.name   arraybuffer4Test081
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8100
-     * @tc.name arraybuffer4Test081
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endMinSafeBuffer = new ArrayBuffer(8);
@@ -1234,12 +1234,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test082
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8200
-     * @tc.name arraybuffer4Test082
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sevenByteStart2End6Buffer = new ArrayBuffer(7);
@@ -1248,12 +1248,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test083
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8300
-     * @tc.name arraybuffer4Test083
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const twoByteZeroEndBuffer = new ArrayBuffer(2);
@@ -1262,12 +1262,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test084
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8400
-     * @tc.name arraybuffer4Test084
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const subarrayBuffer = new ArrayBuffer(8);
@@ -1277,12 +1277,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test085
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8500
-     * @tc.name arraybuffer4Test085
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negStartNegEndBuffer = new ArrayBuffer(8);
@@ -1291,12 +1291,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test086
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8600
-     * @tc.name arraybuffer4Test086
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const someBuffer = new ArrayBuffer(4);
@@ -1308,12 +1308,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test087
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8700
-     * @tc.name arraybuffer4Test087
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const midToEndBuffer = new ArrayBuffer(8);
@@ -1322,12 +1322,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test088
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8800
-     * @tc.name arraybuffer4Test088
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigIntLenBuffer = new ArrayBuffer(16);
@@ -1337,12 +1337,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test089
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_8900
-     * @tc.name arraybuffer4Test089
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const start1EndLenMin1Buffer = new ArrayBuffer(8);
@@ -1351,12 +1351,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test090
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9000
-     * @tc.name arraybuffer4Test090
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const toStringBuffer = new ArrayBuffer(8);
@@ -1365,12 +1365,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test091
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9100
-     * @tc.name arraybuffer4Test091
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negStart6EndBuffer = new ArrayBuffer(8);
@@ -1379,12 +1379,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test092
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9200
-     * @tc.name arraybuffer4Test092
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nineByteNeg4End6Buffer = new ArrayBuffer(9);
@@ -1393,12 +1393,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test093
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9300
-     * @tc.name arraybuffer4Test093
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endEqualNegTotalBuffer = new ArrayBuffer(8);
@@ -1407,12 +1407,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test094
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9400
-     * @tc.name arraybuffer4Test094
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endianDataViewBuffer = new ArrayBuffer(4);
@@ -1423,12 +1423,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test095
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9500
-     * @tc.name arraybuffer4Test095
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const oneKBBuffer = new ArrayBuffer(1024);
@@ -1437,12 +1437,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test096
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9600
-     * @tc.name arraybuffer4Test096
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigUintOffsetBuffer = new ArrayBuffer(16);
@@ -1452,12 +1452,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test097
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9700
-     * @tc.name arraybuffer4Test097
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const safeMaxMin1StartBuffer = new ArrayBuffer(8);
@@ -1466,12 +1466,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test098
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9800
-     * @tc.name arraybuffer4Test098
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const eightMBBuffer = new ArrayBuffer(8388608);
@@ -1480,12 +1480,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test099
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_9900
-     * @tc.name arraybuffer4Test099
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const start3EndNeg4Buffer = new ArrayBuffer(8);
@@ -1494,12 +1494,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test100
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10000
-     * @tc.name arraybuffer4Test100
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int32MaxBuffer = new ArrayBuffer(4);
@@ -1510,12 +1510,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test101
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10100
-     * @tc.name arraybuffer4Test101
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const twoKBBuffer = new ArrayBuffer(2048);
@@ -1524,12 +1524,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test102
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10200
-     * @tc.name arraybuffer4Test102
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dataViewOffsetBuffer = new ArrayBuffer(8);
@@ -1539,12 +1539,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test103
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10300
-     * @tc.name arraybuffer4Test103
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const threeByteZeroEndBuffer = new ArrayBuffer(3);
@@ -1553,12 +1553,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test104
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10400
-     * @tc.name arraybuffer4Test104
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const everyBuffer = new ArrayBuffer(4);
@@ -1571,12 +1571,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test105
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10500
-     * @tc.name arraybuffer4Test105
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endOverLenBuffer = new ArrayBuffer(8);
@@ -1585,12 +1585,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test106
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10600
-     * @tc.name arraybuffer4Test106
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const float32ByteLenBuffer = new ArrayBuffer(8);
@@ -1600,12 +1600,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test107
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10700
-     * @tc.name arraybuffer4Test107
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const minValStartEndBuffer = new ArrayBuffer(8);
@@ -1614,12 +1614,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test108
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10800
-     * @tc.name arraybuffer4Test108
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const multiViewBuffer = new ArrayBuffer(8);
@@ -1631,12 +1631,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test109
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_10900
-     * @tc.name arraybuffer4Test109
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const start5End8Buffer = new ArrayBuffer(8);
@@ -1644,12 +1644,12 @@ export default function ArrayBuffer4Test() {
       expect(start5End8Sliced.byteLength).assertEqual(3);
     });
     /**
+     * @tc.name   arraybuffer4Test110
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11000
-     * @tc.name arraybuffer4Test110
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigIntPosBuffer = new ArrayBuffer(8);
@@ -1660,12 +1660,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test111
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11100
-     * @tc.name arraybuffer4Test111
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fourKBBuffer = new ArrayBuffer(4096);
@@ -1674,12 +1674,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test112
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11200
-     * @tc.name arraybuffer4Test112
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const keysBuffer = new ArrayBuffer(4);
@@ -1690,12 +1690,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test113
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11300
-     * @tc.name arraybuffer4Test113
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negStart7End5Buffer = new ArrayBuffer(8);
@@ -1704,12 +1704,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test114
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11400
-     * @tc.name arraybuffer4Test114
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const float64EndianBuffer = new ArrayBuffer(8);
@@ -1720,12 +1720,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test115
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11500
-     * @tc.name arraybuffer4Test115
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const threeByteEqualStartEndBuffer = new ArrayBuffer(3);
@@ -1734,12 +1734,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test116
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11600
-     * @tc.name arraybuffer4Test116
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const clampedZeroBuffer = new ArrayBuffer(4);
@@ -1750,12 +1750,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test117
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11700
-     * @tc.name arraybuffer4Test117
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const eightKBBuffer = new ArrayBuffer(8192);
@@ -1764,12 +1764,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test118
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11800
-     * @tc.name arraybuffer4Test118
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nineByteNeg5End7Buffer = new ArrayBuffer(9);
@@ -1778,12 +1778,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test119
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_11900
-     * @tc.name arraybuffer4Test119
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const twoMBBuffer = new ArrayBuffer(2097152);
@@ -1792,12 +1792,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test120
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12000
-     * @tc.name arraybuffer4Test120
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const eightByteStart3EndNeg1Buffer = new ArrayBuffer(8);
@@ -1806,12 +1806,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test121
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12100
-     * @tc.name arraybuffer4Test121
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const tenByteNegRangeBuffer = new ArrayBuffer(10);
@@ -1820,12 +1820,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test122
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12200
-     * @tc.name arraybuffer4Test122
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const copyWithinBuffer = new ArrayBuffer(4);
@@ -1837,12 +1837,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test123
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12300
-     * @tc.name arraybuffer4Test123
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const safeMaxStartEndBuffer = new ArrayBuffer(8);
@@ -1851,12 +1851,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test124
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12400
-     * @tc.name arraybuffer4Test124
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int8DataViewBuffer = new ArrayBuffer(4);
@@ -1868,12 +1868,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test125
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12500
-     * @tc.name arraybuffer4Test125
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sixteenKBBuffer = new ArrayBuffer(16384);
@@ -1882,12 +1882,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test126
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12600
-     * @tc.name arraybuffer4Test126
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigUintFillBuffer = new ArrayBuffer(8);
@@ -1899,12 +1899,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test127
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12700
-     * @tc.name arraybuffer4Test127
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const endMinSafeZeroStartBuffer = new ArrayBuffer(8);
@@ -1913,12 +1913,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test128
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12800
-     * @tc.name arraybuffer4Test128
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const findIndexBuffer = new ArrayBuffer(4);
@@ -1930,12 +1930,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test129
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_12900
-     * @tc.name arraybuffer4Test129
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const tenByteStart4EndNeg3Buffer = new ArrayBuffer(10);
@@ -1944,12 +1944,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test130
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13000
-     * @tc.name arraybuffer4Test130
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sixByteStart1End4Buffer = new ArrayBuffer(6);
@@ -1957,12 +1957,12 @@ export default function ArrayBuffer4Test() {
       expect(sixByteStart1End4Sliced.byteLength).assertEqual(3);
     });
     /**
+     * @tc.name   arraybuffer4Test131
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13100
-     * @tc.name arraybuffer4Test131
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const thirtyTwoKBBuffer = new ArrayBuffer(32768);
@@ -1971,12 +1971,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test132
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13200
-     * @tc.name arraybuffer4Test132
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigIntValueOfBuffer = new ArrayBuffer(8);
@@ -1988,12 +1988,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test133
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13300
-     * @tc.name arraybuffer4Test133
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const tenByteMaxSafeEndBuffer = new ArrayBuffer(10);
@@ -2002,12 +2002,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test134
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13400
-     * @tc.name arraybuffer4Test134
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fixedLenEqualBuffer = new ArrayBuffer(8);
@@ -2016,12 +2016,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test135
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13500
-     * @tc.name arraybuffer4Test135
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const eightByteNegStart10Buffer = new ArrayBuffer(8);
@@ -2030,12 +2030,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test136
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13600
-     * @tc.name arraybuffer4Test136
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const uint32EndianBuffer = new ArrayBuffer(4);
@@ -2046,12 +2046,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test137
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13700
-     * @tc.name arraybuffer4Test137
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sixtyFourKBBuffer = new ArrayBuffer(65536);
@@ -2060,12 +2060,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test138
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13800
-     * @tc.name arraybuffer4Test138
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const everyNonNegBuffer = new ArrayBuffer(4);
@@ -2077,12 +2077,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test139
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_13900
-     * @tc.name arraybuffer4Test139
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const eightByteStart3End7Buffer = new ArrayBuffer(8);
@@ -2091,12 +2091,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test140
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14000
-     * @tc.name arraybuffer4Test140
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigIntSubarrayBuffer = new ArrayBuffer(8);
@@ -2107,12 +2107,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test141
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14100
-     * @tc.name arraybuffer4Test141
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const oneTwentyEightKBBuffer = new ArrayBuffer(131072);
@@ -2121,12 +2121,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test142
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14200
-     * @tc.name arraybuffer4Test142
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const viewToStringBuffer = new ArrayBuffer(4);
@@ -2137,12 +2137,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test143
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14300
-     * @tc.name arraybuffer4Test143
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fiveByteZeroEndBuffer = new ArrayBuffer(5);
@@ -2151,12 +2151,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test144
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14400
-     * @tc.name arraybuffer4Test144
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dataViewByteLenBuffer = new ArrayBuffer(8);
@@ -2166,12 +2166,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test145
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14500
-     * @tc.name arraybuffer4Test145
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const eightByteNeg3End9Buffer = new ArrayBuffer(8);
@@ -2180,12 +2180,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test146
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14600
-     * @tc.name arraybuffer4Test146
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fiveByteZeroEnd3Buffer = new ArrayBuffer(5);
@@ -2194,12 +2194,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test147
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14700
-     * @tc.name arraybuffer4Test147
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const twoFiftySixKBBuffer = new ArrayBuffer(262144);
@@ -2208,12 +2208,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test148
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14800
-     * @tc.name arraybuffer4Test148
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const valueOfBuffer = new ArrayBuffer(4);
@@ -2225,12 +2225,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test149
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_14900
-     * @tc.name arraybuffer4Test149
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sixByteStart1End5Buffer = new ArrayBuffer(6);
@@ -2239,12 +2239,12 @@ export default function ArrayBuffer4Test() {
     });
 
     /**
+     * @tc.name   arraybuffer4Test150
      * @tc.number SUB_BUILTINS_arraybuffer4_TEST_15000
-     * @tc.name arraybuffer4Test150
-     * @tc.desc test arraybuffer slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer slice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer4Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fourMBBuffer = new ArrayBuffer(4194304);

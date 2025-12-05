@@ -110,12 +110,12 @@ export default function ImageCreatePictureFromParcelTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_FROM_PARCEL_001
-     * @tc.name      : IMAGE_CREATE_PICTURE_FROM_PARCEL_001
-     * @tc.desc      : 第一个参数为null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_CREATE_PICTURE_FROM_PARCEL_001
+     * @tc.number IMAGE_CREATE_PICTURE_FROM_PARCEL_001
+     * @tc.desc   第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PICTURE_FROM_PARCEL_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PICTURE_FROM_PARCEL_001';
@@ -125,15 +125,15 @@ export default function ImageCreatePictureFromParcelTest() {
       })
     })
 
-    /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_FROM_PARCEL_002
-     * @tc.name      : IMAGE_CREATE_PICTURE_FROM_PARCEL_002
-     * @tc.desc      : 第一个参数为undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
 
+    /**
+     * @tc.name   IMAGE_CREATE_PICTURE_FROM_PARCEL_002
+     * @tc.number IMAGE_CREATE_PICTURE_FROM_PARCEL_002
+     * @tc.desc   IMAGE_CREATE_PICTURE_FROM_PARCEL_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('IMAGE_CREATE_PICTURE_FROM_PARCEL_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PICTURE_FROM_PARCEL_002';
       const path = 'test_air.ico';

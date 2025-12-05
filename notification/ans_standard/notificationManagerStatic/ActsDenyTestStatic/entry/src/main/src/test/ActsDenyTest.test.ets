@@ -55,9 +55,12 @@ export default function ActsDenyTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
     /**
-     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100
-     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100
-     * @tc.desc       requestEnableNotification deny button is clicked
+     * @tc.name   Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100
+     * @tc.number Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100
+     * @tc.desc   requestEnableNotification deny button is clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100', Level.LEVEL2,
       async (done: () => void) => {
