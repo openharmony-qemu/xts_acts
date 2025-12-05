@@ -1405,12 +1405,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0100
-     * @tc.name      : testMaximizeAcrossDisplaywithDestoryedSubwindow
-     * @tc.desc      : testMaximizeAcrossDisplaywithDestoryedSubwindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0100
+     * @tc.name       testMaximizeAcrossDisplaywithDestoryedSubwindow
+     * @tc.desc       testMaximizeAcrossDisplaywithDestoryedSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testMaximizeAcrossDisplaywithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testMaximizeAcrossDisplaywithDestoryedSubwindow';
@@ -1443,12 +1443,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0200
-     * @tc.name      : testMaximizeAcrossDisplaywithSubwindow
-     * @tc.desc      : testMaximizeAcrossDisplaywithSubwindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0200
+     * @tc.name       testMaximizeAcrossDisplaywithSubwindow
+     * @tc.desc       testMaximizeAcrossDisplaywithSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testMaximizeAcrossDisplaywithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testMaximizeAcrossDisplaywithSubwindow';

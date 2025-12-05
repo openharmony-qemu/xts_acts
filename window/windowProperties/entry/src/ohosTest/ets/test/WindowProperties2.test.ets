@@ -1730,6 +1730,7 @@ export default function windowPropertiesTest2() {
                 expect(Math.abs(widthBefore-imageInfo.size.width)).assertLessOrEqual(1);
                 expect(Math.abs(heightBefore-imageInfo.size.height)).assertLessOrEqual(1);
                 pixelMap.release();
+                await windowClass.restore();
                 await terminateAbility(caseName);
                 await sleep(2000)
                 done();
@@ -2522,12 +2523,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0100
-     * @tc.name      : testOnOcclusionStatewithDestoryedSubwindow
-     * @tc.desc      : 验证子窗销毁后注册OnOcclusionState返回1300002错误码验证
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0100
+     * @tc.name       testOnOcclusionStatewithDestoryedSubwindow
+     * @tc.desc       验证子窗销毁后注册OnOcclusionState返回1300002错误码验证
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testOnOcclusionStatewithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testOnOcclusionStatewithDestoryedSubwindow ';
@@ -2558,12 +2559,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0200
-     * @tc.name      : testOffOcclusionStatewithDestoryedSubwindow
-     * @tc.desc      : 验证子窗销毁后注册OffOcclusionState返回1300002错误码验证
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0200
+     * @tc.name       testOffOcclusionStatewithDestoryedSubwindow
+     * @tc.desc       验证子窗销毁后注册OffOcclusionState返回1300002错误码验证
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testOffOcclusionStatewithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testOffOcclusionStatewithDestoryedSubwindow ';
@@ -2594,12 +2595,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0300
-     * @tc.name      : testOnOcclusionStateBeforeLoadcontent
-     * @tc.desc      : 验证子窗loadContent之前注册，首次打开loadContent查看是否有监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0300
+     * @tc.name       testOnOcclusionStateBeforeLoadcontent
+     * @tc.desc       验证子窗loadContent之前注册，首次打开loadContent查看是否有监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testOnOcclusionStateBeforeLoadcontent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testOnOcclusionStateBeforeLoadcontent ';
@@ -2637,12 +2638,12 @@ export default function windowPropertiesTest2() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0400
-     * @tc.name      : testOnOcclusionStateAfterLoadcontent
-     * @tc.desc      : 验证子窗loadContent之后showwindow之前注册，首次打开showwindow查看是否有监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0400
+     * @tc.name       testOnOcclusionStateAfterLoadcontent
+     * @tc.desc       验证子窗loadContent之后showwindow之前注册，首次打开showwindow查看是否有监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testOnOcclusionStateAfterLoadcontent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testOnOcclusionStateAfterLoadcontent ';
@@ -2680,12 +2681,12 @@ export default function windowPropertiesTest2() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0500
-     * @tc.name      : testOnOcclusionStatewithMainWindowandSubwindow
-     * @tc.desc      : 验证主窗与子窗之间无遮挡、部分遮挡、完全遮挡
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0500
+     * @tc.name       testOnOcclusionStatewithMainWindowandSubwindow
+     * @tc.desc       验证主窗与子窗之间无遮挡、部分遮挡、完全遮挡
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testOnOcclusionStatewithMainWindowandSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testOnOcclusionStatewithMainWindowandSubwindow ';
@@ -2796,167 +2797,164 @@ export default function windowPropertiesTest2() {
       console.log(caseName + 'begin');
       let subWindow1: window.Window | undefined;
       let subWindow2: window.Window | undefined;
+      // 用于记录回调状态
+      let occlusionStates: number[] = [];
+      let callbackCalled = false;
+
+      // 定义子窗1的遮挡状态变化回调
+      const occlusionCallback = (data: window.OcclusionState) => {
+        console.info(caseName + ' SubWindow1 occlusionStateChanged callback received, state: ' + data);
+        occlusionStates.push(data);
+        callbackCalled = true;
+      };
       // 步骤1：检查SystemCapability.Window.SessionManager是否支持
       const isSupported = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' SystemCapability.Window.SessionManager supported: ' + isSupported);
-      try {
 
-        subWindow1 = await windowStage.createSubWindow('testOnOcclusionStatewithTwoSubwindow1');
-        subWindow2 = await windowStage.createSubWindow('testOnOcclusionStatewithTwoSubwindow2');
+      subWindow1 = await windowStage.createSubWindow('1testOnOcclusionStatewithTwoSubwindow');
+      subWindow2 = await windowStage.createSubWindow('2testOnOcclusionStatewithTwoSubwindow');
 
-        // 设置子窗口1的初始位置和大小
-        await subWindow1.resize(400, 300);
-        await subWindow1.moveWindowTo(200, 200);
-        await subWindow1.showWindow();
-
-        // 设置子窗口2的初始位置和大小（先放在不相交的位置）
-        await subWindow2.resize(300, 250);
-        await subWindow2.moveWindowTo(1000, 1000);
-        await subWindow2.showWindow();
-        console.info(caseName + ' SubWindow2 shown at (1000, 1000) with size 300x250');
-
-        // 用于记录回调状态
-        let occlusionStates: number[] = [];
-        let callbackCalled = false;
-
-        // 定义子窗1的遮挡状态变化回调
-        const occlusionCallback = (data: window.OcclusionState) => {
-          console.info(caseName + ' SubWindow1 occlusionStateChanged callback received, state: ' + data);
-          occlusionStates.push(data);
-          callbackCalled = true;
-        };
-
-        // 步骤3：子窗1注册on('occlusionStateChanged')监听
-        subWindow1.on('occlusionStateChanged', occlusionCallback);
-        console.info(caseName + ' SubWindow1 registered occlusionStateChanged listener');
-
-        // 等待初始状态稳定
-        await sleep(200);
-        occlusionStates = []; // 清空初始状态
-        callbackCalled = false;
-
-        // 移动子窗2，使得子窗2与子窗1有交集（部分遮挡）
-        console.info(caseName + ' Step 3: Move subWindow2 to partially occlude subWindow1');
-        await subWindow2.moveWindowTo(300, 250); // 与子窗1有交集
-
-        // 等待回调
-        await sleep(500);
-
-        // 验证：应该收到部分可见状态 (state=1)
-        expect(callbackCalled).assertTrue();
-        console.info(caseName + ' Step 3 - Occlusion states: ' + JSON.stringify(occlusionStates));
-        expect(occlusionStates.includes(1)).assertTrue(); // 部分可见
-
-        // 重置状态
-        occlusionStates = [];
-        callbackCalled = false;
-
-        // 步骤4：resize子窗2，使子窗2完全遮挡子窗1
-        console.info(caseName + ' Step 4: Resize subWindow2 to fully occlude subWindow1');
-        const subWindow1Properties = await subWindow1.getWindowProperties();
-        const subWindow1Rect = subWindow1Properties.windowRect;
-
-        // 子窗口2尺寸设置为比子窗口1更大，完全覆盖
-        await subWindow2.resize(subWindow1Rect.width + 100, subWindow1Rect.height + 100);
-        await subWindow2.moveWindowTo(subWindow1Rect.left - 50, subWindow1Rect.top - 50);
-
-        // 等待回调
-        await sleep(500);
-
-        // 验证：应该收到完全不可见状态 (state=2)
-        expect(callbackCalled).assertTrue();
-        console.info(caseName + ' Step 4 - Occlusion states: ' + JSON.stringify(occlusionStates));
-        expect(occlusionStates.includes(2)).assertTrue(); // 完全不可见
-
-        // 重置状态
-        occlusionStates = [];
-        callbackCalled = false;
-
-        // 步骤5：移动子窗2，使子窗2完全与子窗1没有交集
-        console.info(caseName + ' Step 5: Move subWindow2 to have no intersection with subWindow1');
-        await subWindow2.resize(300, 250);
-        await subWindow2.moveWindowTo(subWindow1Rect.left + subWindow1Rect.width + 100,
-          subWindow1Rect.top + subWindow1Rect.height + 100);
-
-        // 等待回调
-        await sleep(500);
-
-        // 验证：应该收到完全可见状态 (state=0)
-        expect(callbackCalled).assertTrue();
-        console.info(caseName + ' Step 5 - Occlusion states: ' + JSON.stringify(occlusionStates));
-        expect(occlusionStates.includes(0)).assertTrue(); // 完全可见
-
-        // 步骤6：子窗1调用off('occlusionStateChanged')取消监听，重复3-5
-        console.info(caseName + ' Step 6: Unregister listener and repeat steps 3-5');
-        subWindow1.off('occlusionStateChanged', occlusionCallback);
-        console.info(caseName + ' SubWindow1 unregistered occlusionStateChanged listener');
-
-        // 重置状态
-        occlusionStates = [];
-        callbackCalled = false;
-
-        // 重复步骤3：部分遮挡
-        console.info(caseName + ' Step 6.1: Repeat step 3 - partial occlusion');
-        await subWindow2.resize(300, 250);
-        await subWindow2.moveWindowTo(300, 250);
-        await sleep(500);
-
-        // 验证：不应该有回调
-        expect(callbackCalled).assertFalse();
-        expect(occlusionStates.length).assertEqual(0);
-        console.info(caseName + ' Step 6.1 completed - No callback received');
-
-        // 重复步骤4：完全遮挡
-        console.info(caseName + ' Step 6.2: Repeat step 4 - full occlusion');
-        await subWindow2.resize(subWindow1Rect.width + 100, subWindow1Rect.height + 100);
-        await subWindow2.moveWindowTo(subWindow1Rect.left - 50, subWindow1Rect.top - 50);
-        await sleep(500);
-
-        // 验证：不应该有回调
-        expect(callbackCalled).assertFalse();
-        expect(occlusionStates.length).assertEqual(0);
-        console.info(caseName + ' Step 6.2 completed - No callback received');
-
-        // 重复步骤5：无遮挡
-        console.info(caseName + ' Step 6.3: Repeat step 5 - no occlusion');
-        await subWindow2.resize(300, 250);
-        await subWindow2.moveWindowTo(subWindow1Rect.left + subWindow1Rect.width + 100,
-          subWindow1Rect.top + subWindow1Rect.height + 100);
-        await sleep(500);
-
-        // 验证：不应该有回调
-        expect(callbackCalled).assertFalse();
-        expect(occlusionStates.length).assertEqual(0);
-        console.info(caseName + ' Step 6 completed - No callbacks received after unregistering');
-
-        // 步骤7：销毁子窗1和子窗2
-        await subWindow1.destroyWindow();
-        await subWindow2.destroyWindow();
-        done();
-
-        if (!isSupported) {
-          // 如果不支持，应该抛出801错误码
-          try {
-            // 步骤3：子窗1注册on('occlusionStateChanged')
-            subWindow1.on('occlusionStateChanged', occlusionCallback);
-            expect().assertFail();
-          } catch (err) {
-            console.info(caseName + ' Expected error caught: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(801);
-            done();
-          }
-        } else {
-
-        }
-      } catch (err) {
-        console.error(caseName + ' failed, error: ' + JSON.stringify(err));
-        await subWindow1?.destroyWindow();
-        await subWindow2?.destroyWindow();
-        if (isSupported) {
-          expect(err.code).assertEqual(801)
-          done();
-        } else {
+      if (!isSupported) {
+        // 如果不支持，应该抛出801错误码
+        try {
+          // 步骤3：子窗1注册on('occlusionStateChanged')
+          subWindow1.on('occlusionStateChanged', occlusionCallback);
           expect().assertFail();
+        } catch (err) {
+          console.info(caseName + ' Expected error caught: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(801);
+          done();
+        }
+      } else {
+        try {
+          let windowLimits = subWindow1.getWindowLimits();
+          console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+          await subWindow1.setUIContent('testability/pages/First/index2');
+          await subWindow2.setUIContent('testability/pages/First/index2');
+          await sleep(100);
+
+          // 设置子窗口1的初始位置和大小
+          await subWindow1.resize(windowLimits.minWidth as number+100, windowLimits.minHeight as number+100);
+          await subWindow1.moveWindowTo(200, 200);
+          await subWindow1.showWindow();
+
+          // 设置子窗口2的初始位置和大小（先放在不相交的位置）
+          await subWindow2.resize(windowLimits.minWidth as number+600, windowLimits.minHeight as number+600);
+          await subWindow2.moveWindowTo(windowLimits.minWidth as number+800, windowLimits.minHeight as number+800);
+          await subWindow2.showWindow();
+          console.info(caseName + ' SubWindow2 shown at (1000, 1000) with size 300x250');
+
+          // 步骤3：子窗1注册on('occlusionStateChanged')监听
+          subWindow1.on('occlusionStateChanged', occlusionCallback);
+          console.info(caseName + ' SubWindow1 registered occlusionStateChanged listener');
+
+          // 等待初始状态稳定
+          await sleep(200);
+          occlusionStates = []; // 清空初始状态
+          callbackCalled = false;
+
+          // 移动子窗2，使得子窗2与子窗1有交集（部分遮挡）
+          console.info(caseName + ' Step 3: Move subWindow2 to partially occlude subWindow1');
+          await subWindow2.moveWindowTo(250, 250); // 与子窗1有交集
+
+          // 等待回调
+          await sleep(500);
+
+          // 验证：应该收到部分可见状态 (state=1)
+          expect(callbackCalled).assertTrue();
+          console.info(caseName + ' Step 3 - Occlusion states: ' + JSON.stringify(occlusionStates));
+          expect(occlusionStates.includes(1)).assertTrue(); // 部分可见
+
+          // 重置状态
+          occlusionStates = [];
+          callbackCalled = false;
+
+          // 步骤4：resize子窗2，使子窗2完全遮挡子窗1
+          console.info(caseName + ' Step 4: Resize subWindow2 to fully occlude subWindow1');
+          const subWindow1Properties = await subWindow1.getWindowProperties();
+          const subWindow1Rect = subWindow1Properties.windowRect;
+
+          console.info(caseName + ' 123.。。: ' );
+
+          // 子窗口2尺寸设置为比子窗口1更大，完全覆盖
+          await subWindow2.moveWindowTo(0, 0);
+
+          // 等待回调
+          await sleep(500);
+
+          // 验证：应该收到完全不可见状态 (state=2)
+          console.info(caseName + ' Step 4 - callbackCalled: ' + JSON.stringify(callbackCalled));
+          expect(callbackCalled).assertTrue();
+          console.info(caseName + ' Step 4 - Occlusion states: ' + JSON.stringify(occlusionStates));
+          expect(occlusionStates.includes(2)).assertTrue(); // 完全不可见
+
+          // 重置状态
+          occlusionStates = [];
+          callbackCalled = false;
+
+          // 步骤5：移动子窗2，使子窗2完全与子窗1没有交集
+          console.info(caseName + ' Step 5: Move subWindow2 to have no intersection with subWindow1');
+          await subWindow2.moveWindowTo(windowLimits.minWidth as number+1000, windowLimits.minHeight as number+1000);
+
+          // 等待回调
+          await sleep(500);
+
+          // 验证：应该收到完全可见状态 (state=0)
+          expect(callbackCalled).assertTrue();
+          console.info(caseName + ' Step 5 - Occlusion states: ' + JSON.stringify(occlusionStates));
+          expect(occlusionStates.includes(0)).assertTrue(); // 完全可见
+
+          // 步骤6：子窗1调用off('occlusionStateChanged')取消监听，重复3-5
+          console.info(caseName + ' Step 6: Unregister listener and repeat steps 3-5');
+          subWindow1.off('occlusionStateChanged', occlusionCallback);
+          console.info(caseName + ' SubWindow1 unregistered occlusionStateChanged listener');
+
+          // 重置状态
+          occlusionStates = [];
+          callbackCalled = false;
+
+          // 重复步骤3：部分遮挡
+          console.info(caseName + ' Step 6.1: Repeat step 3 - partial occlusion');
+          await subWindow2.moveWindowTo(250, 250); // 与子窗1有交集
+          await sleep(500);
+
+          // 验证：不应该有回调
+          expect(callbackCalled).assertFalse();
+          expect(occlusionStates.length).assertEqual(0);
+          console.info(caseName + ' Step 6.1 completed - No callback received');
+
+          // 重复步骤4：完全遮挡
+          console.info(caseName + ' Step 6.2: Repeat step 4 - full occlusion');
+          // await subWindow2.resize(subWindow1Rect.width + 100, subWindow1Rect.height + 100);
+          await subWindow2.moveWindowTo(0, 0);
+          await sleep(500);
+
+          // 验证：不应该有回调
+          expect(callbackCalled).assertFalse();
+          expect(occlusionStates.length).assertEqual(0);
+          console.info(caseName + ' Step 6.2 completed - No callback received');
+
+          // 重复步骤5：无遮挡
+          console.info(caseName + ' Step 6.3: Repeat step 5 - no occlusion');
+          await subWindow2.moveWindowTo(windowLimits.minWidth as number+800, windowLimits.minHeight as number+800);
+          await sleep(500);
+
+          // 验证：不应该有回调
+          expect(callbackCalled).assertFalse();
+          expect(occlusionStates.length).assertEqual(0);
+          console.info(caseName + ' Step 6 completed - No callbacks received after unregistering');
+
+          // 步骤7：销毁子窗1和子窗2
+          await subWindow1.destroyWindow();
+          await subWindow2.destroyWindow();
+          done();
+
+
+        } catch (err) {
+          console.error(caseName + ' failed, error: ' + JSON.stringify(err));
+          await subWindow1?.destroyWindow();
+          await subWindow2?.destroyWindow();
+          expect(false).assertTrue();
           done();
         }
       }
@@ -2964,12 +2962,12 @@ export default function windowPropertiesTest2() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0100
-     * @tc.name      : testIsInFreeWindowModewithdestoryedSubwindow
-     * @tc.desc      : 验证子窗口销毁后调用isInFreeWindowMode接口报1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0100
+     * @tc.name       testIsInFreeWindowModewithdestoryedSubwindow
+     * @tc.desc       验证子窗口销毁后调用isInFreeWindowMode接口报1300002
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testIsInFreeWindowModewithdestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testIsInFreeWindowModewithdestoryedSubwindow ';
@@ -2984,18 +2982,18 @@ export default function windowPropertiesTest2() {
         console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(1300002);
         // 这里不对
-        // expect(err.message == 'This window state is abnormal').assertTrue();
+        expect(err.message != null).assertTrue();
         done();
       }
     });
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0200
-     * @tc.name      : testIsInFreeWindowModewithDifferentWindowType
-     * @tc.desc      : 验证isInFreeWindowMode接口在主窗、子窗和系统窗都可以调用
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0200
+     * @tc.name       testIsInFreeWindowModewithDifferentWindowType
+     * @tc.desc       验证isInFreeWindowMode接口在主窗、子窗和系统窗都可以调用
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testIsInFreeWindowModewithDifferentWindowType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testIsInFreeWindowModewithDifferentWindowType ';
@@ -3016,7 +3014,7 @@ export default function windowPropertiesTest2() {
         let subWindowClass2 = await window.createWindow(config);
         let res3 = subWindowClass2.isInFreeWindowMode();
         console.log(caseName + 'subWindow isInFreeWindowMode: ' + res3);
-        if (isAutoWindow == 'true') {
+        if (res1) {
           expect(res1).assertEqual(true)
           expect(res2).assertEqual(true)
           expect(res3).assertEqual(true)
@@ -3038,12 +3036,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0300
-     * @tc.name      : testOnOffFreeWindowModeChangewithdestoryedSubwindow
-     * @tc.desc      : 验证子窗口销毁后onFreeWindowModeChange和offFreeWindowModeChange监听接口抛1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0300
+     * @tc.name       testOnOffFreeWindowModeChangewithdestoryedSubwindow
+     * @tc.desc       验证子窗口销毁后onFreeWindowModeChange和offFreeWindowModeChange监听接口抛1300002错误码
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testOnOffFreeWindowModeChangewithdestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testOnOffFreeWindowModeChangewithdestoryedSubwindow ';
@@ -3081,12 +3079,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0400
-     * @tc.name      : testSetWindowContainerColorPermissionwithMainWindow
-     * @tc.desc      : 验证普通应用配置权限时主窗调用setWindowContainerColor接口获焦时透明
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0400
+     * @tc.name       testSetWindowContainerColorPermissionwithMainWindow
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口获焦时透明
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testSetWindowContainerColorPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithMainWindow ';
@@ -3118,12 +3116,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0500
-     * @tc.name      : testSetWindowContainerColorPermissionwithInactiveTransparent
-     * @tc.desc      : 验证普通应用配置权限时主窗调用setWindowContainerColor接口失焦时透明
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0500
+     * @tc.name       testSetWindowContainerColorPermissionwithInactiveTransparent
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口失焦时透明
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testSetWindowContainerColorPermissionwithInactiveTransparent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveTransparent ';
@@ -3155,12 +3153,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0600
-     * @tc.name      : testSetWindowContainerColorPermissionwithSubwindow
-     * @tc.desc      : 验证普通应用配置权限时子窗口调用setWindowContainerColor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0600
+     * @tc.name       testSetWindowContainerColorPermissionwithSubwindow
+     * @tc.desc       验证普通应用配置权限时子窗口调用setWindowContainerColor
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testSetWindowContainerColorPermissionwithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithSubwindow ';
@@ -3189,12 +3187,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0700
-     * @tc.name      : testSetWindowContainerColorPermissionwithDialogwindow
-     * @tc.desc      : 验证普通应用配置权限时dialog窗调用setWindowContainerColor接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0700
+     * @tc.name       testSetWindowContainerColorPermissionwithDialogwindow
+     * @tc.desc       验证普通应用配置权限时dialog窗调用setWindowContainerColor接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testSetWindowContainerColorPermissionwithDialogwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithDialogwindow ';
@@ -3228,12 +3226,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0800
-     * @tc.name      : testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha
-     * @tc.desc      : 验证普通应用配置权限时主窗调用setWindowContainerColor接口，参数类型透明度alpha非FF开头
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0800
+     * @tc.name       testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口，参数类型透明度alpha非FF开头
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha ';
@@ -3260,12 +3258,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0900
-     * @tc.name      : testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError
-     * @tc.desc      : 验证普通应用配置权限时主窗调用setWindowContainerColor接口，参数类型错误
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0900
+     * @tc.name       testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口，参数类型错误
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError ';

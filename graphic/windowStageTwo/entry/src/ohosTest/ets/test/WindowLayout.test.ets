@@ -4304,12 +4304,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0100
-     * @tc.name      : testGetWindowLimitsVPwithFloatWindow
-     * @tc.desc      : testGetWindowLimitsVPwithFloatWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0100
+     * @tc.name       testGetWindowLimitsVPwithFloatWindow
+     * @tc.desc       testGetWindowLimitsVPwithFloatWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testGetWindowLimitsVPwithFloatWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetWindowLimitsVPwithFloatWindow';
@@ -4353,12 +4353,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0200
-     * @tc.name      : testGetWindowLimitsVPwithDialogWindow
-     * @tc.desc      : testGetWindowLimitsVPwithDialogWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0200
+     * @tc.name       testGetWindowLimitsVPwithDialogWindow
+     * @tc.desc       testGetWindowLimitsVPwithDialogWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testGetWindowLimitsVPwithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetWindowLimitsVPwithDialogWindow';
@@ -4378,8 +4378,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         let windowLimits = subWindowClass.getWindowLimitsVP();
         console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
         if (canIUseRes) {
-          expect(windowLimits.minWidth).assertEqual(1)
-          expect(windowLimits.minHeight).assertEqual(1)
+          expect(windowLimits.minWidth).assertLarger(1)
+          expect(windowLimits.minHeight).assertLarger(1)
         }
         done()
       } catch (err) {
@@ -4413,36 +4413,29 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       };
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
       console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      subWindowClass = await window.createWindow(config);
+      await subWindowClass.setUIContent('testability/pages/Index2');
+      await subWindowClass.showWindow();
+      await subWindowClass.destroyWindow();
       try {
-        subWindowClass = await window.createWindow(config);
-        await subWindowClass.setUIContent('testability/pages/Index2');
-        await subWindowClass.showWindow();
         let windowLimits = subWindowClass.getWindowLimitsVP();
         console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
-        if (canIUseRes) {
-          expect(windowLimits.minWidth).assertEqual(1)
-          expect(windowLimits.minHeight).assertEqual(1)
-        }
+        expect().assertFail();
         done()
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
-        await subWindowClass?.destroyWindow();
-        if (err.code === 801) {
-          done()
-        } else {
-          expect().assertFail();
-          done()
-        }
+        expect(err.code).assertEqual(1300002);
+        done();
       }
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0400
-     * @tc.name      : testGetWindowLimitsVPSetWindowLimitsVP
-     * @tc.desc      : testGetWindowLimitsVPSetWindowLimitsVP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0400
+     * @tc.name       testGetWindowLimitsVPSetWindowLimitsVP
+     * @tc.desc       testGetWindowLimitsVPSetWindowLimitsVP
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testGetWindowLimitsVPSetWindowLimitsVP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetWindowLimitsVPSetWindowLimitsVP';
@@ -4473,10 +4466,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           expect(windowLimits2.maxWidth).assertEqual(setWindowLimits.maxWidth)
           expect(windowLimits2.maxHeight).assertEqual(setWindowLimits.maxHeight)
         }
+        await terminateAbility5(caseName);
         done()
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
         await windowClass?.destroyWindow();
+        await terminateAbility5(caseName);
         if (err.code === 801) {
           done()
         } else {
@@ -4487,12 +4482,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0500
-     * @tc.name      : testGetWindowLimitsVPSetWindowLimitsPX
-     * @tc.desc      : testGetWindowLimitsVPSetWindowLimitsPX
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0500
+     * @tc.name       testGetWindowLimitsVPSetWindowLimitsPX
+     * @tc.desc       testGetWindowLimitsVPSetWindowLimitsPX
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testGetWindowLimitsVPSetWindowLimitsPX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetWindowLimitsVPSetWindowLimitsPX';

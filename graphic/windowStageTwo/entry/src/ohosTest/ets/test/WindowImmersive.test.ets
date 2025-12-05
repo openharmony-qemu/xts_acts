@@ -3581,12 +3581,65 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0200
-     * @tc.name      : testFreeMultWindowNotFullScreenGetWindowAvoidAreaIgnoringVisibility
-     * @tc.desc      : 验证在自由多窗模式下非全屏窗口调用getWindowAvoidAreaIgnoringVisibility接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0100
+     * @tc.name       testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility
+     * @tc.desc       横验证在自由多窗模式下全屏窗口调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowStageStart = await startAbility7(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
+      let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+      console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
+      try {
+        if (isInFreeWindowMode) {
+          await windowClass.maximize();
+          const mainWindowProperties = windowClass.getWindowProperties();
+          const mainWindowRect = mainWindowProperties.windowRect;
+          console.info(caseName + ' Main window rect: ' + JSON.stringify(mainWindowRect));
+          let subWindow = await windowStageStart.createSubWindow(caseName);
+          await subWindow.resize(mainWindowRect.width, mainWindowRect.height);
+          await subWindow.moveWindowTo(mainWindowRect.left, mainWindowRect.top);
+          console.info(caseName + ' Sub window resized and moved to match main window');
+          await subWindow.setUIContent("testability/pages/First/index2");
+          await subWindow.showWindow();
+          let avoidArea = subWindow.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
+          console.info(caseName + ' avoidArea: ' + JSON.stringify(avoidArea));
+          expect(avoidArea.leftRect.width).assertEqual(0);
+          expect(avoidArea.leftRect.height).assertEqual(0);
+          expect(avoidArea.rightRect.width).assertEqual(0);
+          expect(avoidArea.rightRect.height).assertEqual(0);
+          expect(avoidArea.topRect.width).assertEqual(0);
+          expect(avoidArea.topRect.height).assertEqual(0);
+          expect(avoidArea.bottomRect.width).assertEqual(0);
+          expect(avoidArea.bottomRect.height).assertEqual(0);
+          await subWindow.destroyWindow();
+          await terminateAbility7(caseName);
+          done()
+        } else {
+          await terminateAbility7(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        await terminateAbility7(caseName);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0200
+     * @tc.name       testFreeMultWindowNotFullScreenGetWindowAvoidAreaIgnoringVisibility
+     * @tc.desc       验证在自由多窗模式下非全屏窗口调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testFreeMultWindowNotFullScreenGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testFreeMultWindowNotFullScreenGetWindowAvoidAreaIgnoringVisibility';
@@ -3633,12 +3686,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0300
-     * @tc.name      : testNotFreeMultWindowMainWindowGetWindowAvoidAreaIgnoringVisibility
-     * @tc.desc      : 验证在非自由多窗模式下状态栏、导航条未隐藏时主窗口调用getWindowAvoidAreaIgnoringVisibility接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0300
+     * @tc.name       testNotFreeMultWindowMainWindowGetWindowAvoidAreaIgnoringVisibility
+     * @tc.desc       验证在非自由多窗模式下状态栏、导航条未隐藏时主窗口调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testNotFreeMultWindowMainWindowGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testNotFreeMultWindowMainWindowGetWindowAvoidAreaIgnoringVisibility';
@@ -3651,7 +3704,7 @@ export default function windowImmersiveTest() {
       try {
         if (!isInFreeWindowMode) {
           // 主窗setWindowSystemBarEnable为true 这啥意思？？？
-          await windowClass.setWindowSystemBarEnable(['status']);
+          await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
           try {
             let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
             console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
@@ -3784,12 +3837,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0400
-     * @tc.name      : testNotFreeMultWindowMainWindowHideGetWindowAvoidAreaIgnoringVisibility
-     * @tc.desc      : 验证在非自由多窗模式下状态栏、导航条隐藏时主窗口调用getWindowAvoidAreaIgnoringVisibility接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0400
+     * @tc.name       testNotFreeMultWindowMainWindowHideGetWindowAvoidAreaIgnoringVisibility
+     * @tc.desc       验证在非自由多窗模式下状态栏、导航条隐藏时主窗口调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testNotFreeMultWindowMainWindowHideGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testNotFreeMultWindowMainWindowHideGetWindowAvoidAreaIgnoringVisibility';
@@ -3934,12 +3987,12 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0500
-     * @tc.name      : testNotFreeMultWindowMainWindowDestroyGetWindowAvoidAreaIgnoringVisibilityCutout
-     * @tc.desc      : 销毁窗口后调用getWindowAvoidAreaIgnoringVisibility接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number     SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0500
+     * @tc.name       testNotFreeMultWindowMainWindowDestroyGetWindowAvoidAreaIgnoringVisibilityCutout
+     * @tc.desc       销毁窗口后调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level2
      */
     it('testNotFreeMultWindowMainWindowDestroyGetWindowAvoidAreaIgnoringVisibilityCutout', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testNotFreeMultWindowMainWindowDestroyGetWindowAvoidAreaIgnoringVisibilityCutout';
@@ -3973,12 +4026,12 @@ export default function windowImmersiveTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0600
-     * @tc.name      : testNotFreeMultWindowMainWindowSubwindowGetWindowAvoidAreaIgnoringVisibilityKeyboard
-     * @tc.desc      : 验证在非自由多窗模式下状态栏、导航条隐藏时子窗与主窗位置大小一致时调用getWindowAvoidAreaIgnoringVisibility接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0600
+     * @tc.name       testNotFreeMultWindowMainWindowSubwindowGetWindowAvoidAreaIgnoringVisibilityKeyboard
+     * @tc.desc       验证在非自由多窗模式下状态栏、导航条隐藏时子窗与主窗位置大小一致时调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testNotFreeMultWindowMainWindowSubwindowGetWindowAvoidAreaIgnoringVisibilityKeyboard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testNotFreeMultWindowMainWindowSubwindowGetWindowAvoidAreaIgnoringVisibilityKeyboard';
