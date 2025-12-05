@@ -50,9 +50,9 @@ export default function customDialogControllerJsunit() {
   describe('customDialogControllerTest', () => {
     beforeAll(() => {
       console.info("customDialogControllerTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("customDialogControllerTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

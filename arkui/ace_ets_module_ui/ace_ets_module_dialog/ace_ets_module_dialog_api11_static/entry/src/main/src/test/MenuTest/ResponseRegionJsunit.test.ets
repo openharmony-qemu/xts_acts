@@ -64,9 +64,9 @@ export default function ResponseRegionJsunit() {
     let y_value: number;
     beforeAll(() => {
       console.info("responseRegionTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("responseRegionTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

@@ -15,7 +15,6 @@
  */
 
 import { BusinessError } from '@ohos.base';
-import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';

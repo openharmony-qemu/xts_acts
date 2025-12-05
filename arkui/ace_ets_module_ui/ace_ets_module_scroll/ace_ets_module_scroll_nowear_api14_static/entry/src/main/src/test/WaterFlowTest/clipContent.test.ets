@@ -32,9 +32,9 @@ export default function clipContent() {
   describe('clipContent', () => {
     beforeAll(() => {
       console.info("clipContent beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

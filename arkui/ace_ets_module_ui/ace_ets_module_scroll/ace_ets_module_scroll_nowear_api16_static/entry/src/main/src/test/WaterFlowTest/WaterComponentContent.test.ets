@@ -31,9 +31,9 @@ export default function WaterComponentContent() {
   describe('WaterComponentContent', () => {
     beforeAll(() => {
       console.info("WaterComponentContent beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api16.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

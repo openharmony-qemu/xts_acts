@@ -42,9 +42,9 @@ import { UtilsTest, startAbility } from '../Util.test';
 export default function frameNodeIsVisibleTest() {
   describe('frameNodeIsVisibleTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.XNode.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

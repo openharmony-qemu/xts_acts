@@ -37,9 +37,9 @@ export default function sheetBorderWidth() {
     let currentDeviceIsPC = false
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       
       console.info("popupKeyboardAvoidMode beforeAll start")
       let deviceTypeInfo = deviceInfo.deviceType
