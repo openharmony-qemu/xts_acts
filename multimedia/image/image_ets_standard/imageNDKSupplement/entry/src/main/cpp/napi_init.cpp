@@ -15,6 +15,7 @@
 
 #include "napi/native_api.h"
 #include "ImageEffectSuppTest.h"
+#include "OHEffectFilterInfoSupplementTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -25,6 +26,13 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectInsertFilterSupp", OHImageEffectInsertFilterSupp),
     DESCRIPTOR("OHImageEffectRemoveFilterSupp", OHImageEffectRemoveFilterSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
+    DESCRIPTOR("OHEffectFilterInfoSetFilterNameSupplementTest", OHEffectFilterInfoSetFilterNameSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoGetFilterNameSupplementTest", OHEffectFilterInfoGetFilterNameSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoSetSupportedBufferTypesSupplementTest", OHEffectFilterInfoSetSupportedBufferTypesSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoGetSupportedBufferTypesSupplementTest", OHEffectFilterInfoGetSupportedBufferTypesSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoSetSupportedFormatsSupplementTest", OHEffectFilterInfoSetSupportedFormatsSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoGetSupportedFormatsSupplementTest", OHEffectFilterInfoGetSupportedFormatsSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoReleaseSupplementTest", OHEffectFilterInfoReleaseSupplementTest),
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
