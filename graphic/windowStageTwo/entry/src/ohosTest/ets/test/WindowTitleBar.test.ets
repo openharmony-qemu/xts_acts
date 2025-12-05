@@ -21,6 +21,8 @@ import { Driver, ON } from '@kit.TestKit';
 import { ConfigurationConstant, StartOptions, bundleManager } from '@kit.AbilityKit';
 import { ColorMetrics } from '@kit.ArkUI';
 import MyAbilityStage from '../myabilitystage/MyAbilityStage';
+import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display'
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -78,6 +80,7 @@ export default function windowTitleBarTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -2174,6 +2177,8 @@ export default function windowTitleBarTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
+      let foldStatus:display.FoldStatus = display.getFoldStatus();
+      console.log(caseName + ' foldStatus:' + foldStatus);
       try {
         let windowStage1 = await startAbility(caseName + 'Test1', context, options);
         await sleep(200);
@@ -2185,10 +2190,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test1 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test1');
-        if (isFreeWindowMode == true) {
-          expect(error.code).assertEqual(1300016)
+        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
+          expect(error.code).assertEqual(1300016);
         } else {
-          expect(error.code).assertEqual(801)
+          expect(error.code).assertEqual(801);
         }
       }
 
@@ -2204,10 +2209,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test2 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test2');
-        if (isFreeWindowMode == true) {
-          expect(error.code).assertEqual(1300016)
+        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
+          expect(error.code).assertEqual(1300016);
         } else {
-          expect(error.code).assertEqual(801)
+          expect(error.code).assertEqual(801);
         }
       }
 
@@ -2223,10 +2228,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test3 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test3');
-        if (isFreeWindowMode == true) {
-          expect(error.code).assertEqual(1300016)
+        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
+          expect(error.code).assertEqual(1300016);
         } else {
-          expect(error.code).assertEqual(801)
+          expect(error.code).assertEqual(801);
         }
         done();
       }
@@ -2328,6 +2333,8 @@ export default function windowTitleBarTest() {
           await terminateAbility(caseName);
           expect(false).assertTrue();
           done();
+        }else{
+          done();
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
@@ -2389,6 +2396,19 @@ export default function windowTitleBarTest() {
           mainWindow.setWindowTitleButtonVisible(true,true,true);
           await terminateAbility(caseName);
           expect(false).assertTrue();
+          done();
+        }else{
+          let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
+          await sleep(200);
+          console.log(`${caseName} button: ${button}`);
+          if(button){
+            test = true
+          }else{
+            test = false
+          }
+          console.log(`${caseName} test: ${test}`);
+          expect(test).assertFalse();
+          await terminateAbility(caseName);
           done();
         }
       } catch (error) {

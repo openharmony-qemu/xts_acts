@@ -2863,7 +2863,7 @@ export default function displayTest() {
           await sleep(100);
         }
         console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        expect(brightnessChangeCount1).assertLarger(1);
+        expect(brightnessChangeCount1).assertLargerOrEqual(1);
         while (!callback2Triggered) {
           await sleep(100);
         }

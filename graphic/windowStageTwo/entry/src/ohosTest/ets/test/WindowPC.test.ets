@@ -1495,7 +1495,12 @@ export default function windowPCTest() {
           console.info(`${message} status_primary:${status_primary}, window.WindowStatusType.FULL_SCREEN:${window.WindowStatusType.FULL_SCREEN}`);
           expect(status_primary).assertEqual(window.WindowStatusType.FULL_SCREEN)
           let isImmersive_primary = windowStageStart.getMainWindowSync().getImmersiveModeEnabledState();
-          expect(isImmersive_primary).assertTrue();
+          console.info(`${message} isImmersive_primary:${isImmersive_primary}`);
+          if(isFreeWindowMode){
+            expect(isImmersive_primary).assertTrue();
+          }else{
+            expect(isImmersive_primary).assertEqual(false);
+          }
         }).catch((err: BusinessError) => {
           console.error(`${message} primary Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
           if (err.code == 801) {
@@ -1512,7 +1517,11 @@ export default function windowPCTest() {
           console.info('Succeed in setting window support modes');
           let status_float = windowStageStart.getMainWindowSync().getWindowStatus();
           console.info(`${message} status_float:${status_float}, window.WindowStatusType.FLOATING:${window.WindowStatusType.FLOATING}`);
-          expect(status_float).assertEqual(window.WindowStatusType.FLOATING);
+          if(isFreeWindowMode){
+            expect(status_float).assertEqual(window.WindowStatusType.FLOATING);
+          }else{
+            expect(status_float).assertEqual(window.WindowStatusType.FULL_SCREEN);
+          }
         }).catch((err: BusinessError) => {
           console.error(`${message} float Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
           if (err.code == 801) {
@@ -1533,8 +1542,14 @@ export default function windowPCTest() {
           console.info(`${message} status_fullscreen:${status_fullscreen}, window.WindowStatusType.FULL_SCREEN:${window.WindowStatusType.FULL_SCREEN}`);
           expect(status_fullscreen).assertEqual(window.WindowStatusType.FULL_SCREEN);
           let isImmersive_fullscreen = windowStageStart.getMainWindowSync().getImmersiveModeEnabledState();
-          expect(isImmersive_fullscreen).assertTrue();
-          done()
+          console.info(`${message} isImmersive_fullscreen:${isImmersive_fullscreen}`);
+          if(isFreeWindowMode){
+            expect(isImmersive_fullscreen).assertTrue();
+            done()
+          }else{
+            expect(isImmersive_fullscreen).assertEqual(false);
+            done()
+          }
         }).catch((err: BusinessError) => {
           console.error(`${message} fullscreen Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
           if (err.code == 801) {
