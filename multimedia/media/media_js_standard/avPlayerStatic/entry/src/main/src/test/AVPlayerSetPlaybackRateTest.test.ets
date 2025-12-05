@@ -67,7 +67,7 @@ async function handleState(state: string, operationRecord: Record<string, () => 
       }
       avPlayer!!.prepare().then(() => {
         console.info(`case prepare called`);
-      }).cache(mediaTestBase.cacheCallback);
+      }).cache(mediaTestBase.catchCallback);
       break;
     case PREPARED:
       expect(avPlayer!!.currentTime).assertEqual(0);
@@ -77,7 +77,7 @@ async function handleState(state: string, operationRecord: Record<string, () => 
       console.info('case to play AVPlayer');
       avPlayer!!.play().then(() => {
         console.info(`case play AVPlayer success`);
-      }).cache(mediaTestBase.cacheCallback);
+      }).cache(mediaTestBase.catchCallback);
       break;
     case PLAYING:
       if (operationRecord[PLAYING]) {
