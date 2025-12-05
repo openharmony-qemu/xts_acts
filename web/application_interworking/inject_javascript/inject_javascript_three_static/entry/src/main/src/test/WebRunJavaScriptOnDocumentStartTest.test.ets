@@ -59,12 +59,12 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
 
 
     /*
-     * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_0001
-     * @tc.name       : testWebRunJavaScriptOnDocumentStartStatic001
-     * @tc.desc       : test runJavaScriptOnDocumentStart
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number     SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_0001
+     * @tc.name       testWebRunJavaScriptOnDocumentStartStatic001
+     * @tc.desc       test runJavaScriptOnDocumentStart
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
      */
     it('testWebRunJavaScriptOnDocumentStartStatic001', 0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(4000);
@@ -78,12 +78,12 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
     })
 
     /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0001
-    * @tc.name       : testWebRunJavaScriptOnDocumentEndStatic001
-    * @tc.desc       : test runJavaScriptOnDocumentEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    * @tc.number     SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0001
+    * @tc.name       testWebRunJavaScriptOnDocumentEndStatic001
+    * @tc.desc       test runJavaScriptOnDocumentEnd
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 3
     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -96,4 +96,3 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
       })
   })
 }
-
