@@ -37,7 +37,7 @@ export default function XComponentSliderTest() {
     beforeAll(() => {
       console.info("XComponentSliderTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("XComponentSliderTest beforeAll end");
     });
 

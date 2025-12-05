@@ -38,9 +38,8 @@ export default function ColumnSetMargin_SubChangePad() {
     beforeAll(() => {
       console.info("ColumnSetMargin_SubChangePad beforeEach start");
       //
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ColumnSetMarginTest beforeEach start");

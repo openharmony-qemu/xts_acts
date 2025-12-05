@@ -38,7 +38,7 @@ export default function StepperJsunit11() {
     beforeAll(() => {
       console.info("StepperJsunit11 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async () => {

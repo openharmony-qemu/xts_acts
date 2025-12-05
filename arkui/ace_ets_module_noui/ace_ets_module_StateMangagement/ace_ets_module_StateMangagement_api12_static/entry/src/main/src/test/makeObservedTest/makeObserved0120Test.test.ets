@@ -56,9 +56,9 @@ export default function makeObserved0120Test() {
     beforeAll(() => {
       console.info("makeObserved0120Test beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -120,7 +120,7 @@ export default function makeObserved0120Test() {
         console.info("MR031[makeObserved0120Test_static_01]: " + item.key + ' : ' + item.value);
         console.info("MR031[makeObserved0120Test_static_01]: " + JSON.stringify(textJsonObj.getElement('$attrs').getString('backgroundColor')));
 
-        expect(textJsonObj.getElement('$attrs').getString('backgroundColor')).assertEqual(item.value);
+        expect(textJsonObj.getElement('$attrs').getString('borderStyle')).assertEqual(item.value);
       }
       console.info('makeObserved0120Test_static_01 END');
       done()

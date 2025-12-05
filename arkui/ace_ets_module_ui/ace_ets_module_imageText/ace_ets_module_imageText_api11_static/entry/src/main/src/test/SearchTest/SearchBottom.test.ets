@@ -46,9 +46,9 @@ export default function search_bottom() {
   describe('search_bottom', () => {
     beforeAll(() => {
       console.info("search_bottom beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {

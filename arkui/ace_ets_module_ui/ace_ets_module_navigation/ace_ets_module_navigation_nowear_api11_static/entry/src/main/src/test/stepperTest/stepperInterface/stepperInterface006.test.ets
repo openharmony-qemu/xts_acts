@@ -37,7 +37,7 @@ export default function stepperInterface006() {
     beforeAll(() => {
       console.info("stepperInterface006 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async () => {

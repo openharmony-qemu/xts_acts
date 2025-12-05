@@ -74,7 +74,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            //try {
+            try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
@@ -102,15 +102,15 @@ export default class CommonTest {
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            // } catch (err: Error) {
-            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-            //   console.error(msg);
-            //   console.error(err.stack);
-            //   if (err.name != 'AssertException') {
-            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-            //     expect(msg).assertTrue();
-            //   }
-            // }
+            } catch (err: Error) {
+              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+              console.error(msg);
+              console.error(err.stack);
+              if (err.name != 'AssertException') {
+                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                expect(msg).assertTrue();
+              }
+            }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 
@@ -126,14 +126,14 @@ export default class CommonTest {
     if (sharePage) {
       if (currentIndex == lastIndex) {
         console.info('[' + caseTag + ']' + ' last case, close page.');
-        await Utils.back();
+        // await Utils.back();
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');
-      await Utils.back();
+      // await Utils.back();
     }
   }
 

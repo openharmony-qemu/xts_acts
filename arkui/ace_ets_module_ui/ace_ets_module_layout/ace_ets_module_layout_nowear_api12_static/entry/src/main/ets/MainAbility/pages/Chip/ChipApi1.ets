@@ -22,7 +22,9 @@ import {
   Row,
   Color,
   SymbolGlyphModifier,
-  ColumnOptions
+  ColumnOptions,
+  // Chip,
+  // ChipGroup
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';

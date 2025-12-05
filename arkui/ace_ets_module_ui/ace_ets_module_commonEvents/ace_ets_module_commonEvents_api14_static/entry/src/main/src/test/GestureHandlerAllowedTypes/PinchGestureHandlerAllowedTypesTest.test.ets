@@ -35,9 +35,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function PinchGestureHandlerAllowedTypesTest() {
   describe('PinchGestureHandlerAllowedTypesTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("PinchGestureHandlerAllowedTypesTest beforeEach start");

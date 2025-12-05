@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import {loadAndSetUpUiTest } from '@ohos.UiTest'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import  hilog  from '@ohos.hilog'
 
@@ -30,12 +30,12 @@ class UtilsTest{
       hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
       try {
         if (!UtilsTest.isloadAndSetUpUiTest) {
-
+          // loadAndSetUpUiTest();
           hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
           UtilsTest.isloadAndSetUpUiTest = true;
         }
         resolve(true)
-      } catch(error) {
+      } catch(error: Error) {
         hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
         reject(error)
       }
@@ -56,6 +56,7 @@ class UtilsTest{
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
         UtilsTest.isStartedAbility = true;
+        await UtilsTest.msSleep(4000);
       }
       return true;
     } catch(error) {

@@ -39,7 +39,7 @@ export default function textInputJsunit3() {
     beforeAll(() => {
       console.info("appInfoTest_four_12 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {

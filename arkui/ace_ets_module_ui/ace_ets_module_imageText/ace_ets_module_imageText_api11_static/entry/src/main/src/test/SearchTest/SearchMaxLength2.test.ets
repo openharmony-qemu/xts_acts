@@ -47,9 +47,9 @@ export default function search_maxLength2() {
   describe('search_maxLength2', () => {
     beforeAll(() => {
       console.info("search_maxLength2 beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {

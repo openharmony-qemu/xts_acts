@@ -34,6 +34,7 @@ import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
 import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
+let viewPage:string = ""
 
 export class RectValue {
   left: number = 0;
@@ -118,7 +119,18 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        await Utils.back();
+        console.info('viewPage: ' + viewPage);
+        if(viewPage == ""){
+          viewPage = obj.targetView
+        } else if(viewPage !== "" && viewPage !== obj.targetView){
+          viewPage = obj.targetView
+          router.pushUrl({
+            url: 'MainAbility/pages/index/index',
+          });
+          await Utils.sleep(500);
+        }else{
+          router.clear()
+        }
         pages = router.getState();
       }
 
@@ -130,7 +142,7 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(2000);
+        await Utils.sleep(500);
         console.info('push ' + obj.pageName);
       }
     } catch (err) {
@@ -143,7 +155,6 @@ export default class Utils {
     if (!('index' == router.getState().name)) {
       router.back()
     }
-    AttrsManager.unRegisterDataChange();
     await Utils.sleep(1000);
     router.clear();
   }
@@ -301,7 +312,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as long,
       stopPropagation: () => {
       },
       getModifierKeyState: (keys: Array<string>): boolean => {
@@ -341,7 +352,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as long,
       target: {
         area: {
           width: width,

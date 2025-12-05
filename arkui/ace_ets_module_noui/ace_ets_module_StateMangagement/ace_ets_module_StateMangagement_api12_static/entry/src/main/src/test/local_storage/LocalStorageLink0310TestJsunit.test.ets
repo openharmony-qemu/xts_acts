@@ -55,9 +55,9 @@ export default function LocalStorageLink0310TestJsunit() {
     beforeAll(() => {
       console.info("LocalStorageLink0310TestJsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

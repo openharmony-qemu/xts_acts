@@ -36,7 +36,7 @@ export default function RadioContentModifier() {
     beforeAll(() => {
       console.info("RadioContentModifier beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("RadioContentModifier beforeAll end");
     });
 

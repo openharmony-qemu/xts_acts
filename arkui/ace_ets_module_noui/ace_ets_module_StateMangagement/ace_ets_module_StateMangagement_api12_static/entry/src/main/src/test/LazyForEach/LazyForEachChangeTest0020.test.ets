@@ -46,9 +46,9 @@ export default function LazyForEachChangeTest0020() {
     beforeAll(() => {
       console.info("LazyForEachChangeTest0020 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

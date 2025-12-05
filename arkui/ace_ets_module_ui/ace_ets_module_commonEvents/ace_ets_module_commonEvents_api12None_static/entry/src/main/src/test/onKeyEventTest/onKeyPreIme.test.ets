@@ -30,9 +30,9 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api12/EntryAbility';
 export default function onKeyPreImeTest() {
   describe('onKeyPreImeTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async ():Promise<void> => {
       // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {

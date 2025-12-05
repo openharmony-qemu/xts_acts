@@ -64,9 +64,9 @@ export default function FreezeV2Test03() {
     beforeAll(() => {
       console.info("FreezeV2Test03 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -79,9 +79,8 @@ export default function FreezeV2Test03() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get FreezeV2Test03 state pages:" + JSON.stringify(pages));
-        if (!("Freeze002" == pages.name)) {
+        if (!("FreezeV2/Freeze002" == pages.name)) {
           console.info("get FreezeV2Test03 pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
 
@@ -93,15 +92,6 @@ export default function FreezeV2Test03() {
     });
 
 
-    afterEach(async () => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back()
-      await sleep(1)
-      console.info("Freeze003 after each called");
-    });
-
-
-    
     /*
      * @tc.number   FreezeTest2_static_001
      * @tc.name     FreezeTest2_static_001

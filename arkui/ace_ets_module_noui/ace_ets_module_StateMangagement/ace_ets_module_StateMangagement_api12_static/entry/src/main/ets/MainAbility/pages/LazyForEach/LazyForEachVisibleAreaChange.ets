@@ -38,7 +38,8 @@ import {
   NodeContainer,
   ListScroller,
   Builder,
-  wrapBuilder
+  wrapBuilder,
+  CustomBuilderT
 } from '@ohos.arkui.component'
 import {
   State,
@@ -87,16 +88,15 @@ class MyDataSource implements IDataSource<string> {
 
 class MyController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
-    let webviewBuilderNode = new BuilderNode<Object[]>(uiContext)
-    const builderFunction = (args: Object[]) => {
-      const param = args[0] as ParamsInterface;
-      param.func();
-    };
+    console.log("======================================= build");
+    let webviewBuilderNode = new BuilderNode<Param>(uiContext)
+    const wrapBuilder1 = wrapBuilder<CustomBuilderT<Param>>(builderNode);
+    webviewBuilderNode.build(wrapBuilder1, new Param())
     return webviewBuilderNode.getFrameNode()
   }
 }
 
-AppStorage.setOrCreate('visibleAreaChangeCount', 0)
+
 
 @Builder
 function builderNode(param: Param) {
@@ -105,7 +105,7 @@ function builderNode(param: Param) {
 
 @Component
 struct ANode {
-  @StorageLink('visibleAreaChangeCount') visibleAreaChangeCount: number = 0
+  @StorageLink('visibleAreaChangeCount') visibleAreaChangeCount: int = 0
 
   build() {
     Column() {
@@ -128,7 +128,11 @@ class Param {
 struct LazyForEachVisibleAreaChangeDemo {
   private dataSource: MyDataSource = new MyDataSource()
   private scroller: ListScroller = new ListScroller()
-  @StorageLink('visibleAreaChangeCount') visibleAreaChangeCount: number = 0
+
+  static { AppStorage.setOrCreate('visibleAreaChangeCount', 0) }
+
+  @StorageLink('visibleAreaChangeCount') visibleAreaChangeCount: int = 0
+
 
   aboutToAppear(): void {
     for (let index = 0; index < 300; index++) {

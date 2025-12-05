@@ -36,7 +36,7 @@ export default function EnableHapticFeedbackTest() {
     beforeAll(() => {
       console.info("TextPickerAddApi beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     
     beforeEach(async (done: () => void): Promise<void> => {

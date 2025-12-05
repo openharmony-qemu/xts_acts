@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,9 +33,9 @@ import { MessageManager, Callback } from '../../ets/MainAbility/common/MessageMa
 export default function navigationJsunit() {
   describe('navigationTest', () => {
      beforeAll(() => {
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
+
     });
 
     beforeEach(async () => {

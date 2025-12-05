@@ -78,6 +78,7 @@ struct ButtonApi2 {
         .contentModifier(new MyButtonStyle(this.positionX,this.positionY,Color.Red))
         .onClick((event: ClickEvent) => {
           this.label = 'after click'
+          console.log("===============================  this.label");
         }).enabled(this.buttonEnabled)
         .id('ButtonApi2_btn1')
     }.height('100%').width('100%').justifyContent(FlexAlign.Center)

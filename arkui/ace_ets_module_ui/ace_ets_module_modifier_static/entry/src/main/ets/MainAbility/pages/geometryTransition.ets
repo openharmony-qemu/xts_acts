@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +21,7 @@ import {
   Column,
   ColumnOptions,
   Gauge,
-  animateTo,
+
   FormComponent,
   Visibility,
   FormDimension,
@@ -120,7 +121,7 @@ struct geometryTransition7Example {
             console.info("geometryTransitionTest_0100 emit action state err: " +
             JSON.stringify((err as Error)?.message))
           }
-          animateTo({ duration: 1000 }, () => {
+          this.getUIContext().animateTo({ duration: 1000 }, () => {
             this.btn1 = !this.btn1
             if (this.btn1) {
               this.show = "hide"

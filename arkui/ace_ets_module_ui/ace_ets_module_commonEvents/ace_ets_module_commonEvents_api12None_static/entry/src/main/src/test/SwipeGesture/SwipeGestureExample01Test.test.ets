@@ -25,9 +25,9 @@ import {UtilsTest} from '../Util.test'
 export default function SwipeGestureExample01Test() {
   describe('SwipeGestureExample01Test', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async ():Promise<void> => {
       console.info("SwipeGestureExample01Test beforeEach start");

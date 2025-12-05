@@ -46,9 +46,9 @@ export default function StateTest0090() {
     beforeAll(() => {
       console.info("StateTest0090 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

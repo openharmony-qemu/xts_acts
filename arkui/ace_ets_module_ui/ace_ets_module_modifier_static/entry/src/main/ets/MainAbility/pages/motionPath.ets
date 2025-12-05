@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, ListItem,Marquee,HorizontalAlign,Menu,Column,animateTo,
+import { Entry,Component,$r,Builder,List, ListItem,Marquee,HorizontalAlign,Menu,Column,
  Row,Button,ClickEvent,Week,GridRow,FontWeight,Margin,Swiper,ForEach,PickerTextStyle,Curve,
   ButtonAttribute} from '@ohos.arkui.component';
 import {
@@ -69,7 +70,7 @@ struct MotionPath7Example {
           } catch (err) {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
-          animateTo({ duration: 4000, curve: Curve.Linear }, () => {
+          this.getUIContext().animateTo({ duration: 4000, curve: Curve.Linear }, () => {
             this.toggle = !this.toggle;
           })
         })

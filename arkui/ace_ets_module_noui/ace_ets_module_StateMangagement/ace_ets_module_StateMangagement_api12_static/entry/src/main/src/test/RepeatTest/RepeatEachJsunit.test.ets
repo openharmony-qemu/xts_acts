@@ -54,9 +54,9 @@ export default function RepeatEachJsunit() {
     beforeAll(() => {
       console.info("RepeatEachJsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -69,7 +69,7 @@ export default function RepeatEachJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get RepeatEachJsunit state pages:" + JSON.stringify(pages));
-        if (!("RepeatEachJsunit" == pages.name)) {
+        if (!("RepeatEach" == pages.name)) {
           console.info("get RepeatEachJsunit pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

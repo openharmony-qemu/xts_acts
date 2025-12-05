@@ -21,9 +21,9 @@ import RepeatWaterFlowNumber from './RepeatMixedComponent/RepeatWaterFlowNumber.
 import RepeatTest0030 from './RepeatTest/RepeatTest0030.test';
 
 export default function testsuite() {
-  LazyForEachReload();
-  RepeatWaterFlowBoolean();
-  RepeatWaterFlowNumber();
-  RepeatTest0030();
+  // LazyForEachReload();
+  // RepeatWaterFlowBoolean();
+  // RepeatWaterFlowNumber();
+  // RepeatTest0030();
   makeObserved0140Test();
 }

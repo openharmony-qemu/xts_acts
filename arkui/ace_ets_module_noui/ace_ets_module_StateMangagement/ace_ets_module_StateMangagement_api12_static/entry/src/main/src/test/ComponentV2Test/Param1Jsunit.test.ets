@@ -52,9 +52,9 @@ export default function Param1Jsunit() {
     beforeAll(() => {
       console.info("Param1Jsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

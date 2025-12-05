@@ -59,9 +59,9 @@ export default function SXvalueResourceJsunit() {
     });
     beforeAll(() => {
       console.info("SXvalueResourceJsunit beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);

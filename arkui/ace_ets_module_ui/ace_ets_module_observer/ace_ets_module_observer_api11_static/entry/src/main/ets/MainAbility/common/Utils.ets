@@ -270,97 +270,97 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
-    let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
-    if (down) {
-      let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
-      return up
-    }
+  // static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
+  //   let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
+  //   if (down) {
+  //     let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
+  //     return up
+  //   }
+  //
+  //   return false;
+  // }
 
-    return false;
-  }
+  // static performKeyEvent(type: KeyType, keyCode: number, keyText: string): boolean {
+  //   console.info('performKeyEvent type : ' + type);
+  //   console.info('performKeyEvent keyCode : ' + keyCode);
+  //   console.info('performKeyEvent keyText : ' + keyText);
+  //
+  //   let result = sendKeyEvent({
+  //     type: type,
+  //     keyCode: keyCode as int,
+  //     keyText: keyText,
+  //     intentionCode: IntentionCode.INTENTION_UNKNOWN,
+  //     keySource: KeySource.Keyboard,
+  //     deviceId: 0,
+  //     metaKey: 0,
+  //     timestamp: new Date().getTime(),
+  //     stopPropagation: () => {
+  //     },
+  //     getModifierKeyState: (keys: Array<string>): boolean => {
+  //       console.info("the key 0 is :" + keys[0]);
+  //       return true;
+  //     }
+  //   })
+  //   console.info('performKeyEvent result : ' + result);
+  //   return result
+  // }
+  //
+  // static performMouseEvent(id: string, button: MouseButton, action: MouseAction): boolean {
+  //   console.info('performMouseEvent id : ' + id);
+  //   console.info('performMouseEvent button : ' + button);
+  //   console.info('performMouseEvent action : ' + action);
+  //
+  //   let targetComponentRect = Utils.getComponentRect(id);
+  //   let screenX = (targetComponentRect.right + targetComponentRect.left) * 0.5;
+  //   let screenY = (targetComponentRect.bottom + targetComponentRect.top) * 0.5;
+  //   let x = (targetComponentRect.right + targetComponentRect.left) * 0.5;
+  //   let y = (targetComponentRect.bottom + targetComponentRect.top) * 0.5;
+  //   let width = targetComponentRect.right - targetComponentRect.left;
+  //   let height = targetComponentRect.bottom - targetComponentRect.top;
+  //   console.info('performMouseEvent screenX : ' + screenX);
+  //   console.info('performMouseEvent screenY : ' + screenY);
+  //   console.info('performMouseEvent x : ' + x);
+  //   console.info('performMouseEvent y : ' + y);
+  //   console.info('performMouseEvent width : ' + y);
+  //   console.info('performMouseEvent height : ' + y);
+  //
+  //   let result = sendMouseEvent({
+  //     windowX: screenX,
+  //     windowY: screenX,
+  //     displayX: screenX,
+  //     displayY: screenX,
+  //     x: x,
+  //     y: y,
+  //     button: button,
+  //     action: action,
+  //     timestamp: new Date().getTime(),
+  //     target: {
+  //       area: {
+  //         width: width,
+  //         height: height,
+  //         position: {
+  //           x: 0, y: 0
+  //         },
+  //         globalPosition: {
+  //           x: 0, y: 0
+  //         },
+  //       }
+  //     },
+  //     source: SourceType.Mouse,
+  //     tiltX: 0,
+  //     tiltY: 0,
+  //     sourceTool: SourceTool.Finger,
+  //     pressure: 0,
+  //     stopPropagation: () => {
+  //     },
+  //     getModifierKeyState: (keys: Array<string>): boolean => {
+  //       console.info("the key 0 is :" + keys[0]);
+  //       return true;
+  //     }
+  //   })
 
-  static performKeyEvent(type: KeyType, keyCode: number, keyText: string): boolean {
-    console.info('performKeyEvent type : ' + type);
-    console.info('performKeyEvent keyCode : ' + keyCode);
-    console.info('performKeyEvent keyText : ' + keyText);
-
-    let result = sendKeyEvent({
-      type: type,
-      keyCode: keyCode as int,
-      keyText: keyText,
-      intentionCode: IntentionCode.INTENTION_UNKNOWN,
-      keySource: KeySource.Keyboard,
-      deviceId: 0,
-      metaKey: 0,
-      timestamp: new Date().getTime(),
-      stopPropagation: () => {
-      },
-      getModifierKeyState: (keys: Array<string>): boolean => {
-        console.info("the key 0 is :" + keys[0]);
-        return true;
-      }
-    })
-    console.info('performKeyEvent result : ' + result);
-    return result
-  }
-
-  static performMouseEvent(id: string, button: MouseButton, action: MouseAction): boolean {
-    console.info('performMouseEvent id : ' + id);
-    console.info('performMouseEvent button : ' + button);
-    console.info('performMouseEvent action : ' + action);
-
-    let targetComponentRect = Utils.getComponentRect(id);
-    let screenX = (targetComponentRect.right + targetComponentRect.left) * 0.5;
-    let screenY = (targetComponentRect.bottom + targetComponentRect.top) * 0.5;
-    let x = (targetComponentRect.right + targetComponentRect.left) * 0.5;
-    let y = (targetComponentRect.bottom + targetComponentRect.top) * 0.5;
-    let width = targetComponentRect.right - targetComponentRect.left;
-    let height = targetComponentRect.bottom - targetComponentRect.top;
-    console.info('performMouseEvent screenX : ' + screenX);
-    console.info('performMouseEvent screenY : ' + screenY);
-    console.info('performMouseEvent x : ' + x);
-    console.info('performMouseEvent y : ' + y);
-    console.info('performMouseEvent width : ' + y);
-    console.info('performMouseEvent height : ' + y);
-
-    let result = sendMouseEvent({
-      windowX: screenX,
-      windowY: screenX,
-      displayX: screenX,
-      displayY: screenX,
-      x: x,
-      y: y,
-      button: button,
-      action: action,
-      timestamp: new Date().getTime(),
-      target: {
-        area: {
-          width: width,
-          height: height,
-          position: {
-            x: 0, y: 0
-          },
-          globalPosition: {
-            x: 0, y: 0
-          },
-        }
-      },
-      source: SourceType.Mouse,
-      tiltX: 0,
-      tiltY: 0,
-      sourceTool: SourceTool.Finger,
-      pressure: 0,
-      stopPropagation: () => {
-      },
-      getModifierKeyState: (keys: Array<string>): boolean => {
-        console.info("the key 0 is :" + keys[0]);
-        return true;
-      }
-    })
-
-    console.info('performMouseEvent result : ' + result);
-
-    return result;
-  }
+  //   console.info('performMouseEvent result : ' + result);
+  //
+  //   return result;
+  // }
 }

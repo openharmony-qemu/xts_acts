@@ -41,9 +41,9 @@ export default function column_JustifyContent_ChangeParent() {
     beforeAll(async () => {
       console.info("Column_JustifyContent_ChangeParentTest beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     })
     beforeEach(async (): Promise<void> => {
       console.info("Column_JustifyContent_ChangeParent beforeEach called");

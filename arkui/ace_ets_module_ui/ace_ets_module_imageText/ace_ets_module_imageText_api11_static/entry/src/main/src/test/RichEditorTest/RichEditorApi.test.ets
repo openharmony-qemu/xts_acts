@@ -61,9 +61,9 @@ export default function RichEditorApi() {
     });
     beforeAll(() => {
       console.info("RichEditorApi beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -112,7 +112,7 @@ export default function RichEditorApi() {
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('RichEditorApi_btn_getParagraphs'));
       await (btn1?.click() as Promise<void>)
-      await CommonFunc.sleep(4000);
+      ;
       console.log('spanParagraphs'+ AppStorage.get<TextAlign>('getParagraphs_textAlign'))
       console.log('spanParagraphs'+ AppStorage.get<string>('getParagraphs_size'))
       console.log('spanParagraphs'+ AppStorage.get<[number, number]>('getParagraphs_range'))

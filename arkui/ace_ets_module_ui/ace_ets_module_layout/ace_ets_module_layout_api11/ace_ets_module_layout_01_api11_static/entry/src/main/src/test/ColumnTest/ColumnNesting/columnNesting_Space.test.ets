@@ -38,9 +38,8 @@ export default function columnNesting_Space() {
     beforeAll(() => {
       console.info("columnNesting_Space beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("columnNesting_Space beforeEach start");

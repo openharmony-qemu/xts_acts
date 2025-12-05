@@ -36,11 +36,11 @@ export default function defaultFocus() {
 
   describe('defaultFocus', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
-   beforeEach(async (): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       console.info("defaultFocus beforeEach start");
       const searchRouter = AppStorage.get<Router>("router") as Router
       try {
@@ -58,6 +58,7 @@ export default function defaultFocus() {
         expect().assertFail();
       }
     });
+
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);

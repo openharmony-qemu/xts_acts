@@ -47,9 +47,9 @@ export default function Prefetcher1() {
     beforeAll(() => {
       console.info("Prefetcher1 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

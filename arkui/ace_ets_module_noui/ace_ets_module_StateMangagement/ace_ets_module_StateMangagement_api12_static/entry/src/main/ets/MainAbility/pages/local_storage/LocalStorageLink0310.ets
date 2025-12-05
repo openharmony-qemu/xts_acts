@@ -42,7 +42,7 @@ import {
 } from '@ohos.arkui.stateManagement'
 
 // 定义明确的对象接口
-interface PropObject {
+class PropObject {
   propA?: number;
   propB?: number;
 }
@@ -91,8 +91,9 @@ struct ChildLocalStorageLink0310 {
   }
 }
 
-//@Entry(storageLink0310)
-@Entry
+const _get_localstorage_ : () => LocalStorage = () => storageLink0310
+
+@Entry({ storage: '_get_localstorage_' })
 @Component
 struct LocalStorageLink0310 {
   @LocalStorageLink('LocalStorageLink0310Set') set: Set<number> = new Set<number>()
@@ -134,6 +135,7 @@ struct LocalStorageLink0310 {
           this.und = undefined
           this.nul = null
           this.arr = [1, true, { 'propB': 48 } as PropObject]
+          console.log("==========================================this.arr " + JSON.stringify(this.arr));
         })
     }
   }

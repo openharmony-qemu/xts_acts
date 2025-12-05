@@ -36,9 +36,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function unicodeTest() {
   describe('unicodeTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("unicodeTest beforeEach start");

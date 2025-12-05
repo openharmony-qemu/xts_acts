@@ -28,9 +28,7 @@ export default function ModifierTest() {
   describe('ModifierTest', () => {
     beforeAll(() => {
       console.info("EventLocationInfo beforeEach start");
-      await UtilsTest.msSleep(4000)
       await startAbility("com.open.harmony.nowear.acetestcommenventapi20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

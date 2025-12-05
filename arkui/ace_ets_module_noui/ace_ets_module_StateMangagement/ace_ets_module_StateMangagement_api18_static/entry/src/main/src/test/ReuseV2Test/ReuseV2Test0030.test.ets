@@ -30,9 +30,9 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function ReuseV2Test0030() {
   describe('ReuseV2Test0030', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     })
     beforeEach(async (): Promise<void> => {
       console.info("ReuseV2Test0030 beforeEach start");

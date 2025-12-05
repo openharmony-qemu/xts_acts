@@ -99,7 +99,7 @@ export default class CommonTest {
                 //If there is only an assertion function, automatically modify the status value
                 // console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
                 // AttrsManager.change(data.caseTag, data.testValue.setValue);
-                // AppStorage.setOrCreate<ConstraintSizeOptions>('_constraintSize', data.testValue.setValue)
+                AppStorage.setOrCreate<ConstraintSizeOptions>('_constraintSize', data.testValue.setValue)
                 await Utils.sleep(1000);
               }
 
@@ -129,14 +129,14 @@ export default class CommonTest {
     if (sharePage) {
       if (currentIndex == lastIndex) {
         console.info('[' + caseTag + ']' + ' last case, close page.');
-        await Utils.back();
+        // await Utils.back();
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');
-      await Utils.back();
+      // await Utils.back();
     }
   }
 

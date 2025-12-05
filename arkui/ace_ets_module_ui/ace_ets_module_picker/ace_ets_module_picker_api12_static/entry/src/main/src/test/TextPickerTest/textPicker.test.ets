@@ -36,7 +36,7 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
     beforeAll(() => {
       console.info("textPicker beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("textPicker beforeAll end");
     });
 
@@ -49,7 +49,7 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textPicker state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/TextPicker/textPicker" == pages.name)) {
+        if (!("textPicker" == pages.name)) {
           console.info("get textPicker state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

@@ -38,9 +38,8 @@ export default function ColumnSetPadding__SubChange() {
     beforeAll(() => {
       console.info("ColumnSetPadding__SubChange beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ColumnSetPaddingTest beforeEach start");

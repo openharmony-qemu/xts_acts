@@ -33,9 +33,9 @@ export default function RichEditor1() {
     beforeAll(() => {
       console.info("RichEditor1 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+      ;
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      ;
     });
     beforeEach(async (): Promise<void> => {
       console.info("RichEditor1 beforeEach start");

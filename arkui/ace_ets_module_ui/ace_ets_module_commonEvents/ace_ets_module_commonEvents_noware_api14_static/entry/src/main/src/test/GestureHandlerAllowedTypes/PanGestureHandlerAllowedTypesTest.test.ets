@@ -28,9 +28,9 @@ export default function PanGestureHandlerAllowedTypesTest() {
   describe('PanGestureHandlerAllowedTypesTest', () => {
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.open.harmony.nowearevent.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {

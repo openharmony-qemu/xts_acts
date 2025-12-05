@@ -67,9 +67,9 @@ export default function richEditorApi4() {
     });
     beforeAll(() => {
       console.info("richEditorApi4 beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -104,12 +104,12 @@ export default function richEditorApi4() {
       console.info('[richEditorApi4_0100] content:' + content.getElement('fontSize'));
       console.info('[richEditorApi4_0100] content:' + content.getElement('fontColor'));
       console.info('[richEditorApi4_0100] content:' + content.tryGetString('fontFeature'));
-      console.info('[richEditorApi4_0100] content:' + content.getElement('decoration').getElement('type').getDouble('value'));
+      console.info('[richEditorApi4_0100] content:' + content.getElement('decoration').getDouble('type'));
       console.info('[richEditorApi4_0100] content:' + content.getElement('decoration').getString('color'));
       expect('' + content.getString('fontSize')).assertEqual('50.00vp');
       expect('' + content.getString('fontColor')).assertEqual('#FF182431');
       expect('' + content.tryGetString('fontFeature')).assertEqual('');
-      expect('' + content.getElement('decoration').getElement('type').getDouble('value')).assertEqual('0');
+      expect('' + content.getElement('decoration').getDouble('type')).assertEqual('0');
       expect(content.getElement('decoration').getString('color')).assertEqual('#FF182431');
 
       console.info('[testRichEditor_0100] END');

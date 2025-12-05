@@ -47,9 +47,9 @@ export default function ProviderTest0270() {
     beforeAll(() => {
       console.info("ProviderTest0270 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c)  Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,9 +42,9 @@ export default function scrollEnablePagingJsunit() {
     beforeAll(() => {
       console.info("scrollEnablePaging beforeEach start");
 
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
+
     });
 
     beforeEach(async (): Promise<void> => {

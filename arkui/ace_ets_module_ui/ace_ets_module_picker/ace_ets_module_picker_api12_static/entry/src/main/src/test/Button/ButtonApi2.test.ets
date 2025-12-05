@@ -36,7 +36,7 @@ export default function ButtonApi2() {
     beforeAll(() => {
       console.info("ButtonApi2 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("ButtonApi2 beforeAll end");
     });
 

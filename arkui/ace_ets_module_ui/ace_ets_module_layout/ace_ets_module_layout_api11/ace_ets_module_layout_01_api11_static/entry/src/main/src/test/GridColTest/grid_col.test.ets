@@ -39,9 +39,9 @@ export default function grid_colSpanJsunit() {
   describe('grid_colSpanTest', () => {
     beforeAll(async (): Promise<void> =>{
       console.info("flex beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
 
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/GridCol/grid_col',
