@@ -51,12 +51,12 @@ export default function webDownloadEnumTest() {
     });
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0100
-    * @tc.name        : testWebDownloadEnumStatic001
-    * @tc.desc        : test the value of WebDownloadErrorCode.ERROR_UNKNOWN is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0100
+    * @tc.name        testWebDownloadEnumStatic001
+    * @tc.desc        test the value of WebDownloadErrorCode.ERROR_UNKNOWN is 0
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -71,12 +71,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0200
-    * @tc.name        : testWebDownloadEnumStatic002
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_FAILED is 1
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0200
+    * @tc.name        testWebDownloadEnumStatic002
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_FAILED is 1
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -91,12 +91,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0300
-    * @tc.name        : testWebDownloadEnumStatic003
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_ACCESS_DENIED is 2
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0300
+    * @tc.name        testWebDownloadEnumStatic003
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_ACCESS_DENIED is 2
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -111,12 +111,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0400
-    * @tc.name        : testWebDownloadEnumStatic004
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_NO_SPACE is 3
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0400
+    * @tc.name        testWebDownloadEnumStatic004
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_NO_SPACE is 3
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -131,12 +131,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0500
-    * @tc.name        : testWebDownloadEnumStatic005
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_NAME_TOO_LONG is 5
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0500
+    * @tc.name        testWebDownloadEnumStatic005
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_NAME_TOO_LONG is 5
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -151,12 +151,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0600
-    * @tc.name        : testWebDownloadEnumStatic006
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_TOO_LARGE is 6
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0600
+    * @tc.name        testWebDownloadEnumStatic006
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_TOO_LARGE is 6
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -171,12 +171,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0700
-    * @tc.name        : testWebDownloadEnumStatic007
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_TRANSIENT_ERROR is 10
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0700
+    * @tc.name        testWebDownloadEnumStatic007
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_TRANSIENT_ERROR is 10
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -191,12 +191,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0800
-    * @tc.name        : testWebDownloadEnumStatic008
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_BLOCKED is 11
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0800
+    * @tc.name        testWebDownloadEnumStatic008
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_BLOCKED is 11
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -211,12 +211,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0900
-    * @tc.name        : testWebDownloadEnumStatic009
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_TOO_SHORT is 13
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0900
+    * @tc.name        testWebDownloadEnumStatic009
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_TOO_SHORT is 13
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -231,12 +231,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1000
-    * @tc.name        : testWebDownloadEnumStatic010
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_HASH_MISMATCH is 14
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1000
+    * @tc.name        testWebDownloadEnumStatic010
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_HASH_MISMATCH is 14
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -251,12 +251,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1100
-    * @tc.name        : testWebDownloadEnumStatic011
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_SAME_AS_SOURCE is 15
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1100
+    * @tc.name        testWebDownloadEnumStatic011
+    * @tc.desc        test the value of WebDownloadErrorCode.FILE_SAME_AS_SOURCE is 15
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -271,12 +271,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1200
-    * @tc.name        : testWebDownloadEnumStatic012
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_FAILED is 20
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1200
+    * @tc.name        testWebDownloadEnumStatic012
+    * @tc.desc        test the value of WebDownloadErrorCode.NETWORK_FAILED is 20
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -291,12 +291,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1300
-    * @tc.name        : testWebDownloadEnumStatic013
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_TIMEOUT is 21
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1300
+    * @tc.name        testWebDownloadEnumStatic013
+    * @tc.desc        test the value of WebDownloadErrorCode.NETWORK_TIMEOUT is 21
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -311,12 +311,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1400
-    * @tc.name        : testWebDownloadEnumStatic014
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_DISCONNECTED is 22
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1400
+    * @tc.name        testWebDownloadEnumStatic014
+    * @tc.desc        test the value of WebDownloadErrorCode.NETWORK_DISCONNECTED is 22
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -331,12 +331,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1500
-    * @tc.name        : testWebDownloadEnumStatic015
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_SERVER_DOWN is 23
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1500
+    * @tc.name        testWebDownloadEnumStatic015
+    * @tc.desc        test the value of WebDownloadErrorCode.NETWORK_SERVER_DOWN is 23
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -351,12 +351,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1600
-    * @tc.name        : testWebDownloadEnumStatic016
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_INVALID_REQUEST is 24
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1600
+    * @tc.name        testWebDownloadEnumStatic016
+    * @tc.desc        test the value of WebDownloadErrorCode.NETWORK_INVALID_REQUEST is 24
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -371,12 +371,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1700
-    * @tc.name        : testWebDownloadEnumStatic017
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_FAILED is 30
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1700
+    * @tc.name        testWebDownloadEnumStatic017
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_FAILED is 30
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -391,12 +391,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1800
-    * @tc.name        : testWebDownloadEnumStatic018
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_NO_RANGE is 31
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1800
+    * @tc.name        testWebDownloadEnumStatic018
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_NO_RANGE is 31
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1900
-    * @tc.name        : testWebDownloadEnumStatic019
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_BAD_CONTENT is 33
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_1900
+    * @tc.name        testWebDownloadEnumStatic019
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_BAD_CONTENT is 33
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -431,12 +431,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2000
-    * @tc.name        : testWebDownloadEnumStatic020
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_UNAUTHORIZED is 34
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2000
+    * @tc.name        testWebDownloadEnumStatic020
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_UNAUTHORIZED is 34
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -451,12 +451,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2100
-    * @tc.name        : testWebDownloadEnumStatic021
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_CERT_PROBLEM is 35
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2100
+    * @tc.name        testWebDownloadEnumStatic021
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_CERT_PROBLEM is 35
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -471,12 +471,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2200
-    * @tc.name        : testWebDownloadEnumStatic022
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_FORBIDDEN is 36
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2200
+    * @tc.name        testWebDownloadEnumStatic022
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_FORBIDDEN is 36
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -491,12 +491,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2300
-    * @tc.name        : testWebDownloadEnumStatic023
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_UNREACHABLE is 37
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2300
+    * @tc.name        testWebDownloadEnumStatic023
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_UNREACHABLE is 37
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -511,12 +511,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2400
-    * @tc.name        : testWebDownloadEnumStatic024
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH is 38
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2400
+    * @tc.name        testWebDownloadEnumStatic024
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH is 38
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -531,12 +531,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2500
-    * @tc.name        : testWebDownloadEnumStatic025
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT is 39
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2500
+    * @tc.name        testWebDownloadEnumStatic025
+    * @tc.desc        test the value of WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT is 39
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -551,12 +551,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2600
-    * @tc.name        : testWebDownloadEnumStatic026
-    * @tc.desc        : test the value of WebDownloadErrorCode.USER_CANCELED is 40
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2600
+    * @tc.name        testWebDownloadEnumStatic026
+    * @tc.desc        test the value of WebDownloadErrorCode.USER_CANCELED is 40
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -571,12 +571,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2700
-    * @tc.name        : testWebDownloadEnumStatic027
-    * @tc.desc        : test the value of WebDownloadErrorCode.USER_SHUTDOWN is 41
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2700
+    * @tc.name        testWebDownloadEnumStatic027
+    * @tc.desc        test the value of WebDownloadErrorCode.USER_SHUTDOWN is 41
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -591,12 +591,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2800
-    * @tc.name        : testWebDownloadEnumStatic028
-    * @tc.desc        : test the value of WebDownloadErrorCode.CRASH is 50
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2800
+    * @tc.name        testWebDownloadEnumStatic028
+    * @tc.desc        test the value of WebDownloadErrorCode.CRASH is 50
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -611,12 +611,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2900
-    * @tc.name        : testWebDownloadEnumStatic029
-    * @tc.desc        : test the value of WebDownloadState.IN_PROGRESS is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_2900
+    * @tc.name        testWebDownloadEnumStatic029
+    * @tc.desc        test the value of WebDownloadState.IN_PROGRESS is 0
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -631,12 +631,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3000
-    * @tc.name        : testWebDownloadEnumStatic030
-    * @tc.desc        : test the value of WebDownloadState.COMPLETED is 1
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_3000
+    * @tc.name        testWebDownloadEnumStatic030
+    * @tc.desc        test the value of WebDownloadState.COMPLETED is 1
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -651,12 +651,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3100
-    * @tc.name        : testWebDownloadEnumStatic031
-    * @tc.desc        : test the value of WebDownloadState.CANCELED is 2
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_3100
+    * @tc.name        testWebDownloadEnumStatic031
+    * @tc.desc        test the value of WebDownloadState.CANCELED is 2
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -671,12 +671,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3200
-    * @tc.name        : testWebDownloadEnumStatic032
-    * @tc.desc        : test the value of WebDownloadState.INTERRUPTED is 3
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_3200
+    * @tc.name        testWebDownloadEnumStatic032
+    * @tc.desc        test the value of WebDownloadState.INTERRUPTED is 3
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -691,12 +691,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3300
-    * @tc.name        : testWebDownloadEnumStatic033
-    * @tc.desc        : test the value of WebDownloadState.PENDING is 4
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_3300
+    * @tc.name        testWebDownloadEnumStatic033
+    * @tc.desc        test the value of WebDownloadState.PENDING is 4
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -711,12 +711,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3400
-    * @tc.name        : testWebDownloadEnumStatic034
-    * @tc.desc        : test the value of WebDownloadState.PAUSED is 5
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_3400
+    * @tc.name        testWebDownloadEnumStatic034
+    * @tc.desc        test the value of WebDownloadState.PAUSED is 5
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -731,12 +731,12 @@ export default function webDownloadEnumTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3500
-    * @tc.name        : testWebDownloadEnumStatic035
-    * @tc.desc        : test the value of WebDownloadState.UNKNOWN is 6
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_3500
+    * @tc.name        testWebDownloadEnumStatic035
+    * @tc.desc        test the value of WebDownloadState.UNKNOWN is 6
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
     */
     it('testWebDownloadEnumStatic035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -750,12 +750,12 @@ export default function webDownloadEnumTest() {
       done();
     })
     /*
-    * @tc.number     : SUB_WEB_EMITONSWITCHNEXTPAGE_0100
-    * @tc.name       : testemitonSwitchNextPage
-    * @tc.desc       : test emitonSwitchNextPage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    * @tc.number     SUB_WEB_EMITONSWITCHNEXTPAGE_0100
+    * @tc.name       testemitonSwitchNextPage
+    * @tc.desc       test emitonSwitchNextPage
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 3
     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
