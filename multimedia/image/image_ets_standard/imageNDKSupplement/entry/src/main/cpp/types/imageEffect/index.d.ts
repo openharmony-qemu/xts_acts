@@ -18,3 +18,8 @@ export const OHImageEffectAddFilterSupp: (a: number) => number;
 export const OHImageEffectInsertFilterSupp: (a: number) => number;
 export const OHImageEffectRemoveFilterSupp: (a: number) => number;
 export const OHImageEffectReplaceFilterSupp: (a: number) => number;
+export const OHEffectBufferInfoSetTimestampTest: (a: number) => number;
+export const OHEffectBufferInfoGetTimestampTest: (a: number) => number;
+export const OHEffectBufferInfoSetTextureIdTest: (a: number) => number;
+export const OHEffectBufferInfoGetTextureIdTest: (a: number) => number;
+

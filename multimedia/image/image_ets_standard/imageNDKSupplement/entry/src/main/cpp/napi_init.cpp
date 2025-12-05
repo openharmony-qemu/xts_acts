@@ -15,6 +15,10 @@
 
 #include "napi/native_api.h"
 #include "ImageEffectSuppTest.h"
+#include "OHEffectBufferInfoSetTimestampTest.h"
+#include "OHEffectBufferInfoGetTimestampTest.h"
+#include "OHEffectBufferInfoSetTextureIdTest.h"
+#include "OHEffectBufferInfoGetTextureIdTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -25,6 +29,12 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectInsertFilterSupp", OHImageEffectInsertFilterSupp),
     DESCRIPTOR("OHImageEffectRemoveFilterSupp", OHImageEffectRemoveFilterSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
+    DESCRIPTOR("OHEffectBufferInfoSetTimestampTest", OHEffectBufferInfoSetTimestampTest),
+    DESCRIPTOR("OHEffectBufferInfoGetTimestampTest", OHEffectBufferInfoGetTimestampTest),
+    DESCRIPTOR("OHEffectBufferInfoSetTextureIdTest", OHEffectBufferInfoSetTextureIdTest),
+    DESCRIPTOR("OHEffectBufferInfoGetTextureIdTest", OHEffectBufferInfoGetTextureIdTest),
+
+
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)

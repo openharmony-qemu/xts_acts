@@ -13,7 +13,16 @@
  * limitations under the License.
  */
 import ImageEffectSuppTest from './ImageEffectSupp.test';
+import OHEffectBufferInfoGetTextureIdTest from './OHEffectBufferInfoGetTextureIdTest.test';
+import OHEffectBufferInfoGetTimestampTest from './OHEffectBufferInfoGetTimestampTest.test';
+import OHEffectBufferInfoSetTextureIdTest from './OHEffectBufferInfoSetTextureIdTest.test';
+import OHEffectBufferInfoSetTimestampTest from './OHEffectBufferInfoSetTimestampTest.test';
+
 
 export default function testsuite() {
   ImageEffectSuppTest();
+  OHEffectBufferInfoSetTimestampTest();
+  OHEffectBufferInfoGetTimestampTest();
+  OHEffectBufferInfoSetTextureIdTest();
+  OHEffectBufferInfoGetTextureIdTest();
 }
