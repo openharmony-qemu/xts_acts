@@ -400,12 +400,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0100
-     * @tc.name      : testSetWindowContainerColorNoPermissionwithMainWindow
-     * @tc.desc      : 验证普通应用未配置权限时主窗调用setWindowContainerColor接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0100
+     * @tc.name       testSetWindowContainerColorNoPermissionwithMainWindow
+     * @tc.desc       验证普通应用未配置权限时主窗调用setWindowContainerColor接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testSetWindowContainerColorNoPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorNoPermissionwithMainWindow ';
@@ -432,12 +432,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0200
-     * @tc.name      : testSetWindowContainerColorNoPermissionwithSubwindow
-     * @tc.desc      : 验证普通应用未配置权限时子窗口调用setWindowContainerColor接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0200
+     * @tc.name       testSetWindowContainerColorNoPermissionwithSubwindow
+     * @tc.desc       验证普通应用未配置权限时子窗口调用setWindowContainerColor接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testSetWindowContainerColorNoPermissionwithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorNoPermissionwithSubwindow ';
@@ -469,12 +469,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     });
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0300
-     * @tc.name      : testSetWindowContainerColorPermissionwithSystemWindow
-     * @tc.desc      : 验证普通应用在PC设备未配置权限时dialog窗调用setWindowContainerColor接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0300
+     * @tc.name       testSetWindowContainerColorPermissionwithSystemWindow
+     * @tc.desc       验证普通应用在PC设备未配置权限时dialog窗调用setWindowContainerColor接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testSetWindowContainerColorPermissionwithSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithSystemWindow ';

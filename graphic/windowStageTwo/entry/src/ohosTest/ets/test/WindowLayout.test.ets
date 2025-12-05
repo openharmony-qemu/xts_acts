@@ -4395,12 +4395,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0300
-     * @tc.name      : testGetWindowLimitsVPwithDestoryedWindow
-     * @tc.desc      : testGetWindowLimitsVPwithDestoryedWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0300
+     * @tc.name       testGetWindowLimitsVPwithDestoryedWindow
+     * @tc.desc       testGetWindowLimitsVPwithDestoryedWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testGetWindowLimitsVPwithDestoryedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testGetWindowLimitsVPwithDestoryedWindow';
