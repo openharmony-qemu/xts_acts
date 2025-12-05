@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,15 +36,15 @@ export default function drawingTsPath6Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_4200
-     * @tc.name      : testPathIsInverseFillTypeNormal1Static
-     * @tc.desc      : testPathIsInverseFillTypeNormal1Static
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4200
+     * @tc.name      testPathIsInverseFillTypeNormal1
+     * @tc.desc      testPathIsInverseFillTypeNormal1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level1
      */
-    it('testPathIsInverseFillTypeNormal1Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testPathIsInverseFillTypeNormal1Static';
+    it('testPathIsInverseFillTypeNormal1', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+      const msg = 'testPathIsInverseFillTypeNormal1';
       let path: drawing.Path = new drawing.Path();
       try {
         let result = path.isInverseFillType();
@@ -57,15 +57,15 @@ export default function drawingTsPath6Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_4201
-     * @tc.name      : testPathIsInverseFillTypeNormal2Static
-     * @tc.desc      : testPathIsInverseFillTypeNormal2Static
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4201
+     * @tc.name      testPathIsInverseFillTypeNormal2
+     * @tc.desc      testPathIsInverseFillTypeNormal2
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level0
      */
-    it('testPathIsInverseFillTypeNormal2Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testPathIsInverseFillTypeNormal2Static';
+    it('testPathIsInverseFillTypeNormal2', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testPathIsInverseFillTypeNormal2';
       let path: drawing.Path = new drawing.Path();
       try {
         path.setFillType(drawing.PathFillType.WINDING);
@@ -109,15 +109,15 @@ export default function drawingTsPath6Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_4202
-     * @tc.name      : testPathIsInverseFillTypeMultipleCallsStatic
-     * @tc.desc      : testPathIsInverseFillTypeMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4202
+     * @tc.name      testPathIsInverseFillTypeMultipleCalls
+     * @tc.desc      testPathIsInverseFillTypeMultipleCalls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level3
      */
-    it('testPathIsInverseFillTypeMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testPathIsInverseFillTypeMultipleCallsStatic';
+    it('testPathIsInverseFillTypeMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathIsInverseFillTypeMultipleCalls';
       let path: drawing.Path = new drawing.Path();
       try {
         for (let i = 0; i < 20; i += 1) {
@@ -133,15 +133,15 @@ export default function drawingTsPath6Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_4300
-     * @tc.name      : testPathToggleInverseFillTypeNormal1Static
-     * @tc.desc      : testPathToggleInverseFillTypeNormal1Static
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4300
+     * @tc.name      testPathToggleInverseFillTypeNormal1
+     * @tc.desc      testPathToggleInverseFillTypeNormal1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level1
      */
-    it('testPathToggleInverseFillTypeNormal1Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testPathToggleInverseFillTypeNormal1Static';
+    it('testPathToggleInverseFillTypeNormal1', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+      const msg = 'testPathToggleInverseFillTypeNormal1';
       let path: drawing.Path = new drawing.Path();
       try {
         path.toggleInverseFillType();
@@ -155,15 +155,15 @@ export default function drawingTsPath6Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_4301
-     * @tc.name      : testPathToggleInverseFillTypeNormal2Static
-     * @tc.desc      : testPathToggleInverseFillTypeNormal2Static
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4301
+     * @tc.name      testPathToggleInverseFillTypeNormal2
+     * @tc.desc      testPathToggleInverseFillTypeNormal2
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level0
      */
-    it('testPathToggleInverseFillTypeNormal2Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testPathToggleInverseFillTypeNormal2Static';
+    it('testPathToggleInverseFillTypeNormal2', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testPathToggleInverseFillTypeNormal2';
       let path: drawing.Path = new drawing.Path();
       try {
         path.setFillType(drawing.PathFillType.WINDING);
@@ -211,15 +211,15 @@ export default function drawingTsPath6Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_4302
-     * @tc.name      : testPathToggleInverseFillTypeMultipleCallsStatic
-     * @tc.desc      : testPathToggleInverseFillTypeMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4302
+     * @tc.name      testPathToggleInverseFillTypeMultipleCalls
+     * @tc.desc      testPathToggleInverseFillTypeMultipleCalls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level3
      */
-    it('testPathToggleInverseFillTypeMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testPathToggleInverseFillTypeMultipleCallsStatic';
+    it('testPathToggleInverseFillTypeMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathToggleInverseFillTypeMultipleCalls';
       let path: drawing.Path = new drawing.Path();
       path.setFillType(drawing.PathFillType.WINDING);
       try {
