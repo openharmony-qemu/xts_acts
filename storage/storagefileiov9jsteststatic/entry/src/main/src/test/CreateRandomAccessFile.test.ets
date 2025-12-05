@@ -479,7 +479,7 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         let randomaccessfile1 = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1, end:9});
         let rs = randomaccessfile1.getReadStream();
-        let randomaccessfile2 = fs.createRandomAccessFileSync(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1});
+        let randomaccessfile2 = fs.createRandomAccessFileSync(wpath1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1});
         let ws = randomaccessfile2.getWriteStream();
         rs.on('data', (emitData: buffer.Buffer|string) => {
           let a = emitData;
