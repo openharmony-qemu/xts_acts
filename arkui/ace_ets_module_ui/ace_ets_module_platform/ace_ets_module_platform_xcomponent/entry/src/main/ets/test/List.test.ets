@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import SetXComponentSurfaceConfigTest from './XComponent/SetXComponentSurfaceConfigTest.test'
 import NDKXComponentSurfaceConfigTest from './XComponent/NDKXComponentSurfaceConfigTest.test'
+import SetXComponentSurfaceConfigTest from './XComponent/SetXComponentSurfaceConfigTest.test'
+import XComponentKeyMouseEventTest from './XComponent/XComponentKeyMouseEventTest.test'
 
 export default function testsuite() {
   SetXComponentSurfaceConfigTest()
   NDKXComponentSurfaceConfigTest()
+  XComponentKeyMouseEventTest()
 }
