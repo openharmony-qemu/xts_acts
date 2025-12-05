@@ -2761,12 +2761,12 @@ export default function TextPicker() {
     });
 
      /**
-      * @tc.number    : testPicker57
-      * @tc.name      : testPicker57
-      * @tc.desc      : Testing Change PhotoPickerComponent pickerOptions's isSlidingSupported property
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      * @tc.level     : Level 0
+      * @tc.number      testPicker57
+      * @tc.name        testPicker57
+      * @tc.desc        Testing Change PhotoPickerComponent pickerOptions's isSlidingSupported property
+      * @tc.size        MediumTest
+      * @tc.type        Function
+      * @tc.level       Level 0
       */
     it('testPicker57', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
