@@ -49,9 +49,9 @@ export default function showToastOptions() {
     let currentDeviceIsPC = false
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
 
       let deviceTypeInfo = deviceInfo.deviceType
       currentDeviceIsPC = deviceTypeInfo === "2in1" ? true : false

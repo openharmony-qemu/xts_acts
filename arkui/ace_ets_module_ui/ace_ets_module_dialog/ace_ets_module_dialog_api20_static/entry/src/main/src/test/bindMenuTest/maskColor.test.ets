@@ -42,7 +42,7 @@ export default function maskColorTest() {
     beforeAll(() => {
       console.info("maskColorTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       let options: router.RouterOptions = {

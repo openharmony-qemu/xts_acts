@@ -26,9 +26,9 @@ export default function themePageSliderTest() {
   describe('themePageSliderTest', () => {
     beforeAll(() => {
       console.info("themePageSliderTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.acts.arkui.theme.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -34,7 +34,7 @@ export default function IsAvailableTest() {
     beforeAll(() => {
       console.info("IsAvailableTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.XNode.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

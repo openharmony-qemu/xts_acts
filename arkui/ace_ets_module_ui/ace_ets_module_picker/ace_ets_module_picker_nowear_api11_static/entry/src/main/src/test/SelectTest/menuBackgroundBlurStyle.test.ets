@@ -48,9 +48,9 @@ export default function menuBackgroundBlurStyle() {
     beforeAll(() => {
       console.info("menuBackgroundBlurStyle beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("menuBackgroundBlurStyle beforeEach start");

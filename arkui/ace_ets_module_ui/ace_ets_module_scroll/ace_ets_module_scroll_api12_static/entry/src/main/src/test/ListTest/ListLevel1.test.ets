@@ -36,9 +36,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function listLevel1Test() {
   describe('listLevel1Test', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("listLevel1 beforeEach start");

@@ -28,9 +28,9 @@ export default function UIContextCreateFromBuilderJsunit() {
   describe('UIContextCreateFromBuilderTest', () => {
     beforeAll(() => {
       console.info("UIContextCreateFromBuilderTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.example.myapplication.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.example.myapplication.static", "EntryAbility")
+      
     });
     beforeEach(async () => {
       console.info('UIContextCreateFromBuilderTest beforeEach start');

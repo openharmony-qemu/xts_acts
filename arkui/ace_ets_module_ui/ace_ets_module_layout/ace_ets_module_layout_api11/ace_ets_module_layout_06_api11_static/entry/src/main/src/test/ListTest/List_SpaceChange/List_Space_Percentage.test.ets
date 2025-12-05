@@ -39,9 +39,9 @@ export default function List_Space_Percentage() {
   describe('List_Space_Percentage', () => {
     beforeAll(() => {
       console.log("List_Space_Percentage beforeAll start111")
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("List_Space_Percentage beforeEach start");

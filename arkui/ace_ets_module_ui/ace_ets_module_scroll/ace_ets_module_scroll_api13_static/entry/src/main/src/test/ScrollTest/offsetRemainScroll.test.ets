@@ -37,9 +37,9 @@ export default function offsetRemainScroll() {
   describe('offsetRemainScroll', () => {
     beforeAll(() => {
       await UtilsTest.loadAndSetUpUiTest();
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("offsetRemainScroll beforeEach start");

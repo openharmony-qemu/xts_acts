@@ -35,9 +35,9 @@ function sleep(time: number) {
 export default function scrollbarJsunit() {
   describe('scrollbarTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -52,7 +52,7 @@ export default function scrollbarJsunit() {
         console.info("[scrollbarTest] current page is: " + JSON.stringify(pages.name));
         if (!('ScrollBar' == pages.name)) {
           routerAlp.pushUrl(options);
-          await UtilsTest.msSleep(4000)
+          
         }
       } catch (err) {
         console.info("push scrollBar page error " + JSON.stringify(err));

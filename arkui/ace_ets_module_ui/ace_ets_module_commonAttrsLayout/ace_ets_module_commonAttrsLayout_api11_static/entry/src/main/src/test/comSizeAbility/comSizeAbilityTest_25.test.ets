@@ -38,9 +38,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function comSizeAbilityTest_25() {
   describe('comSizeAbilityTest_25', () => {
 
-    await UtilsTest.msSleep(4000)
+    
     await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
+    
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
     const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;

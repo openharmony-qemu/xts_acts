@@ -62,9 +62,9 @@ export default function ToastShowMode() {
   describe('ToastShowMode', () => {
     beforeAll(() => {
       console.info("ToastShowMode beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("ToastShowMode  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

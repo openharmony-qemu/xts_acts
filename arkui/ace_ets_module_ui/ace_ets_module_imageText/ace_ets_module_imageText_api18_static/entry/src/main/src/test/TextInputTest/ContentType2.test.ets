@@ -34,9 +34,9 @@ export default function ContentTypeTest2() {
   describe('ContentTypeTest2', () => {
     beforeAll(() => {
       console.info("ContentTypeTest2 beforeEach start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

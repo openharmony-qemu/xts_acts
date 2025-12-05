@@ -51,9 +51,9 @@ interface Data {
 export default function positionSettingJsunit() {
   describe('borderTest_five_3', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       console.info("positionSetting beforeEach start");

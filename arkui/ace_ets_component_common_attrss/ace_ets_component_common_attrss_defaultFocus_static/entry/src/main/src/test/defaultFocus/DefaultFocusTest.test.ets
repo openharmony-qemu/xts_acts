@@ -103,9 +103,9 @@ export default function DefaultFocusTest() {
   describe('DefaultFocusTest', () => {
     beforeAll(() => {
       console.info("DefaultFocusTest beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     //Generate test cases (it) through a loop based on the support view * test values.

@@ -35,9 +35,9 @@ export default function AboutToAppearTest() {
   describe('AboutToAppearTest', () => {
     beforeAll(() => {
       console.info("AboutToAppearTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("AboutToAppearTest beforeEach start");

@@ -49,9 +49,9 @@ export default function DialogJsunit() {
   describe('DialogJsunit', () => {
     beforeAll(() => {
       console.info("DialogJsunit beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("DialogJsunit  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

@@ -52,9 +52,9 @@ export default function showActionMenuTrue() {
     beforeAll(() => {
       console.info("showActionMenuTrue beforeAll start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("showActionMenuTrue beforeEach start");

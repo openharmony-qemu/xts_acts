@@ -49,7 +49,7 @@ export default function showActionSheetOrder() {
     beforeAll(() => {
       console.info("DismissReasonTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async () => {

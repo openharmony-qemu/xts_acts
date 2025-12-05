@@ -246,7 +246,7 @@ export default function responseRegionTest() {
     beforeAll(() => {
       console.info("ResponseRegionTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     afterEach(() => {
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', [{ x: 0, y: 0, width: '100%', height: '100%' } ])

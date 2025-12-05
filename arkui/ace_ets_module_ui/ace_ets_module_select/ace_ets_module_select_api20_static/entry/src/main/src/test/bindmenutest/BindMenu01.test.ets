@@ -47,7 +47,7 @@ export default function outlineColorTest() {
     beforeAll(() => {
       console.info("outlineColorTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

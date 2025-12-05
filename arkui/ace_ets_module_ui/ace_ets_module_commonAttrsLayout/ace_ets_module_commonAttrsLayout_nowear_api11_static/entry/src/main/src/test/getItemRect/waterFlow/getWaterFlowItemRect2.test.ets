@@ -36,9 +36,9 @@ export default function getWaterFlowItemRect2() {
   describe('getWaterFlowItemRect2', () => {
     beforeAll(() => {
       console.info("getWaterFlowItemRect2 beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(() => {
       console.info("getWaterFlowItemRect2 beforeEach start");

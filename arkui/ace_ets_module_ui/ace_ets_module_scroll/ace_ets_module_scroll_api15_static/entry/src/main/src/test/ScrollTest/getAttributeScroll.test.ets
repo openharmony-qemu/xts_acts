@@ -37,9 +37,9 @@ export default function getAttributeScroll() {
   describe('getAttributeScroll', () => {
 
     beforeAll(() => {
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
+      await UtilsTest.startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
+      
     });
 
     beforeEach(async (): Promise<void> => {

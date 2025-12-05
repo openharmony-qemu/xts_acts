@@ -39,12 +39,12 @@ export default function defaultFlexTest() {
 
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    // 'SideBarContainer',
-    // 'WaterFlow',
-    // 'Stepper',
-    // 'Select',
-    // 'RowSplit',
-    // 'ColumnSplit',
+     'SideBarContainer',
+     'WaterFlow',
+     'Stepper',
+     'Select',
+     'RowSplit',
+     'ColumnSplit',
 
   )
 

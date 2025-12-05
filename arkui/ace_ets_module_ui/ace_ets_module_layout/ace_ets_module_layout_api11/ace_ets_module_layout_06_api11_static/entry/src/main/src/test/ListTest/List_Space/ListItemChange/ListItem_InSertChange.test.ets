@@ -40,9 +40,9 @@ export default function listItem_InSertChange() {
   describe('ListItem_InSertChangeTest', () => {
     beforeAll(() => {
       console.log("ListItem_InSertChangeTest beforeAll start111")
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("ListItem_InSertChange beforeEach called");

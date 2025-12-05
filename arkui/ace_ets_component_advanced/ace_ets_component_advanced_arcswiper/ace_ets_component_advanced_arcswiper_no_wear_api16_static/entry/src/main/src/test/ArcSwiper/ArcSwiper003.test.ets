@@ -48,9 +48,9 @@ export default function ArcSwiperDemo() {
   describe('ArcSwiper03', () => {
     beforeAll(async () => {
       console.info("beforeAll case");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.example.myapplication.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("search_caret beforeEach start");

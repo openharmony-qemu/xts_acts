@@ -40,7 +40,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function alignSelfTest() {
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.005.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+  
   const uiContext = AppStorage.get<UIContext>('uiContext')!;
   let supportView = [
     'Grid',
@@ -141,7 +141,7 @@ export default function alignSelfTest() {
       console.info("AlignSelfTest beforeEach start");
 
     });
-    await UtilsTest.msSleep(4000)
+    
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
         console.info("AlignSelfTest start");

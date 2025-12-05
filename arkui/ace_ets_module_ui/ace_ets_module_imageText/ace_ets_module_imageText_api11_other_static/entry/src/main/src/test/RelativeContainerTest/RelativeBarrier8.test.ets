@@ -59,9 +59,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function RelativeBarrier8() {
   describe('RelativeBarrier8', () => {
     beforeAll(async () => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

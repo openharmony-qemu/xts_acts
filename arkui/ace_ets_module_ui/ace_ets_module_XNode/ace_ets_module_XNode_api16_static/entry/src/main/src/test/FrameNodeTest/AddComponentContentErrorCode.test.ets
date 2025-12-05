@@ -34,9 +34,9 @@ export default function AddComponentContentErrorCodeTest() {
   describe('AddComponentContentErrorCodeTest', () => {
     beforeAll(() => {
       console.info("AddComponentContentErrorCodeTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
+      
     });
     beforeEach(async () => {
       console.info('AddComponentContentErrorCodeTest beforeEach start');

@@ -36,9 +36,9 @@ export default function GeneralLayoutOriginalTest() {
 
     beforeAll(() => {
       console.info("GeneralLayoutOffsetTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.example.GeneralLayout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.example.GeneralLayout.static", "EntryAbility")
+      
     });
 
     beforeEach(async () => {

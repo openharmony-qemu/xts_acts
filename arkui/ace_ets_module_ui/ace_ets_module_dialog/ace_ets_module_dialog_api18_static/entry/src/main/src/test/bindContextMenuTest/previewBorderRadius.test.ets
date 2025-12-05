@@ -34,9 +34,9 @@ export default function previewBorderRadius() {
   describe('bindContextMenuPreviewBorderRadius', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     })
 
     beforeEach(async () => {

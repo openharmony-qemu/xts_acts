@@ -44,9 +44,9 @@ import { UtilsTest, startAbility, stopApplication } from '../../Util.test';
 export default function getSizeJsunit() {
   describe('getSizeJsunit', () => {
     beforeAll(async () => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

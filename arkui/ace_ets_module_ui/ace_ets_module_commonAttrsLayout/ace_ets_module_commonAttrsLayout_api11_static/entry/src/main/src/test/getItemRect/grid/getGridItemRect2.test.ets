@@ -37,9 +37,9 @@ export default function getGridItemRect2() {
   describe('getGridItemRect2', () => {
     beforeAll(() => {
       console.info("getGridItemRect2 beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(() => {
       console.info("getGridItemRect2 beforeEach start");

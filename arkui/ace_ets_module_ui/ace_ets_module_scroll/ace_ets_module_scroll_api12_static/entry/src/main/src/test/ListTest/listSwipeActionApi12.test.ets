@@ -36,7 +36,7 @@ export default function listSwipeActionApi12Test() {
   describe('listSwipeActionApi12Test', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("listSwipeActionApi12Test beforeEach start");

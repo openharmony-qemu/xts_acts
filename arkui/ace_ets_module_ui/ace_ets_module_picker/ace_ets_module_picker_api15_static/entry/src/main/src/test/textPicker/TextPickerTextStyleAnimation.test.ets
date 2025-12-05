@@ -35,7 +35,7 @@ export default function TextPickerTextStyleAnimationTest() {
     beforeAll(() => {
       console.info("TextPickerTextStyle beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.picker.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

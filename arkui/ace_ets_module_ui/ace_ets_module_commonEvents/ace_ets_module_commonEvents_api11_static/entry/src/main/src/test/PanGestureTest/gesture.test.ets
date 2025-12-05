@@ -41,9 +41,9 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 export default function gestureSetDirectionJsunit() {
   describe('gestureSetDirectionTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

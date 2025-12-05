@@ -24,9 +24,9 @@ export default function curvesJsunit() {
   describe('curvesJsunit', () => {
     beforeAll(() => {
       console.info("curvesJsunit beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -49,7 +49,7 @@ export default function alphabetIndexerThemeTest() {
     beforeAll(() => {
       console.info("AlphabetIndexerPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(() => {
@@ -65,7 +65,7 @@ export default function alphabetIndexerThemeTest() {
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        await UtilsTest.msSleep(4000)
+        
         colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey);
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));

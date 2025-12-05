@@ -34,9 +34,9 @@ export default function backgroundImageResizableTest() {
   describe('backgroundImageResizableTest', () => {
     beforeAll(() => {
       console.info("backgroundImageResizableTest beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(() => {
       console.info("backgroundImageResizableTest beforeEach start");

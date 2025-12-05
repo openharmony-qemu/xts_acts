@@ -50,9 +50,9 @@ export default function ListItemGroup_aspectRatio_all() {
   describe('ListItemGroup_aspectRatio_all', () => {
     beforeAll(() => {
       console.info("ListItemGroup_aspectRatio_all beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("ListItemGroup_aspectRatio_all beforeEach start");

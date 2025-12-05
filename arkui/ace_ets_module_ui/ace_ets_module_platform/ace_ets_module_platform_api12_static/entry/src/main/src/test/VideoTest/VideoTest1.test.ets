@@ -41,9 +41,9 @@ import { BusinessError } from '@ohos.base';
 export default function VideoTest1() {
   describe('VideoTest1', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

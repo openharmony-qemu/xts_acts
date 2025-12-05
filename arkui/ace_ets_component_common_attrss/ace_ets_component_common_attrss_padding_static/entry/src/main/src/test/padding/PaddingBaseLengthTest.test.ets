@@ -40,7 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function PaddingBaseLengthTest() {
   //A list of components that support padding attributes is required.
   let supportView:Array<string> = new Array<string>(
-    // 'AlphabetIndexer',
+    'AlphabetIndexer',
     // 'Button',
     // 'BlankRow',
     // 'BlankColumn',
@@ -75,7 +75,7 @@ export default function PaddingBaseLengthTest() {
     // 'MenuItem',
     // 'MenuItemGroup',
     // 'Gauge',
-    'Marquee', // 非自身问题 NullPointerError 组件不显示
+    // 'Marquee', // 非自身问题 NullPointerError 组件不显示
     // 'NavRouter', // 非自身问题 NullPointerError
     // 'TextArea', // 非自身问题  TextArea的Padding值设置不进去
   )
@@ -154,7 +154,7 @@ export default function PaddingBaseLengthTest() {
     beforeAll(() => {
 
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     //Generate test cases (it) through a loop based on the support view * test values.

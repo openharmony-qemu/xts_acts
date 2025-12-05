@@ -34,9 +34,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RefreshTest() {
   describe('RefreshTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.example.Refresh.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");

@@ -42,9 +42,9 @@ export default function VideoReset2() {
   describe('VideoReset2', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("VideoReset2 beforeEach start");

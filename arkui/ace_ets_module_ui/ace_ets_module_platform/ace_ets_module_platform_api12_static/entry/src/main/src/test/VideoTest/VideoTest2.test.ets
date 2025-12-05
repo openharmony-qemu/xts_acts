@@ -41,9 +41,9 @@ export default function VideoTest2() {
   describe('VideoTest2', () => {
     beforeAll(() => {
       
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("VideoTest2 beforeEach start");

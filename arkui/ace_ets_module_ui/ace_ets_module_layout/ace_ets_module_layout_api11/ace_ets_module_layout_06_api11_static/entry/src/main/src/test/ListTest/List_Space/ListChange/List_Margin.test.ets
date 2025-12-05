@@ -41,9 +41,9 @@ export default function List_Margin() {
     beforeAll(() => {
       console.log("List_Margin beforeAll start111")
             
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("text beforeEach start");

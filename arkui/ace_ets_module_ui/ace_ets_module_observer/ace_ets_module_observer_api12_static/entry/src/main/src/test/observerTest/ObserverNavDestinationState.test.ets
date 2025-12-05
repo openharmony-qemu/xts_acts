@@ -38,9 +38,9 @@ export default function ObserverNavDestinationState() {
     describe('ObserverNavDestinationState', () => {
       beforeAll(() => {
         console.info("ObserverNavDestinationState beforeEach start");
-        await UtilsTest.msSleep(4000);
+        
         await UtilsTest.startAbility("com.arkui.ace.observer12.static", "EntryAbility");
-        await UtilsTest.msSleep(4000);
+        
       });
       beforeEach(async (): Promise<void> => {
         console.info("ObserverNavDestinationState beforeEach start");

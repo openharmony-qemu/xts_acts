@@ -50,9 +50,9 @@ export default function ActionSheetFalse() {
   describe('ActionSheetFalse', () => {
     beforeAll(() => {
       console.info("ActionSheetFalse beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("ActionSheetFalse  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

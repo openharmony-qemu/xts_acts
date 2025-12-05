@@ -45,7 +45,7 @@ export default function barHeightNoMinHeightLimit() {
   describe('barHeightNoMinHeightLimit', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.api20.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -33,9 +33,9 @@ export default function SearchTypeTest() {
   describe('SearchTypeTest', (): void => {
 
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
 
       const searchRouter = AppStorage.get<Router>("router") as Router
       console.info("SearchTypeTest beforeEach start222");

@@ -30,9 +30,9 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function NavigationApi5() {
   describe('NavigationApi5', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
+      await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("NavigationApi5 beforeEach start");

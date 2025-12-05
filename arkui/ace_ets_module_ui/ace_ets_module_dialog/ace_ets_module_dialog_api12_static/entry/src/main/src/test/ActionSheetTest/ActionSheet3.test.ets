@@ -36,9 +36,9 @@ export default function ActionSheet3() {
   describe('ActionSheet3', () => {
     beforeAll(() => {
       console.info("ActionSheet3 beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("ActionSheet3 beforeEach start");

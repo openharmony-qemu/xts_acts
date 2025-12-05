@@ -36,9 +36,9 @@ export default function TitleOptionsToolOptions() {
   describe('TitleOptionsToolOptions', () => {
     beforeAll(() => {
       console.info("TitleOptionsToolOptions beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.navigation13.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("TitleOptionsToolOptions beforeEach start");

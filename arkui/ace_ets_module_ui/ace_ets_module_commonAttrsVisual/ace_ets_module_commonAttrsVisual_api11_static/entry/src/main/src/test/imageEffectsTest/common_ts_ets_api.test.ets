@@ -49,9 +49,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function common_ts_ets_apiStaticClearJsunit() {
 
   console.info("common_ts_ets_apiStaticClearJsunit beforeAll start");
-  await UtilsTest.msSleep(4000)
+  
   await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+  
 
   const uiContext = AppStorage.get<UIContext>('uiContent')!;
 

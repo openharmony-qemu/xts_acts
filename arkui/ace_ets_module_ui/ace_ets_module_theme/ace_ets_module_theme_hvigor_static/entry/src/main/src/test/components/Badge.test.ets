@@ -45,7 +45,7 @@ export default function badgeThemeTest() {
     beforeAll(() => {
       console.info("BadgePage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(() => {

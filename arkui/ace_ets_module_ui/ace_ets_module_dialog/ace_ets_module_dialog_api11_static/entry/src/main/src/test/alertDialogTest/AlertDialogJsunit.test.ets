@@ -50,9 +50,9 @@ export default function AlertDialogJsunit() {
   describe('AlertDialogJsunit', () => {
     beforeAll(() => {
       console.info("AlertDialogJsunit beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("AlertDialogJsunit  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

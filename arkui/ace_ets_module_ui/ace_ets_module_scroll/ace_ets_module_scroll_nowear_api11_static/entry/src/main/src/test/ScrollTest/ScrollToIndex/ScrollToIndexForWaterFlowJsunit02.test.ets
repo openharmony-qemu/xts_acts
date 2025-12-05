@@ -33,9 +33,9 @@ export default function ScrollToIndexForWaterFlowJsunit02() {
 
     beforeAll(() => {
       console.info("ScrollToIndexForWaterFlowJsunit02 beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

@@ -33,9 +33,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function updateBindSheetTest() {
   describe('updateBindSheetTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     })
     beforeEach(async (): Promise<void> => {
       console.info("updateBindSheetTest beforeEach start");

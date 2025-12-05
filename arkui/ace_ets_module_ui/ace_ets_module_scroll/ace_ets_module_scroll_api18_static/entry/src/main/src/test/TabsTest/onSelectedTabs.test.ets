@@ -47,7 +47,7 @@ export default function onSelectedTabs() {
     beforeAll(() => {
       console.info("onSelectedTabs beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

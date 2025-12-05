@@ -39,9 +39,9 @@ export default function listItem_Offset() {
   describe('ListItem_OffsetTest', () => {
     beforeAll(() => {
       console.log("ListItem_OffsetTest beforeAll start111")
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("ListItem_Offset beforeEach called");

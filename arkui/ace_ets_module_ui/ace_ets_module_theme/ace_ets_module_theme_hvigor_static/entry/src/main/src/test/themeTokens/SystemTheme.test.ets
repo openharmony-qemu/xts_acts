@@ -43,7 +43,7 @@ export default function systemThemeTest() {
   describe('ActsSystemTest', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(() => {
@@ -60,7 +60,7 @@ export default function systemThemeTest() {
           })
         }
         colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey)
-        await UtilsTest.msSleep(4000)
+        
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }

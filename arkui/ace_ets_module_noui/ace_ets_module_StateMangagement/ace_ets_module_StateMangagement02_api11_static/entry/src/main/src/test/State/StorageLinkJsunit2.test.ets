@@ -53,9 +53,9 @@ export default function StorageLinkJsunit2() {
   describe('StorageLinkJsunit2', () => {
     beforeAll(() => {
       console.info("StorageLinkJsunit2 beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

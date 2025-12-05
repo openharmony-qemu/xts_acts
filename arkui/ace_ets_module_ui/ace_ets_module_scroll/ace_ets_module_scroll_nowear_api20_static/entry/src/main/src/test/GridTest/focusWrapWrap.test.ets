@@ -45,9 +45,9 @@ export default function focusWrapWrap() {
   describe('focusWrapWrap', () => {
     beforeAll(() => {
       console.info("ActsAceCalendarPickerTest beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api20.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("focusWrapWrap beforeEach start");

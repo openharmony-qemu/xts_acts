@@ -38,7 +38,7 @@ export default function dismissSheetActionTest() {
     beforeAll(() => {
       console.info("dismissSheetActionTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       console.info('dismissSheetActionTest beforeEach start');

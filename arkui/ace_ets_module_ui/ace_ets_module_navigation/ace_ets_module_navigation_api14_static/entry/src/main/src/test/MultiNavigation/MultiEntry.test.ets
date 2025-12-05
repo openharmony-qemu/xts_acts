@@ -36,7 +36,7 @@ export default function MultiEntry() {
     beforeAll(() => {
       console.info("MultiEntry beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info('MultiEntry beforeEach start');

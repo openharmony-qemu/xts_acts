@@ -42,9 +42,9 @@ export default function MaxwidthTest() {
   describe('MaxwidthTest', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     })
 
     beforeEach(async () => {

@@ -37,7 +37,7 @@ export default function PreviewScaleModeTest() {
     beforeAll(() => {
       console.info("PreviewScaleModeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       let options: router.RouterOptions = {

@@ -40,9 +40,9 @@ export default function ApiCommponentAdd02Jsunit() {
 
     beforeAll(() => {
       console.info("ApiCommponentAdd02Jsunit beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

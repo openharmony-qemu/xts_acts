@@ -25,9 +25,9 @@ export default function CheckboxTest() {
   describe('CheckboxTest', () => {
     beforeAll(() => {
       console.info("CheckboxTest beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.example.Checkbox.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");

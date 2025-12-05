@@ -38,7 +38,7 @@ export default function webJsunit() {
   describe('ActsAceWebDevTest1', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       await Utils.sleep(2000);

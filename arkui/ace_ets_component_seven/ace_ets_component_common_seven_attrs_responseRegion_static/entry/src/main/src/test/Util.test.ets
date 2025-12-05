@@ -39,6 +39,7 @@ class UtilsTest{
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
         UtilsTest.isStartedAbility = true;
+        await UtilsTest.msSleep(4000)
       }
       return true;
     } catch(error) {
@@ -53,6 +54,7 @@ async function startAbility(bundleName: string, abilityName: string): Promise<bo
     await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
+    await UtilsTest.msSleep(4000)
     return true;
   } catch(error) {
     console.error(`UiTestCase, start abilityFailed: ${error}`);

@@ -34,9 +34,9 @@ export default function SubMenuExpandingModeTest_EMBEDDED() {
   describe('SubMenuExpandingModeTest_EMBEDDED', () => {
     beforeEach(async (): Promise<void> => {
       beforeAll(() => {
-        await UtilsTest.msSleep(4000)
+  
         await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-        await UtilsTest.msSleep(4000)
+  
       })
       console.info("SubMenuExpandingModeTest_EMBEDDED beforeEach start");
       let options: router.RouterOptions = {

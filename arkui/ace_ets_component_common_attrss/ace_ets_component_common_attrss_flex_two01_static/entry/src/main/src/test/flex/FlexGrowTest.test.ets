@@ -133,7 +133,7 @@ export default function flexGrowTest() {
     beforeAll(() => {
       console.info("FlexGrowTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.two01.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

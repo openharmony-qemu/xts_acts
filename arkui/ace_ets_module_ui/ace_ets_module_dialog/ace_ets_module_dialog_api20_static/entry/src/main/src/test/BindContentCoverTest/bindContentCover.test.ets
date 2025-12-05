@@ -49,7 +49,7 @@ export default function bindContentCoverTest() {
     beforeAll(() => {
       console.info("bindContentCoverTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       console.info('bindContentCoverTest beforeEach start');

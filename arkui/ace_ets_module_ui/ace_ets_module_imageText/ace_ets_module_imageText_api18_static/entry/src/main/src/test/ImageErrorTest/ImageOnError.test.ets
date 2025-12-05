@@ -34,9 +34,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ImageOnErrorTest() {
   describe('ImageOnErrorTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info('ImageOnErrorTest beforeEach start');

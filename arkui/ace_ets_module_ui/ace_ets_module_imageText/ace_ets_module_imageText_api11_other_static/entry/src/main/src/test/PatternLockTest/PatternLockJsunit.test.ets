@@ -58,9 +58,9 @@ export default function PatternLockJsunit() {
   describe('PatternLockJsunit', () => {
 
     beforeAll(async () => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

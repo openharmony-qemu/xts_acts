@@ -103,7 +103,7 @@ export default function FocusControlTest() {
     beforeAll(() => {
       console.info("FocusControlTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs3.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

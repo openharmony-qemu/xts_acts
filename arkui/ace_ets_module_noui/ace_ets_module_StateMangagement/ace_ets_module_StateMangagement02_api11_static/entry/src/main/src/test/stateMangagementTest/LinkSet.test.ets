@@ -53,9 +53,9 @@ export default function LinkSet() {
   describe('LinkSet', () => {
     beforeAll(() => {
       console.info("LinkSet beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

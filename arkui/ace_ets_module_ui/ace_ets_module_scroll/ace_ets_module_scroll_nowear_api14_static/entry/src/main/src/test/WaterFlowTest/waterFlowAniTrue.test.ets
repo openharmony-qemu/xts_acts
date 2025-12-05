@@ -31,9 +31,9 @@ export default function waterFlowAniTrue() {
   describe('waterFlowAniTrue', () => {
     beforeAll(() => {
       console.info("waterFlowAniTrue beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

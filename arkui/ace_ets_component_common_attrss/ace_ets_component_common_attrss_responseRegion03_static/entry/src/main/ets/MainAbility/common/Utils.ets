@@ -91,7 +91,7 @@ export class PageConfig {
   containerView?: string;
 
 }
-
+let viewPage:string=''
 export default class Utils {
   public static instance: Utils = new Utils();
 
@@ -129,7 +129,18 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        await Utils.back();
+        console.info('viewPage: ' + viewPage);
+        if(viewPage == ""){
+          viewPage = obj.targetView
+        } else if(viewPage !== "" && viewPage !== obj.targetView){
+          viewPage = obj.targetView
+          router.pushUrl({
+            url: 'MainAbility/pages/index/index',
+          });
+          await Utils.sleep(500);
+        }else{
+          router.clear()
+        }
         pages = router.getState();
       }
 
@@ -141,7 +152,8 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(1000);
+        await Utils.sleep(500);
+        console.info('push ' + obj.pageName);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -154,7 +166,7 @@ export default class Utils {
       router.back()
     }
     AttrsManager.unRegisterDataChange();
-    await Utils.sleep(1000);
+    await Utils.sleep(500);
     router.clear();
   }
 

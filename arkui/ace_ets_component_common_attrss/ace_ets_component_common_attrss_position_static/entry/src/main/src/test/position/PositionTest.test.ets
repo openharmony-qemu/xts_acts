@@ -40,7 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function positionTest() {
   //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
-    // 'Button',
+    'Button',
     // 'Checkbox',
     // 'CheckboxGroup',
     // 'DataPanel',
@@ -98,7 +98,7 @@ export default function positionTest() {
     // 'Panel', // 10.22 pass 4
     // 'Tabs',//10.22 pass 7
     // 'Gauge',//  10.22 pass 4
-    'TabContent', //10.22 10.13sdk SetNumber died
+    // 'TabContent', //10.22 10.13sdk SetNumber died
   )
   // 存在问题的自定义组件 TabsView ListItemGroupView NavigationView NavRouterView  AlphabetIndexerView
   // 存在问题的官方组件 TabContent Column>Text   Navigator Gauge
@@ -174,7 +174,6 @@ export default function positionTest() {
   describe('PositionTest', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
@@ -193,9 +192,6 @@ export default function positionTest() {
         data.testValue.expectValue.left =Number(uiContext!.vp2px(200))
         data.testValue.expectValue.top = Number(uiContext!.vp2px(100))
       }
-
-
-
 
       console.info('[' + data.caseTag + '] get referenceComponent rect before position changed.');
       let referenceRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
