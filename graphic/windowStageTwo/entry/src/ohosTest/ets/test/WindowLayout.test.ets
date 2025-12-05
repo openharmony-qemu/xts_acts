@@ -4407,7 +4407,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.log(caseName + 'begin');
       let subWindowClass: window.Window | undefined;
       let config: window.Configuration = {
-        name: "dialogWindow",
+        name: "testGetWindowLimitsVPwithDestoryedWindow",
         windowType: window.WindowType.TYPE_DIALOG,
         ctx: context
       };
@@ -4508,7 +4508,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           maxWidth: vp2px(windowLimits.maxWidth as number - 10),
           maxHeight: vp2px(windowLimits.maxHeight as number - 10)
         }
-        await windowClass?.setWindowLimits(setWindowLimits);
+        await windowClass?.setwindowlimitVP(setWindowLimits);
         let windowLimits2 = windowClass?.getWindowLimitsVP();
         console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
 

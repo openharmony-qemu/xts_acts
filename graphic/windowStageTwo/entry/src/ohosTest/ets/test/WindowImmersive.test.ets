@@ -3594,6 +3594,7 @@ export default function windowImmersiveTest() {
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let windowStageStart = await startAbility7(caseName, context);
       let windowClass = windowStageStart.getMainWindowSync();
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
@@ -3850,6 +3851,7 @@ export default function windowImmersiveTest() {
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let windowStageStart = await startAbility7(caseName, context);
       let windowClass = windowStageStart.getMainWindowSync();
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
@@ -4039,6 +4041,7 @@ export default function windowImmersiveTest() {
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let windowStageStart = await startAbility7(caseName, context);
       let windowClass = windowStageStart.getMainWindowSync();
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
