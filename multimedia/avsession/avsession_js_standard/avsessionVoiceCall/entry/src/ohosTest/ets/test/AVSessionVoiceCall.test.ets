@@ -4405,12 +4405,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0400
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0400
-     * @tc.desc      : Testing metadata change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0400
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0400
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -4434,12 +4434,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0500
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0500
-     * @tc.desc      : Testing metadata change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0500
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0500
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -4490,12 +4490,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0600
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0600
-     * @tc.desc      : Testing metadata change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0600
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0600
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
@@ -4549,12 +4549,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0700
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0700
-     * @tc.desc      : Testing metadata change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0700
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0700
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
@@ -4582,12 +4582,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0800
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0800
-     * @tc.desc      : Testing metadata change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0800
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0800
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let filter = []
@@ -4610,12 +4610,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0400
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0400
-     * @tc.desc      : Testing playbackstate change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0400
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0400
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -4639,12 +4639,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0500
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0500
-     * @tc.desc      : Testing playbackstate change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0500
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0500
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -4686,12 +4686,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0600
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0600
-     * @tc.desc      : Testing playbackstate change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0600
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0600
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let filter = ['state','speed','position','bufferedTime','loopMode','isFavorite','activeItemId',
@@ -4734,12 +4734,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0700
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0700
-     * @tc.desc      : Testing playbackstate change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0700
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0700
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let filter = ['state','speed','position','bufferedTime','loopMode','isFavorite','activeItemId',
@@ -4765,12 +4765,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0800
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0800
-     * @tc.desc      : Testing playbackstate change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0800
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0800
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let filter = []
@@ -4796,12 +4796,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100
-     * @tc.desc      : Testing off playbackstate change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100
+     * @tc.desc   Testing off playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
@@ -4817,14 +4817,14 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100
-     * @tc.desc      : Testing off playbackstate change callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0200
+     * @tc.desc   Testing off playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
-    it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         await controller.off('playbackStateChange');
       }catch(err){
@@ -4838,12 +4838,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_1100
-     * @tc.desc      : test onPlayNext callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_1100
+     * @tc.desc   test onPlayNext callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -4864,12 +4864,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_1100
-     * @tc.desc      : test onPlayNext errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_1100
+     * @tc.desc   test onPlayNext errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -4886,12 +4886,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_1100
-     * @tc.desc      : test offPlayNext callback unregistration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_1100
+     * @tc.desc   test offPlayNext callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -4911,12 +4911,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1100
-     * @tc.desc      : test offPlayNext errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1100
+     * @tc.desc   test offPlayNext errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -4931,12 +4931,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1300
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1300
-     * @tc.desc      : test offPlayNext errcode 6600101
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1300
+     * @tc.desc   test offPlayNext errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -4950,12 +4950,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_1100
-     * @tc.desc      : test onPlayPrevious callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_1100
+     * @tc.desc   test onPlayPrevious callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -4975,12 +4975,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_1100
-     * @tc.desc      : test onPlayPrevious errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_1100
+     * @tc.desc   test onPlayPrevious errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -4997,12 +4997,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_1100
-     * @tc.desc      : test offPlayPrevious callback unregistration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_1100
+     * @tc.desc   test offPlayPrevious callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -5022,12 +5022,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1100
-     * @tc.desc      : test offPlayPrevious errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1100
+     * @tc.desc   test offPlayPrevious errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -5042,12 +5042,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1300
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1300
-     * @tc.desc      : test offPlayPrevious errcode 6600101
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1300
+     * @tc.desc   test offPlayPrevious errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -5061,12 +5061,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAY_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAY_1100
-     * @tc.desc      : test onPlay callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAY_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAY_1100
+     * @tc.desc   test onPlay callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -5086,12 +5086,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_1100
-     * @tc.desc      : test onPlay errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_1100
+     * @tc.desc   test onPlay errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -5108,12 +5108,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100
-     * @tc.desc      : test offPlay callback unregistration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100
+     * @tc.desc   test offPlay callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
 
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -5134,12 +5134,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200
-     * @tc.desc      : test offPlay callback unregistration with param
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200
+     * @tc.desc   test offPlay callback unregistration with param
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
 
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -5169,12 +5169,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100
-     * @tc.desc      : test offPlay errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100
+     * @tc.desc   test offPlay errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -5190,12 +5190,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1300
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1300
-     * @tc.desc      : test offPlay errcode 6600101
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1300
+     * @tc.desc   test offPlay errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -5210,12 +5210,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_1100
-     * @tc.desc      : test onRewind callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONREWIND_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONREWIND_1100
+     * @tc.desc   test onRewind callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -5237,12 +5237,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_1200
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_1200
-     * @tc.desc      : test onRewind callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONREWIND_1200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONREWIND_1200
+     * @tc.desc   test onRewind callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -5264,12 +5264,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_1100
-     * @tc.desc      : test onRewind errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_1100
+     * @tc.desc   test onRewind errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -5287,12 +5287,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_1100
-     * @tc.desc      : test offRewind callback unregistration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFREWIND_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFREWIND_1100
+     * @tc.desc   test offRewind callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -5313,12 +5313,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1100
-     * @tc.desc      : test offRewind errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1100
+     * @tc.desc   test offRewind errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -5333,12 +5333,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1300
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1300
-     * @tc.desc      : test offRewind errcode 6600101
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1300
+     * @tc.desc   test offRewind errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -5353,12 +5353,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1100
-     * @tc.desc      : test onFastForward callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1100
+     * @tc.desc   test onFastForward callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -5380,12 +5380,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1200
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1200
-     * @tc.desc      : test onFastForward callback registration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1200
+     * @tc.desc   test onFastForward callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -5407,12 +5407,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_1100
-     * @tc.desc      : test onFastForward errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_1100
+     * @tc.desc   test onFastForward errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -5431,12 +5431,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_1100
-     * @tc.desc      : test offFastForward callback unregistration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_1100
+     * @tc.desc   test offFastForward callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
@@ -5457,12 +5457,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1100
-     * @tc.desc      : test offFastForward errcode 6600102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1100
+     * @tc.desc   test offFastForward errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await session.destroy();
@@ -5478,12 +5478,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1300
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1300
-     * @tc.desc      : test offFastForward errcode 6600101
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1300
+     * @tc.desc   test offFastForward errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
