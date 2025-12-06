@@ -44,6 +44,7 @@ import TextMenuItemIdEqualsTest from './TextMenuItemIdEqualsTest.test';
 import TextMenuType from './TextMenuType.test';
 
 import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
+import TextDirectionTest from './TextDirectionTest.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -77,4 +78,5 @@ export default function testsuite() {
   TextMenuItemIdEqualsTest()
   TextMenuType()
   RichEditorDeleteTest();
+  TextDirectionTest();
 }
