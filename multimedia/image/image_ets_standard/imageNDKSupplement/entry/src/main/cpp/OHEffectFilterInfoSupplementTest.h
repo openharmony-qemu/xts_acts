@@ -22,10 +22,10 @@ extern "C" {
 #endif
 napi_value OHEffectFilterInfoSetFilterNameSupplementTest(napi_env env, napi_callback_info info);
 napi_value OHEffectFilterInfoGetFilterNameSupplementTest(napi_env env, napi_callback_info info);
-napi_value OHEffectFilterInfoSetSupportedBufferTypesSupplementTest(napi_env env, napi_callback_info info);
-napi_value OHEffectFilterInfoGetSupportedBufferTypesSupplementTest(napi_env env, napi_callback_info info);
-napi_value OHEffectFilterInfoSetSupportedFormatsSupplementTest(napi_env env, napi_callback_info info);
-napi_value OHEffectFilterInfoGetSupportedFormatsSupplementTest(napi_env env, napi_callback_info info);
+napi_value OHEffectFilterInfoSetSupportedBufferTypesSuppTest(napi_env env, napi_callback_info info);
+napi_value OHEffectFilterInfoGetSupportedBufferTypesSuppTest(napi_env env, napi_callback_info info);
+napi_value OHEffectFilterInfoSetSupportedFormatsSuppTest(napi_env env, napi_callback_info info);
+napi_value OHEffectFilterInfoGetSupportedFormatsSuppTest(napi_env env, napi_callback_info info);
 napi_value OHEffectFilterInfoReleaseSupplementTest(napi_env env, napi_callback_info info);
 
 #ifdef __cplusplus

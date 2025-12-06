@@ -43,12 +43,12 @@ export default function ImageEffectInfoSupplementTest() {
     });
 
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_001
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_001
-     * @tc.desc   : Set the filter name.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_001
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_001
+     * @tc.desc    Set the filter name.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -57,12 +57,12 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002
-     * @tc.desc   : Set the filter name.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002
+     * @tc.desc    Set the filter name.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -71,12 +71,12 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_003
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_003
-     * @tc.desc   : Set the filter name.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_003
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_003
+     * @tc.desc    Set the filter name.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_003', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -85,12 +85,12 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_004
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_004
-     * @tc.desc   : Set the filter name.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_004
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_004
+     * @tc.desc    Set the filter name.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_004', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -99,12 +99,12 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_005
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_005
-     * @tc.desc   : Get the filter name.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_005
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_005
+     * @tc.desc    Get the filter name.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_001', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
@@ -113,12 +113,12 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002
-     * @tc.desc   : Get the filter name.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002
+     * @tc.desc    Get the filter name.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
@@ -127,12 +127,12 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003
-     * @tc.desc   : Get the filter name.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003
+     * @tc.desc    Get the filter name.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
@@ -141,12 +141,12 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_004
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_004
-     * @tc.desc   : Get the filter name.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_004
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_004
+     * @tc.desc    Get the filter name.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_004', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
@@ -155,211 +155,183 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_001
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_001
-     * @tc.desc   : Set the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_001
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_001
+     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_001', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
-      let result: number = testNapi.OHEffectFilterInfoSetSupportedBufferTypesSupplementTest(CASE_INDEX_1);
+      let result: number = testNapi.OHEffectFilterInfoSetSupportedBufferTypesSuppTest(CASE_INDEX_1);
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002
-     * @tc.desc   : Set the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002
+     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
-      let result: number = testNapi.OHEffectFilterInfoSetSupportedBufferTypesSupplementTest(CASE_INDEX_2);
+      let result: number = testNapi.OHEffectFilterInfoSetSupportedBufferTypesSuppTest(CASE_INDEX_2);
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003
-     * @tc.desc   : Set the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003
+     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
-      let result: number = testNapi.OHEffectFilterInfoSetSupportedBufferTypesSupplementTest(CASE_INDEX_3);
+      let result: number = testNapi.OHEffectFilterInfoSetSupportedBufferTypesSuppTest(CASE_INDEX_3);
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_001
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_001
-     * @tc.desc   : Obtain the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_001
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_001
+     * @tc.desc    Obtain the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_001', Level.LEVEL0, () => {
       const testName = 'SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_001'
       console.info(TAG, testName, 'Start',);
-      let result: number = testNapi.OHEffectFilterInfoGetSupportedBufferTypesSupplementTest(CASE_INDEX_1);
+      let result: number = testNapi.OHEffectFilterInfoGetSupportedBufferTypesSuppTest(CASE_INDEX_1);
       console.info(TAG,testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002
-     * @tc.desc   : Obtain the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002
+     * @tc.desc    Obtain the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002', Level.LEVEL0, () => {
       const testName = 'SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002'
       console.info(TAG, testName,'Start',);
-      let result: number = testNapi.OHEffectFilterInfoGetSupportedBufferTypesSupplementTest(CASE_INDEX_2);
+      let result: number = testNapi.OHEffectFilterInfoGetSupportedBufferTypesSuppTest(CASE_INDEX_2);
       console.info(TAG, testName,'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003
-     * @tc.desc   : Obtain the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003
+     * @tc.desc    Obtain the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003', Level.LEVEL0, () => {
       const testName = 'SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003'
       console.info(TAG, testName,'Start',);
-      let result: number = testNapi.OHEffectFilterInfoGetSupportedBufferTypesSupplementTest(CASE_INDEX_3);
+      let result: number = testNapi.OHEffectFilterInfoGetSupportedBufferTypesSuppTest(CASE_INDEX_3);
       console.info(TAG,testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001
-     * @tc.desc   : Set the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001
+     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
-      let result: number = testNapi.OHEffectFilterInfoSetSupportedFormatsSupplementTest(CASE_INDEX_1);
+      let result: number = testNapi.OHEffectFilterInfoSetSupportedFormatsSuppTest(CASE_INDEX_1);
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_002
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_002
-     * @tc.desc   : Set the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_002
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_002
+     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_002', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
-      let result: number = testNapi.OHEffectFilterInfoSetSupportedFormatsSupplementTest(CASE_INDEX_2);
+      let result: number = testNapi.OHEffectFilterInfoSetSupportedFormatsSuppTest(CASE_INDEX_2);
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003
-     * @tc.desc   : Set the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003
+     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003', Level.LEVEL0, () => {
       console.info(TAG, 'Start',);
-      let result: number = testNapi.OHEffectFilterInfoSetSupportedFormatsSupplementTest(CASE_INDEX_3);
+      let result: number = testNapi.OHEffectFilterInfoSetSupportedFormatsSuppTest(CASE_INDEX_3);
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_004
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_004
-     * @tc.desc   : Set the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
-     */
-    it('SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_004', Level.LEVEL0, () => {
-      console.info(TAG, 'Start',);
-      let result: number = testNapi.OHEffectFilterInfoSetSupportedFormatsSupplementTest(CASE_INDEX_4);
-      console.info(TAG, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
-    });
-    /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_001
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_001
-     * @tc.desc   : Set the memory types supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_001
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_001
+     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_001', Level.LEVEL0, () => {
       console.info(TAG,'Start')
-      let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSupplementTest(CASE_INDEX_1);
+      let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSuppTest(CASE_INDEX_1);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002
-     * @tc.desc   : Obtain the pixel formats supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002
+     * @tc.desc    Obtain the pixel formats supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002', Level.LEVEL0, () => {
       console.info(TAG,'Start')
-      let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSupplementTest(CASE_INDEX_2);
+      let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSuppTest(CASE_INDEX_2);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003
-     * @tc.desc   : Obtain the pixel formats supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003
+     * @tc.desc    Obtain the pixel formats supported by the filter.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003', Level.LEVEL0, () => {
       console.info(TAG,'Start')
-      let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSupplementTest(CASE_INDEX_3);
+      let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSuppTest(CASE_INDEX_3);
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_004
-     * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_004
-     * @tc.desc   : Obtain the pixel formats supported by the filter.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
-     */
-    it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_004', Level.LEVEL0, () => {
-      console.info(TAG,'Start')
-      let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSupplementTest(CASE_INDEX_4);
-      console.info(TAG,'Success',JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
-    });
-    /**
-     * @tc.number : SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_001
-     * @tc.name   : SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_001
-     * @tc.desc   : Destroy the OH-EffectFilterInfo instance.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_001
+     * @tc.name    SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_001
+     * @tc.desc    Destroy the OH-EffectFilterInfo instance.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_001', Level.LEVEL0, () => {
       console.info(TAG,'Start')
@@ -368,12 +340,12 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002
-     * @tc.name   : SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002
-     * @tc.desc   : Destroy the OH-EffectFilterInfo instance.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002
+     * @tc.name    SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002
+     * @tc.desc    Destroy the OH-EffectFilterInfo instance.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002', Level.LEVEL0, () => {
       console.info(TAG,'Start')
