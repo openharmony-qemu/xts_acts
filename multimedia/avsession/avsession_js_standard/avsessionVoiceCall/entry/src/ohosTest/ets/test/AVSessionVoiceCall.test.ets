@@ -19,6 +19,49 @@ import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 
+let changedata: avSession.AVMetadata = {
+  assetId : '9526',
+  title: "lose yourself",
+  artist: "Eminem",
+  author: "ST",
+  avQueueName: "session queuename",
+  avQueueId: "session queueid",
+  avQueueImage: "session queueimage",
+  album: "Slim shady",
+  writer: "ST",
+  composer: "ST",
+  duration: 2222,
+  mediaImage: "https://www.example.com/example.jpg",
+  publishDate: new Date(1994,1,1,1),
+  subtitle: "8 Mile",
+  description: "Rap",
+  lyric: "lrc格式歌词内容",
+  singleLyricText: "单条歌词内容",
+  previousAssetId: "121277",
+  nextAssetId: "121279",
+  filter: 2,
+  drmSchemes: ['123123','456456'],
+  skipIntervals: 10,
+  displayTags: 1
+};
+
+let playbackstate: avSession.AVPlaybackState = {
+  state:avSession.PlaybackState.PLAYBACK_STATE_PLAY,
+  speed: 1.0,
+  position: {elapsedTime:10, updateTime:(new Date()).getTime()},
+  bufferedTime: 1000,
+  loopMode: avSession.LoopMode.LOOP_MODE_SINGLE,
+  isFavorite: true,
+  activeItemId: 123456,
+  volume: 4,
+  maxVolume: 15,
+  muted: true,
+  duration: 123,
+  videoWidth: 30,
+  videoHeight: 20,
+  extras: {'EX': 'this is session ex'}
+};
+
 let sleep = (ms: number): Promise<string> => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -4361,6 +4404,1096 @@ export default function abilityTest() {
       done();
     })
 
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0400
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0400
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
 
+      await controller.on('metadataChange', 'all', (metadata: avSession.AVMetadata) => {
+        flag++;
+        console.info(`metadatachange success flag : ${flag}`)
+      });
+
+      await session.setAVMetadata(changedata);
+
+      await session.setAVMetadata(changedata);
+
+      await sleep(300);
+
+      if (flag == 2) {
+        console.info(`metadatachange all failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0500
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0500
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+
+      await controller.on('metadataChange', 'all', (metadata: avSession.AVMetadata) => {
+        flag++;
+        console.info(`metadatachange success flag : ${flag}`)
+      });
+
+      await session.setAVMetadata(changedata);
+
+      let changedata1: avSession.AVMetadata = {
+        assetId : '9527',
+        title: "lose yourself1",
+        artist: "Eminem1",
+        author: "ST1",
+        avQueueName: "session queuename1",
+        avQueueId: "session queueid1",
+        avQueueImage: "session queueimage1",
+        album: "Slim shady1",
+        writer: "ST1",
+        composer: "ST1",
+        duration: 22221,
+        mediaImage: "https://www.example.com/example.jpg1",
+        publishDate: new Date(1994,1,1,2),
+        subtitle: "8 Mile1",
+        description: "Rap1",
+        lyric: "lrc格式歌词内容1",
+        singleLyricText: "单条歌词内容1",
+        previousAssetId: "1212771",
+        nextAssetId: "1212791",
+        filter: 3,
+        drmSchemes: ['123123','4564561'],
+        skipIntervals: 15,
+        displayTags: 1
+      };
+
+      await session.setAVMetadata(changedata1);
+
+      await sleep(300);
+
+      if (flag !== 2) {
+        console.info(`metadatachange changeall failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0600
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0600
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
+        'album','writer','composer','duration','mediaImage','publishDate','subtitle',
+        'description','lyric','singleLyricText','previousAssetId','nextAssetId',
+        'filter','drmSchemes','skipIntervals','displayTags']
+      let flag = 0;
+
+      await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {
+        flag++;
+        console.info(`metadatachange success flag : ${flag}`)
+      });
+
+      await session.setAVMetadata(changedata);
+
+      let changedata1: avSession.AVMetadata = {
+        assetId : '9527',
+        title: "lose yourself1",
+        artist: "Eminem1",
+        author: "ST1",
+        avQueueName: "session queuename1",
+        avQueueId: "session queueid1",
+        avQueueImage: "session queueimage1",
+        album: "Slim shady1",
+        writer: "ST1",
+        composer: "ST1",
+        duration: 22221,
+        mediaImage: "https://www.example.com/example.jpg1",
+        publishDate: new Date(1994,1,1,2),
+        subtitle: "8 Mile1",
+        description: "Rap1",
+        lyric: "lrc格式歌词内容1",
+        singleLyricText: "单条歌词内容1",
+        previousAssetId: "1212771",
+        nextAssetId: "1212791",
+        filter: 3,
+        drmSchemes: ['123123','4564561'],
+        skipIntervals: 15,
+        displayTags: 1
+      };
+
+      await session.setAVMetadata(changedata1);
+
+      await sleep(300);
+
+      if (flag !== 2) {
+        console.info(`metadatachange filter changeall failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0700
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0700
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
+        'album','writer','composer','duration','mediaImage','publishDate','subtitle',
+        'description','lyric','singleLyricText','previousAssetId','nextAssetId',
+        'filter','drmSchemes','skipIntervals','displayTags']
+      let flag = 0;
+
+      await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {
+        flag++;
+        console.info(`metadatachange success flag : ${flag}`)
+      });
+
+      await session.setAVMetadata(changedata);
+
+      await session.setAVMetadata(changedata);
+
+      await sleep(300);
+
+      if (flag == 2) {
+        console.info(`metadatachange filter all failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0800
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0800
+     * @tc.desc   Testing metadata change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let filter = []
+      let flag = 0;
+
+      await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {
+        flag++;
+        console.info(`metadatachange success flag : ${flag}`)
+      });
+      await session.setAVMetadata(changedata);
+      await session.setAVMetadata(changedata);
+      await sleep(300);
+
+      if (flag == 2) {
+        console.info(`metadatachange filter None failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0400
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0400
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+
+      await controller.on('playbackStateChange', 'all', (playbackstate: avSession.AVPlaybackState) => {
+        flag++;
+        console.info(`playbackStateChange success flag : ${flag}`)
+      });
+
+      await session.setAVPlaybackState(playbackstate);
+
+      await session.setAVPlaybackState(playbackstate);
+
+      await sleep(300);
+
+      if (flag !== 2) {
+        console.info(`playbackStateChange all failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0500
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0500
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+
+      await controller.on('playbackStateChange', 'all', (playbackstate: avSession.AVPlaybackState) => {
+        flag++;
+        console.info(`playbackStateChange success flag : ${flag}`)
+      });
+
+      await session.setAVPlaybackState(playbackstate);
+
+      let playbackstate1: avSession.AVPlaybackState = {
+        state: 3,
+        speed: 1.5,
+        position: {elapsedTime:10, updateTime:(new Date()).getTime()},
+        bufferedTime: 2000,
+        loopMode: 2,
+        isFavorite: false,
+        activeItemId: 123457,
+        volume: 5,
+        maxVolume: 10,
+        muted: false,
+        duration: 124,
+        videoWidth: 40,
+        videoHeight: 50,
+        extras: {'EX': 'this is session ex1'}
+      };
+
+      await session.setAVPlaybackState(playbackstate1);
+
+      await sleep(300);
+
+      if (flag !== 2) {
+        console.info(`playbackStateChange changeall failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0600
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0600
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let filter = ['state','speed','position','bufferedTime','loopMode','isFavorite','activeItemId',
+        'volume','maxVolume','muted','duration','videoWidth','videoHeight','extras']
+      let flag = 0;
+
+      await controller.on('playbackStateChange', filter, (playbackstate: avSession.AVPlaybackState) => {
+        flag++;
+        console.info(`playbackStateChange success flag : ${flag}`)
+      });
+
+      await session.setAVPlaybackState(playbackstate);
+
+      let playbackstate1: avSession.AVPlaybackState = {
+        state: 3,
+        speed: 1.5,
+        position: {elapsedTime:10, updateTime:(new Date()).getTime()},
+        bufferedTime: 2000,
+        loopMode: 2,
+        isFavorite: false,
+        activeItemId: 123457,
+        volume: 5,
+        maxVolume: 10,
+        muted: false,
+        duration: 124,
+        videoWidth: 40,
+        videoHeight: 50,
+        extras: {'EX': 'this is session ex1'}
+      };
+
+      await session.setAVPlaybackState(playbackstate1);
+
+      await sleep(300);
+
+      if (flag !== 2) {
+        console.info(`playbackStateChange filter changeall failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0700
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0700
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let filter = ['state','speed','position','bufferedTime','loopMode','isFavorite','activeItemId',
+        'volume','maxVolume','muted','duration','videoWidth','videoHeight','extras']
+      let flag = 0;
+
+      await controller.on('playbackStateChange', filter, (playbackstate: avSession.AVPlaybackState) => {
+        flag++;
+        console.info(`playbackStateChange success flag : ${flag}`)
+      });
+
+      await session.setAVPlaybackState(playbackstate);
+
+      await session.setAVPlaybackState(playbackstate);
+
+      await sleep(300);
+
+      if (flag !== 2) {
+        console.info(`playbackStateChange filter all failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0800
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0800
+     * @tc.desc   Testing playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let filter = []
+      let flag = 0;
+
+      await controller.on('playbackStateChange', filter, (playbackstate: avSession.AVPlaybackState) => {
+        flag++;
+        console.info(`playbackStateChange success flag : ${flag}`)
+      });
+
+      await session.setAVPlaybackState(playbackstate);
+
+      await session.setAVPlaybackState(playbackstate);
+
+      await sleep(300);
+
+      if (flag == 2) {
+        console.info(`playbackStateChange filter all failed flag : ${flag}`)
+        expect().assertFail()
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100
+     * @tc.desc   Testing off playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try{
+        await controller.off('playbackStateChange');
+      }catch(err){
+        console.info(`playbackStateChange off failed flag : ${err.code}  ${err.message}`)
+        expect().assertFail()
+      }
+
+      await sleep(300);
+
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0200
+     * @tc.desc   Testing off playbackstate change callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYBACKSTATECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try{
+        await controller.off('playbackStateChange');
+      }catch(err){
+        console.info(`playbackStateChange off failed flag : ${err.code}  ${err.message}`)
+        expect().assertFail()
+      }
+
+      await sleep(300);
+
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_1100
+     * @tc.desc   test onPlayNext callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      try {
+        await session.onPlayNext((info:avSession.CommandInfo) => {
+          console.info(`onPlayNext entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          flag++
+        });
+        await controller.sendControlCommand({command:'playNext',commandInfo:{callerModuleName:'Center'}});
+
+        await sleep(300);
+      } catch (err) {
+        console.info(`on playNext entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertFail();
+      }
+      expect(flag).assertEqual(1);
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_1100
+     * @tc.desc   test onPlayNext errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try {
+        await session.onPlayNext((info:avSession.CommandInfo) => {
+          console.info(`onPlayNext entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          expect(false).assertTrue()
+        });
+      } catch (err) {
+        console.info(`onplayNext entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_1100
+     * @tc.desc   test offPlayNext callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      try {
+        await session.onPlayNext((info:avSession.CommandInfo) => {
+          console.info(`onPlayNext entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          flag++
+        });
+        await session.offPlayNext();
+        await controller.sendControlCommand({command:'playNext',commandInfo:{callerModuleName:'Center'}});
+      } catch (err) {
+        console.info(`offplayNext entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600105);
+      }
+      expect(flag).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1100
+     * @tc.desc   test offPlayNext errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try {
+        await session.offPlayNext();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offplayNext entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1300
+     * @tc.desc   test offPlayNext errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        await session.offPlayNext();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offplayNext entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600101);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_1100
+     * @tc.desc   test onPlayPrevious callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      try {
+        await session.onPlayPrevious((info:avSession.CommandInfo) => {
+          console.info(`onPlayPrevious entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          flag++
+        });
+        await controller.sendControlCommand({command:'playPrevious',commandInfo:{callerModuleName:'Center'}});
+        await sleep(300);
+      } catch (err) {
+        console.info(`onplayPrevious entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertFail();
+      }
+      expect(flag).assertEqual(1);
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_1100
+     * @tc.desc   test onPlayPrevious errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try {
+        await session.onPlayPrevious((info:avSession.CommandInfo) => {
+          console.info(`onPlayPrevious entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          expect(false).assertTrue()
+        });
+      } catch (err) {
+        console.info(`onplayPrevious entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_1100
+     * @tc.desc   test offPlayPrevious callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      try {
+        await session.onPlayPrevious((info:avSession.CommandInfo) => {
+          console.info(`onPlayPrevious entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          flag++
+        });
+        await session.offPlayPrevious();
+        await controller.sendControlCommand({command:'playPrevious',commandInfo:{callerModuleName:'Center'}});
+      } catch (err) {
+        console.info(`off playPrevious entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600105);
+      }
+      expect(flag).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1100
+     * @tc.desc   test offPlayPrevious errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try {
+        await session.offPlayPrevious();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offplayPrevious entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1300
+     * @tc.desc   test offPlayPrevious errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        await session.offPlayPrevious();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offplayPrevious entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600101);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAY_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAY_1100
+     * @tc.desc   test onPlay callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      try {
+        await session.onPlay((info:avSession.CommandInfo) => {
+          console.info(`onPlay entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          flag++
+        });
+        await controller.sendControlCommand({command:'play',commandInfo:{callerModuleName:'Center'}});
+        await sleep(300);
+      } catch (err) {
+        console.info(`onplay entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertFail();
+      }
+      expect(flag).assertEqual(1);
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_1100
+     * @tc.desc   test onPlay errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try {
+        await session.onPlay((info:avSession.CommandInfo) => {
+          console.info(`onPlay entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          expect(false).assertTrue()
+        });
+      } catch (err) {
+        console.info(`onplay entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100
+     * @tc.desc   test offPlay callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      try {
+        await session.onPlay((info:avSession.CommandInfo) => {
+          console.info(`onPlay entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          flag++
+        });
+        await session.offPlay();
+        await controller.sendControlCommand({command:'play',commandInfo:{callerModuleName:'Center'}});
+      } catch (err) {
+        console.info(`offplay entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600105);
+      }
+      expect(flag).assertEqual(0);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200
+     * @tc.desc   test offPlay callback unregistration with param
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      let onCallback1 = (info:avSession.CommandInfo) => {
+        console.info(`onPlay entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+        flag++
+      }
+
+      let onCallback2 = (info:avSession.CommandInfo) => {
+        console.info(`onPlay 2 entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+        flag++
+      }
+
+      try {
+        await session.onPlay(onCallback1);
+        await session.onPlay(onCallback2);
+        await session.offPlay(onCallback1);
+        await controller.sendControlCommand({command:'play',commandInfo:{callerModuleName:'Center'}});
+      } catch (err) {
+        console.info(`offplay entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertFail();
+      }
+      expect(flag).assertEqual(1);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100
+     * @tc.desc   test offPlay errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try {
+        await session.offPlay();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offplay entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1300
+     * @tc.desc   test offPlay errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        await session.offPlay();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offplay entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600101);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONREWIND_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONREWIND_1100
+     * @tc.desc   test onRewind callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      let infocallback:avSession.TwoParamCallback<number,avSession.CommandInfo> = ((time:number,info:avSession.CommandInfo)=>{
+        console.info(`onRewind entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+        flag++
+      })
+      try {
+        await session.onRewind(infocallback);
+        await controller.sendControlCommand({command:'rewind',commandInfo:{callerModuleName:'Center'}});
+        await sleep(300);
+      } catch (err) {
+        console.info(`onRewind entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertFail();
+      }
+      expect(flag).assertEqual(1);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONREWIND_1200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONREWIND_1200
+     * @tc.desc   test onRewind callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      let infocallback:avSession.TwoParamCallback<number,avSession.CommandInfo> = ((time:number,info:avSession.CommandInfo)=>{
+        console.info(`onRewind entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+        flag++
+      })
+      try {
+        await session.onRewind(infocallback);
+        await controller.sendControlCommand({command:'rewind',parameter:10,commandInfo:{callerModuleName:'Center'}});
+        await sleep(300);
+      } catch (err) {
+        console.info(`onRewind entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertFail();
+      }
+      expect(flag).assertEqual(1);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_1100
+     * @tc.desc   test onRewind errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      let infocallback:avSession.TwoParamCallback<number,avSession.CommandInfo> = ((time:number,info:avSession.CommandInfo)=>{
+        console.info(`onFastForward entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+        expect(false).assertTrue()
+      })
+      try {
+        await session.onRewind(infocallback);
+      } catch (err) {
+        console.info(`onRewind entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFREWIND_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFREWIND_1100
+     * @tc.desc   test offRewind callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      try {
+        await session.onRewind((info:avSession.CommandInfo) => {
+          console.info(`onRewind entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          flag++
+        });
+        await session.offRewind();
+        await controller.sendControlCommand({command:'rewind',commandInfo:{callerModuleName:'Center'}});
+      } catch (err) {
+        console.info(`offRewind entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600105);
+      }
+      expect(flag).assertEqual(0);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1100
+     * @tc.desc   test offRewind errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try {
+        await session.offRewind();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offRewind entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1300
+     * @tc.desc   test offRewind errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        await session.offRewind();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offRewind entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600101);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1100
+     * @tc.desc   test onFastForward callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      let infocallback:avSession.TwoParamCallback<number,avSession.CommandInfo> = ((time:number,info:avSession.CommandInfo)=>{
+        console.info(`onFastForward entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+        flag++
+      })
+      try {
+        await session.onFastForward(infocallback);
+        await controller.sendControlCommand({command:'fastForward',commandInfo:{callerModuleName:'Center'}});
+        await sleep(300);
+      } catch (err) {
+        console.info(`onFastForward entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertFail();
+      }
+      expect(flag).assertEqual(1);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1200
+     * @tc.desc   test onFastForward callback registration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      let infocallback:avSession.TwoParamCallback<number,avSession.CommandInfo> = ((time:number,info:avSession.CommandInfo)=>{
+        console.info(`onFastForward entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+        flag++
+      })
+      try {
+        await session.onFastForward(infocallback);
+        await controller.sendControlCommand({command:'fastForward',parameter:10,commandInfo:{callerModuleName:'Center'}});
+        await sleep(300);
+      } catch (err) {
+        console.info(`onFastForward entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertFail();
+      }
+      expect(flag).assertEqual(1);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_1100
+     * @tc.desc   test onFastForward errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      let infocallback:avSession.TwoParamCallback<number,avSession.CommandInfo> = ((time:number,info:avSession.CommandInfo)=>{
+        console.info(`onFastForward entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+        expect(false).assertTrue()
+      })
+      try {
+        await session.onFastForward(infocallback);
+      } catch (err) {
+        console.info(`onFastForward entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_1100
+     * @tc.desc   test offFastForward callback unregistration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = 0;
+      try {
+        await session.onFastForward((info:avSession.CommandInfo) => {
+          console.info(`onFastForward entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
+          flag++
+        });
+        await session.offFastForward();
+        await controller.sendControlCommand({command:'fastForward',commandInfo:{callerModuleName:'Center'}});
+      } catch (err) {
+        console.info(`offFastForward entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600105);
+      }
+      expect(flag).assertEqual(0);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1100
+     * @tc.desc   test offFastForward errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try {
+        await session.offFastForward();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offFastForward entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1300
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1300
+     * @tc.desc   test offFastForward errcode 6600101
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        await session.offFastForward();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`offFastForward entry error,error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600101);
+      }
+      done();
+    })
   })
 }
