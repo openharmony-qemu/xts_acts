@@ -1462,10 +1462,10 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetAbnormal, Function | SmallTest | L
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, 0x7F7FFFFF, 0x7F7FFFFF);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2139095040.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2139095040.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2139095170.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2139095170.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2139095170);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2139095170);
     OH_Drawing_RectDestroy(rect);
 }
 
