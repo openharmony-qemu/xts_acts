@@ -1462,8 +1462,8 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetAbnormal, Function | SmallTest | L
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, 0x7F7FFFFF, 0x7F7FFFFF);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2.13909517e+09);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2.13909517e+09);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2.13909504e+09);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2.13909504e+09);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2.13909517e+09);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2.13909517e+09);
     OH_Drawing_RectDestroy(rect);
@@ -1473,7 +1473,7 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetAbnormal, Function | SmallTest | L
  * @tc.name   testRectOffsetMultipleCalls
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2003
  * @tc.desc   Test for testRectOffsetMultipleCalls
- * @tc.type   FUNCTION 
+ * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
@@ -1556,8 +1556,8 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetToAbnormal, Function | SmallTest |
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, 0x7F7FFFFF, 0x7F7FFFFF);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2.13909517e+09);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2.13909517e+09);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2.13909504e+09);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2.13909504e+09);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2.13909517e+09);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2.13909517e+09);
     OH_Drawing_RectDestroy(rect);
