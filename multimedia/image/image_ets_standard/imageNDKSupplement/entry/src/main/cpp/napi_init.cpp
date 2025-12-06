@@ -25,6 +25,14 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectInsertFilterSupp", OHImageEffectInsertFilterSupp),
     DESCRIPTOR("OHImageEffectRemoveFilterSupp", OHImageEffectRemoveFilterSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
+    DESCRIPTOR("OHImageEffectAddFilterByFilterSupp", OHImageEffectAddFilterByFilterSupp),
+    DESCRIPTOR("OHImageEffectInsertFilterByFilterSupp", OHImageEffectInsertFilterByFilterSupp),
+    DESCRIPTOR("OHImageEffectRemoveFilterByIndexSupp", OHImageEffectRemoveFilterByIndexSupp),
+    DESCRIPTOR("OHImageEffectGetFilterSupp", OHImageEffectGetFilterSupp),
+    DESCRIPTOR("OHImageEffectSetInputPictureSupp", OHImageEffectSetInputPictureSupp), 
+    DESCRIPTOR("OHImageEffectSetOutputPictureSupp", OHImageEffectSetOutputPictureSupp),
+    DESCRIPTOR("OHImageEffectReleaseSupp", OHImageEffectReleaseSupp), 
+    DESCRIPTOR("OHImageEffectReplaceFilterByFilterSupp", OHImageEffectReplaceFilterByFilterSupp),
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
