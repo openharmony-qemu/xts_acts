@@ -37,9 +37,7 @@ export default function Row_Padding() {
     beforeAll(() => {
       console.info("Row_Padding beforeAll start");
    
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Row_Padding beforeEach start");

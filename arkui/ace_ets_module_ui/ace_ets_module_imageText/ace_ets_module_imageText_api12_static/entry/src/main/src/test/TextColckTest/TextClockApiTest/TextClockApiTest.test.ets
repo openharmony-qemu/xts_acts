@@ -34,9 +34,7 @@ export default function TextClockApiTest() {
   describe("TextClockApiTest", (): void => {
     beforeAll(() => {
       console.info("TextClockApiTest beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

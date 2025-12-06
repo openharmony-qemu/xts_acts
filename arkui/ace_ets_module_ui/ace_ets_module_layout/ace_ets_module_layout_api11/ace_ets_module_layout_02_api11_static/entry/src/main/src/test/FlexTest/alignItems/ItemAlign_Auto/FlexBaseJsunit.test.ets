@@ -39,9 +39,7 @@ export default function flexBase_AutoJsunit() {
   describe('flexItemAlignAutoTest3', () => {
     beforeAll(() => {
       console.info("flexItemAlignAutoTest3 beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
 

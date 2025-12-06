@@ -40,9 +40,7 @@ export default function progressScaleCountJsunit() {
   describe('progressScaleCountTest', () => {
     beforeAll(() => {
       console.info("progressScaleCountTest beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {

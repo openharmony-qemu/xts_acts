@@ -41,9 +41,7 @@ function sleep(time: int):Promise<int> {
 export default function TimePickerJsunit() {
   describe('TimePickerJsunit', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

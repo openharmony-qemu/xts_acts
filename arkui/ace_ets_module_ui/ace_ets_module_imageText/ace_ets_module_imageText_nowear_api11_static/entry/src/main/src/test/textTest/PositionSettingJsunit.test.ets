@@ -49,9 +49,7 @@ export default function positionSettingJsunit() {
     beforeAll(() => {
       console.info("positionSettingJsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

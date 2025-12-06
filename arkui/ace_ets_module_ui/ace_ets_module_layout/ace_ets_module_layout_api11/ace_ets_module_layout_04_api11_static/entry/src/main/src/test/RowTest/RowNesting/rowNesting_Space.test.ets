@@ -36,9 +36,7 @@ export default function rowNesting_Space() {
     beforeAll(() => {
       console.info("rowNesting_Space beforeAll start");
    
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("rowNesting_Space beforeEach start");

@@ -37,9 +37,7 @@ export default function flex_AlignContent_SpaceBetween_FlexPadTest() {
   describe('Flex_AlignContent_SpaceBetween_FlexPadTest', () => {
     beforeAll(() => {
       console.info("flex_AlignContent_SpaceBetween_FlexPadTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("Flex_AlignContent_SpaceBetween_FlexPadTest beforeEach start");

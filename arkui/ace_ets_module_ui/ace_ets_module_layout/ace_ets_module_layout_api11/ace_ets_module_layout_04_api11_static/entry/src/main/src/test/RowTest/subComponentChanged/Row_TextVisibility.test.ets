@@ -37,9 +37,7 @@ export default function row_TextVisibilityTest() {
   describe('Row_TextVisibilityTest', () => {
     beforeAll(() => {
       console.info("Row_TextVisibilityTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Row_TextVisibilityTest beforeEach start");

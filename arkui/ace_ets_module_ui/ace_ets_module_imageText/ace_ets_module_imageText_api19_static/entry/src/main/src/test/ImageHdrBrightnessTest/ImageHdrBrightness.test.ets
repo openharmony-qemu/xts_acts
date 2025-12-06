@@ -29,9 +29,7 @@ export default function ImageHDRBrightnessTest() {
   describe('ImageHDRBrightnessTest', () => {
     beforeAll(() => {
       console.info("ImageHDRBrightnessTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

@@ -35,9 +35,7 @@ export default function TextAddApi1() {
   describe('TextAddApi1', () => {
     beforeAll(() => {
       console.info("TextAddApi1 beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

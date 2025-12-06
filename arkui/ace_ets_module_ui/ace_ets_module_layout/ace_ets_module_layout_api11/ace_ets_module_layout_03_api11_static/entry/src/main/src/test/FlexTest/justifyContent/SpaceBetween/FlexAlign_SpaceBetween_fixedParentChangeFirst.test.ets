@@ -39,9 +39,7 @@ export default function flexAlign_SpaceBetween_fixedParentChangeFirst() {
   describe('FlexAlign_SpaceBetween_fixedParentChangeFirst', () => {
     beforeAll(() => {
       console.info("FlexAlign_SpaceBetween_fixedParentChangeFirst beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("FlexAlign_SpaceBetween_fixedParentChangeFirst beforeEach start");

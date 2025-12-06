@@ -39,9 +39,7 @@ export default function AlignContent_FlexAlign_SpaceEvenly_padding() {
   describe('AlignContent_FlexAlign_SpaceEvenly_padding', () => {
     beforeAll(() => {
       console.info("AlignContent_FlexAlign_SpaceEvenly_padding beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("AlignContent_FlexAlign_SpaceEvenly_padding beforeEach start");

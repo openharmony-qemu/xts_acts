@@ -32,9 +32,7 @@ const waitUiReadyMs: number = 500;
 export default function NavigationParamTest() {
   describe('NavigationParamTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.navigation.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {

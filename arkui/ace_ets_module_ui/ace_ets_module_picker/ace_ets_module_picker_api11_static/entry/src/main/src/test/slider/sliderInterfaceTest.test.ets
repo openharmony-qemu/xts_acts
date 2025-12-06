@@ -48,9 +48,7 @@ export default function SliderInterfaceTest() {
 
     beforeAll(() => {
       await UtilsTest.loadAndSetUpUiTest();
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     const routerPush = async (target: string) => {

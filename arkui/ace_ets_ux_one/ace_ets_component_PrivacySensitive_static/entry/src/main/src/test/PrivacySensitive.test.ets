@@ -29,7 +29,6 @@ export default function TextPrivacySensitive() {
     beforeAll(() => {
       console.info("ArkUIHDSPrivacySensitiveTest beforeAll start");
       await UtilsTest.startAbility("com.example.privacysensitivetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

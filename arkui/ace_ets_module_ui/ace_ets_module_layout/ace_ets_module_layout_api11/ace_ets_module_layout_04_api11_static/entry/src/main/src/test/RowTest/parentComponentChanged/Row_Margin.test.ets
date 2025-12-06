@@ -36,9 +36,7 @@ export default function Row_Margin() {
   describe('Row_Margin', () => {
     beforeAll(() => {
       console.info("Row_Margin beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Row_Margin beforeEach start");

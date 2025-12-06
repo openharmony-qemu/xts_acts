@@ -37,9 +37,7 @@ export default function RelativeContainer_Level() {
   describe('RelativeContainer_Level', () => {
     beforeAll(async() => {
       console.info("RelativeContainer_Level beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("RelativeContainer_Level beforeEach start");

@@ -47,9 +47,7 @@ export default function frameNodeTest1() {
   describe('frameNodeTest1', () => {
     beforeAll(() => {
       console.info("frameNodeTest1 beforeEach start");
-      await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.FrameNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
       console.info("frameNodeTest1 beforeEach start");

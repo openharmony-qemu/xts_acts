@@ -36,9 +36,7 @@ export default function imageSpanTest5() {
   describe('imageSpanTest5', () => {
     beforeAll(() => {
       console.info("imageSpanTest5 beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

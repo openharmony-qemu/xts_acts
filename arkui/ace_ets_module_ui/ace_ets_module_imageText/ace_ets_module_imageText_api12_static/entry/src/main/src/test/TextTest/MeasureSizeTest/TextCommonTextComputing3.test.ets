@@ -33,9 +33,7 @@ export default function TextCommonTextComputing3() {
   describe('TextCommonTextComputing3', () => {
     beforeAll(() => {
       console.info("TextCommonTextComputing3 beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

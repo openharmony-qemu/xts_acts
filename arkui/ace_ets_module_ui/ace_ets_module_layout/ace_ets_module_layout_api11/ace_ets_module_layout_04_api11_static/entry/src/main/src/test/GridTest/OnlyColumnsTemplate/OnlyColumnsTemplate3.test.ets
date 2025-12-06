@@ -36,9 +36,7 @@ export default function OnlyColumnsTemplate3() {
     beforeAll(() => {
       console.info("OnlyColumnsTemplate3 beforeAll start");
    
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("OnlyColumnsTemplate3 beforeEach start");

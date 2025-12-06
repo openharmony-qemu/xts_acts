@@ -32,9 +32,7 @@ export default function ProgressMask() {
   describe('ProgressMask', () => {
     beforeAll(() => {
       console.info("ProgressMask beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("ProgressMask beforeEach start");

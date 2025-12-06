@@ -36,9 +36,7 @@ export default function rowMar_TextMarPadTest() {
   describe('RowMar_TextMarPadTest', () => {
     beforeAll(() => {
       console.info("RowMar_TextMarPadTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("RowMar_TextMarPadTest beforeEach start");

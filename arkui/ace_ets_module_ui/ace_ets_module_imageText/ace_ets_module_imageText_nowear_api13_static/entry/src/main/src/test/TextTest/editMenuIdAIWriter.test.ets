@@ -37,9 +37,7 @@ export default function editMenuIdAIWriterTest() {
     beforeAll(() => {
       console.info("editMenuIdAIWriterTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

@@ -41,9 +41,7 @@ export default function AlignEnd_AddAllSpace() {
 
     beforeAll(() => {
       console.info("AlignEnd_AddAllSpace beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
 

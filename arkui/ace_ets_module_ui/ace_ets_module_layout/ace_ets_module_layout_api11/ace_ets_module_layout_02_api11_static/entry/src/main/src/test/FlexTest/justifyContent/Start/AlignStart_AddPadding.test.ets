@@ -41,9 +41,7 @@ export default function AlignStart_AddPadding() {
 
     beforeAll(() => {
       console.info("AlignStart_AddPadding beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

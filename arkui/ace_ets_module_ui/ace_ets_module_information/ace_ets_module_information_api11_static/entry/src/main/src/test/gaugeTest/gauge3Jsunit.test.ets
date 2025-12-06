@@ -40,9 +40,7 @@ export default function gauge3Jsunit() {
   describe('gauge3Jsunit', () => {
     beforeAll(() => {
       console.info("gauge3Jsunit beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
 

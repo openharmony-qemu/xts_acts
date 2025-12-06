@@ -36,9 +36,7 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
   describe('gestureInterceptionEnhancementCallbackRecognizerTest', () => {
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("gestureInterceptionEnhancementCallbackRecognizerTest beforeEach start");

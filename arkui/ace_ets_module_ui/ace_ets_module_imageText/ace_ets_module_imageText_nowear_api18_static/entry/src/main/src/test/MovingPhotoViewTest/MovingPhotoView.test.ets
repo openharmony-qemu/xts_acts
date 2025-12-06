@@ -45,9 +45,7 @@ export default function MovingPhotoViewTest() {
     beforeAll(() => {
       console.info("MovingPhotoViewTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("MovingPhotoViewTest beforeEach start");

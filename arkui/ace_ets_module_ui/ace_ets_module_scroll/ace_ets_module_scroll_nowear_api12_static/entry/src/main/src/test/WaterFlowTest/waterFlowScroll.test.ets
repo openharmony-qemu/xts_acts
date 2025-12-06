@@ -26,9 +26,7 @@ import inspector from '@ohos.arkui.inspector'
 export default function waterFlowScroll() {
   describe('waterFlowScroll', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("waterFlowScroll beforeEach start");

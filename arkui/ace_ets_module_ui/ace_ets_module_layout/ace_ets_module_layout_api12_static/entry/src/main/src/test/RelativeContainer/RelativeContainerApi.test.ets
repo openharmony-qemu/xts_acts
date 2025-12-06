@@ -57,9 +57,7 @@ export default function RelativeContainerApi() {
     beforeAll(() => {
       console.info("RelativeContainerApi beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("RelativeContainerApi beforeEach start");

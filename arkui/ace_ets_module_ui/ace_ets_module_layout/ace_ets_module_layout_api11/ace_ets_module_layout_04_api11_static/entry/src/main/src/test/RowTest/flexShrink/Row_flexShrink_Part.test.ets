@@ -36,9 +36,7 @@ export default function Row_flexShrink_Part() {
     beforeAll(async() => {
       console.info("Row_flexShrink_Part beforeAll start");
    
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Row_flexShrink_Part beforeEach start");

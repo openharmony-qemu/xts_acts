@@ -50,9 +50,7 @@ export default function stageRouterTest() {
   describe('stageRouterTest', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");

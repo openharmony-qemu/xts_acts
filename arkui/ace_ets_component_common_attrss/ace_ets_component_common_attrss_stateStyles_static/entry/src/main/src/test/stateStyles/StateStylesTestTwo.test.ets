@@ -60,11 +60,9 @@ export default function stateStylesTestTwo() {
   describe('StateStylesTestTwo', () => {
     beforeAll(() => {
       console.info("StateStylesTest beforeEach start");
-      await UtilsTest.msSleep(4000)
       console.info("startAbility start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       console.info("startAbility end");
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(()=>{
       AppStorage.setOrCreate<boolean>('_isSelect', true)

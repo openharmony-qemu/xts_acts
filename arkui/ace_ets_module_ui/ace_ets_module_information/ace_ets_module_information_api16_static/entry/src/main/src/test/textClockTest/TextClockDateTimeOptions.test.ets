@@ -36,9 +36,7 @@ export default function TextClockDateTimeOptionsTest() {
   describe('TextClockDateTimeOptionsTest', () => {
     beforeAll(() => {
       console.info("TextClockDateTimeOptionsTest beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info('TextClockDateTimeOptionsTest beforeEach start');

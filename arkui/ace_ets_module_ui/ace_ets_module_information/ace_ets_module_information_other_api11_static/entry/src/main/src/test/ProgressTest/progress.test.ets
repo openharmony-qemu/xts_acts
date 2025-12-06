@@ -36,9 +36,7 @@ export default function progressTest() {
   describe('ActsProgressTest', () => {
     beforeAll(() => {
       console.info("progressTest beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("progressTest beforeEach start");

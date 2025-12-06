@@ -32,8 +32,7 @@ export default function counterApi() {
   describe('counterApi', () => {
     beforeAll(() => {
       await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.platform.nowear.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.platform.nowear.api12.static", "EntryAbility");
     });
 
     beforeEach(async () => {

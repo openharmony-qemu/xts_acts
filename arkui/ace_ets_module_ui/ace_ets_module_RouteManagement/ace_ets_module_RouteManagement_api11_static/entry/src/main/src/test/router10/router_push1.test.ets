@@ -38,9 +38,7 @@ export default function router_push1() {
   describe('router_push1', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("router_push1 beforeEach start");

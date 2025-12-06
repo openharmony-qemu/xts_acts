@@ -35,9 +35,7 @@ export default function requestFocus14() {
   describe('requestFocus14', () => {
     beforeAll(() => {
       console.info("requestFocus14 beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("requestFocus14 beforeEach start");

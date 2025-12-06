@@ -41,9 +41,7 @@ export default function abilityTest() {
   describe('ActsAceCounterComponentTest', () => {
     beforeAll(() => {
       console.info("ActsBadgeTest beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {

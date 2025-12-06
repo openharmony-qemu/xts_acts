@@ -44,9 +44,7 @@ export default function progressJsunit() {
   describe('progressTest', () => {
     beforeAll(() => {
       console.info("progressTest beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {

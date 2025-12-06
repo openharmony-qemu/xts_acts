@@ -36,9 +36,7 @@ export default function Row_Space_Default() {
     beforeAll(() => {
       console.info("Row_Space_Default beforeAll start");
    
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Row_Space_Default beforeEach start");

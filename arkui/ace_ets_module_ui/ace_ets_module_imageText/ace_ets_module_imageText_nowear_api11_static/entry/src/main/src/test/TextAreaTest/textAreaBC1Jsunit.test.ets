@@ -36,9 +36,7 @@ export default function textAreaBC1Jsunit() {
     beforeAll(() => {
       console.info("textAreaBC1Jsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

@@ -41,9 +41,7 @@ export default function flexVisibility_EndJsunit() {
   describe('flexItemAlignEndTest8', () => {
     beforeAll(() => {
       console.info("SearchTypeTest beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
 

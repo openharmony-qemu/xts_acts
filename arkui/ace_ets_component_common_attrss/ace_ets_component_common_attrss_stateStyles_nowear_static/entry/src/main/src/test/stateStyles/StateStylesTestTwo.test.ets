@@ -60,11 +60,9 @@ export default function stateStylesTestTwo() {
   describe('StateStylesTestTwo', () => {
     beforeAll(() => {
       console.info("StateStylesTestTwo beforeEach start");
-      await UtilsTest.msSleep(4000)
       console.info("startAbility start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.stateStyle.nowear.test.static", "EntryAbility")
       console.info("startAbility end");
-      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Obtain target component information before changes

@@ -37,9 +37,7 @@ export default function flexAlignSelf_AutoJsunit() {
   describe('flexItemAlignAutoTest7', () => {
     beforeAll(() => {
       console.info("flexItemAlignAutoTest7 beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
