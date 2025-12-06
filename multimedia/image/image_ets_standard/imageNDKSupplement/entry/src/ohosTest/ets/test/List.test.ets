@@ -17,7 +17,7 @@ import OHEffectBufferInfoGetTextureIdTest from './OHEffectBufferInfoGetTextureId
 import OHEffectBufferInfoGetTimestampTest from './OHEffectBufferInfoGetTimestampTest.test';
 import OHEffectBufferInfoSetTextureIdTest from './OHEffectBufferInfoSetTextureIdTest.test';
 import OHEffectBufferInfoSetTimestampTest from './OHEffectBufferInfoSetTimestampTest.test';
-
+import ImageEffectInfoSupplementTest from './OHEffectFilterInfoSupplement.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -25,4 +25,5 @@ export default function testsuite() {
   OHEffectBufferInfoGetTimestampTest();
   OHEffectBufferInfoSetTextureIdTest();
   OHEffectBufferInfoGetTextureIdTest();
+  ImageEffectInfoSupplementTest();
 }

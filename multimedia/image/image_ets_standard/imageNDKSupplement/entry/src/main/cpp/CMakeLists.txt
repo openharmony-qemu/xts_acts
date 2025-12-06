@@ -24,7 +24,8 @@ add_library(imageEffect SHARED
     OHEffectBufferInfoGetTimestampTest.cpp
     OHEffectBufferInfoSetTextureIdTest.cpp
     OHEffectBufferInfoGetTextureIdTest.cpp
-)
+    OHEffectFilterInfoSupplementTest.cpp)
+
 
 find_library(
     # Sets the name of the path variable.
