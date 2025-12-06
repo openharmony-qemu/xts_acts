@@ -35,12 +35,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_001
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_001
-     * @tc.desc   : OHEffectFilterCreateSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_001
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_001
+     * @tc.desc    OHEffectFilterCreateSupp
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_001', Level.LEVEL1, () => {
       const testName ='SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_001'
@@ -51,12 +51,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_002
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_002
-     * @tc.desc   : OHEffectFilterCreateSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_002
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_002
+     * @tc.desc    OHEffectFilterCreateSupp
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_002', Level.LEVEL1, () => {
       const testName ='SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_002'
@@ -67,12 +67,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_003
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_003
-     * @tc.desc   : OHEffectFilterLookUpFiltersSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_003
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_003
+     * @tc.desc    OHEffectFilterLookUpFiltersSupp
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_003', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -83,12 +83,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004
-     * @tc.desc   : OHEffectFilterLookUpFiltersSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004
+     * @tc.desc    OHEffectFilterLookUpFiltersSupp
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -99,12 +99,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_005
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_005
-     * @tc.desc   : OHEffectFilterSetValueSupp空字符串
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_005
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_005
+     * @tc.desc    OHEffectFilterSetValueSupp空字符串
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_005', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -115,12 +115,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_006
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_006
-     * @tc.desc   : OHEffectFilterSetValueSupp的EFFECT_PARAM_ERROR
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_006
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_006
+     * @tc.desc    OHEffectFilterSetValueSupp的EFFECT_PARAM_ERROR
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_006', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -131,12 +131,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_007
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_007
-     * @tc.desc   : OHEffectFilterSetValueSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_007
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_007
+     * @tc.desc    OHEffectFilterSetValueSupp
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_007', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -147,12 +147,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_008
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_008
-     * @tc.desc   : OHEffectFilterGetValueSupp的EFFECT_SUCCESS情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_008
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_008
+     * @tc.desc    OHEffectFilterGetValueSupp的EFFECT_SUCCESS情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_008', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -163,12 +163,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_009
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_009
-     * @tc.desc   : OHEffectFilterGetValueSupp空字符串情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_009
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_009
+     * @tc.desc    OHEffectFilterGetValueSupp空字符串情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_009', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -179,12 +179,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_0010
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_0010
-     * @tc.desc   : OHEffectFilterGetValueSupp的EFFECT_ERROR_PARAM_INVALID情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_0010
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_0010
+     * @tc.desc    OHEffectFilterGetValueSupp的EFFECT_ERROR_PARAM_INVALID情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_0010', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -195,12 +195,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0011
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0011
-     * @tc.desc   : OHEffectFilterRegisterSupp的EFFECT_SUCCESS情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0011
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0011
+     * @tc.desc    OHEffectFilterRegisterSupp的EFFECT_SUCCESS情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0011', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -211,12 +211,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0012
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0012
-     * @tc.desc   : OHEffectFilterRegisterSupp的EFFECT_ERROR_PARAM_INVALID情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0012
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0012
+     * @tc.desc    OHEffectFilterRegisterSupp的EFFECT_ERROR_PARAM_INVALID情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_REGISTER_SUPP_0012', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -227,12 +227,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0013
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0013
-     * @tc.desc   : OHEffectFilterLookupFilterInfoSupp的EFFECT_SUCCESS情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0013
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0013
+     * @tc.desc    OHEffectFilterLookupFilterInfoSupp的EFFECT_SUCCESS情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0013', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -243,12 +243,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0014
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0014
-     * @tc.desc   : OHEffectFilterLookupFilterInfoSupp的EFFECT_ERROR_PARAM_INVALID情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0014
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0014
+     * @tc.desc    OHEffectFilterLookupFilterInfoSupp的EFFECT_ERROR_PARAM_INVALID情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0014', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -259,12 +259,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0015
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0015
-     * @tc.desc   : OHEffectFilterLookupFilterInfoSupp的空字符串情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0015
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0015
+     * @tc.desc    OHEffectFilterLookupFilterInfoSupp的空字符串情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOKUP_FILTER_INFO_SUPP_0015', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -275,12 +275,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0016
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0016
-     * @tc.desc   : OHEffectFilterReleaseSupp的EFFECT_SUCCESS情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0016
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0016
+     * @tc.desc    OHEffectFilterReleaseSupp的EFFECT_SUCCESS情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0016', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
@@ -291,12 +291,12 @@ export default function ImageEffectFilterSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0017
-     * @tc.name   : SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0017
-     * @tc.desc   : OHEffectFilterReleaseSupp的EFFECT_ERROR_PARAM_INVALID情况
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0017
+     * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0017
+     * @tc.desc    OHEffectFilterReleaseSupp的EFFECT_ERROR_PARAM_INVALID情况
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_RELEASE_SUPP_0017', Level.LEVEL1, () => {
       console.info(TAG,'Start',);
