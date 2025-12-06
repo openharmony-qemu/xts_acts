@@ -772,4 +772,51 @@ napi_value XComponentKeyMouseEventTest::TestRegisterKeyEventCallbackWithResult_0
     NAPI_END;
 }
 
+napi_value XComponentKeyMouseEventTest::TestGetTouchPointErrorCode_01(napi_env env, napi_callback_info info)
+{
+    NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
+    auto *nativeXComponent = OH_NativeXComponent_GetNativeXComponent(xcomponent);
+
+    float windowX = 0.0f;
+    float windowY = 0.0f;
+    float displayX = 0.0f;
+    float displayY = 0.0f;
+    auto ret1 = OH_NativeXComponent_GetTouchPointWindowX(nativeXComponent, 0, &windowX);
+    auto ret2 = OH_NativeXComponent_GetTouchPointWindowY(nativeXComponent, 0, &windowY);
+    auto ret3 = OH_NativeXComponent_GetTouchPointDisplayX(nativeXComponent, 0, &displayX);
+    auto ret4 = OH_NativeXComponent_GetTouchPointDisplayY(nativeXComponent, 0, &displayY);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetTouchPointErrorCode_01: %{public}d", ret1);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetTouchPointErrorCode_01: %{public}d", ret2);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetTouchPointErrorCode_01: %{public}d", ret3);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetTouchPointErrorCode_01: %{public}d", ret4);
+    ASSERT_EQ(ret1, OH_NATIVEXCOMPONENT_RESULT_SUCCESS);
+    ASSERT_EQ(ret2, OH_NATIVEXCOMPONENT_RESULT_SUCCESS);
+    ASSERT_EQ(ret3, OH_NATIVEXCOMPONENT_RESULT_SUCCESS);
+    ASSERT_EQ(ret4, OH_NATIVEXCOMPONENT_RESULT_SUCCESS);
+
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestGetTouchPointErrorCode_02(napi_env env, napi_callback_info info)
+{
+    float windowX = 0.0f;
+    float windowY = 0.0f;
+    float displayX = 0.0f;
+    float displayY = 0.0f;
+    auto ret1 = OH_NativeXComponent_GetTouchPointWindowX(nullptr, 0, &windowX);
+    auto ret2 = OH_NativeXComponent_GetTouchPointWindowY(nullptr, 0, &windowY);
+    auto ret3 = OH_NativeXComponent_GetTouchPointDisplayX(nullptr, 0, &displayX);
+    auto ret4 = OH_NativeXComponent_GetTouchPointDisplayY(nullptr, 0, &displayY);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetTouchPointErrorCode_02: %{public}d", ret1);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetTouchPointErrorCode_02: %{public}d", ret2);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetTouchPointErrorCode_02: %{public}d", ret3);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetTouchPointErrorCode_02: %{public}d", ret4);
+    ASSERT_EQ(ret1, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
+    ASSERT_EQ(ret2, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
+    ASSERT_EQ(ret3, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
+    ASSERT_EQ(ret4, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
+
+    NAPI_END;
+}
+
 } // namespace NativeXComponentSample

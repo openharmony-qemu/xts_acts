@@ -82,6 +82,10 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestRegisterKeyEventCallbackWithResult_02", nullptr, XComponentKeyMouseEventTest::TestRegisterKeyEventCallbackWithResult_02,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetTouchPointErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetTouchPointErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetTouchPointErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetTouchPointErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
 
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
