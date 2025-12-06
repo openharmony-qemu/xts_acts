@@ -41,7 +41,7 @@ export default function GetpathTest() {
       let fileuristr = "file://docs/storage/users/cuurrenUser/Docments/test.txt";
       try {
         let uriOBJ = new fileUri.FileUri(fileuristr);
-        expect(true).assertTrue();
+        expect(uriOBJ !== null && uriOBJ !== undefined).assertTrue();
       } catch (e: BusinessError) {
         hilog.info(domain, tag, `test_Fileuri_Getpath_static_001 has failed for ${JSON.stringify(e)}`);
         expect(false).assertTrue();
