@@ -2768,7 +2768,7 @@ export default function TextPicker() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('testPicker57', 0, async (done: Function) => {
+    it('testPicker57', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
         return;
