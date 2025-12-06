@@ -37,14 +37,13 @@ export default function OHEffectBufferInfoGetTimestampTest() {
     afterAll(() => {
     });
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_001
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_001
-     * @tc.desc   : OHEffectBufferInfoGetTimestampTest
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_001
+     * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_001
+     * @tc.desc    OHEffectBufferInfoGetTimestampTest
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
-
     it('SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_001', Level.LEVEL0, () => {
       const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_001"
       console.info(TAG, testName, 'Start',);
@@ -52,16 +51,14 @@ export default function OHEffectBufferInfoGetTimestampTest() {
       console.info(TAG, testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_002
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_002
-     * @tc.desc   : OHEffectBufferInfoGetTimestampTest
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_002
+     * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_002
+     * @tc.desc    OHEffectBufferInfoGetTimestampTest
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
-
     it('SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_002', Level.LEVEL0, () => {
       const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_002"
       console.info(TAG, testName, 'Start',);
@@ -70,14 +67,13 @@ export default function OHEffectBufferInfoGetTimestampTest() {
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_003
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_003
-     * @tc.desc   : OHEffectBufferInfoGetTimestampTest
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_003
+     * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_003
+     * @tc.desc    OHEffectBufferInfoGetTimestampTest
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
-
     it('SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_003', Level.LEVEL0, () => {
       const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_003"
       console.info(TAG, testName, 'Start',);
@@ -85,7 +81,5 @@ export default function OHEffectBufferInfoGetTimestampTest() {
       console.info(TAG, testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
-
-
   })
 }
