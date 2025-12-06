@@ -45,7 +45,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_001
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_001
-     * @tc.desc    Set the filter name.
+     * @tc.desc    OHEffectFilterInfoSetFilterName EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -59,7 +59,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002
-     * @tc.desc    Set the filter name.
+     * @tc.desc    OHEffectFilterInfoSetFilterName EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -73,7 +73,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_003
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_003
-     * @tc.desc    Set the filter name.
+     * @tc.desc    OHEffectFilterInfoSetFilterName EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -87,7 +87,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_004
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_004
-     * @tc.desc    Set the filter name.
+     * @tc.desc    OHEffectFilterInfoSetFilterName EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -101,7 +101,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_005
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_005
-     * @tc.desc    Get the filter name.
+     * @tc.desc    OHEffectFilterInfoGetFilterName EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -115,7 +115,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002
-     * @tc.desc    Get the filter name.
+     * @tc.desc    OHEffectFilterInfoGetFilterName EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -129,7 +129,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003
-     * @tc.desc    Get the filter name.
+     * @tc.desc    OHEffectFilterInfoGetFilterName EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -143,7 +143,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_004
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_004
-     * @tc.desc    Get the filter name.
+     * @tc.desc    OHEffectFilterInfoGetFilterName EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -157,7 +157,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_001
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_001
-     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoSetSupportedBufferTypes EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -171,7 +171,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002
-     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoSetSupportedBufferTypes EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -185,7 +185,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003
-     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoSetSupportedBufferTypes EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -199,7 +199,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_001
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_001
-     * @tc.desc    Obtain the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoGetSupportedBufferTypes EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -214,7 +214,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002
-     * @tc.desc    Obtain the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoGetSupportedBufferTypes EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -229,7 +229,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003
-     * @tc.desc    Obtain the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoGetSupportedBufferTypes EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -244,7 +244,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001
-     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoSetSupportedFormats EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -258,7 +258,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_002
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_002
-     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoSetSupportedFormats EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -272,7 +272,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003
-     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoSetSupportedFormats EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -286,7 +286,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_001
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_001
-     * @tc.desc    Set the memory types supported by the filter.
+     * @tc.desc    OHEffectFilterInfoGetSupportedFormats EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -300,7 +300,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002
-     * @tc.desc    Obtain the pixel formats supported by the filter.
+     * @tc.desc    OHEffectFilterInfoGetSupportedFormats EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -314,7 +314,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003
-     * @tc.desc    Obtain the pixel formats supported by the filter.
+     * @tc.desc    OHEffectFilterInfoGetSupportedFormats EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -328,7 +328,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_001
      * @tc.name    SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_001
-     * @tc.desc    Destroy the OH-EffectFilterInfo instance.
+     * @tc.desc    OHEffectFilterInfoRelease EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -342,7 +342,7 @@ export default function ImageEffectInfoSupplementTest() {
     /**
      * @tc.number  SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002
      * @tc.name    SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002
-     * @tc.desc    Destroy the OH-EffectFilterInfo instance.
+     * @tc.desc    OHEffectFilterInfoRelease EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
