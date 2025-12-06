@@ -49,3 +49,5 @@ export const TestGetKeyEventScrollLockStateErrorCode_01: () => void;
 export const TestGetKeyEventScrollLockStateErrorCode_02: () => void;
 export const TestRegisterKeyEventCallbackWithResult_01: () => void;
 export const TestRegisterKeyEventCallbackWithResult_02: () => void;
+export const TestGetTouchPointErrorCode_01: () => void;
+export const TestGetTouchPointErrorCode_02: () => void;

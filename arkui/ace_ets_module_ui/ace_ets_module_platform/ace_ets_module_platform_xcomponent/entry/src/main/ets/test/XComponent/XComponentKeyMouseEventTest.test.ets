@@ -214,7 +214,6 @@ export default function XComponentKeyMouseEventTest() {
      */
     it('XComponentKeyMouseEventTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentKeyMouseEventTest_0600] START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       // 
@@ -253,7 +252,6 @@ export default function XComponentKeyMouseEventTest() {
      */
     it('XComponentKeyMouseEventTest_0800', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentKeyMouseEventTest_0800] START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       // 
@@ -292,7 +290,6 @@ export default function XComponentKeyMouseEventTest() {
      */
     it('XComponentKeyMouseEventTest_1000', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentKeyMouseEventTest_1000] START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       // 
@@ -331,7 +328,6 @@ export default function XComponentKeyMouseEventTest() {
      */
     it('XComponentKeyMouseEventTest_1200', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentKeyMouseEventTest_1200] START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       // 
@@ -370,7 +366,6 @@ export default function XComponentKeyMouseEventTest() {
      */
     it('XComponentKeyMouseEventTest_1400', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentKeyMouseEventTest_1400] START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       // 
@@ -409,7 +404,6 @@ export default function XComponentKeyMouseEventTest() {
      */
     it('XComponentKeyMouseEventTest_1600', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentKeyMouseEventTest_1600] START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       // 
@@ -419,5 +413,44 @@ export default function XComponentKeyMouseEventTest() {
       done();
     });
     
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_1700
+     * @tc.number XComponentKeyMouseEventTest_1700
+     * @tc.desc   Test ErrorCode: OH_NATIVEXCOMPONENT_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_1700', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_1700] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestGetTouchPointErrorCode_01()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_1700] END');
+      done();
+    });
+
+
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_1800
+     * @tc.number XComponentKeyMouseEventTest_1800
+     * @tc.desc   Test ErrorCode: OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_1800', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_1800] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestGetTouchPointErrorCode_02()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_1800] END');
+      done();
+    });   
+
   })
 }
