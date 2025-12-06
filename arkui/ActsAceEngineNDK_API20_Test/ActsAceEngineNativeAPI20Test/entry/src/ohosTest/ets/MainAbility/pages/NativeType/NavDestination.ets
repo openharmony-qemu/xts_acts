@@ -20,30 +20,39 @@ struct MyPageOne {
     ], { backgroundColor: Color.Orange, barStyle: BarStyle.STACK })
     .onShown(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnShow()
     })
     .onHidden(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnHidden()
     })
     .onAppear(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnAppear()
     })
     .onDisAppear(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnDisAppear()
     })
     .onWillShow(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnWillShow()
     })
     .onWillHide(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnWillHide()
     })
     .onWillAppear(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnWillAppear()
     })
     .onWillDisappear(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnWillDisappear()
     })
     .onBackPressed(()=>{
       native.GetNavDestinationState()
+      native.GetNavDestinationStateOnBackPressed()
       return false
     })
     .focusable(false)
