@@ -437,5 +437,101 @@ export default function GraphicTextEnum() {
         }
       })
 
+    /**
+     * @tc.name   testTextVerticalAlign
+     * @tc.number testTextVerticalAlign
+     * @tc.desc   To test the enum value of TextVerticalAlign.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextVerticalAlign', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let msg = "testTextVerticalAlign"
+      console.info(msg + 'begin');
+      try {
+        expect(0).assertEqual(text.TextVerticalAlign.BASELINE);
+        expect(1).assertEqual(text.TextVerticalAlign.BOTTOM);
+        expect(2).assertEqual(text.TextVerticalAlign.CENTER);
+        expect(3).assertEqual(text.TextVerticalAlign.TOP);
+        done();
+      } catch (err) {
+        console.info(msg + 'test enum value of testTextVerticalAlign error ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTextBadgeType
+     * @tc.number testTextBadgeType
+     * @tc.desc   To test the enum value of TextBadgeType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextBadgeType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "testTextBadgeType"
+        console.info(msg + 'begin');
+        try {
+          expect(0).assertEqual(text.TextBadgeType.TEXT_BADGE_NONE);
+          expect(1).assertEqual(text.TextBadgeType.TEXT_SUPERSCRIPT);
+          expect(2).assertEqual(text.TextBadgeType.TEXT_SUBSCRIPT);
+          done();
+        } catch (err) {
+          console.info(msg + 'test enum value of testTextBadgeType error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testTextHighContrast
+     * @tc.number testTextHighContrast
+     * @tc.desc   To test the enum value of TextBadgeType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextHighContrast', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "testTextHighContrast"
+        console.info(msg + 'begin');
+        try {
+          expect(0).assertEqual(text.TextHighContrast.TEXT_FOLLOW_SYSTEM_HIGH_CONTRAST);
+          expect(1).assertEqual(text.TextHighContrast.TEXT_APP_DISABLE_HIGH_CONTRAST);
+          expect(2).assertEqual(text.TextHighContrast.TEXT_APP_ENABLE_HIGH_CONTRAST);
+          done();
+        } catch (err) {
+          console.info(msg + 'test enum value of testTextHighContrast error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testTextUndefinedGlyphDisplay
+     * @tc.number testTextUndefinedGlyphDisplay
+     * @tc.desc   To test the enum value of TextUndefinedGlyphDisplay.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextUndefinedGlyphDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "testTextUndefinedGlyphDisplay"
+        console.info(msg + 'begin');
+        try {
+          expect(0).assertEqual(text.TextUndefinedGlyphDisplay.USE_DEFAULT);
+          expect(1).assertEqual(text.TextUndefinedGlyphDisplay.USE_TOFU);
+          done();
+        } catch (err) {
+          console.info(msg + 'test enum value of testTextUndefinedGlyphDisplay error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }
