@@ -424,4 +424,14 @@ napi_value XComponentSurfaceConfigTest::TestSetSurfaceConfigErrorCode002(napi_en
     NAPI_END;
 }
 
+napi_value XComponentSurfaceConfigTest::TestSurfaceConfigCreateReturnNoNullptr(napi_env env, napi_callback_info info) {
+    // 创建SurfaceConfig
+    ArkUI_XComponentSurfaceConfig* surfaceConfig =  OH_ArkUI_XComponentSurfaceConfig_Create();
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestSurfaceConfigCreateReturnNoNullptr ret=%{public}p", surfaceConfig);
+
+    ASSERT_OBJ_NE(surfaceConfig, nullptr);
+    OH_ArkUI_XComponentSurfaceConfig_Dispose(surfaceConfig);
+    NAPI_END;
+}
+
 } // namespace NativeXComponentSample

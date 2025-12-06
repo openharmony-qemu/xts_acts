@@ -370,6 +370,11 @@ std::string value2String(napi_env env, napi_value value) // 将napi_value转化�
     return valueString;
 }
 
+bool onKeyEventCBWR(OH_NativeXComponent *component, void *window)
+{
+    return true;
+}
+
 void DispatchMouseEventCB(OH_NativeXComponent *component, void *window)
 {
     OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "DispatchMouseEventCB");
@@ -741,6 +746,29 @@ napi_value XComponentKeyMouseEventTest::TestGetKeyEventScrollLockStateErrorCode_
     OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds",
         "TestGetKeyEventScrollLockStateErrorCode_02: %{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestRegisterKeyEventCallbackWithResult_01(napi_env env, napi_callback_info info)
+{
+    NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
+    auto *nativeXComponent = OH_NativeXComponent_GetNativeXComponent(xcomponent);
+
+    auto ret = OH_NativeXComponent_RegisterKeyEventCallbackWithResult(nativeXComponent, onKeyEventCBWR);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds",
+        "TestRegisterKeyEventCallbackWithResult_01: %{public}d", ret);
+    ASSERT_EQ(ret, OH_NATIVEXCOMPONENT_RESULT_SUCCESS);
+
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestRegisterKeyEventCallbackWithResult_02(napi_env env, napi_callback_info info)
+{
+    auto ret = OH_NativeXComponent_RegisterKeyEventCallbackWithResult(nullptr, onKeyEventCBWR);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds",
+        "TestRegisterKeyEventCallbackWithResult_02: %{public}d", ret);
+    ASSERT_EQ(ret, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
+
     NAPI_END;
 }
 

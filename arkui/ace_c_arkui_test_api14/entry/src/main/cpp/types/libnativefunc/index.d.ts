@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const testNativeXComponent_RegisterKeyEventCallbackWithResult001: () => number;
 
 export const tabStop_001: () => number;
 

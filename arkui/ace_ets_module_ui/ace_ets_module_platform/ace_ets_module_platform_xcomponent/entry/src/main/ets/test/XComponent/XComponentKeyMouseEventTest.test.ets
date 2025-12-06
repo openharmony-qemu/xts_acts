@@ -380,5 +380,44 @@ export default function XComponentKeyMouseEventTest() {
       done();
     });
 
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_1500
+     * @tc.number XComponentKeyMouseEventTest_1500
+     * @tc.desc   Test OH_NativeXComponent_RegisterKeyEventCallbackWithResult ErrorCode: OH_NATIVEXCOMPONENT_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_1500', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_1500] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestRegisterKeyEventCallbackWithResult_01()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_1500] END');
+      done();
+    });
+
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_1600
+     * @tc.number XComponentKeyMouseEventTest_1600
+     * @tc.desc   Test OH_NativeXComponent_RegisterKeyEventCallbackWithResult ErrorCode: OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_1600', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_1600] START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestRegisterKeyEventCallbackWithResult_02()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_1600] END');
+      done();
+    });
+    
   })
 }

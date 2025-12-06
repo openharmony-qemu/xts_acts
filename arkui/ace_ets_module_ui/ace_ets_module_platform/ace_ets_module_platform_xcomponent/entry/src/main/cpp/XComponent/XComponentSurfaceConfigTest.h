@@ -49,6 +49,7 @@ public:
 
     static napi_value TestSetSurfaceConfigErrorCode001(napi_env env, napi_callback_info info);
     static napi_value TestSetSurfaceConfigErrorCode002(napi_env env, napi_callback_info info);
+    static napi_value TestSurfaceConfigCreateReturnNoNullptr(napi_env env, napi_callback_info info);
 public:
     static std::unordered_map<int64_t, PluginRender*> pluginRenderMap_;
     static std::unordered_map<int64_t, OHNativeWindow*> windowMap_;

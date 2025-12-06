@@ -29,6 +29,7 @@ export const drawStar: (id: string) => void;
 
 export const TestSetSurfaceConfigErrorCode001: (id: string) => void;
 export const TestSetSurfaceConfigErrorCode002: (id: string) => void;
+export const TestSurfaceConfigCreateReturnNoNullptr: () => void;
 
 export const CreateKeyMouseEventNativeRoot: (content: NodeContent, tag: string) => void;
 export const getKeyStr: () => string;
@@ -46,3 +47,5 @@ export const TestGetKeyEventCapsLockStateErrorCode_01: () => void;
 export const TestGetKeyEventCapsLockStateErrorCode_02: () => void;
 export const TestGetKeyEventScrollLockStateErrorCode_01: () => void;
 export const TestGetKeyEventScrollLockStateErrorCode_02: () => void;
+export const TestRegisterKeyEventCallbackWithResult_01: () => void;
+export const TestRegisterKeyEventCallbackWithResult_02: () => void;
