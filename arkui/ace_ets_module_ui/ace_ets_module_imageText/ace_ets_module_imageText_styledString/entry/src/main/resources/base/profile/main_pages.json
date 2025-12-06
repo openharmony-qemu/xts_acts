@@ -36,6 +36,7 @@
         "MainAbility/pages/StyledString/TextStyleSuperscript",
         "MainAbility/pages/StyledString/ThicknessScaleTest",
         "MainAbility/pages/StyledString/UnmarshallingErrorCode",
-        "MainAbility/pages/StyledString/VerticalAlign"
+        "MainAbility/pages/StyledString/VerticalAlign",
+        "MainAbility/pages/StyledString/LeadingMarginSpanTest"
     ]
 }
