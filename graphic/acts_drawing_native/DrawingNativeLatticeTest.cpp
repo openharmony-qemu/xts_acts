@@ -119,8 +119,8 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateAbnormal, Function | SmallTest 
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs1[2] = {10, 20};
     int yDivs1[2] = {10, 20};
-    int xDivs2[10] = {10, 20, 30, 40, 50, 60, 70, 80 , 90, 100};
-    int yDivs2[10] = {10, 20, 30, 40, 50, 60, 70, 80 , 90, 100};
+    int xDivs2[10] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+    int yDivs2[10] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_LatticeRectType rectTypes1[9] = {OH_Drawing_LatticeRectType::DEFAULT};

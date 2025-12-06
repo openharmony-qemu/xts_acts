@@ -1312,7 +1312,7 @@ HWTEST_F(DrawingNativeRectTest, testRectSetEmptyNull, Function | SmallTest | Lev
 
 /**
  * @tc.name   testRectSetEmptyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1801
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1802
  * @tc.desc   Test for testRectSetEmptyMultipleCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
