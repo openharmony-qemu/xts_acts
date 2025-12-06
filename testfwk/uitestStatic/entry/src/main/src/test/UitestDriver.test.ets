@@ -1930,21 +1930,27 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testDriverInputText_static text, ${ JSON.stringify(text) }`);
         expect(text != null).assertTrue();
         if (text != null) {
-          await text.clearText();
-          await driver.delayMs(1000);
-          await exitInputMethod()
           let center = await text.getBoundsCenter();
           hilog.info(domain, tag, `testDriverInputText_static center, ${ JSON.stringify(center) }`);
           await driver.inputText(center, '123');
+          await driver.delayMs(1000);
+          await exitInputMethod();
+          await driver.delayMs(1000);
         }
         await driver.delayMs(1000);
         let text1 = await driver.findComponent(ON.type('TextInput'));
+        if (text1 == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          if (scroll != null) {
+            text1 = await scroll.scrollSearch(ON.type('TextInput'))
+          }
+        }
         hilog.info(domain, tag, `testDriverInputText_static text1 success, ${ JSON.stringify(text1) }`);
         expect(text1 != null).assertTrue();
         if (text1 != null) {
           let inputText = await text1.getText();
           hilog.info(domain, tag, `testDriverInputText_static inputText success, ${ JSON.stringify(inputText) }`);
-          expect(inputText).assertEqual('123');
+          expect(inputText).assertEqual('Hello W123orld');
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputText_static error, ${ JSON.stringify(error) }`);
@@ -2081,8 +2087,6 @@ export default function uitestDriverTest() {
         expect(text != null).assertTrue();
         if (text != null) {
           let center = await text.getBoundsCenter()
-          await text.clearText();
-          await driver.delayMs(2000);
           hilog.info(domain, tag, `testDriverInputTextMode_static center, ${ JSON.stringify(center) }`);
           await driver.inputText(center, '123', {paste:false, addition:false})
           await exitInputMethod();
@@ -2100,7 +2104,7 @@ export default function uitestDriverTest() {
           if (text1 != null) {
             let msg = await text1.getText();
             hilog.info(domain, tag, `testDriverInputTextMode_static msg, ${ JSON.stringify(msg) }`);
-            expect(msg == '123').assertTrue()
+            expect(msg == 'Hello W123orld').assertTrue()
           }
         }
       } catch(error) {
@@ -2135,22 +2139,7 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testDriverInputTextMode1_static text, ${ JSON.stringify(text) }`);
         expect(text != null).assertTrue();
         if (text != null) {
-          await text.clearText();
-          await driver.delayMs(2000);
-          await exitInputMethod();
-          await driver.delayMs(2000);
-        }
-        let text1 = await driver.findComponent(ON.type('TextInput'))
-        if (text1 == null) {
-          let scorll = await driver.findComponent(ON.type('Scroll'))
-          if (scorll != null) {
-            text1 = await scorll.scrollSearch(ON.type('TextInput'))
-          }
-        }
-        hilog.info(domain, tag, `testDriverInputTextMode1_static text1, ${ JSON.stringify(text1) }`);
-        expect(text1 != null).assertTrue();
-        if (text1 != null) {
-          let center = await text1.getBoundsCenter();
+          let center = await text.getBoundsCenter();
           hilog.info(domain, tag, `testDriverInputTextMode1_static center, ${ JSON.stringify(center) }`);
           await driver.inputText(center, '长贵儿', {paste:false, addition:false});
           await driver.delayMs(2000)
@@ -2169,7 +2158,7 @@ export default function uitestDriverTest() {
         if (text2 != null) {
           let msg = await text2.getText();
           hilog.info(domain, tag, `testDriverInputTextMode1_static msg, ${ JSON.stringify(msg) }`);
-          expect(msg== '长贵儿').assertTrue()
+          expect(msg== 'Hello W长贵儿orld').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputTextMode1_static error, ${ JSON.stringify(error) }`);
@@ -2203,21 +2192,6 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testDriverInputTextMode2_static text, ${ JSON.stringify(text) }`);
         expect(text != null).assertTrue();
         if (text != null) {
-          await text.clearText()
-          await driver.delayMs(2000)
-          await exitInputMethod()
-          await driver.delayMs(1000)
-        }
-        text = await driver.findComponent(ON.type('TextInput'))
-        if (text == null) {
-          let scorll = await driver.findComponent(ON.type('Scroll'))
-          if (scorll != null) {
-            text = await scorll.scrollSearch(ON.type('TextInput'))
-          }
-        }
-        hilog.info(domain, tag, `testDriverInputTextMode2_static text, ${ JSON.stringify(text) }`);
-        expect(text != null).assertTrue();
-        if (text != null) {
           let center = await text.getBoundsCenter()
           await driver.inputText(center, '123', {paste:true, addition:false})
           await driver.delayMs(2000)
@@ -2236,7 +2210,7 @@ export default function uitestDriverTest() {
         if (text1 != null) {
           let msg = await text1.getText();
           hilog.info(domain, tag, `testDriverInputTextMode2_static msg, ${ JSON.stringify(msg) }`);
-          expect(msg== '123').assertTrue()
+          expect(msg== 'Hello W123orld').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputTextMode2_static error, ${ JSON.stringify(error) }`);
