@@ -2759,5 +2759,48 @@ export default function TextPicker() {
       console.info("testPicker56 finish");
       done();
     });
+
+    /**
+     * @tc.number     testPicker57
+     * @tc.name       testPicker57
+     * @tc.desc       Testing showAssetsCreationDialogEx with isImageFullyDisplayed param.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPicker57', 0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let context = getContext();
+      let isImageFullyDisplayed = true;
+      let originalUris = [' '];
+      let CreationSetting: photoAccessHelper.CreationSetting = {
+        title: 'test',
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+      };
+      try {
+        let pickerController: PickerController = new PickerController();
+        let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
+        photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath],
+          [CreationSetting], isImageFullyDisplayed).then((result) => {
+          originalUris = result;
+          if (result) {
+            expect(true).assertTrue();
+          } else {
+            console.error("testPicker57 empty result");
+            expect(false).assertTrue();
+          }
+        });
+      } catch (error) {
+        console.log("testPicker57 error:" + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+      await CommonFunc.sleep(1000);
+      console.log("testPicker57 btn click finish");
+      done();
+    });
   })
 }
