@@ -25,21 +25,21 @@ using namespace testing::ext;
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
-class DrawingNativeRectTest : public testing::Test {
+class DrawingNativeLatticeTest : public testing::Test {
     protected:
     // 在每个测试用例执行前调用
     void SetUp() override
     {
         // 设置代码
-        std::cout << "DrawingNativeRectTest Setup code called before each test case." << std::endl;
+        std::cout << "DrawingNativeLatticeTest Setup code called before each test case." << std::endl;
         OH_Drawing_ErrorCodeReset();
-        std::cout << "DrawingNativeRectTest errorCodeReset before each test case." << std::endl;
+        std::cout << "DrawingNativeLatticeTest errorCodeReset before each test case." << std::endl;
     }
     void TearDown() override
     {
-        std::cout << "DrawingNativeRectTest Setup code called after each test case." << std::endl;
+        std::cout << "DrawingNativeLatticeTest Setup code called after each test case." << std::endl;
         OH_Drawing_ErrorCodeReset();
-        std::cout << "DrawingNativeRectTest errorCodeReset after each test case." << std::endl;
+        std::cout << "DrawingNativeLatticeTest errorCodeReset after each test case." << std::endl;
     }
 };
 
@@ -51,7 +51,7 @@ class DrawingNativeRectTest : public testing::Test {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DrawingNativeRectTest, testLatticeCreateNormal, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativeLatticeTest, testLatticeCreateNormal, Function | SmallTest | Level0) {
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[2] = {10, 20};
     int yDivs[2] = {10, 20};
@@ -74,7 +74,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateNormal, Function | SmallTest | 
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativeRectTest, testLatticeCreateNull, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativeLatticeTest, testLatticeCreateNull, Function | SmallTest | Level3) {
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[2] = {10, 20};
     int yDivs[2] = {10, 20};
@@ -115,7 +115,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateNull, Function | SmallTest | Le
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativeRectTest, testLatticeCreateAbnormal, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativeLatticeTest, testLatticeCreateAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs1[2] = {10, 20};
     int yDivs1[2] = {10, 20};
@@ -151,7 +151,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateAbnormal, Function | SmallTest 
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativeRectTest, testLatticeCreateEnumTraversal, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativeLatticeTest, testLatticeCreateEnumTraversal, Function | SmallTest | Level3) {
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[2] = {10, 20};
     int yDivs[2] = {10, 20};
@@ -180,7 +180,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateEnumTraversal, Function | Small
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativeRectTest, testLatticeCreateMultipleCalls, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativeLatticeTest, testLatticeCreateMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[2] = {10, 20};
     int yDivs[2] = {10, 20};
@@ -205,7 +205,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateMultipleCalls, Function | Small
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DrawingNativeRectTest, testLatticeDestroyNormal, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativeLatticeTest, testLatticeDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[2] = {10, 20};
     int yDivs[2] = {10, 20};
@@ -227,7 +227,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeDestroyNormal, Function | SmallTest |
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativeRectTest, testLatticeDestroyNull, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativeLatticeTest, testLatticeDestroyNull, Function | SmallTest | Level3) {
     OH_Drawing_ErrorCode errorCode = OH_Drawing_LatticeDestroy(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
 }
