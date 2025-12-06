@@ -751,6 +751,33 @@ export default function drawingTsMatrixPart2Test() {
         console.info(msg + ` mapRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
+      try {
+        let matrix2 = new drawing.Matrix();
+        let dst2: common2D.Rect = { left: 100, top: 20, right: 130, bottom: 60 };
+        let src2: common2D.Rect = { left: 100, top: 80, right: 130, bottom: 120 };
+        matrix2.setRotation(45, 100, 100);
+        let result8: boolean = matrix2.mapRect(dst2, src2);
+        console.info(msg + " mapRect -----result8:  "+ result8);
+        expect(result8).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` mapRect result8 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        let matrix3 = new drawing.Matrix();
+        let dst3: common2D.Rect = { left: 100, top: 20, right: 130, bottom: 60 };
+        let src3: common2D.Rect = { left: 100, top: 80, right: 130, bottom: 120 };
+        let value : Array<number> = [2, 2, 2, 2, 2, 2, 2, 2, 2];
+        matrix3.setMatrix(value);
+        let result9: boolean = matrix3.mapRect(dst3, src3);
+        console.info(msg + " mapRect -----result9:  "+ result9);
+        expect(result9).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` mapRect result9 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
     })
     /**
      * @tc.name   testMatrixMapRectMultipleCallsStatic
