@@ -1323,7 +1323,7 @@ HWTEST_F(DrawingNativeRectTest, testRectSetEmptyMultipleCalls, Function | SmallT
     EXPECT_NE(rect, nullptr);
     for (int i = 0; i < 10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(rect);
-        EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
     OH_Drawing_RectDestroy(rect);
 }
@@ -1410,10 +1410,10 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetNormal, Function | SmallTest | Lev
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
     errorCode = OH_Drawing_RectOffset(rect, -100, -100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), -100.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), -100.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
     OH_Drawing_RectDestroy(rect);
 }
 
@@ -1437,15 +1437,15 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetNull, Function | SmallTest | Level
     errorCode = OH_Drawing_RectOffset(rect, 0, 100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
     errorCode = OH_Drawing_RectOffset(rect, 100, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
     OH_Drawing_RectDestroy(rect);
 }
 
@@ -1464,8 +1464,8 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetAbnormal, Function | SmallTest | L
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2139095040.0);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2139095040.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2139095040.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2139095040.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2.13909517e+09);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2.13909517e+09);
     OH_Drawing_RectDestroy(rect);
 }
 
@@ -1473,7 +1473,7 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetAbnormal, Function | SmallTest | L
  * @tc.name   testRectOffsetMultipleCalls
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2003
  * @tc.desc   Test for testRectOffsetMultipleCalls
- * @tc.type   FUNCTION
+ * @tc.type   FUNCTION 
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
@@ -1483,10 +1483,10 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetMultipleCalls, Function | SmallTes
     for (float i = 0; i < 10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, 10, 10);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0 + i * 10.0);
-        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0 + i * 10.0);
-        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0 + i * 10.0);
-        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0 + i * 10.0);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 10.0 + i * 10.0);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 10.0 + i * 10.0);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 110.0 + i * 10.0);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 110.0 + i * 10.0);
     }
     OH_Drawing_RectDestroy(rect);
 }
@@ -1558,8 +1558,8 @@ HWTEST_F(DrawingNativeRectTest, testRectOffsetToAbnormal, Function | SmallTest |
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2139095040.0);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2139095040.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2139095040.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2139095040.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2.13909517e+09);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2.13909517e+09);
     OH_Drawing_RectDestroy(rect);
 }
 

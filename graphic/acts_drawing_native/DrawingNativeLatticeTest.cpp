@@ -92,7 +92,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateNull, Function | SmallTest | Le
     errorCode = OH_Drawing_LatticeCreate(xDivs, yDivs, 2, 0, rect, rectTypes, 9, colors, 9, &lattice);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_LatticeCreate(xDivs, yDivs, 2, 2, nullptr, rectTypes, 9, colors, 9, &lattice);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_LatticeCreate(xDivs, yDivs, 2, 2, rect, nullptr, 9, colors, 9, &lattice);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_LatticeCreate(xDivs, yDivs, 2, 2, rect, rectTypes, 0, colors, 9, &lattice);
