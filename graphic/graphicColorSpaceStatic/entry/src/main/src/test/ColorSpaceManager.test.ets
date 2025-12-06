@@ -386,9 +386,9 @@ export default function colorSpaceManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_GRAPHIC_COLOR_SPACE_API_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_014 begin');
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_013 begin');
       try {
         let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
         let colorSpaceName1 = colorSpace1.getColorSpaceName();
@@ -436,9 +436,9 @@ export default function colorSpaceManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_GRAPHIC_COLOR_SPACE_API_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_015 begin');
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_014 begin');
       try {
         let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_PQ);
         let colorSpaceName1 = colorSpace1.getColorSpaceName();
@@ -486,9 +486,9 @@ export default function colorSpaceManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_GRAPHIC_COLOR_SPACE_API_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_016 begin');
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_015 begin');
       try {
         let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_PQ_LIMIT);
         let colorSpaceName1 = colorSpace1.getColorSpaceName();
@@ -539,9 +539,9 @@ export default function colorSpaceManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_GRAPHIC_COLOR_SPACE_API_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_017 begin');
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_016 begin');
       try {
         let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
         let point = colorSpace.getWhitePoint();
