@@ -34,6 +34,7 @@
         "MainAbility/pages/ListItemGroup/listScrollbarColor",
         "MainAbility/pages/List/ListFillPolicyModifier",
         "MainAbility/pages/List/ListFillPolicy",
-        "MainAbility/pages/List/ListContentSize"
+        "MainAbility/pages/List/ListContentSize",
+        "MainAbility/pages/List/listNoMakeObserved"
     ]
 }

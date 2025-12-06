@@ -17,10 +17,12 @@ import WaterflowDemo from './WaterflowDemo.test';
 import WaterflowAddJsunit from './WaterflowAddJsunit.test';
 import WaterFlowFriction from './WaterFlowFriction.test';
 import waterFlowDraggingFling from './WaterFlow/waterFlowDraggingFling.test';
+import repeatNoMakeObserved from './WaterFlow/repeatNoMakeObserved.test';
 
 export default function testsuite() {
   WaterflowDemo()
   WaterflowAddJsunit()
   WaterFlowFriction()
   waterFlowDraggingFling()
+  repeatNoMakeObserved()
 }

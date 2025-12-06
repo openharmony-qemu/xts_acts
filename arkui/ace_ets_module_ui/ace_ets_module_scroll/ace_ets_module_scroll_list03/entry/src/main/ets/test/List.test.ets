@@ -47,6 +47,7 @@ import ListFillPolicyModifier from './List/ListFillPolicyModifier.test';
 import listScrollbarColor from './ListItemGroup/listScrollbarColor.test';
 import ListContentSize from './List/ListContentSize.test';
 import ListFillPolicy from './List/ListFillPolicy.test';
+import listNoMakeObserved from './List/listNoMakeObserved.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -83,4 +84,5 @@ export default function testsuite() {
   listScrollbarColor()
   ListContentSize()
   ListFillPolicy()
+  listNoMakeObserved()
 }
