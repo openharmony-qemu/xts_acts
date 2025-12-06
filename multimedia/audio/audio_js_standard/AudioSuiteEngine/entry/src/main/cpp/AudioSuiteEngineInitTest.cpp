@@ -4884,8 +4884,8 @@ static napi_value AudioSuiteEngine_IsNodeTypeSupported_0001(napi_env env, napi_c
 static napi_value AudioSuiteEngine_IsNodeTypeSupported_0002(napi_env env, napi_callback_info info)
 {
     napi_value res;
-    bool isSupported = false;
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_IsNodeTypeSupported(nullptr, &isSupported);
+    OH_AudioNode_Type nodeType = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_IsNodeTypeSupported(nodeType, nullptr);
     if (result != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
         LOG("AudioSuiteEngine_IsNodeTypeSupported_0002 fail, result is: %{public}d", result);
     }
