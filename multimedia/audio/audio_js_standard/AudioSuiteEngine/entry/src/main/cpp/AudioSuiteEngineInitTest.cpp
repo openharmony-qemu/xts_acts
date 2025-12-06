@@ -4869,11 +4869,11 @@ static napi_value AudioSuiteEngine_StopPipeline_0004(napi_env env, napi_callback
 static napi_value AudioSuiteEngine_IsNodeTypeSupported_0001(napi_env env, napi_callback_info info)
 {
     napi_value res;
-    bool isSupported = false;    
+    bool isSupported = false;
     for (const auto setNodeType : audioNodeTypeTest) {
         OH_AudioSuite_Result result = OH_AudioSuiteEngine_IsNodeTypeSupported(setNodeType, &isSupported);
         napi_create_int32(env, result, &res);
-        if (result != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {            
+        if (result != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
             LOG("AudioSuiteEngine_IsNodeTypeSupported_0001 fail, result is: %{public}d", result);
             return res;
         }
@@ -4884,11 +4884,11 @@ static napi_value AudioSuiteEngine_IsNodeTypeSupported_0001(napi_env env, napi_c
 static napi_value AudioSuiteEngine_IsNodeTypeSupported_0002(napi_env env, napi_callback_info info)
 {
     napi_value res;
-    bool isSupported = false;    
+    bool isSupported = false;
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_IsNodeTypeSupported(nullptr, &isSupported);
     if (result != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
         LOG("AudioSuiteEngine_IsNodeTypeSupported_0002 fail, result is: %{public}d", result);
-    } 
+    }
     napi_create_int32(env, result, &res);
     return res;
 }
