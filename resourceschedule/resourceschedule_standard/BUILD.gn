@@ -23,6 +23,7 @@ group("resourceschedule_standard") {
       "backgroundtaskmanager_new:backgroundtaskmanager_new_test",
       "backgroundtaskmanager_new_static:backgroundtaskmanager_new_static_test",
       "backgroundtaskmanager_nop:resourceschedule_backgroundtaskmanager_ets_nop_test",
+      "backgroundtaskmanager_nop_static:backgroundtaskmanager_nop_static_test",
       "deviceusagestatisticsjsunit:resourceschedule_deviceusagestatisticsjsunit_js_test",
       "ffrt:resourceschedule_ffrt_js_test",
       "qos_manager:ActsQoSCAPITest",
