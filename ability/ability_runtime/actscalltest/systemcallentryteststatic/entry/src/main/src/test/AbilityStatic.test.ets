@@ -65,12 +65,12 @@ export default function AbilityStaticTest() {
       hilog.info(domain, tag, `${itName} start`);
       try {
         caller.release();
-        expect().assertFail();
+        done();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller release fail error code: ${err?.code}, msg: ${err?.message}`);
-        done();
+        expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
       }
     })
