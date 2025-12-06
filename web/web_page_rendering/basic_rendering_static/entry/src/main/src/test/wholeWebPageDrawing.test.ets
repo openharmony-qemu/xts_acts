@@ -17,7 +17,6 @@ import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { beforeAll, beforeEach, describe, it, Level, Size, TestType, afterEach } from '../../../hypium/index';
 import Utils from './Util.test';
-import { sendEventByKey } from '@internal.full.global';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';

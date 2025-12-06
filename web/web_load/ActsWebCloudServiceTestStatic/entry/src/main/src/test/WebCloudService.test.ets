@@ -9,7 +9,6 @@ import { Utils, startAbility, stopApplication } from './Util.test';
 import webview from '@ohos.web.webview';
 import router from '@ohos.router';
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
-import { sendEventByKey } from '@internal.full.global';
 import emitter from '@ohos.events.emitter';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
