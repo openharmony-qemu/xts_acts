@@ -5107,6 +5107,7 @@ export default function abilityTest() {
       done();
     })
 
+
     /**
      * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100
@@ -5115,7 +5116,6 @@ export default function abilityTest() {
      * @tc.type   Function
      * @tc.level  Level2
      */
-
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
       try {
@@ -5133,6 +5133,7 @@ export default function abilityTest() {
       done();
     })
 
+
     /**
      * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200
@@ -5141,7 +5142,6 @@ export default function abilityTest() {
      * @tc.type   Function
      * @tc.level  Level2
      */
-
     it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = 0;
       let onCallback1 = (info:avSession.CommandInfo) => {
@@ -5153,7 +5153,6 @@ export default function abilityTest() {
         console.info(`onPlay 2 entry & info: ${info.callerModuleName} ${info.callerBundleName} ${info.callerDeviceId} ${info.callerType}`);
         flag++
       }
-
 
       try {
         await session.onPlay(onCallback1);
@@ -5167,6 +5166,7 @@ export default function abilityTest() {
       expect(flag).assertEqual(1);
       done();
     })
+
 
     /**
      * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_1100
