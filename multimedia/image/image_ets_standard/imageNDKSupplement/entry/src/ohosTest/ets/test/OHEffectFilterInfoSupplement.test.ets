@@ -50,14 +50,12 @@ export default function ImageEffectInfoSupplementTest() {
      * @tc.type   : Function
      * @tc.level  : Level 1
      */
-
     it('SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
       let result: number = testNapi.OHEffectFilterInfoSetFilterNameSupplementTest(CASE_INDEX_1);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_FILTER_NAME_002
@@ -114,7 +112,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_002
@@ -129,7 +126,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_003
@@ -172,7 +168,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_002
@@ -187,7 +182,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_BUFFER_003
@@ -217,7 +211,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG,testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_002
@@ -233,7 +226,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG, testName,'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_003
@@ -277,7 +269,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_003
@@ -320,7 +311,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_002
@@ -335,7 +325,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003
@@ -350,7 +339,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_004
      * @tc.name   : SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_004
@@ -379,7 +367,6 @@ export default function ImageEffectInfoSupplementTest() {
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
-
     /**
      * @tc.number : SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002
      * @tc.name   : SUB_OH_EFFECT_INFO_RELEASE_SUPPLEMENT_002
