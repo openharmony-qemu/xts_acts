@@ -37,7 +37,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_001
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_001
-     * @tc.desc    OHEffectFilterCreateSupp
+     * @tc.desc    OHEffectFilterCreateSupp——EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -53,7 +53,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_002
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_CREATE_SUPP_002
-     * @tc.desc    OHEffectFilterCreateSupp
+     * @tc.desc    OHEffectFilterCreateSupp——空指针EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -69,7 +69,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_003
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_003
-     * @tc.desc    OHEffectFilterLookUpFiltersSupp
+     * @tc.desc    OHEffectFilterLookUpFiltersSupp——EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -85,7 +85,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004
-     * @tc.desc    OHEffectFilterLookUpFiltersSupp
+     * @tc.desc    OHEffectFilterLookUpFiltersSupp——EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -101,7 +101,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_005
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_005
-     * @tc.desc    OHEffectFilterSetValueSupp空字符串
+     * @tc.desc    OHEffectFilterSetValueSupp空字符串——EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -117,7 +117,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_006
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_006
-     * @tc.desc    OHEffectFilterSetValueSupp的EFFECT_PARAM_ERROR
+     * @tc.desc    OHEffectFilterSetValueSupp——EFFECT_PARAM_ERROR
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -133,7 +133,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_007
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_007
-     * @tc.desc    OHEffectFilterSetValueSupp
+     * @tc.desc    OHEffectFilterSetValueSupp——EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -149,7 +149,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_008
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_008
-     * @tc.desc    OHEffectFilterGetValueSupp的EFFECT_SUCCESS情况
+     * @tc.desc    OHEffectFilterGetValueSupp——EFFECT_SUCCESS情况
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -165,7 +165,7 @@ export default function ImageEffectFilterSuppTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_009
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_GET_VALUE_SUPP_009
-     * @tc.desc    OHEffectFilterGetValueSupp空字符串情况
+     * @tc.desc    OHEffectFilterGetValueSupp——空字符串EFFECT_ERROR_29000122情况
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
