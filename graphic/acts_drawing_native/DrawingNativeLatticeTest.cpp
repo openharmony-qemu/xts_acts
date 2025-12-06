@@ -45,7 +45,7 @@ class DrawingNativeRectTest : public testing::Test {
 
 /**
  * @tc.name   testLatticeCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0100
  * @tc.desc   Test for testLatticeCreateNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -68,7 +68,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateNormal, Function | SmallTest | 
 
 /**
  * @tc.name   testLatticeCreateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0101
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0101
  * @tc.desc   Test for testLatticeCreateNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -109,7 +109,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateNull, Function | SmallTest | Le
 
 /**
  * @tc.name   testLatticeCreateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0102
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0102
  * @tc.desc   Test for testLatticeCreateAbnormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -119,8 +119,8 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateAbnormal, Function | SmallTest 
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs1[2] = {10, 20};
     int yDivs1[2] = {10, 20};
-    int xDivs2[2] = {10, 20, 30, 40, 50, 60, 70, 80 ,90 ,100};
-    int yDivs2[2] = {10, 20, 30, 40, 50, 60, 70, 80 ,90 ,100};
+    int xDivs2[10] = {10, 20, 30, 40, 50, 60, 70, 80 , 90, 100};
+    int yDivs2[10] = {10, 20, 30, 40, 50, 60, 70, 80 , 90, 100};
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_LatticeRectType rectTypes1[9] = {OH_Drawing_LatticeRectType::DEFAULT};
@@ -145,7 +145,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateAbnormal, Function | SmallTest 
 
 /**
  * @tc.name   testLatticeCreateEnumTraversal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0103
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0103
  * @tc.desc   Test for testLatticeCreateEnumTraversal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -174,7 +174,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateEnumTraversal, Function | Small
 
 /**
  * @tc.name   testLatticeCreateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0104
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0104
  * @tc.desc   Test for testLatticeCreateMultipleCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -199,7 +199,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeCreateMultipleCalls, Function | Small
 
 /**
  * @tc.name   testLatticeDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0200
  * @tc.desc   Test for testLatticeDestroyNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -221,7 +221,7 @@ HWTEST_F(DrawingNativeRectTest, testLatticeDestroyNormal, Function | SmallTest |
 
 /**
  * @tc.name   testLatticeDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0201
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0201
  * @tc.desc   Test for testLatticeDestroyNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST

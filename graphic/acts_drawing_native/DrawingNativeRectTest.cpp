@@ -1367,7 +1367,7 @@ HWTEST_F(DrawingNativeRectTest, testRectIsEmptyNull, Function | SmallTest | Leve
     EXPECT_EQ(isEmpty, false);
     errorCode = OH_Drawing_RectIsEmpty(rect, nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    EXPECT_EQ(isEmpty, false); 
+    EXPECT_EQ(isEmpty, false);
     OH_Drawing_RectDestroy(rect);
 }
 
@@ -1642,7 +1642,7 @@ HWTEST_F(DrawingNativeRectTest, testRectSortNull, Function | SmallTest | Level3)
  */
 HWTEST_F(DrawingNativeRectTest, testRectSortMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
-    EXPECT_NE(rect, nullptr); 
+    EXPECT_NE(rect, nullptr);
     for (int i = 0; i < 10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
