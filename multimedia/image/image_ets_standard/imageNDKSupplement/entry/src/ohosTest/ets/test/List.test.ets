@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import ImageEffectSuppTest from './ImageEffectSupp.test';
+import ImageEffectInfoSupplementTest from './OHEffectFilterInfoSupplement.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
+  ImageEffectInfoSupplementTest();
 }
