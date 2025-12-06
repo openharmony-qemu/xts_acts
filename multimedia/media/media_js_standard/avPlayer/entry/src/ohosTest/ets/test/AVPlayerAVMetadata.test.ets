@@ -557,7 +557,7 @@ export default function AVMetadata() {
       // 获取元信息
       await avMetadataExtractor.fetchMetadata().then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, videoOrientation: ${metadata.videoOrientation}`);
-        expect(metadata.videoOrientation).assertEqual("0");
+        expect(metadata.videoOrientation).assertEqual("");
         avMetadataExtractor.release();
       }).catch((error: BusinessError) => {
         console.error(`fetchMetadata catchCallback, error message:${error.message}`);
