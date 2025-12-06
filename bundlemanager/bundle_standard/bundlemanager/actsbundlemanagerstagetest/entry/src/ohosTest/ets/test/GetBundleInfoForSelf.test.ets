@@ -270,6 +270,31 @@ export default function getBundleInfoForSelf() {
     })
 
     /**
+     * @tc.name   getBundleInfoForSelfEntryModuleInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5641
+     * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getBundleInfoForSelfEntryModuleInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
+      await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ENTRY_MODULE).then(data => {
+        console.info("ModulePro" + JSON.stringify(data));
+        checkCommonBundleInfo(data);
+        expect(data.appInfo).assertEqual(null);
+        expect(data.hapModulesInfo.length).assertEqual(0);
+        expect(data.reqPermissionDetails.length).assertEqual(0);
+        expect(data.permissionGrantStates.length).assertEqual(0);
+        expect(data.signatureInfo).assertEqual(null);
+        done();
+      }).catch((err: BusinessError) => {
+        console.info("getBundleInfoForSelf fail" + JSON.stringify(err));
+        expect(err).assertFail();
+        done();
+      })
+    })
+
+    /**
      * @tc.name   getBundleInfoForSelfModuleCal
      * @tc.number Sub_Bms_Framework_Query_AppInfo_5660
      * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by callback).
