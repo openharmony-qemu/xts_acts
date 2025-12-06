@@ -63,13 +63,13 @@ export default function ActsLongTimeTaskNopStaticTest() {
     })
 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_001
-     * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_001
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_001
+     * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:() => void): Promise<void> => {
@@ -116,13 +116,13 @@ export default function ActsLongTimeTaskNopStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_001 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_002
-     * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_002
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_002
+     * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:() => void): Promise<void> => {
@@ -164,14 +164,14 @@ export default function ActsLongTimeTaskNopStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_002 end---');
       })
 
-    /*
-   * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_003
-   * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_003
-   * @tc.desc:Test that the updateBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
-   */
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_003
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_003
+     * @tc.desc   Test that the updateBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:() => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_003 begin---');
@@ -211,10 +211,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_003 end---');
       })
 
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_004
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_004
-    //  * @tc.desc:Test that the on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_004
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_004
+    //  * @tc.desc   Test that the on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -246,10 +246,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_004 end---');
     //   })
     //
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_005
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_005
-    //  * @tc.desc:Test that the off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_005
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_005
+    //  * @tc.desc   Test that the off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -281,13 +281,13 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_005 end---');
     //   })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_006
-     * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_006
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_006
+     * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:() => void): Promise<void> => {
@@ -327,10 +327,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_006 end---');
       })
 
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_007
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_007
-    //  * @tc.desc:Test that the suspend on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_007
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_007
+    //  * @tc.desc   Test that the suspend on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -364,10 +364,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_007 end---');
     //   })
     //
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_008
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_008
-    //  * @tc.desc:Test that the suspend off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_008
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_008
+    //  * @tc.desc   Test that the suspend off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -401,10 +401,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_008 end---');
     //   })
     //
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_009
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_009
-    //  * @tc.desc:Test that the active on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_009
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_009
+    //  * @tc.desc   Test that the active on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -435,10 +435,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_009 end---');
     //   })
     //
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_010
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_010
-    //  * @tc.desc:Test that the active off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_010
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_010
+    //  * @tc.desc   Test that the active off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -469,10 +469,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_010 end---');
     //   })
 
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_011
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_011
-    //  * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_011
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_011
+    //  * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -521,10 +521,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_011 end---');
     //   })
     //
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_012
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_012
-    //  * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_012
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_012
+    //  * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -574,10 +574,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_012 end---');
     //   })
     //
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_013
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_013
-    //  * @tc.desc:Test that the  api12 updateBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_013
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_013
+    //  * @tc.desc   Test that the  api12 updateBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -638,10 +638,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_013 end---');
     //   })
 
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_014
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_014
-    //  * @tc.desc:Test that the api12 startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_014
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_014
+    //  * @tc.desc   Test that the api12 startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest
@@ -703,10 +703,10 @@ export default function ActsLongTimeTaskNopStaticTest() {
     //     hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_014 end---');
     //   })
     //
-    // /*
-    //  * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_015
-    //  * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_015
-    //  * @tc.desc:Test that the backgroundTaskManager isModeSupported function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+    // /**
+    //  * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_015
+    //  * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_015
+    //  * @tc.desc   Test that the backgroundTaskManager isModeSupported function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
     //  * @tc.level:Level 3
     //  * @tc.type:Function
     //  * @tc.size:MediumTest

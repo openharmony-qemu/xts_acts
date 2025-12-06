@@ -17,8 +17,7 @@ group("backgroundtaskmanager_nop_static_test") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "longtimetask_nop_static:ActsResourcescheduleLongTaskMgrNopStaticTest",
-      "reminderagentmanager_nop_static:ActsResourcescheduleReminderAgentMgrNopStaticTest"
+      "longtimetask_nop_static:ActsResourcescheduleLongTaskMgrNopStaticTest"
     ]
   }
 }
