@@ -139,7 +139,7 @@ export default function ActsShortTimeTaskManagerStaticTest() {
       }
     });
 
-   /**
+    /**
      * @tc.name   ACTS_StageContext_Static_0900
      * @tc.number ACTS_StageContext_Static_0900
      * @tc.desc   test EventHub test multiple callbacks
@@ -438,7 +438,7 @@ export default function ActsShortTimeTaskManagerStaticTest() {
         done();
       });
 
-   /**
+    /**
      * @tc.name   ACTS_StageContext_Static_1400
      * @tc.number ACTS_StageContext_Static_1400
      * @tc.desc   test EventHub test call on/off in callback
