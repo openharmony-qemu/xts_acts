@@ -25,3 +25,12 @@ export const OHEffectFilterInfoGetSupportedBufferTypesSupplementTest: (a: number
 export const OHEffectFilterInfoSetSupportedFormatsSupplementTest: (a: number) => number;
 export const OHEffectFilterInfoGetSupportedFormatsSupplementTest: (a: number) => number;
 export const OHEffectFilterInfoReleaseSupplementTest: (a: number) => number;
+export const OHImageEffectReplaceFilterByFilterSupp: (a: number) => number;
+export const OHImageEffectAddFilterByFilterSupp: (a: number) => number;
+export const OHImageEffectInsertFilterByFilterSupp: (a: number) => number;
+export const OHImageEffectRemoveFilterByIndexSupp: (a: number) => number;
+export const OHImageEffectGetFilterSupp: (a: number) => number;
+export const OHImageEffectSetInputPictureSupp: (a: number) => number;
+export const OHImageEffectSetOutputPictureSupp: (a: number) => number;
+export const OHImageEffectReleaseSupp:(a: number) => number;
+
