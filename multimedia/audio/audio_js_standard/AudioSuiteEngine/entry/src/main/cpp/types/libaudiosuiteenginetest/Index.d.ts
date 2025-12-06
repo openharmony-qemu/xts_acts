@@ -170,3 +170,5 @@ export const OH_AudioSuiteEngine_SampleRate_001: () => number;
 export const OH_AudioSuiteEngine_SampleRate_002: () => number;
 export const OH_AudioSuiteEngine_AudioSuiteResult_001: () => number;
 export const OH_AudioSuiteEngine_VoiceBeautifierType_001: () => number;
+export const AudioSuiteEngine_IsNodeTypeSupported_0001: () => number;
+export const AudioSuiteEngine_IsNodeTypeSupported_0002: () => number;

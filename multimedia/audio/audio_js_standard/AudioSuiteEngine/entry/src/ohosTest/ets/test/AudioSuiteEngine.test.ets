@@ -2520,5 +2520,37 @@ export default function AudioSuiteEngineTest() {
       done();
     })
 
+    /**
+     * @tc.number     AudioSuiteEngine_IsNodeTypeSupported_0001
+     * @tc.name       AudioSuiteEngine_IsNodeTypeSupported_0001
+     * @tc.desc       AudioSuite IsNodeTypeSupported test - AUDIOSUITE_SUCCESS
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_IsNodeTypeSupported_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_IsNodeTypeSupported_0001();
+      console.info(`Tag: AudioSuiteEngine_IsNodeTypeSupported_0001 : ${result}`);
+      expect(result).assertEqual(AUDIOSUITE_RESULT.AUDIOSUITE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_IsNodeTypeSupported_0002
+     * @tc.name       AudioSuiteEngine_IsNodeTypeSupported_0002
+     * @tc.desc       AudioSuite IsNodeTypeSupported test - AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_IsNodeTypeSupported_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_IsNodeTypeSupported_0002();
+      console.info(`Tag: AudioSuiteEngine_IsNodeTypeSupported_0002 : ${result}`);
+      expect(result).assertEqual(AUDIOSUITE_RESULT.AUDIOSUITE_ERROR_INVALID_PARAM);
+      done();
+    })
+
   })
 }
