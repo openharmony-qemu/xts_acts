@@ -47,8 +47,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestSetSurfaceConfigErrorCode002", nullptr, XComponentSurfaceConfigTest::TestSetSurfaceConfigErrorCode002,
             nullptr, nullptr, nullptr, napi_default, nullptr},
 
-
-
         {"CreateKeyMouseEventNativeRoot", nullptr, XComponentKeyMouseEventTest::CreateKeyMouseEventNativeRoot,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getKeyStr", nullptr, XComponentKeyMouseEventTest::GetKeyString, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -81,6 +79,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestRegisterKeyEventCallbackWithResult_01", nullptr, XComponentKeyMouseEventTest::TestRegisterKeyEventCallbackWithResult_01,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestRegisterKeyEventCallbackWithResult_02", nullptr, XComponentKeyMouseEventTest::TestRegisterKeyEventCallbackWithResult_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestSurfaceConfigCreateReturnNoNullptr", nullptr, XComponentKeyMouseEventTest::TestSurfaceConfigCreateReturnNoNullptr,
          nullptr, nullptr, nullptr, napi_default, nullptr},
 
     };

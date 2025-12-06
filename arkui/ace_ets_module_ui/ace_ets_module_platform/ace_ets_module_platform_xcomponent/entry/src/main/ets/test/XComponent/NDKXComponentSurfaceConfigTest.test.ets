@@ -102,5 +102,22 @@ export default function NDKXComponentSurfaceConfigTest() {
       done();
     });
 
+    /**
+     * @tc.name   NDKXComponentSurfaceConfigTest_0400
+     * @tc.number NDKXComponentSurfaceConfigTest_0400
+     * @tc.desc   Test OH_ArkUI_XComponentSurfaceConfig_Create ErrorCode return Non-nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('NDKXComponentSurfaceConfigTest_0400', Level.LEVEL1, async (done: Function) => {
+      console.info('[NDKXComponentSurfaceConfigTest_0400] START');
+      await CommonFunc.sleep(1000);
+
+      expect(native.TestSurfaceConfigCreateReturnNoNullptr()).assertEqual(0)
+
+      console.info('[NDKXComponentSurfaceConfigTest_0400] END');
+      done();
+    });
   })
 }

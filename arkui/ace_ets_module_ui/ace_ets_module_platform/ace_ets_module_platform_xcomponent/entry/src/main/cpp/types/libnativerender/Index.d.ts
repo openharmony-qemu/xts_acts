@@ -29,6 +29,7 @@ export const drawStar: (id: string) => void;
 
 export const TestSetSurfaceConfigErrorCode001: (id: string) => void;
 export const TestSetSurfaceConfigErrorCode002: (id: string) => void;
+export const TestSurfaceConfigCreateReturnNoNullptr: () => void;
 
 export const CreateKeyMouseEventNativeRoot: (content: NodeContent, tag: string) => void;
 export const getKeyStr: () => string;
