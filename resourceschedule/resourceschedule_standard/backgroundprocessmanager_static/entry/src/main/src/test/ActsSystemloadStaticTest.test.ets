@@ -25,13 +25,13 @@ export default function ActsSystemloadStaticTest() {
     describe("ActsSystemloadStaticTest", (): void => {
         hilog.info(DOMAIN, TAG, '%{public}s', 'describe start');
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001
-         * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001
-         * @tc.desc:Test that the systemLoad enum SystemLoadLevel of LOW
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001
+         * @tc.desc   Test that the systemLoad enum SystemLoadLevel of LOW
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
          */
         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
           hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001 begin---');
@@ -50,13 +50,13 @@ export default function ActsSystemloadStaticTest() {
           hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001 end---');
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002
-         * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002
-         * @tc.desc:Test that the systemLoad enum SystemLoadLevel of NORMAL
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002
+         * @tc.desc   Test that the systemLoad enum SystemLoadLevel of NORMAL
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
          */
         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002 begin---');
@@ -75,13 +75,13 @@ export default function ActsSystemloadStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002 end---');
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003
-         * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003
-         * @tc.desc:Test that the systemLoad enum SystemLoadLevel of MEDIUM
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003
+         * @tc.desc   Test that the systemLoad enum SystemLoadLevel of MEDIUM
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
          */
         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003 begin---');
@@ -100,13 +100,13 @@ export default function ActsSystemloadStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003 end---');
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004
-         * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004
-         * @tc.desc:Test that the systemLoad enum SystemLoadLevel of HIGH
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004
+         * @tc.desc   Test that the systemLoad enum SystemLoadLevel of HIGH
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
          */
         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004 begin---');
@@ -125,13 +125,13 @@ export default function ActsSystemloadStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004 end---');
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005
-         * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005
-         * @tc.desc:Test that the systemLoad enum SystemLoadLevel of OVERHEATED
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005
+         * @tc.desc   Test that the systemLoad enum SystemLoadLevel of OVERHEATED
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
          */
         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005 begin---');
@@ -150,13 +150,13 @@ export default function ActsSystemloadStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005 end---');
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006
-         * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006
-         * @tc.desc:Test that the systemLoad enum SystemLoadLevel of WARNING
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006
+         * @tc.desc   Test that the systemLoad enum SystemLoadLevel of WARNING
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
          */
         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006 begin---');
@@ -175,13 +175,13 @@ export default function ActsSystemloadStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006 end---');
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007
-         * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007
-         * @tc.desc:Test that the systemLoad enum SystemLoadLevel of EMERGENCY
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007
+         * @tc.desc   Test that the systemLoad enum SystemLoadLevel of EMERGENCY
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
          */
         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007 begin---');
@@ -200,13 +200,13 @@ export default function ActsSystemloadStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007 end---');
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008
-         * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008
-         * @tc.desc:Test that the systemLoad enum SystemLoadLevel of ESCAPE
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008
+         * @tc.desc   Test that the systemLoad enum SystemLoadLevel of ESCAPE
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
          */
         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008 begin---');
@@ -225,100 +225,100 @@ export default function ActsSystemloadStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008 end---');
         })
 
-       /*
-        * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009
-        * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009
-        * @tc.desc:Test that the systemLoad on callback function normal call
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
-        it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-            hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 begin---');
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009
+         * @tc.desc   Test that the systemLoad on callback function normal call
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         */
+         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 begin---');
 
-            try {
-                let onSystemLoadChange = (res: systemLoad.SystemLoadLevel) => {
-                    console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 system load changed, current level ` + res);
-                };
-                let callbackFlag = 0;
+             try {
+                 let onSystemLoadChange = (res: systemLoad.SystemLoadLevel) => {
+                     console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 system load changed, current level ` + res);
+                 };
+                 let callbackFlag = 0;
 
-                systemLoad.onSystemLoadChange(onSystemLoadChange);
-                console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 register systemload callback succeeded. `);
-                callbackFlag = 1;
+                 systemLoad.onSystemLoadChange(onSystemLoadChange);
+                 console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 register systemload callback succeeded. `);
+                 callbackFlag = 1;
 
-                expect(callbackFlag).assertEqual(1);
-                done();
-            } catch (error) {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 aa error: %{public}s', JSON.stringify(error));
-                expect(false).assertTrue();
-                done();
-            }
+                 expect(callbackFlag).assertEqual(1);
+                 done();
+             } catch (error) {
+                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 aa error: %{public}s', JSON.stringify(error));
+                 expect(false).assertTrue();
+                 done();
+             }
 
-            hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 end---');
-        })
+             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 end---');
+         })
 
-       /*
-        * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010
-        * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010
-        * @tc.desc:Test that the systemLoad off callback function normal call
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
-        it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-            hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 begin---');
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010
+         * @tc.desc   Test that the systemLoad off callback function normal call
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         */
+         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 begin---');
 
-            try {
-                let offSystemLoadChange = (res: systemLoad.SystemLoadLevel) => {
-                    console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 system load changed, current level ` + res);
-                };
-                let callbackFlag = 0;
+             try {
+                 let offSystemLoadChange = (res: systemLoad.SystemLoadLevel) => {
+                     console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 system load changed, current level ` + res);
+                 };
+                 let callbackFlag = 0;
 
-                systemLoad.offSystemLoadChange(offSystemLoadChange);
-                console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 register systemload callback succeeded. `);
-                callbackFlag = 1;
+                 systemLoad.offSystemLoadChange(offSystemLoadChange);
+                 console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 register systemload callback succeeded. `);
+                 callbackFlag = 1;
 
-                expect(callbackFlag).assertEqual(1);
-                done();
-            } catch (error) {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 aa error: %{public}s', JSON.stringify(error));
-                expect(false).assertTrue();
-                done();
-            }
+                 expect(callbackFlag).assertEqual(1);
+                 done();
+             } catch (error) {
+                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 aa error: %{public}s', JSON.stringify(error));
+                 expect(false).assertTrue();
+                 done();
+             }
 
-            hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 end---');
-        })
+             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 end---');
+         })
 
-       /*
-        * @tc.number:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011
-        * @tc.name:SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011
-        * @tc.desc:Test that the systemLoad getLevel promise function normal call
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
-        it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-            hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 begin---');
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011
+         * @tc.name   SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011
+         * @tc.desc   Test that the systemLoad getLevel promise function normal call
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         */
+         it("SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 begin---');
 
-            try {
-                systemLoad.getLevel().then((res: systemLoad.SystemLoadLevel) => {
-                    console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 getLevel promise succeeded. result: ` + JSON.stringify(res));
-                    let level: int = res;
-                    expect(level).assertLess(7);
-                    done();
-                }).catch((err: Error) => {
-                    console.error(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 getLevel promise failed. code is ${err.code} message is ${err.message}`);
-                    expect(false).assertTrue();
-                    done();
-                })
-            } catch (error) {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 aa error: %{public}s', JSON.stringify(error));
-                expect(false).assertTrue();
-                done();
-            }
+             try {
+                 systemLoad.getLevel().then((res: systemLoad.SystemLoadLevel) => {
+                     console.info(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 getLevel promise succeeded. result: ` + JSON.stringify(res));
+                     let level: int = res;
+                     expect(level).assertLess(7);
+                     done();
+                 }).catch((err: Error) => {
+                     console.error(`SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 getLevel promise failed. code is ${err.code} message is ${err.message}`);
+                     expect(false).assertTrue();
+                     done();
+                 })
+             } catch (error) {
+                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 aa error: %{public}s', JSON.stringify(error));
+                 expect(false).assertTrue();
+                 done();
+             }
 
-            hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 end---');
-        })
+             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 end---');
+         })
 
     })
 

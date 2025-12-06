@@ -17,6 +17,7 @@ group("resourceschedule_standard") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "backgroundprocessmanager_static:ActsResourcescheduleBackgroundProcessMgrStaticTest",
       "backgroundtaskmanager:resourceschedule_backgroundtaskmanager_js_test",
       "backgroundtaskmanager_ndk:backgroundtaskmanager_ndk_test",
       "backgroundtaskmanager_new:backgroundtaskmanager_new_test",
