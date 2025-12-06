@@ -411,13 +411,6 @@ export default function GraphicTextNewAPI() {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();
             }
-            // try {
-            //   let advancesNull = runs[0].getAdvances(undefined);
-            //   expect(advancesNull).assertEqual(undefined);
-            // } catch (err) {
-            //   console.info(msg + JSON.stringify(err));
-            //   expect().assertFail();
-            // }
 
           }
         }
@@ -562,7 +555,6 @@ export default function GraphicTextNewAPI() {
         let lines = paragraph.getTextLines();
         console.info('www data lines ', JSON.stringify(lines));
         expect(lines.length == 0).assertTrue();
-        // expect(lines[0] == undefined).assertTrue();
         let arrLineMetric =  paragraph.getLineMetrics();
         console.info('www data arrLineMetric ', JSON.stringify(arrLineMetric));
         expect(arrLineMetric.length == 0).assertTrue();
@@ -699,12 +691,6 @@ export default function GraphicTextNewAPI() {
         let glphy4 = runs[0].getGlyphs({start: 0, end: -1});
         console.info('www data glphy4 ' + JSON.stringify(glphy4));
         expect(glphy4 == undefined).assertTrue();
-        // let glphy5 = runs[0].getGlyphs(null);
-        // console.info('www data glphy5 ' + JSON.stringify(glphy5));
-        // expect(glphy5 == undefined).assertTrue();
-        // let glphy6 = runs[0].getGlyphs(undefined);
-        // console.info('www data glphy6 ' + JSON.stringify(glphy6));
-        // expect(glphy6 == undefined).assertTrue();
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -756,12 +742,6 @@ export default function GraphicTextNewAPI() {
         let position4 = runs[0].getPositions({start: 0, end: -1});
         console.info('www data position4 ' + JSON.stringify(position4));
         expect(position4 == undefined).assertTrue();
-        // let position5 = runs[0].getPositions(null);
-        // console.info('www data position5 ' + JSON.stringify(position5));
-        // expect(position5 == undefined).assertTrue();
-        // let position6 = runs[0].getPositions(undefined);
-        // console.info('www data position6 ' + JSON.stringify(position6));
-        // expect(position6 == undefined).assertTrue();
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -806,7 +786,6 @@ export default function GraphicTextNewAPI() {
         expect(offset.length > 0).assertTrue();
         let indices = runs[0].getStringIndices(); // 获取渲染块全部字符索引
         console.info('www data indices ' + JSON.stringify(indices));
-        // expect(indices?.length).assertLarger(0);
         let indicesRange1 = runs[0].getStringIndices({start:1, end:2}); // 获取渲染块从起始位置1开始, 长度为2范围内的字符索引
         console.info('www data indicesRange1 ' + JSON.stringify(indicesRange1));
         expect(indicesRange1?.length).assertLarger(0);
@@ -816,9 +795,6 @@ export default function GraphicTextNewAPI() {
         let indicesRange3 = runs[0].getStringIndices({start:0, end:-10}); // -10是非法参数，将返回undefined
         console.info('www data indicesRange3 ' + JSON.stringify(indicesRange3));
         expect(indicesRange3 == undefined).assertTrue();
-        // let indicesNull = runs[0].getStringIndices(null); // null是非法参数，将返回undefined
-        // console.info('www data indicesNull ' + JSON.stringify(indicesNull));
-        // expect(indicesNull == undefined).assertTrue();
         let indicesUndefined = runs[0].getStringIndices(undefined); // undefined是非法参数，将返回undefined
         console.info('www data indicesUndefined ' + JSON.stringify(indicesUndefined));
         expect(indicesUndefined == undefined).assertTrue();
