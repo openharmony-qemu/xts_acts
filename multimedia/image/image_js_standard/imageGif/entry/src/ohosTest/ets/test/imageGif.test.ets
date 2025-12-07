@@ -20,6 +20,7 @@ import rpc from '@ohos.rpc';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
 import featureAbility from "@ohos.ability.featureAbility";
 import { BusinessError } from '@ohos.base';
+import common from '@ohos.app.ability.common';
 
 
 const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
@@ -31,6 +32,7 @@ const DECODE_FAILED = 7700301;
 const UNSUPPORTED_MIMETYPE = 7700102;
 const IMAGE_TOO_LARGE = 7700103;
 const UNSUPPORTED_OPTIONS = 7700203;
+const READ_FAILED = 7700202;
 let filePath: ESObject;
 let fdNumber: number;
 let globalImagesource: image.ImageSource;
@@ -57,6 +59,11 @@ interface Size {
   height: number
 }
 
+interface GenericError {
+  code?: number;
+  message?: string;
+}
+
 class Logger {
   testNum: string;
 
@@ -76,6 +83,20 @@ let sleep = async (delay: number): Promise<void> => {
     }, delay);
   });
 };
+
+function handleError(testTag: string, err: GenericError | Array<GenericError>, expectedErrorCode: number): boolean {
+  if (Array.isArray(err)) {
+    for (let error of err) {
+      console.error(`${testTag} failed.err: ${error.code} errorMessage: ${error.message}`);
+      return error.code == expectedErrorCode;
+    }
+  } else {
+    let error: GenericError = err;
+    console.error(`${testTag} failed.err: ${error.code} errorMessage: ${error.message}`);
+    return error.code == expectedErrorCode;
+  }
+  return false;
+}
 
 async function getFd(fileName: string) {
   let context: ESObject = await AppStorage.get('thisContext');
@@ -476,6 +497,65 @@ async function gifInCompleteFrameTestError(logger: Logger, fileName: string, err
   }
 }
 
+async function heifsCheckPictureAtIndex(
+  logger: Logger,
+  index: number,
+  imageSource: image.ImageSource,
+  picture: image.Picture,
+  delayTimeList: Array<number>
+): Promise<boolean> {
+  let ret = false;
+  let mainPixelMap: image.PixelMap | undefined;
+  try {
+    let metadata: image.Metadata = await picture.getMetadata(image.MetadataType.HEIFS_METADATA);
+    let delayTime: Record<string, string | null> = await metadata.getProperties(['HeifsDelayTime']);
+    mainPixelMap = picture.getMainPixelmap();
+    let srcImageInfo: image.ImageInfo = await imageSource.getImageInfo();
+    let dstImageInfo: image.ImageInfo = await mainPixelMap.getImageInfo();
+    ret = (delayTime['HeifsDelayTime'] === delayTimeList[index].toString()) &&
+      (srcImageInfo.size.width === dstImageInfo.size.width) &&
+      (srcImageInfo.size.height === dstImageInfo.size.height) && 
+      (srcImageInfo.mimeType === dstImageInfo.mimeType);
+    logger.log(`index is: ${index}, compare result is: ${ret}`);
+    if (!ret) {
+      logger.log(`delayTimeList is: ${delayTimeList[index]}`);
+      logger.log("metadata delayTime is: " + delayTime[image.HeifsPropertyKey.HEIFS_DELAY_TIME]);
+      logger.log(`srcImageInfo is: ${JSON.stringify(srcImageInfo)}, dstImageInfo is: ${JSON.stringify(dstImageInfo)}`);
+    }
+  } catch (error) {
+    logger.log("heifsCheckPictureAtIndex failed error is: " + JSON.stringify(error));
+    ret = false;
+  } finally {
+    picture?.release();
+    mainPixelMap?.release();
+  }
+  return ret;
+}
+
+async function heifsIncompleteFrameTest(logger: Logger, fileName: string): Promise<boolean> {
+  let filePath = await getFilePath(fileName);
+  logger.log("filePath is: " + filePath);
+  let ret: boolean = false;
+  try {
+    let imageSource: image.ImageSource = image.createImageSource(filePath);
+    let frameCount: number = await imageSource.getFrameCount();
+    logger.log("get frameCount num is: " + frameCount);
+    let delayTimeList: Array<number> = await imageSource.getDelayTimeList();
+
+    for (let index = 0; index < frameCount; index++) {
+      let picture: image.Picture = await imageSource.createPictureAtIndex(index);
+      ret = await heifsCheckPictureAtIndex(logger, index, imageSource, picture, delayTimeList);
+    }
+    if (imageSource != undefined) {
+      await imageSource?.release();
+    }
+    return ret;
+  } catch (error) {
+    logger.log("heifsIncompleteFrameTest failed error is: " + JSON.stringify(error));
+    return ret;
+  }
+}
+
 class MySequence implements rpc.Parcelable {
   picture_: image.Picture;
 
@@ -495,7 +575,7 @@ class MySequence implements rpc.Parcelable {
   }
 }
 
-async function gifInCompleteFrameTestMarshalling(logger: Logger, picture: image.Picture): Promise<boolean> {
+async function gifInCompleteFrameTestMarshalling(logger: Logger, picture: image.Picture, metadataType: image.MetadataType): Promise<boolean> {
   try {
     let parcelable: MySequence = new MySequence(picture);
     let data: rpc.MessageSequence = rpc.MessageSequence.create();
@@ -504,8 +584,8 @@ async function gifInCompleteFrameTestMarshalling(logger: Logger, picture: image.
     data.readParcelable(ret);
     await sleep(500);
 
-    let marshallingMetadata = await picture.getMetadata(image.MetadataType.GIF_METADATA);
-    let unmarshallingMetadata = await ret.picture_.getMetadata(image.MetadataType.GIF_METADATA);
+    let marshallingMetadata = await picture.getMetadata(metadataType);
+    let unmarshallingMetadata = await ret.picture_.getMetadata(metadataType);
     let marshallingProperties = await marshallingMetadata.getAllProperties();
     let unmarshallingProperties = await unmarshallingMetadata.getAllProperties();
     logger.log(`marshalling properties: ` + JSON.stringify(marshallingProperties));
@@ -519,12 +599,12 @@ async function gifInCompleteFrameTestMarshalling(logger: Logger, picture: image.
   }
 }
 
-async function gifInCompleteFrameMetadataTest(logger: Logger, picture: image.Picture, modifyProperties: Record<string, string | null>): Promise<boolean> {
+async function gifInCompleteFrameMetadataTest(logger: Logger, picture: image.Picture, modifyProperties: Record<string, string | null>, metadataType: image.MetadataType): Promise<boolean> {
   try {
-    let metadata = await picture.getMetadata(image.MetadataType.GIF_METADATA);
+    let metadata = await picture.getMetadata(metadataType);
     await metadata.setProperties(modifyProperties);
-    await picture.setMetadata(image.MetadataType.GIF_METADATA, metadata);
-    let dataAfterSet = await picture.getMetadata(image.MetadataType.GIF_METADATA);
+    await picture.setMetadata(metadataType, metadata);
+    let dataAfterSet = await picture.getMetadata(metadataType);
     let data = await dataAfterSet.getAllProperties();
     logger.log("modifyProperties is: " + JSON.stringify(modifyProperties));
     logger.log("after data is: " + JSON.stringify(data));
@@ -1024,7 +1104,7 @@ export default function imageGif() {
       try {
         let imageSourceApi = image.createImageSource(filePath);
         let picture: image.Picture = await imageSourceApi.createPictureAtIndex(0);
-        let ret = await gifInCompleteFrameTestMarshalling(logger, picture);
+        let ret = await gifInCompleteFrameTestMarshalling(logger, picture, image.MetadataType.GIF_METADATA);
         expect(ret).assertTrue();
         done();
       } catch (error) {
@@ -1052,7 +1132,7 @@ export default function imageGif() {
         let imageSourceApi = image.createImageSource(filePath);
         let picture: image.Picture = await imageSourceApi.createPictureAtIndex(0);
         let modifyProperties: Record<string, string | null> = {"GifDelayTime":"100", "GifDisposalType":"2"};
-        let ret = await gifInCompleteFrameMetadataTest(logger, picture, modifyProperties);
+        let ret = await gifInCompleteFrameMetadataTest(logger, picture, modifyProperties, image.MetadataType.GIF_METADATA);
         expect(ret).assertTrue();
         done();
       } catch (error) {
@@ -1145,5 +1225,628 @@ export default function imageGif() {
         done();
       }
     });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0100
+     * @tc.desc        Test HEIFS multi-frame decode with metadata verification
+     *                 1.create HEIFS imagesource
+     *                 2.createPictureAtIndex for each frame
+     *                 3.verify delay time metadata and image info
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0100", Level.LEVEL0, async (done:() => void)=>{
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0100");
+      let fileName = "heif.heic";
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let ret = await heifsIncompleteFrameTest(logger, fileName);
+        logger.log("heifsIncompleteFrameTest success ret is: " + ret);
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0200
+     * @tc.desc        Test HEIFS picture marshalling and unmarshalling
+     *                 1.create HEIFS picture at index 0
+     *                 2.marshalling picture to MessageSequence
+     *                 3.unmarshalling and compare metadata properties
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0200", Level.LEVEL0, async (done:() => void)=>{
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0200");
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        try {
+          let imageSourceApi = image.createImageSource(filePath);
+          let picture: image.Picture = await imageSourceApi.createPictureAtIndex(0);
+          let ret = await gifInCompleteFrameTestMarshalling(logger, picture, image.MetadataType.HEIFS_METADATA);
+          expect(ret).assertTrue();
+          done();
+        } catch (error) {
+          logger.log("error is: " + JSON.stringify(error));
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0300
+     * @tc.desc        Test HEIFS metadata set and get for delay time
+     *                 1.create HEIFS picture at index 0
+     *                 2.set HeifsDelayTime metadata to 100
+     *                 3.get metadata and verify delay time value
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0300", Level.LEVEL0, async (done:() => void)=>{
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_0300");
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        try {
+          let imageSourceApi = image.createImageSource(filePath);
+          let picture: image.Picture = await imageSourceApi.createPictureAtIndex(0);
+          let modifyProperties: Record<string, string | null> = {"HeifsDelayTime":"100"};
+          let ret = await gifInCompleteFrameMetadataTest(logger, picture, modifyProperties, image.MetadataType.HEIFS_METADATA);
+          expect(ret).assertTrue();
+          done();
+        } catch (error) {
+          logger.log("error is: " + JSON.stringify(error));
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_MIMETYPE_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_MIMETYPE_0100
+     * @tc.desc        Test HEIFS picture MIME type verification
+     *                 1.create HEIFS picture at index 0
+     *                 2.get main pixelmap from picture
+     *                 3.verify MIME type is "image/heif-sequence"
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_MIMETYPE_0100", Level.LEVEL0, async (done:() => void)=>{
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_MIMETYPE_0100");
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let ret = false;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        try {
+          let imageSourceApi = image.createImageSource(filePath);
+          let picture: image.Picture = await imageSourceApi.createPictureAtIndex(0);
+          let mainPixelMap: image.PixelMap = picture.getMainPixelmap();
+          let dstImageInfo: image.ImageInfo = await mainPixelMap.getImageInfo();
+          ret = dstImageInfo.mimeType == "image/heif-sequence";
+          await picture?.release();
+          await mainPixelMap?.release();
+        } catch (error) {
+          logger.log("checkPictureAtIndex getMetadata failed error is: " + JSON.stringify(error));
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPIXELMAP_MIMETYPE_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPIXELMAP_MIMETYPE_0100
+     * @tc.desc        Test HEIFS create pixelmap and verify MIME type and dimensions
+     *                 1.create HEIFS imagesource
+     *                 2.create pixelmap from imagesource
+     *                 3.compare MIME type, width and height
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPIXELMAP_MIMETYPE_0100", Level.LEVEL0, async (done:() => void)=>{
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPIXELMAP_MIMETYPE_0100");
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let ret = false;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        try {
+          let imageSourceApi = image.createImageSource(filePath);
+          let pixelmap: image.PixelMap = await imageSourceApi.createPixelMap();
+          let srcImageInfo = await imageSourceApi.getImageInfo();
+          let dstImageInfo: image.ImageInfo = await pixelmap.getImageInfo();
+          ret = (srcImageInfo.mimeType == dstImageInfo.mimeType) &&
+            (srcImageInfo.size.width === dstImageInfo.size.width) &&
+            (srcImageInfo.size.height === dstImageInfo.size.height);
+          await pixelmap?.release();
+          await imageSourceApi?.release();
+        } catch (error) {
+          logger.log("checkPictureAtIndex getMetadata failed error is: " + JSON.stringify(error));
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_INTERMEDIATE_FRAME_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_INTERMEDIATE_FRAME_0100
+     * @tc.desc        Test HEIFS decode at specific index with metadata verification
+     *                 1.create HEIFS imagesource
+     *                 2.createPictureAtIndex at index 10
+     *                 3.verify picture metadata and image info
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_INTERMEDIATE_FRAME_0100", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_INTERMEDIATE_FRAME_0100";
+      let logger = new Logger(testTag);
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let ret = false;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let picture: image.Picture | undefined;
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          let delayTimeList: Array<number> = await imageSourceApi.getDelayTimeList();
+          picture = await imageSourceApi.createPictureAtIndex(10);
+          ret = await heifsCheckPictureAtIndex(logger, 10, imageSourceApi, picture, delayTimeList);
+          logger.log("createPictureAtIndex success picture is: " + (picture != undefined));
+        } catch (error) {
+          logger.log("checkPictureAtIndex picture failed error is: " + JSON.stringify(error));
+        } finally {
+          if (picture != undefined) {
+            await picture?.release();
+          }
+          if (imageSourceApi != undefined) {
+            await imageSourceApi?.release();
+          }
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_FRAME_SKIPPING_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_FRAME_SKIPPING_0100
+     * @tc.desc        Test HEIFS decode at even indices with metadata verification
+     *                 1.create HEIFS imagesource and get frameCount
+     *                 2.createPictureAtIndex for even indices (0, 2, 4...)
+     *                 3.verify each frame's metadata and image info
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_FRAME_SKIPPING_0100", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_FRAME_SKIPPING_0100";
+      let logger = new Logger(testTag);
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let ret = true;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let picture: image.Picture | undefined;
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          let frameCount: number = await imageSourceApi.getFrameCount();
+          logger.log("get frameCount num is: " + frameCount);
+          let delayTimeList: Array<number> = await imageSourceApi.getDelayTimeList();
+          for (let index = 0; index < frameCount; index += 2) {
+            picture = await imageSourceApi.createPictureAtIndex(index);
+            let temp = await heifsCheckPictureAtIndex(logger, index, imageSourceApi, picture, delayTimeList);
+            ret = ret && temp;
+          }
+          logger.log("Frame skipping createPictureAtIndex success picture ret is: " + ret);
+        } catch (error) {
+          logger.log("Frame skipping checkPictureAtIndex picture failed error is: " + JSON.stringify(error));
+          ret = false;
+        } finally {
+          if (picture != undefined) {
+            await picture?.release();
+          }
+          if (imageSourceApi != undefined) {
+            await imageSourceApi?.release();
+          }
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_DECODING_FORMAT_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_DECODING_FORMAT_0100
+     * @tc.desc        Test HEIFS format support verification
+     *                 1.get supported formats from API
+     *                 2.get supported formats from imagesource
+     *                 3.verify "image/heif-sequence" is included
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_DECODING_FORMAT_0100", Level.LEVEL0, async (done:() => void)=>{
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_DECODING_FORMAT_0100");
+      let fileName = "heif.heic";
+      let context: common.UIAbilityContext | undefined = await AppStorage.get('thisContext');
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        const srcSupportedFormatsList: Array<string> = await image.getImageSourceSupportedFormats();
+        const dstSupportedFormatsList: Array<string> = image.createImageSource(context!.filesDir + '/' + "test.jpg").supportedFormats;
+        console.log(`${logger}, srcSupportedFormatsList: ` + JSON.stringify(srcSupportedFormatsList));
+        console.log(`${logger}, dstSupportedFormatsList: ` + JSON.stringify(dstSupportedFormatsList));
+        const ret = (JSON.stringify(srcSupportedFormatsList) == JSON.stringify(dstSupportedFormatsList));
+        console.log("compare result is: " + ret);
+        expect(ret).assertTrue();
+        expect(srcSupportedFormatsList.includes('image/heif-sequence')).assertTrue();
+        expect(dstSupportedFormatsList.includes('image/heif-sequence')).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0100
+     * @tc.desc        Verify batch modify and read HEIFS metadata properties for heic file
+     *                 1.Create image source from heic file using fd
+     *                 2.Read modified properties using readImageMetadata API
+     *                 4.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0100", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0100";
+      let logger = new Logger(testTag);
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let propertyKeys = ["HeifsDelayTime"]
+      let ret = true;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          let frameCount: number = await imageSourceApi.getFrameCount();
+          logger.log("get frameCount num is: " + frameCount);
+          let delayTimeList: Array<number> = await imageSourceApi.getDelayTimeList();
+          
+          for (let index = 0; index < frameCount; index++) {
+            const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata(propertyKeys, index);
+            if (exifValue.heifsMetadata != undefined) {
+              let actualValue: number = exifValue.heifsMetadata!.heifsDelayTime as number;
+              ret = ret && actualValue == delayTimeList[index];
+            }
+          }
+          logger.log("Frame skipping readImageMetadata success picture ret is: " + ret);
+        } catch (error) {
+          logger.log("Frame skipping readImageMetadata picture failed error is: " + JSON.stringify(error));
+          ret = false;
+        } finally {
+          if (imageSourceApi != undefined) {
+            await imageSourceApi?.release();
+          }
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0200
+     * @tc.desc        Verify HEIFS metadata getProperties and getAllProperties for HEIFS file
+     *                 1.Create image source from heic file
+     *                 2.Read metadata using readImageMetadata API for each frame
+     *                 3.Get properties using both getProperties and getAllProperties
+     *                 4.Verify both methods return same delay time value
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0200", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0200";
+      let logger = new Logger(testTag);
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let propertyKeys = ["HeifsDelayTime"]
+      let ret = true;
+      let actualValue1: string | null;
+      let actualValue2: string | null;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          let frameCount: number = await imageSourceApi.getFrameCount();
+          logger.log("get frameCount num is: " + frameCount);
+          let delayTimeList: Array<number> = await imageSourceApi.getDelayTimeList();
+
+          for (let index = 0; index < frameCount; index++) {
+            const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata(propertyKeys, index);
+            if (exifValue.heifsMetadata != undefined) {
+              let exifRecord1: Record<string, string | null> = await exifValue.heifsMetadata!.getProperties(propertyKeys);
+              let exifRecord2: Record<string, string | null> = await exifValue.heifsMetadata!.getAllProperties();
+              actualValue1 = exifRecord1[propertyKeys[0]] as string;
+              actualValue2 = exifRecord2[propertyKeys[0]] as string;
+              ret = ret && actualValue1 == JSON.stringify(delayTimeList[index]) && actualValue2 == JSON.stringify(delayTimeList[index]);
+            }
+          }
+          logger.log("Frame skipping readImageMetadata success picture ret is: " + ret);
+        } catch (error) {
+          logger.log("Frame skipping readImageMetadata picture failed error is: " + JSON.stringify(error));
+          ret = false;
+        } finally {
+          if (imageSourceApi != undefined) {
+            await imageSourceApi?.release();
+          }
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0300
+     * @tc.desc        Verify HEIFS metadata setProperties and getProperties for standard metadata
+     *                 1.Read HEIFS metadata using readImageMetadata
+     *                 2.Get property value using getProperties
+     *                 3.Modify property value using setProperties
+     *                 4.Verify modified value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0300", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0300";
+      let logger = new Logger(testTag);
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let result: boolean = true;
+      let heifsMetadataKey: string[] = ["HeifsDelayTime"];
+      let expectedValue: Record<string, string | null> = {"HeifsDelayTime": "60"}
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          let frameCount: number = await imageSourceApi.getFrameCount();
+          logger.log("get frameCount num is: " + frameCount);
+          for (let index = 0; index < frameCount; index++) {
+            const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata(heifsMetadataKey, index);
+            if (exifValue.heifsMetadata != undefined) {
+              let actualValue1: Record<string, string | null> = await exifValue.heifsMetadata!.getProperties(["HeifsDelayTime"]);
+              logger.log("readImageMetadata old actualValue1 is: " + actualValue1["HeifsDelayTime"]);
+
+              await exifValue.heifsMetadata!.setProperties(expectedValue);
+              let actualValue2: Record<string, string | null> = await exifValue.heifsMetadata!.getProperties(["HeifsDelayTime"]);
+              logger.log("readImageMetadata new actualValue2 is: " + actualValue2["HeifsDelayTime"]);
+              result = actualValue2["HeifsDelayTime"] == expectedValue["HeifsDelayTime"];
+            }
+          }
+        } catch (error) {
+          logger.log("Error setMetadata err: " + error);
+          result = false;
+        }
+        logger.log("readImageMetadata setMetadata result is: " + result);
+        expect(result).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0400
+     * @tc.desc        Verify HEIFS metadata clone functionality
+     *                 1.Read HEIFS metadata using readImageMetadata
+     *                 2.Clone metadata object using clone API
+     *                 3.Get properties from both original and cloned objects
+     *                 4.Verify cloned properties match original values
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0400", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFSMETADATA_PROMISE_0400";
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let result: boolean = true;
+      let heifsMetadataKey: string[] = ["HeifsDelayTime"];
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        console.info(`${testTag} device is not support decode heif!`);
+        done();
+      } else {
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          const exifValue1: image.ImageMetadata = await imageSourceApi.readImageMetadata(heifsMetadataKey);
+          if (exifValue1.heifsMetadata != undefined) {
+            let actualValue1: Record<string, string | null> = await exifValue1.heifsMetadata!.getProperties(heifsMetadataKey);
+            console.info(`${testTag} readImageMetadata actualValue1 is: ${actualValue1}`);
+
+            let exifValue2: image.HeifsMetadata = await exifValue1.heifsMetadata!.clone();
+
+            let actualValue2: Record<string, string | null> = await exifValue2!.getProperties(heifsMetadataKey);
+            console.info(`${testTag} readImageMetadata actualValue1 is: ${actualValue2}`);
+
+            if (actualValue1!["HeifsDelayTime"] !== actualValue2!["HeifsDelayTime"]) {
+              result = false;
+              console.info(`${testTag} readImageMetadata clone key: ${heifsMetadataKey}. actualValue1: ${actualValue1}. actualValue2: ${actualValue2}`);
+            }
+          }
+        } catch (error) {
+          console.error(`${testTag} Error clone err: ${error}`);
+          result = false;
+        }
+        console.info(`${testTag} readImageMetadata clone result is: ${result}`);
+        expect(result).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0100
+     * @tc.desc        Test HEIFS create picture with out-of-bounds index error
+     *                 1.create HEIFS imagesource and get frameCount
+     *                 2.createPictureAtIndex with index equals frameCount
+     *                 3.verify UNSUPPORTED_OPTIONS error code
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0100";
+      let logger = new Logger(testTag);
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let ret = false;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let picture: image.Picture | undefined;
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          let frameCount: number = await imageSourceApi.getFrameCount();
+          logger.log("get frameCount num is: " + frameCount);
+          picture = await imageSourceApi.createPictureAtIndex(frameCount);
+          logger.log("createPictureAtIndex success picture is: " + (picture != undefined));
+        } catch (error) {
+          logger.log("Border value checkPictureAtIndex picture failed error is: " + JSON.stringify(error));
+          ret = handleError(testTag, error as GenericError | Array<GenericError>, UNSUPPORTED_OPTIONS);
+        } finally {
+          if (picture != undefined) {
+            await picture?.release();
+          }
+          if (imageSourceApi != undefined) {
+            await imageSourceApi?.release();
+          }
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0200
+     * @tc.desc        Test HEIFS create picture with negative index error
+     *                 1.create HEIFS imagesource
+     *                 2.createPictureAtIndex with index -1
+     *                 3.verify UNSUPPORTED_OPTIONS error code
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0200";
+      let logger = new Logger(testTag);
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let ret = false;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let picture: image.Picture | undefined;
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          picture = await imageSourceApi.createPictureAtIndex(-1);
+          logger.log("createPictureAtIndex success picture is: " + (picture != undefined));
+        } catch (error) {
+          logger.log("Border value checkPictureAtIndex picture failed error is: " + JSON.stringify(error));
+          ret = handleError(testTag, error as GenericError | Array<GenericError>, UNSUPPORTED_OPTIONS);
+        } finally {
+          if (picture != undefined) {
+            await picture?.release();
+          }
+          if (imageSourceApi != undefined) {
+            await imageSourceApi?.release();
+          }
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0300
+     * @tc.desc        Test HEIFS writeImageMetadata error handling
+     *                 1.create HEIFS imagesource
+     *                 2.create HeifsMetadata instance and writeImageMetadata
+     *                 3.verify READ_FAILED error code
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0300", Level.LEVEL0, async (done:() => void)=>{
+      let testTag: string = "SUB_MULTIMEDIA_IMAGE_HEIFS_CREATEPICTURE_ERROR_0300";
+      let logger = new Logger(testTag);
+      let fileName = "heif.heic";
+      let filePath = await getFilePath(fileName);
+      let ret = false;
+      if (!(fileName.toLowerCase().endsWith('.heic') && isSupportHEICDecode)) {
+        logger.log("device is not support decode heif!");
+        done();
+      } else {
+        let heifsMetadata1 = image.HeifsMetadata.createInstance();
+        const imageMetadata: image.ImageMetadata = {
+          heifsMetadata: heifsMetadata1
+        };
+        let imageSourceApi = image.createImageSource(filePath);
+        try {
+          await imageSourceApi.writeImageMetadata(imageMetadata);
+          logger.log("writeImageMetadata success");
+        } catch (error) {
+          logger.log("Border value writeImageMetadata failed error is: " + JSON.stringify(error));
+          ret = handleError(testTag, error as GenericError | Array<GenericError>, READ_FAILED);
+        } finally {
+          if (imageSourceApi != undefined) {
+            await imageSourceApi?.release();
+          }
+        }
+        expect(ret).assertTrue();
+        done();
+      }
+    });
+
+
   });
 }
