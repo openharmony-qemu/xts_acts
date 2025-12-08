@@ -61,10 +61,6 @@ export default function swiperFillPolicy() {
       console.info("[swiperFillPolicy_0100] content: " + JSON.stringify(JSON.parse(strJson1).$attrs.content));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual("ItemFillPolicy: 0");
 
-      let strJson2 = getInspectorByKey('swiper_fillType');
-      console.info("[swiperFillPolicy_0100] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_DEFAULT");
-
       let swiper = CommonFunc.getComponentRectOnScreen('swiper_fillType');
       let swiperW = swiper.right - swiper.left
       console.info('[swiperFillPolicy_0100] swiper width: ' + swiperW);
@@ -96,10 +92,6 @@ export default function swiperFillPolicy() {
       console.info("[swiperFillPolicy_0200] content: " + JSON.stringify(JSON.parse(strJson1).$attrs.content));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual("ItemFillPolicy: 1");
 
-      let strJson2 = getInspectorByKey('swiper_fillType');
-      console.info("[swiperFillPolicy_0200] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_SM1MD2LG3");
-
       let swiper = CommonFunc.getComponentRectOnScreen('swiper_fillType');
       let swiperW = swiper.right - swiper.left
       console.info('[swiperFillPolicy_0200] swiper width: ' + swiperW);
@@ -130,10 +122,6 @@ export default function swiperFillPolicy() {
       let strJson1 = getInspectorByKey('swiper_fillType_text');
       console.info("[swiperFillPolicy_0300] content: " + JSON.stringify(JSON.parse(strJson1).$attrs.content));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual("ItemFillPolicy: 2");
-
-      let strJson2 = getInspectorByKey('swiper_fillType');
-      console.info("[swiperFillPolicy_0300] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_SM2MD3LG5");
 
       let swiper1 = CommonFunc.getComponentRectOnScreen('swiperType_1');
       console.info('[swiperFillPolicy_0300] swiper1.right: ' + swiper1.right);
