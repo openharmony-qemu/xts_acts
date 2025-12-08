@@ -216,6 +216,8 @@ export default function RichEditorStabillity003() {
       await CommonFunc.sleep(100);
       await driver.click(getBounds.left + 190, getBounds.top + 190);
       await CommonFunc.sleep(100);
+      await driver.click(getBounds.left + 190, getBounds.top + 190);
+      await CommonFunc.sleep(300);
       let getPosition = await driver.findComponent(ON.id('getPosition'));
       await getPosition.click();
       await CommonFunc.sleep(300);
