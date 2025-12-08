@@ -25,12 +25,12 @@ export default function FinishCallbackLogicallyTest() {
     await Utils.pushPage("componentapi/AnimateOptionFinishCallbackTest", done)
     })
     /**
-     * @tc.number  : FinishCallbackLogicallyTest_0100
-     * @tc.name    : FinishCallbackLogicallyTest_0100
-     * @tc.desc    : Test the ARKUI_FINISH_CALLBACK_LOGICALLY.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number  FinishCallbackLogicallyTest_0100
+     * @tc.name    FinishCallbackLogicallyTest_0100
+     * @tc.desc    Test the ARKUI_FINISH_CALLBACK_LOGICALLY.
+     * @tc.level   LEVEL1
+     * @tc.size    MediumTest
+     * @tc.type    Function
      */
     it('FinishCallbackLogicallyTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       try{
