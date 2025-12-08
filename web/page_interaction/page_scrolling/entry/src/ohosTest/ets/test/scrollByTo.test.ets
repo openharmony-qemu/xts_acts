@@ -41,12 +41,12 @@ export default function webViewSrollableJsunit() {
         if (!("scrollByTo" == pages.name)) {
           console.info("get scroll state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await driver.waitForComponent(ON.id("scrollByToButton"), 10000);
           console.info("push scroll page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scroll page error: " + err);
       }
+      await driver.waitForComponent(ON.id("scrollByToButton"), 10000);
       done()
     });
     beforeEach(async  (done: Function) =>{
