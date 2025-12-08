@@ -32,13 +32,12 @@ export default function ConcurrencyBaseTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SIMPLE_001
-         * @tc.name: testSendableDateSimple001
-         * @tc.desc: checks Sendable with primitive type
-         * @tc.author: maksim-khramov
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 1
+         * @tc.name   testSendableDateSimple001
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SIMPLE_001
+         * @tc.desc   checks Sendable with primitive type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testSendableDateSimple001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
           let input: Date = new Date();

@@ -26,14 +26,14 @@ export default function datePickerOnDateChangeTest() {
       await Utils.pushPage(`datepicker/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ONDATECHANGE_0100
-    * @tc.name       : testDatePickerOnDateChange001
-    * @tc.desc       : test OnAccept event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDatePickerOnDateChange001
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ONDATECHANGE_0100
+     * @tc.desc   test OnAccept event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDatePickerOnDateChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.pickerFlingComponent('datePickerOnDateChangeTest', false, true);
       await Utils.sleep(2000)

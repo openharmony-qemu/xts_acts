@@ -45,9 +45,12 @@ export default function flexMargin_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoFlexMargin
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_0500
-     * @tc.name testFlexItemAlignAutoFlexMargin
-     * @tc.desc the margin of parent component set to 10
+     * @tc.desc   the margin of parent component set to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoFlexMargin',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoFlexMargin START');

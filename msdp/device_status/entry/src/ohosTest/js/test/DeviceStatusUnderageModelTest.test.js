@@ -53,7 +53,6 @@ export default function DeviceStatusUnderageModelTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0100
      * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0100
      * @tc.desc   UnderageModel callback interface test
@@ -76,7 +75,6 @@ export default function DeviceStatusUnderageModelTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0200
      * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0200
      * @tc.desc   UnderageModel callback interface test
@@ -104,7 +102,6 @@ export default function DeviceStatusUnderageModelTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0300
      * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0300
      * @tc.desc   UnderageModel callback interface test
@@ -127,7 +124,6 @@ export default function DeviceStatusUnderageModelTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0400
      * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0400
      * @tc.desc   UnderageModel callback interface test
@@ -150,7 +146,6 @@ export default function DeviceStatusUnderageModelTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0500
      * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0500
      * @tc.desc   UnderageModel callback interface test
@@ -178,7 +173,6 @@ export default function DeviceStatusUnderageModelTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0600
      * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0600
      * @tc.desc   UnderageModel callback interface test

@@ -58,14 +58,14 @@ export default function WebSchemeHandlerResponse() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
-    * @tc.name       : WebSchemeHandlerResponse0100
-    * @tc.desc       : test WebSchemeHandlerResponse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebSchemeHandlerResponse0100
+     * @tc.number SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+     * @tc.desc   test WebSchemeHandlerResponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebSchemeHandlerResponse0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebSchemeHandlerResponse0100", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

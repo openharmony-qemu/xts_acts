@@ -26,37 +26,37 @@ export default function textInputMaxFontSizeTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAX_FONT_SIZE_0001
-     * @tc.name: testTextInputMaxFontSize001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxFontSize001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAX_FONT_SIZE_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxFontSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxFontSize001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAX_FONT_SIZE_0002
-     * @tc.name: testTextInputMaxFontSize002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxFontSize002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAX_FONT_SIZE_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxFontSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxFontSize002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAX_FONT_SIZE_0003
-     * @tc.name: testTextInputMaxFontSize003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxFontSize003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAX_FONT_SIZE_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxFontSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxFontSize003()).assertEqual(0)

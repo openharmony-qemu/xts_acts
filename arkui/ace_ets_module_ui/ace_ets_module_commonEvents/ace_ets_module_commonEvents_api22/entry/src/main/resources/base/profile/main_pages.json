@@ -1,6 +1,7 @@
 {
     "src": [
         "MainAbility/pages/index/index",
-        "MainAbility/pages/HasAxisTest/HasAxisTest"
+        "MainAbility/pages/HasAxisTest/HasAxisTest",
+        "MainAbility/pages/LongPress/allowableMovement"
     ]
 }

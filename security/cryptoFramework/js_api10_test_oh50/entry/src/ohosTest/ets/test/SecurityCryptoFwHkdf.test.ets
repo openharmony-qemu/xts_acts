@@ -41,12 +41,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0100
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0100
-     * @tc.name Test HKDF derived algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -77,12 +77,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0200
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0200
-     * @tc.name Test HKDF derived algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -113,12 +113,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0300
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0300
-     * @tc.name Test HKDF algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -149,12 +149,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0400
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0400
-     * @tc.name Test HKDF derived algorithm traversal test, keySize = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -176,12 +176,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0500
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0500
-     * @tc.name Test HKDF derived algorithm traversal test, keySize = 1. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -202,12 +202,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0600
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0600
-     * @tc.name Test HKDF derived algorithm traversal test, keySize = 31. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -228,12 +228,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0700
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0700
-     * @tc.name Test HKDF derived algorithm traversal test, keySize = 33. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -254,12 +254,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0800
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0800
-     * @tc.name Test HKDF derived algorithm traversal test, keySize = mdSize * 255 + 1. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -280,12 +280,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_0900
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_0900
-     * @tc.name Test HKDF derived algorithm traversal test, keySize = mdSize * 255 + 1. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -306,12 +306,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1000
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1000
-     * @tc.name Test HKDF derived algorithm traversal test, keySize = mdSize * 255 + 1. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -332,12 +332,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1100
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1100
-     * @tc.name Test HKDF derived algorithm traversal test, saltLen = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -358,12 +358,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1200
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1200
-     * @tc.name Test HKDF derived algorithm traversal test, keyLen = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "";
@@ -384,12 +384,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1300
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1300
-     * @tc.name Test HKDF derived algorithm traversal test, keyLen = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "";
@@ -410,12 +410,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1400
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1400
-     * @tc.name Test HKDF derived algorithm traversal test, keyLen = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "";
@@ -436,12 +436,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1500
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1500
-     * @tc.name Test HKDF derived algorithm traversal test, infoLen = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -462,12 +462,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1600
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1600
-     * @tc.name Test HKDF derived algorithm traversal test, infoLen = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -488,12 +488,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1700
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1700
-     * @tc.name Test HKDF derived algorithm traversal test, saltLen = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -514,12 +514,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1800
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1800
-     * @tc.name Test HKDF derived algorithm traversal test, saltLen = 0. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let key: string = "hello world";
@@ -540,12 +540,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_1900
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_1900
-     * @tc.name Test HKDF derived algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -559,12 +559,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_2000
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_2000
-     * @tc.name Test HKDF derived algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -578,12 +578,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_2100
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_2100
-     * @tc.name Test HKDF derived algorithm traversal test, KAT. Promise style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -617,12 +617,12 @@ export default function SecurityCryptoFwHkdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_2200
      * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_2200
-     * @tc.name Test HKDF derived algorithm traversal test, KAT. Callback style. Process success
-     * @tc.desc algorithm is HKDF
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Hkdf_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

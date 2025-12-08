@@ -21,7 +21,6 @@ export default function iPCCApiTest() {
   describe('IPCCApiTest', () => {
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_JoinWorkThread_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_JoinWorkThread_0100
      * @tc.desc   test OH_IPCSkeleton_JoinWorkThread
@@ -36,7 +35,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_StopWorkThread_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_StopWorkThread_0100
      * @tc.desc   test OH_IPCSkeleton_StopWorkThread
@@ -51,7 +49,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_GetCallingTokenId_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_GetCallingTokenId_0100
      * @tc.desc   test OH_IPCSkeleton_GetCallingTokenId
@@ -66,7 +63,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_GetFirstTokenId_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_GetFirstTokenId_0100
      * @tc.desc   test OH_IPCSkeleton_GetFirstTokenId
@@ -81,7 +77,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_GetSelfTokenId_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_GetSelfTokenId_0100
      * @tc.desc   test OH_IPCSkeleton_GetSelfTokenId
@@ -96,7 +91,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_GetCallingPid_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_GetCallingPid_0100
      * @tc.desc   test OH_IPCSkeleton_GetCallingPid
@@ -111,7 +105,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_GetCallingUid_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_GetCallingUid_0100
      * @tc.desc   test OH_IPCSkeleton_GetCallingUid
@@ -126,7 +119,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_IsLocalCalling_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_IsLocalCalling_0100
      * @tc.desc   test OH_IPCSkeleton_IsLocalCalling
@@ -141,7 +133,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_SetMaxWorkThreadNum_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_SetMaxWorkThreadNum_0100
      * @tc.desc   test OH_IPCSkeleton_SetMaxWorkThreadNum
@@ -156,7 +147,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_ResetCallingIdentity_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_ResetCallingIdentity_0100
      * @tc.desc   test OH_IPCSkeleton_ResetCallingIdentity
@@ -171,7 +161,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_SetCallingIdentity_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_SetCallingIdentity_0100
      * @tc.desc   test OH_IPCSkeleton_SetCallingIdentity
@@ -186,7 +175,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCSkeleton_IsHandlingTransaction_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCSkeleton_IsHandlingTransaction_0100
      * @tc.desc   test OH_IPCSkeleton_IsHandlingTransaction
@@ -201,7 +189,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCRemoteStub_Create_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCRemoteStub_Create_0100
      * @tc.desc   test OH_IPCRemoteStub_Create
@@ -216,7 +203,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCRemoteStub_Destroy_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCRemoteStub_Destroy_0100
      * @tc.desc   test OH_IPCRemoteStub_Destroy
@@ -231,7 +217,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCRemoteProxy_Destroy_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCRemoteProxy_Destroy_0100
      * @tc.desc   test OH_IPCRemoteProxy_Destroy
@@ -246,7 +231,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCRemoteProxy_SendRequest_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCRemoteProxy_SendRequest_0100
      * @tc.desc   test OH_IPCRemoteProxy_SendRequest
@@ -261,7 +245,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCRemoteProxy_GetInterfaceDescriptor_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCRemoteProxy_GetInterfaceDescriptor_0100
      * @tc.desc   test OH_IPCRemoteProxy_GetInterfaceDescriptor
@@ -276,7 +259,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCDeathRecipient_Create_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCDeathRecipient_Create_0100
      * @tc.desc   test OH_IPCDeathRecipient_Create
@@ -291,7 +273,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCDeathRecipient_Destroy_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCDeathRecipient_Destroy_0100
      * @tc.desc   test OH_IPCDeathRecipient_Destroy
@@ -306,7 +287,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCRemoteProxy_AddDeathRecipient_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCRemoteProxy_AddDeathRecipient_0100
      * @tc.desc   test OH_IPCRemoteProxy_AddDeathRecipient
@@ -321,7 +301,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCRemoteProxy_RemoveDeathRecipient_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCRemoteProxy_RemoveDeathRecipient_0100
      * @tc.desc   test OH_IPCRemoteProxy_RemoveDeathRecipient
@@ -336,7 +315,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCRemoteProxy_IsRemoteDead_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCRemoteProxy_IsRemoteDead_0100
      * @tc.desc   test OH_IPCRemoteProxy_IsRemoteDead
@@ -351,7 +329,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_Create_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_Create_0100
      * @tc.desc   test OH_IPCParcel_Create
@@ -366,7 +343,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_Destroy_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_Destroy_0100
      * @tc.desc   test OH_IPCParcel_Destroy
@@ -381,7 +357,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_GetDataSize_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_GetDataSize_0100
      * @tc.desc   test OH_IPCParcel_GetDataSize
@@ -396,7 +371,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_GetWritableBytes_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_GetWritableBytes_0100
      * @tc.desc   test OH_IPCParcel_GetWritableBytes
@@ -411,7 +385,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_GetReadableBytes_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_GetReadableBytes_0100
      * @tc.desc   test OH_IPCParcel_GetReadableBytes
@@ -426,7 +399,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_GetReadPosition_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_GetReadPosition_0100
      * @tc.desc   test OH_IPCParcel_GetReadPosition
@@ -441,7 +413,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_GetWritePosition_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_GetWritePosition_0100
      * @tc.desc   test OH_IPCParcel_GetWritePosition
@@ -456,7 +427,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_RewindReadPosition_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_RewindReadPosition_0100
      * @tc.desc   test OH_IPCParcel_RewindReadPosition
@@ -471,7 +441,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_RewindWritePosition_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_RewindWritePosition_0100
      * @tc.desc   test OH_IPCParcel_RewindWritePosition
@@ -486,7 +455,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteInt8_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteInt8_0100
      * @tc.desc   test OH_IPCParcel_WriteInt8
@@ -501,7 +469,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadInt8_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadInt8_0100
      * @tc.desc   test OH_IPCParcel_ReadInt8
@@ -516,7 +483,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteInt16_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteInt16_0100
      * @tc.desc   test OH_IPCParcel_WriteInt16
@@ -531,7 +497,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadInt16_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadInt16_0100
      * @tc.desc   test OH_IPCParcel_ReadInt16
@@ -546,7 +511,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteInt32_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteInt32_0100
      * @tc.desc   test OH_IPCParcel_WriteInt32
@@ -561,7 +525,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadInt32_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadInt32_0100
      * @tc.desc   test OH_IPCParcel_ReadInt32
@@ -576,7 +539,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteInt64_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteInt64_0100
      * @tc.desc   test OH_IPCParcel_WriteInt64
@@ -591,7 +553,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadInt64_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadInt64_0100
      * @tc.desc   test OH_IPCParcel_ReadInt64
@@ -606,7 +567,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteFloat_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteFloat_0100
      * @tc.desc   test OH_IPCParcel_WriteFloat
@@ -621,7 +581,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadFloat_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadFloat_0100
      * @tc.desc   test OH_IPCParcel_ReadFloat
@@ -636,7 +595,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteDouble_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteDouble_0100
      * @tc.desc   test OH_IPCParcel_WriteDouble
@@ -651,7 +609,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadDouble_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadDouble_0100
      * @tc.desc   test OH_IPCParcel_ReadDouble
@@ -666,7 +623,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteString_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteString_0100
      * @tc.desc   test OH_IPCParcel_WriteString
@@ -681,7 +637,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadString_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadString_0100
      * @tc.desc   test OH_IPCParcel_ReadString
@@ -696,7 +651,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteBuffer_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteBuffer_0100
      * @tc.desc   test OH_IPCParcel_WriteBuffer
@@ -711,7 +665,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadBuffer_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadBuffer_0100
      * @tc.desc   test OH_IPCParcel_ReadBuffer
@@ -726,7 +679,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteRemoteStub_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteRemoteStub_0100
      * @tc.desc   test OH_IPCParcel_WriteRemoteStub
@@ -741,7 +693,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadRemoteStub_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadRemoteStub_0100
      * @tc.desc   test OH_IPCParcel_ReadRemoteStub
@@ -756,7 +707,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteRemoteProxy_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteRemoteProxy_0100
      * @tc.desc   test OH_IPCParcel_WriteRemoteProxy
@@ -771,7 +721,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadRemoteProxy_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadRemoteProxy_0100
      * @tc.desc   test OH_IPCParcel_ReadRemoteProxy
@@ -786,7 +735,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteFileDescriptor_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteFileDescriptor_0100
      * @tc.desc   test OH_IPCParcel_WriteFileDescriptor
@@ -801,7 +749,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadFileDescriptor_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadFileDescriptor_0100
      * @tc.desc   test OH_IPCParcel_ReadFileDescriptor
@@ -816,7 +763,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_Append_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_Append_0100
      * @tc.desc   test OH_IPCParcel_Append
@@ -831,7 +777,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteInterfaceToken_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteInterfaceToken_0100
      * @tc.desc   test OH_IPCParcel_WriteInterfaceToken
@@ -846,7 +791,6 @@ export default function iPCCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadInterfaceToken_0100
      * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadInterfaceToken_0100
      * @tc.desc   test OH_IPCParcel_ReadInterfaceToken

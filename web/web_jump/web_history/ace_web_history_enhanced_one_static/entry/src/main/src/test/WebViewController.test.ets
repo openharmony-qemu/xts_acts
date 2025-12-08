@@ -15,7 +15,6 @@
 
 import { beforeAll, beforeEach, describe, it, Level, Size, TestType } from '../../../hypium/index';
 import Utils from './Util.test';
-import { sendEventByKey } from '@internal.full.global';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -55,14 +54,14 @@ export default function WebViewControllerTest() {
       console.info('webViewController beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_BACKFORWARDLIST_CURRENTINDEX_TITLE_0100
-    * @tc.name       : testBackForwardListCurrentIndexStatic001
-    * @tc.desc       : test BackForwardList CurrentIndex
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testBackForwardListCurrentIndexStatic001
+     * @tc.number SUB_WEB_BACKFORWARDLIST_CURRENTINDEX_TITLE_0100
+     * @tc.desc   test BackForwardList CurrentIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBackForwardListCurrentIndexStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testBackForwardListCurrentIndex001', 10)
@@ -74,14 +73,14 @@ export default function WebViewControllerTest() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_BACKFORWARDLIST_SIZE_TITLE_0100
-    * @tc.name       : testBackForwardListCurrentSizeStatic001
-    * @tc.desc       : test BackForwardList Size
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testBackForwardListCurrentSizeStatic001
+     * @tc.number SUB_WEB_BACKFORWARDLIST_SIZE_TITLE_0100
+     * @tc.desc   test BackForwardList Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBackForwardListCurrentSizeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testBackForwardListCurrentSize001', 10)

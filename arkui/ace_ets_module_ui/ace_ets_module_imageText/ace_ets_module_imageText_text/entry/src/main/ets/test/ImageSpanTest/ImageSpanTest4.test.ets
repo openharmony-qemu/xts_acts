@@ -43,13 +43,13 @@ export default function ImageSpanTest4() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_imageSpanTest4_0100
-     * @tc.name      imageSpanTest4_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   imageSpanTest4_0100
+     * @tc.number SUB_ACE_imageSpanTest4_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest4_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanTest4_0100 START');
@@ -63,12 +63,12 @@ export default function ImageSpanTest4() {
     });
 
     /**
-     * @tc.number    SUB_ACE_imageSpanTest4_0200
-     * @tc.name      imageSpanTest4_0200
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   imageSpanTest4_0200
+     * @tc.number SUB_ACE_imageSpanTest4_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest4_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanTest4_0200 START');
@@ -83,12 +83,12 @@ export default function ImageSpanTest4() {
     });
 
     /**
-     * @tc.number    SUB_ACE_imageSpanTest4_0300
-     * @tc.name      imageSpanTest4_0300
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   imageSpanTest4_0300
+     * @tc.number SUB_ACE_imageSpanTest4_0300
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest4_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanTest4_0300 START');
@@ -102,12 +102,12 @@ export default function ImageSpanTest4() {
     });
 
     /**
-     * @tc.number    SUB_ACE_imageSpanTest4_0400
-     * @tc.name      imageSpanTest4_0400
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   imageSpanTest4_0400
+     * @tc.number SUB_ACE_imageSpanTest4_0400
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest4_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanTest4_0400 START');
@@ -121,12 +121,12 @@ export default function ImageSpanTest4() {
     });
 
     /**
-     * @tc.number    SUB_ACE_imageSpanTest4_0500
-     * @tc.name      imageSpanTest4_0500
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   imageSpanTest4_0500
+     * @tc.number SUB_ACE_imageSpanTest4_0500
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest4_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanTest4_0500 START');

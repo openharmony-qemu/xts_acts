@@ -46,7 +46,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferences001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1100
      * @tc.desc   GetPreferences callback interface test
@@ -72,7 +71,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferences002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0700
      * @tc.desc   GetPreferences callback interface test
@@ -94,7 +92,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferences003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0800
      * @tc.desc   GetPreferences callback interface test
@@ -122,7 +119,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferences004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0900
      * @tc.desc   GetPreferences callback interface test
@@ -146,7 +142,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferences000
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0400
      * @tc.desc   DeletePreferences callback interface test
@@ -172,7 +167,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferences001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0500
      * @tc.desc   DeletePreferences callback interface test
@@ -205,7 +199,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferences003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1600
      * @tc.desc   DeletePreferences callback interface test
@@ -252,7 +245,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferences004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1300
      * @tc.desc   DeletePreferences callback interface test
@@ -282,7 +274,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferences005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1400
      * @tc.desc   DeletePreferences callback interface test
@@ -319,7 +310,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferences006
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1200
      * @tc.desc   DeletePreferences callback interface test
@@ -369,7 +359,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCache0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0900
      * @tc.desc   RemovePreferencesFromCache callback interface test
@@ -395,7 +384,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCache001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0200
      * @tc.desc   RemovePreferencesFromCache callback interface test
@@ -431,7 +419,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCache003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0100
      * @tc.desc   RemovePreferencesFromCache callback interface test
@@ -475,7 +462,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCache004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0400
      * @tc.desc   RemovePreferencesFromCache callback interface test
@@ -506,7 +492,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCache005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0400
      * @tc.desc   RemovePreferencesFromCache callback interface test
@@ -543,7 +528,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCache006
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0500
      * @tc.desc   RemovePreferencesFromCache callback interface test
@@ -588,7 +572,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetDefaultValue0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3200
      * @tc.desc   Get defaultValue callback interface test
@@ -605,7 +588,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetFloat0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3300
      * @tc.desc   Get float callback interface test
@@ -623,7 +605,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetInt0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3400
      * @tc.desc   Get int callback interface test
@@ -641,7 +622,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetLong0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3500
      * @tc.desc   Get long callback interface test
@@ -659,7 +639,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetString001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3800
      * @tc.desc   Get String callback interface test
@@ -678,7 +657,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetBoolean0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3100
      * @tc.desc   Get Boolean callback interface test
@@ -696,7 +674,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetStringArray001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3700
      * @tc.desc   Get StringArray callback interface test
@@ -717,7 +694,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetNumArray001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3600
      * @tc.desc   Get NumArray callback interface test
@@ -738,7 +714,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetBoolArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3000
      * @tc.desc   Get BoolArray callback interface test
@@ -759,7 +734,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetAll0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1700
      * @tc.desc   GetAll callback interface test
@@ -806,7 +780,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutFloat0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2900
      * @tc.desc   Put float callback interface test
@@ -827,7 +800,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutInt0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3000
      * @tc.desc   Put int callback interface test
@@ -848,7 +820,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutLong0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3100
      * @tc.desc   Put long callback interface test
@@ -870,7 +841,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutString0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3400
      * @tc.desc   Put String callback interface test
@@ -891,7 +861,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutBoolean0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2800
      * @tc.desc   Put Boolean callback interface test
@@ -912,7 +881,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutStringArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3300
      * @tc.desc   Put StringArray callback interface test
@@ -934,7 +902,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutNumArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3200
      * @tc.desc   Put NumberArray callback interface test
@@ -956,7 +923,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutBoolArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2700
      * @tc.desc   Put BoolArray callback interface test
@@ -978,7 +944,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKey0005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1400
      * @tc.desc   Has float callback interface test
@@ -995,7 +960,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKey0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1500
      * @tc.desc   Has int callback interface test
@@ -1012,7 +976,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKey0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1600
      * @tc.desc   Has long callback interface test
@@ -1029,7 +992,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKey0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1700
      * @tc.desc   Has string callback interface test
@@ -1046,7 +1008,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKey0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1300
      * @tc.desc   Has boolean callback interface test
@@ -1063,7 +1024,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesClear0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_ClearJSAPITest_0500
      * @tc.desc   Clear callback interface test
@@ -1119,7 +1079,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDelete0010
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2400
      * @tc.desc   Delete callback interface test
@@ -1145,7 +1104,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferenceCB001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_FlushJSAPITest_0400
      * @tc.desc   Flush callback interface test
@@ -1171,7 +1129,6 @@ export default function preferencesCallBackTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesCallback001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0200
      * @tc.desc   Clear、Put、Get、Flush String callback interface test

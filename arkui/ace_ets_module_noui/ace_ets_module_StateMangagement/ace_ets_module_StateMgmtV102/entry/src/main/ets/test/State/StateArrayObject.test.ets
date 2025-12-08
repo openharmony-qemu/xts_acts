@@ -59,14 +59,14 @@ export default function StateArrayObject() {
       await CommonFunc.sleep(1000);
       console.info("StateArrayObject after each called");
     });
-    /* *
-    * @tc.number: StateArrayObject_0100
-    * @tc.name  : StateArrayObject_0100
-    * @tc.desc  : Test if the state decorator supports StateArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   StateArrayObject_0100
+     * @tc.number StateArrayObject_0100
+     * @tc.desc   Test if the state decorator supports StateArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayObject_0100', Level.LEVEL0, async (done: Function) => {
       console.info('StateArrayObject_0100 START');
       let driver: Driver = await Driver.create()
@@ -84,14 +84,14 @@ export default function StateArrayObject() {
       console.info('[StateArrayObject_0100] END');
       done();
     });
-    /* *
-    * @tc.number: StateArrayObject_0200
-    * @tc.name  : StateArrayObject_0200
-    * @tc.desc  : Test if the state decorator supports StateArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   StateArrayObject_0200
+     * @tc.number StateArrayObject_0200
+     * @tc.desc   Test if the state decorator supports StateArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayObject_0200', Level.LEVEL0, async (done: Function) => {
       console.info('StateArrayObject_0200 START');
       let driver: Driver = await Driver.create()
@@ -109,14 +109,14 @@ export default function StateArrayObject() {
       console.info('[StateArrayObject_0200] END');
       done();
     });
-    /* *
-    * @tc.number: StateArrayObject_0300
-    * @tc.name  : StateArrayObject_0300
-    * @tc.desc  : Test if the state decorator supports StateArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   StateArrayObject_0300
+     * @tc.number StateArrayObject_0300
+     * @tc.desc   Test if the state decorator supports StateArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayObject_0300', Level.LEVEL0, async (done: Function) => {
       console.info('StateArrayObject_0300 START');
       let driver: Driver = await Driver.create()
@@ -134,14 +134,14 @@ export default function StateArrayObject() {
       console.info('[StateArrayObject_0300] END');
       done();
     });
-    /* *
-    * @tc.number: StateArrayObject_0400
-    * @tc.name  : StateArrayObject_0400
-    * @tc.desc  : Test if the state decorator supports StateArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   StateArrayObject_0400
+     * @tc.number StateArrayObject_0400
+     * @tc.desc   Test if the state decorator supports StateArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayObject_0400', Level.LEVEL0, async (done: Function) => {
       console.info('StateArrayObject_0400 START');
       let driver: Driver = await Driver.create()

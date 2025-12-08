@@ -195,12 +195,12 @@ export default function SessionTest() {
     })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionBeginConfig0100
-     * @tc.name       : testOHCaptureSessionBeginConfig0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionBeginConfig0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionBeginConfig0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionBeginConfig0100', Level.LEVEL0, () => {
 
@@ -209,12 +209,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionBeginConfig0200
-     * @tc.name       : testOHCaptureSessionBeginConfig0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionBeginConfig0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionBeginConfig0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionBeginConfig0200', Level.LEVEL0, () => {
 
@@ -223,12 +223,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddInput0100
-     * @tc.name       : testOHCaptureSessionAddInput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddInput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddInput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddInput0100', Level.LEVEL0, () => {
 
@@ -238,12 +238,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddInput0200
-     * @tc.name       : testOHCaptureSessionAddInput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddInput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddInput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddInput0200', Level.LEVEL0, () => {
 
@@ -253,12 +253,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveInput0100
-     * @tc.name       : testOHCaptureSessionRemoveInput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemoveInput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveInput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemoveInput0100', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -268,12 +268,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveInput0200
-     * @tc.name       : testOHCaptureSessionRemoveInput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemoveInput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveInput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemoveInput0200', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -283,12 +283,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveInput0300
-     * @tc.name       : testOHCaptureSessionRemoveInput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemoveInput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveInput0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemoveInput0300', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -298,12 +298,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPreviewOutput0100
-     * @tc.name       : testOHCaptureSessionAddPreviewOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddPreviewOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPreviewOutput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddPreviewOutput0100', Level.LEVEL0, () => {
 
@@ -315,12 +315,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPreviewOutput0200
-     * @tc.name       : testOHCaptureSessionAddPreviewOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddPreviewOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPreviewOutput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddPreviewOutput0200', Level.LEVEL0, () => {
 
@@ -332,12 +332,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPreviewOutput0300
-     * @tc.name       : testOHCaptureSessionAddPreviewOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddPreviewOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPreviewOutput0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddPreviewOutput0300', Level.LEVEL0, () => {
 
@@ -349,12 +349,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionCommitConfig0100
-     * @tc.name       : testOHCaptureSessionCommitConfig0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCommitConfig0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionCommitConfig0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCommitConfig0100', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -366,12 +366,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionCommitConfig0200
-     * @tc.name       : testOHCaptureSessionCommitConfig0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCommitConfig0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionCommitConfig0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCommitConfig0200', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -383,12 +383,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPhotoOutput0100
-     * @tc.name       : testOHCaptureSessionAddPhotoOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddPhotoOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPhotoOutput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddPhotoOutput0100', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -401,12 +401,12 @@ export default function SessionTest() {
       cameras.oHCaptureSessionRemovePhotoOutput(0);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPhotoOutput0200
-     * @tc.name       : testOHCaptureSessionAddPhotoOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddPhotoOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPhotoOutput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddPhotoOutput0200', Level.LEVEL0, () => {
 
@@ -419,12 +419,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPhotoOutput0300
-     * @tc.name       : testOHCaptureSessionAddPhotoOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddPhotoOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddPhotoOutput0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddPhotoOutput0300', Level.LEVEL0, () => {
 
@@ -437,12 +437,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePhotoOutput0100
-     * @tc.name       : testOHCaptureSessionRemovePhotoOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemovePhotoOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePhotoOutput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemovePhotoOutput0100', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -455,12 +455,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePhotoOutput0200
-     * @tc.name       : testOHCaptureSessionRemovePhotoOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemovePhotoOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePhotoOutput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemovePhotoOutput0200', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -474,12 +474,12 @@ export default function SessionTest() {
       cameras.oHCaptureSessionRemovePhotoOutput(0);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePhotoOutput0300
-     * @tc.name       : testOHCaptureSessionRemovePhotoOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemovePhotoOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePhotoOutput0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemovePhotoOutput0300', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -492,12 +492,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePreviewOutput0100
-     * @tc.name       : testOHCaptureSessionRemovePreviewOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemovePreviewOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePreviewOutput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemovePreviewOutput0100', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -509,12 +509,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePreviewOutput0200
-     * @tc.name       : testOHCaptureSessionRemovePreviewOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemovePreviewOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePreviewOutput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemovePreviewOutput0200', Level.LEVEL0, () => {
       sessionBeginConfig();
@@ -526,12 +526,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePreviewOutput0300
-     * @tc.name       : testOHCaptureSessionRemovePreviewOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemovePreviewOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemovePreviewOutput0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemovePreviewOutput0300', Level.LEVEL0, () => {
       sessionBeginConfig();

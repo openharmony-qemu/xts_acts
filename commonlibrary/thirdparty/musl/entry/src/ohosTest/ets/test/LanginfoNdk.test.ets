@@ -24,13 +24,13 @@ export default function langInfoNdkTest() {
     })
 
     /**
-    * @tc.number     : SUB_THIRDPARTY_MUSL_LANGINFO_NL_LANGINFO_0100
-    * @tc.name       : testMuslLanginfoNlLanginfo001
-    * @tc.desc       : test nl_langinfo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+     * @tc.name   testMuslLanginfoNlLanginfo001
+     * @tc.number SUB_THIRDPARTY_MUSL_LANGINFO_NL_LANGINFO_0100
+     * @tc.desc   test nl_langinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMuslLanginfoNlLanginfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = langinfo.nlLanginfo();
       expect(a).assertEqual('Monday');
@@ -38,13 +38,13 @@ export default function langInfoNdkTest() {
     });
 
     /**
-    * @tc.number     : SUB_THIRDPARTY_MUSL_LANGINFO_NL_LANGINFO_L_0100
-    * @tc.name       : testMuslLanginfoNlLanginfoL001
-    * @tc.desc       : nl_langinfo_l
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+     * @tc.name   testMuslLanginfoNlLanginfoL001
+     * @tc.number SUB_THIRDPARTY_MUSL_LANGINFO_NL_LANGINFO_L_0100
+     * @tc.desc   nl_langinfo_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMuslLanginfoNlLanginfoL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = langinfo.nlLanginfoL();
       expect(a).assertEqual('ASCII');

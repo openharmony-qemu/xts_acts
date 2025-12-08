@@ -56,14 +56,14 @@ export default function WebInitTest() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_035
-    * @tc.name       : ContextMenuEditStateFlagsStatic
-    * @tc.desc       : Save current page
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   ContextMenuEditStateFlagsStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_035
+     * @tc.desc   Save current page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ContextMenuEditStateFlagsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags', 10)
@@ -78,14 +78,14 @@ export default function WebInitTest() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_036
-    * @tc.name       : ContextMenuEditStateFlags1Static
-    * @tc.desc       : Save current page
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   ContextMenuEditStateFlags1Static
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_036
+     * @tc.desc   Save current page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ContextMenuEditStateFlags1Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags1', 10)
@@ -100,14 +100,14 @@ export default function WebInitTest() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_037
-    * @tc.name       : ContextMenuEditStateFlags2Static
-    * @tc.desc       : Save current page
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   ContextMenuEditStateFlags2Static
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_037
+     * @tc.desc   Save current page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ContextMenuEditStateFlags2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags2', 10)
@@ -122,14 +122,14 @@ export default function WebInitTest() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_038
-    * @tc.name       : ContextMenuEditStateFlags3Static
-    * @tc.desc       : Save current page
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   ContextMenuEditStateFlags3Static
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_038
+     * @tc.desc   Save current page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ContextMenuEditStateFlags3Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags3', 10)
@@ -145,14 +145,14 @@ export default function WebInitTest() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_039
-    * @tc.name       : ContextMenuEditStateFlags4Static
-    * @tc.desc       : Save current page
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   ContextMenuEditStateFlags4Static
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_039
+     * @tc.desc   Save current page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ContextMenuEditStateFlags4Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)

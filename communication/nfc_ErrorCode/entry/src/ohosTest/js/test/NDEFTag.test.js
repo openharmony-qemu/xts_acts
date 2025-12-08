@@ -114,7 +114,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0100
          * @tc.desc   Creates an ndef message using the original bytes. The error code is 401
@@ -144,7 +143,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0200
          * @tc.desc   Creates an ndef message using the original bytes. The error code is 401
@@ -180,7 +178,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0300
          * @tc.desc   Read the ndef message on the tag promise. The error code is 401
@@ -208,7 +205,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0400
          * @tc.desc   Read the ndef message on the tag callback .The error code is 401
@@ -241,7 +237,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0500
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0500
          * @tc.desc   Write ndef messages to this tag promise. The error code is 401
@@ -273,7 +268,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0600
          * @tc.desc   Write ndef messages to this tag callback. The error code is 401
@@ -310,7 +304,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0700
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0700
          * @tc.desc   Set the Ndef label to read-only Promise. The error code is 401
@@ -338,7 +331,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0800
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0800
          * @tc.desc   Set the Ndef label to read-only callback. The error code is 401
@@ -371,7 +363,6 @@ export default function nfcNDEFErrorTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:44
           * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0900
           * @tc.number SUB_Communication_NFC_nfcNDEF_js_0900
           * @tc.desc   Test getNdef api. The error code is 401
@@ -395,7 +386,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1000
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1000
          * @tc.desc   Converts the Nfc forum type to the byte array defined in the Nfc forum. The error code is 401
@@ -420,7 +410,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1100
          * @tc.desc   Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag Promise. The error code is 401
@@ -451,7 +440,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1200
          * @tc.desc   Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag callback. The error code is 401
@@ -486,7 +474,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1300
          * @tc.desc   Format as NDEF and set the NDEF message write label to read-only Promise. The error code is 401
@@ -519,7 +506,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1400
          * @tc.desc   Format as NDEF and set the NDEF message write label to read-only callback. The error code is 401
@@ -555,7 +541,6 @@ export default function nfcNDEFErrorTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:44
           * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1500
           * @tc.number SUB_Communication_NFC_nfcNDEF_js_1500
           * @tc.desc   Obtains all records of ndef makeUriRecord. The error code is 401
@@ -588,7 +573,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1600
          * @tc.desc   Obtains all records of createNdefMessage NDEF. The error code is 401
@@ -621,7 +605,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1700
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1700
          * @tc.desc   Obtains all records of ndef makeMimeRecord. The error code is 401
@@ -655,7 +638,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1800
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1800
          * @tc.desc   Obtains all records of ndef makeExternalRecord. The error code is 401
@@ -688,7 +670,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1900
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1900
          * @tc.desc   Obtains all records of ndef messageToBytes. The error code is 401
@@ -733,7 +714,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2000
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2000
          * @tc.desc   Test getNdefFormatable api. The error code is 401
@@ -757,7 +737,6 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2100
          * @tc.desc   Test makeApplicationRecord api. The error code is 401

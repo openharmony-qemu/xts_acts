@@ -189,13 +189,13 @@ export default function AVSessionControllerErrorCode() {
             console.info('TestLog: End Testing avSession Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0100
-         * @tc.name      : sendAVKeyEvent(callback) with invalid params(errcode 401)
-         * @tc.desc      : test sendAVKeyEvent(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0100
+         * @tc.desc   test sendAVKeyEvent(callback) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -216,13 +216,13 @@ export default function AVSessionControllerErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0200
-         * @tc.name      : sendAVKeyEvent(callback) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test sendAVKeyEvent(callback) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0200
+         * @tc.desc   test sendAVKeyEvent(callback) errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(() => {
@@ -245,13 +245,13 @@ export default function AVSessionControllerErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0300
-         * @tc.name      : sendAVKeyEvent(callback) with invalid session commands(errcode 6600105)
-         * @tc.desc      : test sendAVKeyEvent(callback) errcode 6600105
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0300
+         * @tc.desc   test sendAVKeyEvent(callback) errcode 6600105
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -272,13 +272,13 @@ export default function AVSessionControllerErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0400
-         * @tc.name      : sendAVKeyEvent(callback) with deactivated session(errcode 6600106)
-         * @tc.desc      : test sendAVKeyEvent(callback) errcode 6600106
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0400
+         * @tc.desc   test sendAVKeyEvent(callback) errcode 6600106
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.deactivate().then(() => {
@@ -305,13 +305,13 @@ export default function AVSessionControllerErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0500
-         * @tc.name      : sendAVKeyEvent(promise) with invalid params(errcode 401)
-         * @tc.desc      : test sendAVKeyEvent(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0500
+         * @tc.desc   test sendAVKeyEvent(promise) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await controller.sendAVKeyEvent().then(() => {
@@ -324,13 +324,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0600
-         * @tc.name      : sendAVKeyEvent(promise) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test sendAVKeyEvent(promise) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0600
+         * @tc.desc   test sendAVKeyEvent(promise) errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(async () => {
@@ -345,13 +345,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0700
-         * @tc.name      : sendAVKeyEvent(promise) with invalid session commands(errcode 6600105)
-         * @tc.desc      : test sendAVKeyEvent(promise) errcode 6600105
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0700
+         * @tc.desc   test sendAVKeyEvent(promise) errcode 6600105
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await controller.sendAVKeyEvent(errEvent).then(() => {
@@ -364,13 +364,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0800
-         * @tc.name      : sendAVKeyEvent(promise) with deactivated session(errcode 6600106)
-         * @tc.desc      : test sendAVKeyEvent(promise) errcode 6600106
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0800
+         * @tc.desc   test sendAVKeyEvent(promise) errcode 6600106
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.deactivate().then(() => {
@@ -389,13 +389,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_0100
-         * @tc.name      : getRealPlaybackPositionSync with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getRealPlaybackPositionSync errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_0100
+         * @tc.desc   test getRealPlaybackPositionSync errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(() => {
@@ -410,13 +410,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0100
-         * @tc.name      : getValidCommands(promise) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getValidCommands(promise) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0100
+         * @tc.desc   test getValidCommands(promise) errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(async () => {
@@ -431,13 +431,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0200
-         * @tc.name      : getValidCommands(promise) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getValidCommands(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0200
+         * @tc.desc   test getValidCommands(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
@@ -452,13 +452,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0300
-         * @tc.name      : getValidCommands(callback) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getValidCommands(callback) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0300
+         * @tc.desc   test getValidCommands(callback) errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(() => {
@@ -481,13 +481,13 @@ export default function AVSessionControllerErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0400
-         * @tc.name      : getValidCommands(callback) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getValidCommands(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0400
+         * @tc.desc   test getValidCommands(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
@@ -511,13 +511,13 @@ export default function AVSessionControllerErrorCode() {
             
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0100
-         * @tc.name      : on('sessionEvent') with none param (errcode 401)
-         * @tc.desc      : test on('sessionEvent') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0100
+         * @tc.desc   test on('sessionEvent') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -530,13 +530,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0200
-         * @tc.name      : on('sessionEvent') with too many params (errcode 401)
-         * @tc.desc      : test on('sessionEvent') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0200
+         * @tc.desc   test on('sessionEvent') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -548,13 +548,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0300
-         * @tc.name      : on('sessionEvent') with invalid param type(errcode 401)
-         * @tc.desc      : test on('sessionEvent') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0300
+         * @tc.desc   test on('sessionEvent') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -566,13 +566,13 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0400
-         * @tc.name      : on('sessionEvent') with controller does not exist(errcode 6600103)
-         * @tc.desc      : test on('sessionEvent') errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0400
+         * @tc.desc   test on('sessionEvent') errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -585,14 +585,14 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_ERRORCODE_0100
-         * @tc.name      : off('sessionEvent') with invalid param number(errcode 401)
-         * @tc.desc      : test off('sessionEvent') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_ERRORCODE_0100
+   * @tc.desc   test off('sessionEvent') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 offCallbackInvalidParam('sessionEvent');
@@ -604,14 +604,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0100
-         * @tc.name      : sendCommonCommand(promise) with invalid param number(errcode 401)
-         * @tc.desc      : test sendCommonCommand(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0100
+   * @tc.desc   test sendCommonCommand(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await controller.sendCommonCommand(COMMON_COMMAND_STRING).then(() => {
                 console.info('sendCommonCommand Successfully');
@@ -623,14 +623,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0200
-         * @tc.name      : sendCommonCommand(promise) with invalid param type(errcode 401)
-         * @tc.desc      : test sendCommonCommand(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0200
+   * @tc.desc   test sendCommonCommand(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await controller.sendCommonCommand(COMMON_COMMAND_PARAMS, COMMON_COMMAND_PARAMS).then(() => {
                 console.info('sendCommonCommand Successfully');
@@ -642,14 +642,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0300
-         * @tc.name      : sendCommonCommand(promise) with avsession does not active(errcode 6600106)
-         * @tc.desc      : test sendCommonCommand(promise) errcode 6600106
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0300
+   * @tc.desc   test sendCommonCommand(promise) errcode 6600106
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSessionState(async () => {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS).then(() => {
@@ -663,14 +663,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0400
-         * @tc.name      : sendCommonCommand(promise) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test sendCommonCommand(promise) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0400
+   * @tc.desc   test sendCommonCommand(promise) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(async () => {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS).then(() => {
@@ -684,14 +684,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0500
-         * @tc.name      : sendCommonCommand(callback) with invalid param number(errcode 401)
-         * @tc.desc      : test sendCommonCommand(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0500
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0500
+   * @tc.desc   test sendCommonCommand(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 controller.sendCommonCommand(COMMON_COMMAND_STRING, err => {
@@ -711,14 +711,14 @@ export default function AVSessionControllerErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0600
-         * @tc.name      : sendCommonCommand(callback) with invalid param type(errcode 401)
-         * @tc.desc      : test sendCommonCommand(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0600
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0600
+   * @tc.desc   test sendCommonCommand(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 controller.sendCommonCommand(COMMON_COMMAND_PARAMS, COMMON_COMMAND_PARAMS, err => {
@@ -738,14 +738,14 @@ export default function AVSessionControllerErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0700
-         * @tc.name      : sendCommonCommand(callback) with avsession does not active(errcode 6600106)
-         * @tc.desc      : test sendCommonCommand(callback) errcode 6600106
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0700
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0700
+   * @tc.desc   test sendCommonCommand(callback) errcode 6600106
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSessionState(() => {
                 try {
@@ -767,14 +767,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0800
-         * @tc.name      : sendCommonCommand(callback) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test sendCommonCommand(callback) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0800
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0800
+   * @tc.desc   test sendCommonCommand(callback) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {
@@ -796,14 +796,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0100
-         * @tc.name      : getExtras(promise) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getExtras(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0100
+   * @tc.desc   test getExtras(promise) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidSession(async () => {
                 await controller.getExtras().then(() => {
@@ -817,14 +817,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0200
-         * @tc.name      : getExtras(promise) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getExtras(promise) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0200
+   * @tc.desc   test getExtras(promise) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(async () => {
                 await controller.getExtras().then(() => {
@@ -838,14 +838,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0300
-         * @tc.name      : getExtras(callback) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getExtras(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0300
+   * @tc.desc   test getExtras(callback) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -867,14 +867,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0400
-         * @tc.name      : getExtras(callback) with avsession does not exist(errcode 6600103)
-         * @tc.desc      : test getExtras(callback) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0400
+   * @tc.desc   test getExtras(callback) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {
@@ -896,14 +896,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0100
-         * @tc.name      : on('extrasChange') with none param (errcode 401)
-         * @tc.desc      : test on('extrasChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0100
+   * @tc.desc   test on('extrasChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 onCallbackInvalidParam('extrasChange');
@@ -915,14 +915,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0200
-         * @tc.name      : on('extrasChange') with invalid param number (errcode 401)
-         * @tc.desc      : test on('extrasChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0200
+   * @tc.desc   test on('extrasChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			try {
 				controller.on('extrasChange', callback1, callback2);
@@ -933,14 +933,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0300
-         * @tc.name      : on('extrasChange') with invalid param type (errcode 401)
-         * @tc.desc      : test on('extrasChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0300
+   * @tc.desc   test on('extrasChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 controller.on('extrasChange', INVALID_STRING);
@@ -951,14 +951,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0400
-         * @tc.name      : on('extrasChange') with controller does not exist(errcode 6600103)
-         * @tc.desc      : test on('extrasChange') errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0400
+   * @tc.desc   test on('extrasChange') errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 await onCallbackInvalidController('extrasChange')
@@ -970,14 +970,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_ERRORCODE_0100
-         * @tc.name      : off('extrasChange') with invalid param number(errcode 401)
-         * @tc.desc      : test off('extrasChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_ERRORCODE_0100
+   * @tc.desc   test off('extrasChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 offCallbackInvalidParam('extrasChange');
@@ -989,14 +989,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-		/* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0100
-         * @tc.name      : on('queueItemsChange') with none param (errcode 401)
-         * @tc.desc      : test on('queueItemsChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0100
+   * @tc.desc   test on('queueItemsChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 onCallbackInvalidParam('queueItemsChange');
@@ -1008,14 +1008,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0200
-         * @tc.name      : on('queueItemsChange') with too many params (errcode 401)
-         * @tc.desc      : test on('queueItemsChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0200
+   * @tc.desc   test on('queueItemsChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 controller.on('queueItemsChange', callback1, callback2);
@@ -1026,14 +1026,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0300
-         * @tc.name      : on('queueItemsChange') with controller does not exist(errcode 6600103)
-         * @tc.desc      : test on('queueItemsChange') errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0300
+   * @tc.desc   test on('queueItemsChange') errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 await onCallbackInvalidController('queueItemsChange');
@@ -1045,14 +1045,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_ERRORCODE_0100
-         * @tc.name      : off('queueItemsChange') with invalid param number(errcode 401)
-         * @tc.desc      : test off('queueItemsChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_ERRORCODE_0100
+   * @tc.desc   test off('queueItemsChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 offCallbackInvalidParam('queueItemsChange');
@@ -1064,14 +1064,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-		/* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0100
-         * @tc.name      : on('queueTitleChange') with none param (errcode 401)
-         * @tc.desc      : test on('queueTitleChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0100
+   * @tc.desc   test on('queueTitleChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 onCallbackInvalidParam('queueTitleChange');
@@ -1083,14 +1083,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0200
-         * @tc.name      : on('queueTitleChange') with too many params (errcode 401)
-         * @tc.desc      : test on('queueTitleChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0200
+   * @tc.desc   test on('queueTitleChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 controller.on('queueTitleChange', callback1, callback2);
@@ -1101,14 +1101,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0300
-         * @tc.name      : on('queueTitleChange') with controller does not exist(errcode 6600103)
-         * @tc.desc      : test on('queueTitleChange') errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0300
+   * @tc.desc   test on('queueTitleChange') errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 await onCallbackInvalidController('queueTitleChange');
@@ -1120,14 +1120,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_ERRRORCODE_0100
-         * @tc.name      : off('queueTitleChange') with invalid param number(errcode 401)
-         * @tc.desc      : test off('queueTitleChange') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_ERRRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_ERRRORCODE_0100
+   * @tc.desc   test off('queueTitleChange') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_ERRRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 offCallbackInvalidParam('queueTitleChange');
@@ -1139,14 +1139,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0100
-         * @tc.name      : skipToQueueItem(promise) with invalid params(errcode 401)
-         * @tc.desc      : test skipToQueueItem(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0100
+   * @tc.desc   test skipToQueueItem(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await controller.skipToQueueItem('invalid param').then(() => {
                 console.info('skipToQueueItem Successfully');
@@ -1158,14 +1158,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0200
-         * @tc.name      : skipToQueueItem(promise) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test skipToQueueItem(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0200
+   * @tc.desc   test skipToQueueItem(promise) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
                 await controller.skipToQueueItem(QUEUE_ITEM_ID).then(() => {
@@ -1179,14 +1179,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0300
-         * @tc.name      : skipToQueueItem(promise) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test skipToQueueItem(promise) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0300
+   * @tc.desc   test skipToQueueItem(promise) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(async () => {
                 await controller.skipToQueueItem(QUEUE_ITEM_ID).then(() => {
@@ -1200,14 +1200,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0400
-         * @tc.name      : skipToQueueItem(callback) with invalid params(errcode 401)
-         * @tc.desc      : test skipToQueueItem(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0400
+   * @tc.desc   test skipToQueueItem(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 controller.skipToQueueItem('invalid param', err => {
@@ -1227,14 +1227,14 @@ export default function AVSessionControllerErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0500
-         * @tc.name      : skipToQueueItem(callback) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test skipToQueueItem(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0500
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0500
+   * @tc.desc   test skipToQueueItem(callback) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -1256,14 +1256,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0600
-         * @tc.name      : skipToQueueItem(callback) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test skipToQueueItem(callback) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0600
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0600
+   * @tc.desc   test skipToQueueItem(callback) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(() => {
                 try {
@@ -1285,14 +1285,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0100
-         * @tc.name      : getAVQueueItems(promise) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getAVQueueItems(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0100
+   * @tc.desc   test getAVQueueItems(promise) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
                 await controller.getAVQueueItems().then(() => {
@@ -1306,14 +1306,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0200
-         * @tc.name      : getAVQueueItems(promise) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getAVQueueItems(promise) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0200
+   * @tc.desc   test getAVQueueItems(promise) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(async () => {
                 await controller.getAVQueueItems().then(() => {
@@ -1327,14 +1327,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0300
-         * @tc.name      : getAVQueueItems(callback) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getAVQueueItems(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0300
+   * @tc.desc   test getAVQueueItems(callback) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidSession(() => {
                 try {
@@ -1356,14 +1356,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0400
-         * @tc.name      : getAVQueueItems(callback) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getAVQueueItems(callback) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0400
+   * @tc.desc   test getAVQueueItems(callback) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(() => {
                 try {
@@ -1385,14 +1385,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0100
-         * @tc.name      : getAVQueueTitle(promise) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getAVQueueTitle(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0100
+   * @tc.desc   test getAVQueueTitle(promise) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
                 await controller.getAVQueueTitle().then(() => {
@@ -1406,14 +1406,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0200
-         * @tc.name      : getAVQueueTitle(promise) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getAVQueueTitle(promise) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0200
+   * @tc.desc   test getAVQueueTitle(promise) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(async () => {
                 await controller.getAVQueueTitle().then(() => {
@@ -1427,14 +1427,14 @@ export default function AVSessionControllerErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0300
-         * @tc.name      : getAVQueueTitle(callback) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getAVQueueTitle(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0300
+   * @tc.desc   test getAVQueueTitle(callback) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidSession(() => {
                 try {
@@ -1456,14 +1456,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0400
-         * @tc.name      : getAVQueueTitle(callback) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getAVQueueTitle(callback) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0400
+   * @tc.desc   test getAVQueueTitle(callback) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidController(() => {
                 try {
@@ -1485,14 +1485,14 @@ export default function AVSessionControllerErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_0100
-         * @tc.name      : getAVPlaybackStateSync(async) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getAVPlaybackStateSync(async) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_0100
+   * @tc.desc   test getAVPlaybackStateSync(async) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -1506,14 +1506,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_0200
-         * @tc.name      : getAVPlaybackStateSync(async) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getAVPlaybackStateSync(async) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_0200
+   * @tc.desc   test getAVPlaybackStateSync(async) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {
@@ -1527,14 +1527,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_0100
-         * @tc.name      : getAVMetadataSync(async) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getAVMetadataSync(async) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_0100
+   * @tc.desc   test getAVMetadataSync(async) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -1548,14 +1548,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_0200
-         * @tc.name      : getAVMetadataSync(async) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getAVMetadataSync(async) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_0200
+   * @tc.desc   test getAVMetadataSync(async) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {
@@ -1569,14 +1569,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_0100
-         * @tc.name      : getAVQueueTitleSync(async) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getAVQueueTitleSync(async) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_0100
+   * @tc.desc   test getAVQueueTitleSync(async) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -1590,14 +1590,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_0200
-         * @tc.name      : getAVQueueTitleSync(async) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getAVQueueTitleSync(async) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_0200
+   * @tc.desc   test getAVQueueTitleSync(async) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {
@@ -1611,14 +1611,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_0100
-         * @tc.name      : getAVQueueItemsSync(async) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getAVQueueItemsSync(async) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_0100
+   * @tc.desc   test getAVQueueItemsSync(async) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -1632,14 +1632,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_0200
-         * @tc.name      : getAVQueueItemsSync(async) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getAVQueueItemsSync(async) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_0200
+   * @tc.desc   test getAVQueueItemsSync(async) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {
@@ -1653,14 +1653,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_0100
-         * @tc.name      : getOutputDeviceSync(async) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getOutputDeviceSync(async) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_0100
+   * @tc.desc   test getOutputDeviceSync(async) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {
@@ -1674,14 +1674,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_0100
-         * @tc.name      : isActiveSync(async) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test isActiveSync(async) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_0100
+   * @tc.desc   test isActiveSync(async) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -1695,14 +1695,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_0200
-         * @tc.name      : isActiveSync(async) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test isActiveSync(async) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_0200
+   * @tc.desc   test isActiveSync(async) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {
@@ -1716,14 +1716,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_0100
-         * @tc.name      : getValidCommandsSync(async) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test getValidCommandsSync(async) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_0100
+   * @tc.desc   test getValidCommandsSync(async) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -1737,14 +1737,14 @@ export default function AVSessionControllerErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_0200
-         * @tc.name      : getValidCommandsSync(async) with controller does not exist(errcode 6600103)
-         * @tc.desc      : test getValidCommandsSync(async) errcode 6600103
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_0200
+   * @tc.desc   test getValidCommandsSync(async) errcode 6600103
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidController(() => {
                 try {

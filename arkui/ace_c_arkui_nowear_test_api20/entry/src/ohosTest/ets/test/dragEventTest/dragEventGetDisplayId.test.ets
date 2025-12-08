@@ -26,15 +26,15 @@ export default function dragEventGetDisplayIdTest() {
       done();
     })
 
-   /*
-   * @tc.number     : SUB_ARKUI_CAPI_OH_ARKUI_DRAGEVENT_GETDISPLAYID_0100
-   * @tc.name       : dragEventGetDisplayId0001
-   * @tc.desc       : testing dragEvent getDisplayId
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
 
+  /**
+   * @tc.name   dragEventGetDisplayId0001
+   * @tc.number dragEventGetDisplayId0001
+   * @tc.desc   dragEventGetDisplayId0001
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('dragEventGetDisplayId0001', Level.LEVEL1, async (done: Function) => {
     console.info('dragEventGetDisplayId0001 START');
     let PAGE_TAG = 'dragEventGetDisplayId';
@@ -54,15 +54,15 @@ export default function dragEventGetDisplayIdTest() {
     done();
   });
 
-   /*
-   * @tc.number     : SUB_ARKUI_CAPI_OH_ARKUI_DRAGEVENT_GETTOUCHPOINTGLOBALDISPLAY_0100
-   * @tc.name       : dragEventTouchPointDisplayXY0001
-   * @tc.desc       : testing dragEvent getGlobalDisplay
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
 
+  /**
+   * @tc.name   dragEventTouchPointDisplayXY0001
+   * @tc.number dragEventTouchPointDisplayXY0001
+   * @tc.desc   dragEventTouchPointDisplayXY0001
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('dragEventTouchPointDisplayXY0001', Level.LEVEL1, async (done: Function) => {
   console.info('dragEventGetDisplayId0001 START');
   let PAGE_TAG = 'dragEventGetGlobalDisplay';

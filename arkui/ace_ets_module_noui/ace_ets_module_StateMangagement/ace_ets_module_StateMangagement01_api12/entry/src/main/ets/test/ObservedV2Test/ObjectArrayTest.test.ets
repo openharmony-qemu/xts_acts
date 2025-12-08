@@ -42,12 +42,12 @@ export default function ObjectArrayTest() {
       done();
     });
     /**
-     * @tc.number    ObjectArray
-     * @tc.name      ObjectArrayTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectArrayTest_0100
+     * @tc.number ObjectArray
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ObjectArrayTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ObjectArrayTest_0100 START');

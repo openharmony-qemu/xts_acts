@@ -41,12 +41,12 @@ export default function PromiseTimeOutTest() {
     });
 
     /**
+     * @tc.name   PromiseTimeOutTest0100
      * @tc.number SUB_PROMISE_TIME_OUT_TEST_0100
-     * @tc.name PromiseTimeOutTest0100
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseTimeOutTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "PromiseTimeOutTest0100";
@@ -64,12 +64,12 @@ export default function PromiseTimeOutTest() {
     })
 
     /**
+     * @tc.name   PromiseTimeOutTest0200
      * @tc.number SUB_PROMISE_TIME_OUT_TEST_0200
-     * @tc.name PromiseTimeOutTest0200
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseTimeOutTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "PromiseTimeOutTest0200";
@@ -88,12 +88,12 @@ export default function PromiseTimeOutTest() {
 
 
     /**
+     * @tc.name   PromiseTimeOutTest0300
      * @tc.number SUB_PROMISE_TIME_OUT_TEST_0300
-     * @tc.name PromiseTimeOutTest0300
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseTimeOutTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "PromiseTimeOutTest0300";
@@ -118,12 +118,12 @@ export default function PromiseTimeOutTest() {
     })
 
     /**
+     * @tc.name   PromiseTimeOutTest0400
      * @tc.number SUB_PROMISE_TIME_OUT_TEST_0400
-     * @tc.name PromiseTimeOutTest0400
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseTimeOutTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "PromiseTimeOutTest0400";

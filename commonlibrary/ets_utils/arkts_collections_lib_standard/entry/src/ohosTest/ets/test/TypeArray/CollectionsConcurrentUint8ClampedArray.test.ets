@@ -54,12 +54,12 @@ export default function CollectionsUint8ClampedArray() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6401
-     * @tc.name      : CollectionsUint8ClampedArrayTest6401
-     * @tc.desc      : ConcatArray copyWithin 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6401
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6401
+     * @tc.desc   ConcatArray copyWithin 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -89,12 +89,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6402
-     * @tc.name      : CollectionsUint8ClampedArrayTest6402
-     * @tc.desc      : ConcatArray every 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6402
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6402
+     * @tc.desc   ConcatArray every 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -124,12 +124,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6403
-     * @tc.name      : CollectionsUint8ClampedArrayTest6403
-     * @tc.desc      : ConcatArray filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6403
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6403
+     * @tc.desc   ConcatArray filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -159,12 +159,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6404
-     * @tc.name      : CollectionsUint8ClampedArrayTest6404
-     * @tc.desc      : ConcatArray find 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6404
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6404
+     * @tc.desc   ConcatArray find 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -194,12 +194,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6405
-     * @tc.name      : CollectionsUint8ClampedArrayTest6405
-     * @tc.desc      : ConcatArray findIndex 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6405
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6405
+     * @tc.desc   ConcatArray findIndex 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -229,12 +229,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6406
-     * @tc.name      : CollectionsUint8ClampedArrayTest6406
-     * @tc.desc      : ConcatArray indexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6406
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6406
+     * @tc.desc   ConcatArray indexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -264,12 +264,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6407
-     * @tc.name      : CollectionsUint8ClampedArrayTest6407
-     * @tc.desc      : ConcatArray join 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6407
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6407
+     * @tc.desc   ConcatArray join 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6407', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -299,12 +299,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6408
-     * @tc.name      : CollectionsUint8ClampedArrayTest6408
-     * @tc.desc      : ConcatArray map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6408
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6408
+     * @tc.desc   ConcatArray map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6408', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -334,12 +334,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6409
-     * @tc.name      : CollectionsUint8ClampedArrayTest6409
-     * @tc.desc      : ConcatArray reduce1 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6409
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6409
+     * @tc.desc   ConcatArray reduce1 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6409', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -369,12 +369,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6410
-     * @tc.name      : CollectionsUint8ClampedArrayTest6410
-     * @tc.desc      : ConcatArray reduce2 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6410
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6410
+     * @tc.desc   ConcatArray reduce2 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -404,12 +404,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6411
-     * @tc.name      : CollectionsUint8ClampedArrayTest6411
-     * @tc.desc      : ConcatArray reverse 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6411
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6411
+     * @tc.desc   ConcatArray reverse 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6411', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -439,12 +439,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6412
-     * @tc.name      : CollectionsUint8ClampedArrayTest6412
-     * @tc.desc      : ConcatArray set 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6412
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6412
+     * @tc.desc   ConcatArray set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6412', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -474,12 +474,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6413
-     * @tc.name      : CollectionsUint8ClampedArrayTest6413
-     * @tc.desc      : ConcatArray slice 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6413
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6413
+     * @tc.desc   ConcatArray slice 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6413', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -509,12 +509,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6414
-     * @tc.name      : CollectionsUint8ClampedArrayTest6414
-     * @tc.desc      : ConcatArray some 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6414
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6414
+     * @tc.desc   ConcatArray some 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6414', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -544,12 +544,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6415
-     * @tc.name      : CollectionsUint8ClampedArrayTest6415
-     * @tc.desc      : ConcatArray sort 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6415
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6415
+     * @tc.desc   ConcatArray sort 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6415', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -579,12 +579,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6416
-     * @tc.name      : CollectionsUint8ClampedArrayTest6416
-     * @tc.desc      : ConcatArray subarray 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6416
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6416
+     * @tc.desc   ConcatArray subarray 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6416', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -614,12 +614,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6417
-     * @tc.name      : CollectionsUint8ClampedArrayTest6417
-     * @tc.desc      : ConcatArray at 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6417
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6417
+     * @tc.desc   ConcatArray at 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6417', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -649,12 +649,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6418
-     * @tc.name      : CollectionsUint8ClampedArrayTest6418
-     * @tc.desc      : ConcatArray entries 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6418
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6418
+     * @tc.desc   ConcatArray entries 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6418', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -684,12 +684,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_64181
-     * @tc.name      : CollectionsUint8ClampedArrayTest64181
-     * @tc.desc      : ConcatArray entries 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest64181
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_64181
+     * @tc.desc   ConcatArray entries 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest64181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -719,12 +719,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6419
-     * @tc.name      : CollectionsUint8ClampedArrayTest6419
-     * @tc.desc      : ConcatArray keys 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6419
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6419
+     * @tc.desc   ConcatArray keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6419', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -754,12 +754,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6420
-     * @tc.name      : CollectionsUint8ClampedArrayTest6420
-     * @tc.desc      : ConcatArray values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6420
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6420
+     * @tc.desc   ConcatArray values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -789,12 +789,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6421
-     * @tc.name      : CollectionsUint8ClampedArrayTest6421
-     * @tc.desc      : ConcatArray includes 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6421
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6421
+     * @tc.desc   ConcatArray includes 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6421', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -824,12 +824,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6422
-     * @tc.name      : CollectionsUint8ClampedArrayTest6422
-     * @tc.desc      : ConcatArray reduceRight1 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6422
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6422
+     * @tc.desc   ConcatArray reduceRight1 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6422', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -859,12 +859,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6423
-     * @tc.name      : CollectionsUint8ClampedArrayTest6423
-     * @tc.desc      : ConcatArray reduceRight2 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6423
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6423
+     * @tc.desc   ConcatArray reduceRight2 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6423', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -894,12 +894,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6424
-     * @tc.name      : CollectionsUint8ClampedArrayTest6424
-     * @tc.desc      : ConcatArray toString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6424
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6424
+     * @tc.desc   ConcatArray toString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6424', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -929,12 +929,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6425
-     * @tc.name      : CollectionsUint8ClampedArrayTest6425
-     * @tc.desc      : ConcatArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6425
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6425
+     * @tc.desc   ConcatArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6425', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -964,12 +964,12 @@ export default function CollectionsUint8ClampedArray() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6426
-     * @tc.name      : CollectionsUint8ClampedArrayTest6426
-     * @tc.desc      : ConcatArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint8ClampedArrayTest6426
+     * @tc.number SUB_COLLECTION_UINT8CLAMPEDARRAY_TEST_6426
+     * @tc.desc   ConcatArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint8ClampedArrayTest6426', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

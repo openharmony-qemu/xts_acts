@@ -41,7 +41,6 @@ export default function UDMFSupportClipboardApiTest() {
   describe('UDMFSupportClipboardApiTest', () => {
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0100
      * @tc.desc   unifiedDataChannel properties test
@@ -67,7 +66,6 @@ export default function UDMFSupportClipboardApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200
      * @tc.desc   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200
@@ -113,7 +111,6 @@ export default function UDMFSupportClipboardApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300
      * @tc.desc   unifiedDataChannel properties test
@@ -145,7 +142,6 @@ export default function UDMFSupportClipboardApiTest() {
       }
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400
      * @tc.desc   unifiedDataChannel properties test
@@ -180,7 +176,6 @@ export default function UDMFSupportClipboardApiTest() {
       expect(types[1]).assertEqual(htmlType);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0500
      * @tc.desc   unifiedDataChannel properties test
@@ -243,7 +238,6 @@ export default function UDMFSupportClipboardApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0600
      * @tc.desc   unifiedDataChannel properties test
@@ -312,7 +306,6 @@ export default function UDMFSupportClipboardApiTest() {
       expect(data6.abilityName).assertEqual(wantText.abilityName);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0700
      * @tc.desc   unifiedDataChannel properties test
@@ -351,7 +344,6 @@ export default function UDMFSupportClipboardApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0800
      * @tc.desc   unifiedDataChannel properties test
@@ -389,7 +381,6 @@ export default function UDMFSupportClipboardApiTest() {
       expect(data4).assertEqual(8899.7788);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0900
      * @tc.desc   unifiedDataChannel properties test
@@ -429,7 +420,6 @@ export default function UDMFSupportClipboardApiTest() {
     });
   
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000
      * @tc.desc   addRecord  test
@@ -449,7 +439,6 @@ export default function UDMFSupportClipboardApiTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1100
      * @tc.desc   hasType test

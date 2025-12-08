@@ -56,28 +56,28 @@ export default function webViewMenuShowResult() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CLOSECONTEXTMENU_0100
-    * @tc.name       : testCloseContextMenu001
-    * @tc.desc       : test CloseContextMenu
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCloseContextMenu001
+     * @tc.number SUB_WEB_CLOSECONTEXTMENU_0100
+     * @tc.desc   test CloseContextMenu
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCloseContextMenu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitCloseContextMenu", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testCloseContextMenu001", true, 176610, done);
       Utils.waitAndClickComponent(driver, "WebViewMenuShowResultTestButton", "testCloseContextMenu001");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_COPYGETEDITSTATEFLAGS_0100
-    * @tc.name       : testCopyGetEditStateFlags001
-    * @tc.desc       : test Copy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitCopyGetEditStateFlags001
+     * @tc.number SUB_WEB_COPYGETEDITSTATEFLAGS_0100
+     * @tc.desc   test Copy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitCopyGetEditStateFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitCopyGetEditStateFlags001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("emitCopyGetEditStateFlags001", 4, 176620, done);
@@ -85,28 +85,28 @@ export default function webViewMenuShowResult() {
 
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONTEXTMENURESULTCOPY_0100
-    * @tc.name       : testCopy001
-    * @tc.desc       : test Copy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCopy001
+     * @tc.number SUB_WEB_CONTEXTMENURESULTCOPY_0100
+     * @tc.desc   test Copy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCopy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitCopy001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testCopy001", true, 176630, done);
       Utils.waitAndClickComponent(driver, "WebViewMenuShowResultTestButton", "testCopy001");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONTEXTMENURESULTCUT_0100
-    * @tc.name       : testCut001
-    * @tc.desc       : test Cut
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCut001
+     * @tc.number SUB_WEB_CONTEXTMENURESULTCUT_0100
+     * @tc.desc   test Cut
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCut001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitCut001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testCut001", true, 176640, done);

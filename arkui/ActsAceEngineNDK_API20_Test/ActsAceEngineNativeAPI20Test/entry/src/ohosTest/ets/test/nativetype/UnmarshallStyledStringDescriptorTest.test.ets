@@ -22,12 +22,12 @@ const OS_ACCOUNT_ERR_INVALID_PARAMETER = 12300002;
 export default function UnmarshallStyledStringDescriptorTest() {
   describe('UnmarshallStyledStringDescriptorTest', () => {
     /**
-     * @tc.number  : SUB_ArkUI_ACE_UnmarshallStyledStringDescriptorTest_0100
-     * @tc.name    : testArkUIACEUnmarshallStyledStringDescriptorTest0100
-     * @tc.desc    : testing OH_ArkUI_UnmarshallStyledStringDescriptor interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEUnmarshallStyledStringDescriptorTest0100
+     * @tc.number SUB_ArkUI_ACE_UnmarshallStyledStringDescriptorTest_0100
+     * @tc.desc   testing OH_ArkUI_UnmarshallStyledStringDescriptor interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEUnmarshallStyledStringDescriptorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -72,12 +72,12 @@ export default function UnmarshallStyledStringDescriptorTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_UnmarshallStyledStringDescriptorTest_0200
-     * @tc.name    : testArkUIACEUnmarshallStyledStringDescriptorTest0200
-     * @tc.desc    : testing OH_ArkUI_UnmarshallStyledStringDescriptor interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEUnmarshallStyledStringDescriptorTest0200
+     * @tc.number SUB_ArkUI_ACE_UnmarshallStyledStringDescriptorTest_0200
+     * @tc.desc   testing OH_ArkUI_UnmarshallStyledStringDescriptor interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEUnmarshallStyledStringDescriptorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

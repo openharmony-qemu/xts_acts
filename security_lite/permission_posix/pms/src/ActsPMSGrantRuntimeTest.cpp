@@ -89,9 +89,12 @@ protected:
 };
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0960
- * @tc.name       grant permissions to large and small PIDs
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_0960
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_0960, Function | MediumTest | Level3)
 {
@@ -112,9 +115,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_0960, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0970
- * @tc.name       grant permissions while not load permiossion
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_0970
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0970
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_0970, Function | MediumTest | Level2)
 {
@@ -127,9 +133,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_0970, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0980
- * @tc.name       grant runtime app permissions
- * @tc.desc       [C- SECURITY -0400]
+ * @tc.name   testSecPMPMS_0980
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0980
+ * @tc.desc   [C- SECURITY -0400]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_0980, Function | MediumTest | Level0)
 {
@@ -144,9 +153,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_0980, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0990
- * @tc.name       grant opened permissions
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_0990
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0990
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_0990, Function | MediumTest | Level1)
 {
@@ -166,9 +178,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_0990, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1000
- * @tc.name       grant permissions without request
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1000
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1000, Function | MediumTest | Level2)
 {
@@ -183,9 +198,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1000, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1010
- * @tc.name       grant system_grant permissions
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1010
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1010, Function | MediumTest | Level2)
 {
@@ -200,9 +218,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1010, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1020
- * @tc.name       grant user_grant permissions
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1020
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1020, Function | MediumTest | Level1)
 {
@@ -220,9 +241,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1020, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1030
- * @tc.name       grant unknown permissions
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1030
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1030, Function | MediumTest | Level3)
 {
@@ -237,9 +261,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1030, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1180
- * @tc.name       grant runtime permissions after grant permission
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1180
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1180
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1180, Function | MediumTest | Level3)
 {
@@ -255,9 +282,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1180, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1190
- * @tc.name       grant runtime permissions after revoke permission
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1190
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1190
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1190, Function | MediumTest | Level2)
 {
@@ -274,9 +304,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1190, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1200
- * @tc.name       grant runtime permissions continuously
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1200
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1200, Function | MediumTest | Level2)
 {
@@ -297,9 +330,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1200, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1300
- * @tc.name       grant permissions of unnormal task
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1300
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1300, Function | MediumTest | Level3)
 {
@@ -308,9 +344,12 @@ HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1300, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1330
- * @tc.name       grant permissions of unnormal permission
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testSecPMPMS_1330
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1330
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSGrantRuntimeTest, testSecPMPMS_1330, Function | MediumTest | Level4)
 {

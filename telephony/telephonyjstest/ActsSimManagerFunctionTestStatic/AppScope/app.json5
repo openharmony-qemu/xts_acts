@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "com.example.actsimmanagerfunctiontest.static",
+    "bundleName": "com.example.actssimmanagerfunctiontest.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

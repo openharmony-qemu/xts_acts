@@ -46,12 +46,12 @@ export default function FlexMatchParentTest() {
     });
 
     /**
-     * @tc.number    FlexMatchParentTest_0100
-     * @tc.name      FlexMatchParentTest_0100
-     * @tc.desc      test Flex LayoutPolicy.matchParent
-     * @tc.level:    Level 1
-     * @tc.type :    FlexMatchParent
-     * @tc.size :
+     * @tc.name   FlexMatchParentTest_0100
+     * @tc.number FlexMatchParentTest_0100
+     * @tc.desc   test Flex LayoutPolicy.matchParent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FlexMatchParentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[FlexMatchParentTest_0100] START');

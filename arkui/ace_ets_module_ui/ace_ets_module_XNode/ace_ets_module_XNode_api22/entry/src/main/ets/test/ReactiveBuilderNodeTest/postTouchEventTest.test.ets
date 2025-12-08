@@ -46,12 +46,12 @@ export default function postTouchEventTest() {
     });
 
     /**
-     * @tc.number    postTouchEventTest_0100
-     * @tc.name      postTouchEventTest_0100
-     * @tc.desc      ReactiveBuilderNode set postTouchEventTest
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   postTouchEventTest_0100
+     * @tc.number postTouchEventTest_0100
+     * @tc.desc   ReactiveBuilderNode set postTouchEventTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('postTouchEventTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[postTouchEventTest_0100] START');
@@ -71,12 +71,12 @@ export default function postTouchEventTest() {
     });
 
     /**
-     * @tc.number    postTouchEventTest_0200
-     * @tc.name      postTouchEventTest_0200
-     * @tc.desc      test postTouchEvent
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   postTouchEventTest_0200
+     * @tc.number postTouchEventTest_0200
+     * @tc.desc   test postTouchEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('postTouchEventTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[postTouchEventTest_0200] START');

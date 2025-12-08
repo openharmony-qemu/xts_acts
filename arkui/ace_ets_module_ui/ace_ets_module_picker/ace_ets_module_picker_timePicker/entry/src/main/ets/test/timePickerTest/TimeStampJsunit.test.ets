@@ -45,12 +45,12 @@ export default function timeStampJsunit() {
     });
 
     /**
-     * @tc.number: timeStampTest_0100
-     * @tc.name  : timeStampTest_0100
-     * @tc.desc  : To test the timePicker eventData
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   timeStampTest_0100
+     * @tc.number timeStampTest_0100
+     * @tc.desc   To test the timePicker eventData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('timeStampTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('timeStampTest_0100 START');

@@ -42,14 +42,14 @@ export default function pixelRoundTest() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_pixelRoundTest_001
-       * @tc.name  : pixelRoundTest_001
-       * @tc.desc  : pixelRoundTest_001
-       * @tc.level : Level 2
-       * @tc.type : xts
-       * @tc.size : 1
-       */
+    /**
+     * @tc.name   pixelRoundTest_001
+     * @tc.number SUB_ACE_pixelRoundTest_001
+     * @tc.desc   pixelRoundTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pixelRoundTest_001', Level.LEVEL2, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('pixelRoundTest_001 START');

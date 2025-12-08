@@ -1,7 +1,0 @@
-{
-    "src": [
-        "MainAbility/pages/index/index",
-        "MainAbility/pages/ScrollToIndex/ScrollToIndexForWaterFlow01",
-        "MainAbility/pages/ScrollToIndex/ScrollToIndexForWaterFlow02"
-    ]
-}

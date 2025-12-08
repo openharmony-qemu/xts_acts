@@ -40,7 +40,6 @@ export default function MultimodalTouchEventTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_TouchEvent_Action_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_Action_0100
      * @tc.desc   Test TouchEvent Action
@@ -67,7 +66,6 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_TouchEvent_ToolType_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_ToolType_0100
      * @tc.desc   Test TouchEvent ToolType
@@ -98,7 +96,6 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_TouchEvent_SourceType_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_SourceType_0100
      * @tc.desc   Test TouchEvent SourceType
@@ -124,7 +121,6 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_TouchEvent_FixedMode_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_FixedMode_0100
      * @tc.desc   Test TouchEvent FixedMode
@@ -149,7 +145,6 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_TouchEvent_Touch_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_Touch_0100
      * @tc.desc   Test TouchEvent Touch
@@ -214,7 +209,6 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_TouchEvent_Touch_0200
      * @tc.number SUB_MMI_Input_Api_TouchEvent_Touch_0200
      * @tc.desc   Test TouchEvent TouchEvent
@@ -276,7 +270,6 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputEvent_0100
      * @tc.number SUB_MMI_Input_Api_InputEvent_0100
      * @tc.desc   Test InputEvent

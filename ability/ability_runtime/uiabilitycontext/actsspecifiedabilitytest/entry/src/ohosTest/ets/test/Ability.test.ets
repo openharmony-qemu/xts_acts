@@ -97,13 +97,13 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0100
-     * @tc.name   : start specified ability
-     * @tc.desc   : Expect: start success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0100
+     * @tc.desc   Expect: start success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0100';
@@ -144,13 +144,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0200
-     * @tc.name   : start specified ability twice
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0200
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0200
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0200';
@@ -201,13 +201,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0300
-     * @tc.name   : start specified ability twice (one by one)
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0300
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0300
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0300', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0300';
@@ -257,13 +257,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0400
-     * @tc.name   : start specified ability two instances
-     * @tc.desc   : Expect: start two instances success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0400
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0400
+     * @tc.desc   Expect: start two instances success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0400', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0400';
@@ -320,13 +320,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0500
-     * @tc.name   : start specified ability two instances (one by one)
-     * @tc.desc   : Expect: start two instances success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0500
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0500
+     * @tc.desc   Expect: start two instances success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0500', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0500';
@@ -380,13 +380,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0600
-     * @tc.name   : start two specified abilities
-     * @tc.desc   : Expect: start two abilities success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0600
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0600
+     * @tc.desc   Expect: start two abilities success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0600', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0600';
@@ -435,13 +435,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0700
-     * @tc.name   : start two specified abilities (one by one)
-     * @tc.desc   : Expect: start two abilities success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0700
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0700
+     * @tc.desc   Expect: start two abilities success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0700', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0700';
@@ -500,13 +500,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0800
-     * @tc.name   : start two applications
-     * @tc.desc   : Expect: start success both
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0800
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0800
+     * @tc.desc   Expect: start success both
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0800', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0800';
@@ -562,13 +562,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0900
-     * @tc.name   : start two applications multi times
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0900
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0900
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0900', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_0900';
@@ -650,13 +650,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1000
-     * @tc.name   : start specified ability crash
-     * @tc.desc   : Expect: start crash
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1000
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1000
+     * @tc.desc   Expect: start crash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1000', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1000';
@@ -695,13 +695,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1100
-     * @tc.name   : start specified ability timeout
-     * @tc.desc   : Expect: start timeout
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1100
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1100
+     * @tc.desc   Expect: start timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1100';
@@ -747,13 +747,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1200
-     * @tc.name   : start specified process singleton ability (result is empty process flag)
-     * @tc.desc   : Expect: start success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1200
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1200
+     * @tc.desc   Expect: start success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1200';
@@ -796,13 +796,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1300
-     * @tc.name   : start specified process singleton ability twice (the both will get the same result: app not exist with empty process flag)
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1300
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1300
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1300', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1300';
@@ -857,13 +857,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1400
-     * @tc.name   : start specified process singleton ability twice (one by one)
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1400
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1400
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1400', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1400';
@@ -921,13 +921,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1500
-     * @tc.name   : start main process first, then start specified process singleton ability
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1500
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1500
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1500', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1500';
@@ -980,13 +980,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1600
-     * @tc.name   : start main process first (no specified), start specified process singleton ability
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1600
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1600
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1600', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1600';
@@ -1034,13 +1034,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1700
-     * @tc.name   : start main process first (no specified), delay 30ms start specified process singleton ability
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1700
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1700
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1700', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1700';
@@ -1089,13 +1089,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1800
-     * @tc.name   : start specified process specified ability
-     * @tc.desc   : Expect: start success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1800
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1800
+     * @tc.desc   Expect: start success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1800', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1800';
@@ -1138,13 +1138,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1900
-     * @tc.name   : start specified process specified ability twice
-     * @tc.desc   : Expect: start success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1900
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1900
+     * @tc.desc   Expect: start success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1900', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_1900';
@@ -1201,13 +1201,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2000
-     * @tc.name   : start specified process specified ability twice (two instance)
-     * @tc.desc   : Expect: start success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2000
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2000
+     * @tc.desc   Expect: start success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2000', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2000';
@@ -1273,13 +1273,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2100
-     * @tc.name   : start no specified first, then start specified process specified ability four times
-     * @tc.desc   : Expect: start success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2100
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2100
+     * @tc.desc   Expect: start success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2100';
@@ -1373,13 +1373,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2200
-     * @tc.name   : start main process first (no specified), delay 30ms start specified ability
-     * @tc.desc   : Expect: start success twice
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2200
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2200
+     * @tc.desc   Expect: start success twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2200';
@@ -1422,13 +1422,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2300
-     * @tc.name   : start two process two instance, exit main process, start second instance again
-     * @tc.desc   : Expect: start success, reuse success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2300
+     * @tc.number SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2300
+     * @tc.desc   Expect: start success, reuse success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2300', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_StartSpecifiedAbility_2300';

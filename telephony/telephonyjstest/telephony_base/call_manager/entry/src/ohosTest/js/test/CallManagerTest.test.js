@@ -38,10 +38,12 @@ export default function ActsBaseCallManagerTest() {
         const REJECT_MESSAGE_NUM = '1234567890123456789012345678901234567890';
 
         /**
-         * @tc.number  Telephony_CallManager_getCallState_Async_0100
-         * @tc.name    To get the idle call status, call getCallState() to get the current call status.
-         *             call.CallState.CALL_STATE_IDLE is returned
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_getCallState_Async_0100
+         * @tc.number Telephony_CallManager_getCallState_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_getCallState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.getCallState((err, data) => {
@@ -58,10 +60,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_getCallState_Promise_0100
-         * @tc.name    To get the idle call status, call getCallState() to get the current call status.
-         *             call.CallState.CALL_STATE_IDLE is returned
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_getCallState_Promise_0100
+         * @tc.number Telephony_CallManager_getCallState_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_getCallState_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -79,9 +83,12 @@ export default function ActsBaseCallManagerTest() {
 
 
         /**
-         * @tc.number  Telephony_CallManager_hasCall_Async_0400
-         * @tc.name    When idle, hasCall() is called to confirm that there is no current call,returning false
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_hasCall_Async_0400
+         * @tc.number Telephony_CallManager_hasCall_Async_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_hasCall_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.hasCall((err, data) => {
@@ -99,9 +106,12 @@ export default function ActsBaseCallManagerTest() {
 
 
         /**
-         * @tc.number  Telephony_CallManager_hasCall_Promise_0400
-         * @tc.name    When idle, hasCall() is called to confirm that there is no current call, returning false
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_hasCall_Promise_0400
+         * @tc.number Telephony_CallManager_hasCall_Promise_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_hasCall_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -118,10 +128,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Async_0100
-         * @tc.name    PhoneNumber is 100000000000. Call formatPhoneNumber() to format the number.
-         *             The return value is 10 000 000 0000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Async_0100
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumber('100000000000', (err, data) => {
@@ -139,10 +151,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Async_0200
-         * @tc.name    If phoneNumber is 10 000 000 0000, options: CN, call formatPhoneNumber() to format the number,
-         *             and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Async_0200
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Async_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumber('10 000 000 0000', {
@@ -161,10 +175,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Async_0300
-         * @tc.name    If phoneNumber is (010)00000000, options: CN, call formatPhoneNumber() to format the number,
-         *             return the value 010 0000 0000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Async_0300
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Async_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumber('(010)00000000', {
@@ -183,10 +199,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Async_0400
-         * @tc.name    PhoneNumber is 010-0000-0000, options: CN, call formatPhoneNumber() to format the number,
-         *             return 010 0000 0000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Async_0400
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Async_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumber('010-0000-0000', {
@@ -205,10 +223,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Async_0500
-         * @tc.name    PhoneNumber 666666999999 is not supported in the current country. Options: CN. Call
-         *             formatPhoneNumber() to format the number and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Async_0500
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Async_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumber('666666999999', {
@@ -227,10 +247,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Async_0600
-         * @tc.name    If phoneNumber is 2000000000, type non-existent options: abCDFG. Call
-         *             formatPhoneNumber() to format the number and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Async_0600
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Async_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Async_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumber('2000000000', {
@@ -249,10 +271,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Async_0700
-         * @tc.name    If phoneNumber is 2000000000, options: ', call formatPhoneNumber() to
-         *             format the number and catch err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Async_0700
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Async_0700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumber('2000000000', {
@@ -270,10 +294,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Promise_0100
-         * @tc.name    PhoneNumber is 2000000. Call formatPhoneNumber() to format the number.
-         *             The return value is 200 0000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Promise_0100
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -290,9 +316,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Promise_0200
-         * @tc.name    PhoneNumber is 010-100-0000, options: CN, call formatPhoneNumber() to format the number, err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Promise_0200
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Promise_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -309,10 +338,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Promise_0300
-         * @tc.name    PhoneNumber: (010)00000000, options: CN, call formatPhoneNumber() to format the number,
-         *             return the value 010 0000 0000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Promise_0300
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Promise_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -331,10 +362,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Promise_0400
-         * @tc.name    If phoneNumber is 200-0000, options: CN, call formatPhoneNumber() to format the
-         *             number and return 200 0000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Promise_0400
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Promise_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -353,10 +386,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Promise_0500
-         * @tc.name    PhoneNumber 666666999999 is not supported in the current country. Options: CN. Call
-         *             formatPhoneNumber() to format the number and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Promise_0500
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Promise_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -373,10 +408,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Promise_0600
-         * @tc.name    If phoneNumber is 20000000, enter non-existent options: abCDFG and call
-         *             formatPhoneNumber() to format the number and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Promise_0600
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Promise_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -395,9 +432,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumber_Promise_0700
-         * @tc.name    If phoneNumber is 20000000, options: , call formatPhoneNumber() to format the number and catch err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumber_Promise_0700
+         * @tc.number Telephony_CallManager_formatPhoneNumber_Promise_0700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumber_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -415,10 +455,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Async_0100
-         * @tc.name    PhoneNumber is 010-0000-0000, options: CN, call formatPhoneNumberToE164() to format the number,
-         *             and return +861000000000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Async_0100
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumberToE164('010-0000-0000', 'CN', (err, data) => {
@@ -435,10 +477,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Async_0200
-         * @tc.name    If phoneNumber is (010)00000000, options: CN, call formatPhoneNumberToE164() to format the number,
-         *             return +861000000000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Async_0200
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Async_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumberToE164('(010)00000000', 'CN', (err, data) => {
@@ -455,10 +499,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Async_0300
-         * @tc.name    If phoneNumber is 01000000000, options: CN, call formatPhoneNumberToE164() to format the number,
-         *             and return +861000000000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Async_0300
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Async_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumberToE164('01000000000', 'CN', (err, data) => {
@@ -475,10 +521,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Async_0400
-         * @tc.name    PhoneNumber 666666999999 is not supported in the current country. Options: CN. Call
-         *             formatPhoneNumberToE164() to format the number and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Async_0400
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Async_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumberToE164('666666999999', 'CN', (err,data) => {
@@ -495,10 +543,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Async_0500
-         * @tc.name    If phoneNumber is 01000000000, type non-existent options: abCDFG. Call formatPhoneNumberToE164()
-         *             to format the number and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Async_0500
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Async_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumberToE164('01000000000', 'abcdfg', (err,data) => {
@@ -515,10 +565,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Async_0600
-         * @tc.name    If phoneNumber is 01000000000, options: ', call formatPhoneNumberToE164() to
-         *             format the number and catch err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Async_0600
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Async_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Async_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.formatPhoneNumberToE164('01000000000', '', (err) => {
@@ -534,10 +586,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Promise_0100
-         * @tc.name    PhoneNumber is 52300000000, options: CN, call formatPhoneNumberToE164() to format the number,
-         *             return +8652300000000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Promise_0100
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -554,10 +608,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Promise_0200
-         * @tc.name    If phoneNumber is (523)00000000, options: CN, call formatPhoneNumberToE164() to format the number,
-         *             return +8652300000000
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Promise_0200
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Promise_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.log('Telephony_CallManager_formatPhoneNumberToE164_Promise_0200 running');
@@ -575,10 +631,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Promise_0300
-         * @tc.name    PhoneNumber is 523-0000-0000, options: CN. Call formatPhoneNumberToE164() to format the number.
-         *             +8652300000000 is returned
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Promise_0300
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Promise_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -595,10 +653,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Promise_0400
-         * @tc.name    Currently, phoneNumber is 999999, options: CN. Call formatPhoneNumberToE164() to
-         *             format the number and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Promise_0400
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Promise_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -614,10 +674,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Promise_0500
-         * @tc.name    PhoneNumber is 52300000000. Type non-existent options: abCDFG. Call formatPhoneNumberToE164() to
-         *             format the number and capture err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Promise_0500
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Promise_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -633,10 +695,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_formatPhoneNumberToE164_Promise_0600
-         * @tc.name    If phoneNumber is 52300000000, options: ', call formatPhoneNumberToE164()
-         *             to format the number and catch err
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_formatPhoneNumberToE164_Promise_0600
+         * @tc.number Telephony_CallManager_formatPhoneNumberToE164_Promise_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_formatPhoneNumberToE164_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -653,10 +717,12 @@ export default function ActsBaseCallManagerTest() {
 
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0100
-         * @tc.name    PhoneNumber: 0+0+0, options is 1. Call isEmergencyPhoneNumber() to check whether it is an
-         *             emergency number. The return value is false
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0100
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('0+0+0', {
@@ -675,10 +741,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0200
-         * @tc.name    PhoneNumber: INVALID_NUMBER, options 1. Call isEmergencyPhoneNumber() to check whether it is an
-         *             emergency number. The return value is false
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0200
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let CASE_NAME = 'Telephony_CallManager_isEmergencyPhoneNumber_Async_0200';
@@ -697,10 +765,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0300
-         * @tc.name    PhoneNumber: 000, options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency number
-         *             The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0300
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('000', {
@@ -719,10 +789,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0400
-         * @tc.name    PhoneNumber: 112 with options 1. Call isEmergencyPhoneNumber() to verify whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0400
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('112', {
@@ -741,10 +813,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0500
-         * @tc.name    PhoneNumber: 911, options are 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0500
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('911', {
@@ -763,10 +837,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0600
-         * @tc.name    PhoneNumber: 08 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0600
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('08', {
@@ -785,10 +861,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0700
-         * @tc.name    PhoneNumber: 118, options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0700
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('118', {
@@ -807,10 +885,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0800
-         * @tc.name    PhoneNumber: 999 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0800
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('999', {
@@ -829,10 +909,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_0900
-         * @tc.name    PhoneNumber: 119. Call isEmergencyPhoneNumber() to determine whether it is an emergency number.
-         *             The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0900
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0900
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('119', {
@@ -851,10 +933,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_1000
-         * @tc.name    PhoneNumber: 110, isEmergencyPhoneNumber() is called back to determine whether it is an emergency
-         *             number, returning true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_1000
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_1000
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('110', {
@@ -873,10 +957,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Async_1300
-         * @tc.name    PhoneNumber: 110, options -1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is false
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_1300
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_1300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             call.isEmergencyPhoneNumber('110', {
@@ -894,10 +980,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_0100
-         * @tc.name    PhoneNumber: 0+0+0, options is 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is false
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0100
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -916,10 +1004,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_0200
-         * @tc.name    PhoneNumber: INVALID_NUMBER, options 1. Call isEmergencyPhoneNumber() to check whether it is an
-         *             emergency number. The return value is false
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0200
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -938,10 +1028,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300
-         * @tc.name    PhoneNumber: 000 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -960,10 +1052,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_0400
-         * @tc.name    PhoneNumber: 112 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0400
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -982,10 +1076,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_0500
-         * @tc.name    PhoneNumber: 911 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0500
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -1004,10 +1100,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600
-         * @tc.name    PhoneNumber: 08. If options are 1, call isEmergencyPhoneNumber() to check whether it is an
-         *             emergency number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -1026,10 +1124,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700
-         * @tc.name    PhoneNumber: 118 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -1048,10 +1148,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_0800
-         * @tc.name    PhoneNumber: 999 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0800
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -1070,10 +1172,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_1100
-         * @tc.name    PhoneNumber: 119 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_1100
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_1100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -1090,10 +1194,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_1200
-         * @tc.name    PhoneNumber: 110 with options 1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is true
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_1200
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_1200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -1110,10 +1216,12 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.number  Telephony_CallManager_isEmergencyPhoneNumber_Promise_1300
-         * @tc.name    PhoneNumber: 120, options -1. Call isEmergencyPhoneNumber() to check whether it is an emergency
-         *             number. The return value is false
-         * @tc.desc    Function test
+         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_1300
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_1300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {

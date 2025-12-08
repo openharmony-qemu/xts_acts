@@ -77,14 +77,14 @@ export default function WebSocketTest() {
     })
 
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0100
-    * @tc.name  : testWebSocketConnectCallback0100
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options is options,callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback0100
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is options,callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectCallback0100';
       console.info(`${caseName} test start`);
@@ -111,14 +111,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0200
-    * @tc.name  : testWebSocketConnectCallback0200
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options is null,callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback0200
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0200
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is null,callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectCallback0200';
       console.info(`${caseName} test start`);
@@ -144,14 +144,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0300
-    * @tc.name  : testWebSocketConnectCallback0300
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback0300
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0300
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectCallback0300';
       console.info(`${caseName} test start`);
@@ -178,14 +178,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0400
-    * @tc.name  : testWebSocketConnectCallback0400
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is '',callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback0400
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0400
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is '',callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectCallback0400';
       console.info(`${caseName} test start`);
@@ -214,14 +214,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0500
-    * @tc.name  : testWebSocketConnectCallback0500
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is '123',callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback0500
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0500
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is '123',callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectCallback0500';
       console.info(`${caseName} test start`);
@@ -250,14 +250,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0700
-    * @tc.name  : testWebSocketConnectCallback0700
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is undefined,callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback0600
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0700
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is undefined,callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectCallback0700';
       console.info(`${caseName} test start`);
@@ -285,14 +285,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0800
-    * @tc.name  : testWebSocketConnectCallback0800
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The proxy in the option is proxy,callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback0700
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0800
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The proxy in the option is proxy,callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let proxy: webSocket.ProxyConfiguration = 'no-proxy'
       let caseName: string = 'testWebSocketConnectCallback0800';
@@ -322,14 +322,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0900
-    * @tc.name  : testWebSocketConnectCallback0900
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The proxy in the option is proxy,callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback0800
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0900
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The proxy in the option is proxy,callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let proxy: webSocket.ProxyConfiguration = 'system'
       let caseName: string = 'testWebSocketConnectCallback0900';
@@ -360,14 +360,14 @@ export default function WebSocketTest() {
     });
 
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0100
-    * @tc.name  : testWebSocketConnectPromise0100
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options is options,promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise0100
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is options,promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectPromise0100';
       console.info(`${caseName} test start`);
@@ -391,14 +391,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0200
-    * @tc.name  : testWebSocketConnectPromise0200
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options is {},promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise0200
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0200
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectPromise0200';
       console.info(`${caseName} test start`);
@@ -422,14 +422,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0300
-    * @tc.name  : testWebSocketConnectPromise0300
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options Parameter rejection,promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise0300
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0300
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options Parameter rejection,promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectPromise0300';
       console.info(`${caseName} test start`);
@@ -453,14 +453,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0400
-    * @tc.name  : testWebSocketConnectPromise0400
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is '',promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise0400
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0400
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is '',promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectPromise0400';
       console.info(`${caseName} test start`);
@@ -486,14 +486,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0500
-    * @tc.name  : testWebSocketConnectPromise0500
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is '123',promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise0500
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0500
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is '123',promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectPromise0500';
       console.info(`${caseName} test start`);
@@ -519,14 +519,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0600
-    * @tc.name  : testWebSocketConnectPromise0600
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is undefined,promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise0600
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0600
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The protocol in the option is undefined,promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketConnectPromise0600';
       console.info(`${caseName} test start`);
@@ -552,14 +552,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0700
-    * @tc.name  : testWebSocketConnectPromise0700
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The proxy in the option is proxy,promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise0700
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0700
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The proxy in the option is proxy,promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let proxy: webSocket.ProxyConfiguration = 'system'
       let caseName: string = 'testWebSocketConnectPromise0700';
@@ -586,14 +586,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0800
-    * @tc.name  : testWebSocketConnectPromise0800
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,The proxy in the option is proxy,promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise0800
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0800
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,The proxy in the option is proxy,promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let proxy: webSocket.ProxyConfiguration = 'no-proxy'
       let caseName: string = 'testWebSocketConnectPromise0800';
@@ -620,13 +620,13 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_Network_WebSocket_OnHeaderReceiveCallback_0100
-     * @tc.name  : testWebSocketOnHeaderReceiveCallback0100
-     * @tc.desc  : Subscribe to the headerReceive event of WebSocket(on_HeaderReceive)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testWebSocketOnHeaderReceiveCallback0100
+     * @tc.number SUB_Network_WebSocket_OnHeaderReceiveCallback_0100
+     * @tc.desc   Subscribe to the headerReceive event of WebSocket(on_HeaderReceive)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebSocketOnHeaderReceiveCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketOnHeaderReceiveCallback0100';
@@ -669,13 +669,13 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_Network_WebSocket_OffHeaderReceiveCallback_0100
-     * @tc.name  : testWebSocketOffHeaderReceiveCallback0100
-     * @tc.desc  : Subscribe to the headerReceive event of WebSocket(off twice)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testWebSocketOffHeaderReceiveCallback0100
+     * @tc.number SUB_Network_WebSocket_OffHeaderReceiveCallback_0100
+     * @tc.desc   Subscribe to the headerReceive event of WebSocket(off twice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebSocketOffHeaderReceiveCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketOffHeaderReceiveCallback0100';
@@ -720,13 +720,13 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_Network_WebSocket_OffHeaderReceiveCallback_0200
-     * @tc.name  : testWebSocketOffHeaderReceiveCallback0200
-     * @tc.desc  : Subscribe to the headerReceive event of WebSocket(off-->on)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testWebSocketOffHeaderReceiveCallback0200
+     * @tc.number SUB_Network_WebSocket_OffHeaderReceiveCallback_0200
+     * @tc.desc   Subscribe to the headerReceive event of WebSocket(off-->on)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebSocketOffHeaderReceiveCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketOffHeaderReceiveCallback0200';
@@ -770,13 +770,13 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_Network_WebSocket_OffHeaderReceiveCallback_0300
-     * @tc.name  : testWebSocketOffHeaderReceiveCallback0300
-     * @tc.desc  : Subscribe to the headerReceive event of WebSocket(on-->off)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testWebSocketOffHeaderReceiveCallback0300
+     * @tc.number SUB_Network_WebSocket_OffHeaderReceiveCallback_0300
+     * @tc.desc   Subscribe to the headerReceive event of WebSocket(on-->off)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebSocketOffHeaderReceiveCallback0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testWebSocketOffHeaderReceiveCallback0300';
@@ -821,12 +821,12 @@ export default function WebSocketTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_WebSocket_CloseResult_0100
-     * @tc.name   : testNetworkMgrWebSocketCloseResult0100
-     * @tc.desc   : Closure result obtained by subscribing to the close event when the WebSocket connection is closed.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrWebSocketCloseResult0100
+     * @tc.number SUB_NetworkMgr_WebSocket_CloseResult_0100
+     * @tc.desc   Closure result obtained by subscribing to the close event when the WebSocket connection is closed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketCloseResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketCloseResult0100';
@@ -867,14 +867,14 @@ export default function WebSocketTest() {
       }
     })
 
-    /*
-      * @tc.number: SUB_NetworkMgr_WebSocket_Connect_0100
-      * @tc.name  : testNetworkMgrWebSocketConnect0100
-      * @tc.desc  : Establish a WebSocket connection based on the URL address and header(connect twice)
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 3
-      */
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnect0100
+     * @tc.number SUB_NetworkMgr_WebSocket_Connect_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(connect twice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketConnect0100',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketConnect0100';
       console.info(`${caseName} test start`);

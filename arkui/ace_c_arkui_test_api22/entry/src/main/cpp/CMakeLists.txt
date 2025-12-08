@@ -22,10 +22,18 @@ add_library(nativerender SHARED
     component/ListComponentTest.cpp
     component/TextComponentTest.cpp
     list/SnapSpeedTest.cpp
+    list/LanesValueTest.cpp
     component/WaterFlowComponentTest.cpp
     waterFlow/WaterFlowFillPolicyTest.cpp
     image/ImageDrawableDescriptorTest.cpp
     image/ImageErrorTest.cpp
+    textLineHeight/LineHeightTest.cpp
+    textArea/TextAreaBarStateTest.cpp
+    scrollbarTest/ScrollBarTest.cpp
+    showCounterTest/ShowCounterTest.cpp
+    component/SwiperComponentTest.cpp
+    swiper/FinishAnimationTest.cpp
+    imageSpanTest/ImageSpanTest.cpp
 )
 
 add_library(nativefunc SHARED

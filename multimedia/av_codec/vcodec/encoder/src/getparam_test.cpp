@@ -78,9 +78,12 @@ void HwEncGetParamNdkTest::TearDown()
 }
 namespace {
 /**
- * @tc.number    : VIDEO_ENCODE_MSE_QP_0100
- * @tc.name      : encode Avbuffer h265 buffer,get QP and MSE
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_MSE_QP_0100
+ * @tc.number VIDEO_ENCODE_MSE_QP_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_MSE_QP_0100, TestSize.Level0)
 {
@@ -108,9 +111,12 @@ HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_MSE_QP_0100, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_MSE_QP_0200
- * @tc.name      : encode Avbuffer h265 surf,get QP and MSE
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_MSE_QP_0200
+ * @tc.number VIDEO_ENCODE_MSE_QP_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_MSE_QP_0200, TestSize.Level0)
 {
@@ -137,9 +143,12 @@ HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_MSE_QP_0200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_MSE_QP_0300
- * @tc.name      : encode Avbuffer h264 buffer,get QP and MSE
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_MSE_QP_0300
+ * @tc.number VIDEO_ENCODE_MSE_QP_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_MSE_QP_0300, TestSize.Level0)
 {
@@ -166,9 +175,12 @@ HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_MSE_QP_0300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_MSE_QP_0400
- * @tc.name      : encode Avbuffer h264 surf,get QP and MSE
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_MSE_QP_0400
+ * @tc.number VIDEO_ENCODE_MSE_QP_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_MSE_QP_0400, TestSize.Level0)
 {
@@ -195,9 +207,12 @@ HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_MSE_QP_0400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_REPEAT_0100
- * @tc.name      : set frame after 0
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_REPEAT_0100
+ * @tc.number VIDEO_ENCODE_REPEAT_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncGetParamNdkTest, VIDEO_ENCODE_REPEAT_0100, TestSize.Level0)
 {

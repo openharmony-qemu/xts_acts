@@ -34,6 +34,14 @@ let HuksOptions63kb = {
 
 export default function SecurityHuksAgreeX25519PromiseJsunit() {
     describe('SecurityHuksAgreeX25519PromiseJsunit', function () {
+        /**
+         * @tc.name   Security_HUKS_Agree_API9_X25519_101
+         * @tc.number Security_HUKS_Agree_API9_X25519_101
+         * @tc.desc   Security_HUKS_Agree_API9_X25519_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API9_X25519_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testAgreeX25519Size256Finish63KBAgreeKeyAlias_01_101';
             const srcKeyAliesSecond = 'testAgreeX25519Size256Finish63KBAgreeKeyAlias_02_101';
@@ -76,6 +84,14 @@ export default function SecurityHuksAgreeX25519PromiseJsunit() {
         });
 
         //abort
+        /**
+         * @tc.name   Security_HUKS_Agree_API9_X25519_102
+         * @tc.number Security_HUKS_Agree_API9_X25519_102
+         * @tc.desc   Security_HUKS_Agree_API9_X25519_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API9_X25519_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testAgreeX25519Size256Abort63KBAgreeKeyAlias_01_101';
             const srcKeyAliesSecond = 'testAgreeX25519Size256Abort63KBAgreeKeyAlias_02_101';

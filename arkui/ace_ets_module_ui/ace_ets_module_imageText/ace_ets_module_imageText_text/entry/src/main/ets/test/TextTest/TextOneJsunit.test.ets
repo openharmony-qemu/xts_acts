@@ -42,12 +42,12 @@ export default function TextOneJsunit() {
       done();
     });
     /**
-     * @tc.number    textOneJsunit_0100
-     * @tc.name      textOneJsunit_0100
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textOneJsunit_0100
+     * @tc.number textOneJsunit_0100
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textOneJsunit_0100', Level.LEVEL1, async (done: Function) => {
        console.info('textOneJsunit_0100 START');
@@ -61,14 +61,14 @@ export default function TextOneJsunit() {
        expect(obj.$attrs.fontSize).assertEqual('12.00fp');
        done();
     });
-    /**
-     * @tc.number    textOneJsunit_0200
-     * @tc.name      textOneJsunit_0200
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
-     */
+   /**
+    * @tc.name   textOneJsunit_0200
+    * @tc.number textOneJsunit_0200
+    * @tc.desc   text api
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('textOneJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0200 START');
       // test the enum value of textAlign 
@@ -87,12 +87,12 @@ export default function TextOneJsunit() {
       done();
     });
     /**
-     * @tc.number    textOneJsunit_0300
-     * @tc.name      textOneJsunit_0300
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textOneJsunit_0300
+     * @tc.number textOneJsunit_0300
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textOneJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0300 START');
@@ -106,12 +106,12 @@ export default function TextOneJsunit() {
       done();
     });
     /**
-     * @tc.number    textOneJsunit_0400
-     * @tc.name      textOneJsunit_0400
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textOneJsunit_0400
+     * @tc.number textOneJsunit_0400
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textOneJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0400 START');
@@ -134,12 +134,12 @@ export default function TextOneJsunit() {
       done();
     });
     /**
-     * @tc.number    textOneJsunit_0500
-     * @tc.name      textOneJsunit_0500
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textOneJsunit_0500
+     * @tc.number textOneJsunit_0500
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textOneJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0500 START');
@@ -155,12 +155,12 @@ export default function TextOneJsunit() {
       done();
     });
     /**
-     * @tc.number    textOneJsunit_0600
-     * @tc.name      textOneJsunit_0600
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textOneJsunit_0600
+     * @tc.number textOneJsunit_0600
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textOneJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0600 START');

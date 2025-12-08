@@ -40,12 +40,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1001
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_0100
-     * @tc.name builtinsReadonlyArrayForEachTest1001
-     * @tc.desc Verify basic element iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Verify basic element iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsReadonlyArrayForEachTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: readonly number[] = [1, 2, 3];
@@ -55,12 +55,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1002
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_0200
-     * @tc.name builtinsReadonlyArrayForEachTest1002
-     * @tc.desc Verify parameters index and ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify parameters index and ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: readonly number[] = [1, 2, 3];
@@ -74,12 +74,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1003
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_0300
-     * @tc.name builtinsReadonlyArrayForEachTest1003
-     * @tc.desc Verify ReadonlyArray modification during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify ReadonlyArray modification during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new ReadonlyArrayTest<number>([1, 2, 3])
@@ -95,12 +95,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1005
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_0500
-     * @tc.name builtinsReadonlyArrayForEachTest1005
-     * @tc.desc Verify sparse ReadonlyArray handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse ReadonlyArray handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: readonly (number | undefined)[] = [1, , 3];
@@ -110,12 +110,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1006
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_0600
-     * @tc.name builtinsReadonlyArrayForEachTest1006
-     * @tc.desc Verify nested ReadonlyArray elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify nested ReadonlyArray elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: readonly (number | readonly (number | undefined)[])[] = [1, [, 3], 4];
@@ -128,12 +128,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1007
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_0700
-     * @tc.name builtinsReadonlyArrayForEachTest1007
-     * @tc.desc Verify empty ReadonlyArray handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify empty ReadonlyArray handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: readonly number[] = [];
@@ -146,12 +146,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1008
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_0800
-     * @tc.name builtinsReadonlyArrayForEachTest1008
-     * @tc.desc Verify iteration over nested empty ReadonlyArrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify iteration over nested empty ReadonlyArrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: readonly (number | readonly number[])[] = [[], [1], [2]];
@@ -161,12 +161,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1009
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_0900
-     * @tc.name builtinsReadonlyArrayForEachTest1009
-     * @tc.desc Verify null/undefined handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify null/undefined handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: readonly (number | null | readonly (number | undefined)[])[] = [null, [undefined, 3]];
@@ -179,12 +179,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1010
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_1000
-     * @tc.name builtinsReadonlyArrayForEachTest1010
-     * @tc.desc Verify object element handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify object element handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const obj: FlatObj = {
@@ -197,12 +197,12 @@ export default function builtinsReadonlyArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayForEachTest1011
      * @tc.number SUB_BUILTINS_ReadonlyArray_FOREACH_TEST_1100
-     * @tc.name builtinsReadonlyArrayForEachTest1011
-     * @tc.desc Verify string ReadonlyArray iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify string ReadonlyArray iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: readonly string[] = ['abc', 'bcd', 'cde'];

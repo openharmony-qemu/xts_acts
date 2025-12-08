@@ -16,7 +16,6 @@ export default function storageStatistics_test() {
     hilog.info(domain, tag, '%{public}s', 'storageStatistics_test start');
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storage_statistics_test_get_current_bundle_stats_async_static_000
      * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_STATS_ASYNC_0000
      * @tc.desc   Test getCurrentBundleStats() interfaces
@@ -50,7 +49,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storage_statistics_test_get_current_bundle_stats_async_static_001
      * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_STATS_ASYNC_0001
      * @tc.desc   Test getCurrentBundleStats() interfaces
@@ -89,7 +87,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storage_statistics_test_get_user_storage_stats_async_static_000
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0000
      * @tc.desc   Test getUserStorageStats() interfaces
@@ -118,7 +115,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storage_statistics_test_get_user_storage_stats_async_static_001
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0001
      * @tc.desc   Test getUserStorageStats() interfaces
@@ -158,7 +154,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storage_statistics_test_get_user_storage_stats_async_static_002
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0002
      * @tc.desc   Test getCurrentBundleStats() interfaces
@@ -188,7 +183,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storage_statistics_test_get_user_storage_stats_async_static_003
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0003
      * @tc.desc   Test getUserStorageStats() interfaces
@@ -229,7 +223,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storageStatistics_test_get_free_size_sync_static_000
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_SYNC_0000
      * @tc.desc   Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
@@ -255,7 +248,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storageStatistics_test_get_free_size_sync_static_001
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_SYNC_0100
      * @tc.desc   Test getFreeSize() interfaces, when the path is dev, callback way back.
@@ -281,7 +273,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storageStatistics_test_get_total_size_sync_static_000
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_SYNC_0000
      * @tc.desc   Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
@@ -307,7 +298,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storageStatistics_test_get_total_size_sync_static_001
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_SYNC_0100
      * @tc.desc   Test getTotalSize() interfaces, when the path is dev, callback way back.
@@ -334,7 +324,6 @@ export default function storageStatistics_test() {
 
     
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storageStatistics_test_get_free_size_async_static_000
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_0000
      * @tc.desc   Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
@@ -360,7 +349,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storageStatistics_test_get_free_size_async_static_001
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_0100
      * @tc.desc   Test getFreeSize() interfaces, when the path is dev, callback way back.
@@ -393,7 +381,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storageStatistics_test_get_total_size_async_static_000
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_0000
      * @tc.desc   Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
@@ -418,7 +405,6 @@ export default function storageStatistics_test() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   storageStatistics_test_get_total_size_async_static_001
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_0100
      * @tc.desc   Test getTotalSize() interfaces, when the path is dev, callback way back.

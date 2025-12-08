@@ -42,11 +42,14 @@ export default function abilityTest() {
 
     console.debug("====>in ActsGetDisplayIdStartAbilityForResultTest====>");
 
-    /*
-    * @tc.number: ACTS_startAbilityForResult_0800
-    * @tc.name: Get the specified displayId to start Ability
-    * @tc.desc: Verify Get displayId to startAbilityForResult Ability
-    */
+    /**
+     * @tc.name   ACTS_startAbilityForResult_0800
+     * @tc.number ACTS_startAbilityForResult_0800
+     * @tc.desc   Verify Get displayId to startAbilityForResult Ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_startAbilityForResult_0800', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_startAbilityForResult_0800====<begin');
       let id: number = -1;
@@ -86,11 +89,14 @@ export default function abilityTest() {
 
     })
 
-    /*
-    * @tc.number: ACTS_startAbilityForResult_0900
-    * @tc.name: Get the specified displayId to start Ability
-    * @tc.desc: Verify that the ability to startAbilityForResult when displayId is a string
-    */
+    /**
+     * @tc.name   ACTS_startAbilityForResult_0900
+     * @tc.number ACTS_startAbilityForResult_0900
+     * @tc.desc   Verify that the ability to startAbilityForResult when displayId is a string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_startAbilityForResult_0900', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_startAbilityForResult_0900====<begin');
       let id: number = -1;
@@ -133,11 +139,14 @@ export default function abilityTest() {
       console.log('Start  ACTS_startAbilityForResult_0900 timer id : ' + id);
     })
 
-    /*
-    * @tc.number: ACTS_startAbilityForResult_1000
-    * @tc.name: Get the specified displayId to start Ability
-    * @tc.desc: Validation parameters want to filter the DISPLAY_ID of parameters
-    */
+    /**
+     * @tc.name   ACTS_startAbilityForResult_1000
+     * @tc.number ACTS_startAbilityForResult_1000
+     * @tc.desc   Validation parameters want to filter the DISPLAY_ID of parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_startAbilityForResult_1000', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_startAbilityForResult_1000====<begin');
       let id: number = -1;

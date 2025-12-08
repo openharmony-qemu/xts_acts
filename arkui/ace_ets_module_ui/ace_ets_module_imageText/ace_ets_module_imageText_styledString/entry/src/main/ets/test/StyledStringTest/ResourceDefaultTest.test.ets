@@ -43,12 +43,12 @@ export default function ResourceDefaultTest() {
     });
     
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0010
-     * @tc.name      ResourceDefaultTest_0010
-     * @tc.desc      set ImageAttachment resourceValue: resource
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0010
+     * @tc.number SUB_ACE_Resource_DefaultTest_0010
+     * @tc.desc   set ImageAttachment resourceValue: resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0010] START');
@@ -69,12 +69,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0020
-     * @tc.name      ResourceDefaultTest_0020
-     * @tc.desc      set ImageAttachment resourceValue: string
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0020
+     * @tc.number SUB_ACE_Resource_DefaultTest_0020
+     * @tc.desc   set ImageAttachment resourceValue: string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0020] START');
@@ -95,12 +95,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0030
-     * @tc.name      ResourceDefaultTest_0030
-     * @tc.desc      test ImageAttachment default: size
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0030
+     * @tc.number SUB_ACE_Resource_DefaultTest_0030
+     * @tc.desc   test ImageAttachment default: size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0030] START');
@@ -121,12 +121,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0040
-     * @tc.name      ResourceDefaultTest_0040
-     * @tc.desc      test ImageAttachment default: verticalAlign
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0040
+     * @tc.number SUB_ACE_Resource_DefaultTest_0040
+     * @tc.desc   test ImageAttachment default: verticalAlign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0040] START');
@@ -147,12 +147,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0050
-     * @tc.name      ResourceDefaultTest_0050
-     * @tc.desc      test ImageAttachment default: objectFit
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0050
+     * @tc.number SUB_ACE_Resource_DefaultTest_0050
+     * @tc.desc   test ImageAttachment default: objectFit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0050] START');
@@ -173,12 +173,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0060
-     * @tc.name      ResourceDefaultTest_0060
-     * @tc.desc      test ImageAttachment default: layoutStyle
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0060
+     * @tc.number SUB_ACE_Resource_DefaultTest_0060
+     * @tc.desc   test ImageAttachment default: layoutStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0060] START');
@@ -199,12 +199,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0070
-     * @tc.name      ResourceDefaultTest_0070
-     * @tc.desc      test ImageAttachment default: colorFilter
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0070
+     * @tc.number SUB_ACE_Resource_DefaultTest_0070
+     * @tc.desc   test ImageAttachment default: colorFilter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0070', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0070] START');
@@ -225,12 +225,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0080
-     * @tc.name      ResourceDefaultTest_0080
-     * @tc.desc      test ImageAttachment size: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0080
+     * @tc.number SUB_ACE_Resource_DefaultTest_0080
+     * @tc.desc   test ImageAttachment size: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0080', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0080] START');
@@ -251,12 +251,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0090
-     * @tc.name      ResourceDefaultTest_0090
-     * @tc.desc      test ImageAttachment verticalAlign: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0090
+     * @tc.number SUB_ACE_Resource_DefaultTest_0090
+     * @tc.desc   test ImageAttachment verticalAlign: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0090', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0090] START');
@@ -277,12 +277,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0100
-     * @tc.name      ResourceDefaultTest_0100
-     * @tc.desc      test ImageAttachment objectFit: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0100
+     * @tc.number SUB_ACE_Resource_DefaultTest_0100
+     * @tc.desc   test ImageAttachment objectFit: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0100] START');
@@ -303,12 +303,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0110
-     * @tc.name      ResourceDefaultTest_0110
-     * @tc.desc      test ImageAttachment layoutStyle: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0110
+     * @tc.number SUB_ACE_Resource_DefaultTest_0110
+     * @tc.desc   test ImageAttachment layoutStyle: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0110', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0110] START');
@@ -329,12 +329,12 @@ export default function ResourceDefaultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_Resource_DefaultTest_0120
-     * @tc.name      ResourceDefaultTest_0120
-     * @tc.desc      test ImageAttachment colorFilter: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ResourceDefaultTest_0120
+     * @tc.number SUB_ACE_Resource_DefaultTest_0120
+     * @tc.desc   test ImageAttachment colorFilter: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResourceDefaultTest_0120', Level.LEVEL2, async (done: Function) => {
       console.info('[ResourceDefaultTest_0120] START');

@@ -167,9 +167,12 @@ static void SetEndFlag(bool &audioIsEnd, bool &videoIsEnd)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_0200
- * @tc.name      : create source with no permission URI
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_0200
+ * @tc.number DEMUXER_FUNCTION_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0200, TestSize.Level0)
 {
@@ -179,9 +182,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_0300
- * @tc.name      : create source with invalid uri
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_0300
+ * @tc.number DEMUXER_FUNCTION_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0300, TestSize.Level1)
 {
@@ -191,9 +197,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0300, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_0400
- * @tc.name      : create source with fd but no permission
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_0400
+ * @tc.number DEMUXER_FUNCTION_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0400, TestSize.Level1)
 {
@@ -210,9 +219,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0400, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_0500
- * @tc.name      : create source with invalid fd
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_0500
+ * @tc.number DEMUXER_FUNCTION_0500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0500, TestSize.Level1)
 {
@@ -226,9 +238,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0500, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_0700
- * @tc.name      : create source with fd, mp4
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_0700
+ * @tc.number DEMUXER_FUNCTION_0700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0700, TestSize.Level0)
 {
@@ -275,9 +290,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0700, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_0800
- * @tc.name      : create source with fd,avcc mp4
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_0800
+ * @tc.number DEMUXER_FUNCTION_0800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0800, TestSize.Level0)
 {
@@ -334,9 +352,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0800, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_0900
- * @tc.name      : create source with fd,hvcc mp4
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_0900
+ * @tc.number DEMUXER_FUNCTION_0900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0900, TestSize.Level0)
 {
@@ -392,9 +413,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_0900, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1000
- * @tc.name      : create source with fd,mpeg mp4
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1000
+ * @tc.number DEMUXER_FUNCTION_1000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1000, TestSize.Level0)
 {
@@ -452,9 +476,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1000, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1100
- * @tc.name      : demux m4a
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1100
+ * @tc.number DEMUXER_FUNCTION_1100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1100, TestSize.Level0)
 {
@@ -503,9 +530,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1100, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1200
- * @tc.name      : demux aac
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1200
+ * @tc.number DEMUXER_FUNCTION_1200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1200, TestSize.Level0)
 {
@@ -552,9 +582,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1300
- * @tc.name      : demux mp3
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1300
+ * @tc.number DEMUXER_FUNCTION_1300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1300, TestSize.Level0)
 {
@@ -601,9 +634,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1400
- * @tc.name      : demux ogg
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1400
+ * @tc.number DEMUXER_FUNCTION_1400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1400, TestSize.Level0)
 {
@@ -650,9 +686,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1500
- * @tc.name      : demux flac
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1500
+ * @tc.number DEMUXER_FUNCTION_1500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1500, TestSize.Level0)
 {
@@ -700,9 +739,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1500, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1600
- * @tc.name      : demux wav
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1600
+ * @tc.number DEMUXER_FUNCTION_1600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1600, TestSize.Level0)
 {
@@ -750,9 +792,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1600, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1700
- * @tc.name      : demux mpeg-ts
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1700
+ * @tc.number DEMUXER_FUNCTION_1700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1700, TestSize.Level0)
 {
@@ -810,9 +855,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1700, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1800
- * @tc.name      : demux unsupported source
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1800
+ * @tc.number DEMUXER_FUNCTION_1800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1800, TestSize.Level2)
 {
@@ -826,9 +874,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_1900
- * @tc.name      : demux mp4, zero track
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_1900
+ * @tc.number DEMUXER_FUNCTION_1900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1900, TestSize.Level1)
 {
@@ -850,9 +901,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_1900, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_2000
- * @tc.name      : Test the size parameter of the OH_AVSource_CreateWithFD interface
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_2000
+ * @tc.number DEMUXER_FUNCTION_2000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2000, TestSize.Level0)
 {
@@ -903,9 +957,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2000, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_2100
- * @tc.name      : Test the size and offset parameter of the OH_AVSource_CreateWithFD interface
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_2100
+ * @tc.number DEMUXER_FUNCTION_2100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2100, TestSize.Level0)
 {
@@ -961,9 +1018,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2100, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_2200
- * @tc.name      : Test the size parameter of the OH_AVSource_CreateWithFD interface
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_2200
+ * @tc.number DEMUXER_FUNCTION_2200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2200, TestSize.Level0)
 {
@@ -1014,9 +1074,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_2300
- * @tc.name      : Test the size and offset parameter of the OH_AVSource_CreateWithFD interface
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_2300
+ * @tc.number DEMUXER_FUNCTION_2300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2300, TestSize.Level0)
 {
@@ -1070,9 +1133,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_2400
- * @tc.name      : Test the size parameter of the OH_AVsource_CreateWithFD interface
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_2400
+ * @tc.number DEMUXER_FUNCTION_2400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2400, TestSize.Level0)
 {
@@ -1131,9 +1197,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_2400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3100
- * @tc.name      : seek to the start time, previous mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3100
+ * @tc.number DEMUXER_FUNCTION_3100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3100, TestSize.Level1)
 {
@@ -1192,9 +1261,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3100, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3200
- * @tc.name      : seek to the start time, next mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3200
+ * @tc.number DEMUXER_FUNCTION_3200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3200, TestSize.Level1)
 {
@@ -1253,9 +1325,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3200, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3300
- * @tc.name      : seek to the start time, closest mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3300
+ * @tc.number DEMUXER_FUNCTION_3300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3300, TestSize.Level1)
 {
@@ -1313,9 +1388,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3300, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3400
- * @tc.name      : seek to the end time, previous mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3400
+ * @tc.number DEMUXER_FUNCTION_3400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3400, TestSize.Level1)
 {
@@ -1368,9 +1446,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3400, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3500
- * @tc.name      : seek to the end time, next mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3500
+ * @tc.number DEMUXER_FUNCTION_3500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3500, TestSize.Level1)
 {
@@ -1424,9 +1505,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3500, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3600
- * @tc.name      : seek to the end time, closest mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3600
+ * @tc.number DEMUXER_FUNCTION_3600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3600, TestSize.Level1)
 {
@@ -1477,9 +1561,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3600, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3700
- * @tc.name      : seek to a random time, previous mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3700
+ * @tc.number DEMUXER_FUNCTION_3700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3700, TestSize.Level0)
 {
@@ -1535,9 +1622,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3700, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3800
- * @tc.name      : seek to a random time, next mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3800
+ * @tc.number DEMUXER_FUNCTION_3800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3800, TestSize.Level0)
 {
@@ -1593,9 +1683,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3800, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_3900
- * @tc.name      : seek to a random time, closest mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_3900
+ * @tc.number DEMUXER_FUNCTION_3900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3900, TestSize.Level0)
 {
@@ -1652,9 +1745,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_3900, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_4000
- * @tc.name      : seek to a invalid time, closest mode
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_4000
+ * @tc.number DEMUXER_FUNCTION_4000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4000, TestSize.Level2)
 {
@@ -1677,9 +1773,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_4100
- * @tc.name      : remove track before add track
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_4100
+ * @tc.number DEMUXER_FUNCTION_4100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4100, TestSize.Level2)
 {
@@ -1701,9 +1800,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_4200
- * @tc.name      : remove all tracks after demux finish
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_4200
+ * @tc.number DEMUXER_FUNCTION_4200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4200, TestSize.Level1)
 {
@@ -1746,9 +1848,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4200, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_4300
- * @tc.name      : remove all tracks before demux finish
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_4300
+ * @tc.number DEMUXER_FUNCTION_4300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4300, TestSize.Level1)
 {
@@ -1799,9 +1904,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4300, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_4400
- * @tc.name      : remove audio track before demux finish
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_4400
+ * @tc.number DEMUXER_FUNCTION_4400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4400, TestSize.Level1)
 {
@@ -1852,9 +1960,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4400, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_4500
- * @tc.name      : start demux bufore add track
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_4500
+ * @tc.number DEMUXER_FUNCTION_4500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4500, TestSize.Level2)
 {
@@ -1876,9 +1987,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_4500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7000
- * @tc.name      : demuxer MP4 ,GetSourceFormat,OH_MD_KEY_TRACK_COUNT
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7000
+ * @tc.number DEMUXER_FUNCTION_7000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7000, TestSize.Level0)
 {
@@ -1905,9 +2019,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7000, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7100
- * @tc.name      : demuxer MP4 ,GetSourceFormat,OH_MD_KEY_TRACK_COUNT
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7100
+ * @tc.number DEMUXER_FUNCTION_7100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7100, TestSize.Level0)
 {
@@ -1925,9 +2042,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7100, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7200
- * @tc.name      : demuxer MP4 ,GetAudioTrackFormat,MD_KEY_AAC_IS_ADTS
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7200
+ * @tc.number DEMUXER_FUNCTION_7200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7200, TestSize.Level0)
 {
@@ -1946,9 +2066,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7300
- * @tc.name      : demuxer MP4 ,GetAudioTrackFormat ,MD_KEY_BITRATE
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7300
+ * @tc.number DEMUXER_FUNCTION_7300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7300, TestSize.Level0)
 {
@@ -1968,9 +2091,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7400
- * @tc.name      : demuxer MP4 ,GetAudioTrackFormat,MD_KEY_CHANNEL_COUNT
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7400
+ * @tc.number DEMUXER_FUNCTION_7400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7400, TestSize.Level0)
 {
@@ -1991,9 +2117,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7500
- * @tc.name      : demuxer MP4 ,GetAudioTrackFormat,MD_KEY_SAMPLE_RATE
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7500
+ * @tc.number DEMUXER_FUNCTION_7500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7500, TestSize.Level0)
 {
@@ -2013,9 +2142,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7500, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7600
- * @tc.name      : demuxer MP4 ,GetVideoTrackFormat,MD_KEY_HEIGHT
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7600
+ * @tc.number DEMUXER_FUNCTION_7600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7600, TestSize.Level0)
 {
@@ -2035,9 +2167,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7600, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7700
- * @tc.name      : demuxer MP4 ,GetVideoTrackFormat,MD_KEY_WIDTH
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7700
+ * @tc.number DEMUXER_FUNCTION_7700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7700, TestSize.Level0)
 {
@@ -2057,9 +2192,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7700, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7800
- * @tc.name      : demuxer MP4 GetPublicTrackFormat,MD_KEY_CODEC_MIME
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7800
+ * @tc.number DEMUXER_FUNCTION_7800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7800, TestSize.Level0)
 {
@@ -2079,9 +2217,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7800, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_7900
- * @tc.name      : demuxer MP4 ,GetPublicTrackFormat,MD_KEY_TRACK_TYPE
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_7900
+ * @tc.number DEMUXER_FUNCTION_7900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7900, TestSize.Level0)
 {
@@ -2102,9 +2243,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_7900, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8000
- * @tc.name      : demuxer MP4 ,check source format,OH_MD_KEY_TITLE
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8000
+ * @tc.number DEMUXER_FUNCTION_8000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8000, TestSize.Level0)
 {
@@ -2124,9 +2268,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8000, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8100
- * @tc.name      : demuxer MP4 ,check source format,OH_MD_KEY_ALBUM
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8100
+ * @tc.number DEMUXER_FUNCTION_8100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8100, TestSize.Level0)
 {
@@ -2144,9 +2291,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8100, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8200
- * @tc.name      : demuxer MP4 ,check source format,OH_MD_KEY_ALBUM_ARTIST
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8200
+ * @tc.number DEMUXER_FUNCTION_8200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8200, TestSize.Level0)
 {
@@ -2164,9 +2314,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8300
- * @tc.name      : demuxer MP4 ,check track format,OH_MD_KEY_DATE
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8300
+ * @tc.number DEMUXER_FUNCTION_8300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8300, TestSize.Level0)
 {
@@ -2185,9 +2338,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8400
- * @tc.name      : demuxer MP4 ,check track format,OH_MD_KEY_COMMENT
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8400
+ * @tc.number DEMUXER_FUNCTION_8400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8400, TestSize.Level0)
 {
@@ -2206,9 +2362,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8500
- * @tc.name      : demuxer MP4 ,check track format,OH_MD_KEY_GENRE
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8500
+ * @tc.number DEMUXER_FUNCTION_8500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8500, TestSize.Level0)
 {
@@ -2227,9 +2386,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8500, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8600
- * @tc.name      : demuxer MP4 ,check track format,OH_MD_KEY_COPYRIGHT
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8600
+ * @tc.number DEMUXER_FUNCTION_8600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8600, TestSize.Level0)
 {
@@ -2247,9 +2409,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8600, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8700
- * @tc.name      : demuxer MP4 ,check track format,OH_MD_KEY_LANGUAGE
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8700
+ * @tc.number DEMUXER_FUNCTION_8700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8700, TestSize.Level0)
 {
@@ -2267,9 +2432,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8700, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8800
- * @tc.name      : demuxer MP4 ,check track format,OH_MD_KEY_DESCRIPTION
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8800
+ * @tc.number DEMUXER_FUNCTION_8800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8800, TestSize.Level0)
 {
@@ -2287,9 +2455,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8800, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_8800
- * @tc.name      : demuxer MP4 ,check track format,OH_MD_KEY_LYRICS
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_8900
+ * @tc.number DEMUXER_FUNCTION_8800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8900, TestSize.Level0)
 {
@@ -2307,9 +2478,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_8900, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_9000
- * @tc.name      : demuxer MP4 ,check source format,OH_MD_KEY_ARTIST
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_9000
+ * @tc.number DEMUXER_FUNCTION_9000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_9000, TestSize.Level0)
 {
@@ -2327,9 +2501,12 @@ HWTEST_F(DemuxerFuncNdkTest, DEMUXER_FUNCTION_9000, TestSize.Level0)
     close(fd);
 }
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_FUNCTION_0200
- * @tc.name      : demuxer video amr nb
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_FUNCTION_0200
+ * @tc.number SUB_MEDIA_DEMUXER_FUNCTION_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_0200, TestSize.Level0)
 {
@@ -2360,9 +2537,12 @@ HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_0200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_FUNCTION_0300
- * @tc.name      : demuxer video amr wb
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_FUNCTION_0300
+ * @tc.number SUB_MEDIA_DEMUXER_FUNCTION_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_0300, TestSize.Level0)
 {
@@ -2393,9 +2573,12 @@ HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_0300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_FUNCTION_1000
- * @tc.name      : demuxer amr_nb format
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_FUNCTION_1000
+ * @tc.number SUB_MEDIA_DEMUXER_FUNCTION_1000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_1000, TestSize.Level2)
 {
@@ -2417,9 +2600,12 @@ HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_1000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_FUNCTION_1100
- * @tc.name      : demuxer amr_wb format
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_FUNCTION_1100
+ * @tc.number SUB_MEDIA_DEMUXER_FUNCTION_1100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_1100, TestSize.Level2)
 {
@@ -2442,9 +2628,12 @@ HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_1100, TestSize.Level2)
 
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_FUNCTION_1200
- * @tc.name      : demux hevc ts video and audio
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_FUNCTION_1200
+ * @tc.number SUB_MEDIA_DEMUXER_FUNCTION_1200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_1200, TestSize.Level0)
 {
@@ -2502,9 +2691,12 @@ HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_1200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_FUNCTION_1300
- * @tc.name      : demux hevc ts video
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_FUNCTION_1300
+ * @tc.number SUB_MEDIA_DEMUXER_FUNCTION_1300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFuncNdkTest, SUB_MEDIA_DEMUXER_FUNCTION_1300, TestSize.Level0)
 {

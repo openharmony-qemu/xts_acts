@@ -219,7 +219,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0100
          * @tc.desc   Test Js Api SingleKvStore.restore() manal testcase 001
@@ -249,7 +248,6 @@ export default function kvStoreBackupCallbackJsunittest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0200
          * @tc.desc   Test Js Api SingleKvStore.restore() manal testcase 002
@@ -285,7 +283,6 @@ export default function kvStoreBackupCallbackJsunittest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0300
          * @tc.desc   Test Js Api SingleKvStore.backup() db testcase 001
@@ -318,7 +315,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0400
          * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 001
@@ -351,7 +347,6 @@ export default function kvStoreBackupCallbackJsunittest(){
             }
         })
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0500
          * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 002
@@ -384,7 +379,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0600
          * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 003
@@ -417,7 +411,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0400
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0700
          * @tc.desc   Test Js Api SingleKvStore.backup() testcase 004
@@ -447,7 +440,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0800
          * @tc.desc   Test Js Api SingleKvStore.backup() testcase 005
@@ -519,7 +511,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0900
          * @tc.desc   Test Js Api SingleKvStore.backup() testcase 006
@@ -602,7 +593,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1000
          * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 001
@@ -637,7 +627,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1100
          * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 002
@@ -672,7 +661,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1200
          * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 003
@@ -707,7 +695,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1300
          * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 004
@@ -742,7 +729,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1400
          * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 005
@@ -780,7 +766,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1500
          * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 006
@@ -810,7 +795,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_DELETEBUCKUP_CALLBACK_0100
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1600
          * @tc.desc   Test Js Api SingleKvStore.deleteBackup() testcase 001
@@ -840,7 +824,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1700
          * @tc.desc   Test Js Api SingleKvStore.put() db testcase 001
@@ -869,7 +852,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1800
          * @tc.desc   Test Js Api SingleKvStore.put() db testcase 002
@@ -899,7 +881,6 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:47
          * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300
          * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1900
          * @tc.desc   Test Js Api SingleKvStore.put() db testcase 003

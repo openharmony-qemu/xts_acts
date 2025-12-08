@@ -44,6 +44,14 @@ export default function TimePickerDialogJsunit() {
     });
 
 
+    /**
+     * @tc.name   TimePickerDialogJsunit_0100
+     * @tc.number TimePickerDialogJsunit_0100
+     * @tc.desc   TimePickerDialogJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TimePickerDialogJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TimePickerDialogJsunit_0100 START');
 	    let driver = await UiDriver.create()

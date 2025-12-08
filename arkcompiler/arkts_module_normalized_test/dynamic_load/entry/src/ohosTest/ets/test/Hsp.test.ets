@@ -19,12 +19,12 @@ import { BusinessError } from "@kit.BasicServicesKit";
 export default function dynamicLoadHsp() {
   describe('HspTest', () => {
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0100
-     * @tc.name      : testConstantExpressionsHsp01
-     * @tc.desc      : Test constant expression loading hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsHsp01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0100
+     * @tc.desc   Test constant expression loading hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressionsHsp01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsHsp01";
@@ -37,12 +37,12 @@ export default function dynamicLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0200
-     * @tc.name      : testConstantExpressionsHsp02
-     * @tc.desc      : Test constant expression loading hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsHsp02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0200
+     * @tc.desc   Test constant expression loading hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressionsHsp02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsHsp02";
@@ -55,12 +55,12 @@ export default function dynamicLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0300
-     * @tc.name      : testConstantExpressionsHsp03
-     * @tc.desc      : Test constant expression loading hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsHsp03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0300
+     * @tc.desc   Test constant expression loading hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressionsHsp03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsHsp03";
@@ -73,12 +73,12 @@ export default function dynamicLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0400
-     * @tc.name      : testConstantExpressionsHsp04
-     * @tc.desc      : Test constant expression loading hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsHsp04
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0400
+     * @tc.desc   Test constant expression loading hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressionsHsp04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsHsp04";
@@ -91,12 +91,12 @@ export default function dynamicLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0500
-     * @tc.name      : testVariableExpressionsHsp01
-     * @tc.desc      : Test variable expression loading hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsHsp01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0500
+     * @tc.desc   Test variable expression loading hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressionsHsp01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHsp01";
@@ -110,12 +110,12 @@ export default function dynamicLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0600
-     * @tc.name      : testVariableExpressionsHsp02
-     * @tc.desc      : Test variable expression loading hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsHsp02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0600
+     * @tc.desc   Test variable expression loading hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressionsHsp02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHsp02";
@@ -129,12 +129,12 @@ export default function dynamicLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0700
-     * @tc.name      : testVariableExpressionsHsp03
-     * @tc.desc      : Test variable expression loading hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsHsp03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0700
+     * @tc.desc   Test variable expression loading hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressionsHsp03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHsp03";
@@ -148,12 +148,12 @@ export default function dynamicLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0800
-     * @tc.name      : testVariableExpressionsHsp04
-     * @tc.desc      : Test variable expression loading hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsHsp04
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HSP_0800
+     * @tc.desc   Test variable expression loading hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressionsHsp04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHsp04";

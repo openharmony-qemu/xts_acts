@@ -25,14 +25,14 @@ export default function calendarPickerTest(){
       done();
     })
 
-    /*
-     * @tc.number: CalendarPickerMarkTodayTest001
-     * @tc.name: CalendarPickerMarkTodayTest001
-     * @tc.desc: CalendarPickerMark value 2025-01-07,2025-01-09,2025-07-01,2100-12-31，markToday true
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-      */
+    /**
+     * @tc.name   CalendarPickerMarkTodayTest001
+     * @tc.number CalendarPickerMarkTodayTest001
+     * @tc.desc   CalendarPickerMark value 2025-01-07,2025-01-09,2025-07-01,2100-12-31，markToday true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerMarkTodayTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerMarkTodayTest001 START');
       let PAGE_TAG = 'CalendarPickerMarkTodayTest';
@@ -50,14 +50,14 @@ export default function calendarPickerTest(){
       done();
     })
 
-    /*
-     * @tc.number: CalendarPickerMarkTodayTest002
-     * @tc.name: CalendarPickerMarkTodayTest002
-     * @tc.desc: CalendarPickerMark value 1970-01-01,2020-11-10,2021-01-,2021-01-15，markToday true
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-      */
+    /**
+     * @tc.name   CalendarPickerMarkTodayTest002
+     * @tc.number CalendarPickerMarkTodayTest002
+     * @tc.desc   CalendarPickerMark value 1970-01-01,2020-11-10,2021-01-,2021-01-15，markToday true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerMarkTodayTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerMarkTodayTest002 START');
       let PAGE_TAG = 'CalendarPickerMarkTodayTest';
@@ -75,13 +75,13 @@ export default function calendarPickerTest(){
       done();
     })
 
-    /*
-    * @tc.number: CalendarPickerMarkTodayTest003
-    * @tc.name: CalendarPickerMarkTodayTest003
-    * @tc.desc: CalendarPickerMark value 2025-01-07,2025-01-09,2025-07-01,2100-12-31，markToday false
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
+    /**
+     * @tc.name   CalendarPickerMarkTodayTest003
+     * @tc.number CalendarPickerMarkTodayTest003
+     * @tc.desc   CalendarPickerMark value 2025-01-07,2025-01-09,2025-07-01,2100-12-31，markToday false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CalendarPickerMarkTodayTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerMarkTodayTest003 START');
@@ -100,14 +100,14 @@ export default function calendarPickerTest(){
       done();
     })
 
-    /*
-   * @tc.number: CalendarPickerMarkTodayTest004
-   * @tc.name: CalendarPickerMarkTodayTest004
-   * @tc.desc: CalendarPickerMark value null,undefied,2025-07-01,2100-12-31，markToday false
-   * @tc.size: MediumTest
-   * @tc.type: Function
-   * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   CalendarPickerMarkTodayTest004
+     * @tc.number CalendarPickerMarkTodayTest004
+     * @tc.desc   CalendarPickerMark value null,undefied,2025-07-01,2100-12-31，markToday false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerMarkTodayTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerMarkTodayTest004 START');
       let PAGE_TAG = 'CalendarPickerMarkTodayTest';

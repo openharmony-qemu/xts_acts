@@ -46,10 +46,13 @@ export default function commonColorModeJsunit() {
       console.info("commonColorMode after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         testCommonColorMode0011
-     * @tc.desic        acecommonColorModeEtsTest0011
+    /**
+     * @tc.name   testCommonColorMode0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   testCommonColorMode0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonColorMode0011', Level.LEVEL2, async (done: Function) => {
       console.info('commonColorMode testCommonColorMode0011 START');
@@ -64,10 +67,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0012
-     * @tc.name         testCommonColorMode0012
-     * @tc.desic        acecommonColorModeEtsTest0012
+    /**
+     * @tc.name   testCommonColorMode0012
+     * @tc.number SUB_ACE_BASIC_ETS_API_0012
+     * @tc.desc   testCommonColorMode0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonColorMode0012', Level.LEVEL2, async (done: Function) => {
       console.info('commonColorMode testCommonColorMode0012 START');
@@ -84,10 +90,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00017
-     * @tc.name         testCommonMiddle0001
-     * @tc.desic        acecommonMiddleEtsTest0001
+    /**
+     * @tc.name   testCommonMiddle0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_00017
+     * @tc.desc   testCommonMiddle0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonMiddle0001', Level.LEVEL2, async (done: Function) => {
       console.info('commonMiddle testCommonMiddle0001 START');
@@ -102,10 +111,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00018
-     * @tc.name         testCommonOutset0001
-     * @tc.desic        acecommonOutsetEtsTest0001
+    /**
+     * @tc.name   testCommonOutset0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_00018
+     * @tc.desc   testCommonOutset0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonOutset0001', Level.LEVEL2, async (done: Function) => {
       console.info('commonOutset testCommonOutset0001 START');
@@ -119,10 +131,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00019
-     * @tc.name         testCommonRepeat0001
-     * @tc.desic        acecommonRepeatEtsTest0001
+    /**
+     * @tc.name   testCommonRepeat0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_00019
+     * @tc.desc   testCommonRepeat0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonRepeat0001', Level.LEVEL2, async (done: Function) => {
       console.info('commonRepeat testCommonRepeat0001 START');
@@ -136,10 +151,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00020
-     * @tc.name         testCommonSpace0001
-     * @tc.desic        acecommonSpaceEtsTest0001
+    /**
+     * @tc.name   testCommonSpace0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_00020
+     * @tc.desc   testCommonSpace0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonSpace0001', Level.LEVEL2, async (done: Function) => {
       console.info('commonSpace testCommonSpace0001 START');
@@ -153,10 +171,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00021
-     * @tc.name         testCommonSlice0001
-     * @tc.desic        acecommonSliceEtsTest0001
+    /**
+     * @tc.name   testCommonSlice0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_00021
+     * @tc.desc   testCommonSlice0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonSlice0001', Level.LEVEL2, async (done: Function) => {
       console.info('commonSlice testCommonSlice0001 START');
@@ -170,10 +191,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00022
-     * @tc.name         testCommonArea0001
-     * @tc.desic        acecommonAreaEtsTest0001
+    /**
+     * @tc.name   testCommonArea0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_00022
+     * @tc.desc   testCommonArea0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonArea0001', Level.LEVEL2, async (done: Function) => {
       console.info('commonSlice testCommonArea0001 START');
@@ -196,10 +220,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00023
-     * @tc.name         testCommonTouches0001
-     * @tc.desic        acecommonTouchesEtsTest0001
+    /**
+     * @tc.name   testCommonTouches0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_00023
+     * @tc.desc   testCommonTouches0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonTouches0001', Level.LEVEL2, async (done: Function) => {
       console.info('commonSlice testCommonTouches0001 START');
@@ -223,10 +250,13 @@ export default function commonColorModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00024
-     * @tc.name         testCommonChangedTouches0001
-     * @tc.desic        acecommonTouchesEtsTest0001
+    /**
+     * @tc.name   testCommonChangedTouches0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_00024
+     * @tc.desc   testCommonChangedTouches0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCommonChangedTouches0001', Level.LEVEL2, async (done: Function) => {
       console.info('commonSlice testCommonChangedTouches0001 START');

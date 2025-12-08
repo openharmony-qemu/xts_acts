@@ -86,12 +86,12 @@ export default function SchemaFieldNode(){
     });
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0100
-     * @tc.name SUB_SchemaFieldNode_STRING_0100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=STRING，default='field'
+     * @tc.desc   FieldNode.type=STRING，default='field'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -148,12 +148,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0200
-     * @tc.name SUB_SchemaFieldNode_STRING_0200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=STRING，default='+'
+     * @tc.desc   FieldNode.type=STRING，default='+'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -210,12 +210,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0300
-     * @tc.name SUB_SchemaFieldNode_STRING_0300
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=STRING，default='-'
+     * @tc.desc   FieldNode.type=STRING，default='-'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -273,12 +273,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0400
-     * @tc.name SUB_SchemaFieldNode_STRING_0400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=STRING，default=' '
+     * @tc.desc   FieldNode.type=STRING，default=' '
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -335,12 +335,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0500
-     * @tc.name SUB_SchemaFieldNode_STRING_0500
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=STRING，default='~!@#$%^&*()'
+     * @tc.desc   FieldNode.type=STRING，default='~!@#$%^&*()'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -397,12 +397,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0600
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0600
-     * @tc.name SUB_SchemaFieldNode_STRING_0600
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=STRING，default='//;,.=-'
+     * @tc.desc   FieldNode.type=STRING，default='//;,.=-'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -459,12 +459,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0700
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0700
-     * @tc.name SUB_SchemaFieldNode_STRING_0700
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=STRING，default='3'
+     * @tc.desc   FieldNode.type=STRING，default='3'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -517,12 +517,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0800
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0800
-     * @tc.name SUB_SchemaFieldNode_STRING_0800
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=STRING，default='true'
+     * @tc.desc   FieldNode.type=STRING，default='true'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -575,12 +575,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_STRING_0900
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_STRING_0900
-     * @tc.name SUB_SchemaFieldNode_STRING_0900
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode('+- *#')
+     * @tc.desc   FieldNode('+- *#')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_STRING_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -620,12 +620,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0100
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default='0'
+     * @tc.desc   FieldNode.type=INTEGER，default='0'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -683,12 +683,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0200
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default='field', 失败
+     * @tc.desc   FieldNode.type=INTEGER，default='field', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -730,12 +730,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0300
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0300
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default='+', 失败
+     * @tc.desc   FieldNode.type=INTEGER，default='+', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -775,12 +775,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0400
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default='-', 失败
+     * @tc.desc   FieldNode.type=INTEGER，default='-', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -820,12 +820,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0500
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0500
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default=' ', 失败
+     * @tc.desc   FieldNode.type=INTEGER，default=' ', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -865,12 +865,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0600
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0600
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0600
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default='~!@#$%^&*()', 失败
+     * @tc.desc   FieldNode.type=INTEGER，default='~!@#$%^&*()', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -910,12 +910,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0700
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0700
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0700
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default='//;,.=-', 失败
+     * @tc.desc   FieldNode.type=INTEGER，default='//;,.=-', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -955,12 +955,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0800
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0800
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0800
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default='3.21', 失败
+     * @tc.desc   FieldNode.type=INTEGER，default='3.21', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1000,12 +1000,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_INTEGER_0900
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_INTEGER_0900
-     * @tc.name SUB_SchemaFieldNode_INTEGER_0900
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=INTEGER，default='3.21', 失败
+     * @tc.desc   FieldNode.type=INTEGER，default='3.21', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_INTEGER_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1046,12 +1046,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_FLOAT_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_FLOAT_0100
-     * @tc.name SUB_SchemaFieldNode_FLOAT_0100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=FLOAT，default='3.21'
+     * @tc.desc   FieldNode.type=FLOAT，default='3.21'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_FLOAT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1109,12 +1109,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_FLOAT_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_FLOAT_0200
-     * @tc.name SUB_SchemaFieldNode_FLOAT_0200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=FLOAT，default='field', 失败
+     * @tc.desc   FieldNode.type=FLOAT，default='field', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_FLOAT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1155,12 +1155,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_FLOAT_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_FLOAT_0300
-     * @tc.name SUB_SchemaFieldNode_FLOAT_0300
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=FLOAT，default='+-  ', 失败
+     * @tc.desc   FieldNode.type=FLOAT，default='+-  ', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_FLOAT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1200,12 +1200,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_FLOAT_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_FLOAT_0400
-     * @tc.name SUB_SchemaFieldNode_FLOAT_0400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=FLOAT，default='~!@#$%^&*()//;,.=-', 失败
+     * @tc.desc   FieldNode.type=FLOAT，default='~!@#$%^&*()//;,.=-', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_FLOAT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1245,12 +1245,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_FLOAT_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_FLOAT_0500
-     * @tc.name SUB_SchemaFieldNode_FLOAT_0500
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=FLOAT，default='true', 失败
+     * @tc.desc   FieldNode.type=FLOAT，default='true', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_FLOAT_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1290,12 +1290,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_DOUBLE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_DOUBLE_0100
-     * @tc.name SUB_SchemaFieldNode_DOUBLE_0100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=DOUBLE，default='3.21'
+     * @tc.desc   FieldNode.type=DOUBLE，default='3.21'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_DOUBLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1353,12 +1353,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_DOUBLE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_DOUBLE_0200
-     * @tc.name SUB_SchemaFieldNode_DOUBLE_0200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=DOUBLE，default='field', 失败
+     * @tc.desc   FieldNode.type=DOUBLE，default='field', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_DOUBLE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1399,12 +1399,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_DOUBLE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_DOUBLE_0300
-     * @tc.name SUB_SchemaFieldNode_DOUBLE_0300
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=DOUBLE，default='+-  ', 失败
+     * @tc.desc   FieldNode.type=DOUBLE，default='+-  ', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_DOUBLE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1444,12 +1444,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_DOUBLE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_DOUBLE_0400
-     * @tc.name SUB_SchemaFieldNode_DOUBLE_0400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=DOUBLE，default='~!@#$%^&*()//;,.=-', 失败
+     * @tc.desc   FieldNode.type=DOUBLE，default='~!@#$%^&*()//;,.=-', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_DOUBLE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1489,12 +1489,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_DOUBLE_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_DOUBLE_0500
-     * @tc.name SUB_SchemaFieldNode_DOUBLE_0500
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=DOUBLE，default='true', 失败
+     * @tc.desc   FieldNode.type=DOUBLE，default='true', 失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_DOUBLE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1535,12 +1535,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_BOOLEAN_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_BOOLEAN_0100
-     * @tc.name SUB_SchemaFieldNode_BOOLEAN_0100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=BOOLEAN，default='true'
+     * @tc.desc   FieldNode.type=BOOLEAN，default='true'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_BOOLEAN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1598,12 +1598,12 @@ export default function SchemaFieldNode(){
 
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_BOOLEAN_0101
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_BOOLEAN_0101
-     * @tc.name SUB_SchemaFieldNode_BOOLEAN_0101
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=BOOLEAN，default='false'
+     * @tc.desc   FieldNode.type=BOOLEAN，default='false'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_BOOLEAN_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1660,12 +1660,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_BOOLEAN_0102
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_BOOLEAN_0102
-     * @tc.name SUB_SchemaFieldNode_BOOLEAN_0102
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=BOOLEAN，default='TRUE'
+     * @tc.desc   FieldNode.type=BOOLEAN，default='TRUE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_BOOLEAN_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1703,12 +1703,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_BOOLEAN_0103
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_BOOLEAN_0103
-     * @tc.name SUB_SchemaFieldNode_BOOLEAN_0103
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=BOOLEAN，default='FALSE'
+     * @tc.desc   FieldNode.type=BOOLEAN，default='FALSE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_BOOLEAN_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1746,12 +1746,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_BOOLEAN_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_BOOLEAN_0200
-     * @tc.name SUB_SchemaFieldNode_BOOLEAN_0200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=BOOLEAN，default='field'
+     * @tc.desc   FieldNode.type=BOOLEAN，default='field'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_BOOLEAN_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1789,12 +1789,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_BOOLEAN_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_BOOLEAN_0300
-     * @tc.name SUB_SchemaFieldNode_BOOLEAN_0300
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=BOOLEAN，default='+-  '
+     * @tc.desc   FieldNode.type=BOOLEAN，default='+-  '
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_BOOLEAN_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1832,12 +1832,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_BOOLEAN_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_BOOLEAN_0400
-     * @tc.name SUB_SchemaFieldNode_BOOLEAN_0400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=BOOLEAN，default='~!@#$%^&*()//;,.=-'
+     * @tc.desc   FieldNode.type=BOOLEAN，default='~!@#$%^&*()//;,.=-'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_BOOLEAN_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1875,12 +1875,12 @@ export default function SchemaFieldNode(){
     })
 
     /**
+     * @tc.name   SUB_SchemaFieldNode_BOOLEAN_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_SchemaFieldNode_BOOLEAN_0500
-     * @tc.name SUB_SchemaFieldNode_BOOLEAN_0500
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  FieldNode.type=BOOLEAN，default='0'
+     * @tc.desc   FieldNode.type=BOOLEAN，default='0'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_SchemaFieldNode_BOOLEAN_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {

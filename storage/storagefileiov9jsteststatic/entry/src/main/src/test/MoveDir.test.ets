@@ -18,6 +18,7 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
 import fs from '@ohos.file.fs';
+import { ConflictFiles } from '@ohos.file.fs';
 import buffer from '@ohos.buffer';
 import { BusinessError } from '@ohos.base';
 
@@ -99,14 +100,12 @@ export default function fileIOMoveDir() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_moveDir start');
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_000
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0000
-     * @tc.name fileIO_test_moveDir_sync_static_000
-     * @tc.desc Test moveDirSync() interface.
-     * There is no target folder(src) under path dest.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_000 start');
@@ -145,14 +144,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_001
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0100
-     * @tc.name fileIO_test_moveDir_sync_static_001
-     * @tc.desc Test moveDirSync() interface.
-     * There is a target folder(src) under path dest but it is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_001 start');
@@ -193,14 +190,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_002
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0200
-     * @tc.name fileIO_test_moveDir_sync_static_002
-     * @tc.desc Test moveDirSync() interface.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_REPLACE.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_002 start');
@@ -229,14 +224,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_003
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0300
-     * @tc.name fileIO_test_moveDir_sync_static_003
-     * @tc.desc Test moveDirSync() interface.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_REPLACE.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_003 start');
@@ -265,14 +258,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_004
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0400
-     * @tc.name fileIO_test_moveDir_sync_static_004
-     * @tc.desc Test moveDirSync() interface.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_THROW_ERR.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_004 start');
@@ -304,14 +295,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_005
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0500
-     * @tc.name fileIO_test_moveDir_sync_static_005
-     * @tc.desc Test moveDirSync() interface.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_THROW_ERR.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_005 start');
@@ -345,14 +334,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_006
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0600
-     * @tc.name fileIO_test_moveDir_sync_static_006
-     * @tc.desc Test moveDirSync() interface.
-     * Src is empty and there is a target folder(src) under path dest but it is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_006 start');
@@ -379,14 +366,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_007
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0700
-     * @tc.name fileIO_test_moveDir_sync_static_007
-     * @tc.desc Test moveDirSync() interface.
-     * Src is empty and there is no target folder(src) under path dest.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_007 start');
@@ -411,14 +396,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_008
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0800
-     * @tc.name fileIO_test_moveDir_sync_static_008
-     * @tc.desc Test moveDirSync() interface.
-     * Invalid mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_008 start');
@@ -444,14 +427,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_009
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0900
-     * @tc.name fileIO_test_moveDir_sync_static_009
-     * @tc.desc Test moveDirSync() interface.
-     * The path point to a file, not a directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_009 start');
@@ -473,14 +454,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_010
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1000
-     * @tc.name fileIO_test_moveDir_sync_static_010
-     * @tc.desc Test moveDirSync() interface.
-     * Invalid path. Can not move the same path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_010 start');
@@ -505,14 +484,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_011
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1100
-     * @tc.name fileIO_test_moveDir_sync_static_011
-     * @tc.desc Test moveDirSync() interface.
-     * Invalid path. Can not move subPath.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_011 start');
@@ -541,14 +518,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_sync_static_012
      * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1200
-     * @tc.name fileIO_test_moveDir_sync_static_012
-     * @tc.desc Test moveDirSync() interface.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_THROW_ERR.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_012 start');
@@ -581,14 +556,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_000
      * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0000
-     * @tc.name fileIO_test_moveDir_async_static_000
-     * @tc.desc Test moveDir() interface.Promise.
-     * There is no target folder(src) under path dest.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDir() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_000 start');
@@ -627,15 +600,13 @@ export default function fileIOMoveDir() {
       }
     });
 
-     /**
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_001
      * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0100
-     * @tc.name fileIO_test_moveDir_async_static_001
-     * @tc.desc Test moveDir() interface.Callback.
-     * There is no target folder(src) under path dest.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDir() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveDir_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_001 start');
@@ -680,14 +651,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_002
      * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0200
-     * @tc.name fileIO_test_moveDir_async_static_002
-     * @tc.desc Test moveDir() interface.Promise.
-     * There is a target folder(src) under path dest but it is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDir() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveDir_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_002 start');
@@ -728,15 +697,13 @@ export default function fileIOMoveDir() {
       }
     });
 
-     /**
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_003
      * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0300
-     * @tc.name fileIO_test_moveDir_async_static_003
-     * @tc.desc Test moveDir() interface.Callback.
-     * There is a target folder(src) under path dest but it is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveDir() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_003 start');
@@ -783,14 +750,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_004
      * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0400
-     * @tc.name fileIO_test_moveDir_async_static_004
-     * @tc.desc Test moveFile() interface.Promise.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_REPLACE.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_004 start');
@@ -820,14 +785,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_005
      * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0500
-     * @tc.name fileIO_test_moveDir_async_static_005
-     * @tc.desc Test moveFile() interface.Callback.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_REPLACE.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_005 start');
@@ -863,14 +826,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_006
      * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0600
-     * @tc.name fileIO_test_moveDir_async_static_006
-     * @tc.desc Test moveFile() interface.Promise.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_REPLACE.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_006 start');
@@ -900,14 +861,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_007
      * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0700
-     * @tc.name fileIO_test_moveDir_async_static_007
-     * @tc.desc Test moveFile() interface.Callback.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_REPLACE.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_007 start');
@@ -947,14 +906,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_008
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_0800
-     * @tc.name fileIO_test_moveDir_async_static_008
-     * @tc.desc Test moveFile() interface.Promise.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_THROW_ERR.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_008 start');
@@ -987,14 +944,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_009
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_0900
-     * @tc.name fileIO_test_moveDir_async_static_009
-     * @tc.desc Test moveFile() interface.Callback.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_THROW_ERR.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_009 start');
@@ -1030,14 +985,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_010
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1000
-     * @tc.name fileIO_test_moveDir_async_static_010
-     * @tc.desc Test moveFile() interface.Promise.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_THROW_ERR.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_010 start');
@@ -1055,14 +1008,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_011
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1100
-     * @tc.name fileIO_test_moveDir_async_static_011
-     * @tc.desc Test moveFile() interface.Callback.
-     * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_THROW_ERR.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_011 start');
@@ -1084,14 +1035,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_012
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1200
-     * @tc.name fileIO_test_moveDir_async_static_012
-     * @tc.desc Test moveFile() interface.Promise.
-     * Src is empty and there is a target folder(src) under path dest but it is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_012 start');
@@ -1119,14 +1068,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_013
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1300
-     * @tc.name fileIO_test_moveDir_async_static_013
-     * @tc.desc Test moveFile() interface.Callback.
-     * Src is empty and there is a target folder(src) under path dest but it is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_013 start');
@@ -1159,14 +1106,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_014
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1400
-     * @tc.name fileIO_test_moveDir_async_static_014
-     * @tc.desc Test moveFile() interface.Promise.
-     * Src is empty and there is no target folder(src) under path dest.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_014 start');
@@ -1192,14 +1137,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_015
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1500
-     * @tc.name fileIO_test_moveDir_async_static_015
-     * @tc.desc Test moveFile() interface.CallBack.
-     * Src is empty and there is no target folder(src) under path dest.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.CallBack.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_015 start');
@@ -1230,14 +1173,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_016
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1600
-     * @tc.name fileIO_test_moveDir_async_static_016
-     * @tc.desc Test moveFile() interface.Promise.
-     * Invalid mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_016 start');
@@ -1256,14 +1197,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_017
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1700
-     * @tc.name fileIO_test_moveDir_async_static_017
-     * @tc.desc Test moveFile() interface.Callback.
-     * Invalid mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_017 start');
@@ -1286,14 +1225,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_018
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1800
-     * @tc.name fileIO_test_moveDir_async_static_018
-     * @tc.desc Test moveFile() interface.Promise.
-     * Invalid path.The path point to a file, not a directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_018 start');
@@ -1311,14 +1248,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_019
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_1900
-     * @tc.name fileIO_test_moveDir_async_static_019
-     * @tc.desc Test moveFile() interface.Callback.
-     * Invalid path.The path point to a file, not a directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_019 start');
@@ -1340,14 +1275,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_020
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2000
-     * @tc.name fileIO_test_moveDir_async_static_020
-     * @tc.desc Test moveFile() interface.Promise.
-     * Invalid path. Can not move the same path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_020 start');
@@ -1364,15 +1297,13 @@ export default function fileIOMoveDir() {
       }
     });
 
-     /**
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_021
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2100
-     * @tc.name fileIO_test_moveDir_async_static_021
-     * @tc.desc Test moveFile() interface.Callback.
-     * Invalid path.Can not move the same path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_021 start');
@@ -1394,14 +1325,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_022
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2200
-     * @tc.name fileIO_test_moveDir_async_static_022
-     * @tc.desc Test moveFile() interface.Promise.
-     * Invalid path. Can not move subPath.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_022 start');
@@ -1418,15 +1347,13 @@ export default function fileIOMoveDir() {
       }
     });
 
-     /**
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_023
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2300
-     * @tc.name fileIO_test_moveDir_async_static_023
-     * @tc.desc Test moveFile() interface.Callback.
-     * Invalid path.Can not move subPath.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface.Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_023 start');
@@ -1448,14 +1375,12 @@ export default function fileIOMoveDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveDir_async_static_024
      * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2400
-     * @tc.name fileIO_test_moveDir_async_static_024
-     * @tc.desc Test moveFile() interface. Promise.
-     * Undefined option arguments, use default mode = DIRMODE_DIRECTORY_THROW_ERR.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveDir_async_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_024 start');
@@ -1468,6 +1393,69 @@ export default function fileIOMoveDir() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_024 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath.baseDir);
         expect(e.code == 13900032 && e.message == 'Directory not empty').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_025
+     * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2500
+     * @tc.desc   Test moveDir() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_moveDir_async_static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath: Dir = await readyFiles('fileIO_test_moveDir_async_static_025');
+      let callfalg = 0;
+
+      try {
+        fs.moveDirWithConflictFiles(dpath.srcDir, dpath.destDir, DIRMODE_FILE_THROW_ERR, (err: BusinessError<Array<ConflictFiles>>|null) => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_025 copyDirWithConflictFiles start ');
+          callfalg = 1;
+          if (err && err.data && err.code == 13900015 && err.data?.length !== undefined) {
+            let errData = err?.data;
+            if(errData != null){
+              for(let i=0; i<errData.length; i++){
+                hilog.info(domain, tag, '%{public}s', "fileIO_test_moveDir_async_static_025 failed with conflicting files: " + err?.data![i].srcFile + " " + err?.data![i].destFile);
+              }
+            }
+            expect(callfalg).assertEqual(1);
+            done();
+          }
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_025 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_026
+     * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2600
+     * @tc.desc   Test moveDir() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_moveDir_async_static_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath: Dir = await readyFiles('fileIO_test_moveDir_async_static_026');
+      let callfalg = 0;
+
+      try {
+        fs.moveDirWithConflictFiles(dpath.srcDir, dpath.destDir, (err: BusinessError<Array<ConflictFiles>>|null) => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_026 copyDirWithConflictFiles start ');
+          callfalg = 1;
+          if (err && err.code == 13900032) {
+            hilog.info(domain, tag, '%{public}s', "fileIO_test_moveDir_async_static_026 failed with conflicting files:");
+            expect(callfalg).assertEqual(1);
+            done();
+          }
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_026 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
         done();
       }
     });

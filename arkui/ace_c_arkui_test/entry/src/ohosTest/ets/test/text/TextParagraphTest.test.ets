@@ -26,39 +26,39 @@ export default function textParagraphTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CONTENT_WITH_STYLED_STRING_0100
-     * @tc.name       : testTextParagraph001
-     * @tc.desc       : testing padding for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextParagraph001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CONTENT_WITH_STYLED_STRING_0100
+     * @tc.desc   testing padding for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextParagraph001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextParagraph001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CONTENT_WITH_STYLED_STRING_0200
-     * @tc.name       : testTextParagraph002
-     * @tc.desc       : testing padding for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextParagraph002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CONTENT_WITH_STYLED_STRING_0200
+     * @tc.desc   testing padding for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextParagraph002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextParagraph002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CONTENT_WITH_STYLED_STRING_0300
-     * @tc.name       : testTextParagraph003
-     * @tc.desc       : testing padding for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextParagraph003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CONTENT_WITH_STYLED_STRING_0300
+     * @tc.desc   testing padding for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextParagraph003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextParagraph003()).assertEqual(0)

@@ -28,13 +28,13 @@ export default function DragEventGetWidthHeightTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragEvent_GetWidthHeight_0100
-     * @tc.name       : DragEventGetWidthHeightTest001
-     * @tc.desc       : testing DisableDefaultDropAnimation DragEvent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragEventGetWidthHeightTest001
+     * @tc.number SUB_ARKUI_CAPI_DragEvent_GetWidthHeight_0100
+     * @tc.desc   testing DisableDefaultDropAnimation DragEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragEventGetWidthHeightTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragEventGetWidthHeightTest001 START');

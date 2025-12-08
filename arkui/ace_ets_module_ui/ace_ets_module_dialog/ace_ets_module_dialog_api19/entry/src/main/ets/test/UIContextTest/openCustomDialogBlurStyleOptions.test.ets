@@ -37,12 +37,12 @@ export default function UIOpenCustomDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIOpenCustomDialogBlurStyleOptions_0100
-     * @tc.name      UIOpenCustomDialogBlurStyleOptions_0100
-     * @tc.desc      createOpenCustomDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIOpenCustomDialogBlurStyleOptions_0100
+     * @tc.number UIOpenCustomDialogBlurStyleOptions_0100
+     * @tc.desc   createOpenCustomDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIOpenCustomDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIOpenCustomDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function UIOpenCustomDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIOpenCustomDialogBlurStyleOptions_0200
-     * @tc.name      UIOpenCustomDialogBlurStyleOptions_0200
-     * @tc.desc      createOpenCustomDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIOpenCustomDialogBlurStyleOptions_0200
+     * @tc.number UIOpenCustomDialogBlurStyleOptions_0200
+     * @tc.desc   createOpenCustomDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIOpenCustomDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIOpenCustomDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function UIOpenCustomDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIOpenCustomDialogBlurStyleOptions_0300
-     * @tc.name      UIOpenCustomDialogBlurStyleOptions_0300
-     * @tc.desc      createOpenCustomDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIOpenCustomDialogBlurStyleOptions_0300
+     * @tc.number UIOpenCustomDialogBlurStyleOptions_0300
+     * @tc.desc   createOpenCustomDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIOpenCustomDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIOpenCustomDialogBlurStyleOptions_0300';

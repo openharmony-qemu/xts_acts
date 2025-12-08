@@ -65,7 +65,6 @@ export default function rdbDecryptTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0100
      * @tc.desc   default params
@@ -104,7 +103,6 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest0100 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0200
      * @tc.desc   default params getrdbstore,open rdbstore
@@ -162,7 +160,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0300
      * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_GCM
@@ -212,7 +209,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0400
      * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC
@@ -260,7 +256,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0500
      * @tc.desc   iterationCount is 0
@@ -306,7 +301,6 @@ export default function rdbDecryptTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0600
      * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_GCM
@@ -354,7 +348,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0700
      * @tc.desc   encryptionKey is new Uint8Array([])
@@ -402,7 +395,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0800
      * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC
@@ -450,7 +442,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0900
      * @tc.desc   cryptoPageSize is 2048
@@ -499,7 +490,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1000
      * @tc.desc   params is undefined
@@ -544,7 +534,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1100
      * @tc.desc   encryptionAlgo hmacAlgo kdfAlgo cryptoPageSize is undefined
@@ -590,7 +579,6 @@ export default function rdbDecryptTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1200
      * @tc.desc   cryptoPageSize is 1024
@@ -643,7 +631,6 @@ export default function rdbDecryptTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1300
      * @tc.desc   cryptoPageSize is 4096
@@ -694,7 +681,6 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest1300 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1400
      * @tc.desc   cryptoPageSize is 65536
@@ -748,7 +734,6 @@ export default function rdbDecryptTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1500
      * @tc.desc   cryptoPageSize is 65536.7
@@ -801,7 +786,6 @@ export default function rdbDecryptTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1600
      * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC+1
@@ -838,7 +822,6 @@ export default function rdbDecryptTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1700
      * @tc.desc   iterationCount is -1
@@ -873,7 +856,6 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest1700 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1800
      * @tc.desc   cryptoPageSize is 511
@@ -909,7 +891,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1900
      * @tc.desc   cryptoPageSize is 65537
@@ -944,7 +925,6 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest1900 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2000
      * @tc.desc   cryptoPageSize is 1
@@ -980,7 +960,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2100
      * @tc.desc   encryptionAlgo is 4,hmacAlgo is 5,kdfAlgo is 6
@@ -1015,7 +994,6 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest2100 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2200
      * @tc.desc   params is Infinity
@@ -1051,7 +1029,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2300
      * @tc.desc   params is NaN
@@ -1088,7 +1065,6 @@ export default function rdbDecryptTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2400
      * @tc.desc   cryptoPageSize is 512
@@ -1127,7 +1103,6 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest2400 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2500
      * @tc.desc   no encrpy attach encrpy,cryptoParam is default
@@ -1180,7 +1155,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2600
      * @tc.desc   no encrpy attach encrpy,cryptoParam is no default
@@ -1237,7 +1211,6 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest2600 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2700
      * @tc.desc   no encrpy attach encrpy,cryptoParam is invalid params
@@ -1304,7 +1277,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2800
      * @tc.desc   encrpy attach encrpy,cryptoParam is no default
@@ -1371,7 +1343,6 @@ export default function rdbDecryptTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbDecryptTest2900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2900
      * @tc.desc   no encrpy attach encrpy,insert data from encrpy to noencrpy

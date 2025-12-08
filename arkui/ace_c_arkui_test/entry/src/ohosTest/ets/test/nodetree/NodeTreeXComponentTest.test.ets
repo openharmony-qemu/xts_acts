@@ -25,13 +25,13 @@ export default function nodeTreeXComponentTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_TREE_XCOMPONENT_0100
-     * @tc.name: testNodeTreeXComponent001
-     * @tc.desc: testing AttachNativeRootNode with nomral value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testNodeTreeXComponent001
+     * @tc.number SUB_ARKUI_CAPI_NODE_TREE_XCOMPONENT_0100
+     * @tc.desc   testing AttachNativeRootNode with nomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeTreeXComponent001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'NodeTreeXComponentTest';
@@ -42,13 +42,13 @@ export default function nodeTreeXComponentTest() {
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_TREE_XCOMPONENT_0200
-     * @tc.name: testNodeTreeXComponent002
-     * @tc.desc: testing DetachNativeRootNode with nomral value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testNodeTreeXComponent002
+     * @tc.number SUB_ARKUI_CAPI_NODE_TREE_XCOMPONENT_0200
+     * @tc.desc   testing DetachNativeRootNode with nomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeTreeXComponent002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'NodeTreeXComponentDetachTest';
@@ -59,13 +59,13 @@ export default function nodeTreeXComponentTest() {
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_TREE_XCOMPONENT_0300
-     * @tc.name: testNodeTreeXComponent003
-     * @tc.desc: testing AttachNativeRootNode with abnomral value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testNodeTreeXComponent003
+     * @tc.number SUB_ARKUI_CAPI_NODE_TREE_XCOMPONENT_0300
+     * @tc.desc   testing AttachNativeRootNode with abnomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeTreeXComponent003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'NodeTreeXComponent401Test';
@@ -76,13 +76,13 @@ export default function nodeTreeXComponentTest() {
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_TREE_XCOMPONENT_0400
-     * @tc.name: testNodeTreeXComponent004
-     * @tc.desc: testing DetachNativeRootNode with abnomral value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testNodeTreeXComponent004
+     * @tc.number SUB_ARKUI_CAPI_NODE_TREE_XCOMPONENT_0400
+     * @tc.desc   testing DetachNativeRootNode with abnomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeTreeXComponent004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'NodeTreeXComponentDetach401Test';

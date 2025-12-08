@@ -39,13 +39,15 @@ export default function abilityTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_WantConstantCover_0100
-     * @tc.name    Verify PAGE_PATH.
-     * @tc.desc    Function test
-     * @tc.level   3
-     */
 
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_WantConstantCover_0100
+     * @tc.number SUB_AA_OpenHarmony_WantConstantCover_0100
+     * @tc.desc   SUB_AA_OpenHarmony_WantConstantCover_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_WantConstantCover_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_WantConstantCover_0100 ==>';
       expect(wantConstant.Params.PAGE_PATH)
@@ -53,11 +55,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_WantConstantCover_0200
-     * @tc.name    Verify ROUTER_NAME.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_WantConstantCover_0200
+     * @tc.number SUB_AA_OpenHarmony_WantConstantCover_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_WantConstantCover_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_WantConstantCover_0200 ==>';
@@ -66,11 +70,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_WantConstantCover_0300
-     * @tc.name    Verify PAGE_SOURCE_FILE.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_WantConstantCover_0300
+     * @tc.number SUB_AA_OpenHarmony_WantConstantCover_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_WantConstantCover_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_WantConstantCover_0300 ==>';
@@ -79,11 +85,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_WantConstantCover_0400
-     * @tc.name    Verify BUILD_FUNCTION.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_WantConstantCover_0400
+     * @tc.number SUB_AA_OpenHarmony_WantConstantCover_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_WantConstantCover_0400', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_WantConstantCover_0400 ==>';
@@ -92,11 +100,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_WantConstantCover_0500
-     * @tc.name    Verify SUB_PACKAGE_NAME.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_WantConstantCover_0500
+     * @tc.number SUB_AA_OpenHarmony_WantConstantCover_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_WantConstantCover_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_WantConstantCover_0500 ==>';
@@ -105,11 +115,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number  Sub_Ability_AbilityRuntime_AtomicserviceShareRouter_0100
-     * @tc.name    Sub_Ability_AbilityRuntime_AtomicserviceShareRouter_0100
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Sub_Ability_AbilityRuntime_AtomicserviceShareRouter_0100
+     * @tc.number Sub_Ability_AbilityRuntime_AtomicserviceShareRouter_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Ability_AbilityRuntime_AtomicserviceShareRouter_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'Sub_Ability_AbilityRuntime_AtomicserviceShareRouter_0100 ==>';

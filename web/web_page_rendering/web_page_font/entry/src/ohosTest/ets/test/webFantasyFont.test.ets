@@ -54,14 +54,14 @@ export default function webFantasyFont() {
       done();
     })
 
-    /*
-    * @tc.number     : emitWebFantasyFont001
-    * @tc.name       : emitWebFantasyFont001
-    * @tc.desc       : test minLogicalFontSize
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitWebFantasyFont001
+     * @tc.number emitWebFantasyFont001
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitWebFantasyFont001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebFantasyFont001", 150120)
       Utils.registerEvent("emitWebFantasyFont001", 0, 150130, done);

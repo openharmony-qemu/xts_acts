@@ -47,12 +47,12 @@ export default function IsModifiableBooleanTest() {
     });
 
     /**
-     * @tc.number    IsModifiableBooleanTest_0100
-     * @tc.name      IsModifiableBooleanTest_0100
-     * @tc.desc      isModifiable boolean test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IsModifiableBooleanTest_0100
+     * @tc.number IsModifiableBooleanTest_0100
+     * @tc.desc   isModifiable boolean test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IsModifiableBooleanTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('IsModifiableBooleanTest_0100 START');

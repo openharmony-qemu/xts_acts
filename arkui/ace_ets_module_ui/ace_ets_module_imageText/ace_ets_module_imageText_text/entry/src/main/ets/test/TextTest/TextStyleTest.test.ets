@@ -47,12 +47,12 @@ export default function TextStyleTest() {
     });
 
     /**
-     * @tc.number    TextStyle_0005
-     * @tc.name      TextStyle_0005
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0005
+     * @tc.number TextStyle_0005
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0005', Level.LEVEL1, async (done: Function) => {
 
@@ -67,12 +67,12 @@ export default function TextStyleTest() {
     });
 
     /**
-     * @tc.number    TextStyle_0008
-     * @tc.name      TextStyle_0008
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0008
+     * @tc.number TextStyle_0008
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0008', Level.LEVEL1, async (done: Function) => {
       console.info('[TextStyle_0008] START');

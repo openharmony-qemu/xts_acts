@@ -19,12 +19,12 @@ export default function atomicsExchangeTest() {
     })
 
     /**
+     * @tc.name   atomicsExchangeTest001
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_001
-     * @tc.name atomicsExchangeTest001
-     * @tc.desc Test basic usage with Int32Array: replace value and return old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test basic usage with Int32Array: replace value and return old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -36,12 +36,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest002
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_002
-     * @tc.name atomicsExchangeTest002
-     * @tc.desc Test with Uint8Array: replace unsigned 8-bit value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test with Uint8Array: replace unsigned 8-bit value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -53,12 +53,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest003
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_003
-     * @tc.name atomicsExchangeTest003
-     * @tc.desc Test with Int8Array: replace signed 8-bit value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test with Int8Array: replace signed 8-bit value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -70,12 +70,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest004
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_004
-     * @tc.name atomicsExchangeTest004
-     * @tc.desc Test with Uint16Array: replace unsigned 16-bit value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test with Uint16Array: replace unsigned 16-bit value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(2);
@@ -87,12 +87,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest005
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_005
-     * @tc.name atomicsExchangeTest005
-     * @tc.desc Test with Int16Array: replace signed 16-bit value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test with Int16Array: replace signed 16-bit value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(2);
@@ -104,12 +104,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest006
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_006
-     * @tc.name atomicsExchangeTest006
-     * @tc.desc Test with Uint32Array: replace unsigned 32-bit value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test with Uint32Array: replace unsigned 32-bit value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -121,12 +121,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest007
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_007
-     * @tc.name atomicsExchangeTest007
-     * @tc.desc Test with BigInt64Array: replace 64-bit signed BigInt value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test with BigInt64Array: replace 64-bit signed BigInt value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -138,12 +138,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest008
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_008
-     * @tc.name atomicsExchangeTest008
-     * @tc.desc Test with BigUint64Array: replace 64-bit unsigned BigInt value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test with BigUint64Array: replace 64-bit unsigned BigInt value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -155,12 +155,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest009
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_009
-     * @tc.name atomicsExchangeTest009
-     * @tc.desc Test exchange at non-zero index of Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange at non-zero index of Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -174,12 +174,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest010
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_010
-     * @tc.name atomicsExchangeTest010
-     * @tc.desc Test exchange with zero value in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with zero value in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -191,12 +191,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest011
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_011
-     * @tc.name atomicsExchangeTest011
-     * @tc.desc Test throw TypeError with non-integer typed array (Float32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw TypeError with non-integer typed array (Float32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -214,12 +214,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest012
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_012
-     * @tc.name atomicsExchangeTest012
-     * @tc.desc Test throw RangeError with index out of bounds (exceed length)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw RangeError with index out of bounds (exceed length)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -232,12 +232,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest013
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_013
-     * @tc.name atomicsExchangeTest013
-     * @tc.desc Test throw RangeError with negative index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw RangeError with negative index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -250,12 +250,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest014
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_014
-     * @tc.name atomicsExchangeTest014
-     * @tc.desc Test throw TypeError with non-shared ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw TypeError with non-shared ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ab = new ArrayBuffer(4);
@@ -268,12 +268,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest015
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_015
-     * @tc.name atomicsExchangeTest015
-     * @tc.desc Test multiple consecutive exchange calls on Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test multiple consecutive exchange calls on Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -291,12 +291,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest016
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_016
-     * @tc.name atomicsExchangeTest016
-     * @tc.desc Test exchange with maximum Int32 value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with maximum Int32 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -309,12 +309,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest017
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_017
-     * @tc.name atomicsExchangeTest017
-     * @tc.desc Test exchange with minimum Int32 value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with minimum Int32 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -327,12 +327,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest018
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_018
-     * @tc.name atomicsExchangeTest018
-     * @tc.desc Test exchange on large SharedArrayBuffer (Int32Array with index 5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on large SharedArrayBuffer (Int32Array with index 5)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(32); // 8 Int32 elements
@@ -346,12 +346,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest019
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_019
-     * @tc.name atomicsExchangeTest019
-     * @tc.desc Test value overflow for Uint8Array in exchange
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test value overflow for Uint8Array in exchange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -363,12 +363,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest020
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_020
-     * @tc.name atomicsExchangeTest020
-     * @tc.desc Test value underflow for Int8Array in exchange
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test value underflow for Int8Array in exchange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -380,12 +380,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest021
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_021
-     * @tc.name atomicsExchangeTest021
-     * @tc.desc Test exchange with same old and new value in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with same old and new value in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -397,12 +397,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest022
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_022
-     * @tc.name atomicsExchangeTest022
-     * @tc.desc Test throw TypeError with non-typed array object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw TypeError with non-typed array object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -425,12 +425,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest023
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_023
-     * @tc.name atomicsExchangeTest023
-     * @tc.desc Test exchange with large positive value in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with large positive value in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -442,12 +442,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest024
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_024
-     * @tc.name atomicsExchangeTest024
-     * @tc.desc Test exchange with large negative value in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with large negative value in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -459,12 +459,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest025
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_025
-     * @tc.name atomicsExchangeTest025
-     * @tc.desc Test exchange on Uint16Array with overflow value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Uint16Array with overflow value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(2);
@@ -476,12 +476,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest026
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_026
-     * @tc.name atomicsExchangeTest026
-     * @tc.desc Test exchange on Int16Array with overflow value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Int16Array with overflow value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(2);
@@ -493,12 +493,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest027
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_027
-     * @tc.name atomicsExchangeTest027
-     * @tc.desc Test throw TypeError with non-integer value for BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw TypeError with non-integer value for BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -522,12 +522,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest028
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_028
-     * @tc.name atomicsExchangeTest028
-     * @tc.desc Test exchange on multiple indexes of Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on multiple indexes of Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(12); // 3 Int32 elements
@@ -549,12 +549,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest029
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_029
-     * @tc.name atomicsExchangeTest029
-     * @tc.desc Test exchange on Uint8Array with mid-range value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Uint8Array with mid-range value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -566,12 +566,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest030
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_030
-     * @tc.name atomicsExchangeTest030
-     * @tc.desc Test exchange on Int8Array with mid-range negative value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Int8Array with mid-range negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -582,12 +582,12 @@ export default function atomicsExchangeTest() {
       expect(ia[0]).assertEqual(64);
     });
     /**
+     * @tc.name   atomicsExchangeTest031
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_031
-     * @tc.name atomicsExchangeTest031
-     * @tc.desc Test exchange with zero index and zero initial value in Uint32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with zero index and zero initial value in Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -598,12 +598,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest032
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_032
-     * @tc.name atomicsExchangeTest032
-     * @tc.desc Test throw TypeError when SharedArrayBuffer is detached
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw TypeError when SharedArrayBuffer is detached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -622,12 +622,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest033
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_033
-     * @tc.name atomicsExchangeTest033
-     * @tc.desc Test exchange with maximum Uint8 value (255) to minimum (0)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with maximum Uint8 value (255) to minimum (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -639,12 +639,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest034
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_034
-     * @tc.name atomicsExchangeTest034
-     * @tc.desc Test exchange with minimum Int8 value (-128) to maximum (127)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange with minimum Int8 value (-128) to maximum (127)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -656,12 +656,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest035
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_035
-     * @tc.name atomicsExchangeTest035
-     * @tc.desc Test throw RangeError with index equal to typed array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw RangeError with index equal to typed array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements
@@ -675,12 +675,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest036
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_036
-     * @tc.name atomicsExchangeTest036
-     * @tc.desc Test exchange on BigInt64Array with large negative BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on BigInt64Array with large negative BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -692,12 +692,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest037
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_037
-     * @tc.name atomicsExchangeTest037
-     * @tc.desc Test exchange on BigUint64Array with large positive BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on BigUint64Array with large positive BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -709,12 +709,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest038
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_038
-     * @tc.name atomicsExchangeTest038
-     * @tc.desc Test exchange with non-integer new value (Int32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test exchange with non-integer new value (Int32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -728,12 +728,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest039
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_039
-     * @tc.name atomicsExchangeTest039
-     * @tc.desc Test exchange on Int16Array with small positive value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Int16Array with small positive value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(2);
@@ -745,12 +745,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest040
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_040
-     * @tc.name atomicsExchangeTest040
-     * @tc.desc Test exchange on Uint16Array with small positive value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Uint16Array with small positive value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(2);
@@ -762,12 +762,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest041
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_041
-     * @tc.name atomicsExchangeTest041
-     * @tc.desc Test throw TypeError with non-shared typed array from ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw TypeError with non-shared typed array from ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ab = new ArrayBuffer(4);
@@ -780,12 +780,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest042
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_042
-     * @tc.name atomicsExchangeTest042
-     * @tc.desc Test exchange on Int32Array with value 1 (minimum positive)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Int32Array with value 1 (minimum positive)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -797,12 +797,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest043
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_043
-     * @tc.name atomicsExchangeTest043
-     * @tc.desc Test exchange on Uint32Array with value 4294967294 (max-1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Uint32Array with value 4294967294 (max-1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -815,12 +815,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest044
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_044
-     * @tc.name atomicsExchangeTest044
-     * @tc.desc Test exchange on BigInt64Array with zero BigInt value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on BigInt64Array with zero BigInt value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -832,12 +832,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest045
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_045
-     * @tc.name atomicsExchangeTest045
-     * @tc.desc Test exchange on BigUint64Array with zero BigInt value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on BigUint64Array with zero BigInt value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -849,12 +849,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest046
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_046
-     * @tc.name atomicsExchangeTest046
-     * @tc.desc Test throw TypeError when index is non-integer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test throw TypeError when index is non-integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsExchangeTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -867,12 +867,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest047
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_047
-     * @tc.name atomicsExchangeTest047
-     * @tc.desc Test exchange on Int8Array with value -1 (minimum negative)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Int8Array with value -1 (minimum negative)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -884,12 +884,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest048
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_048
-     * @tc.name atomicsExchangeTest048
-     * @tc.desc Test exchange on Uint8Array with value 1 (minimum positive)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Uint8Array with value 1 (minimum positive)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -901,12 +901,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest049
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_049
-     * @tc.name atomicsExchangeTest049
-     * @tc.desc Test exchange on Int32Array with value -1 (minimum negative)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Int32Array with value -1 (minimum negative)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -918,12 +918,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest050
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_050
-     * @tc.name atomicsExchangeTest050
-     * @tc.desc Test exchange on Uint32Array with value 1 (minimum positive)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exchange on Uint32Array with value 1 (minimum positive)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsExchangeTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -935,12 +935,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest051
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_051
-     * @tc.name atomicsExchangeTest051
-     * @tc.desc Test async exchange with Promise.race between two updates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.race between two updates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -975,12 +975,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest052
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_052
-     * @tc.name atomicsExchangeTest052
-     * @tc.desc Test nested async exchange with retry logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested async exchange with retry logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1021,12 +1021,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest053
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_053
-     * @tc.name atomicsExchangeTest053
-     * @tc.desc Test async exchange with Promise.all for batch updates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.all for batch updates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements
@@ -1057,12 +1057,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest054
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_054
-     * @tc.name atomicsExchangeTest054
-     * @tc.desc Test exchange in async generator with sequential updates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async generator with sequential updates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const oldValues: number[] = await atomicsExchangeTest054();
@@ -1071,12 +1071,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest055
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_055
-     * @tc.name atomicsExchangeTest055
-     * @tc.desc Test nested exchange with async error handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested exchange with async error handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1121,12 +1121,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest056
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_056
-     * @tc.name atomicsExchangeTest056
-     * @tc.desc Test async exchange with timeout fallback using Promise.race
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with timeout fallback using Promise.race
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1158,12 +1158,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest057
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_057
-     * @tc.name atomicsExchangeTest057
-     * @tc.desc Test exchange in async class with nested methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async class with nested methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class AtomicUpdater {
@@ -1213,12 +1213,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest058
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_058
-     * @tc.name atomicsExchangeTest058
-     * @tc.desc Test async exchange with Promise.allSettled for partial success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.allSettled for partial success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements
@@ -1254,12 +1254,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest059
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_059
-     * @tc.name atomicsExchangeTest059
-     * @tc.desc Test nested exchange with async state synchronization
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested exchange with async state synchronization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements (state + data)
@@ -1308,12 +1308,12 @@ export default function atomicsExchangeTest() {
 
 
     /**
+     * @tc.name   atomicsExchangeTest060
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_060
-     * @tc.name atomicsExchangeTest060
-     * @tc.desc Test async exchange with closure capturing context
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with closure capturing context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1347,12 +1347,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest061
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_061
-     * @tc.name atomicsExchangeTest061
-     * @tc.desc Test nested async exchange with retry limit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested async exchange with retry limit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1391,12 +1391,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest062
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_062
-     * @tc.name atomicsExchangeTest062
-     * @tc.desc Test async exchange with Promise chaining for sequential updates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise chaining for sequential updates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements
@@ -1430,12 +1430,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest063
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_063
-     * @tc.name atomicsExchangeTest063
-     * @tc.desc Test exchange in async iterator with dynamic value generation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async iterator with dynamic value generation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Consume iterator (3 dynamic updates)
@@ -1445,12 +1445,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest064
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_064
-     * @tc.name atomicsExchangeTest064
-     * @tc.desc Test async exchange with cross-index dependency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with cross-index dependency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements (A: trigger, B: data)
@@ -1498,12 +1498,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest065
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_065
-     * @tc.name atomicsExchangeTest065
-     * @tc.desc Test nested exchange with async finally for cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested exchange with async finally for cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements (data + cleanup flag)
@@ -1550,12 +1550,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest066
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_066
-     * @tc.name atomicsExchangeTest066
-     * @tc.desc Test async exchange with Promise.race between update and cancel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.race between update and cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1592,12 +1592,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest067
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_067
-     * @tc.name atomicsExchangeTest067
-     * @tc.desc Test exchange in async subclass with inherited method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async subclass with inherited method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
 
@@ -1641,12 +1641,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest068
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_068
-     * @tc.name atomicsExchangeTest068
-     * @tc.desc Test async exchange with dynamic index from Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with dynamic index from Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12); // 3 Int32 elements
@@ -1682,12 +1682,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest069
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_069
-     * @tc.name atomicsExchangeTest069
-     * @tc.desc Test nested exchange with async validation of new value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested exchange with async validation of new value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1734,12 +1734,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest070
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_070
-     * @tc.name atomicsExchangeTest070
-     * @tc.desc Test async exchange with nested error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with nested error propagation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1781,12 +1781,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest071
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_071
-     * @tc.name atomicsExchangeTest071
-     * @tc.desc Test exchange in async closure with state persistence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async closure with state persistence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1823,12 +1823,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest072
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_072
-     * @tc.name atomicsExchangeTest072
-     * @tc.desc Test async exchange with Promise.all and cross-index consistency check
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.all and cross-index consistency check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements (A and B)
@@ -1867,12 +1867,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest073
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_073
-     * @tc.name atomicsExchangeTest073
-     * @tc.desc Test nested exchange with async retry and error recovery
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested exchange with async retry and error recovery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1919,12 +1919,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest074
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_074
-     * @tc.name atomicsExchangeTest074
-     * @tc.desc Test async exchange with Promise.race between two competing closures
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.race between two competing closures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1961,12 +1961,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest075
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_075
-     * @tc.name atomicsExchangeTest075
-     * @tc.desc Test exchange in async class with multiple instances and shared buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async class with multiple instances and shared buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class SharedAtomic {
@@ -2013,12 +2013,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest076
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_076
-     * @tc.name atomicsExchangeTest076
-     * @tc.desc Test nested async exchange with dynamic newValue from external API mock
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested async exchange with dynamic newValue from external API mock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2051,12 +2051,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest077
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_077
-     * @tc.name atomicsExchangeTest077
-     * @tc.desc Test async exchange with finally block for state reset
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with finally block for state reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2097,12 +2097,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest078
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_078
-     * @tc.name atomicsExchangeTest078
-     * @tc.desc Test exchange in async iterator with error handling per iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async iterator with error handling per iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const oldValues: number[] = await atomicsExchangeTest078();
@@ -2111,12 +2111,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest079
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_079
-     * @tc.name atomicsExchangeTest079
-     * @tc.desc Test async exchange with nested lock/unlock using atomic operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with nested lock/unlock using atomic operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32: [lock, data]
@@ -2173,12 +2173,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest080
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_080
-     * @tc.name atomicsExchangeTest080
-     * @tc.desc Test exchange with async batch validation and partial rollback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange with async batch validation and partial rollback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12); // 3 Int32: [A, B, C]
@@ -2247,12 +2247,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest081
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_081
-     * @tc.name atomicsExchangeTest081
-     * @tc.desc Test async exchange with closure that captures validation rules
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with closure that captures validation rules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2295,12 +2295,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest082
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_082
-     * @tc.name atomicsExchangeTest082
-     * @tc.desc Test nested async exchange with Promise.race for timeout and cancel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested async exchange with Promise.race for timeout and cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2354,12 +2354,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest083
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_083
-     * @tc.name atomicsExchangeTest083
-     * @tc.desc Test exchange in async subclass with overridden validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async subclass with overridden validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
 
@@ -2418,12 +2418,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest084
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_084
-     * @tc.name atomicsExchangeTest084
-     * @tc.desc Test async exchange with Promise.allSettled and error logging
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.allSettled and error logging
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12); // 3 Int32: [A, B, C]
@@ -2467,12 +2467,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest085
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_085
-     * @tc.name atomicsExchangeTest085
-     * @tc.desc Test nested exchange with async state check before and after
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested exchange with async state check before and after
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2535,12 +2535,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest086
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_086
-     * @tc.name atomicsExchangeTest086
-     * @tc.desc Test async exchange with closure that tracks update history
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with closure that tracks update history
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2589,12 +2589,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest087
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_087
-     * @tc.name atomicsExchangeTest087
-     * @tc.desc Test nested async exchange with retry on validation failure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested async exchange with retry on validation failure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2642,12 +2642,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest088
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_088
-     * @tc.name atomicsExchangeTest088
-     * @tc.desc Test async exchange with Promise.race between two API-driven values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.race between two API-driven values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2681,12 +2681,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest089
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_089
-     * @tc.name atomicsExchangeTest089
-     * @tc.desc Test exchange in async class with static shared state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async class with static shared state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
 
@@ -2724,12 +2724,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest090
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_090
-     * @tc.name atomicsExchangeTest090
-     * @tc.desc Test nested async exchange with finally for resource release
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested async exchange with finally for resource release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32: [data, resourceFlag]
@@ -2788,12 +2788,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest091
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_091
-     * @tc.name atomicsExchangeTest091
-     * @tc.desc Test async exchange with closure that enforces value sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with closure that enforces value sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2832,12 +2832,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest092
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_092
-     * @tc.name atomicsExchangeTest092
-     * @tc.desc Test nested exchange with async batch rollback on partial failure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested exchange with async batch rollback on partial failure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32: [A, B]
@@ -2899,12 +2899,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest093
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_093
-     * @tc.name atomicsExchangeTest093
-     * @tc.desc Test async exchange with Promise.race between exchange and state change
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.race between exchange and state change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2938,12 +2938,12 @@ export default function atomicsExchangeTest() {
 
 
     /**
+     * @tc.name   atomicsExchangeTest094
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_094
-     * @tc.name atomicsExchangeTest094
-     * @tc.desc Test async exchange with closure that limits update frequency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with closure that limits update frequency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2987,12 +2987,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest095
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_095
-     * @tc.name atomicsExchangeTest095
-     * @tc.desc Test nested async exchange with Promise.all and cross-index dependency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested async exchange with Promise.all and cross-index dependency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32: [dependent, trigger]
@@ -3034,12 +3034,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest096
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_096
-     * @tc.name atomicsExchangeTest096
-     * @tc.desc Test exchange in async iterator with dynamic stop condition
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test exchange in async iterator with dynamic stop condition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const oldValues: number[] = await atomicsExchangeTest096();
@@ -3049,12 +3049,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest097
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_097
-     * @tc.name atomicsExchangeTest097
-     * @tc.desc Test async exchange with finally block for audit log
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with finally block for audit log
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -3101,12 +3101,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest098
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_098
-     * @tc.name atomicsExchangeTest098
-     * @tc.desc Test nested exchange with async validation of both old and new values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested exchange with async validation of both old and new values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -3153,12 +3153,12 @@ export default function atomicsExchangeTest() {
       expect(ia[0]).assertEqual(25);
     });
     /**
+     * @tc.name   atomicsExchangeTest099
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_099
-     * @tc.name atomicsExchangeTest099
-     * @tc.desc Test async exchange with Promise.race between multiple closure instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async exchange with Promise.race between multiple closure instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -3194,12 +3194,12 @@ export default function atomicsExchangeTest() {
     });
 
     /**
+     * @tc.name   atomicsExchangeTest100
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_100
-     * @tc.name atomicsExchangeTest100
-     * @tc.desc Test comprehensive async nested exchange with retry, validation, and cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test comprehensive async nested exchange with retry, validation, and cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsExchangeTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12); // 3 Int32: [data, lock, cleanupFlag]

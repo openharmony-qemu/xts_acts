@@ -40,12 +40,12 @@ export default function openBindSheetTest() {
       done();
     });
     /**
-     * @tc.number    openBindSheet
-     * @tc.name      openBindSheetTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   openBindSheetTest_0100
+     * @tc.number openBindSheet
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('openBindSheetTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('openBindSheetTest_0100 START');

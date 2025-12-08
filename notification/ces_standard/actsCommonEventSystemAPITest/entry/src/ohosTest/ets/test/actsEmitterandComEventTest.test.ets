@@ -51,12 +51,12 @@ export default function actsEmitterandComEventTest() {
   const DOMAIN_NUMBER: number = 0xFF00;
   describe('actsEmitterandComEventTest', () => {
     /**
-     * @tc.number     : Sub_NotificationAns_Emitter_Basic_0001
-     * @tc.name       : 持续订阅-发布2次-两次都能收到订阅回调-取消订阅成功
-     * @tc.desc       : 事件基本功能用例
-     * @tc.size       : MediumTest
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_NotificationAns_Emitter_Basic_0001
+     * @tc.number Sub_NotificationAns_Emitter_Basic_0001
+     * @tc.desc   事件基本功能用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_Emitter_Basic_0001', Level.LEVEL0, async (done: Function) => {
       // 调用持续订阅指定事件接口
@@ -87,12 +87,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_NotificationAns_Emitter_Basic_0002
-     * @tc.name       : 单次订阅-发布2次-仅第一次能收到订阅回调-取消订阅成功
-     * @tc.desc       : 事件基本功能用例
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_NotificationAns_Emitter_Basic_0002
+     * @tc.number Sub_NotificationAns_Emitter_Basic_0002
+     * @tc.desc   事件基本功能用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_Emitter_Basic_0002', Level.LEVEL0, async (done: Function) => {
       let eventData: emitter.EventData = {
@@ -125,12 +125,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_NotificationAns_CommonEvent_Basic_0001
-     * @tc.name       : 公共事件订阅-发布-检查订阅回调-取消订阅基本功能正常
-     * @tc.desc       : 公共事件基础用例验证
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_NotificationAns_CommonEvent_Basic_0001
+     * @tc.number Sub_NotificationAns_CommonEvent_Basic_0001
+     * @tc.desc   公共事件基础用例验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_CommonEvent_Basic_0001', Level.LEVEL0, async (done: Function) => {
       let subscribeInfo:commonEventManager.CommonEventSubscribeInfo = {
@@ -189,12 +189,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_NotificationAns_CommonEvent_Basic_0002
-     * @tc.name       : 有序公共事件订阅-发布-检查订阅回调-取消订阅基本功能正常（finishCommonEvent）
-     * @tc.desc       : 公共事件基础用例验证
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_NotificationAns_CommonEvent_Basic_0002
+     * @tc.number Sub_NotificationAns_CommonEvent_Basic_0002
+     * @tc.desc   公共事件基础用例验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_CommonEvent_Basic_0002', Level.LEVEL0, async (done: Function) => {
       //订阅者a，优先级为1
@@ -313,12 +313,12 @@ export default function actsEmitterandComEventTest() {
       }
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Emit_0100
-     * @tc.name       : 调用emitter.on接口注册eventid，取消回调的eventid没有被注册，多次调用emitter.emit接口发布事件的eventid已被注册
-     * @tc.desc       : Function test
-     * @tc.size       : Large-scale test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_0100
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Emit_0100',  Level.LEVEL2, async (done: Function) => {
       // 调用持续订阅指定事件接口
@@ -351,12 +351,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Emit_0200
-     * @tc.name       : 调用emitter.on注册eventid，取消回调的exentid已经被注册，多次调用emitter.emit接口发布事件的eventid已被注册
-     * @tc.desc       : Function test
-     * @tc.size       : Large-scale test
-     * @tc.type       : Function test
-     * @tc.level      : Level 3
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_0200
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Emit_0200', Level.LEVEL3, async (done: Function) => {
       // 调用持续订阅指定事件接口
@@ -389,12 +389,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Emit_0300
-     * @tc.name       : 调用emitter.once注册eventid，取消回调的eventid没有被注册，多次调用emitter.emit接口发布事件的eventid已被注册
-     * @tc.desc       : Function test
-     * @tc.size       : Large-scale test
-     * @tc.type       : Function test
-     * @tc.level      : Level 3
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_0300
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Emit_0300', Level.LEVEL3, async (done: Function) => {
       let eventData: emitter.EventData = {
@@ -433,12 +433,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Emit_0400
-     * @tc.name       : 调用emitter.once注册eventid，取消回调的eventid已经被注册，多次调用emitter.emit接口发布事件的eventid已被注册
-     * @tc.desc       : Function test
-     * @tc.size       : Large-scale test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_0400
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Emit_0400', Level.LEVEL2, async (done: Function) => {
       let eventData: emitter.EventData = {
@@ -476,12 +476,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_0001
-     * @tc.name       : 调用on持续订阅事件1，调用emit多次、不同时间间隔发送指定事件1，调用off取消订阅事件1，再次调用emit发送指定事件1
-     * @tc.desc       : Function test
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_0001
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_0001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Sendable_0001',  Level.LEVEL2, async (done: Function) => {
       //调用持续订阅指定事件接口
@@ -517,12 +517,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_0002
-     * @tc.name       : 调用once单次订阅事件1，调用off取消订阅事件1
-     * @tc.desc       : Function test
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_0002
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_0002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Emitter_Publish_Sendable_0002', Level.LEVEL0, async (done: Function) => {
       let onConsume_number = 0
@@ -542,12 +542,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_0003
-     * @tc.name       : 调用once单次订阅事件1，调用emit发送指定事件1
-     * @tc.desc       : Function test
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_0003
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_0003
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Sendable_0003', Level.LEVEL3, async (done: Function) => {
       let eventData = new SelfEventData();
@@ -568,12 +568,12 @@ export default function actsEmitterandComEventTest() {
       done()
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_0004
-     * @tc.name       : 调用once单次订阅事件1，调用emit发送指定事件1，调用emit发送指定事件1
-     * @tc.desc       : Function test
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_0004
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_0004
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Emitter_Publish_Sendable_0004', Level.LEVEL0, async (done: Function) => {
       let eventData = new SelfEventData();

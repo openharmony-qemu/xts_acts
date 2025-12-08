@@ -39,12 +39,12 @@ export default function builtinsStatementBlockTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementBlockTest1001
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0100
-     * @tc.name builtinsStatementBlockTest1001
-     * @tc.desc test Statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsStatementBlockTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       console.info('testTag', '%{public}s', 'it begin');
@@ -63,12 +63,12 @@ export default function builtinsStatementBlockTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementBlockTest1002
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0200
-     * @tc.name builtinsStatementBlockTest1002
-     * @tc.desc test Statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementBlockTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       console.info('testTag', '%{public}s', 'it begin');
@@ -93,12 +93,12 @@ export default function builtinsStatementBlockTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementBlockTest1003
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0300
-     * @tc.name builtinsStatementBlockTest1003
-     * @tc.desc test Statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementBlockTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       console.info('testTag', '%{public}s', 'it begin');
@@ -130,12 +130,12 @@ export default function builtinsStatementBlockTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementBlockTest1004
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0400
-     * @tc.name builtinsStatementBlockTest1004
-     * @tc.desc test Statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementBlockTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       console.info('testTag', '%{public}s', 'it begin');
@@ -178,12 +178,12 @@ export default function builtinsStatementBlockTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementBlockTest1005
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0500
-     * @tc.name builtinsStatementBlockTest1005
-     * @tc.desc test Statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementBlockTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       console.info('testTag', '%{public}s', 'it begin');
@@ -256,12 +256,12 @@ export default function builtinsStatementBlockTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementBlockTest1007
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0700
-     * @tc.name builtinsStatementBlockTest1007
-     * @tc.desc test Statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementBlockTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       console.info('testTag', '%{public}s', 'it begin');
@@ -293,12 +293,12 @@ export default function builtinsStatementBlockTest() {
 
 
     /**
+     * @tc.name   builtinsStatementBlockTest1008
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0800
-     * @tc.name builtinsStatementBlockTest1008
-     * @tc.desc test Statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementBlockTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       console.info('testTag', '%{public}s', 'it begin');
@@ -371,12 +371,12 @@ export default function builtinsStatementBlockTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementBlockTest1009
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0900
-     * @tc.name builtinsStatementBlockTest1009
-     * @tc.desc test Statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementBlockTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

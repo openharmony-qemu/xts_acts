@@ -148,7 +148,6 @@ export default function rdbStoreQuerySqlTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreQuerySql001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0970
      * @tc.desc   RdbStore querySql callback test
@@ -182,7 +181,6 @@ export default function rdbStoreQuerySqlTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreQuerySql002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1010
      * @tc.desc   RdbStore querySql callback test
@@ -216,7 +214,6 @@ export default function rdbStoreQuerySqlTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreQuerySql003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0980   8
      * @tc.desc   RdbStore querySql promise test
@@ -242,7 +239,6 @@ export default function rdbStoreQuerySqlTest() {
       console.info(TAG + "testRdbStoreQuerySql003 end.");
     });
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreQuerySql004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1020
      * @tc.desc   RdbStore querySql promise test
@@ -269,7 +265,6 @@ export default function rdbStoreQuerySqlTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreQuerySql005
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0990
      * @tc.desc   RdbStore querySql callback test
@@ -301,7 +296,6 @@ export default function rdbStoreQuerySqlTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreQuerySql006
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1000
      * @tc.desc   RdbStore querySql callback test

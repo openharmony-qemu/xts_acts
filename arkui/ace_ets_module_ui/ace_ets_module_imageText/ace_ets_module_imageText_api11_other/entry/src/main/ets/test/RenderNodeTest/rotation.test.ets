@@ -43,13 +43,13 @@ export default function rotationTest() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_rotationTest_0100
-     * @tc.name      rotationTest_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   rotationTest_0100
+     * @tc.number SUB_ACE_rotationTest_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rotationTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('rotationTest_0100 START');

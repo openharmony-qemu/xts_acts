@@ -58,9 +58,12 @@ export default function LazyForEachReload() {
     });
 
     /**
+     * @tc.name   LazyForEachReload_001
      * @tc.number LazyForEachReload_001
-     * @tc.name LazyForEachReload
-     * @tc.desc Test LazyForEachReload
+     * @tc.desc   Test LazyForEachReload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachReload_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachReload_001] START');      

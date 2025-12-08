@@ -65,12 +65,12 @@ export default function sendableGetNextObjectTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_GET_NEXT_OBJECT_001
-     * @tc.name      : getNextObject_sendable_promise_001
-     * @tc.desc      : getNextObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getNextObject_sendable_promise_001
+     * @tc.number SENDABLE_FETCH_RESULT_GET_NEXT_OBJECT_001
+     * @tc.desc   getNextObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNextObject_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getNextObject_sendable_promise_001';
@@ -79,12 +79,12 @@ export default function sendableGetNextObjectTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_GET_NEXT_OBJECT_002
-     * @tc.name      : getNextObject_sendable_promise_002
-     * @tc.desc      : getNextObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getNextObject_sendable_promise_002
+     * @tc.number SENDABLE_FETCH_RESULT_GET_NEXT_OBJECT_002
+     * @tc.desc   getNextObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNextObject_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getNextObject_sendable_promise_002';
@@ -94,12 +94,12 @@ export default function sendableGetNextObjectTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_GET_NEXT_OBJECT_003
-     * @tc.name      : getNextObject_sendable_promise_003
-     * @tc.desc      : getNextObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getNextObject_sendable_promise_003
+     * @tc.number SENDABLE_FETCH_RESULT_GET_NEXT_OBJECT_003
+     * @tc.desc   getNextObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNextObject_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getNextObject_sendable_promise_003';

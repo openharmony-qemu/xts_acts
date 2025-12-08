@@ -37,7 +37,6 @@ export default function ActsInputmethodFourTest() {
       await delegator.executeShellCommand('ime -s com.acts.actsinputmethodtest');
     })
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_SELECT_ALL_17800
      * @tc.number SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_SELECT_ALL_17800
      * @tc.desc   test IME_EXTEND_ACTION_SELECT_ALL
@@ -87,7 +86,6 @@ export default function ActsInputmethodFourTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_CUT_17900
      * @tc.number SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_CUT_17900
      * @tc.desc   test IME_EXTEND_ACTION_CUT
@@ -137,7 +135,6 @@ export default function ActsInputmethodFourTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_COPY_18000
      * @tc.number SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_COPY_18000
      * @tc.desc   test IME_EXTEND_ACTION_COPY
@@ -187,7 +184,6 @@ export default function ActsInputmethodFourTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_PASTE_18100
      * @tc.number SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_PASTE_18100
      * @tc.desc   test IME_EXTEND_ACTION_PASTE

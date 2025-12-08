@@ -44,12 +44,12 @@ export default function richEditorSupportSvg2Test() {
     });
     
     /**
-     * @tc.number    SUB_ACE_richEditorSupportSvg2Test_0010
-     * @tc.name      richEditorSupportSvg2Test_0010
-     * @tc.desc      set resource SupportSvg2: true
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   richEditorSupportSvg2Test_0010
+     * @tc.number SUB_ACE_richEditorSupportSvg2Test_0010
+     * @tc.desc   set resource SupportSvg2: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('richEditorSupportSvg2Test_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[richEditorSupportSvg2Test_0010] START');
@@ -70,12 +70,12 @@ export default function richEditorSupportSvg2Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_richEditorSupportSvg2Test_0020
-     * @tc.name      richEditorSupportSvg2Test_0020
-     * @tc.desc      set string ColorFilter: false
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   richEditorSupportSvg2Test_0020
+     * @tc.number SUB_ACE_richEditorSupportSvg2Test_0020
+     * @tc.desc   set string ColorFilter: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('richEditorSupportSvg2Test_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[richEditorSupportSvg2Test_0020] START');
@@ -95,13 +95,13 @@ export default function richEditorSupportSvg2Test() {
       done();
     });
 	
-	/**
-     * @tc.number    SUB_ACE_richEditorSupportSvg2Test_0030
-     * @tc.name      richEditorSupportSvg2Test_0030
-     * @tc.desc      set string ColorFilter: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   richEditorSupportSvg2Test_0030
+     * @tc.number SUB_ACE_richEditorSupportSvg2Test_0030
+     * @tc.desc   set string ColorFilter: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('richEditorSupportSvg2Test_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[richEditorSupportSvg2Test_0030] START');
@@ -121,13 +121,13 @@ export default function richEditorSupportSvg2Test() {
       done();
     });
 	
-	/**
-     * @tc.number    SUB_ACE_richEditorSupportSvg2Test_0040
-     * @tc.name      richEditorSupportSvg2Test_0040
-     * @tc.desc      set string ColorFilter: false
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   richEditorSupportSvg2Test_0040
+     * @tc.number SUB_ACE_richEditorSupportSvg2Test_0040
+     * @tc.desc   set string ColorFilter: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('richEditorSupportSvg2Test_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[richEditorSupportSvg2Test_0040] START');

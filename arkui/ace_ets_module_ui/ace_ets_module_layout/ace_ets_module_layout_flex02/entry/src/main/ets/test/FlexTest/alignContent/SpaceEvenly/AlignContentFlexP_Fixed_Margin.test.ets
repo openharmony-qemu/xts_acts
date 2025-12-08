@@ -50,12 +50,15 @@ export default function AlignContentFlexP_Fixed_Margin() {
       console.info("AlignContentFlexP_Fixed_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_1100
-     * @tc.name testAlignContentSpaceEvenlyFlexFixedMarginSatisfy
-     * @tc.desc Set the margin for the flex subcomponents to meet the size of flex.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexFixedMarginSatisfy
+     * @tc.number testAlignContentSpaceEvenlyFlexFixedMarginSatisfy
+     * @tc.desc   testAlignContentSpaceEvenlyFlexFixedMarginSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexFixedMarginSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexFixedMarginSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -118,12 +121,15 @@ export default function AlignContentFlexP_Fixed_Margin() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_1200
-     * @tc.name testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy
-     * @tc.desc Set a margin for a flex subcomponent that does not fit the flex size.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy
+     * @tc.number testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy
+     * @tc.desc   testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

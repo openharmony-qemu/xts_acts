@@ -20,13 +20,12 @@ import { BusinessError } from "@kit.BasicServicesKit";
 export default function dynamicLoadHap() {
   describe('HapTest', () => {
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0100
-     * @tc.name      : testConstantExpressions01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressions01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0100
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressions01";
@@ -39,13 +38,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0200
-     * @tc.name      : testConstantExpressions02
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ../xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressions02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0200
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressions02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressions02";
@@ -58,13 +56,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0300
-     * @tc.name      : testConstantExpressions03
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load the folder ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressions03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0300
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressions03";
@@ -77,13 +74,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0400
-     * @tc.name      : testConstantExpressions04
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files with Chinese names.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressions04
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0400
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressions04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressions04";
@@ -96,13 +92,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0600
-     * @tc.name      : testVariableExpressions01
-     * @tc.desc      : Use variable expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressions01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0600
+     * @tc.desc   Use variable expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressions01";
@@ -116,13 +111,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0700
-     * @tc.name      : testVariableExpressions02
-     * @tc.desc      : Use variable expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ../xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressions02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0700
+     * @tc.desc   Use variable expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressions02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressions02";
@@ -136,13 +130,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0800
-     * @tc.name      : testVariableExpressions03
-     * @tc.desc      : Use variable expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load the folder ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressions03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0800
+     * @tc.desc   Use variable expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressions03";
@@ -156,13 +149,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0900
-     * @tc.name      : testVariableExpressions04
-     * @tc.desc      : Use variable expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files with Chinese names.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressions04
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_0900
+     * @tc.desc   Use variable expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressions04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressions04";
@@ -176,13 +168,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1000
-     * @tc.name      : testNativeSoConstantExpressions01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading
-     *                 to load files from absolute paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNativeSoConstantExpressions01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1000
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeSoConstantExpressions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testNativeSoConstantExpressions01";
@@ -203,13 +194,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1100
-     * @tc.name      : testNativeSoConstantExpressions02
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading
-     *                 to load files from absolute paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNativeSoConstantExpressions02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1100
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeSoConstantExpressions02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testNativeSoConstantExpressions02";
@@ -226,13 +216,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1200
-     * @tc.name      : testNativeSoConstantExpressions03
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading
-     *                 to load files from absolute paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNativeSoConstantExpressions03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1200
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeSoConstantExpressions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testNativeSoConstantExpressions03";
@@ -245,13 +234,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1300
-     * @tc.name      : testNativeSoVariableExpressions01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading
-     *                 to load files from absolute paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNativeSoVariableExpressions01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1300
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeSoVariableExpressions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testNativeSoVariableExpressions01";
@@ -268,13 +256,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1400
-     * @tc.name      : testNativeSoVariableExpressions02
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading
-     *                 to load files from absolute paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNativeSoVariableExpressions02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1400
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeSoVariableExpressions02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testNativeSoVariableExpressions02";
@@ -292,13 +279,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1500
-     * @tc.name      : testNativeSoVariableExpressions03
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading
-     *                 to load files from absolute paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNativeSoVariableExpressions03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1500
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeSoVariableExpressions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName: string = "testNativeSoVariableExpressions03";
@@ -314,13 +300,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1600
-     * @tc.name      : testJsonConstantExpressions01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading
-     *                 to load files from absolute paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testJsonConstantExpressions01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAP_1600
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJsonConstantExpressions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testJsonConstantExpressions01";
@@ -333,13 +318,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0100
-     * @tc.name      : testDynamicDeregisterSingle01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterSingle01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0100
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterSingle01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterSingle01";
@@ -353,13 +337,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0200
-     * @tc.name      : testDynamicDeregisterSingle02
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterSingle02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0200
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterSingle02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterSingle02";
@@ -373,13 +356,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0300
-     * @tc.name      : testDynamicDeregisterSingle03
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterSingle03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0300
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterSingle03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterSingle03";
@@ -396,13 +378,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0400
-     * @tc.name      : testDynamicDeregisterMulti01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterMulti01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0400
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterMulti01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterMulti01";
@@ -416,13 +397,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0500
-     * @tc.name      : testDynamicDeregisterMulti02
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterMulti02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0500
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterMulti02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterMulti02";
@@ -437,13 +417,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0600
-     * @tc.name      : testDynamicDeregisterMulti03
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterMulti03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0600
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterMulti03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterMulti03";
@@ -457,13 +436,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0700
-     * @tc.name      : testDynamicDeregisterCircular01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterCircular01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0700
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterCircular01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterCircular01";
@@ -478,13 +456,12 @@ export default function dynamicLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0800
-     * @tc.name      : testDynamicDeregisterCircular02
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterCircular02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0800
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterCircular02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterCircular02";
@@ -497,13 +474,12 @@ export default function dynamicLoadHap() {
       })
     })
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0900
-     * @tc.name      : testDynamicDeregisterDynamic01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterDynamic01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0900
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterDynamic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterDynamic01";
@@ -516,13 +492,12 @@ export default function dynamicLoadHap() {
       })
     })
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_1000
-     * @tc.name      : testDynamicDeregisterMuiliLoad01
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterMuiliLoad01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_1000
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterMuiliLoad01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterMuiliLoad01";
@@ -535,13 +510,12 @@ export default function dynamicLoadHap() {
       })
     })
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_1100
-     * @tc.name      : testDynamicDeregisterMuiliLoad02
-     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
-     *                 using relative paths to load files from ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDynamicDeregisterMuiliLoad02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_1100
+     * @tc.desc   Use constant expressions in this project's HAP for dynamic loading,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDynamicDeregisterMuiliLoad02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testDynamicDeregisterMuiliLoad02";

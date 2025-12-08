@@ -140,12 +140,12 @@ export default function closeTest () {
       await sleep(1000);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_CALLBACK_0000
-     * @tc.name      : photoAsset_close_callback_000
-     * @tc.desc      : image asset close
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photoAsset_close_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_CALLBACK_0000
+     * @tc.desc   image asset close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('photoAsset_close_callback_000', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'photoAsset_close_callback_000';
@@ -154,12 +154,12 @@ export default function closeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_CALLBACK_0100
-     * @tc.name      : photoAsset_close_callback_001
-     * @tc.desc      : video asset close
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photoAsset_close_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_CALLBACK_0100
+     * @tc.desc   video asset close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('photoAsset_close_callback_001', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'photoAsset_close_callback_001';
@@ -168,12 +168,12 @@ export default function closeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_CALLBACK_0200
-     * @tc.name      : photoAsset_close_callback_002
-     * @tc.desc      : video asset close, fd is array<string>, error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_close_callback_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_CALLBACK_0200
+     * @tc.desc   video asset close, fd is array<string>, error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_close_callback_002', Level.LEVEL2, async (done:Function)=> {
       const testNum = 'photoAsset_close_callback_002';
@@ -182,12 +182,12 @@ export default function closeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_PROMISE_0000
-     * @tc.name      : photoAsset_close_promise_000
-     * @tc.desc      : image asset close
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photoAsset_close_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_PROMISE_0000
+     * @tc.desc   image asset close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('photoAsset_close_promise_000', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'photoAsset_close_promise_000';
@@ -196,12 +196,12 @@ export default function closeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_PROMISE_0100
-     * @tc.name      : photoAsset_close_promise_001
-     * @tc.desc      : video asset close
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photoAsset_close_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_PROMISE_0100
+     * @tc.desc   video asset close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('photoAsset_close_promise_001', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'photoAsset_close_promise_001';
@@ -210,12 +210,12 @@ export default function closeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_PROMISE_0200
-     * @tc.name      : photoAsset_close_promise_002
-     * @tc.desc      : video asset close, fd is array<string>, error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_close_promise_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_PROMISE_0200
+     * @tc.desc   video asset close, fd is array<string>, error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_close_promise_002', Level.LEVEL2, async (done:Function)=> {
       const testNum = 'photoAsset_close_promise_002';

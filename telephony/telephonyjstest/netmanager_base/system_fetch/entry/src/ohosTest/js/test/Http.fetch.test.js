@@ -22,9 +22,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
   describe("Telephony_NetStack_HttpFetchTest", function () {
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchBasicGet_0100
      * @tc.number Telephony_NetStack_HttpTestFetchBasicGet_0100
-     * @tc.name 基本场景，FETCH方式测试能否GET一个网址
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_NetStack_HttpTestFetchBasicGet_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
@@ -58,9 +61,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchUserAgent_0100
      * @tc.number Telephony_NetStack_HttpTestFetchUserAgent_0100
-     * @tc.name FETCH方式返回用户代理
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_NetStack_HttpTestFetchUserAgent_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
@@ -97,9 +103,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchUserAgent_0200
      * @tc.number Telephony_NetStack_HttpTestFetchUserAgent_0200
-     * @tc.name FETCH方式返回用户代理
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetStack_HttpTestFetchUserAgent_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
@@ -137,9 +146,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchHeader_0100
      * @tc.number Telephony_NetStack_HttpTestFetchHeader_0100
-     * @tc.name 返回Header
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_NetStack_HttpTestFetchHeader_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
@@ -176,9 +188,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchHeader_0200
      * @tc.number Telephony_NetStack_HttpTestFetchHeader_0200
-     * @tc.name 返回Header
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetStack_HttpTestFetchHeader_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
@@ -216,9 +231,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchPost_0100
      * @tc.number Telephony_NetStack_HttpTestFetchPost_0100
-     * @tc.name 返回Post内容
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_NetStack_HttpTestFetchPost_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
@@ -257,9 +275,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchPost_0200
      * @tc.number Telephony_NetStack_HttpTestFetchPost_0200
-     * @tc.name 返回Post内容
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetStack_HttpTestFetchPost_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
@@ -299,9 +320,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchPut_0100
      * @tc.number Telephony_NetStack_HttpTestFetchPut_0100
-     * @tc.name 返回Put内容
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_NetStack_HttpTestFetchPut_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
@@ -340,9 +364,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchPut_0200
      * @tc.number Telephony_NetStack_HttpTestFetchPut_0200
-     * @tc.name 返回Put内容
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetStack_HttpTestFetchPut_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
@@ -382,9 +409,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchUrlEncode_0100
      * @tc.number Telephony_NetStack_HttpTestFetchUrlEncode_0100
-     * @tc.name 返回Cookies内容
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_NetStack_HttpTestFetchUrlEncode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
@@ -428,9 +458,12 @@ export default function Telephony_NetStack_HttpFetchTest() {
     });
 
     /**
+     * @tc.name   Telephony_NetStack_HttpTestFetchUrlEncode_0200
      * @tc.number Telephony_NetStack_HttpTestFetchUrlEncode_0200
-     * @tc.name 返回Cookies内容
-     * @tc.desc function test
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetStack_HttpTestFetchUrlEncode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();

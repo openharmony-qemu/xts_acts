@@ -47,13 +47,13 @@ export default function EnableMultiTypeTest() {
       console.info("EnableMultiTypeTest after each called");
     });
 
-    /*
-    * @tc.number       EnableMultiTypeTest0001
-    * @tc.name         EnableMultiTypeTest0001
-    * @tc.desc         test decoration option enableMultiType
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   EnableMultiTypeTest0001
+     * @tc.number EnableMultiTypeTest0001
+     * @tc.desc   test decoration option enableMultiType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('EnableMultiTypeTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

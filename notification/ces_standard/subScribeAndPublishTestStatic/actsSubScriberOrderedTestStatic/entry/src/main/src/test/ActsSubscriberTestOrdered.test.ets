@@ -66,9 +66,12 @@ export default function ActsSubscriberTestOrder() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ces_Publish_CommonEvent_Static_0950
-     * @tc.name       Sub_Notification_Ces_Publish_CommonEvent_Static_0950
-     * @tc.desc       Check the subscriber can receive event "publish_event0100" type of the interface (by Promise)
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_0950
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_0950
+     * @tc.desc   Check the subscriber can receive event "publish_event0100" type of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_0950'
@@ -189,9 +192,12 @@ export default function ActsSubscriberTestOrder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
-     * @tc.name       Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
-     * @tc.desc       Check the subscriber can receive event "publish_event0200" type of the interface (by Promise)
+     * @tc.name   Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
+     * @tc.number Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
+     * @tc.desc   Check the subscriber can receive event "publish_event0200" type of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it ('Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100'
@@ -304,9 +310,12 @@ export default function ActsSubscriberTestOrder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
-     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
-     * @tc.desc       Check the subscriber can receive event "publish_event0301" type of the interface (by Promise)
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
+     * @tc.desc   Check the subscriber can receive event "publish_event0301" type of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1000'
@@ -423,9 +432,12 @@ export default function ActsSubscriberTestOrder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
-     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
-     * @tc.desc       Check the subscriber can receive event "publish_eventOrder0400" type of the interface by promise
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
+     * @tc.desc   Check the subscriber can receive event "publish_eventOrder0400" type of the interface by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1100'
@@ -517,9 +529,12 @@ export default function ActsSubscriberTestOrder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
-     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
-     * @tc.desc       Check the subscriber can receive event "publish_event0500" type of the interface (by promise)
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
+     * @tc.desc   Check the subscriber can receive event "publish_event0500" type of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1200'
@@ -616,9 +631,12 @@ export default function ActsSubscriberTestOrder() {
     })
 
     /**
+     * @tc.name   SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600
      * @tc.number SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600
-     * @tc.name SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600
-     * @tc.desc createSubscriber
+     * @tc.desc   createSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600'

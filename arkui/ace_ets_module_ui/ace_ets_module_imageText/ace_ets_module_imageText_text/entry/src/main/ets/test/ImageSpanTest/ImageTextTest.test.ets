@@ -38,12 +38,12 @@ export default function ImageTextTest() {
       done()
     });
     /**
-     * @tc.number    ArkUI_Image_Text_0100
-     * @tc.name      ArkUI_Image_Text_0100
-     * @tc.desc      ImageSpan.verticalAlign(ImageSpanAlignment.BASELINE/CENTER/TOP/BOTTOM)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ArkUI_Image_Text_0100
+     * @tc.number ArkUI_Image_Text_0100
+     * @tc.desc   ImageSpan.verticalAlign(ImageSpanAlignment.BASELINE/CENTER/TOP/BOTTOM)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Image_Text_0100', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Image_Text_0100'
@@ -65,12 +65,12 @@ export default function ImageTextTest() {
       done();
     });
     /**
-     * @tc.number    ArkUI_Image_Text_0200
-     * @tc.name      ArkUI_Image_Text_0200
-     * @tc.desc      ImageSpan.objectFit(Contain/Cover/Auto/Fill/ScaleDown/None)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ArkUI_Image_Text_0200
+     * @tc.number ArkUI_Image_Text_0200
+     * @tc.desc   ImageSpan.objectFit(Contain/Cover/Auto/Fill/ScaleDown/None)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Image_Text_0200', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Image_Text_0200'
@@ -98,12 +98,12 @@ export default function ImageTextTest() {
       done();
     });
     /**
-     * @tc.number    ArkUI_Image_Text_0300
-     * @tc.name      ArkUI_Image_Text_0300
-     * @tc.desc      Text.textIndent
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ArkUI_Image_Text_0300
+     * @tc.number ArkUI_Image_Text_0300
+     * @tc.desc   Text.textIndent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Image_Text_0300', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Image_Text_0300'
@@ -121,12 +121,12 @@ export default function ImageTextTest() {
       done();
     });
     /**
-     * @tc.number    ArkUI_Image_Text_0400
-     * @tc.name      ArkUI_Image_Text_0400
-     * @tc.desc      ImageSpan(null/undefined/'')
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ArkUI_Image_Text_0400
+     * @tc.number ArkUI_Image_Text_0400
+     * @tc.desc   ImageSpan(null/undefined/'')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Image_Text_0400', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Image_Text_0400'
@@ -146,12 +146,12 @@ export default function ImageTextTest() {
       done();
     });
     /**
-     * @tc.number    ArkUI_Image_Text_0500
-     * @tc.name      ArkUI_Image_Text_0500
-     * @tc.desc      verticalAlign(null/undefined)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ArkUI_Image_Text_0500
+     * @tc.number ArkUI_Image_Text_0500
+     * @tc.desc   verticalAlign(null/undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Image_Text_0500', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Image_Text_0500'
@@ -168,12 +168,12 @@ export default function ImageTextTest() {
       done();
     });
     /**
-     * @tc.number    ArkUI_Image_Text_0600
-     * @tc.name      ArkUI_Image_Text_0600
-     * @tc.desc      objectFit(null/undefined)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ArkUI_Image_Text_0600
+     * @tc.number ArkUI_Image_Text_0600
+     * @tc.desc   objectFit(null/undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Image_Text_0600', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Image_Text_0600'
@@ -189,13 +189,13 @@ export default function ImageTextTest() {
       console.info(`${SUITE} ${CASE} END`);
       done();
     });
-     /**
-     * @tc.number    ArkUI_Image_Text_0700
-     * @tc.name      ArkUI_Image_Text_0700
-     * @tc.desc      textIndent(null/undefined)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ArkUI_Image_Text_0700
+     * @tc.number ArkUI_Image_Text_0700
+     * @tc.desc   textIndent(null/undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Image_Text_0700', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Image_Text_0700'

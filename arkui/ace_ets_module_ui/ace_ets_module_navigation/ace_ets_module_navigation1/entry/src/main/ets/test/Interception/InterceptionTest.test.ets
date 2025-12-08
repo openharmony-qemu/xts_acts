@@ -49,10 +49,12 @@ export default function InterceptionTest() {
 
 
     /**
-     * @tc.number    interception_0100
-     * @tc.name      interception_0100
-     * @tc.desc      Test interception before willshow and implement page interception
-     * @tc.level     Level 0
+     * @tc.name   interception_0100
+     * @tc.number interception_0100
+     * @tc.desc   Test interception before willshow and implement page interception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('interception_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('interception_0100 START');

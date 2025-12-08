@@ -40,12 +40,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0100
-     * @tc.name      getAttrsTest_0100
-     * @tc.desc      frameNode: getPositionToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0100
+     * @tc.number getAttrsTest_0100
+     * @tc.desc   frameNode: getPositionToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0100 START');
@@ -62,12 +62,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0200
-     * @tc.name      getAttrsTest_0200
-     * @tc.desc      frameNode: getPositionToParent
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0200
+     * @tc.number getAttrsTest_0200
+     * @tc.desc   frameNode: getPositionToParent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0200 START');
@@ -84,12 +84,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0300
-     * @tc.name      getAttrsTest_0300
-     * @tc.desc      frameNode: getMeasuredSize
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0300
+     * @tc.number getAttrsTest_0300
+     * @tc.desc   frameNode: getMeasuredSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0300 START');
@@ -106,12 +106,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0400
-     * @tc.name      getAttrsTest_0400
-     * @tc.desc      frameNode: getLayoutPosition
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0400
+     * @tc.number getAttrsTest_0400
+     * @tc.desc   frameNode: getLayoutPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0400 START');
@@ -128,12 +128,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0500
-     * @tc.name      getAttrsTest_0500
-     * @tc.desc      frameNode: getUserConfigBorderWidth
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0500
+     * @tc.number getAttrsTest_0500
+     * @tc.desc   frameNode: getUserConfigBorderWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0500 START');
@@ -150,12 +150,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0600
-     * @tc.name      getAttrsTest_0600
-     * @tc.desc      frameNode: getUserConfigPadding
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0600
+     * @tc.number getAttrsTest_0600
+     * @tc.desc   frameNode: getUserConfigPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0600 START');
@@ -172,12 +172,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0700
-     * @tc.name      getAttrsTest_0700
-     * @tc.desc      frameNode: getUserConfigMargin
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0700
+     * @tc.number getAttrsTest_0700
+     * @tc.desc   frameNode: getUserConfigMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0700 START');
@@ -194,12 +194,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0800
-     * @tc.name      getAttrsTest_0800
-     * @tc.desc      frameNode: getUserConfigSize
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0800
+     * @tc.number getAttrsTest_0800
+     * @tc.desc   frameNode: getUserConfigSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0800 START');
@@ -216,12 +216,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_0900
-     * @tc.name      getAttrsTest_0900
-     * @tc.desc      frameNode: getUniqueId
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_0900
+     * @tc.number getAttrsTest_0900
+     * @tc.desc   frameNode: getUniqueId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_0900', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_0900 START');
@@ -238,12 +238,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_1000
-     * @tc.name      getAttrsTest_1000
-     * @tc.desc      frameNode: getCustomProperty
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_1000
+     * @tc.number getAttrsTest_1000
+     * @tc.desc   frameNode: getCustomProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_1000 START');
@@ -260,12 +260,12 @@ export default function getAttrsTest() {
       done();
     });
     /**
-     * @tc.number    getAttrsTest_1100
-     * @tc.name      getAttrsTest_1100
-     * @tc.desc      frameNode: get commonAttribute()
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttrsTest_1100
+     * @tc.number getAttrsTest_1100
+     * @tc.desc   frameNode: get commonAttribute()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttrsTest_1100', Level.LEVEL0, async (done: Function) => {
       console.info('getAttrsTest_1100 START');

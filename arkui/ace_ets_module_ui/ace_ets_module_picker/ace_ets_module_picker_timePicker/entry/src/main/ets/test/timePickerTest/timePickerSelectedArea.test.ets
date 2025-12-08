@@ -40,14 +40,14 @@ export default function timePickerSelectedAreaTest() {
       console.info('timePickerSelectedAreaTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: timePickerSelectedAreaTest_001
-    * @tc.name  : timePickerSelectedAreaTest_001
-    * @tc.desc  : To test the onEnterSelectedArea event
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerSelectedAreaTest_001
+     * @tc.number timePickerSelectedAreaTest_001
+     * @tc.desc   To test the onEnterSelectedArea event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timePickerSelectedAreaTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('timePickerSelectedAreaTest_001 START');
       let driver = Driver.create();

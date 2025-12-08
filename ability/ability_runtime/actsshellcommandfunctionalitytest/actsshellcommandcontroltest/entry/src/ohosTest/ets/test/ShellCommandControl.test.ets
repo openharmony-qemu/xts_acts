@@ -21,10 +21,12 @@ let TAG: string;
 export default function shellCommandControlTest() {
   describe('ShellCommandControlTest', () => {
     /**
-     * @tc.number: Acts_Ability_ShellCommandControl__0100
-     * @tc.name: Verify that the aa command aa help can be executed
-     * @tc.desc: Error code 0 is returned
-     * @tc.level 0
+     * @tc.name   Acts_Ability_ShellCommandControl__0100
+     * @tc.number Acts_Ability_ShellCommandControl__0100
+     * @tc.desc   Error code 0 is returned
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_Ability_ShellCommandControl__0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'Acts_Ability_ShellCommandControl__0100';
@@ -40,10 +42,12 @@ export default function shellCommandControlTest() {
     })
 
     /**
-     * @tc.number: Acts_Ability_ShellCommandControl__0200
-     * @tc.name: Verify that the aa command ls -l cannot be executed
-     * @tc.desc: Error code -1 is returned
-     * @tc.level 3
+     * @tc.name   Acts_Ability_ShellCommandControl__0200
+     * @tc.number Acts_Ability_ShellCommandControl__0200
+     * @tc.desc   Error code -1 is returned
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_Ability_ShellCommandControl__0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'Acts_Ability_ShellCommandControl__0200';

@@ -29,13 +29,13 @@ export default function KeyEventGetGetDeviceIdTest() {
     });
 
    
-     /*
-      * @tc.number     : SUB_ARKUI_CAPI_UIInputEvent_GetDeviceId_000
-      * @tc.name       : KeyEventGetGetDeviceIdTest_001
-      * @tc.desc       : testing KeyEvent GetType
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
+     /**
+      * @tc.name   KeyEventGetGetDeviceIdTest_001
+      * @tc.number SUB_ARKUI_CAPI_UIInputEvent_GetDeviceId_000
+      * @tc.desc   testing KeyEvent GetType
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
       */
      it('KeyEventGetGetDeviceIdTest_001', Level.LEVEL1, async (done: Function) => {
        console.info('KeyEventGetGetDeviceIdTest_001 START');

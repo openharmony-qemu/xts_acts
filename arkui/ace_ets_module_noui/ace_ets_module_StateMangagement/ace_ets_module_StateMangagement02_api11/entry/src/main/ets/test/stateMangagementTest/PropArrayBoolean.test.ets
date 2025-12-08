@@ -54,14 +54,14 @@ export default function PropArrayBoolean() {
       }
       done();
     });
-    /* *
-    * @tc.number: PropArrayBoolean_0100
-    * @tc.name  : PropArrayBoolean_0100
-    * @tc.desc  : Test if the state decorator supports PropArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   PropArrayBoolean_0100
+     * @tc.number PropArrayBoolean_0100
+     * @tc.desc   Test if the state decorator supports PropArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayBoolean_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PropArrayBoolean_0100 START');
       let driver: Driver = await Driver.create()
@@ -79,14 +79,14 @@ export default function PropArrayBoolean() {
       console.info('[PropArrayBoolean_0100] END');
       done();
     });
-    /* *
-    * @tc.number: PropArrayBoolean_0200
-    * @tc.name  : PropArrayBoolean_0200
-    * @tc.desc  : Test if the state decorator supports PropArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   PropArrayBoolean_0200
+     * @tc.number PropArrayBoolean_0200
+     * @tc.desc   Test if the state decorator supports PropArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayBoolean_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PropArrayBoolean_0200 START');
       let driver: Driver = await Driver.create()
@@ -104,14 +104,14 @@ export default function PropArrayBoolean() {
       console.info('[PropArrayBoolean_0200] END');
       done();
     });
-    /* *
-    * @tc.number: PropArrayBoolean_0300
-    * @tc.name  : PropArrayBoolean_0300
-    * @tc.desc  : Test if the state decorator supports PropArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   PropArrayBoolean_0300
+     * @tc.number PropArrayBoolean_0300
+     * @tc.desc   Test if the state decorator supports PropArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayBoolean_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PropArrayBoolean_0300 START');
       let driver: Driver = await Driver.create()

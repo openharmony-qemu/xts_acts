@@ -48,12 +48,12 @@ export default function ImageAttachmentTest() {
     });
 
     /**
-     * @tc.number    ImageAttachmentTest001
-     * @tc.name      ImageAttachmentTest001
-     * @tc.desc      test the attr of StyledString: ImageAttachment.sizeInVp(50vp)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAttachmentTest001
+     * @tc.number ImageAttachmentTest001
+     * @tc.desc   test the attr of StyledString: ImageAttachment.sizeInVp(50vp)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachmentTest001', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAttachmentTest001] START');
@@ -72,12 +72,12 @@ export default function ImageAttachmentTest() {
     });
 
     /**
-     * @tc.number    ImageAttachmentTest002
-     * @tc.name      ImageAttachmentTest002
-     * @tc.desc      test the attr of StyledString: ImageAttachment.sizeInVp(50px)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAttachmentTest002
+     * @tc.number ImageAttachmentTest002
+     * @tc.desc   test the attr of StyledString: ImageAttachment.sizeInVp(50px)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachmentTest002', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAttachmentTest002] START');
@@ -96,12 +96,12 @@ export default function ImageAttachmentTest() {
     });
 
     /**
-     * @tc.number    ImageAttachmentTest003
-     * @tc.name      ImageAttachmentTest003
-     * @tc.desc      test the attr of StyledString: ImageAttachment.sizeInVp(0)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAttachmentTest003
+     * @tc.number ImageAttachmentTest003
+     * @tc.desc   test the attr of StyledString: ImageAttachment.sizeInVp(0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachmentTest003', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAttachmentTest003] START');
@@ -120,12 +120,12 @@ export default function ImageAttachmentTest() {
     });
 
     /**
-     * @tc.number    ImageAttachmentTest004
-     * @tc.name      ImageAttachmentTest004
-     * @tc.desc      test the attr of StyledString: ImageAttachment.sizeInVp(-50)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAttachmentTest004
+     * @tc.number ImageAttachmentTest004
+     * @tc.desc   test the attr of StyledString: ImageAttachment.sizeInVp(-50)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachmentTest004', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAttachmentTest004] START');
@@ -144,12 +144,12 @@ export default function ImageAttachmentTest() {
     });
 
     /**
-     * @tc.number    ImageAttachmentTest005
-     * @tc.name      ImageAttachmentTest005
-     * @tc.desc      test the attr of StyledString: ImageAttachment.sizeInVp(undefined)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAttachmentTest005
+     * @tc.number ImageAttachmentTest005
+     * @tc.desc   test the attr of StyledString: ImageAttachment.sizeInVp(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachmentTest005', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAttachmentTest005] START');
@@ -168,12 +168,12 @@ export default function ImageAttachmentTest() {
     });
 
     /**
-     * @tc.number    ImageAttachmentTest006
-     * @tc.name      ImageAttachmentTest006
-     * @tc.desc      test the attr of StyledString: ImageAttachment.sizeInVp(null)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAttachmentTest006
+     * @tc.number ImageAttachmentTest006
+     * @tc.desc   test the attr of StyledString: ImageAttachment.sizeInVp(null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachmentTest006', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAttachmentTest006] START');

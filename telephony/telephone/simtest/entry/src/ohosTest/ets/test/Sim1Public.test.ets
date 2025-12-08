@@ -78,12 +78,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKey_0300
-     * @tc.name   : testTelephonySimGetOpKey0300
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise asynchronous callbacks. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   testTelephonySimGetOpKey0300
+     * @tc.number SUB_Telephony_Sim_GetOpKey_0300
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise asynchronous callbacks. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySimGetOpKey0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpKey0300';
@@ -115,12 +115,12 @@ export default function Sim1Public() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKey_0500
-     * @tc.name   : testTelephonySimGetOpKey0500
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpKey0500
+     * @tc.number SUB_Telephony_Sim_GetOpKey_0500
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpKey0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpKey0500';
@@ -167,15 +167,15 @@ export default function Sim1Public() {
       }
     });
 
-    /**
-     * @tc.number : SUB_Telephony_Sim_GetSimSpn_0600
-     * @tc.name   : testTelephonySimGetSimSpn0600
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
-     */
 
+    /**
+     * @tc.name   testTelephonySimGetSimSpn0600
+     * @tc.number testTelephonySimGetSimSpn0600
+     * @tc.desc   testTelephonySimGetSimSpn0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonySimGetSimSpn0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimSpn0600';
       console.info(`${caseName} test start`);
@@ -215,15 +215,15 @@ export default function Sim1Public() {
       }
     });
 
-    /**
-     * @tc.number : SUB_Telephony_Sim_GetSimSpn_0700
-     * @tc.name   : testTelephonySimGetSimSpn0700
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
 
+    /**
+     * @tc.name   testTelephonySimGetSimSpn0700
+     * @tc.number testTelephonySimGetSimSpn0700
+     * @tc.desc   testTelephonySimGetSimSpn0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonySimGetSimSpn0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimSpn0700';
       console.info(`${caseName} test start`);
@@ -264,12 +264,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKey_0600
-     * @tc.name   : testTelephonySimGetOpKey0600
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpKey0600
+     * @tc.number SUB_Telephony_Sim_GetOpKey_0600
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpKey0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpKey0600';
@@ -304,12 +304,12 @@ export default function Sim1Public() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKey_0900
-     * @tc.name   : testTelephonySimGetOpKey0900
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpKey0900
+     * @tc.number SUB_Telephony_Sim_GetOpKey_0900
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpKey0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpKey0900';
@@ -368,12 +368,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKey_1000
-     * @tc.name   : testTelephonySimGetOpKey1000
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpKey1000
+     * @tc.number SUB_Telephony_Sim_GetOpKey_1000
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpKey1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpKey1000';
@@ -412,12 +412,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKeySync_0300
-     * @tc.name   : testTelephonySimGetOpKeySync0300
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpKeySync0300
+     * @tc.number SUB_Telephony_Sim_GetOpKeySync_0300
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpKeySync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpKeySync0300';
@@ -444,12 +444,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpName_0100
-     * @tc.name   : testTelephonySimGetOpName0100
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   testTelephonySimGetOpName0100
+     * @tc.number SUB_Telephony_Sim_GetOpName_0100
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySimGetOpName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpName0100';
@@ -483,12 +483,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpName_0300
-     * @tc.name   : testTelephonySimGetOpName0300
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise asynchronous callbacks. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpName0300
+     * @tc.number SUB_Telephony_Sim_GetOpName_0300
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise asynchronous callbacks. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpName0300';
@@ -519,12 +519,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpName_0500
-     * @tc.name   : testTelephonySimGetOpName0500
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpName0500
+     * @tc.number SUB_Telephony_Sim_GetOpName_0500
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpName0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpName0500';
@@ -578,12 +578,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpName_0600
-     * @tc.name   : testTelephonySimGetOpName0600
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpName0600
+     * @tc.number SUB_Telephony_Sim_GetOpName_0600
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpName0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpName0600';
@@ -617,12 +617,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpName_0900
-     * @tc.name   : testTelephonySimGetOpName0900
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpName0900
+     * @tc.number SUB_Telephony_Sim_GetOpName_0900
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpName0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpName0900';
@@ -681,12 +681,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimSpn_1100
-     * @tc.name   : testTelephonySimGetSimSpn1100
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimSpn1100
+     * @tc.number SUB_Telephony_Sim_GetSimSpn_1100
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimSpn1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimSpn1100';
@@ -733,12 +733,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimSpn_1200
-     * @tc.name   : testTelephonySimGetSimSpn1200
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimSpn1200
+     * @tc.number SUB_Telephony_Sim_GetSimSpn_1200
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimSpn1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimSpn1200';
@@ -785,12 +785,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpNameSync_0300
-     * @tc.name   : testTelephonySimGetOpNameSync0300
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpNameSync0300
+     * @tc.number SUB_Telephony_Sim_GetOpNameSync_0300
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpNameSync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetOpNameSync0300';
@@ -817,12 +817,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetDefaultVoiceSimId_0100
-     * @tc.name   : testTelephonySimGetDefaultVoiceSimId0100
-     * @tc.desc   : Obtain the SIM card ID of the default voice service. Use callback for asynchronous callback.Need to insert SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetDefaultVoiceSimId0100
+     * @tc.number SUB_Telephony_Sim_GetDefaultVoiceSimId_0100
+     * @tc.desc   Obtain the SIM card ID of the default voice service. Use callback for asynchronous callback.Need to insert SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetDefaultVoiceSimId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetDefaultVoiceSimId0100';
@@ -873,12 +873,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetDefaultVoiceSimId_0300
-     * @tc.name   : testTelephonySimGetDefaultVoiceSimId0300
-     * @tc.desc   : Obtain the SIM card ID of the default voice service. Use Promise for asynchronous callback. Need to insert SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetDefaultVoiceSimId0300
+     * @tc.number SUB_Telephony_Sim_GetDefaultVoiceSimId_0300
+     * @tc.desc   Obtain the SIM card ID of the default voice service. Use Promise for asynchronous callback. Need to insert SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetDefaultVoiceSimId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetDefaultVoiceSimId0300';
@@ -926,12 +926,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_1500
-     * @tc.name   : testTelephonySimGetSimAuthentication1500
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimAuthentication1500
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1500
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimAuthentication1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimAuthentication1500';
@@ -962,12 +962,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_1600
-     * @tc.name   : testTelephonySimGetSimAuthentication1600
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimAuthentication1600
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1600
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimAuthentication1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimAuthentication1600';
@@ -998,12 +998,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_1700
-     * @tc.name   : testTelephonySimGetSimAuthentication1700
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimAuthentication1700
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1700
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimAuthentication1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimAuthentication1700';
@@ -1036,12 +1036,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_1800
-     * @tc.name   : testTelephonySimGetSimAuthentication1800
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimAuthentication1800
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1800
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimAuthentication1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimAuthentication1800';
@@ -1088,12 +1088,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_1900
-     * @tc.name   : testTelephonySimGetSimAuthentication1900
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimAuthentication1900
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1900
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimAuthentication1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimAuthentication1900';
@@ -1140,12 +1140,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_2000
-     * @tc.name   : testTelephonySimGetSimAuthentication2000
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimAuthentication2000
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_2000
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimAuthentication2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimAuthentication2000';
@@ -1192,12 +1192,12 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_2100
-     * @tc.name   : testTelephonySimGetSimAuthentication2100
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimAuthentication2100
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_2100
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetSimAuthentication2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimAuthentication2100';

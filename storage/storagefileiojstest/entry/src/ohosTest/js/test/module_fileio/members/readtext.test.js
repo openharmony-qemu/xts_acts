@@ -23,13 +23,12 @@ export default function fileioReadtext() {
 describe('fileio_readtext', function () {
 
   /**
+   * @tc.name   fileio_test_readtext_sync_000
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0000
-   * @tc.name fileio_test_readtext_sync_000
-   * @tc.desc Test readtextSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_readtext_sync_000');
@@ -45,13 +44,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_sync_001
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0100
-   * @tc.name fileio_test_readtext_sync_001
-   * @tc.desc Test readtextSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_readtext_sync_001');
@@ -70,13 +68,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_sync_002
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0200
-   * @tc.name fileio_test_readtext_sync_002
-   * @tc.desc Test readtextSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_readtext_sync_002');
@@ -95,13 +92,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_sync_003
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0300
-   * @tc.name fileio_test_readtext_sync_003
-   * @tc.desc Test readtextSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_sync_003', Level.LEVEL0, function () {
     try {
@@ -113,13 +109,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_sync_004
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0400
-   * @tc.name fileio_test_readtext_sync_004
-   * @tc.desc Test readtextSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_sync_004', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_readtext_sync_004');
@@ -133,13 +128,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_sync_005
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0500
-   * @tc.name fileio_test_readtext_sync_005
-   * @tc.desc Test readtextSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_sync_005', Level.LEVEL0, async function () {
     const invalidLength = -1;
@@ -156,13 +150,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_sync_006
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0600
-   * @tc.name fileio_test_readtext_sync_006
-   * @tc.desc Test readtextSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_readtext_sync_006', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_readtext_sync_006');
@@ -179,13 +172,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_sync_007
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0700
-   * @tc.name fileio_test_readtext_sync_007
-   * @tc.desc Test readtextSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_readtext_sync_007', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_readtext_sync_007');
@@ -206,13 +198,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_async_000
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0000
-   * @tc.name fileio_test_readtext_async_000
-   * @tc.desc Test readtext() interfaces. Callback.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_000');
@@ -233,13 +224,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_async_001
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0100
-   * @tc.name fileio_test_readtext_async_001
-   * @tc.desc Test readtext() interfaces. Callback.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_001');
@@ -260,13 +250,12 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_async_002
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0200
-   * @tc.name fileio_test_readtext_async_002
-   * @tc.desc Test readtext() interfaces. Callback.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_readtext_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_002');
@@ -294,15 +283,13 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_async_003
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0300
-   * @tc.name fileio_test_readtext_async_003
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileio_test_readtext_async_003', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_003');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -319,15 +306,13 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_async_004
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0400
-   * @tc.name fileio_test_readtext_async_004
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileio_test_readtext_async_004', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_004');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -349,15 +334,13 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_async_005
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0500
-   * @tc.name fileio_test_readtext_async_005
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileio_test_readtext_async_005', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_005');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -378,15 +361,13 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_async_006
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0600
-   * @tc.name fileio_test_readtext_async_006
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileio_test_readtext_async_006', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_006');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -412,15 +393,13 @@ describe('fileio_readtext', function () {
   });
 
   /**
+   * @tc.name   fileio_test_readtext_async_006
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0600
-   * @tc.name fileio_test_readtext_async_006
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileio_test_readtext_async_006', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_006');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();

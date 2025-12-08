@@ -26,13 +26,13 @@ export default function buttonLabelTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_LABEL_0100
-     * @tc.name: testButtonLabel001
-     * @tc.desc: testing label for button with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonLabel001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_LABEL_0100
+     * @tc.desc   testing label for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonLabel001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ButtonLabel001Test';
@@ -41,13 +41,13 @@ export default function buttonLabelTest() {
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_LABEL_0200
-     * @tc.name: testButtonLabel002
-     * @tc.desc: testing label for button with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonLabel002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_LABEL_0200
+     * @tc.desc   testing label for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonLabel002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ButtonLabel002Test';
@@ -57,13 +57,13 @@ export default function buttonLabelTest() {
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_LABEL_0300
-     * @tc.name: testButtonLabel003
-     * @tc.desc: testing label for button with NULL value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonLabel003
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_LABEL_0300
+     * @tc.desc   testing label for button with NULL value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonLabel003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ButtonLabel003Test';
@@ -72,13 +72,13 @@ export default function buttonLabelTest() {
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_LABEL_0400
-     * @tc.name: testButtonLabel004
-     * @tc.desc: testing label for button with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonLabel004
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_LABEL_0400
+     * @tc.desc   testing label for button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonLabel004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ButtonLabel004Test';

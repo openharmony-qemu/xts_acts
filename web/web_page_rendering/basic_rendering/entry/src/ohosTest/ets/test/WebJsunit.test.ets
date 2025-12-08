@@ -34,30 +34,39 @@ export default function webJsunit() {
       await waitForComponent("webcomponent");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_011
-     *tc.name getWebId
-     *tc.desic Gets the id for the current Web
+    /**
+     * @tc.name   getWebId
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_011
+     * @tc.desc   getWebId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getWebId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetWebId", 151290)
       Utils.registerEvent("getWebId", "webId", 151300, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_045
-     *tc.name onTitleReceive
-     *tc.desic Triggered when the title of the main application document changes
+    /**
+     * @tc.name   onTitleReceive
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_045
+     * @tc.desc   onTitleReceive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onTitleReceive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnTitleReceive", 151290)
       Utils.registerEvent("onTitleReceive", "index", 151310, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_062
-     *tc.name webVisibility
-     *tc.desic Web Visibility test
+    /**
+     * @tc.name   webVisibility
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_062
+     * @tc.desc   webVisibility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('webVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebVisibility", 151290)

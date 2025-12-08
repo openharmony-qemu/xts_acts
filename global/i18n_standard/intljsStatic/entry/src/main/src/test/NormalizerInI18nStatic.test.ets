@@ -53,7 +53,6 @@ export default function NormalizerInI18nTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0100
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0100
      * @tc.desc   normalize the '1e9b 0323' in NFC mode
@@ -71,7 +70,6 @@ export default function NormalizerInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0200
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0200
      * @tc.desc   normalize the '1e9b 0323' in NFD mode
@@ -89,7 +87,6 @@ export default function NormalizerInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0300
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0300
      * @tc.desc   normalize the '1e9b 0323' in NFKC mode
@@ -107,7 +104,6 @@ export default function NormalizerInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0400
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0400
      * @tc.desc   normalize the '1e9b 0323' in NFKD mode
@@ -125,7 +121,6 @@ export default function NormalizerInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0500
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0500
      * @tc.desc   normalize the '0032 2075' in NFC mode
@@ -143,7 +138,6 @@ export default function NormalizerInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0600
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0600
      * @tc.desc   normalize the '0032 2075' in NFD mode
@@ -161,7 +155,6 @@ export default function NormalizerInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0700
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0700
      * @tc.desc   normalize the '0032 2075' in NFKC mode
@@ -179,7 +172,6 @@ export default function NormalizerInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0800
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0800
      * @tc.desc   normalize the '0032 2075' in NFKD mode
@@ -197,7 +189,6 @@ export default function NormalizerInI18nTest() {
     })
  
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_0900
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0900
      * @tc.desc   test the getInstance error code, getInstance method return 401 error code
@@ -218,7 +209,6 @@ export default function NormalizerInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_static_1000
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_1000
      * @tc.desc   normalize method return 401 error code

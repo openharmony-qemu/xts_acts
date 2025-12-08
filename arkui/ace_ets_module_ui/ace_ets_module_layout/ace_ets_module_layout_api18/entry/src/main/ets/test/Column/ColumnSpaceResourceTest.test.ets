@@ -46,12 +46,12 @@ export default function ColumnSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    ColumnSpaceResourceTest_0100
-     * @tc.name      ColumnSpaceResourceTest_0100
-     * @tc.desc      test type of space is Resource (string)
-     * @tc.level:    Level 1
-     * @tc.type :    ColumnSpaceResource
-     * @tc.size :
+     * @tc.name   ColumnSpaceResourceTest_0100
+     * @tc.number ColumnSpaceResourceTest_0100
+     * @tc.desc   test type of space is Resource (string)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ColumnSpaceResourceTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnSpaceResourceTest_0100] START');
@@ -78,12 +78,12 @@ export default function ColumnSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    ColumnSpaceResourceTest_0200
-     * @tc.name      ColumnSpaceResourceTest_0200
-     * @tc.desc      test type of space is Resource (integer)
-     * @tc.level:    Level 1
-     * @tc.type :    ColumnSpaceResource
-     * @tc.size :
+     * @tc.name   ColumnSpaceResourceTest_0200
+     * @tc.number ColumnSpaceResourceTest_0200
+     * @tc.desc   test type of space is Resource (integer)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ColumnSpaceResourceTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnSpaceResourceTest_0200] START');
@@ -110,12 +110,12 @@ export default function ColumnSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    ColumnSpaceResourceTest_0300
-     * @tc.name      ColumnSpaceResourceTest_0300
-     * @tc.desc      test type of space is Resource (float)
-     * @tc.level:    Level 1
-     * @tc.type :    ColumnSpaceResource
-     * @tc.size :
+     * @tc.name   ColumnSpaceResourceTest_0300
+     * @tc.number ColumnSpaceResourceTest_0300
+     * @tc.desc   test type of space is Resource (float)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ColumnSpaceResourceTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnSpaceResourceTest_0300] START');

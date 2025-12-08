@@ -45,11 +45,13 @@ export default function NavigationTest() {
       console.info("NavigationTest after each called");
     });
 
-    /*
-     * @tc.number      NavigationMode_001
-     * @tc.name        Navigation basic navigation function test
-     * @tc.desc        Test Navigation push and pop functions between pageOne001 and pageTwo002
-     * @tc.level       Level 2
+    /**
+     * @tc.name   NavigationMode_001
+     * @tc.number NavigationMode_001
+     * @tc.desc   Test Navigation push and pop functions between pageOne001 and pageTwo002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NavigationMode_001',  Level.LEVEL2, async  (done:Function) =>{
       console.info('[NavigationMode_001] START');

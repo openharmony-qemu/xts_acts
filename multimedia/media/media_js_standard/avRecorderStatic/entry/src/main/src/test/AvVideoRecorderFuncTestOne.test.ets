@@ -1538,13 +1538,12 @@ export function avVideoRecorderTestOne() {
       }
     } as Callback<eventEmitter.EventData>);
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0100
-      * @tc.desc    Recorder video start-pause-resume-stop
-      *               : 001.test start-pause-resume-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0100
+     * @tc.desc   Recorder video start-pause-resume-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1581,13 +1580,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0400
-      * @tc.desc    Recorder video start-pause-resume
-      *               : 001.test start-pause-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0400
+     * @tc.desc   Recorder video start-pause-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1624,13 +1622,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0500
-      * @tc.desc    Recorder video start-stop-resume
-      *               : 001.test start-stop-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0500
+     * @tc.desc   Recorder video start-stop-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1667,13 +1664,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0600
-      * @tc.desc    Recorder video start-reset-resume
-      *               : 001.test start-reset-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0600
+     * @tc.desc   Recorder video start-reset-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1710,13 +1706,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0800
-      * @tc.desc    Recorder create-prepare-getInputSurface-start-pause-resume-resume-resume
-      *               : 001.test create-prepare-getInputSurface-start-pause-resume-resume-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0800
+     * @tc.desc   Recorder create-prepare-getInputSurface-start-pause-resume-resume-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1757,13 +1752,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0400
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0400
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1800,13 +1794,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0500
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0500
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1843,13 +1836,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0600
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0600
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1886,13 +1878,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0800
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0800
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1933,13 +1924,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0500
-      * @tc.desc    Recorder start-pause-resume-stop
-      *               : 001.test start-pause-resume-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0500
+     * @tc.desc   Recorder start-pause-resume-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -1976,13 +1966,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0500
-      * @tc.desc    Recorder video resume-stop
-      *               : 001.test resume-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0500
+     * @tc.desc   Recorder video resume-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2019,13 +2008,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0500
-      * @tc.desc    Recorder video start-resume-reset
-      *               : 001.test start-resume-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0500
+     * @tc.desc   Recorder video start-resume-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2062,13 +2050,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0100
-      * @tc.desc    Recorder video create-resume
-      *               : 001.test create-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0100
+     * @tc.desc   Recorder video create-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2098,13 +2085,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0200
-      * @tc.desc    Recorder video prepare-resume
-      *               : 001.test prepare-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0200
+     * @tc.desc   Recorder video prepare-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2133,13 +2119,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0300
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0300
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2174,13 +2159,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0700
-      * @tc.desc    Recorder create-prepare-getInputSurface-resume
-      *               : 001.test create-prepare-getInputSurface-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0700
+     * @tc.desc   Recorder create-prepare-getInputSurface-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2212,13 +2196,12 @@ export function avVideoRecorderTestOne() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0100
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0100
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2253,13 +2236,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0200
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0200
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2294,13 +2276,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0300
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0300
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2335,13 +2316,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0700
-      * @tc.desc    Recorder video start-resume
-      *               : 001.test start-resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0700
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2375,13 +2355,12 @@ export function avVideoRecorderTestOne() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0300
-      * @tc.desc    Recorder video start-stop
-      *               : 001.test start-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0300
+     * @tc.desc   Recorder video start-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2414,13 +2393,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0400
-      * @tc.desc    Recorder video start-pause-stop
-      *               : 001.test start-pause-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0400
+     * @tc.desc   Recorder video start-pause-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2456,13 +2434,12 @@ export function avVideoRecorderTestOne() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0600
-      * @tc.desc    Recorder start-reset-stop
-      *               : 001.test start-reset-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0600
+     * @tc.desc   Recorder start-reset-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2497,13 +2474,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0800
-      * @tc.desc    Recorder start-stop-stop-stop
-      *               : 001.test start-stop-stop-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0800
+     * @tc.desc   Recorder start-stop-stop-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2540,13 +2516,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0100
-      * @tc.desc    Recorder video create-stop
-      *               : 001.test create-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0100
+     * @tc.desc   Recorder video create-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2575,13 +2550,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0200
-      * @tc.desc    Recorder video prepare-stop
-      *               : 001.test prepare-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0200
+     * @tc.desc   Recorder video prepare-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2610,13 +2584,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0300
-      * @tc.desc    Recorder video start-stop
-      *               : 001.test start-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0300
+     * @tc.desc   Recorder video start-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2650,13 +2623,12 @@ export function avVideoRecorderTestOne() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0400
-      * @tc.desc    Recorder video pause-stop
-      *               : 001.test pause-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0400
+     * @tc.desc   Recorder video pause-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2692,13 +2664,12 @@ export function avVideoRecorderTestOne() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0600
-      * @tc.desc    Recorder video reset-stop
-      *               : 001.test reset-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0600
+     * @tc.desc   Recorder video reset-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2733,13 +2704,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0700
-      * @tc.desc    Recorder video getInputSurface-stop
-      *               : 001.test getInputSurface-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0700
+     * @tc.desc   Recorder video getInputSurface-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2772,13 +2742,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0800
-      * @tc.desc    Recorder video start-stop-stop-stop
-      *               : 001.test start-stop-stop-stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0800
+     * @tc.desc   Recorder video start-stop-stop-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2817,13 +2786,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0100
-      * @tc.desc    Recorder video create-reset
-      *               : 001.test create-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0100
+     * @tc.desc   Recorder video create-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2853,13 +2821,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0200
-      * @tc.desc    Recorder video prepare-reset
-      *               : 001.test prepare-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0200
+     * @tc.desc   Recorder video prepare-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2888,13 +2855,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0300
-      * @tc.desc    Recorder video start-reset
-      *               : 001.test start-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0300
+     * @tc.desc   Recorder video start-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2929,13 +2895,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0400
-      * @tc.desc    Recorder video start-pause-reset
-      *               : 001.test start-pause-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0400
+     * @tc.desc   Recorder video start-pause-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -2970,13 +2935,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0500
-      * @tc.desc    Recorder video start-resume-reset
-      *               : 001.test start-resume-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0500
+     * @tc.desc   Recorder video start-resume-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3011,13 +2975,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0600
-      * @tc.desc    Recorder video start-stop-reset
-      *               : 001.test start-stop-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0600
+     * @tc.desc   Recorder video start-stop-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3052,13 +3015,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0700
-      * @tc.desc    Recorder create-prepare-getInputSurface-reset
-      *               : 001.test create-prepare-getInputSurface-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0700
+     * @tc.desc   Recorder create-prepare-getInputSurface-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3089,13 +3051,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0800
-      * @tc.desc    Recorder create-prepare-getInputSurface-start-reset-reset-reset
-      *               : 001.test create-prepare-getInputSurface-start-reset-reset-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0800
+     * @tc.desc   Recorder create-prepare-getInputSurface-start-reset-reset-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3132,13 +3093,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0100
-      * @tc.desc    Recorder video create-reset
-      *               : 001.test create-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0100
+     * @tc.desc   Recorder video create-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3167,13 +3127,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0200
-      * @tc.desc    Recorder video prepare-reset
-      *               : 001.test prepare-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0200
+     * @tc.desc   Recorder video prepare-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3202,13 +3161,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0300
-      * @tc.desc    Recorder video start-reset
-      *               : 001.test start-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0300
+     * @tc.desc   Recorder video start-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3241,13 +3199,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0400
-      * @tc.desc    Recorder video start-pause-reset
-      *               : 001.test start-pause-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0400
+     * @tc.desc   Recorder video start-pause-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3283,13 +3240,12 @@ export function avVideoRecorderTestOne() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0600
-      * @tc.desc    Recorder video start-stop-reset
-      *               : 001.test start-stop-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0600
+     * @tc.desc   Recorder video start-stop-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3324,13 +3280,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0700
-      * @tc.desc    Recorder create-prepare-getInputSurface-reset
-      *               : 001.test create-prepare-getInputSurface-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0700
+     * @tc.desc   Recorder create-prepare-getInputSurface-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3361,13 +3316,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0800
-      * @tc.desc    Recorder create-prepare-getInputSurface-start-reset-reset-reset
-      *               : 001.test create-prepare-getInputSurface-start-reset-reset-reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0800
+     * @tc.desc   Recorder create-prepare-getInputSurface-start-reset-reset-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3407,13 +3361,12 @@ export function avVideoRecorderTestOne() {
 
     // promise prepare
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0100
-      * @tc.desc    1.create 2.prepare
-      *               : 01. create->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0100
+     * @tc.desc   1.create 2.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3444,13 +3397,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0200
-      * @tc.desc    1.create 2.prepare 3.start 4.prepare
-      *               : 02. start->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0200
+     * @tc.desc   1.create 2.prepare 3.start 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3491,13 +3443,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0300
-      * @tc.desc    1.create 2.prepare 3.start 4.pause 5.prepare
-      *               : 03. pause->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0300
+     * @tc.desc   1.create 2.prepare 3.start 4.pause 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3539,13 +3490,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0400
-      * @tc.desc    1.create 2.prepare 3.start 4.pause 5.resume 6.prepare
-      *               : 04. resume->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0400
+     * @tc.desc   1.create 2.prepare 3.start 4.pause 5.resume 6.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3589,13 +3539,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0500
-      * @tc.desc    1.create 2.prepare 3.start 4.stop 5.prepare
-      *               : 05. stop->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0500
+     * @tc.desc   1.create 2.prepare 3.start 4.stop 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3637,13 +3586,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0600
-      * @tc.desc    1.create 2.prepare 3.start 4.reset 5.prepare
-      *               : 06. reset->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0600
+     * @tc.desc   1.create 2.prepare 3.start 4.reset 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3685,13 +3633,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0700
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.prepare
-      *               : 07. getInputSurface->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3728,13 +3675,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0800
-      * @tc.desc    1.create 2.prepare 3.prepare 4.prepare
-      *               : 08. prepare 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0800
+     * @tc.desc   1.create 2.prepare 3.prepare 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3774,13 +3720,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0900
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0900
-      * @tc.desc    1.create 2.prepare (audioBitrate -1)
-      *               : 09.audioBitrate -1
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0900
+     * @tc.desc   1.create 2.prepare (audioBitrate -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3830,13 +3775,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1000
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1000
-      * @tc.desc    1.create 2.prepare (audioSampleRate -1)
-      *               : 10.audioSampleRate -1
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1000
+     * @tc.desc   1.create 2.prepare (audioSampleRate -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3886,13 +3830,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1100
-      * @tc.desc    1.create 2.prepare (videoBitrateRange -1)
-      *               : 11.videoBitrateRange -1
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1100
+     * @tc.desc   1.create 2.prepare (videoBitrateRange -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3942,13 +3885,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1200
-      * @tc.desc    1.create 2.prepare (videoFrameRate -1)
-      *               : 12.videoFrameRate -1
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1200
+     * @tc.desc   1.create 2.prepare (videoFrameRate -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -3999,13 +3941,12 @@ export function avVideoRecorderTestOne() {
 
     // Promise getInputSurface
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0100
-      * @tc.desc    1.create 2.getInputSurface
-      *               : 01. create->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0100
+     * @tc.desc   1.create 2.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4036,13 +3977,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0200
-      * @tc.desc    1.create 2.prepare 3.getInputSurface
-      *               : 02. prepare->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0200
+     * @tc.desc   1.create 2.prepare 3.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4077,13 +4017,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0300
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.getInputSurface
-      *               : 03. start->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4122,13 +4061,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0400
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.getInputSurface
-      *               : 04. pause->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4171,13 +4109,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0500
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.getInputSurface
-      *               : 05. resume->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4222,12 +4159,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0600
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4270,13 +4207,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0700
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.getInputSurface
-      *               : 07. reset->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4319,13 +4255,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0800
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.getInputSurface 5.getInputSurface
-      *               : 08. getInputSurface 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.getInputSurface 5.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4367,13 +4302,12 @@ export function avVideoRecorderTestOne() {
 
     // Promise start
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0100
-      * @tc.desc    1.create 2.start
-      *               : 01. create->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0100
+     * @tc.desc   1.create 2.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4404,13 +4338,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0200
-      * @tc.desc    1.create 2.prepare 4.start
-      *               : 02. prepare->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0200
+     * @tc.desc   1.create 2.prepare 4.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4443,13 +4376,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0300
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.start
-      *               : 03. pause->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4492,13 +4424,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0400
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.start
-      *               : 04. resume->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4543,13 +4474,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0500
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.start
-      *               : 05. stop->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4592,13 +4522,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0600
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.start
-      *               : 06. reset->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4641,13 +4570,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0700
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start
-      *               : 07. getInputSurface->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4684,13 +4612,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0800
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.start 6.start
-      *               : 08. start 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.start 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4737,13 +4664,12 @@ export function avVideoRecorderTestOne() {
 
     // Promise pause
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0100
-      * @tc.desc    1.create 2.pause
-      *               : 01. create->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0100
+     * @tc.desc   1.create 2.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4774,13 +4700,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0200
-      * @tc.desc    1.create 2.prepare 3.pause
-      *               : 02. prepare->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0200
+     * @tc.desc   1.create 2.prepare 3.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4813,13 +4738,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0300
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause
-      *               : 03. start->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4858,13 +4782,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0400
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.pause
-      *               : 04. resume->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4907,13 +4830,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0500
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.pause
-      *               : 05. stop->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -4956,13 +4878,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0600
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.pause
-      *               : 06. reset->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5005,13 +4926,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0700
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.pause
-      *               : 07. getInputSurface->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5048,13 +4968,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0800
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.pause 7.pause
-      *               : 08. pause 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.pause 7.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5102,13 +5021,12 @@ export function avVideoRecorderTestOne() {
     // 状态切换
     // 01.promise回调方式
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0100
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
-      *               : 01.AVRecorder test recording 3 seconds
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0100
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5145,13 +5063,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0200
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
-      *               : 02.AVRecorder test recording 3 seconds to pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0200
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5190,13 +5107,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0300
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
-      *               : 03.AVRecorder test recording 3 seconds to pause to resume
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0300
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5239,13 +5155,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0400
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
-      *               : 04.AVRecorder test recording 3 seconds to stop
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0400
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5284,13 +5199,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0500
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
-      *               : 05.AVRecorder test recording 3 seconds to reset
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0500
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5329,13 +5243,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0600
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.stop 7.release
-      *               : 06.AVRecorder test stop recording after recording 3 seconds
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0600
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.stop 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5376,13 +5289,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0700
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.reset 7.release
-      *               : 07.AVRecorder test reset recording after recording 3 seconds
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0700
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.reset 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5423,13 +5335,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0800
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.stop 8.release
-      *               : 08.AVRecorder test resume recording after pause and stop recording
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0800
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.stop 8.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5472,13 +5383,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0900
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0900
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.reset 8.release
-      *               : 09.AVRecorder test resume recording after pause and reset recording
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0900
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.reset 8.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5521,13 +5431,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1000
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1000
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
-      *               : 10.AVRecorder test recording 3 seconds (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1000
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5578,13 +5487,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1100
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
-      *               : 11.AVRecorder test recording 3 seconds to pause (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1100
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5637,13 +5545,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1200
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
-      *               : 12.AVRecorder test recording 3 seconds to pause to resume (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1200
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5698,13 +5605,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1300
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
-      *               : 13.AVRecorder test recording 3 seconds to stop (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1300
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5757,13 +5663,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1400
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
-      *               : 14.AVRecorder test recording 3 seconds to reset (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1400
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5817,13 +5722,12 @@ export function avVideoRecorderTestOne() {
 
     // 02.callback回调
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0100
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
-      *               : 01.AVRecorder test recording 3 seconds
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0100
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5856,13 +5760,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0200
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
-      *               : 02.AVRecorder test recording 3 seconds to pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0200
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5895,13 +5798,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0300
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
-      *               : 03.AVRecorder test recording 3 seconds to pause to resume
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0300
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5938,13 +5840,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0400
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
-      *               : 04.AVRecorder test recording 3 seconds to stop
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0400
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -5977,13 +5878,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0500
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
-      *               : 05.AVRecorder test recording 3 seconds to reset
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0500
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6016,13 +5916,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0600
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.stop 7.release
-      *               : 06.AVRecorder test stop recording after recording 3 seconds
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0600
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.stop 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6057,13 +5956,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0700
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.reset 7.release
-      *               : 07.AVRecorder test reset recording after recording 3 seconds
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0700
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.reset 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6098,13 +5996,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0800
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.stop 8.release
-      *               : 08.AVRecorder test resume recording after pause and stop recording
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0800
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.stop 8.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6141,13 +6038,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0900
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0900
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.reset 8.release
-      *               : 09.AVRecorder test resume recording after pause and reset recording
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0900
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.reset 8.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6184,13 +6080,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1000
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1000
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
-      *               : 10.AVRecorder test recording 3 seconds (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1000
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6223,13 +6118,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1100
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
-      *               : 11.AVRecorder test recording 3 seconds to pause (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1100
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6262,13 +6156,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1200
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
-      *               : 12.AVRecorder test recording 3 seconds to pause to resume (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1200
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6305,13 +6198,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1300
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
-      *               : 13.AVRecorder test recording 3 seconds to stop (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1300
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6344,13 +6236,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1400
-      * @tc.desc    1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
-      *               : 14.AVRecorder test recording 3 seconds to reset (only video)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1400
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6384,13 +6275,12 @@ export function avVideoRecorderTestOne() {
 
     // Callback  prepare
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0100
-      * @tc.desc    1.create 2.prepare
-      *               : 01. create->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0100
+     * @tc.desc   1.create 2.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6417,13 +6307,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0200
-      * @tc.desc    1.create 2.prepare 3.start 4.prepare
-      *               : 02. start->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0200
+     * @tc.desc   1.create 2.prepare 3.start 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6456,13 +6345,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0300
-      * @tc.desc    1.create 2.prepare 3.start 4.pause 5.prepare
-      *               : 03. pause->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0300
+     * @tc.desc   1.create 2.prepare 3.start 4.pause 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6497,13 +6385,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0400
-      * @tc.desc    1.create 2.prepare 3.start 4.pause 5.resume 6.prepare
-      *               : 04. resume->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0400
+     * @tc.desc   1.create 2.prepare 3.start 4.pause 5.resume 6.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6542,13 +6429,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0500
-      * @tc.desc    1.create 2.prepare 3.start 4.stop 5.prepare
-      *               : 05. stop->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0500
+     * @tc.desc   1.create 2.prepare 3.start 4.stop 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6585,13 +6471,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0600
-      * @tc.desc    1.create 2.prepare 3.start 4.reset 5.prepare
-      *               : 06. reset->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0600
+     * @tc.desc   1.create 2.prepare 3.start 4.reset 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6628,13 +6513,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0700
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.prepare
-      *               : 07. getInputSurface->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6665,13 +6549,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0800
-      * @tc.desc    1.create 2.prepare 3.prepare 4.prepare
-      *               : 08. prepare 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0800
+     * @tc.desc   1.create 2.prepare 3.prepare 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6702,13 +6585,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0900
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0900
-      * @tc.desc    1.create 2.prepare (audioBitrate -1)
-      *               : 09.audioBitrate -1
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0900
+     * @tc.desc   1.create 2.prepare (audioBitrate -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6754,13 +6636,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1000
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1000
-      * @tc.desc    1.create 2.prepare (audioSampleRate -1)
-      *               : 10.audioSampleRate -1
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1000
+     * @tc.desc   1.create 2.prepare (audioSampleRate -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6806,13 +6687,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1100
-      * @tc.desc    1.create 2.prepare (videoBitrateRange -1)
-      *               : 11.videoBitrateRange -1
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1100
+     * @tc.desc   1.create 2.prepare (videoBitrateRange -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6858,13 +6738,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1200
-      * @tc.desc    1.create 2.prepare (videoFrameRate -1)
-      *               : 12.videoFrameRate -1
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1200
+     * @tc.desc   1.create 2.prepare (videoFrameRate -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6911,13 +6790,12 @@ export function avVideoRecorderTestOne() {
 
     // Callback getInputSurface
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0100
-      * @tc.desc    1.create 2.getInputSurface
-      *               : 01. create->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0100
+     * @tc.desc   1.create 2.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6946,13 +6824,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0200
-      * @tc.desc    1.create 2.prepare 3.getInputSurface
-      *               : 02. prepare->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0200
+     * @tc.desc   1.create 2.prepare 3.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -6981,13 +6858,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0300
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.getInputSurface
-      *               : 03. start->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7020,13 +6896,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0400
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.getInputSurface
-      *               : 04. pause->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7063,13 +6938,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0500
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.getInputSurface
-      *               : 05. resume->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7108,12 +6982,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0600
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7150,13 +7024,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0700
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.getInputSurface
-      *               : 07. reset->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7193,13 +7066,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0800
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.getInputSurface 5.getInputSurface
-      *               : 08. getInputSurface 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.getInputSurface 5.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7233,13 +7105,12 @@ export function avVideoRecorderTestOne() {
 
     // Callback start
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0100
-      * @tc.desc    1.create 2.start
-      *               : 01. create->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0100
+     * @tc.desc   1.create 2.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7268,13 +7139,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0200
-      * @tc.desc    1.create 2.prepare 4.start
-      *               : 02. prepare->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0200
+     * @tc.desc   1.create 2.prepare 4.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7303,13 +7173,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0300
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.start
-      *               : 03. pause->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7346,13 +7215,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0400
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.start
-      *               : 04. resume->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7391,13 +7259,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0500
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.start
-      *               : 05. stop->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7434,13 +7301,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0600
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.start
-      *               : 06. reset->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7477,13 +7343,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0700
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start
-      *               : 07. getInputSurface->start
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7514,13 +7379,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0800
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.start 6.start
-      *               : 08. start 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.start 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7556,13 +7420,12 @@ export function avVideoRecorderTestOne() {
 
     // Callback pause
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0100
-      * @tc.desc    1.create 2.pause
-      *               : 01. create->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0100
+     * @tc.desc   1.create 2.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7591,13 +7454,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0200
-      * @tc.desc    1.create 2.prepare 3.pause
-      *               : 02. prepare->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0200
+     * @tc.desc   1.create 2.prepare 3.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7626,13 +7488,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0300
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause
-      *               : 03. start->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7665,13 +7526,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0400
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.pause
-      *               : 04. resume->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7708,13 +7568,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0500
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.pause
-      *               : 05. stop->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7751,13 +7610,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0600
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.pause
-      *               : 06. reset->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7792,13 +7650,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0700
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.pause
-      *               : 07. getInputSurface->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7833,13 +7690,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0800
-      * @tc.desc    1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.pause 7.pause
-      *               : 08. pause 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.pause 7.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7878,13 +7734,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0200
-      * @tc.desc    Recorder video
-      *               : 02.AVRecorder recording(audioBitrate 8000,audioSampleRate 8000,videoBitrateRange 280000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7926,13 +7781,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0300
-      * @tc.desc    Recorder video
-      *               : 03.AVRecorder recording(audioBitrate 16000,audioSampleRate 32000,videoBitrateRange 560000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0300
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -7974,13 +7828,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0400
-      * @tc.desc    Recorder video
-      *               : 04.AVRecorder recording(audioBitrate 32000,audioSampleRate 44100,videoBitrateRange 1120000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0400
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8022,13 +7875,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0500
-      * @tc.desc    Recorder video
-      *               : 05.AVRecorder recording(audioBitrate 112000,audioSampleRate 96000,videoBitrateRange 2240000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0500
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8070,13 +7922,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0600
-      * @tc.desc    Recorder video
-      *               : 06.AVRecorder recording orientationHint:90
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0600
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8114,13 +7965,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0700
-      * @tc.desc    Recorder video
-      *               : 07.AVRecorder recording orientationHint:180
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0700
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8158,13 +8008,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0800
-      * @tc.desc    Recorder video
-      *               : 08.AVRecorder recording orientationHint:270
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0800
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8202,13 +8051,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0900
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0900
-      * @tc.desc    Recorder video
-      *               : 09.AVRecorder recording videoFrameRate:5
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0900
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8248,13 +8096,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1000
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1000
-      * @tc.desc    Recorder video
-      *               : 10.AVRecorder recording videoFrameRate:30
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1000
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8294,13 +8141,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1200
-      * @tc.desc    Recorder video
-      *               : 12.AVRecorder Record MPEG4
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8338,13 +8184,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0100
-      * @tc.desc    Recorder video 1，record 3s； 2，pause 3，resume 4，stop 5，restart
-      *               : 001.test 1，record 3s； 2，pause 3，resume 4，stop 5，restart
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0100
+     * @tc.desc   Recorder video 1，record 3s； 2，pause 3，resume 4，stop 5，restart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8383,13 +8228,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0200
-      * @tc.desc    Recorder video
-      *               : 02.AVRecorder recording(audioBitrate 8000,audioSampleRate 8000,videoBitrateRange 280000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8433,13 +8277,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0300
-      * @tc.desc    Recorder video
-      *               : 03.AVRecorder recording(audioBitrate 16000,audioSampleRate 32000,videoBitrateRange 560000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0300
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8483,13 +8326,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0400
-      * @tc.desc    Recorder video
-      *               : 04.AVRecorder recording(audioBitrate 32000,audioSampleRate 44100,videoBitrateRange 1120000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0400
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8533,13 +8375,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0500
-      * @tc.desc    Recorder video
-      *               : 05.AVRecorder recording(audioBitrate 112000,audioSampleRate 96000,videoBitrateRange 2240000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0500
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8583,13 +8424,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0600
-      * @tc.desc    Recorder video
-      *               : 06.AVRecorder recording orientationHint:90
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0600
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8629,13 +8469,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0700
-      * @tc.desc    Recorder video
-      *               : 07.AVRecorder recording orientationHint:180
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0700
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8675,13 +8514,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0800
-      * @tc.desc    Recorder video
-      *               : 08.AVRecorder recording orientationHint:270
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0800
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8721,13 +8559,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0900
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0900
-      * @tc.desc    Recorder video (test failed)
-      *               : 09.AVRecorder recording videoFrameRate:5
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0900
+     * @tc.desc   Recorder video (test failed)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8769,13 +8606,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1000
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1000
-      * @tc.desc    Recorder video
-      *               : 10.AVRecorder recording videoFrameRate:30
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1000
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8817,13 +8653,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1200
-      * @tc.desc    Recorder video
-      *               : 12.AVRecorder Record MPEG4
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8863,13 +8698,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0100
-      * @tc.desc    Recorder video
-      *               : 01.AVRecorder Record H264+AAC
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8906,13 +8740,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0200
-      * @tc.desc    Recorder video
-      *               : 02.AVRecorder recording(audioBitrate 8000,audioSampleRate 8000,videoBitrateRange 280000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -8954,13 +8787,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0300
-      * @tc.desc    Recorder video
-      *               : 03.AVRecorder recording(audioBitrate 16000,audioSampleRate 32000,videoBitrateRange 560000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0300
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9002,13 +8834,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0400
-      * @tc.desc    Recorder video
-      *               : 04.AVRecorder recording(audioBitrate 32000,audioSampleRate 44100,videoBitrateRange 1120000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0400
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9050,13 +8881,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0500
-      * @tc.desc    Recorder video
-      *               : 05.AVRecorder recording(audioBitrate 112000,audioSampleRate 96000,videoBitrateRange 2240000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0500
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9098,13 +8928,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0600
-      * @tc.desc    Recorder video
-      *               : 06.AVRecorder recording orientationHint:90
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0600
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9142,13 +8971,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0700
-      * @tc.desc    Recorder video
-      *               : 07.AVRecorder recording orientationHint:180
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0700
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9186,13 +9014,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0800
-      * @tc.desc    Recorder video
-      *               : 08.AVRecorder recording orientationHint:270
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0800
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9230,13 +9057,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0900
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0900
-      * @tc.desc    Recorder video
-      *               : 09.AVRecorder recording videoFrameRate:5
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0900
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9276,13 +9102,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1000
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1000
-      * @tc.desc    Recorder video
-      *               : 10.AVRecorder recording videoFrameRate:30
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1000
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9322,13 +9147,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1200
-      * @tc.desc    Recorder video
-      *               : 12.AVRecorder Record MPEG4
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9366,13 +9190,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0100
-      * @tc.desc    Recorder video (test failed)
-      *               : 01.AVRecorder Record H264+AAC
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0100
+     * @tc.desc   Recorder video (test failed)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9411,13 +9234,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0200
-      * @tc.desc    Recorder video
-      *               : 02.AVRecorder recording(audioBitrate 8000,audioSampleRate 8000,videoBitrateRange 280000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9461,13 +9283,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0300
-      * @tc.desc    Recorder video
-      *               : 03.AVRecorder recording(audioBitrate 16000,audioSampleRate 32000,videoBitrateRange 560000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0300
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9511,13 +9332,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0400
-      * @tc.desc    Recorder video
-      *               : 04.AVRecorder recording(audioBitrate 32000,audioSampleRate 44100,videoBitrateRange 1120000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0400
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9561,13 +9381,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0500
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0500
-      * @tc.desc    Recorder video
-      *               : 05.AVRecorder recording(audioBitrate 112000,audioSampleRate 96000,videoBitrateRange 2240000)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0500
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9611,13 +9430,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0600
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0600
-      * @tc.desc    Recorder video
-      *               : 06.AVRecorder recording orientationHint:90
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0600
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9657,13 +9475,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0700
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0700
-      * @tc.desc    Recorder video
-      *               : 07.AVRecorder recording orientationHint:180
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0700
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9703,13 +9520,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0800
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0800
-      * @tc.desc    Recorder video
-      *               : 08.AVRecorder recording orientationHint:270
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0800
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9749,13 +9565,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0900
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0900
-      * @tc.desc    Recorder video (test failed)
-      *               : 09.AVRecorder recording videoFrameRate:5
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0900
+     * @tc.desc   Recorder video (test failed)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9797,13 +9612,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1000
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1000
-      * @tc.desc    Recorder video
-      *               : 10.AVRecorder recording videoFrameRate:30
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1000
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9845,13 +9659,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1200
-      * @tc.desc    Recorder video
-      *               : 12.AVRecorder Record MPEG4
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9891,13 +9704,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_PROMISE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_PROMISE_static_0100
-      * @tc.desc    1.create 2.prepare 3.getAVRecorderConfig
-      *               : 02. prepare->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_PROMISE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_PROMISE_static_0100
+     * @tc.desc   1.create 2.prepare 3.getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9929,13 +9741,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H265_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H265_static_0100
-      * @tc.desc    Recorder video
-      *               : 01.AVRecorder Record H265+AAC
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H265_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H265_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H265_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -9973,13 +9784,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0100
-      * @tc.desc    Recorder video
-      *               : 01.AVRecorder Record H265+AAC
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10019,13 +9829,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0200
-      * @tc.desc    Recorder video
-      *               : 02.AVRecorder Record isHdr
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H265_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10064,13 +9873,12 @@ export function avVideoRecorderTestOne() {
       done();
     })
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_CALLBACK_static_0100
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_CALLBACK_static_0100
-      * @tc.desc    Recorder video
-      *               : 13.AVRecorder getAvailableEncoder
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_CALLBACK_static_0100
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_CALLBACK_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10110,13 +9918,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_CALLBACK_static_0100
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_CALLBACK_static_0100
-      * @tc.desc    Recorder video
-      *               : 13.AVRecorder getMaxAmplitude
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_CALLBACK_static_0100
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_CALLBACK_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10156,13 +9963,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_PROMISE_static_0100
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_PROMISE_static_0100
-      * @tc.desc    Recorder video
-      *               : 13.AVRecorder getAvailableEncoder
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_PROMISE_static_0100
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_PROMISE_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_GET_AVAILABLE_ENCODER_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10202,13 +10008,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_PROMISE_static_0100
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_PROMISE_static_0100
-      * @tc.desc    Recorder video
-      *               : 13.AVRecorder getMaxAmplitude
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_PROMISE_static_0100
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_PROMISE_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_GET_MAX_AMPLITUDE_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10248,13 +10053,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUM_MULTIMEDIA_MEDIA_ERRORCODE_ENUM_static_0100
-      * @tc.name    SUM_MULTIMEDIA_MEDIA_ERRORCODE_ENUM_static_0100
-      * @tc.desc    Test Enumerate ErrorCode
-      *               : ErrorCode
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUM_MULTIMEDIA_MEDIA_ERRORCODE_ENUM_static_0100
+     * @tc.number SUM_MULTIMEDIA_MEDIA_ERRORCODE_ENUM_static_0100
+     * @tc.desc   Test Enumerate ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_MEDIA_ERRORCODE_ENUM_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10268,13 +10072,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_UPDATE_ROTATION_static_0100
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_UPDATE_ROTATION_static_0100
-      * @tc.desc    Recorder video
-      *               : AVRecorder updateRotation
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_UPDATE_ROTATION_static_0100
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_UPDATE_ROTATION_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_UPDATE_ROTATION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10308,13 +10111,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0100
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0100
-      * @tc.desc    Recorder video
-      *               : AVVideoRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0100
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10332,13 +10134,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0200
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0200
-      * @tc.desc    Recorder video
-      *               : AVVideoRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0200
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0200
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_CREATE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10359,13 +10160,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0100
-      * @tc.desc    recorder (metadata)
-      *               : 09.metadata
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0100
+     * @tc.desc   recorder (metadata)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10403,13 +10203,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0200
-      * @tc.desc    recorder (metadata)
-      *               : 09.metadata customInfo(number)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0200
+     * @tc.desc   recorder (metadata)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10445,13 +10244,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_02001
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_02001
-      * @tc.desc    recorder (metadata)
-      *               : 09.metadata videoOrientation(99)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_02001
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_02001
+     * @tc.desc   recorder (metadata)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_static_02001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10484,13 +10282,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0100
-      * @tc.desc    AudioSourceType set AUDIO_SOURCE_TYPE_VOICE_RECOGNITION
-      *               : 01.AVRecorder set AudioSourceType
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0100
+     * @tc.desc   AudioSourceType set AUDIO_SOURCE_TYPE_VOICE_RECOGNITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10526,13 +10323,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0200
-      * @tc.desc    AudioSourceType set AUDIO_SOURCE_TYPE_VOICE_COMMUNICATION
-      *               : 02.AVRecorder set AudioSourceType
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0200
+     * @tc.desc   AudioSourceType set AUDIO_SOURCE_TYPE_VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10568,13 +10364,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0300
-      * @tc.desc    AudioSourceType set AUDIO_SOURCE_TYPE_VOICE_MESSAGE
-      *               : 03.AVRecorder set AudioSourceType
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0300
+     * @tc.desc   AudioSourceType set AUDIO_SOURCE_TYPE_VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10610,13 +10405,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0400
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0400
-      * @tc.desc    AudioSourceType set AUDIO_SOURCE_TYPE_CAMCORDER
-      *               : 04.AVRecorder set AudioSourceType
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0400
+     * @tc.desc   AudioSourceType set AUDIO_SOURCE_TYPE_CAMCORDER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUDIO_SOURCE_TYPE_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10652,13 +10446,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0100
-      * @tc.desc    recorder
-      *               : 09.FileGenerationMode 1 + url ''
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0100
+     * @tc.desc   recorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10697,13 +10490,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0200
-      * @tc.desc    recorder
-      *               : 09.FileGenerationMode 0 + url ''
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0200
+     * @tc.desc   recorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10731,13 +10523,12 @@ export function avVideoRecorderTestOne() {
     })
 
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_CALLBACK_static_0100
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_CALLBACK_static_0100
-      * @tc.desc    Recorder video
-      *               : 13.AVRecorder getCurrentAudioCapturerInfo
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level0
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_CALLBACK_static_0100
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_CALLBACK_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10776,13 +10567,12 @@ export function avVideoRecorderTestOne() {
       done();
     })
     /**
-      * @tc.number  SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_PROMISE_static_0100
-      * @tc.name    SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_PROMISE_static_0100
-      * @tc.desc    Recorder video
-      *               : 13.AVRecorder getCurrentAudioCapturerInfo
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level0
+     * @tc.name   SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_PROMISE_static_0100
+     * @tc.number SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_PROMISE_static_0100
+     * @tc.desc   Recorder video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_PROMISE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {
@@ -10821,12 +10611,12 @@ export function avVideoRecorderTestOne() {
       done();
     })
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_static_0100
-      * @tc.desc    AVRecorder	off_stateChange、off_error、off_audioCapturerChange、off_photoAssetAvailable
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_static_0100
+     * @tc.desc   AVRecorder	off_stateChange、off_error、off_audioCapturerChange、off_photoAssetAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_static_0100', Level.LEVEL0, async (done: () => void) => {
       if (!isSupportCameraVideoProfiles) {

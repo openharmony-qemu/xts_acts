@@ -20,12 +20,12 @@ export default function mediaCodecBaseXdlNdkTest() {
   describe('MuslMediaCodecBaseXdlTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0200
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange002
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0200
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange002', Level.LEVEL0, async (done: Function) => {
       try {
@@ -39,12 +39,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0300
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange003
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0300
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange003', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeBnormal();
@@ -53,12 +53,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0400
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange004
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0400
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange004', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeCnormal();
@@ -67,12 +67,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0500
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange005
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0500
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange005', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeDnormal();
@@ -81,12 +81,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0600
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange006
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0600
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange006', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeEnormal();
@@ -95,12 +95,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0700
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange007
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0700
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange007', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeFnormal();
@@ -109,12 +109,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0800
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange008
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0800
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange008', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeGnormal();
@@ -123,12 +123,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0900
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange009
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0900
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange009', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeHnormal();
@@ -137,12 +137,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1000
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange010
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1000
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange010', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeInormal();
@@ -151,12 +151,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1100
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange011
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1100
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange011', Level.LEVEL0, async (done: Function) => {
       try {
@@ -170,12 +170,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1200
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange012
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1200
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange012', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeKnormal();
@@ -184,12 +184,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1300
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange013
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1300
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange013', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeLnormal();
@@ -198,12 +198,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1400
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange014
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1400
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange014', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeMnormal();
@@ -212,12 +212,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1500
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange015
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1500
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange015', Level.LEVEL0, async (done: Function) => {
       try {
@@ -231,12 +231,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1600
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange016
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1600
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange016', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeOnormal();
@@ -245,12 +245,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1700
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange017
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1700
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange017', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangePnormal();
@@ -259,12 +259,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1800
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange018
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1800
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange018', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeQnormal();
@@ -273,12 +273,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1900
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange019
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange019
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1900
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange019', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeRnormal();
@@ -287,12 +287,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2000
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange020
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange020
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2000
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange020', Level.LEVEL0, async (done: Function) => {
       try {
@@ -306,12 +306,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2100
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange021
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange021
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2100
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange021', Level.LEVEL0, async (done: Function) => {
       try {
@@ -325,12 +325,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2200
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange022
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange022
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2200
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange022', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeUnormal();
@@ -339,12 +339,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2300
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange023
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange023
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2300
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange023', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeVnormal();
@@ -353,12 +353,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2400
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange024
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange024
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2400
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange024', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeWnormal();
@@ -367,12 +367,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2500
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange025
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange025
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2500
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange025', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeXnormal();
@@ -381,12 +381,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2600
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange026
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange026
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2600
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange026', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeYnormal();
@@ -395,12 +395,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2700
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange027
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange027
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2700
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange027', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeZnormal();
@@ -409,12 +409,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2800
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange028
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange028
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2800
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange028', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeAAnormal();
@@ -423,12 +423,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2900
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange029
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange029
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_2900
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange029', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeABnormal();
@@ -437,12 +437,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3000
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange030
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange030
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3000
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange030', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeACnormal();
@@ -451,12 +451,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1100
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange031
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange031
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_1100
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange031', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeADnormal();
@@ -465,12 +465,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3200
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange032
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange032
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3200
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange032', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeAEnormal();
@@ -479,12 +479,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3300
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange033
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange033
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3300
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange033', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeAFnormal();
@@ -493,12 +493,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3400
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange034
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange034
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3400
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange034', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeAGnormal();
@@ -507,12 +507,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3500
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange035
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange035
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3500
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange035', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeAHnormal();
@@ -521,12 +521,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3600
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange036
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange036
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3600
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange036', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeAInormal();
@@ -535,12 +535,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3700
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange037
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange037
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3700
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange037', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeAJnormal();
@@ -549,12 +549,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3800
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange038
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange038
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3800
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange038', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeAKnormal();
@@ -563,12 +563,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3900
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange039
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange039
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_3900
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange039', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderQualityRangeALnormal();
@@ -577,12 +577,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_4000
-     * @tc.name       : testOHAvCapabilityGetEncoderQualityRange040
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderQualityRange040
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_4000
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderQualityRange040', Level.LEVEL0, async (done: Function) => {
       try {
@@ -596,12 +596,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0200
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange002
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0200
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange002', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAnormal();
@@ -610,12 +610,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0300
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange003
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0300
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange003', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeBnormal();
@@ -624,12 +624,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0400
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange004
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0400
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange004', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeCnormal();
@@ -638,12 +638,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0500
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange005
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0500
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange005', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeDnormal();
@@ -652,12 +652,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0600
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange006
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0600
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange006', Level.LEVEL0, async (done: Function) => {
       try {
@@ -671,12 +671,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0700
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange007
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0700
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange007', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeFnormal();
@@ -685,12 +685,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0800
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange008
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0800
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange008', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeGnormal();
@@ -699,12 +699,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0900
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange009
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0900
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange009', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeHnormal();
@@ -713,12 +713,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1000
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange010
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1000
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange010', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeInormal();
@@ -727,12 +727,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1100
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange011
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1100
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange011', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeJnormal();
@@ -741,12 +741,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1200
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange012
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1200
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange012', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeKnormal();
@@ -755,12 +755,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1300
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange013
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1300
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange013', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeLnormal();
@@ -769,12 +769,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1400
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange014
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1400
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange014', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeMnormal();
@@ -783,12 +783,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1500
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange015
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1500
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange015', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeNnormal();
@@ -797,12 +797,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1600
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange016
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1600
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange016', Level.LEVEL0, async (done: Function) => {
       try {
@@ -816,12 +816,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1700
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange017
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1700
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange017', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangePnormal();
@@ -830,12 +830,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1800
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange018
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1800
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange018', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeQnormal();
@@ -844,12 +844,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1900
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange019
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange019
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_1900
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange019', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeRnormal();
@@ -858,12 +858,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2000
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange020
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange020
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2000
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange020', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeSnormal();
@@ -872,12 +872,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2100
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange021
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange021
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2100
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange021', Level.LEVEL0, async (done: Function) => {
       try {
@@ -891,12 +891,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2200
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange022
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange022
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2200
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange022', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeUnormal();
@@ -905,12 +905,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2300
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange023
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange023
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2300
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange023', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeVnormal();
@@ -919,12 +919,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2400
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange024
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange024
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2400
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange024', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeWnormal();
@@ -933,12 +933,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2500
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange025
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange025
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2500
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange025', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeXnormal();
@@ -947,12 +947,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2600
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange026
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange026
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2600
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange026', Level.LEVEL0, async (done: Function) => {
       try {
@@ -966,12 +966,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2700
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange027
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange027
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2700
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange027', Level.LEVEL0, async (done: Function) => {
       try {
@@ -985,12 +985,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2800
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange028
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange028
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2800
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange028', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAAnormal();
@@ -999,12 +999,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2900
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange029
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange029
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_2900
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange029', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeABnormal();
@@ -1013,12 +1013,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3000
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange030
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange030
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3000
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange030', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeACnormal();
@@ -1027,12 +1027,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3100
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange031
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange031
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3100
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange031', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1046,12 +1046,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3200
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange032
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange032
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3200
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange032', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAEnormal();
@@ -1060,12 +1060,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3300
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange033
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange033
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3300
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange033', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAFnormal();
@@ -1074,12 +1074,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3400
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange034
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange034
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3400
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange034', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAGnormal();
@@ -1088,12 +1088,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3500
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange035
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange035
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3500
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange035', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAHnormal();
@@ -1102,12 +1102,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3600
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange036
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange036
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3600
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange036', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAInormal();
@@ -1116,12 +1116,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3700
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange037
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange037
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3700
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange037', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAJnormal();
@@ -1130,12 +1130,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3800
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange038
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange038
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3800
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange038', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAKnormal();
@@ -1144,12 +1144,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3900
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange039
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange039
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_3900
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange039', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeALnormal();
@@ -1158,12 +1158,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_4000
-     * @tc.name       : testOHAvCapabilityGetEncoderComplexityRange040
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetEncoderComplexityRange040
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_4000
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetEncoderComplexityRange040', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetEncoderComplexityRangeAMnormal();
@@ -1172,12 +1172,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0200
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates002
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0200
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates002', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesAbnormal();
@@ -1186,12 +1186,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0300
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates003
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0300
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates003', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesAnormal();
@@ -1200,12 +1200,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0400
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates004
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0400
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates004', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesBnormal();
@@ -1214,12 +1214,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0500
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates005
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0500
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates005', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesCnormal();
@@ -1228,12 +1228,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0600
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates006
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0600
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates006', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesDnormal();
@@ -1242,12 +1242,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0700
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates007
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0700
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates007', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesEnormal();
@@ -1256,12 +1256,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0800
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates008
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0800
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates008', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesFnormal();
@@ -1270,12 +1270,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0900
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates009
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0900
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates009', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesGnormal();
@@ -1284,12 +1284,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1000
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates010
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1000
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates010', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesHnormal();
@@ -1298,12 +1298,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1100
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates011
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1100
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates011', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesInormal();
@@ -1312,12 +1312,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1200
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates012
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1200
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates012', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesGnormal();
@@ -1326,12 +1326,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1300
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates013
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1300
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates013', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesKnormal();
@@ -1340,12 +1340,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1400
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates014
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1400
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates014', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesLnormal();
@@ -1354,12 +1354,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1500
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates015
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1500
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates015', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesMnormal();
@@ -1368,12 +1368,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1600
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates016
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1600
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates016', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesNnormal();
@@ -1382,12 +1382,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1700
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates017
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1700
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates017', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioSupportedSampleRatesOnormal();
@@ -1396,12 +1396,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1800
-     * @tc.name       : testOHAvCapabilityGetAudioSupportedSampleRates018
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioSupportedSampleRates018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_1800
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioSupportedSampleRates018', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1415,12 +1415,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0200
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange002
-     * @tc.desc       : test OH_AVCapafbility_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0200
+     * @tc.desc   test OH_AVCapafbility_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange002', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeAnormal();
@@ -1429,12 +1429,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0300
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange003
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0300
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange003', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeBnormal();
@@ -1443,12 +1443,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0400
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange004
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0400
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange004', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeCnormal();
@@ -1457,12 +1457,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0500
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange005
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0500
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange005', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeDnormal();
@@ -1471,12 +1471,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0600
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange006
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0600
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange006', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1490,12 +1490,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0700
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange007
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0700
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange007', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1509,12 +1509,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0800
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange008
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0800
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange008', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeGnormal();
@@ -1523,12 +1523,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0900
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange009
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0900
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange009', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeHnormal();
@@ -1537,12 +1537,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1000
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange010
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1000
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange010', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeInormal();
@@ -1551,12 +1551,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1100
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange011
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1100
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange011', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeJnormal();
@@ -1565,12 +1565,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1200
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange012
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1200
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange012', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1584,12 +1584,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1300
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange013
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1300
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange013', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeLnormal();
@@ -1598,12 +1598,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1400
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange014
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1400
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange014', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeMnormal();
@@ -1612,12 +1612,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1500
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange015
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1500
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange015', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeNnormal();
@@ -1626,12 +1626,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1600
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange016
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1600
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange016', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1645,12 +1645,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1700
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange017
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1700
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange017', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangePnormal();
@@ -1659,12 +1659,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1800
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange018
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1800
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange018', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeQnormal();
@@ -1673,12 +1673,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1900
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange019
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange019
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_1900
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange019', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeRnormal();
@@ -1687,12 +1687,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_2000
-     * @tc.name       : testOHAvCapabilityGetAudioChannelCountRange020
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetAudioChannelCountRange020
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_2000
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetAudioChannelCountRange020', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetAudioChannelCountRangeSnormal();
@@ -1701,12 +1701,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0200
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment002
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0200
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment002', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoWidthAlignmentAnormal();
@@ -1715,12 +1715,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0300
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment003
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0300
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment003', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1734,12 +1734,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0400
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment004
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0400
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment004', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoWidthAlignmentCnormal();
@@ -1748,12 +1748,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0500
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment005
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0500
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment005', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoWidthAlignmentDnormal();
@@ -1762,12 +1762,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0600
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment006
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0600
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment006', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1781,12 +1781,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0700
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment007
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0700
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment007', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1800,12 +1800,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0800
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment008
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0800
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment008', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1819,12 +1819,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0900
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment009
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0900
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment009', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1838,12 +1838,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1000
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment010
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1000
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment010', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1857,12 +1857,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1100
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment011
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1100
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment011', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoWidthAlignmentJnormal();
@@ -1871,12 +1871,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1200
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment012
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1200
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment012', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoWidthAlignmentKnormal();
@@ -1885,12 +1885,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1300
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment013
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1300
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment013', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoWidthAlignmentLnormal();
@@ -1899,12 +1899,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1400
-     * @tc.name       : testOHAvCapabilityGetVideoWidthAlignment014
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAvCapabilityGetVideoWidthAlignment014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_1400
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAvCapabilityGetVideoWidthAlignment014', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoWidthAlignmentMnormal();
@@ -1913,12 +1913,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0200
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment002
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0200
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment002', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoHeightAlignmentAnormal();
@@ -1927,12 +1927,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0300
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment003
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0300
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment003', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1946,12 +1946,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0400
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment004
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0400
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment004', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoHeightAlignmentCnormal();
@@ -1960,12 +1960,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0500
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment005
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0500
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment005', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoHeightAlignmentDnormal();
@@ -1974,12 +1974,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0600
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment006
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0600
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment006', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1993,12 +1993,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0700
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment007
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0700
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment007', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2012,12 +2012,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0800
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment008
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0800
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment008', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2031,12 +2031,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0900
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment009
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0900
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment009', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2050,12 +2050,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1000
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment010
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1000
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment010', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoHeightAlignmentInormal();
@@ -2064,12 +2064,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1100
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment011
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1100
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment011', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoHeightAlignmentJnormal();
@@ -2078,12 +2078,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1200
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment012
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1200
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment012', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2097,12 +2097,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1300
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment013
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1300
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment013', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoHeightAlignmentLnormal();
@@ -2111,12 +2111,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1400
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment014
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_1400
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment014', Level.LEVEL0, async (done: Function) => {
       let result: number = mediacodecbasexdlndk.oHAvCapabilityGetVideoHeightAlignmentMnormal();
@@ -2125,12 +2125,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0100
-     * @tc.name       : testOhAvCapabilityGetEncoderQualityRange001
-     * @tc.desc       : test OH_AVCapability_GetEncoderQualityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetEncoderQualityRange001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERQUALITYRANGE_0100
+     * @tc.desc   test OH_AVCapability_GetEncoderQualityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetEncoderQualityRange001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2144,12 +2144,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0100
-     * @tc.name       : testOhAvCapabilityGetEncoderComplexityRange001
-     * @tc.desc       : test OH_AVCapability_GetEncoderComplexityRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetEncoderComplexityRange001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETENCODERCOMPLEXITYRANGE_0100
+     * @tc.desc   test OH_AVCapability_GetEncoderComplexityRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetEncoderComplexityRange001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2163,12 +2163,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0100
-     * @tc.name       : testOhAvCapabilityGetAudioSupportedSampleRates001
-     * @tc.desc       : test OH_AVCapability_GetAudioSupportedSampleRates
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetAudioSupportedSampleRates001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOSUPPORTEDSAMPLERATES_0100
+     * @tc.desc   test OH_AVCapability_GetAudioSupportedSampleRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetAudioSupportedSampleRates001', Level.LEVEL0, async (done: Function) => {
       expect(mediacodecbasexdlndk.OH_AVCapability_GetAudioSupportedSampleRates()).assertEqual(0);
@@ -2176,12 +2176,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0100
-     * @tc.name       : testOhAvCapabilityGetAudioChannelCountRange001
-     * @tc.desc       : test OH_AVCapability_GetAudioChannelCountRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetAudioChannelCountRange001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETAUDIOCHANNELCOUNTRANGE_0100
+     * @tc.desc   test OH_AVCapability_GetAudioChannelCountRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetAudioChannelCountRange001', Level.LEVEL0, async (done: Function) => {
       expect(mediacodecbasexdlndk.OH_AVCapability_GetAudioChannelCountRange()).assertEqual(0);
@@ -2189,12 +2189,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0100
-     * @tc.name       : testOhAvCapabilityGetVideoWidthAlignment001
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoWidthAlignment001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHALIGNMENT_0100
+     * @tc.desc   test OH_AVCapability_GetVideoWidthAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoWidthAlignment001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2208,12 +2208,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0100
-     * @tc.name       : testOhAvCapabilityGetVideoHeightAlignment001
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightAlignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightAlignment001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTALIGNMENT_0100
+     * @tc.desc   test OH_AVCapability_GetVideoHeightAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightAlignment001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2227,12 +2227,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_AVCAPABILITY_OH_AVCODEC_GETCAPABILITY_0100
-     * @tc.name       : testOhAvCodecGetCapability001
-     * @tc.desc       : test OH_AVCodec_GetCapability
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCodecGetCapability001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_AVCAPABILITY_OH_AVCODEC_GETCAPABILITY_0100
+     * @tc.desc   test OH_AVCodec_GetCapability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCodecGetCapability001', Level.LEVEL0, async (done: Function) => {
       expect(mediacodecbasexdlndk.OH_AVCodec_GetCapability()).assertEqual(0);
@@ -2240,12 +2240,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCODEC_GETCAPABILITYBYCATEGORY_0100
-     * @tc.name       : testOhAvCodecGetCapabilityByCategory001
-     * @tc.desc       : test OH_AVCodec_GetCapabilityByCategory
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCodecGetCapabilityByCategory001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCODEC_GETCAPABILITYBYCATEGORY_0100
+     * @tc.desc   test OH_AVCodec_GetCapabilityByCategory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCodecGetCapabilityByCategory001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2259,12 +2259,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHRANGE_0100
-     * @tc.name       : testOhAvCapabilityGetVideoWidthRange001
-     * @tc.desc       : test OH_AVCapability_GetVideoWidthRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoWidthRange001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOWIDTHRANGE_0100
+     * @tc.desc   test OH_AVCapability_GetVideoWidthRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoWidthRange001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2278,12 +2278,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTRANGE_0100
-     * @tc.name       : testOhAvCapabilityGetVideoHeightRange001
-     * @tc.desc       : test OH_AVCapability_GetVideoHeightRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoHeightRange001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOHEIGHTRANGE_0100
+     * @tc.desc   test OH_AVCapability_GetVideoHeightRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoHeightRange001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2297,12 +2297,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_ISVIDEOSIZESUPPORTED_0100
-     * @tc.name       : testOhAvCapabilityIsVideoSizeSupported001
-     * @tc.desc       : test OH_AVCapability_IsVideoSizeSupported
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityIsVideoSizeSupported001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_ISVIDEOSIZESUPPORTED_0100
+     * @tc.desc   test OH_AVCapability_IsVideoSizeSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityIsVideoSizeSupported001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2316,12 +2316,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOFRAMERATERANGE_0100
-     * @tc.name       : testOhAvCapabilityGetVideoFrameRateRange001
-     * @tc.desc       : test OH_AVCapability_GetVideoFrameRateRange
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoFrameRateRange001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOFRAMERATERANGE_0100
+     * @tc.desc   test OH_AVCapability_GetVideoFrameRateRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoFrameRateRange001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2335,12 +2335,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOFRAMERATERANGEFORSIZE_0100
-     * @tc.name       : testOhAvCapabilityGetVideoFrameRateRangeForSize001
-     * @tc.desc       : test OH_AVCapability_GetVideoFrameRateRangeForSize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoFrameRateRangeForSize001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOFRAMERATERANGEFORSIZE_0100
+     * @tc.desc   test OH_AVCapability_GetVideoFrameRateRangeForSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoFrameRateRangeForSize001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2354,12 +2354,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_AREVIDEOSIZEANDFRAMERATESUPPORTED_0100
-     * @tc.name       : testOhAvCapabilityAreVideoSizeAndFrameRateSupported001
-     * @tc.desc       : test OH_AVCapability_AreVideoSizeAndFrameRateSupported
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityAreVideoSizeAndFrameRateSupported001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_AREVIDEOSIZEANDFRAMERATESUPPORTED_0100
+     * @tc.desc   test OH_AVCapability_AreVideoSizeAndFrameRateSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityAreVideoSizeAndFrameRateSupported001', Level.LEVEL0, async (done: Function) => {
       expect(mediacodecbasexdlndk.OH_AVCapability_AreVideoSizeAndFrameRateSupported()).assertEqual(0);
@@ -2367,12 +2367,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOSUPPORTEDPIXELFORMATS_0100
-     * @tc.name       : testOhAvCapabilityGetVideoSupportedPixelFormats001
-     * @tc.desc       : test OH_AVCapability_GetVideoSupportedPixelFormats
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetVideoSupportedPixelFormats001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETVIDEOSUPPORTEDPIXELFORMATS_0100
+     * @tc.desc   test OH_AVCapability_GetVideoSupportedPixelFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetVideoSupportedPixelFormats001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2386,12 +2386,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETSUPPORTEDPROFILES_0100
-     * @tc.name       : testOhAvCapabilityGetSupportedProfiles001
-     * @tc.desc       : test OH_AVCapability_GetSupportedProfiles
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetSupportedProfiles001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETSUPPORTEDPROFILES_0100
+     * @tc.desc   test OH_AVCapability_GetSupportedProfiles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetSupportedProfiles001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -2405,12 +2405,12 @@ export default function mediaCodecBaseXdlNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETSUPPORTEDLEVELSFORPROFILE_0100
-     * @tc.name       : testOhAvCapabilityGetSupportedLevelsForProfile001
-     * @tc.desc       : test OH_AVCapability_GetSupportedLevelsForProfile
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOhAvCapabilityGetSupportedLevelsForProfile001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCAPABILITY_OH_AVCAPABILITY_GETSUPPORTEDLEVELSFORPROFILE_0100
+     * @tc.desc   test OH_AVCapability_GetSupportedLevelsForProfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvCapabilityGetSupportedLevelsForProfile001', Level.LEVEL0, async (done: Function) => {
       try {

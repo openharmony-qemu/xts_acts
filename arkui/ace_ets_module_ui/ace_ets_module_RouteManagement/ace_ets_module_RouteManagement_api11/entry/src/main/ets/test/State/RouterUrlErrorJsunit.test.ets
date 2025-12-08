@@ -42,12 +42,12 @@ export default function RouterUrlErrorJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASICABILITY_ROUTERPAGE_009
-     * @tc.name      RouterUrlErrorJsunit_0100
-     * @tc.desc      The route input parameter is abnormally redirected
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RouterUrlErrorJsunit_0100
+     * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_009
+     * @tc.desc   The route input parameter is abnormally redirected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterUrlErrorJsunit_0100', Level.LEVEL2, async  (done:Function) =>{
       console.info('RouterUrlErrorJsunit_0100 START');

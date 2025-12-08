@@ -16,12 +16,20 @@ import { NodeContent } from '@ohos.arkui.node'
 
 export const bindNode: (id: string, node: object) => void;
 export const unbindNode: (id: string) => void;
-export const setFrameRate: (id: string, min: number, max: number, expected: number) => number;
-export const setNeedSoftKeyboard: (id: string, needSoftKeyborad: boolean) => number;
+export const setNeedSoftKeyboard: (id: string, needSoftKeyborad: boolean) => void;
 export const disposeProvider: (id: string) => void;
 export const createProvider: (id: string) => void;
-export const registerFrameCallback: (id: string) => number;
-export const unregisterFrameCallback: (id: string) => number;
+export const registerFrameCallback: (id: string) => void;
+export const unregisterFrameCallback: (id: string) => void;
+export const TestSetExpectedFrameRateRangeErrorCode_001: (id: string) => void;
+export const TestSetExpectedFrameRateRangeErrorCode_002: (id: string) => void;
+export const TestRegisterOnFrameCallbackErrorCode_001: (id: string) => void;
+export const TestRegisterOnFrameCallbackErrorCode_002: (id: string) => void;
+export const TestUnregisterOnFrameCallbackErrorCode_001: (id: string) => void;
+export const TestUnregisterOnFrameCallbackErrorCode_002: (id: string) => void;
+export const TestSetNeedSoftKeyboardErrorCode_001: (id: string) => void;
+export const TestSetNeedSoftKeyboardErrorCode_002: (id: string) => void;
+
 export const createNativeNode: (content: NodeContent) => void;
 export const getKeyStr: () => string;
 export const getIndicatorStr: () => string;

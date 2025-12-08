@@ -26,91 +26,91 @@ export default function listItemClipTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_CLIP_0100
-     * @tc.name       : testListItemClip001
-     * @tc.desc       : testing clip for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemClip001
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_CLIP_0100
+     * @tc.desc   testing clip for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemClip001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemClip001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_CLIP_0200
-     * @tc.name       : testListItemClip002
-     * @tc.desc       : testing clip for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemClip002
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_CLIP_0200
+     * @tc.desc   testing clip for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemClip002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemClip002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_CLIP_0300
-     * @tc.name       : testListItemClip003
-     * @tc.desc       : testing clip for listItem with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListItemClip003
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_CLIP_0300
+     * @tc.desc   testing clip for listItem with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemClip003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemClip003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_CLIP_0400
-     * @tc.name       : testListItemClip004
-     * @tc.desc       : testing clip for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemClip004
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_CLIP_0400
+     * @tc.desc   testing clip for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemClip004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemClip004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_CLIP_0500
-     * @tc.name       : testListItemClip005
-     * @tc.desc       : testing clip for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemClip005
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_CLIP_0500
+     * @tc.desc   testing clip for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemClip005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemClip005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_CLIP_0600
-     * @tc.name       : testListItemClip006
-     * @tc.desc       : testing clip for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemClip006
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_CLIP_0600
+     * @tc.desc   testing clip for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemClip006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemClip006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_CLIP_0700
-     * @tc.name       : testListItemClip007
-     * @tc.desc       : testing clip for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemClip007
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_CLIP_0700
+     * @tc.desc   testing clip for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemClip007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemClip007()).assertEqual(0)

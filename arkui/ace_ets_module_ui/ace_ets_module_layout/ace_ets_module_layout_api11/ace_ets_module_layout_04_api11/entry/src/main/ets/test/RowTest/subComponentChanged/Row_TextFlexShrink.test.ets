@@ -45,9 +45,12 @@ export default function row_TextFlexShrinkTest() {
       console.info("Row_TextFlexShrinkTest after each called");
     });
     /**
+     * @tc.name   testRowTextFlexShrink
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1700
-     * @tc.name testRowTextFlexShrink
-     * @tc.desc The flexshink of the child components set to 1
+     * @tc.desc   The flexshink of the child components set to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextFlexShrink',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextFlexShrink] START');

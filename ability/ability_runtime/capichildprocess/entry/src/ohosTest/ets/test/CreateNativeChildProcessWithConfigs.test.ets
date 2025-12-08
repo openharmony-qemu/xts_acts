@@ -43,12 +43,12 @@ export default function createNativeChildProcessWithConfigsTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1600
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1600
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1600
-     * @tc.desc To verify the function of creating a subprocess by CreateNativeChildProcessWithConfigs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   To verify the function of creating a subprocess by CreateNativeChildProcessWithConfigs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1600', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeChildProcessWithConfigs_1600`;
@@ -81,12 +81,12 @@ export default function createNativeChildProcessWithConfigsTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1700
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1700
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1700
-     * @tc.desc An error is returned when the vaule of libname is a relative path during the creation of a subprocess
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the vaule of libname is a relative path during the creation of a subprocess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1700', Level.LEVEL0, (done: Function) => {
       let tag = `ACTS_NativeChildProcessWithConfigs_1700`;
@@ -102,12 +102,12 @@ export default function createNativeChildProcessWithConfigsTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1800
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1800
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1800
-     * @tc.desc An error is returned when the libname is nullptr during the creation of a subprocess
-     * @tc.size MediumTest
-     * @tc.type Function  
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the libname is nullptr during the creation of a subprocess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1800', Level.LEVEL0, (done: Function) => {
       let tag = `ACTS_NativeChildProcessWithConfigs_1800`;
@@ -123,12 +123,12 @@ export default function createNativeChildProcessWithConfigsTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1900
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1900
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1900
-     * @tc.desc An error is returned when the vaule of libname is an empty string during the creation of a subprocess
-     * @tc.size MediumTest
-     * @tc.type Function  
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the vaule of libname is an empty string during the creation of a subprocess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_1900', Level.LEVEL0, (done: Function) => {
       let tag = `ACTS_NativeChildProcessWithConfigs_1900`;
@@ -145,12 +145,12 @@ export default function createNativeChildProcessWithConfigsTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2100
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2100
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2100
-     * @tc.desc An error is returned when a subprocess whose libname use sandbox path
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when a subprocess whose libname use sandbox path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2100', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeChildProcessWithConfigs_2100`;
@@ -174,12 +174,12 @@ export default function createNativeChildProcessWithConfigsTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2200
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2200
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2200
-     * @tc.desc An error is returned when a subprocess whose libname does not exist is created 
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when a subprocess whose libname does not exist is created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2200', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeChildProcessWithConfigs_2200`;
@@ -203,12 +203,12 @@ export default function createNativeChildProcessWithConfigsTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2300
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2300
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2300
-     * @tc.desc An error is returned when the callback of a subprocess to be created is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the callback of a subprocess to be created is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessWithConfigs_2300', Level.LEVEL0, (done: Function) => {
       let tag = `ACTS_NativeChildProcessWithConfigs_2300`;

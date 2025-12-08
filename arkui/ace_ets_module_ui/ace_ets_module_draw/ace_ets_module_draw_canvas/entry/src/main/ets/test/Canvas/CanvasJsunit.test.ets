@@ -46,12 +46,12 @@ export default function canvasJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testCanvas01
-     * @tc.name: testCanvas01
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   testCanvas01
+     * @tc.number SUB_ARKUI_API_testCanvas01
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvas01', Level.LEVEL0, async (done: Function) => {
       console.info('[testCanvas01] START');

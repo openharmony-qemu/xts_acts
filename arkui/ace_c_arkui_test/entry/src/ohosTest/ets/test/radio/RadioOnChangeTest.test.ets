@@ -27,14 +27,14 @@ export default function radioOnChangeTest() {
       await Utils.pushPage(`radio/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_RADIO_EVENT_ON_CHANGE_0100
-    * @tc.name       : testRadioOnChange001
-    * @tc.desc       : testing onChange event callback for radio with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRadioOnChange001
+     * @tc.number SUB_ARKUI_CAPI_RADIO_EVENT_ON_CHANGE_0100
+     * @tc.desc   testing onChange event callback for radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRadioOnChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnChangeRadio')
       await Utils.sleep(3000);

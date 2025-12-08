@@ -26,65 +26,65 @@ export default function textInputLineHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0100
-     * @tc.name: testTextInputLineHeight001
-     * @tc.desc: testing line height for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputLineHeight001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0100
+     * @tc.desc   testing line height for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputLineHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputLineHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0200
-     * @tc.name: testTextInputLineHeight002
-     * @tc.desc: testing line height for textInput with 100
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputLineHeight002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0200
+     * @tc.desc   testing line height for textInput with 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputLineHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputLineHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0300
-     * @tc.name: testTextInputLineHeight003
-     * @tc.desc: testing line height for textInput with zero
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputLineHeight003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0300
+     * @tc.desc   testing line height for textInput with zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputLineHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputLineHeight003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0400
-     * @tc.name: testTextInputLineHeight004
-     * @tc.desc: testing line height for textInput with negative value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputLineHeight004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0400
+     * @tc.desc   testing line height for textInput with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputLineHeight004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputLineHeight004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0500
-     * @tc.name: testTextInputLineHeight005
-     * @tc.desc: testing line height for textInput with negative value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputLineHeight005
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_LINEHEIGHT_0500
+     * @tc.desc   testing line height for textInput with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputLineHeight005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputLineHeight005()).assertEqual(0)

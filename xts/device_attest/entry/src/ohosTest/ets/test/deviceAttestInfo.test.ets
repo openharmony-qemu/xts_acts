@@ -36,7 +36,6 @@ export default function deviceAttestInfoTest(context: Context, windowStage:windo
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001
      * @tc.number SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001
      * @tc.desc   202 - Not System App. Interface caller is not a system app.
@@ -67,7 +66,6 @@ export default function deviceAttestInfoTest(context: Context, windowStage:windo
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_002
      * @tc.number SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_002
      * @tc.desc   202 - Not System App. Interface caller is not a system app.
@@ -99,7 +97,6 @@ export default function deviceAttestInfoTest(context: Context, windowStage:windo
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_003
      * @tc.number SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_003
      * @tc.desc   202 - Not System App. Interface caller is not a system app.

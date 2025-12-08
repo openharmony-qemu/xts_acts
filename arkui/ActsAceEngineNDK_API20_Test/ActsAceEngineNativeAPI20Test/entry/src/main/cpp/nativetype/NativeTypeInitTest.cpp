@@ -72,6 +72,9 @@ static void InitPush1(std::vector<napi_property_descriptor>& desc)
     desc.push_back(XL("CreateRouterPageNode", CreateRouterPageNode));
     desc.push_back(XL("GetRouterPageNodeState", GetRouterPageNodeState));
     desc.push_back(XL("SetCustomSpanMetricsWidthError", SetCustomSpanMetricsWidthError));
+    desc.push_back(XL("GetRouterStateOnShow", GetRouterStateOnShow));
+    desc.push_back(XL("GetRouterStateOnHide", GetRouterStateOnHide));
+    desc.push_back(XL("GetRouterStateOnBackPressed", GetRouterStateOnBackPressed));
 }
 static void InitPush2(std::vector<napi_property_descriptor>& desc)
 {

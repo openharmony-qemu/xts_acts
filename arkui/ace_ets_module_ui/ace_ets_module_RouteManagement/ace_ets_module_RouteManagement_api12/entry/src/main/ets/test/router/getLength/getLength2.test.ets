@@ -48,10 +48,12 @@ export default function getLength2() {
     });
 
     /**
-     * @tc.number    getLength2_0100
-     * @tc.name      getLength2_0100
-     * @tc.desc      Test getLength
-     * @tc.level     Level 2
+     * @tc.name   getLength2_0100
+     * @tc.number getLength2_0100
+     * @tc.desc   Test getLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getLength2_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[getLength2_0100] START');

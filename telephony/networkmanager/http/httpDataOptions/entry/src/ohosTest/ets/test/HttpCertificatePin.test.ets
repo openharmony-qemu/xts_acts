@@ -36,12 +36,12 @@ export default function HttpCertificatePinTest() {
   describe('HttpCertificatePinTest', () => {
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_CertificatePin_0100
-     * @tc.name  : testHttpCertificatePin0100
-     * @tc.desc  : test certificatePin with wrong baidu's PIN value
-     * @tc.size  : SmallTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+     * @tc.name   testHttpCertificatePin0100
+     * @tc.number SUB_NetworkMgr_Http_CertificatePin_0100
+     * @tc.desc   test certificatePin with wrong baidu's PIN value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHttpCertificatePin0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       const caseName: string = 'testHttpCertificatePin0100';
@@ -79,12 +79,12 @@ export default function HttpCertificatePinTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_CertificatePin_0200
-     * @tc.name  : testHttpCertificatePin0200
-     * @tc.desc  : test certificatePin with correct baidu's PIN value
-     * @tc.size  : SmallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpCertificatePin0200
+     * @tc.number SUB_NetworkMgr_Http_CertificatePin_0200
+     * @tc.desc   test certificatePin with correct baidu's PIN value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpCertificatePin0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = 'testHttpCertificatePin0200';

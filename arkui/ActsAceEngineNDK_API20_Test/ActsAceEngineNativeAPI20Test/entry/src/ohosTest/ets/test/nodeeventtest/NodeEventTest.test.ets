@@ -29,14 +29,14 @@ export default function NodeEventTest() {
     beforeEach(async (done: Function) => {
       await Utils.pushPage(`NodeEventTest/NodeEventTest`, done);
     });
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0100
-       * @tc.name       : testOHArkUINodeEventGetNumberValue0100
-       * @tc.desc       : testing OH_ArkUI_NodeEvent_GetNumberValue interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeEventGetNumberValue0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0100
+     * @tc.desc   testing OH_ArkUI_NodeEvent_GetNumberValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeEventGetNumberValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -53,15 +53,15 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0200
-     * @tc.name       : testOHArkUINodeEventGetNumberValue0200
-     * @tc.desc       : testing OH_ArkUI_NodeEvent_GetNumberValue interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testOHArkUINodeEventGetNumberValue0200
+     * @tc.number testOHArkUINodeEventGetNumberValue0200
+     * @tc.desc   testOHArkUINodeEventGetNumberValue0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeEventGetNumberValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -78,14 +78,14 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0300
-        * @tc.name       : testOHArkUINodeEventGetNumberValue0300
-        * @tc.desc       : testing OH_ArkUI_NodeEvent_GetNumberValue interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUINodeEventGetNumberValue0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0300
+     * @tc.desc   testing OH_ArkUI_NodeEvent_GetNumberValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeEventGetNumberValue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -100,14 +100,14 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetStringValue_0200
-        * @tc.name       : testOHArkUINodeEventGetStringValue0200
-        * @tc.desc       : testing OH_ArkUI_NodeEvent_GetStringValue interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUINodeEventGetStringValue0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetStringValue_0200
+     * @tc.desc   testing OH_ArkUI_NodeEvent_GetStringValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeEventGetStringValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -124,14 +124,14 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetStringValue_0300
-        * @tc.name       : testOHArkUINodeEventGetStringValue0300
-        * @tc.desc       : testing OH_ArkUI_NodeEvent_GetStringValue interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUINodeEventGetStringValue0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetStringValue_0300
+     * @tc.desc   testing OH_ArkUI_NodeEvent_GetStringValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeEventGetStringValue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -146,13 +146,13 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventSetReturnNumberValue_0100
-     * @tc.name       : testOHArkUINodeEventSetReturnNumberValue0100
-     * @tc.desc       : testing OH_ArkUI_NodeEvent_SetReturnNumberValue interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeEventSetReturnNumberValue0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventSetReturnNumberValue_0100
+     * @tc.desc   testing OH_ArkUI_NodeEvent_SetReturnNumberValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeEventSetReturnNumberValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -171,14 +171,14 @@ export default function NodeEventTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventSetReturnNumberValue_0300
-        * @tc.name       : testOHArkUINodeEventSetReturnNumberValue0300
-        * @tc.desc       : testing OH_ArkUI_NodeEvent_SetReturnNumberValue interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUINodeEventSetReturnNumberValue0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventSetReturnNumberValue_0300
+     * @tc.desc   testing OH_ArkUI_NodeEvent_SetReturnNumberValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeEventSetReturnNumberValue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

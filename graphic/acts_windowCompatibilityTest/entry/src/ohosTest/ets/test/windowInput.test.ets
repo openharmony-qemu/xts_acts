@@ -45,12 +45,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       console.log(msg + ' beforeEach end!!!')
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0010
-     * @tc.name      : testKeepKeyboardOnFocus_DialogWindow
-     * @tc.desc      : The soft keyboard created by other Windows is retained when the window is in focus
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testKeepKeyboardOnFocus_DialogWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0010
+     * @tc.desc   The soft keyboard created by other Windows is retained when the window is in focus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testKeepKeyboardOnFocus_DialogWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testKeepKeyboardOnFocus_DialogWindow';
@@ -82,12 +82,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0020
-     * @tc.name      : testKeepKeyboardOnFocus_SubWindow
-     * @tc.desc      : The soft keyboard created by other Windows is retained when the window is in focus
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testKeepKeyboardOnFocus_SubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0020
+     * @tc.desc   The soft keyboard created by other Windows is retained when the window is in focus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testKeepKeyboardOnFocus_SubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testKeepKeyboardOnFocus_SubWindow';
@@ -115,12 +115,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0030
-     * @tc.name      : testKeepKeyboardOnFocus_MainWindow
-     * @tc.desc      : The soft keyboard created by other Windows is retained when the window is in focus
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testKeepKeyboardOnFocus_MainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0030
+     * @tc.desc   The soft keyboard created by other Windows is retained when the window is in focus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testKeepKeyboardOnFocus_MainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testKeepKeyboardOnFocus_MainWindow';
@@ -144,12 +144,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0040
-     * @tc.name      : testKeepKeyboardOnFocus_SubWindowWithOps
-     * @tc.desc      : The soft keyboard created by other Windows is retained when the window is in focus
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testKeepKeyboardOnFocus_SubWindowWithOps
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0040
+     * @tc.desc   The soft keyboard created by other Windows is retained when the window is in focus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testKeepKeyboardOnFocus_SubWindowWithOps', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testKeepKeyboardOnFocus_SubWindowWithOps';
@@ -190,12 +190,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
         });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0050
-     * @tc.name      : testWindow_on_off_keyboardDidShow_normal
-     * @tc.desc      : Enable fixed soft keyboard to display animation completed listening
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testWindow_on_off_keyboardDidShow_normal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0050
+     * @tc.desc   Enable fixed soft keyboard to display animation completed listening
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindow_on_off_keyboardDidShow_normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindow_on_off_keyboardDidShow_normal';
@@ -287,12 +287,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0060
-     * @tc.name      : testWindowOffKeyboardDidShow_UnregisteredOff
-     * @tc.desc      : Disable listening for the height change of the soft keyboard in the fixed state input method window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffKeyboardDidShow_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0060
+     * @tc.desc   Disable listening for the height change of the soft keyboard in the fixed state input method window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffKeyboardDidShow_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffKeyboardDidShow_UnregisteredOff';
@@ -320,12 +320,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0070
-     * @tc.name      : testWindowOffKeyboardDidShow_RepeatOff
-     * @tc.desc      : test testWindowOffKeyboardDidShow_RepeatOff
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffKeyboardDidShow_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0070
+     * @tc.desc   test testWindowOffKeyboardDidShow_RepeatOff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffKeyboardDidShow_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffKeyboardDidShow_RepeatOff';
@@ -381,12 +381,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0080
-     * @tc.name      : testWindow_on_off_keyboardDidHide_normal
-     * @tc.desc      : Enable fixed soft keyboard to display animation completed listening
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testWindow_on_off_keyboardDidHide_normal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0080
+     * @tc.desc   Enable fixed soft keyboard to display animation completed listening
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindow_on_off_keyboardDidHide_normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindow_on_off_keyboardDidHide_normal';
@@ -467,12 +467,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0090
-     * @tc.name      : testWindowOffKeyboardDidHide_UnregisteredOff
-     * @tc.desc      : test testWindowOffKeyboardDidHide_UnregisteredOff
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffKeyboardDidHide_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0090
+     * @tc.desc   test testWindowOffKeyboardDidHide_UnregisteredOff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffKeyboardDidHide_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffKeyboardDidHide_UnregisteredOff';
@@ -500,12 +500,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0100
-     * @tc.name      : testWindowOffKeyboardDidHide_RepeatOff
-     * @tc.desc      : test testWindowOffKeyboardDidHide_RepeatOff
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffKeyboardDidHide_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0100
+     * @tc.desc   test testWindowOffKeyboardDidHide_RepeatOff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffKeyboardDidHide_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffKeyboardDidHide_RepeatOff';
@@ -561,12 +561,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0110
-     * @tc.name      : testWindowOnkeyboardDidShow_WindowAbnormal
-     * @tc.desc      : test testWindowOnkeyboardDidShow_WindowAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testWindowOnkeyboardDidShow_WindowAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0110
+     * @tc.desc   test testWindowOnkeyboardDidShow_WindowAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindowOnkeyboardDidShow_WindowAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async () => {
       let caseName = 'testWindowOnkeyboardDidShow_WindowAbnormal';
@@ -596,12 +596,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0120
-     * @tc.name      : testWindowOffkeyboardDidShow_WindowAbnormal
-     * @tc.desc      : test testWindowOffkeyboardDidShow_WindowAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testWindowOffkeyboardDidShow_WindowAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0120
+     * @tc.desc   test testWindowOffkeyboardDidShow_WindowAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindowOffkeyboardDidShow_WindowAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async () => {
       let caseName = 'testWindowOffkeyboardDidShow_WindowAbnormal';
@@ -629,12 +629,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0130
-     * @tc.name      : testWindowOnkeyboardDidHide_WindowAbnormal
-     * @tc.desc      : test testWindowOnkeyboardDidHide_WindowAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testWindowOnkeyboardDidHide_WindowAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0130
+     * @tc.desc   test testWindowOnkeyboardDidHide_WindowAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindowOnkeyboardDidHide_WindowAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async () => {
       let caseName = 'testWindowOnkeyboardDidHide_WindowAbnormal';
@@ -664,12 +664,12 @@ export default function windowInputTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0140
-     * @tc.name      : testWindowOffkeyboardDidHide_WindowAbnormal
-     * @tc.desc      : test testWindowOffkeyboardDidHide_WindowAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testWindowOffkeyboardDidHide_WindowAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0140
+     * @tc.desc   test testWindowOffkeyboardDidHide_WindowAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindowOffkeyboardDidHide_WindowAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async () => {
       let caseName = 'testWindowOffkeyboardDidHide_WindowAbnormal';

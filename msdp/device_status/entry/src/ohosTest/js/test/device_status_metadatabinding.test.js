@@ -38,7 +38,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0100
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0100
      * @tc.desc   metadataBinding callback interface test
@@ -60,7 +59,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0200
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0200
      * @tc.desc   metadataBinding callback interface test
@@ -83,7 +81,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0300
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0300
      * @tc.desc   metadataBinding callback interface test
@@ -106,7 +103,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0400
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0400
      * @tc.desc   metadataBinding callback interface test
@@ -129,7 +125,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0500
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0500
      * @tc.desc   metadataBinding callback interface test
@@ -153,7 +148,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0600
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0600
      * @tc.desc   metadataBinding callback interface test
@@ -177,7 +171,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0700
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0700
      * @tc.desc   metadataBinding callback interface test

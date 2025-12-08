@@ -18,6 +18,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function HitraceMeterTest() {
 describe("HitraceMeterTest", function () {
 
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0100
+     * @tc.number DFX_DFR_HitraceMeter_0100
+     * @tc.desc   DFX_DFR_HitraceMeter_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_HitraceMeter_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info("-------DFX_DFR_HitraceMeter_0100 start--------");
         for (var i = 0; i < 3; i++) {
@@ -31,6 +39,14 @@ describe("HitraceMeterTest", function () {
         done();
     })
 
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0200
+     * @tc.number DFX_DFR_HitraceMeter_0200
+     * @tc.desc   DFX_DFR_HitraceMeter_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_HitraceMeter_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info("------DFX_DFR_HitraceMeter_0200 start------");
         // Normal condition
@@ -84,6 +100,14 @@ describe("HitraceMeterTest", function () {
         done();
     })
 
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0300
+     * @tc.number DFX_DFR_HitraceMeter_0300
+     * @tc.desc   DFX_DFR_HitraceMeter_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_HitraceMeter_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info("------DFX_DFR_HitraceMeter_0300 start------");
         // Normal condition
@@ -137,6 +161,14 @@ describe("HitraceMeterTest", function () {
         done();
     })
 
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0400
+     * @tc.number DFX_DFR_HitraceMeter_0400
+     * @tc.desc   DFX_DFR_HitraceMeter_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_HitraceMeter_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info("-------DFX_DFR_HitraceMeter_0400 start--------");
         for (var i = 0; i < 3; i++) {
@@ -147,6 +179,14 @@ describe("HitraceMeterTest", function () {
         done();
     })
 
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0500
+     * @tc.number DFX_DFR_HitraceMeter_0500
+     * @tc.desc   DFX_DFR_HitraceMeter_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_HitraceMeter_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info("-------DFX_DFR_HitraceMeter_0500 start--------");
         // Normal condition
@@ -200,6 +240,14 @@ describe("HitraceMeterTest", function () {
         done();
     })
 
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0600
+     * @tc.number DFX_DFR_HitraceMeter_0600
+     * @tc.desc   DFX_DFR_HitraceMeter_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_HitraceMeter_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info("-------DFX_DFR_HitraceMeter_0600 start--------");
         let flag = false;

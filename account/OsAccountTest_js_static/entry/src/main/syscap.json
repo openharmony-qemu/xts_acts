@@ -5,7 +5,16 @@
             {
                 "xts": [
                     "SystemCapability.Account.AppAccount",
-                    "SystemCapability.Account.OsAccount"
+                    "SystemCapability.Account.OsAccount",
+                    "SystemCapability.Notification.CommonEvent",
+                    "SystemCapability.Ability.AbilityRuntime.Core",
+                    "SystemCapability.Startup.SystemInfo",
+                    "SystemCapability.BundleManager.BundleFramework.Core",
+                    "SystemCapability.Ability.AbilityBase",
+                    "SystemCapability.HiviewDFX.HiLog",
+                    "SystemCapability.Startup.SystemInfo",
+                    "SystemCapability.ArkUI.ArkUI.Full",
+                    "SystemCapability.Test.UiTest"
                 ]
             }
         ]

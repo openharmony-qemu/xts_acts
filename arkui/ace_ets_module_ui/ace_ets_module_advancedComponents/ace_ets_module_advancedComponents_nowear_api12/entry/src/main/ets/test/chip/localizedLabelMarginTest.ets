@@ -41,12 +41,12 @@ export default function localizedLabelMarginTest() {
     });
 
     /**
-     * @tc.number    localizedLabelMarginTest_0100
-     * @tc.name      localizedLabelMarginTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   localizedLabelMarginTest_0100
+     * @tc.number localizedLabelMarginTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localizedLabelMarginTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('localizedLabelMarginTest_0100 START');
@@ -62,12 +62,12 @@ export default function localizedLabelMarginTest() {
       done();
     });
     /**
-     * @tc.number    localizedLabelMarginTest_0200
-     * @tc.name      localizedLabelMarginTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   localizedLabelMarginTest_0200
+     * @tc.number localizedLabelMarginTest_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localizedLabelMarginTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('localizedLabelMarginTest_0200 START');

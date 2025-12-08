@@ -47,12 +47,12 @@ export default function ShaderStyleTest() {
     });
 
     /**
-     * @tc.number    shaderStyleTest_0010
-     * @tc.name      shaderStyleTest_0010
-     * @tc.desc      test Text shaderStyle
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   shaderStyleTest_0010
+     * @tc.number shaderStyleTest_0010
+     * @tc.desc   test Text shaderStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('shaderStyleTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[shaderStyleTest_0010] START');

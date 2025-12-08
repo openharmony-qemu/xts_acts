@@ -26,78 +26,78 @@ export default function commonAttrsBorderStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0100
-     * @tc.name       : testCommonAttrsBorderStyle001
-     * @tc.desc       : testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_SOLID value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderStyle001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0100
+     * @tc.desc   testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_SOLID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0200
-     * @tc.name       : testCommonAttrsBorderStyle002
-     * @tc.desc       : testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_DASHED value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderStyle002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0200
+     * @tc.desc   testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_DASHED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0300
-     * @tc.name       : testCommonAttrsBorderStyle003
-     * @tc.desc       : testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_DOTTED value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderStyle003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0300
+     * @tc.desc   testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_DOTTED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderStyle003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0400
-     * @tc.name       : testCommonAttrsBorderStyle004
-     * @tc.desc       : testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_SOLID value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderStyle004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0400
+     * @tc.desc   testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_SOLID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderStyle004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0500
-     * @tc.name       : testCommonAttrsBorderStyle005
-     * @tc.desc       : testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_DASHED value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderStyle005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0500
+     * @tc.desc   testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_DASHED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderStyle005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0600
-     * @tc.name       : testCommonAttrsBorderStyle006
-     * @tc.desc       : testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_DOTTED value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderStyle006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERSTYLE_0600
+     * @tc.desc   testing borderStyle for commonAttrs with ARKUI_BORDER_STYLE_DOTTED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderStyle006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderStyle006()).assertEqual(0)

@@ -55,12 +55,14 @@ export default function abilityTest() {
 
     console.debug("====>in ACTS_InterfaceMultiUsers====>");
 
-     /*
-     * @tc.number  : ACTS_ThirdPartyKillProcess_0100
-     * @tc.name    : ACTS_ThirdPartyKillProcess_0100
-     * @tc.desc    : Starting mainability3 with startAbilityforresult
-     *               then terminateself ability and return result failed.(promise)
-     */
+     /**
+      * @tc.name   ACTS_ThirdPartyKillProcess_0100
+      * @tc.number ACTS_ThirdPartyKillProcess_0100
+      * @tc.desc   Starting mainability3 with startAbilityforresult
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('ACTS_ThirdPartyKillProcess_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_ThirdPartyKillProcess_0100'
       console.debug(TAG + "====>start startAbility====>");
@@ -105,11 +107,13 @@ export default function abilityTest() {
       }, 5000)
     })
 
-    /*
-     * @tc.number  : ACTS_ThirdPartyKillProcess_0200
-     * @tc.name    : ACTS_ThirdPartyKillProcess_0200
-     * @tc.desc    : Starting mainability3 with startAbilityforresult
-     *               then terminateself ability and return result failed.(callback)
+    /**
+     * @tc.name   ACTS_ThirdPartyKillProcess_0200
+     * @tc.number ACTS_ThirdPartyKillProcess_0200
+     * @tc.desc   Starting mainability3 with startAbilityforresult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ThirdPartyKillProcess_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_ThirdPartyKillProcess_0200'

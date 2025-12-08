@@ -44,12 +44,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0100
-     * @tc.name : RenderFitJsunit_0100
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0100
+     * @tc.number RenderFitJsunit_0100
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -64,12 +64,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0200
-     * @tc.name : RenderFitJsunit_0200
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0200
+     * @tc.number RenderFitJsunit_0200
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -84,12 +84,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0300
-     * @tc.name : RenderFitJsunit_0300
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0300
+     * @tc.number RenderFitJsunit_0300
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0300', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -104,12 +104,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0400
-     * @tc.name : RenderFitJsunit_0400
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0400
+     * @tc.number RenderFitJsunit_0400
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0400', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -124,12 +124,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0500
-     * @tc.name : RenderFitJsunit_0500
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0500
+     * @tc.number RenderFitJsunit_0500
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0500', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -144,12 +144,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0600
-     * @tc.name : RenderFitJsunit_0600
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0600
+     * @tc.number RenderFitJsunit_0600
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0600', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -164,12 +164,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0700
-     * @tc.name : RenderFitJsunit_0700
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0700
+     * @tc.number RenderFitJsunit_0700
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0700', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -184,12 +184,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0800
-     * @tc.name : RenderFitJsunit_0800
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0800
+     * @tc.number RenderFitJsunit_0800
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0800', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -204,12 +204,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_0900
-     * @tc.name : RenderFitJsunit_0900
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_0900
+     * @tc.number RenderFitJsunit_0900
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_0900', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -224,12 +224,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_1000
-     * @tc.name : RenderFitJsunit_1000
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_1000
+     * @tc.number RenderFitJsunit_1000
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_1000', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -244,12 +244,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_1100
-     * @tc.name : RenderFitJsunit_1100
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_1100
+     * @tc.number RenderFitJsunit_1100
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_1100', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -264,12 +264,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_1200
-     * @tc.name : RenderFitJsunit_1200
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_1200
+     * @tc.number RenderFitJsunit_1200
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_1200', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -284,12 +284,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_1300
-     * @tc.name : RenderFitJsunit_1300
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_1300
+     * @tc.number RenderFitJsunit_1300
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_1300', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
@@ -304,12 +304,12 @@ export default function RenderFitJsunit() {
     });
 
     /**
-     * @tc.number: RenderFitJsunit_1400
-     * @tc.name : RenderFitJsunit_1400
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderFitJsunit_1400
+     * @tc.number RenderFitJsunit_1400
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderFitJsunit_1400', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit

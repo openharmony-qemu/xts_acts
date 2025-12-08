@@ -26,52 +26,52 @@ export default function textLineBreakStrategyTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_LINEBREAKSTRATEGY_0100
-     * @tc.name       : testTextLineBreakStrategy001
-     * @tc.desc       : testing lineBreakStrategy for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextLineBreakStrategy001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_LINEBREAKSTRATEGY_0100
+     * @tc.desc   testing lineBreakStrategy for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLineBreakStrategy001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextLineBreakStrategy001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_LINEBREAKSTRATEGY_0200
-     * @tc.name       : testTextLineBreakStrategy002
-     * @tc.desc       : testing lineBreakStrategy for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextLineBreakStrategy002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_LINEBREAKSTRATEGY_0200
+     * @tc.desc   testing lineBreakStrategy for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLineBreakStrategy002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextLineBreakStrategy002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_LINEBREAKSTRATEGY_0300
-     * @tc.name       : testTextLineBreakStrategy003
-     * @tc.desc       : testing lineBreakStrategy for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextLineBreakStrategy003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_LINEBREAKSTRATEGY_0300
+     * @tc.desc   testing lineBreakStrategy for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLineBreakStrategy003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextLineBreakStrategy003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_LINEBREAKSTRATEGY_0400
-     * @tc.name       : testTextLineBreakStrategy004
-     * @tc.desc       : testing lineBreakStrategy for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextLineBreakStrategy004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_LINEBREAKSTRATEGY_0400
+     * @tc.desc   testing lineBreakStrategy for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLineBreakStrategy004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextLineBreakStrategy004()).assertEqual(0)

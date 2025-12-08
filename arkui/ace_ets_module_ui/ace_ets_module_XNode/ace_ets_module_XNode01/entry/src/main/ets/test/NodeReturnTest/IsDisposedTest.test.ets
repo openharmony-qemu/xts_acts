@@ -47,12 +47,12 @@ export default function IsDisposedTest() {
     });
 
     /**
-     * @tc.number    IsDisposedTest_0100
-     * @tc.name      IsDisposedTest_0100
-     * @tc.desc      frameNode: UIContext isDisposed Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IsDisposedTest_0100
+     * @tc.number IsDisposedTest_0100
+     * @tc.desc   frameNode: UIContext isDisposed Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IsDisposedTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('IsDisposedTest_0100 START');

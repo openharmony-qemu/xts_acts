@@ -48,12 +48,12 @@ export default function checkboxGroupNodeTest() {
     })
    
     /**
-     * @tc.number    checkboxGroupNode0100
-     * @tc.name      checkboxGroupNode0100
-     * @tc.desc      frameNode: createNodecheckboxGroupToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   checkboxGroupNode0100
+     * @tc.number checkboxGroupNode0100
+     * @tc.desc   frameNode: createNodecheckboxGroupToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkboxGroupNode0100', Level.LEVEL1, async (done: Function) => {
 

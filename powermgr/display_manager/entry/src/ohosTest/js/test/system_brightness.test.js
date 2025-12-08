@@ -24,7 +24,6 @@ export default async function SystemBrightnessTest() {
     console.log("System SystemBrightness Test Begin");
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_value_success
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0010
      * @tc.desc   Get brightness success
@@ -45,7 +44,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_test_success_not_must
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0020
      * @tc.desc   Get brightness
@@ -68,7 +66,6 @@ export default async function SystemBrightnessTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_value_fail_not_must_test
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0030
      * @tc.desc   Get brightness
@@ -87,7 +84,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_test_fail_not_must
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0040
      * @tc.desc   Get brightness
@@ -102,7 +98,6 @@ export default async function SystemBrightnessTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   set_value_success_value
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0050
      * @tc.desc   Set brightness success
@@ -140,7 +135,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   set_value_fail
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0060
      * @tc.desc   Set brightness fail
@@ -167,7 +161,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   set_value_undefined
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0070
      * @tc.desc   Check undefined as input of setValue
@@ -196,7 +189,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_mode_success
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0080
      * @tc.desc   Get mode success
@@ -215,7 +207,6 @@ export default async function SystemBrightnessTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_mode_success_null
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0090
      * @tc.desc   Get mode success is null
@@ -238,7 +229,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   set_mode_success
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0100
      * @tc.desc   set mode success
@@ -266,7 +256,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   set_mode_fail
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0110
      * @tc.desc   set mode fail
@@ -294,7 +283,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   set_keep_screen_on_true
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0120
      * @tc.desc   set keep screen on true
@@ -321,7 +309,6 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   set_keep_screen_on_false
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0130
      * @tc.desc   set keep screen on false

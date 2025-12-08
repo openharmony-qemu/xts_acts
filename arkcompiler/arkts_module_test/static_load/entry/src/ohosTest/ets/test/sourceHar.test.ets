@@ -37,12 +37,12 @@ export default function staticLoadSourceHar() {
   describe('StaticLoadSourceHarTest', () => {
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0100
-     * @tc.name      : testSourceHar01
-     * @tc.desc      : Test static loading of the source HAR, invoking the files exported with relative paths ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar01
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0100
+     * @tc.desc   Test static loading of the source HAR, invoking the files exported with relative paths ./xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSourceHar01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar01";
@@ -55,12 +55,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0200
-     * @tc.name      : testSourceHar02
-     * @tc.desc      : Test static loading of the source HAR, invoking the files exported with relative paths ../xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar02
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0200
+     * @tc.desc   Test static loading of the source HAR, invoking the files exported with relative paths ../xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSourceHar02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar02";
@@ -73,12 +73,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0300
-     * @tc.name      : testSourceHar03
-     * @tc.desc      : Test static loading of the source HAR, invoking the folders exported with relative paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar03
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0300
+     * @tc.desc   Test static loading of the source HAR, invoking the folders exported with relative paths.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSourceHar03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar03";
@@ -91,12 +91,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0400
-     * @tc.name      : testSourceHar04
-     * @tc.desc      : Test static loading of the source HAR, accessing the exported files with Chinese names.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar04
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0400
+     * @tc.desc   Test static loading of the source HAR, accessing the exported files with Chinese names.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar04";
@@ -109,12 +109,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0500
-     * @tc.name      : testSourceHar05
-     * @tc.desc      : Load har, package name xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar05
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0500
+     * @tc.desc   Load har, package name xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar05";
@@ -127,12 +127,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0600
-     * @tc.name      : testSourceHar06
-     * @tc.desc      : Load har, two-level package name @xxx/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar06
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0600
+     * @tc.desc   Load har, two-level package name @xxx/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar07";
@@ -145,12 +145,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0700
-     * @tc.name      : testSourceHar07
-     * @tc.desc      : Load har, package name + path xxx/file/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar07
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0700
+     * @tc.desc   Load har, package name + path xxx/file/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar07";
@@ -163,12 +163,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0800
-     * @tc.name      : testSourceHar08
-     * @tc.desc      : Load har, two-level package name + path @xxx/xxx/file/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar08
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0800
+     * @tc.desc   Load har, two-level package name + path @xxx/xxx/file/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar08";
@@ -181,12 +181,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0900
-     * @tc.name      : testSourceHar09
-     * @tc.desc      : Remote har, package name xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar09
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_0900
+     * @tc.desc   Remote har, package name xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar09", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar09";
@@ -199,12 +199,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1000
-     * @tc.name      : testSourceHar10
-     * @tc.desc      : Remote har, two-level package name @xxx/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar10
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1000
+     * @tc.desc   Remote har, two-level package name @xxx/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar10", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar10";
@@ -217,12 +217,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1100
-     * @tc.name      : testSourceHar11
-     * @tc.desc      : Remote har, package name + path xxx/file/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar11
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1100
+     * @tc.desc   Remote har, package name + path xxx/file/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar11", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar11";
@@ -235,12 +235,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1200
-     * @tc.name      : testSourceHar12
-     * @tc.desc      : Remote har, two-level package name + path @xxx/xxx/file/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar12
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1200
+     * @tc.desc   Remote har, two-level package name + path @xxx/xxx/file/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar12";
@@ -253,12 +253,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1300
-     * @tc.name      : testSourceHar13
-     * @tc.desc      : The same project HSP, package name xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar13
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1300
+     * @tc.desc   The same project HSP, package name xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar13";
@@ -271,12 +271,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1400
-     * @tc.name      : testSourceHar14
-     * @tc.desc      : The same project HSP, two-level package name @xxx/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar14
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1400
+     * @tc.desc   The same project HSP, two-level package name @xxx/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar14", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar14";
@@ -289,12 +289,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1500
-     * @tc.name      : testSourceHar15
-     * @tc.desc      : The same project HSP, package name + path xxx/file/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar15
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1500
+     * @tc.desc   The same project HSP, package name + path xxx/file/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar15", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar15";
@@ -307,12 +307,12 @@ export default function staticLoadSourceHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1600
-     * @tc.name      : testSourceHar16
-     * @tc.desc      : The same project HSP, two-level package name + path @xxx/xxx/file/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSourceHar16
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_SOURCE_HAR_1600
+     * @tc.desc   The same project HSP, two-level package name + path @xxx/xxx/file/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSourceHar16", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar16";

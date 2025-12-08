@@ -59,9 +59,12 @@ export default function Foreach2() {
     });
 
     /**
+     * @tc.name   ForEach2Test_001
      * @tc.number ForEach2Test_001
-     * @tc.name ForEach2Test_001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ForEach2Test_001', Level.LEVEL0, async () => {
       console.info('ForEach2Test_001 START');
@@ -70,9 +73,12 @@ export default function Foreach2() {
     });
 
     /**
+     * @tc.name   ForEach2Test_002
      * @tc.number ForEach2Test_002
-     * @tc.name ForEach2Test_002
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ForEach2Test_002', Level.LEVEL0, async () => {
       console.info('ForEach2Test_002 START');

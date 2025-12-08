@@ -49,12 +49,12 @@ export default function editableTitleBarAccessibilityTest() {
     })
 
     /**
+     * @tc.name   editableTitleBarAccessibilityPage_0100
      * @tc.number editableTitleBarAccessibilityPage
-     * @tc.name   editableTitleBarAccessibilityPage
      * @tc.desc   Test editableTitleBarAccessibilityPage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editableTitleBarAccessibilityPage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

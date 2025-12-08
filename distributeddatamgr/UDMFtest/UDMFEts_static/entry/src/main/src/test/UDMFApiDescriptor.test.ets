@@ -25,7 +25,6 @@ export default function UDMFApiDescriptorTest() {
   describe("UDMFApiDescriptorTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'UDMFApiDescriptorTest start');
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775
      * @tc.desc   predicates orderByAsc normal test
@@ -46,7 +45,6 @@ export default function UDMFApiDescriptorTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775 end');
     });
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9776
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9776
      * @tc.desc   predicates orderByAsc normal test

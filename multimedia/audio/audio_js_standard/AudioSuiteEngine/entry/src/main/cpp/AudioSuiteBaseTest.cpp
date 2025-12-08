@@ -19,6 +19,10 @@ OH_AudioSuite_Result CreateAudioSuiteEngine()
 {
     OH_AudioSuiteEngine* audioSuiteEngine = nullptr;
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    if (result != AUDIOSUITE_SUCCESS) {
+        LOG("OH_AudioSuiteEngine_Create failed, result is: %{public}d", result);
+    }
     LOG("OH_AudioSuiteEngine_Create, result is: %{public}d", result);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
     return result;
 }

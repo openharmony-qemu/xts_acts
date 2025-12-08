@@ -71,12 +71,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number       testRecoverPromiseErrCode1300002_0100
-         * @tc.name         testRecoverPromiseErrCode1300002_static_0100
-         * @tc.desc         testRecoverPromiseErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testRecoverPromiseErrCode1300002_static_0100
+         * @tc.number testRecoverPromiseErrCode1300002_0100
+         * @tc.desc   testRecoverPromiseErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRecoverPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testRecoverPromiseErrCode1300002_static_0100";
@@ -112,12 +112,12 @@ export default function WindowPCTest() {
 
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1280
-         * @tc.name        testRecover_static_0100
-         * @tc.desc        test the function of Recover
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level4
+         * @tc.name   testRecover_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1280
+         * @tc.desc   test the function of Recover
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('testRecover_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let msgStr:string = 'testRecover_static_0100';
@@ -149,12 +149,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number     SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0100
-         * @tc.name       testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow_Static
-         * @tc.desc       验证子窗销毁后调用接口报1300002
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level2
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0100
+         * @tc.desc   验证子窗销毁后调用接口报1300002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow_Static';
@@ -191,12 +191,12 @@ export default function WindowPCTest() {
 
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0200
-         * @tc.name      testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow_Static
-         * @tc.desc      验证主窗/dialog窗/float/接口报1300004
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level2
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0200
+         * @tc.desc   验证主窗/dialog窗/float/接口报1300004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow_Static';
@@ -285,12 +285,12 @@ export default function WindowPCTest() {
 
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0400
-         * @tc.name      testSetRelativePositionToParentWindowEnabled_Static
-         * @tc.desc      验证子窗设置enable=true，子窗和主窗左上角重合
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabled_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0400
+         * @tc.desc   验证子窗设置enable=true，子窗和主窗左上角重合
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabled_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabled_Static';
@@ -349,12 +349,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0500
-         * @tc.name      testSetRelativePositionToParentWindowUnEnabled_Static
-         * @tc.desc      验证子窗设置enable=false，子窗和主窗左上角不重合
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level0
+         * @tc.name   testSetRelativePositionToParentWindowUnEnabled_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0500
+         * @tc.desc   验证子窗设置enable=false，子窗和主窗左上角不重合
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowUnEnabled_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowUnEnabled_Static';
@@ -405,12 +405,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number  SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0600
-         * @tc.name    testSetRelativePositionToParentWindowEnabledwithAnchorTopStart_Static
-         * @tc.desc    验证子窗设置enable=true，anchor=TOP_START，子窗位于主窗左上角
-         * @tc.size    MediumTest
-         * @tc.type    Function
-         * @tc.level   Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorTopStart_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0600
+         * @tc.desc   验证子窗设置enable=true，anchor=TOP_START，子窗位于主窗左上角
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorTopStart_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorTopStart_Static';
@@ -469,12 +469,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0700
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithAnchorTop_Static
-         * @tc.desc     验证子窗设置enable=true，anchor=TOP，子窗位于主窗上边界横向居中点
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorTop_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0700
+         * @tc.desc   验证子窗设置enable=true，anchor=TOP，子窗位于主窗上边界横向居中点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorTop_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorTop_Static';
@@ -533,12 +533,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0800
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd_Static
-         * @tc.desc     验证子窗设置enable=true，anchor=TOP_END，子窗位于主窗右上角
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0800
+         * @tc.desc   验证子窗设置enable=true，anchor=TOP_END，子窗位于主窗右上角
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd_Static';
@@ -597,12 +597,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0900
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithAnchorStart_Static
-         * @tc.desc     验证子窗设置enable=true，anchor=START，子窗位于主窗左边界纵向居中点
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorStart_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_0900
+         * @tc.desc   验证子窗设置enable=true，anchor=START，子窗位于主窗左边界纵向居中点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorStart_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorStart_Static';
@@ -661,12 +661,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1000
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithAnchorCenter_Static
-         * @tc.desc     验证子窗设置enable=true，anchor=CENTER，子窗位于主窗窗口横向和纵向居中点
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorCenter_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1000
+         * @tc.desc   验证子窗设置enable=true，anchor=CENTER，子窗位于主窗窗口横向和纵向居中点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorCenter_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorCenter_Static';
@@ -725,12 +725,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1100
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithAnchorEnd_Static
-         * @tc.desc     验证子窗设置enable=true，anchor=END，子窗位于主窗右边界纵向居中点
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorEnd_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1100
+         * @tc.desc   验证子窗设置enable=true，anchor=END，子窗位于主窗右边界纵向居中点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorEnd_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorEnd_Static';
@@ -789,12 +789,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1200
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart_Static
-         * @tc.desc     验证子窗设置enable=true，anchor=BOTTOM_START，子窗位于主窗左下角
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1200
+         * @tc.desc   验证子窗设置enable=true，anchor=BOTTOM_START，子窗位于主窗左下角
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart_Static';
@@ -853,12 +853,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1300
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithAnchorBottom_Static
-         * @tc.desc     验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向居中点
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorBottom_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1300
+         * @tc.desc   验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向居中点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorBottom_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottom_Static';
@@ -917,12 +917,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1400
-         * @tc.name      testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd_Static
-         * @tc.desc      验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向右顶点
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1400
+         * @tc.desc   验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向右顶点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd_Static';
@@ -981,12 +981,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1500
-         * @tc.name      testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY_Static
-         * @tc.desc      验证offsetX为正，offsetY为正可以设置成功
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level0
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1500
+         * @tc.desc   验证offsetX为正，offsetY为正可以设置成功
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY_Static';
@@ -1045,12 +1045,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1600
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY_Static
-         * @tc.desc     验证offsetX为正，offsetY为负可以设置成功
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level1
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1600
+         * @tc.desc   验证offsetX为正，offsetY为负可以设置成功
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY_Static';
@@ -1109,12 +1109,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1700
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX_Static
-         * @tc.desc     验证offsetX为负，offsetY为正可以设置成功
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level1
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1700
+         * @tc.desc   验证offsetX为负，offsetY为正可以设置成功
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX_Static';
@@ -1173,12 +1173,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number   SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1800
-         * @tc.name     testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY_Static
-         * @tc.desc     验证offsetX为负，offsetY为负可以设置成功
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level1
+         * @tc.name   testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY_Static
+         * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_Static_1800
+         * @tc.desc   验证offsetX为负，offsetY为负可以设置成功
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY_Static';
@@ -1236,12 +1236,12 @@ export default function WindowPCTest() {
             }
         })
         /**
-         * @tc.number      testSetDragKeyFramePolicy_Static_0100
-         * @tc.name        testSetDragKeyFramePolicy_EnableWithDefaultValue_Static
-         * @tc.desc        Test the function when enable with default value
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testSetDragKeyFramePolicy_EnableWithDefaultValue_Static
+         * @tc.number testSetDragKeyFramePolicy_Static_0100
+         * @tc.desc   Test the function when enable with default value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetDragKeyFramePolicy_EnableWithDefaultValue_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'testSetDragKeyFramePolicy_EnableWithDefaultValue_Static';
@@ -1280,12 +1280,12 @@ export default function WindowPCTest() {
             }
         })
         /**
-         * @tc.number      testSetDragKeyFramePolicy_Static_0200
-         * @tc.name        testSetDragKeyFramePolicy_EnableWithNotDefaultValue_Static
-         * @tc.desc        Test the function when enable with not default value_Static
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testSetDragKeyFramePolicy_EnableWithNotDefaultValue_Static
+         * @tc.number testSetDragKeyFramePolicy_Static_0200
+         * @tc.desc   Test the function when enable with not default value_Static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetDragKeyFramePolicy_EnableWithNotDefaultValue_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'testSetDragKeyFramePolicy_EnableWithNotDefaultValue_Static';
@@ -1333,12 +1333,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number      testSetDragKeyFramePolicy_Static_0400
-         * @tc.name        testSetDragKeyFramePolicy_NegativeValueFail_Static
-         * @tc.desc        Test the function when failed with negative value
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testSetDragKeyFramePolicy_NegativeValueFail_Static
+         * @tc.number testSetDragKeyFramePolicy_Static_0400
+         * @tc.desc   Test the function when failed with negative value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetDragKeyFramePolicy_NegativeValueFail_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'testSetDragKeyFramePolicy_NegativeValueFail_Static';
@@ -1382,12 +1382,12 @@ export default function WindowPCTest() {
             }
         })
         /**
-         * @tc.number      testSetDragKeyFramePolicy_Static_0500
-         * @tc.name        testSetDragKeyFramePolicy_ZeroValueFail_Static
-         * @tc.desc        Test the function when failed with zero value
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testSetDragKeyFramePolicy_ZeroValueFail_Static
+         * @tc.number testSetDragKeyFramePolicy_Static_0500
+         * @tc.desc   Test the function when failed with zero value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetDragKeyFramePolicy_ZeroValueFail_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'testSetDragKeyFramePolicy_ZeroValueFail_Static';
@@ -1431,12 +1431,12 @@ export default function WindowPCTest() {
             }
         })
         /**
-         * @tc.number      testSetDragKeyFramePolicy_Static_0600
-         * @tc.name        testSetDragKeyFramePolicy_SubWindowFail_Static
-         * @tc.desc        Test the function when failed with subWindow
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testSetDragKeyFramePolicy_SubWindowFail_Static
+         * @tc.number testSetDragKeyFramePolicy_Static_0600
+         * @tc.desc   Test the function when failed with subWindow
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetDragKeyFramePolicy_SubWindowFail_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'testSetDragKeyFramePolicy_SubWindowFail_Static';
@@ -1484,12 +1484,12 @@ export default function WindowPCTest() {
             }
         })
         /**
-         * @tc.number      testSetDragKeyFramePolicy_Static_0700
-         * @tc.name        testSetDragKeyFramePolicy_1300002_Static
-         * @tc.desc        Test the function when failed with 1300002
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testSetDragKeyFramePolicy_1300002_Static
+         * @tc.number testSetDragKeyFramePolicy_Static_0700
+         * @tc.desc   Test the function when failed with 1300002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetDragKeyFramePolicy_1300002_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'testSetDragKeyFramePolicy_1300002_Static';
@@ -1536,12 +1536,12 @@ export default function WindowPCTest() {
             }
         })
         /**
-         * @tc.number      testSetDragKeyFramePolicy_Static_0800
-         * @tc.name        testSetDragKeyFramePolicy_Disable_Static
-         * @tc.desc        Test the function when disable
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       LEVEL0
+         * @tc.name   testSetDragKeyFramePolicy_Disable_Static
+         * @tc.number testSetDragKeyFramePolicy_Static_0800
+         * @tc.desc   Test the function when disable
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetDragKeyFramePolicy_Disable_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const message:string = 'testSetDragKeyFramePolicy_Disable_Static';
@@ -1580,12 +1580,12 @@ export default function WindowPCTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SET_WINDOW_SHADOW_ENABLED_WITH_DESTROYED_SUBWINDOW_Static
-         * @tc.name        testSetWindowShadowEnabledwithDestroyedSubwindow_Static
-         * @tc.desc        验证setWindowShadowEnabled接口抛1300002错误码
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   testSetWindowShadowEnabledwithDestroyedSubwindow_Static
+         * @tc.number SUB_BASIC_WMS_SET_WINDOW_SHADOW_ENABLED_WITH_DESTROYED_SUBWINDOW_Static
+         * @tc.desc   验证setWindowShadowEnabled接口抛1300002错误码
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testSetWindowShadowEnabledwithDestroyedSubwindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let CaseName:string = 'testSetWindowShadowEnabledwithDestroyedSubwindow_Static';
@@ -1611,12 +1611,12 @@ export default function WindowPCTest() {
             }
         })
         /**
-         * @tc.number       SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_Static_0100
-         * @tc.name         testSetWindowShadowEnabledwithPermission_Static
-         * @tc.desc         验证非2in1设备调用接口报801，2in1设备调用成功
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 0
+         * @tc.name   testSetWindowShadowEnabledwithPermission_Static
+         * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_Static_0100
+         * @tc.desc   验证非2in1设备调用接口报801，2in1设备调用成功
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetWindowShadowEnabledwithPermission_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string = "testSetWindowShadowEnabledwithPermission_Static";
@@ -1647,12 +1647,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number       SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_Static_0300
-         * @tc.name         testSetWindowShadowEnabledwithUnsupportedSubwindow_Static
-         * @tc.desc         验证子窗调用接口报1300004
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 2
+         * @tc.name   testSetWindowShadowEnabledwithUnsupportedSubwindow_Static
+         * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_Static_0300
+         * @tc.desc   验证子窗调用接口报1300004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testSetWindowShadowEnabledwithUnsupportedSubwindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = "testSetWindowShadowEnabledwithUnsupportedSubwindow_Static";

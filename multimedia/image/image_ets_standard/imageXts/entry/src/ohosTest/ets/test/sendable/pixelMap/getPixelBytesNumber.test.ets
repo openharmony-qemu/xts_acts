@@ -58,12 +58,12 @@ export default function sendableGetPixelBytesNumberTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_GET_PIXEL_BYTES_NUMBER_001
-     * @tc.name      : getPixelBytesNumber_sendable_promise_001
-     * @tc.desc      : getPixelBytesNumber
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getPixelBytesNumber_sendable_promise_001
+     * @tc.number PIXEL_MAP_GET_PIXEL_BYTES_NUMBER_001
+     * @tc.desc   getPixelBytesNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPixelBytesNumber_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getPixelBytesNumber_sendable_promise_001';
@@ -73,12 +73,12 @@ export default function sendableGetPixelBytesNumberTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_GET_PIXEL_BYTES_NUMBER_001
-     * @tc.name      : getPixelBytesNumber_sendable_promise_002
-     * @tc.desc      : getPixelBytesNumber
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getPixelBytesNumber_sendable_promise_002
+     * @tc.number PIXEL_MAP_GET_PIXEL_BYTES_NUMBER_001
+     * @tc.desc   getPixelBytesNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPixelBytesNumber_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getPixelBytesNumber_sendable_promise_002';

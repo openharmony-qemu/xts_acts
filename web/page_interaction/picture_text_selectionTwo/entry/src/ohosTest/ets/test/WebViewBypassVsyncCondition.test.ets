@@ -65,14 +65,14 @@ export default function WebViewBypassVsyncCondition() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_BYPASSVSYNCCONDITION_0100
-    * @tc.name       : emitBypassVsyncCondition01
-    * @tc.desc       : emitBypassVsyncCondition01
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitBypassVsyncCondition01
+     * @tc.number SUB_WEB_BYPASSVSYNCCONDITION_0100
+     * @tc.desc   emitBypassVsyncCondition01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitBypassVsyncCondition01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitBypassVsyncCondition01", EVENT_ID_SET_SUITE_KEY)
       Utils.registerBaseEvent("emitBypassVsyncCondition01", WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET, 
@@ -83,14 +83,14 @@ export default function WebViewBypassVsyncCondition() {
       await Utils.waitAndClickComponent(driver, 'BypassVsyncConditionButton', 'emitBypassVsyncCondition01');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_BYPASSVSYNCCONDITION_0200
-    * @tc.name       : emitBypassVsyncCondition02
-    * @tc.desc       : emitBypassVsyncCondition02
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitBypassVsyncCondition02
+     * @tc.number SUB_WEB_BYPASSVSYNCCONDITION_0200
+     * @tc.desc   emitBypassVsyncCondition02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitBypassVsyncCondition02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitBypassVsyncCondition02", EVENT_ID_SET_SUITE_KEY)
       Utils.registerBaseEvent("emitBypassVsyncCondition02", WebBypassVsyncCondition.NONE, 

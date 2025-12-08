@@ -36,10 +36,13 @@ export default function webJsunit() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_001                                                                                                                                                                     
-     *tc.name LoadUrl                                                                                                                                                                                                                
-     *tc.desic load contents from url
+    /**
+     * @tc.name   LoadUrl
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_001
+     * @tc.desc   LoadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LoadUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitLoadUrl";
@@ -47,10 +50,13 @@ export default function webJsunit() {
       Utils.registerContainEvent("LoadUrl", "index", 200270, done);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_009
-     *tc.name Refresh
-     *tc.desic refresh current page
+    /**
+     * @tc.name   Refresh
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_009
+     * @tc.desc   Refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Refresh', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRefresh";
@@ -58,10 +64,13 @@ export default function webJsunit() {
       Utils.registerEvent("Refresh", "index", 200280, done);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_002                                                                                                                                                                  
-     *tc.name LoadData                                                                                                                                                                                                                
-     *tc.desic load contents from data
+    /**
+     * @tc.name   LoadData
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_002
+     * @tc.desc   LoadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LoadData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitLoadData";

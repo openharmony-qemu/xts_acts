@@ -26,65 +26,65 @@ export default function textTextAlignTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0100
-     * @tc.name       : testTextTextAlign001
-     * @tc.desc       : testing textAlign for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextAlign001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0100
+     * @tc.desc   testing textAlign for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextAlign001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextAlign001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0200
-     * @tc.name       : testTextTextAlign002
-     * @tc.desc       : testing textAlign for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextAlign002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0200
+     * @tc.desc   testing textAlign for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextAlign002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextAlign002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0300
-     * @tc.name       : testTextTextAlign003
-     * @tc.desc       : testing textAlign for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextAlign003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0300
+     * @tc.desc   testing textAlign for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextAlign003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextAlign003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0400
-     * @tc.name       : testTextTextAlign004
-     * @tc.desc       : testing textAlign for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextAlign004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0400
+     * @tc.desc   testing textAlign for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextAlign004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextAlign004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0500
-     * @tc.name       : testTextTextAlign005
-     * @tc.desc       : testing textAlign for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextTextAlign005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTALIGN_0500
+     * @tc.desc   testing textAlign for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextAlign005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextAlign005()).assertEqual(0)

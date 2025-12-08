@@ -68,7 +68,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getRemoteDeviceNameErrCode2900003Test
          * @tc.number getRemoteDeviceNameErrCode2900003Test
          * @tc.desc   Test getRemoteDeviceNameErrCode2900003Test API functionality
@@ -95,7 +94,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getRemoteDeviceNameAliasErrCode2900003Test
          * @tc.number getRemoteDeviceNameAliasErrCode2900003Test
          * @tc.desc   Test getRemoteDeviceNameAliasErrCode2900003Test API functionality
@@ -122,7 +120,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getRemoteDeviceClassErrCode2900003Test
          * @tc.number getRemoteDeviceClassErrCode2900003Test
          * @tc.desc   Test getRemoteDeviceClassErrCode2900003Test API functionality
@@ -151,7 +148,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   setBluetoothScanModeErrCode2900003Test
          * @tc.number setBluetoothScanModeErrCode2900003Test
          * @tc.desc   Test setBluetoothScanModeErrCode2900003Test API functionality
@@ -177,7 +173,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getPairedDevicesErrCode2900003Test
          * @tc.number getPairedDevicesErrCode2900003Test
          * @tc.desc   Test getPairedDevicesErrCode2900003Test API functionality
@@ -204,7 +199,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   clientCloseErrCode2900003Test
          * @tc.number clientCloseErrCode2900003Test
          * @tc.desc   Test clientCloseErrCode2900003Test API functionality
@@ -231,7 +225,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   serverCloseErrCode2900003Test
          * @tc.number serverCloseErrCode2900003Test
          * @tc.desc   Test serverCloseErrCode2900003Test API functionality
@@ -258,7 +251,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   clientConnectErrCode2900003Test
          * @tc.number clientConnectErrCode2900003Test
          * @tc.desc   Test clientConnectErrCode2900003Test API functionality
@@ -285,7 +277,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   clientDisconnectErrCode2900003Test
          * @tc.number clientDisconnectErrCode2900003Test
          * @tc.desc   Test clientDisconnectErrCode2900003Test API functionality
@@ -312,7 +303,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   stopAdvertisingErrCode2900003Test
          * @tc.number stopAdvertisingErrCode2900003Test
          * @tc.desc   Test stopAdvertisingErrCode2900003Test API functionality
@@ -339,7 +329,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   stopBleScanErrCode2900003Test
          * @tc.number stopBleScanErrCode2900003Test
          * @tc.desc   Test stopBleScanErrCode2900003Test API functionality

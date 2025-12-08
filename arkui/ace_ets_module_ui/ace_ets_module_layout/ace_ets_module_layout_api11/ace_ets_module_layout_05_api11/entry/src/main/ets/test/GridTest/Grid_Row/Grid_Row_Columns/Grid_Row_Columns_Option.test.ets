@@ -47,9 +47,12 @@ export default function Grid_Row_Columns_Option() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowColumns_Option_0100
      * @tc.number SUB_ACE_GRIDROWCOLUMNS_Option_0100
-     * @tc.name testGutterColumns
-     * @tc.desc Set the Columns of GridRow to '30px'
+     * @tc.desc   Set the Columns of GridRow to '30px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowColumns_Option_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowColumns_Option_0100 START');
@@ -70,9 +73,12 @@ export default function Grid_Row_Columns_Option() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowColumns_Option_0200
      * @tc.number SUB_ACE_GRIDROWCOLUMNS_Option_0200
-     * @tc.name testGutterColumns
-     * @tc.desc Set the Columns of GridRow to '70px'
+     * @tc.desc   Set the Columns of GridRow to '70px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowColumns_Option_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowColumns_Option_0200 START');
@@ -98,9 +104,12 @@ export default function Grid_Row_Columns_Option() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowColumns_Option_0300
      * @tc.number SUB_ACE_GRIDROWCOLUMNS_Option_0300
-     * @tc.name testGutterColumns
-     * @tc.desc Set the Columns of GridRow to '120px'
+     * @tc.desc   Set the Columns of GridRow to '120px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowColumns_Option_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowColumns_Option_0300 START');
@@ -127,9 +136,12 @@ export default function Grid_Row_Columns_Option() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowColumns_Option_0400
      * @tc.number SUB_ACE_GRIDROWCOLUMNS_Option_0400
-     * @tc.name testGutterColumns
-     * @tc.desc Set the Columns of GridRow to '170px'
+     * @tc.desc   Set the Columns of GridRow to '170px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowColumns_Option_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowColumns_Option_0400 START');
@@ -159,9 +171,12 @@ export default function Grid_Row_Columns_Option() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowColumns_Option_0500
      * @tc.number SUB_ACE_GRIDROWCOLUMNS_Option_0500
-     * @tc.name testGutterColumns
-     * @tc.desc Set the Columns of GridRow to '220px'
+     * @tc.desc   Set the Columns of GridRow to '220px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowColumns_Option_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowColumns_Option_0500 START');
@@ -192,9 +207,12 @@ export default function Grid_Row_Columns_Option() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowColumns_Option_0600
      * @tc.number SUB_ACE_GRIDROWCOLUMNS_Option_0600
-     * @tc.name testGutterColumns
-     * @tc.desc Set the Columns of GridRow to '320px'
+     * @tc.desc   Set the Columns of GridRow to '320px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowColumns_Option_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowColumns_Option_0600 START');

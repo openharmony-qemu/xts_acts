@@ -53,14 +53,14 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_ONPAGEVISIBLE_STATIC_0100
-    * @tc.name       : testOnPageVisibleStatic001
-    * @tc.desc       : test onPageVisible
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnPageVisibleStatic001
+     * @tc.number SUB_WEB_ONPAGEVISIBLE_STATIC_0100
+     * @tc.desc   test onPageVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnPageVisibleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');

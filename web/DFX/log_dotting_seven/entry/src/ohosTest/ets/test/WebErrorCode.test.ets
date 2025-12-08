@@ -57,67 +57,67 @@ export default function webErrorCode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_REGISTERJAVASCRIPTPROXY_0100
-    * @tc.name       : testRegisterJavaScriptProxyFullParamsError001
-    * @tc.desc       : test registerJavaScriptProxy fullParams error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testRegisterJavaScriptProxyFullParamsError001
+     * @tc.number SUB_WEB_ERRORCODE_REGISTERJAVASCRIPTPROXY_0100
+     * @tc.desc   test registerJavaScriptProxy fullParams error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRegisterJavaScriptProxyFullParamsError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testRegisterJavaScriptProxyFullParamsError001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testRegisterJavaScriptProxyFullParamsError001", '17100001', 123110, done);
       Utils.waitAndClickComponent(driver, "ErrorCodeTestSuiteButton");
     })
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_LOADURLWITHHEADERS_0100
-    * @tc.name       : testLoadUrlWithHeadersError001
-    * @tc.desc       : test loadurl headersParams error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
 
+    /**
+     * @tc.name   testLoadUrlWithHeadersError001
+     * @tc.number testLoadUrlWithHeadersError001
+     * @tc.desc   testLoadUrlWithHeadersError001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLoadUrlWithHeadersError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testLoadUrlWithHeadersError001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testLoadUrlWithHeadersError001", '17100001', 123120, done);
       Utils.waitAndClickComponent(driver, "ErrorCodeTestSuiteButton");
     })
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_LOADURLWITHHEADERS_0200
-    * @tc.name       : testLoadUrlWithHeadersError002
-    * @tc.desc       : test loadurl headersParams error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testLoadUrlWithHeadersError002
+     * @tc.number SUB_WEB_ERRORCODE_LOADURLWITHHEADERS_0200
+     * @tc.desc   test loadurl headersParams error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLoadUrlWithHeadersError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testLoadUrlWithHeadersError002", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testLoadUrlWithHeadersError002", '17100002', 123130, done);
       Utils.waitAndClickComponent(driver, "ErrorCodeTestSuiteButton");
     })
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_LOADURLWITHHEADERS_0300
-    * @tc.name       : testLoadUrlWithHeadersError003
-    * @tc.desc       : test loadurl headersParams error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testLoadUrlWithHeadersError003
+     * @tc.number SUB_WEB_ERRORCODE_LOADURLWITHHEADERS_0300
+     * @tc.desc   test loadurl headersParams error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLoadUrlWithHeadersError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testLoadUrlWithHeadersError003", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testLoadUrlWithHeadersError003", '17100003', 123140, done);
       Utils.waitAndClickComponent(driver, "ErrorCodeTestSuiteButton");
     })
-    /*
-    * @tc.number     : SUB_WEB_SSLERRORHANDLER_0100
-    * @tc.name       : testSslErrorHandler001
-    * @tc.desc       : test sslErrorHandler
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSslErrorHandler001
+     * @tc.number SUB_WEB_SSLERRORHANDLER_0100
+     * @tc.desc   test sslErrorHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSslErrorHandler001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testSslErrorHandler001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testSslErrorHandler001", 1, 123150, done);

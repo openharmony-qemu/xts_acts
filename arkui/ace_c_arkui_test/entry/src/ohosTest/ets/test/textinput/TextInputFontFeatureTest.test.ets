@@ -26,37 +26,37 @@ export default function textInputFontFeatureTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_FONT_FEATURE_0001
-     * @tc.name: testTextInputFontFeature001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputFontFeature001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FONT_FEATURE_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontFeature001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontFeature001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_FONT_FEATURE_0002
-     * @tc.name: testTextInputFontFeature002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputFontFeature002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FONT_FEATURE_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontFeature002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontFeature002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_FONT_FEATURE_0003
-     * @tc.name: testTextInputFontFeature003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputFontFeature003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FONT_FEATURE_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontFeature003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontFeature003()).assertEqual(0)

@@ -46,10 +46,12 @@ export default function Stack_Offset_Change() {
       console.info("Stack_Offset_Change after each called")
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentTopStart
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0100
-     * @tc.name testStackOffsetChangeWithAlignmentTopStart
-     * @tc.desc The stack component sets alignContent to Alignment.TopStart and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.TopStart and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentTopStart',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentTopStart] START');
@@ -79,10 +81,12 @@ export default function Stack_Offset_Change() {
       done();
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentTop
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0200
-     * @tc.name testStackOffsetChangeWithAlignmentTop
-     * @tc.desc The stack component sets alignContent to Alignment.Top and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Top and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentTop',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentTop] START');
@@ -116,10 +120,12 @@ export default function Stack_Offset_Change() {
       done();
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentTopEnd
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0300
-     * @tc.name testStackOffsetChangeWithAlignmentTopEnd
-     * @tc.desc The stack component sets alignContent to Alignment.TopEnd and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.TopEnd and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentTopEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentTopEnd] START');
@@ -152,10 +158,12 @@ export default function Stack_Offset_Change() {
       done();
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentStart
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0400
-     * @tc.name testStackOffsetChangeWithAlignmentStart
-     * @tc.desc The stack component sets alignContent to Alignment.Start and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Start and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentStart',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentStart] START');
@@ -189,10 +197,12 @@ export default function Stack_Offset_Change() {
       done();
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentCenter
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0500
-     * @tc.name testStackOffsetChangeWithAlignmentCenter
-     * @tc.desc The stack component sets alignContent to Alignment.Center and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Center and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentCenter] START');
@@ -227,10 +237,12 @@ export default function Stack_Offset_Change() {
       done();
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentEnd
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0600
-     * @tc.name testStackOffsetChangeWithAlignmentEnd
-     * @tc.desc The stack component sets alignContent to Alignment.End and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.End and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentEnd] START');
@@ -264,10 +276,12 @@ export default function Stack_Offset_Change() {
       done();
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentBottomStart
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0700
-     * @tc.name testStackOffsetChangeWithAlignmentBottomStart
-     * @tc.desc The stack component sets alignContent to Alignment.BottomStart and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.BottomStart and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentBottomStart] START');
@@ -300,10 +314,12 @@ export default function Stack_Offset_Change() {
       done();
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentBottom
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0800
-     * @tc.name testStackOffsetChangeWithAlignmentBottom
-     * @tc.desc The stack component sets alignContent to Alignment.Bottom and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Bottom and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentBottom] START');
@@ -337,10 +353,12 @@ export default function Stack_Offset_Change() {
       done();
     });
     /**
+     * @tc.name   testStackOffsetChangeWithAlignmentBottomEnd
      * @tc.number SUB_ACE_STACK_OFFSET_CHANGE_TEST_0900
-     * @tc.name testStackOffsetChangeWithAlignmentBottomEnd
-     * @tc.desc The stack component sets alignContent to Alignment.BottomEnd and sets the offset of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.BottomEnd and sets the offset of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackOffsetChangeWithAlignmentBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackOffsetChangeWithAlignmentBottomEnd] START');

@@ -49,10 +49,12 @@ export default function flexWrapReverse_fixedParentChildVisibility() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedVisibilityNoneAndOtherOutRange
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_1200
-     * @tc.name testWrapReverseParentfixedVisibilityNoneAndOtherOutRange
-     * @tc.desc The layout space of the parent component is fixed, and the visibility none is set for the child
-     *               component, and the layout range of remaining components exceeds the container space
+     * @tc.desc   The layout space of the parent component is fixed, and the visibility none is set for the child
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedVisibilityNoneAndOtherOutRange',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedVisibilityNoneAndOtherOutRange START');
@@ -93,10 +95,12 @@ export default function flexWrapReverse_fixedParentChildVisibility() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedVisibilityNoneAndOtherInRange
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_1300
-     * @tc.name testWrapReverseParentfixedVisibilityNoneAndOtherInRange
-     * @tc.desc The layout space of the parent component is fixed, and the visibility none is set for the child
-     *               component, and the remaining component layout range does not exceed the container space
+     * @tc.desc   The layout space of the parent component is fixed, and the visibility none is set for the child
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedVisibilityNoneAndOtherInRange',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedVisibilityNoneAndOtherInRange START');
@@ -137,9 +141,12 @@ export default function flexWrapReverse_fixedParentChildVisibility() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedVisibilityHiddenAndOtherInRange
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_1400
-     * @tc.name testWrapReverseParentfixedVisibilityHiddenAndOtherInRange
-     * @tc.desc The layout space of the parent component is fixed, and visibility hidden is set for child component
+     * @tc.desc   The layout space of the parent component is fixed, and visibility hidden is set for child component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedVisibilityHiddenAndOtherInRange',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedVisibilityHiddenAndOtherInRange START');

@@ -46,12 +46,12 @@ export default function symbolToStringTestTest() {
 
 
     /**
+     * @tc.name   DefaultObjectToStringTagTest001
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_001
-     * @tc.name DefaultObjectToStringTagTest001
-     * @tc.desc Verify plain object without [Symbol.toStringTag] returns default "[object Object]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify plain object without [Symbol.toStringTag] returns default "[object Object]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DefaultObjectToStringTagTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test001_DefaultObjectToStringTag();
@@ -59,12 +59,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   CustomObjectToStringTagTest002
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_002
-     * @tc.name CustomObjectToStringTagTest002
-     * @tc.desc Verify custom object with [Symbol.toStringTag] returns custom type tag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom object with [Symbol.toStringTag] returns custom type tag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomObjectToStringTagTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test002_CustomObjectToStringTag();
@@ -72,12 +72,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   BuiltInArrayToStringTagTest003
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_003
-     * @tc.name BuiltInArrayToStringTagTest003
-     * @tc.desc Verify built-in Array's [Symbol.toStringTag] returns "[object Array]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify built-in Array's [Symbol.toStringTag] returns "[object Array]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BuiltInArrayToStringTagTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test003_BuiltInArrayToStringTag();
@@ -85,12 +85,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   SubclassInheritToStringTagTest004
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_004
-     * @tc.name SubclassInheritToStringTagTest004
-     * @tc.desc Verify subclass inherits [Symbol.toStringTag] from parent
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass inherits [Symbol.toStringTag] from parent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubclassInheritToStringTagTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test004_SubclassInheritToStringTag();
@@ -98,12 +98,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   FrozenObjectToStringTagTest005
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_005
-     * @tc.name FrozenObjectToStringTagTest005
-     * @tc.desc Verify frozen object retains [Symbol.toStringTag] functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify frozen object retains [Symbol.toStringTag] functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrozenObjectToStringTagTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test005_FrozenObjectToStringTag();
@@ -113,12 +113,12 @@ export default function symbolToStringTestTest() {
 
 
     /**
+     * @tc.name   NullUndefinedToStringTagTest007
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_007
-     * @tc.name NullUndefinedToStringTagTest007
-     * @tc.desc Verify null/undefined return default tags "[object Null]"/"[object Undefined]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify null/undefined return default tags "[object Null]"/"[object Undefined]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NullUndefinedToStringTagTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test007_NullUndefinedToStringTag();
@@ -126,12 +126,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   OverrideArrayToStringTagTest008
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_008
-     * @tc.name OverrideArrayToStringTagTest008
-     * @tc.desc Verify Array instance can override [Symbol.toStringTag] to custom value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array instance can override [Symbol.toStringTag] to custom value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OverrideArrayToStringTagTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test008_OverrideArrayToStringTag();
@@ -141,12 +141,12 @@ export default function symbolToStringTestTest() {
 
 
     /**
+     * @tc.name   FunctionToStringTagTest010
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_010
-     * @tc.name FunctionToStringTagTest010
-     * @tc.desc Verify Function's default [Symbol.toStringTag] is "Function" and customizable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Function's default [Symbol.toStringTag] is "Function" and customizable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FunctionToStringTagTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test010_FunctionToStringTag();
@@ -154,12 +154,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   BuiltInPromiseToStringTagTest011
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_011
-     * @tc.name BuiltInPromiseToStringTagTest011
-     * @tc.desc Verify built-in Promise's [Symbol.toStringTag] returns "[object Promise]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify built-in Promise's [Symbol.toStringTag] returns "[object Promise]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BuiltInPromiseToStringTagTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test011_BuiltInPromiseToStringTag();
@@ -167,12 +167,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   GetterToStringTagTest012
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_012
-     * @tc.name GetterToStringTagTest012
-     * @tc.desc Verify [Symbol.toStringTag] as getter returns dynamic values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.toStringTag] as getter returns dynamic values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GetterToStringTagTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test012_GetterToStringTag();
@@ -181,12 +181,12 @@ export default function symbolToStringTestTest() {
 
 
     /**
+     * @tc.name   BuiltInMapToStringTagTest014
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_014
-     * @tc.name BuiltInMapToStringTagTest014
-     * @tc.desc Verify built-in Map's [Symbol.toStringTag] returns "[object Map]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify built-in Map's [Symbol.toStringTag] returns "[object Map]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BuiltInMapToStringTagTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test014_BuiltInMapToStringTag();
@@ -194,12 +194,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   DeleteToStringTagFallbackTest015
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_015
-     * @tc.name DeleteToStringTagFallbackTest015
-     * @tc.desc Verify deleting [Symbol.toStringTag] falls back to default "[object Object]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify deleting [Symbol.toStringTag] falls back to default "[object Object]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DeleteToStringTagFallbackTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test015_DeleteToStringTagFallback();
@@ -207,12 +207,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   TypedArrayToStringTagTest016
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_016
-     * @tc.name TypedArrayToStringTagTest016
-     * @tc.desc Verify Uint8Array's [Symbol.toStringTag] returns "[object Uint8Array]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Uint8Array's [Symbol.toStringTag] returns "[object Uint8Array]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypedArrayToStringTagTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test016_TypedArrayToStringTag();
@@ -220,12 +220,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   ErrorObjectToStringTagTest017
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_017
-     * @tc.name ErrorObjectToStringTagTest017
-     * @tc.desc Verify Error object's [Symbol.toStringTag] returns "[object Error]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Error object's [Symbol.toStringTag] returns "[object Error]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ErrorObjectToStringTagTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test017_ErrorObjectToStringTag();
@@ -233,12 +233,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   GeneratorFunctionToStringTagTest018
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_018
-     * @tc.name GeneratorFunctionToStringTagTest018
-     * @tc.desc Verify Generator instance's [Symbol.toStringTag] returns "[object Generator]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Generator instance's [Symbol.toStringTag] returns "[object Generator]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GeneratorFunctionToStringTagTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test018_GeneratorFunctionToStringTag();
@@ -248,12 +248,12 @@ export default function symbolToStringTestTest() {
 
 
     /**
+     * @tc.name   BuiltInWeakMapToStringTagTest020
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_020
-     * @tc.name BuiltInWeakMapToStringTagTest020
-     * @tc.desc Verify built-in WeakMap's [Symbol.toStringTag] returns "[object WeakMap]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify built-in WeakMap's [Symbol.toStringTag] returns "[object WeakMap]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BuiltInWeakMapToStringTagTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test020_BuiltInWeakMapToStringTag();
@@ -263,12 +263,12 @@ export default function symbolToStringTestTest() {
 
 
     /**
+     * @tc.name   MultiLevelInheritanceOverrideTest022
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_022
-     * @tc.name MultiLevelInheritanceOverrideTest022
-     * @tc.desc Verify multi-level inheritance follows [Symbol.toStringTag] override priority
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify multi-level inheritance follows [Symbol.toStringTag] override priority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultiLevelInheritanceOverrideTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test022_MultiLevelInheritanceOverride();
@@ -276,12 +276,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   SymbolObjectToStringTagTest023
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_023
-     * @tc.name SymbolObjectToStringTagTest023
-     * @tc.desc Verify Symbol wrapper object's [Symbol.toStringTag] returns "[object Symbol]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol wrapper object's [Symbol.toStringTag] returns "[object Symbol]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolObjectToStringTagTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test023_SymbolObjectToStringTag();
@@ -289,12 +289,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   DateObjectToStringTagTest024
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_024
-     * @tc.name DateObjectToStringTagTest024
-     * @tc.desc Verify Date object's [Symbol.toStringTag] returns "[object Date]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Date object's [Symbol.toStringTag] returns "[object Date]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DateObjectToStringTagTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test024_DateObjectToStringTag();
@@ -302,12 +302,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   RegExpObjectToStringTagTest025
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_025
-     * @tc.name RegExpObjectToStringTagTest025
-     * @tc.desc Verify RegExp object's [Symbol.toStringTag] returns "[object RegExp]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify RegExp object's [Symbol.toStringTag] returns "[object RegExp]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpObjectToStringTagTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test025_RegExpObjectToStringTag();
@@ -315,12 +315,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   ProxyInheritToStringTagTest026
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_026
-     * @tc.name ProxyInheritToStringTagTest026
-     * @tc.desc Verify Proxy instance inherits [Symbol.toStringTag] from target
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Proxy instance inherits [Symbol.toStringTag] from target
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ProxyInheritToStringTagTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test026_ProxyInheritToStringTag();
@@ -328,12 +328,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   EmptyClassToStringTagTest027
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_027
-     * @tc.name EmptyClassToStringTagTest027
-     * @tc.desc Verify empty class instance returns default "[object Object]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify empty class instance returns default "[object Object]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EmptyClassToStringTagTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test027_EmptyClassToStringTag();
@@ -342,12 +342,12 @@ export default function symbolToStringTestTest() {
 
 
     /**
+     * @tc.name   BuiltInSetToStringTagTest029
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_029
-     * @tc.name BuiltInSetToStringTagTest029
-     * @tc.desc Verify built-in Set's [Symbol.toStringTag] returns "[object Set]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify built-in Set's [Symbol.toStringTag] returns "[object Set]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BuiltInSetToStringTagTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test029_BuiltInSetToStringTag();
@@ -355,12 +355,12 @@ export default function symbolToStringTestTest() {
     });
 
     /**
+     * @tc.name   ToJSONDoesNotAffectToStringTagTest030
      * @tc.number SUB_SYMBOL_TOSTRINGTAG_STANDALONE_TEST_030
-     * @tc.name ToJSONDoesNotAffectToStringTagTest030
-     * @tc.desc Verify toJSON method does not affect [Symbol.toStringTag]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify toJSON method does not affect [Symbol.toStringTag]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToJSONDoesNotAffectToStringTagTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToStringTagStandaloneTestUtils.test030_ToJSONDoesNotAffectToStringTag();

@@ -23,7 +23,6 @@ const UDMF_ERR = 20400000;
 export default function ActsUdmfTest() {
   describe('ActsUdmfTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecordProvider_Destroy_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecordProvider_Destroy_0100
      * @tc.desc   test OH_UdmfRecordProvider_Destroy Test Illegal Parameter Scene
@@ -45,7 +44,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0200
      * @tc.desc   test OH_UdmfRecord_AddFileUri Test Illegal Parameter Scene
@@ -67,7 +65,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0300
      * @tc.desc   test OH_UdmfRecord_AddFileUri Test Normal Scene
@@ -89,7 +86,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0400
      * @tc.desc   test OH_UdmfRecord_AddPixelMap Test Illegal Parameter Scene
@@ -111,7 +107,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0500
      * @tc.desc   test OH_UdmfRecord_AddPixelMap Test Normal Scene
@@ -133,7 +128,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetGeneralEntry_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetGeneralEntry_0600
      * @tc.desc   test OH_UdmfRecord_GetGeneralEntry Test Illegal Parameter Scene
@@ -155,7 +149,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetPlainText_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetPlainText_0700
      * @tc.desc   test OH_UdmfRecord_GetPlainText Test Internal Data Error Scene
@@ -177,7 +170,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHyperlink_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHyperlink_0800
      * @tc.desc   test OH_UdmfRecord_GetHyperlink Test Internal Data Error Scene
@@ -199,7 +191,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHtml_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHtml_0900
      * @tc.desc   test OH_UdmfRecord_GetHtml Test Internal Data Error Scene
@@ -221,7 +212,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1000
      * @tc.desc   test OH_UdmfRecord_GetAppItem Test Illegal Parameter Scene
@@ -243,7 +233,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1100
      * @tc.desc   test OH_UdmfRecord_GetAppItem Test Internal Data Error Scene
@@ -265,7 +254,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_SetProvider_1200
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_SetProvider_1200
      * @tc.desc   test OH_UdmfRecord_SetProvider Test Illegal Parameter Scene
@@ -287,7 +275,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_GetVisibility_1300
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_GetVisibility_1300
      * @tc.desc   test OH_UdmfOptions_GetVisibility Test Normal Scene
@@ -309,7 +296,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1400
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1400
      * @tc.desc   test OH_UdmfOptions_SetVisibility Test Illegal Parameter Scene
@@ -331,7 +317,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1500
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1500
      * @tc.desc   test OH_UdmfOptions_SetVisibility Test Normal Scene
@@ -353,7 +338,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedData_1600
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedData_1600
      * @tc.desc   test OH_Udmf_GetUnifiedData Test Internal Data Error Scene
@@ -375,7 +359,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedDataByOptions_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedDataByOptions_1700
      * @tc.desc   test OH_Udmf_GetUnifiedDataByOptions Test Internal Data Error Scene
@@ -397,7 +380,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_SetUnifiedData_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_SetUnifiedData_1800
      * @tc.desc   test OH_Udmf_SetUnifiedData Test Internal Data Error Scene
@@ -419,7 +401,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_UpdateUnifiedData_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_UpdateUnifiedData_1900
      * @tc.desc   test OH_Udmf_UpdateUnifiedData Test Internal Data Error Scene
@@ -441,7 +422,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_DeleteUnifiedData_2000
      * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_DeleteUnifiedData_2000
      * @tc.desc   test OH_Udmf_DeleteUnifiedData Test Internal Data Error Scene
@@ -463,7 +443,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMF_ALL_2100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMF_ALL_2100
      * @tc.desc   Test the scenario of enumeration value UDMF_ALL of data visibility level.
@@ -485,7 +464,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMF_OWN_PROCESS_2200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMF_OWN_PROCESS_2200
      * @tc.desc   Test the scenario of enumeration value UDMF_OWN_PROCESS of data visibility level.
@@ -507,7 +485,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDS_SDK_OH_UdsPixelMap_SetPixelMap_2300
      * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsPixelMap_SetPixelMap_2300
      * @tc.desc   test OH_UdsPixelMap_SetPixelMap Test Illegal Parameter Scene
@@ -530,7 +507,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_Destroy_2400
      * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_Destroy_2400
      * @tc.desc   test OH_UdsArrayBuffer_Destroy Test Illegal Parameter Scene
@@ -552,7 +528,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_GetData_2500
      * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_GetData_2500
      * @tc.desc   test OH_UdsArrayBuffer_GetData Test Illegal Parameter Scene
@@ -574,7 +549,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_2600
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_2600
      * @tc.desc   test OH_UdmfProgressInfo_GetStatus return UDMF_FINISHED
@@ -596,7 +570,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_2700
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_2700
      * @tc.desc   test UDMF_FINISHED
@@ -618,7 +591,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_2800
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_2800
      * @tc.desc   test UDMF_PROCESSING
@@ -640,7 +612,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_2900
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_2900
      * @tc.desc   test UDMF_CANCELED
@@ -662,7 +633,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3000
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3000
      * @tc.desc   test UDMF_INNER_ERROR
@@ -684,7 +654,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3100
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3100
      * @tc.desc   test UDMF_INVALID_PARAMETERS
@@ -706,7 +675,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3200
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3200
      * @tc.desc   test UDMF_DATA_NOT_FOUND
@@ -728,7 +696,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3300
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3300
      * @tc.desc   test UDMF_SYNC_FAILED
@@ -750,7 +717,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3400
      * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3400
      * @tc.desc   test UDMF_COPY_FILE_FAILED
@@ -772,7 +738,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_Udmf_FileConflictOptions_3500
      * @tc.number SUB_OH_Udmf_FileConflictOptions_3500
      * @tc.desc   test UDMF_SKIP
@@ -794,7 +759,6 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_Udmf_ProgressIndicator_3600
      * @tc.number SUB_OH_Udmf_ProgressIndicator_3600
      * @tc.desc   test UDMF_SKIP

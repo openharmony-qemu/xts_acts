@@ -20,13 +20,12 @@ export default function getUserDirNdkTest(){
   describe('getUserDirNdkTestCheck', () => {
 
     /**
+     * @tc.name   environment_ndktest_getUserDownloadDir_001
      * @tc.number SUB_BASIC_FM_FileAPI_NDK_Environment_0100
-     * @tc.name environment_ndktest_getUserDownloadDir_001
-     * @tc.desc function of API, Test getUserDownloadDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test getUserDownloadDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_ndktest_getUserDownloadDir_001', Level.LEVEL0, async (done: Function) => {
       let data = environment.getUserDownloadDir();
@@ -41,13 +40,12 @@ export default function getUserDirNdkTest(){
     });
 
     /**
+     * @tc.name   environment_ndktest_getUserDesktopDir_001
      * @tc.number SUB_BASIC_FM_FileAPI_NDK_Environment_0200
-     * @tc.name environment_ndktest_getUserDesktopDir_001
-     * @tc.desc function of API, Test getUserDesktopDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test getUserDesktopDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_ndktest_getUserDesktopDir_001', Level.LEVEL0, async (done: Function) => {
       let data = environment.getUserDesktopDir();
@@ -62,13 +60,12 @@ export default function getUserDirNdkTest(){
     });
 
     /**
+     * @tc.name   environment_ndktest_getUserDocumentDir_001
      * @tc.number SUB_BASIC_FM_FileAPI_NDK_Environment_0300
-     * @tc.name environment_ndktest_getUserDocumentDir_001
-     * @tc.desc function of API, Test getUserDocumentDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test getUserDocumentDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_ndktest_getUserDocumentDir_001', Level.LEVEL0, async (done: Function) => {
       let data = environment.getUserDocumentDir();

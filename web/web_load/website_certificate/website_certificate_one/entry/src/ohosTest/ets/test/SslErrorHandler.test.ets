@@ -59,14 +59,14 @@ export default function sslErrorHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONSSLERROREVENTRECEIVE_0100
-    * @tc.name       : testOnSslErrorEventReceive001
-    * @tc.desc       : test onSslErrorEventReceive handleConfirm
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnSslErrorEventReceive001
+     * @tc.number SUB_WEB_ONSSLERROREVENTRECEIVE_0100
+     * @tc.desc   test onSslErrorEventReceive handleConfirm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnSslErrorEventReceive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnSslErrorEventReceive001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -77,14 +77,14 @@ export default function sslErrorHandler() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SSLERRORHANDLERHANDLECANCEL_0100
-    * @tc.name       : testSslErrorHandlerHandleCancel001
-    * @tc.desc       : test sslErrorHandler handleCancel
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSslErrorHandlerHandleCancel001
+     * @tc.number SUB_WEB_SSLERRORHANDLERHANDLECANCEL_0100
+     * @tc.desc   test sslErrorHandler handleCancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSslErrorHandlerHandleCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSslErrorHandlerHandleCancel001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -95,14 +95,14 @@ export default function sslErrorHandler() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SSLERRORHANDLERHANDLECONFIRM_0100
-    * @tc.name       : testSslErrorHandlerHandleConfirm001
-    * @tc.desc       : test sslErrorHandler handleConfirm
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSslErrorHandlerHandleConfirm001
+     * @tc.number SUB_WEB_SSLERRORHANDLERHANDLECONFIRM_0100
+     * @tc.desc   test sslErrorHandler handleConfirm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSslErrorHandlerHandleConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSslErrorHandlerHandleConfirm001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -113,14 +113,14 @@ export default function sslErrorHandler() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARSSLCACHE_0100
-    * @tc.name       : testClearSslCache001
-    * @tc.desc       : test clearSslCache
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testClearSslCache001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARSSLCACHE_0100
+     * @tc.desc   test clearSslCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testClearSslCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testClearSslCache001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

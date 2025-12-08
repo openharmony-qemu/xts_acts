@@ -44,12 +44,12 @@ export default function ImageProcessingTest() {
     });
 
     /**
-     * @tc.number    SUB_Test_COLOR_SPACE_CONVERSION
-     * @tc.name      Test_COLOR_SPACE_CONVERSION
-     * @tc.desc      test TestOther
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_Test_COLOR_SPACE_CONVERSION
+     * @tc.number SUB_Test_COLOR_SPACE_CONVERSION
+     * @tc.desc   test TestOther
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Test_COLOR_SPACE_CONVERSION', Level.LEVEL1, () => {
       try {
@@ -62,12 +62,12 @@ export default function ImageProcessingTest() {
     });
 
     /**
-     * @tc.number    SUB_Test_DETAIL_ENHANCER
-     * @tc.name      Test_DETAIL_ENHANCER
-     * @tc.desc      test TestOther
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_Test_DETAIL_ENHANCER
+     * @tc.number SUB_Test_DETAIL_ENHANCER
+     * @tc.desc   test TestOther
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Test_DETAIL_ENHANCER', Level.LEVEL1, () => {
       try {
@@ -80,12 +80,12 @@ export default function ImageProcessingTest() {
     });
 
     /**
-     * @tc.number    SUB_Test_COMPOSITION
-     * @tc.name      Test_COMPOSITION
-     * @tc.desc      test TestOther
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_Test_COMPOSITION
+     * @tc.number SUB_Test_COMPOSITION
+     * @tc.desc   test TestOther
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Test_COMPOSITION', Level.LEVEL1, () => {
       try {
@@ -98,12 +98,12 @@ export default function ImageProcessingTest() {
     });
 
     /**
-     * @tc.number    SUB_Test_DECOMPOSITION
-     * @tc.name      Test_DECOMPOSITION
-     * @tc.desc      test TestOther
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_Test_DECOMPOSITION
+     * @tc.number SUB_Test_DECOMPOSITION
+     * @tc.desc   test TestOther
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Test_DECOMPOSITION', Level.LEVEL1, () => {
       try {
@@ -116,12 +116,12 @@ export default function ImageProcessingTest() {
     });
 
     /**
-     * @tc.number    SUB_Test_METADATA_GENERATION
-     * @tc.name      Test_METADATA_GENERATION
-     * @tc.desc      test TestOther
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_Test_METADATA_GENERATION
+     * @tc.number SUB_Test_METADATA_GENERATION
+     * @tc.desc   test TestOther
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Test_METADATA_GENERATION', Level.LEVEL1, () => {
       try {

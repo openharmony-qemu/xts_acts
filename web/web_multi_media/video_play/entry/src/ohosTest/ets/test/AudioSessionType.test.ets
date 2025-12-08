@@ -54,13 +54,13 @@ export default function webViewAudioSessionType() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AUDIOSESSIONTYPE_0001
-     *@tc.name testWebViewAudioSessionType01
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewAudioSessionType01
+     * @tc.number SUB_ACE_WEB_AUDIOSESSIONTYPE_0001
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewAudioSessionType01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAudioSessionType0100"

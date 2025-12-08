@@ -61,42 +61,42 @@ export default function ActsWebRunJavaScriptOnDocumentEndTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0001
-    * @tc.name       : testWebRunJavaScriptOnDocumentEnd001
-    * @tc.desc       : test runJavaScriptOnDocumentEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnDocumentEnd001
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0001
+     * @tc.desc   test runJavaScriptOnDocumentEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebRunJavaScriptOnDocumentEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd001", 173090)
       Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd001", '"runJavaScriptOnDocumentEnd"', 173100, done);
       sendEventByKey('WebRunJavaScriptOnDocumentEndTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0002
-    * @tc.name       : testWebRunJavaScriptOnDocumentEnd002
-    * @tc.desc       : test runJavaScriptOnDocumentEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnDocumentEnd002
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0002
+     * @tc.desc   test runJavaScriptOnDocumentEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebRunJavaScriptOnDocumentEnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd002", 173090)
       Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd002", '"msg2"', 173110, done);
       sendEventByKey('WebRunJavaScriptOnDocumentEndTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0003
-    * @tc.name       : testWebRunJavaScriptOnDocumentEnd003
-    * @tc.desc       : test runJavaScriptOnDocumentEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnDocumentEnd003
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0003
+     * @tc.desc   test runJavaScriptOnDocumentEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebRunJavaScriptOnDocumentEnd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd003", 173090)
       Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd003", true, 173120, done);

@@ -45,6 +45,14 @@ export default function gridMaxCountJsunit() {
       console.info("gridMaxCount after each called");
     });
 
+    /**
+     * @tc.name   testcheckgridMaxCount0001
+     * @tc.number testcheckgridMaxCount0001
+     * @tc.desc   testcheckgridMaxCount0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testcheckgridMaxCount0001', Level.LEVEL0, async () => {
       console.info('testcheckgridMaxCount testcheckgridMaxCount0001 START');
       await Utils.sleep(2000);
@@ -57,6 +65,14 @@ export default function gridMaxCountJsunit() {
 
     });
 
+    /**
+     * @tc.name   testEdgeEffectOptions0002
+     * @tc.number testEdgeEffectOptions0002
+     * @tc.desc   testEdgeEffectOptions0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEdgeEffectOptions0002', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0002 START');
       await Utils.sleep(2000);
@@ -66,6 +82,14 @@ export default function gridMaxCountJsunit() {
       console.info("edgeEffectOptions value :" + JSON.parse(strJson).$attrs.edgeEffectOptions.alwaysEnabled);
     });
 
+    /**
+     * @tc.name   testEdgeEffectOptions0003
+     * @tc.number testEdgeEffectOptions0003
+     * @tc.desc   testEdgeEffectOptions0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEdgeEffectOptions0003', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0003 START');
       await Utils.sleep(2000);

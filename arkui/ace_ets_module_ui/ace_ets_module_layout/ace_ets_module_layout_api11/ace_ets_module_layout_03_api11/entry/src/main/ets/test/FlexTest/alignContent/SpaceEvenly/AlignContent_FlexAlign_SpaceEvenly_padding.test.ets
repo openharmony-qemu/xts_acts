@@ -50,13 +50,15 @@ export default function AlignContent_FlexAlign_SpaceEvenly_padding() {
       console.info("AlignContent_FlexAlign_SpaceEvenly_padding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_0300
-     * @tc.name testAlignContentSpaceEvenlyFlexPaddingNoSatisfy
-     * @tc.desc Set the alignContent property of the flex component to FlexAlign.SpaceEvenly, and set the padding
-     *               of the flex component so that it does not meet the child component size requirements.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexPaddingNoSatisfy
+     * @tc.number testAlignContentSpaceEvenlyFlexPaddingNoSatisfy
+     * @tc.desc   testAlignContentSpaceEvenlyFlexPaddingNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexPaddingNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexPaddingNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -116,10 +118,12 @@ export default function AlignContent_FlexAlign_SpaceEvenly_padding() {
     });
 
     /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexPaddingSatisfy
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_0400
-     * @tc.name testAlignContentSpaceEvenlyFlexPaddingSatisfy
-     * @tc.desc Set the alignContent property of the flex component to FlexAlign.SpaceEvenly and the padding of the
-     *               flex component to meet the child component sizing requirements.
+     * @tc.desc   Set the alignContent property of the flex component to FlexAlign.SpaceEvenly and the padding of the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignContentSpaceEvenlyFlexPaddingSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexPaddingSatisfy START');

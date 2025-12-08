@@ -42,11 +42,13 @@ export default function getCaretRect() {
       done();
     });
 
-    /*
-     * @tc.number       getCaretRect0001
-     * @tc.name         getCaretRect0001
-     * @tc.desc        Returns the position of the cursor relative to the RichEditor 
-                          component. If the cursor does not blink, undefined is returned.
+    /**
+     * @tc.name   getCaretRect0001
+     * @tc.number getCaretRect0001
+     * @tc.desc   Returns the position of the cursor relative to the RichEditor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getCaretRect0001', Level.LEVEL0, async (done: Function) => {
       console.info("[getCaretRect0001] start");
@@ -66,11 +68,13 @@ export default function getCaretRect() {
       done();
     });
 
-    /*
-     * @tc.number       getCaretRect0002
-     * @tc.name         getCaretRect0002
-     * @tc.desc        Returns the position of the cursor relative to the RichEditor 
-                          component. If the cursor does not blink, undefined is returned.
+    /**
+     * @tc.name   getCaretRect0002
+     * @tc.number getCaretRect0002
+     * @tc.desc   Returns the position of the cursor relative to the RichEditor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getCaretRect0002', Level.LEVEL0, async (done: Function) => {
       console.info("[getCaretRect0002] start");

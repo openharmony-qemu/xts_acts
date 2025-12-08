@@ -50,12 +50,12 @@ export default function abilityTest() {
     let success_number = 1111;
 
     /**
-     * @tc.number  NETWORKMANAGER_CONNECTION_GETCONNECTIONPROPTIES_0100
-     * @tc.name    test_isDefaultNetMetered401
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   Test_OHNetConnGetConnectionProperties_0100
+     * @tc.number NETWORKMANAGER_CONNECTION_GETCONNECTIONPROPTIES_0100
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_OHNetConnGetConnectionProperties_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "Test_OHNetConnGetConnectionProperties_0100";
@@ -71,12 +71,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number  NETWORKMANAGER_CONNECTION_GETCONNECTIONPROPTIES_0200
-     * @tc.name    test_isDefaultNetMetered0
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   Test_OHNetConnGetConnectionProperties_0200
+     * @tc.number NETWORKMANAGER_CONNECTION_GETCONNECTIONPROPTIES_0200
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_OHNetConnGetConnectionProperties_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "Test_OHNetConnGetConnectionProperties_0200";
@@ -92,12 +92,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number  NETWORKMANAGER_CONNECTION_GETCONNECTIONPROPTIES_0300
-     * @tc.name    test_isDefaultNetMetered201013
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   Test_OHNetConnGetConnectionProperties_0300
+     * @tc.number NETWORKMANAGER_CONNECTION_GETCONNECTIONPROPTIES_0300
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_OHNetConnGetConnectionProperties_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "Test_OHNetConnGetConnectionProperties_0300";

@@ -51,12 +51,12 @@ export default function SegmentButtonOptionsReturnValue() {
     });
 
     /**
-     * @tc.number    SegmentButtonOptionsReturnValue_001
-     * @tc.name      SegmentButtonOptionsReturnValue_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonOptionsReturnValue_001
+     * @tc.number SegmentButtonOptionsReturnValue_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonOptionsReturnValue_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonOptionsReturnValue_001] START');
@@ -76,12 +76,12 @@ export default function SegmentButtonOptionsReturnValue() {
 
 
     /**
-     * @tc.number    SegmentButtonOptionsReturnValue_002
-     * @tc.name      SegmentButtonOptionsReturnValue_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonOptionsReturnValue_002
+     * @tc.number SegmentButtonOptionsReturnValue_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonOptionsReturnValue_002', Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonOptionsReturnValue_002] START');
@@ -100,12 +100,12 @@ export default function SegmentButtonOptionsReturnValue() {
     });
 
     /**
-     * @tc.number    SegmentButtonOptionsReturnValue_003
-     * @tc.name      SegmentButtonOptionsReturnValue_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonOptionsReturnValue_003
+     * @tc.number SegmentButtonOptionsReturnValue_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonOptionsReturnValue_003', Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonOptionsReturnValue_003] START');

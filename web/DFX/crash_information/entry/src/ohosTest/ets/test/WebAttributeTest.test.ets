@@ -57,27 +57,27 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONRENDEREXITED_0100
-    * @tc.name        : testOnRenderExited001
-    * @tc.desc        : test onRenderExited RenderExitReason.ProcessCrashed
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testOnRenderExited001
+     * @tc.number SUB_WEB_ONRENDEREXITED_0100
+     * @tc.desc   test onRenderExited RenderExitReason.ProcessCrashed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnRenderExited001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnRenderExited", EVENT_ID_SET_SUITE_KEY)
       Utils.registerEvent("testOnRenderExited001", RenderExitReason.ProcessCrashed, 125010, done);
       Utils.waitAndClickComponent(driver, "WebAttributeTestButton");
     })
-    /*
-    * @tc.number     : SUB_WEB_RENDEREXITREASONPROCESSCRASHED_0100
-    * @tc.name       : testRenderExitReasonProcessCrashed001
-    * @tc.desc       : test RenderExitReasonProcessCrashed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRenderExitReasonProcessCrashed001
+     * @tc.number SUB_WEB_RENDEREXITREASONPROCESSCRASHED_0100
+     * @tc.desc   test RenderExitReasonProcessCrashed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRenderExitReasonProcessCrashed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitRenderExitReasonProcessCrashed", EVENT_ID_SET_SUITE_KEY)
       Utils.registerEvent("testRenderExitReasonProcessCrashed001", 2, 125020, done);

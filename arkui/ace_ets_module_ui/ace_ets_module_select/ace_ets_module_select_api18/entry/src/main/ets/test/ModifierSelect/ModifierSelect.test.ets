@@ -41,13 +41,13 @@
        done();
      });
  
-     /* *
-      * @tc.number: ModifierSelect001
-      * @tc.name  : ModifierSelect001
-      * @tc.desc  : To test the ModifierPage
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
+     /**
+      * @tc.name   ModifierSelect001
+      * @tc.number ModifierSelect001
+      * @tc.desc   To test the ModifierPage
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
       */
      it('ModifierSelect001', Level.LEVEL3, async (done: Function) => {
        let Key: string = 'ModifierSelect01'

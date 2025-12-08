@@ -37,12 +37,12 @@ export default function NetManagerWSProxy() {
     }
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0100
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0100
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0100
-     * @tc.desc Test callback options default connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options default connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0100 test start")
@@ -69,12 +69,12 @@ export default function NetManagerWSProxy() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0200
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0200
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0200
-     * @tc.desc Test promise options default connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test promise options default connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0200 test start")
@@ -104,12 +104,12 @@ export default function NetManagerWSProxy() {
 
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0300
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0300
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0300
-     * @tc.desc Test callback options proxy connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options proxy connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0300 test start")
@@ -142,12 +142,12 @@ export default function NetManagerWSProxy() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0400
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0400
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0400
-     * @tc.desc Test promise options proxy connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test promise options proxy connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0400 test start")
@@ -182,12 +182,12 @@ export default function NetManagerWSProxy() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0500
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0500
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0500
-     * @tc.desc Test callback options null connect success.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options null connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0500 test start")
@@ -214,12 +214,12 @@ export default function NetManagerWSProxy() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0600
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0600
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0600
-     * @tc.desc Test callback options undefined connect success.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options undefined connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0600 test start")
@@ -246,12 +246,12 @@ export default function NetManagerWSProxy() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0700
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0700
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0700
-     * @tc.desc Test callback options proxy null connect success.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options proxy null connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0700 test start")
@@ -280,12 +280,12 @@ export default function NetManagerWSProxy() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0800
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0800
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0800
-     * @tc.desc Test callback options proxy undefined connect success.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options proxy undefined connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0800 test start")
@@ -314,12 +314,12 @@ export default function NetManagerWSProxy() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSProxy_0900
      * @tc.number SUB_NetworkManager_NetStack_Api_WSProxy_0900
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSProxy_0900
-     * @tc.desc Test promise options proxy undefined connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test promise options proxy undefined connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NetworkManager_NetStack_Api_WSProxy_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSProxy_0900 test start")

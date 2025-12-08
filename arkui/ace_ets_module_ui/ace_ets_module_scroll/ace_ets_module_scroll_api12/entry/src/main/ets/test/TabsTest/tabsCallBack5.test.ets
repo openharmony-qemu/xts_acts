@@ -42,12 +42,12 @@ export default function tabsCallBack5() {
     });
 
     /**
-     * @tc.number    tabsCallBack5_001
-     * @tc.name      tabsCallBack5_0100
-     * @tc.desc      AnimationDuration is set to null and will not trigger a callback.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsCallBack5_0100
+     * @tc.number tabsCallBack5_001
+     * @tc.desc   AnimationDuration is set to null and will not trigger a callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsCallBack5_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsCallBack5_0100] START');

@@ -45,10 +45,13 @@ export default function hoverEffectJsunit() {
       console.info('hoverEffect after each called');
     });
 
-    /*
-     * @tc.number       testhoverEffect0001
-     * @tc.name         testhoverEffect0001
-     * @tc.desc         acehoverEffectEtsTest0001
+    /**
+     * @tc.name   testhoverEffect0001
+     * @tc.number testhoverEffect0001
+     * @tc.desc   acehoverEffectEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testhoverEffect0001', Level.LEVEL2, async (done: Function) => {
       console.info('hoverEffect testhoverEffect0001 START');
@@ -61,10 +64,13 @@ export default function hoverEffectJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       testhoverEffect0002
-     * @tc.name         testhoverEffect0002
-     * @tc.desc         acehoverEffectEtsTest0002
+    /**
+     * @tc.name   testhoverEffect0002
+     * @tc.number testhoverEffect0002
+     * @tc.desc   acehoverEffectEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testhoverEffect0002', Level.LEVEL2, async (done: Function) => {
       console.info('hoverEffect testhoverEffect0002 START');

@@ -43,12 +43,12 @@ export default function maxDownRefresh() {
     });
 
     /**
-     * @tc.number    maxDownRefresh_001
-     * @tc.name      maxDownRefresh_0100
-     * @tc.desc      Set the value of the maxPullDownDistance property to the normal value of 64.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   maxDownRefresh_0100
+     * @tc.number maxDownRefresh_001
+     * @tc.desc   Set the value of the maxPullDownDistance property to the normal value of 64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('maxDownRefresh_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[maxDownRefresh_0100] START');
@@ -79,12 +79,12 @@ export default function maxDownRefresh() {
     });
 
     /**
-     * @tc.number    maxDownRefresh_002
-     * @tc.name      maxDownRefresh_0200
-     * @tc.desc      Set the value of the maxPullDownDistance property to an outlier of -1.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   maxDownRefresh_0200
+     * @tc.number maxDownRefresh_002
+     * @tc.desc   Set the value of the maxPullDownDistance property to an outlier of -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('maxDownRefresh_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[maxDownRefresh_0200] START');
@@ -115,12 +115,12 @@ export default function maxDownRefresh() {
     });
 
     /**
-     * @tc.number    maxDownRefresh_003
-     * @tc.name      maxDownRefresh_0300
-     * @tc.desc      Set the value of the maxPullDownDistance property to null.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   maxDownRefresh_0300
+     * @tc.number maxDownRefresh_003
+     * @tc.desc   Set the value of the maxPullDownDistance property to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('maxDownRefresh_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[maxDownRefresh_0300] START');
@@ -151,12 +151,12 @@ export default function maxDownRefresh() {
     });
 
     /**
-     * @tc.number    maxDownRefresh_004
-     * @tc.name      maxDownRefresh_0400
-     * @tc.desc      Set the value of the maxPullDownDistance property to undefined.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   maxDownRefresh_0400
+     * @tc.number maxDownRefresh_004
+     * @tc.desc   Set the value of the maxPullDownDistance property to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('maxDownRefresh_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[maxDownRefresh_0400] START');

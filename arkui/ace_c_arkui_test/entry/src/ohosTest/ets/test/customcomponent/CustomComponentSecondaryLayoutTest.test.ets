@@ -27,15 +27,14 @@ export default function customComponentSecondaryLayoutTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SECONDARY_LAYOUT_001
-    * @tc.name       : testCustomComponentSecondaryLayout001
-    * @tc.desc       : test custom event callback
-    * @tc.size       : MediumTest
-    
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentSecondaryLayout001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SECONDARY_LAYOUT_001
+     * @tc.desc   test custom event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentSecondaryLayout001', Level.LEVEL1, async (done: Function) => {
       let dataArray: number[][] = nativeRender.getSecondaryLayoutData();
       console.log('testCustomComponentSecondaryLayout001', JSON.stringify(dataArray))

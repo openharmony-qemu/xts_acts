@@ -26,208 +26,208 @@ export default function spanFontWeightTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0100
-     * @tc.name: testSpanFontWeight001
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0100
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0200
-     * @tc.name: testSpanFontWeight002
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0200
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0300
-     * @tc.name: testSpanFontWeight003
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0300
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0400
-     * @tc.name: testSpanFontWeight004
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight004
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0400
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0500
-     * @tc.name: testSpanFontWeight005
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight005
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0500
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0600
-     * @tc.name: testSpanFontWeight006
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight006
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0600
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0700
-     * @tc.name: testSpanFontWeight007
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight007
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0700
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0800
-     * @tc.name: testSpanFontWeight008
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight008
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0800
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0900
-     * @tc.name: testSpanFontWeight009
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight009
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_0900
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1000
-     * @tc.name: testSpanFontWeight010
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight010
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1000
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1100
-     * @tc.name: testSpanFontWeight011
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight011
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1100
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1200
-     * @tc.name: testSpanFontWeight012
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight012
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1200
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight012()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1300
-     * @tc.name: testSpanFontWeight013
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight013
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1300
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight013', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight013()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1400
-     * @tc.name: testSpanFontWeight014
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight014
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1400
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight014', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight014()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1500
-     * @tc.name: testSpanFontWeight015
-     * @tc.desc: testing fontWeight for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontWeight015
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1500
+     * @tc.desc   testing fontWeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight015', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight015()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1600
-     * @tc.name: testSpanFontWeight016
-     * @tc.desc: testing fontWeight for span with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSpanFontWeight016
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTWEIGHT_1600
+     * @tc.desc   testing fontWeight for span with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontWeight016', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontWeight016()).assertEqual(0)

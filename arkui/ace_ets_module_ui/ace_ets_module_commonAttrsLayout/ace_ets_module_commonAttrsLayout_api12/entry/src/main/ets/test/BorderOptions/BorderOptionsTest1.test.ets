@@ -49,10 +49,12 @@ export default function BorderOptionsTest1() {
 
 
     /**
-     * @tc.number    BorderOptionsTest1_0100
-     * @tc.name      BorderOptionsTest1_0100
-     * @tc.desc      Test BorderOptions
-     * @tc.level     Level 2
+     * @tc.name   BorderOptionsTest1_0100
+     * @tc.number BorderOptionsTest1_0100
+     * @tc.desc   Test BorderOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BorderOptionsTest1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('BorderOptionsTest1_0100 START');

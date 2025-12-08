@@ -19,7 +19,6 @@ import { BusinessError } from '@ohos.base'
 export default function inputMethodAttachTest() {
     describe('inputMethod_attach', () => {
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_attach_Async_static_0100
          * @tc.number SUB_Misc_inputMethod_attach_Async_static_0100
          * @tc.desc   Call the attach interface in Async mode. Optional input parameter showkeyboard=true
@@ -68,7 +67,6 @@ export default function inputMethodAttachTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_attach_Async_static_0200
          * @tc.number SUB_Misc_inputMethod_attach_Async_static_0200
          * @tc.desc   Call the attach interface in Async mode. Optional input parameter showkeyboard=false
@@ -103,7 +101,6 @@ export default function inputMethodAttachTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_attach_Promise_static_0100
          * @tc.number SUB_Misc_inputMethod_attach_Promise_static_0100
          * @tc.desc   Call the attach interface in Promise mode. Optional input parameter showkeyboard=true
@@ -132,7 +129,6 @@ export default function inputMethodAttachTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_attach_Promise_static_0200
          * @tc.number SUB_Misc_inputMethod_attach_Promise_static_0200
          * @tc.desc   Call the attach interface in Promise mode. Optional input parameter showkeyboard=false
@@ -161,7 +157,6 @@ export default function inputMethodAttachTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_attach_Promise_static_0300
          * @tc.number SUB_Misc_inputMethod_attach_Promise_static_0300
          * @tc.desc   Call the attach interface in Promise mode.

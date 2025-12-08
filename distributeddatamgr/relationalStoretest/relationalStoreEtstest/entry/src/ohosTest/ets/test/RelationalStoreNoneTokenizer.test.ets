@@ -58,7 +58,6 @@ export default function RelationalStoreNoneTokenizer() {
         });
         console.info(TAG + "*************Unit Test Begin*************");
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreNoneTokenizerQuery0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0100
          * @tc.desc   RelationalStore NoneTokenizer 中文
@@ -102,7 +101,6 @@ export default function RelationalStoreNoneTokenizer() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreNoneTokenizerQuery0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0200
          * @tc.desc   RelationalStore NoneTokenizer 英文
@@ -156,7 +154,6 @@ export default function RelationalStoreNoneTokenizer() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreNoneTokenizerQuery0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0300
          * @tc.desc   RelationalStore NoneTokenizer 数字
@@ -220,7 +217,6 @@ export default function RelationalStoreNoneTokenizer() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreNoneTokenizerQuery0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0400
          * @tc.desc   RelationalStore NoneTokenizer 中英文数字
@@ -264,7 +260,6 @@ export default function RelationalStoreNoneTokenizer() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreNoneTokenizerQuery0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0500
          * @tc.desc   RelationalStore NoneTokenizer 中英文数字空格
@@ -320,7 +315,6 @@ export default function RelationalStoreNoneTokenizer() {
             done();
         });
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreNoneTokenizerQuery0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0600
          * @tc.desc   RelationalStore NoneTokenizer 中英文数字特殊字符

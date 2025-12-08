@@ -50,12 +50,12 @@ export default function WeakMixTest() {
 
 
     /**
+     * @tc.name   WeakSetMapRefBasicTest007
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_000
-     * @tc.name WeakSetMapRefBasicTest000
-     * @tc.desc Verify WeakSet stores objects, WeakMap maps to their WeakRefs, and all clean up when GC'd
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify WeakSet stores objects, WeakMap maps to their WeakRefs, and all clean up when GC'd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakSetMapRefBasicTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test007_WeakSetMapRefBasic();
@@ -63,12 +63,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixArrayElementsTest001
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_001
-     * @tc.name WeakMixArrayElementsTest001
-     * @tc.desc WeakMap uses arrays as keys, WeakSet stores elements, WeakRef tracks relationships
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap uses arrays as keys, WeakSet stores elements, WeakRef tracks relationships
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArrayElementsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test001_WeakMixArrayElements();
@@ -76,12 +76,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixMapEntriesTest002
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_002
-     * @tc.name WeakMixMapEntriesTest002
-     * @tc.desc WeakSet stores Maps, WeakMap links Maps to WeakRefs of their entries arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores Maps, WeakMap links Maps to WeakRefs of their entries arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixMapEntriesTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test002_WeakMixMapEntries();
@@ -89,12 +89,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateTrackingTest003
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_003
-     * @tc.name WeakMixDateTrackingTest003
-     * @tc.desc Track Date objects with WeakSet, related data with WeakMap and WeakRef
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Track Date objects with WeakSet, related data with WeakMap and WeakRef
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateTrackingTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test003_WeakMixDateTracking();
@@ -102,12 +102,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixRegExpMatchesTest004
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_004
-     * @tc.name WeakMixRegExpMatchesTest004
-     * @tc.desc WeakSet holds RegExps, WeakMap links to WeakRefs of their match results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet holds RegExps, WeakMap links to WeakRefs of their match results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRegExpMatchesTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test004_WeakMixRegExpMatches();
@@ -115,12 +115,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixBufferViewsTest005
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_005
-     * @tc.name WeakMixBufferViewsTest005
-     * @tc.desc WeakSet stores ArrayBuffers, WeakMap maps to WeakRefs of their DataViews
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores ArrayBuffers, WeakMap maps to WeakRefs of their DataViews
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixBufferViewsTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test005_WeakMixBufferViews();
@@ -128,12 +128,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSetOperationsTest006
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_006
-     * @tc.name WeakMixSetOperationsTest006
-     * @tc.desc WeakMap uses Sets as keys, WeakSet tracks related objects via WeakRef
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap uses Sets as keys, WeakSet tracks related objects via WeakRef
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetOperationsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test006_WeakMixSetOperations();
@@ -142,12 +142,12 @@ export default function WeakMixTest() {
 
 
     /**
+     * @tc.name   WeakMixClassInstancesTest008
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_008
-     * @tc.name WeakMixClassInstancesTest008
-     * @tc.desc WeakSet stores class instances, WeakMap links to WeakRefs of their internal data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores class instances, WeakMap links to WeakRefs of their internal data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixClassInstancesTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test008_WeakMixClassInstances();
@@ -155,12 +155,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixCircularRefTest009
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_009
-     * @tc.name WeakMixCircularRefTest009
-     * @tc.desc Handle circular references with combination of WeakSet, WeakMap and WeakRef
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handle circular references with combination of WeakSet, WeakMap and WeakRef
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixCircularRefTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test009_WeakMixCircularRef();
@@ -168,12 +168,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixNestedArraysTest010
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_010
-     * @tc.name WeakMixNestedArraysTest010
-     * @tc.desc 验证WeakMap存储外层数组、WeakSet跟踪内层数组的组合场景，强引用清除后均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储外层数组、WeakSet跟踪内层数组的组合场景，强引用清除后均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixNestedArraysTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test010_WeakMixNestedArrays();
@@ -181,12 +181,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixMapTransformationTest011
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_011
-     * @tc.name WeakMixMapTransformationTest011
-     * @tc.desc 验证WeakSet存储原始Map、WeakMap关联转换后Map的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始Map、WeakMap关联转换后Map的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixMapTransformationTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test011_WeakMixMapTransformation();
@@ -194,12 +194,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSetDifferenceTest012
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_012
-     * @tc.name WeakMixSetDifferenceTest012
-     * @tc.desc 验证WeakMap使用两个Set作为键、WeakSet存储差集结果的组合场景，所有对象均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap使用两个Set作为键、WeakSet存储差集结果的组合场景，所有对象均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetDifferenceTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test012_WeakMixSetDifference();
@@ -207,12 +207,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateCalculationsTest013
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_013
-     * @tc.name WeakMixDateCalculationsTest013
-     * @tc.desc 验证WeakSet存储日期对象、WeakMap关联计算结果的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储日期对象、WeakMap关联计算结果的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateCalculationsTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test013_WeakMixDateCalculations();
@@ -220,12 +220,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixRegexReplacementTest014
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_014
-     * @tc.name WeakMixRegexReplacementTest014
-     * @tc.desc 验证WeakSet存储RegExp、WeakMap关联替换函数的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储RegExp、WeakMap关联替换函数的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRegexReplacementTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test014_WeakMixRegexReplacement();
@@ -233,12 +233,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixBufferConversionsTest015
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_015
-     * @tc.name WeakMixBufferConversionsTest015
-     * @tc.desc 验证WeakMap存储ArrayBuffer、WeakSet跟踪视图对象的组合场景，强引用清除后均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储ArrayBuffer、WeakSet跟踪视图对象的组合场景，强引用清除后均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixBufferConversionsTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test015_WeakMixBufferConversions();
@@ -249,12 +249,12 @@ export default function WeakMixTest() {
 
 
     /**
+     * @tc.name   WeakMixArrayFilteringTest017
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_017
-     * @tc.name WeakMixArrayFilteringTest017
-     * @tc.desc 验证WeakSet存储原始数组、WeakMap关联过滤结果的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始数组、WeakMap关联过滤结果的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArrayFilteringTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test017_WeakMixArrayFiltering();
@@ -262,12 +262,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSetMappingTest018
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_018
-     * @tc.name WeakMixSetMappingTest018
-     * @tc.desc 验证WeakMap存储原始Set、WeakSet存储映射元素的组合场景，所有对象均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储原始Set、WeakSet存储映射元素的组合场景，所有对象均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetMappingTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test018_WeakMixSetMapping();
@@ -275,12 +275,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixComplexStructureTest019
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_019
-     * @tc.name WeakMixComplexStructureTest019
-     * @tc.desc 验证WeakSet与WeakMap协同跟踪嵌套对象的组合场景，根引用清除后整个结构被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet与WeakMap协同跟踪嵌套对象的组合场景，根引用清除后整个结构被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixComplexStructureTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test019_WeakMixComplexStructure();
@@ -289,12 +289,12 @@ export default function WeakMixTest() {
 
 
     /**
+     * @tc.name   WeakMixFunctionResultsTest021
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_021
-     * @tc.name WeakMixFunctionResultsTest021
-     * @tc.desc 验证WeakSet存储函数、WeakMap关联函数结果的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储函数、WeakMap关联函数结果的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixFunctionResultsTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test021_WeakMixFunctionResults();
@@ -302,12 +302,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixNestedMapsTest022
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_022
-     * @tc.name WeakMixNestedMapsTest022
-     * @tc.desc 验证WeakMap存储外层Map、WeakSet跟踪内层Map的组合场景，强引用清除后均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储外层Map、WeakSet跟踪内层Map的组合场景，强引用清除后均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixNestedMapsTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test022_WeakMixNestedMaps();
@@ -315,12 +315,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixArrayMappingTest023
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_023
-     * @tc.name WeakMixArrayMappingTest023
-     * @tc.desc 验证WeakSet存储原始数组、WeakMap关联映射结果的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始数组、WeakMap关联映射结果的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArrayMappingTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test023_WeakMixArrayMapping();
@@ -328,12 +328,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixErrorObjectsTest024
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_024
-     * @tc.name WeakMixErrorObjectsTest024
-     * @tc.desc 验证WeakSet存储Error实例、WeakMap关联错误详情的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储Error实例、WeakMap关联错误详情的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixErrorObjectsTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test024_WeakMixErrorObjects();
@@ -341,12 +341,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSetIntersectionTest025
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_025
-     * @tc.name WeakMixSetIntersectionTest025
-     * @tc.desc 验证WeakMap使用两个Set作为键、WeakSet存储交集结果的组合场景，所有对象均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap使用两个Set作为键、WeakSet存储交集结果的组合场景，所有对象均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetIntersectionTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test025_WeakMixSetIntersection();
@@ -354,12 +354,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixBufferSlicesTest026
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_026
-     * @tc.name WeakMixBufferSlicesTest026
-     * @tc.desc 验证WeakSet存储原始缓冲区、WeakMap关联切片的WeakRef的组合场景，强引用清除后均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始缓冲区、WeakMap关联切片的WeakRef的组合场景，强引用清除后均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixBufferSlicesTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test026_WeakMixBufferSlices();
@@ -367,12 +367,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixRegexGroupsTest027
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_027
-     * @tc.name WeakMixRegexGroupsTest027
-     * @tc.desc 验证WeakSet存储RegExp、WeakMap关联分组结果的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储RegExp、WeakMap关联分组结果的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRegexGroupsTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test027_WeakMixRegexGroups();
@@ -380,12 +380,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateFormatsTest028
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_028
-     * @tc.name WeakMixDateFormatsTest028
-     * @tc.desc 验证WeakMap存储Date、WeakSet跟踪格式化结果的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储Date、WeakSet跟踪格式化结果的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateFormatsTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test028_WeakMixDateFormats();
@@ -393,12 +393,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixClassInheritanceTest029
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_029
-     * @tc.name WeakMixClassInheritanceTest029
-     * @tc.desc 验证WeakSet存储子类实例、WeakMap关联父类实例的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储子类实例、WeakMap关联父类实例的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixClassInheritanceTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test029_WeakMixClassInheritance();
@@ -406,12 +406,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixArraySortingTest030
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_030
-     * @tc.name WeakMixArraySortingTest030
-     * @tc.desc 验证WeakSet存储原始数组、WeakMap关联排序结果的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始数组、WeakMap关联排序结果的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArraySortingTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test030_WeakMixArraySorting();
@@ -419,12 +419,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixMapFilteringTest031
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_031
-     * @tc.name WeakMixMapFilteringTest031
-     * @tc.desc 验证WeakMap存储原始Map、WeakSet跟踪过滤后条目的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储原始Map、WeakSet跟踪过滤后条目的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixMapFilteringTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test031_WeakMixMapFiltering();
@@ -432,12 +432,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixTypedArraysTest032
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_032
-     * @tc.name WeakMixTypedArraysTest032
-     * @tc.desc 验证WeakSet存储TypedArray、WeakMap关联视图的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储TypedArray、WeakMap关联视图的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixTypedArraysTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test032_WeakMixTypedArrays();
@@ -445,12 +445,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixStringObjectsTest033
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_033
-     * @tc.name WeakMixStringObjectsTest033
-     * @tc.desc 验证WeakSet存储String对象、WeakMap关联处理结果的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储String对象、WeakMap关联处理结果的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixStringObjectsTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test033_WeakMixStringObjects();
@@ -461,12 +461,12 @@ export default function WeakMixTest() {
 
 
     /**
+     * @tc.name   WeakMixSetComplementTest035
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_035
-     * @tc.name WeakMixSetComplementTest035
-     * @tc.desc 验证WeakMap使用两个Set作为键、WeakSet存储补集结果的组合场景，所有对象均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap使用两个Set作为键、WeakSet存储补集结果的组合场景，所有对象均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetComplementTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test035_WeakMixSetComplement();
@@ -474,12 +474,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateComparisonTest036
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_036
-     * @tc.name WeakMixDateComparisonTest036
-     * @tc.desc 验证WeakSet存储多个Date、WeakMap关联比较结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储多个Date、WeakMap关联比较结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateComparisonTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test036_WeakMixDateComparison();
@@ -487,12 +487,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixRegexSplitTest037
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_037
-     * @tc.name WeakMixRegexSplitTest037
-     * @tc.desc 验证WeakSet存储RegExp、WeakMap关联分割结果的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储RegExp、WeakMap关联分割结果的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRegexSplitTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test037_WeakMixRegexSplit();
@@ -500,12 +500,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixBufferCopyTest038
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_038
-     * @tc.name WeakMixBufferCopyTest038
-     * @tc.desc 验证WeakMap存储原始缓冲区、WeakSet跟踪复制结果的组合场景，强引用清除后均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储原始缓冲区、WeakSet跟踪复制结果的组合场景，强引用清除后均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixBufferCopyTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test038_WeakMixBufferCopy();
@@ -513,12 +513,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixFunctionBindingTest039
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_039
-     * @tc.name WeakMixFunctionBindingTest039
-     * @tc.desc 验证WeakSet存储绑定函数、WeakMap关联原始函数的WeakRef的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储绑定函数、WeakMap关联原始函数的WeakRef的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixFunctionBindingTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test039_WeakMixFunctionBinding();
@@ -526,12 +526,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixComprehensiveStructureTest040
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_040
-     * @tc.name WeakMixComprehensiveStructureTest040
-     * @tc.desc 验证多层嵌套结构的弱引用跟踪场景，根引用清除后整个结构被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证多层嵌套结构的弱引用跟踪场景，根引用清除后整个结构被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixComprehensiveStructureTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test040_WeakMixComprehensiveStructure();
@@ -539,12 +539,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixPromiseObjectsTest041
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_041
-     * @tc.name WeakMixPromiseObjectsTest041
-     * @tc.desc 验证WeakSet存储Promise对象、WeakMap关联结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储Promise对象、WeakMap关联结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixPromiseObjectsTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test041_WeakMixPromiseObjects();
@@ -552,12 +552,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixGeneratorFunctionsTest042
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_042
-     * @tc.name WeakMixGeneratorFunctionsTest042
-     * @tc.desc 验证WeakMap存储生成器、WeakSet跟踪迭代结果的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储生成器、WeakSet跟踪迭代结果的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixGeneratorFunctionsTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test042_WeakMixGeneratorFunctions();
@@ -565,12 +565,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSymbolObjectsTest043
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_043
-     * @tc.name WeakMixSymbolObjectsTest043
-     * @tc.desc 验证WeakSet存储Symbol包装对象、WeakMap关联映射结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储Symbol包装对象、WeakMap关联映射结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSymbolObjectsTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test043_WeakMixSymbolObjects();
@@ -578,12 +578,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixNestedWeakMapsTest044
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_044
-     * @tc.name WeakMixNestedWeakMapsTest044
-     * @tc.desc 验证WeakMap嵌套WeakMap作为键、WeakSet跟踪值对象的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap嵌套WeakMap作为键、WeakSet跟踪值对象的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixNestedWeakMapsTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test044_WeakMixNestedWeakMaps();
@@ -591,12 +591,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixArrayFlattenTest045
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_045
-     * @tc.name WeakMixArrayFlattenTest045
-     * @tc.desc 验证WeakSet存储原始数组、WeakMap关联扁平化结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始数组、WeakMap关联扁平化结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArrayFlattenTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test045_WeakMixArrayFlatten();
@@ -604,12 +604,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixMapMergeTest046
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_046
-     * @tc.name WeakMixMapMergeTest046
-     * @tc.desc 验证WeakMap存储两个Map、WeakSet跟踪合并结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储两个Map、WeakSet跟踪合并结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixMapMergeTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test046_WeakMixMapMerge();
@@ -617,12 +617,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateAdditionTest047
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_047
-     * @tc.name WeakMixDateAdditionTest047
-     * @tc.desc 验证WeakSet存储基础Date、WeakMap关联计算后Date的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储基础Date、WeakMap关联计算后Date的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateAdditionTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test047_WeakMixDateAddition();
@@ -630,12 +630,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixRegexEscapingTest048
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_048
-     * @tc.name WeakMixRegexEscapingTest048
-     * @tc.desc 验证WeakMap存储原始RegExp、WeakSet跟踪转义结果的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储原始RegExp、WeakSet跟踪转义结果的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRegexEscapingTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test048_WeakMixRegexEscaping();
@@ -643,12 +643,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixBufferConcatTest049
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_049
-     * @tc.name WeakMixBufferConcatTest049
-     * @tc.desc 验证WeakSet存储源缓冲区、WeakMap关联拼接结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储源缓冲区、WeakMap关联拼接结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixBufferConcatTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test049_WeakMixBufferConcat();
@@ -656,12 +656,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixProxyObjectsTest050
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_050
-     * @tc.name WeakMixProxyObjectsTest050
-     * @tc.desc 验证WeakMap存储代理对象、WeakSet跟踪目标对象的组合场景，两者均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储代理对象、WeakSet跟踪目标对象的组合场景，两者均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixProxyObjectsTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test050_WeakMixProxyObjects();
@@ -669,12 +669,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixArrayUniqueTest051
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_051
-     * @tc.name WeakMixArrayUniqueTest051
-     * @tc.desc 验证WeakSet存储原始数组、WeakMap关联去重结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始数组、WeakMap关联去重结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArrayUniqueTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test051_WeakMixArrayUnique();
@@ -682,12 +682,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSetPartitionTest052
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_052
-     * @tc.name WeakMixSetPartitionTest052
-     * @tc.desc 验证WeakMap存储原始Set、WeakSet跟踪分区结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储原始Set、WeakSet跟踪分区结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetPartitionTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // 两次GC可以
@@ -696,12 +696,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixNumberObjectsTest053
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_053
-     * @tc.name WeakMixNumberObjectsTest053
-     * @tc.desc 验证WeakSet存储Number包装对象、WeakMap关联计算结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储Number包装对象、WeakMap关联计算结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixNumberObjectsTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test053_WeakMixNumberObjects();
@@ -709,12 +709,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixWeakSetCompositionTest054
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_054
-     * @tc.name WeakMixWeakSetCompositionTest054
-     * @tc.desc 验证WeakMap存储多个WeakSet、WeakSet跟踪交集对象的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储多个WeakSet、WeakSet跟踪交集对象的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixWeakSetCompositionTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test054_WeakMixWeakSetComposition();
@@ -722,12 +722,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixArrayChunkTest055
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_055
-     * @tc.name WeakMixArrayChunkTest055
-     * @tc.desc 验证WeakSet存储原始数组、WeakMap关联分块结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始数组、WeakMap关联分块结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArrayChunkTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test055_WeakMixArrayChunk();
@@ -735,12 +735,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixMapInversionTest056
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_056
-     * @tc.name WeakMixMapInversionTest056
-     * @tc.desc 验证WeakMap存储原始Map、WeakSet跟踪键值反转结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储原始Map、WeakSet跟踪键值反转结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixMapInversionTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test056_WeakMixMapInversion();
@@ -748,12 +748,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateRangeTest057
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_057
-     * @tc.name WeakMixDateRangeTest057
-     * @tc.desc 验证WeakSet存储日期范围、WeakMap关联包含检查结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储日期范围、WeakMap关联包含检查结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateRangeTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test057_WeakMixDateRange();
@@ -761,12 +761,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixRegexFlagsTest058
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_058
-     * @tc.name WeakMixRegexFlagsTest058
-     * @tc.desc 验证WeakMap存储RegExp、WeakSet跟踪不同标志组合的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储RegExp、WeakSet跟踪不同标志组合的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRegexFlagsTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test058_WeakMixRegexFlags();
@@ -776,12 +776,12 @@ export default function WeakMixTest() {
 
 
     /**
+     * @tc.name   WeakMixRecursiveStructureTest060
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_060
-     * @tc.name WeakMixRecursiveStructureTest060
-     * @tc.desc 验证弱引用跟踪递归嵌套结构，根引用清除后整个结构被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证弱引用跟踪递归嵌套结构，根引用清除后整个结构被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRecursiveStructureTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // 两次GC
@@ -789,12 +789,12 @@ export default function WeakMixTest() {
       expect(result).assertEqual("Test Passed: WeakMixRecursiveStructureTest060");
     });
     /**
+     * @tc.name   WeakMixArrayReduceTest061
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_061
-     * @tc.name WeakMixArrayReduceTest061
-     * @tc.desc 验证WeakSet存储原始数组、WeakMap关联归约结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储原始数组、WeakMap关联归约结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArrayReduceTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test061_WeakMixArrayReduce();
@@ -802,12 +802,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixMapFilteringAdvancedTest062
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_062
-     * @tc.name WeakMixMapFilteringAdvancedTest062
-     * @tc.desc 验证WeakMap存储原始Map、WeakSet跟踪复杂过滤结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储原始Map、WeakSet跟踪复杂过滤结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixMapFilteringAdvancedTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test062_WeakMixMapFilteringAdvanced();
@@ -815,12 +815,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSetSymmetricDifferenceTest063
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_063
-     * @tc.name WeakMixSetSymmetricDifferenceTest063
-     * @tc.desc 验证WeakMap使用两个Set作为键、WeakSet存储对称差结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap使用两个Set作为键、WeakSet存储对称差结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetSymmetricDifferenceTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test063_WeakMixSetSymmetricDifference();
@@ -828,12 +828,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixErrorInheritanceTest064
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_064
-     * @tc.name WeakMixErrorInheritanceTest064
-     * @tc.desc 验证WeakSet存储自定义Error子类、WeakMap关联错误链的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储自定义Error子类、WeakMap关联错误链的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixErrorInheritanceTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test064_WeakMixErrorInheritance();
@@ -841,12 +841,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixAsyncIteratorsTest065
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_065
-     * @tc.name WeakMixAsyncIteratorsTest065
-     * @tc.desc 验证WeakMap存储异步迭代器、WeakSet跟踪迭代结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储异步迭代器、WeakSet跟踪迭代结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixAsyncIteratorsTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test065_WeakMixAsyncIterators();
@@ -854,12 +854,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixTypedArrayConversionTest066
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_066
-     * @tc.name WeakMixTypedArrayConversionTest066
-     * @tc.desc 验证WeakSet存储源TypedArray、WeakMap关联类型转换结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储源TypedArray、WeakMap关联类型转换结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixTypedArrayConversionTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test066_WeakMixTypedArrayConversion();
@@ -867,12 +867,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSymbolRegistryTest067
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_067
-     * @tc.name WeakMixSymbolRegistryTest067
-     * @tc.desc 验证WeakMap存储全局注册表Symbol、WeakSet跟踪关联对象的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储全局注册表Symbol、WeakSet跟踪关联对象的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSymbolRegistryTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test067_WeakMixSymbolRegistry();
@@ -880,12 +880,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixNestedProxiesTest068
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_068
-     * @tc.name WeakMixNestedProxiesTest068
-     * @tc.desc 验证WeakSet存储嵌套代理对象、WeakMap关联目标链的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储嵌套代理对象、WeakMap关联目标链的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixNestedProxiesTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test068_WeakMixNestedProxies();
@@ -893,12 +893,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateLocalizationTest069
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_069
-     * @tc.name WeakMixDateLocalizationTest069
-     * @tc.desc 验证WeakMap存储Date、WeakSet跟踪多语言格式化结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储Date、WeakSet跟踪多语言格式化结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateLocalizationTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test069_WeakMixDateLocalization();
@@ -906,12 +906,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixRegexExecResultsTest070
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_070
-     * @tc.name WeakMixRegexExecResultsTest070
-     * @tc.desc 验证WeakSet存储RegExp、WeakMap关联多次执行结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储RegExp、WeakMap关联多次执行结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRegexExecResultsTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test070_WeakMixRegexExecResults();
@@ -919,12 +919,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixBufferViewsTest071
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_071
-     * @tc.name WeakMixBufferViewsTest071
-     * @tc.desc 验证WeakMap存储ArrayBuffer、WeakSet跟踪多类型视图的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储ArrayBuffer、WeakSet跟踪多类型视图的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixBufferViewsTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test071_WeakMixBufferViews();
@@ -932,12 +932,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixFunctionCompositionTest072
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_072
-     * @tc.name WeakMixFunctionCompositionTest072
-     * @tc.desc 验证WeakSet存储函数集合、WeakMap关联组合函数的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储函数集合、WeakMap关联组合函数的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixFunctionCompositionTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test072_WeakMixFunctionComposition();
@@ -945,12 +945,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixArrayIntersectionTest073
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_073
-     * @tc.name WeakMixArrayIntersectionTest073
-     * @tc.desc 验证WeakMap存储两个数组、WeakSet存储交集结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储两个数组、WeakSet存储交集结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixArrayIntersectionTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test073_WeakMixArrayIntersection();
@@ -958,12 +958,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixMapChainingTest074
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_074
-     * @tc.name WeakMixMapChainingTest074
-     * @tc.desc 验证WeakSet存储Map链、WeakMap关联链式查询结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储Map链、WeakMap关联链式查询结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixMapChainingTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test074_WeakMixMapChaining();
@@ -971,12 +971,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSetCartesianProductTest075
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_075
-     * @tc.name WeakMixSetCartesianProductTest075
-     * @tc.desc 验证WeakMap使用两个Set作为键、WeakSet存储笛卡尔积结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap使用两个Set作为键、WeakSet存储笛卡尔积结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetCartesianProductTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test075_WeakMixSetCartesianProduct();
@@ -984,12 +984,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateArithmeticTest076
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_076
-     * @tc.name WeakMixDateArithmeticTest076
-     * @tc.desc 验证WeakSet存储基准Date、WeakMap关联多单位计算结果的WeakRef的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakSet存储基准Date、WeakMap关联多单位计算结果的WeakRef的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateArithmeticTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test076_WeakMixDateArithmetic();
@@ -997,12 +997,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixClassInstancesTest079
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_079
-     * @tc.name WeakMixClassInstancesTest079
-     * @tc.desc 验证WeakMap存储类实例、WeakSet跟踪实例方法结果的组合场景，均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证WeakMap存储类实例、WeakSet跟踪实例方法结果的组合场景，均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixClassInstancesTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test079_WeakMixClassInstances();
@@ -1010,12 +1010,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixHybridStructureTest080
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_080
-     * @tc.name WeakMixHybridStructureTest080
-     * @tc.desc 验证弱引用跟踪混合类型嵌套结构（数组+Map+对象），根引用清除后均被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证弱引用跟踪混合类型嵌套结构（数组+Map+对象），根引用清除后均被GC回收
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixHybridStructureTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test080_WeakMixHybridStructure();
@@ -1023,12 +1023,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixObjectCloningTest081
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_081
-     * @tc.name WeakMixObjectCloningTest081
-     * @tc.desc WeakSet stores original objects, WeakMap associates cloning results, verify GC cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores original objects, WeakMap associates cloning results, verify GC cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixObjectCloningTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test081_WeakMixObjectCloning();
@@ -1036,12 +1036,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixEventListenersTest082
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_082
-     * @tc.name WeakMixEventListenersTest082
-     * @tc.desc WeakMap stores event targets, WeakSet tracks listeners, verify automatic cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap stores event targets, WeakSet tracks listeners, verify automatic cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixEventListenersTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test082_WeakMixEventListeners();
@@ -1049,12 +1049,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDataPipelineTest083
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_083
-     * @tc.name WeakMixDataPipelineTest083
-     * @tc.desc WeakSet stores pipeline nodes, WeakMap associates processing results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores pipeline nodes, WeakMap associates processing results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDataPipelineTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test083_WeakMixDataPipeline();
@@ -1062,12 +1062,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixModuleCompositionTest084
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_084
-     * @tc.name WeakMixModuleCompositionTest084
-     * @tc.desc WeakMap stores module instances, WeakSet tracks exported members
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap stores module instances, WeakSet tracks exported members
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixModuleCompositionTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test084_WeakMixModuleComposition();
@@ -1075,12 +1075,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixCacheMechanismTest085
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_085
-     * @tc.name WeakMixCacheMechanismTest085
-     * @tc.desc WeakMap implements auto-recycling cache, WeakSet tracks cache keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap implements auto-recycling cache, WeakSet tracks cache keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixCacheMechanismTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test085_WeakMixCacheMechanism();
@@ -1088,12 +1088,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixTreeTraversalTest086
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_086
-     * @tc.name WeakMixTreeTraversalTest086
-     * @tc.desc WeakSet stores tree nodes, WeakMap associates traversal paths
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores tree nodes, WeakMap associates traversal paths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixTreeTraversalTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test086_WeakMixTreeTraversal();
@@ -1102,12 +1102,12 @@ export default function WeakMixTest() {
 
 
     /**
+     * @tc.name   WeakMixStringProcessingTest088
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_088
-     * @tc.name WeakMixStringProcessingTest088
-     * @tc.desc WeakSet stores processing functions, WeakMap associates conversion results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores processing functions, WeakMap associates conversion results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixStringProcessingTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test088_WeakMixStringProcessing();
@@ -1115,12 +1115,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixNumberRangesTest089
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_089
-     * @tc.name WeakMixNumberRangesTest089
-     * @tc.desc WeakMap stores range definitions, WeakSet tracks inclusion checks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap stores range definitions, WeakSet tracks inclusion checks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixNumberRangesTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test089_WeakMixNumberRanges();
@@ -1128,12 +1128,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSetPowerSetTest090
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_090
-     * @tc.name WeakMixSetPowerSetTest090
-     * @tc.desc WeakMap stores original Set, WeakSet tracks power set elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap stores original Set, WeakSet tracks power set elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSetPowerSetTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test090_WeakMixSetPowerSet();
@@ -1141,12 +1141,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixFunctionMemoizationTest091
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_091
-     * @tc.name WeakMixFunctionMemoizationTest091
-     * @tc.desc WeakMap stores functions and parameters, WeakSet tracks cache results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap stores functions and parameters, WeakSet tracks cache results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixFunctionMemoizationTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test091_WeakMixFunctionMemoization();
@@ -1157,12 +1157,12 @@ export default function WeakMixTest() {
 
 
     /**
+     * @tc.name   WeakMixClassHierarchyTest094
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_094
-     * @tc.name WeakMixClassHierarchyTest094
-     * @tc.desc WeakSet stores class instances, WeakMap associates hierarchy information
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores class instances, WeakMap associates hierarchy information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixClassHierarchyTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test094_WeakMixClassHierarchy();
@@ -1170,12 +1170,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixMapMergeDedupeTest095
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_095
-     * @tc.name WeakMixMapMergeDedupeTest095
-     * @tc.desc WeakSet stores source maps, WeakMap associates merged results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores source maps, WeakMap associates merged results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixMapMergeDedupeTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test095_WeakMixMapMergeDedupe();
@@ -1183,12 +1183,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixSlidingWindowTest096
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_096
-     * @tc.name WeakMixSlidingWindowTest096
-     * @tc.desc WeakMap stores original array, WeakSet tracks window results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap stores original array, WeakSet tracks window results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixSlidingWindowTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test096_WeakMixSlidingWindow();
@@ -1196,12 +1196,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixRegexReplacementTest097
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_097
-     * @tc.name WeakMixRegexReplacementTest097
-     * @tc.desc WeakSet stores RegExp, WeakMap associates replacement results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores RegExp, WeakMap associates replacement results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixRegexReplacementTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test097_WeakMixRegexReplacement();
@@ -1209,12 +1209,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixDateRangeIntersectionTest098
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_098
-     * @tc.name WeakMixDateRangeIntersectionTest098
-     * @tc.desc WeakMap stores date ranges, WeakSet tracks intersection results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap stores date ranges, WeakSet tracks intersection results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixDateRangeIntersectionTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test098_WeakMixDateRangeIntersection();
@@ -1222,12 +1222,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixBufferChunkingTest099
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_099
-     * @tc.name WeakMixBufferChunkingTest099
-     * @tc.desc WeakSet stores chunks, WeakMap associates merged results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSet stores chunks, WeakMap associates merged results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixBufferChunkingTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test099_WeakMixBufferChunking();
@@ -1235,12 +1235,12 @@ export default function WeakMixTest() {
     });
 
     /**
+     * @tc.name   WeakMixComplexFilteringTest100
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_100
-     * @tc.name WeakMixComplexFilteringTest100
-     * @tc.desc WeakMap stores data sources, WeakSet tracks filtering results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMap stores data sources, WeakSet tracks filtering results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMixComplexFilteringTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakMixTestUtils.test100_WeakMixComplexFiltering();

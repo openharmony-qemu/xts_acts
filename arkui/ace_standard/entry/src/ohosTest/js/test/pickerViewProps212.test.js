@@ -80,9 +80,12 @@ export default function pickerViewPropsJsTest212() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewRefProp
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewRefProp', Level.LEVEL0, async function(done) {
             console.info('testPickerViewRefProp START');
@@ -99,9 +102,12 @@ export default function pickerViewPropsJsTest212() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewRefPropNone START');

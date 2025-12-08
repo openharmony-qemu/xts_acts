@@ -26,52 +26,52 @@ export default function imageAnimatorReverseTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_REVERSE_0100
-     * @tc.name: testImageAnimatorReverse001
-     * @tc.desc: testing reverse for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorReverse001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_REVERSE_0100
+     * @tc.desc   testing reverse for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorReverse001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorReverse001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_REVERSE_0200
-     * @tc.name: testImageAnimatorReverse002
-     * @tc.desc: testing reverse for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorReverse002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_REVERSE_0200
+     * @tc.desc   testing reverse for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorReverse002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorReverse002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_REVERSE_0300
-     * @tc.name: testImageAnimatorReverse003
-     * @tc.desc: testing reverse for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorReverse003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_REVERSE_0300
+     * @tc.desc   testing reverse for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorReverse003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorReverse003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_REVERSE_0400
-     * @tc.name: testImageAnimatorReverse004
-     * @tc.desc: testing reverse for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorReverse004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_REVERSE_0400
+     * @tc.desc   testing reverse for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorReverse004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorReverse004()).assertEqual(0)

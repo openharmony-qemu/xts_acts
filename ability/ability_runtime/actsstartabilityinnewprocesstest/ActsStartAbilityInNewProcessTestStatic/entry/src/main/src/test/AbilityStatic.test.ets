@@ -201,12 +201,12 @@ export default function abilitystaticTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400
-     * @tc.name SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400
-     * @tc.desc Start with processMode only.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start with processMode only.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400]';

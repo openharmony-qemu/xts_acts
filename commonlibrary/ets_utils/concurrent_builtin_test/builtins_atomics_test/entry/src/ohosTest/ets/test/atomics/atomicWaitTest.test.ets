@@ -12,12 +12,12 @@ export default function atomicsWaitTest() {
 
 
     /**
+     * @tc.name   atomicsWaitTest001
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0001
-     * @tc.name atomicsWaitTest001
-     * @tc.desc Return "not-equal" when Int32Array value doesn't match expected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Return "not-equal" when Int32Array value doesn't match expected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsWaitTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -43,12 +43,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest002
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0002
-     * @tc.name atomicsWaitTest002
-     * @tc.desc Return "ok" when Int32Array wait is woken by Atomics.notify()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Return "ok" when Int32Array wait is woken by Atomics.notify()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -86,12 +86,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest003
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0003
-     * @tc.name atomicsWaitTest003
-     * @tc.desc Return "timed-out" when Int32Array wait exceeds timeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Return "timed-out" when Int32Array wait exceeds timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -122,12 +122,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest004
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0004
-     * @tc.name atomicsWaitTest004
-     * @tc.desc Return "not-equal" when BigInt64Array value doesn't match expected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Return "not-equal" when BigInt64Array value doesn't match expected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsWaitTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -154,12 +154,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest005
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0005
-     * @tc.name atomicsWaitTest005
-     * @tc.desc Return "ok" when BigInt64Array wait is woken by Atomics.notify()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Return "ok" when BigInt64Array wait is woken by Atomics.notify()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -197,12 +197,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest006
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0006
-     * @tc.name atomicsWaitTest006
-     * @tc.desc Return "timed-out" when BigInt64Array wait exceeds timeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Return "timed-out" when BigInt64Array wait exceeds timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -233,12 +233,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest007
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0007
-     * @tc.name atomicsWaitTest007
-     * @tc.desc Throw TypeError when typedArray is Uint32Array (not Int32Array/BigInt64Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Throw TypeError when typedArray is Uint32Array (not Int32Array/BigInt64Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsWaitTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -267,12 +267,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest008
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0008
-     * @tc.name atomicsWaitTest008
-     * @tc.desc Throw RangeError when Int32Array index is out of bounds
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Throw RangeError when Int32Array index is out of bounds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsWaitTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -309,12 +309,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest009
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0009
-     * @tc.name atomicsWaitTest009
-     * @tc.desc Throw RangeError when BigInt64Array index is negative
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Throw RangeError when BigInt64Array index is negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsWaitTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -351,12 +351,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest010
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0010
-     * @tc.name atomicsWaitTest010
-     * @tc.desc Treat undefined timeout as Infinity (Int32Array never times out)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Treat undefined timeout as Infinity (Int32Array never times out)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -393,12 +393,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest011
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0011
-     * @tc.name atomicsWaitTest011
-     * @tc.type Function
-     * @tc.desc Treat NaN timeout as Infinity (BigInt64Array woken by notify)
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Treat NaN timeout as Infinity (BigInt64Array woken by notify)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -435,12 +435,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest012
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0012
-     * @tc.name atomicsWaitTest012
-     * @tc.desc Treat negative timeout as 0 (Int32Array times out immediately)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Treat negative timeout as 0 (Int32Array times out immediately)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -477,12 +477,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest013
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0013
-     * @tc.name atomicsWaitTest013
-     * @tc.desc Throw TypeError when typedArray is non-SharedArrayBuffer backed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Throw TypeError when typedArray is non-SharedArrayBuffer backed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsWaitTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -519,12 +519,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest014
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0014
-     * @tc.name atomicsWaitTest014
-     * @tc.desc Int32Array wait woken by notify even if value changes after wait
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Int32Array wait woken by notify even if value changes after wait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -561,12 +561,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest015
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0015
-     * @tc.name atomicsWaitTest015
-     * @tc.desc BigInt64Array wait woken by notify even if value changes after wait
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   BigInt64Array wait woken by notify even if value changes after wait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -603,12 +603,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest016
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0016
-     * @tc.name atomicsWaitTest016
-     * @tc.desc Int32Array wait with timeout=0 returns "timed-out" immediately
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Int32Array wait with timeout=0 returns "timed-out" immediately
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -640,12 +640,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest017
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0017
-     * @tc.name atomicsWaitTest017
-     * @tc.desc BigInt64Array wait with timeout=0 returns "timed-out" immediately
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   BigInt64Array wait with timeout=0 returns "timed-out" immediately
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -677,12 +677,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest018
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0018
-     * @tc.name atomicsWaitTest018
-     * @tc.desc Nested arrow function wrapper for Int32Array wait
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow function wrapper for Int32Array wait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -714,12 +714,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest019
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0019
-     * @tc.name atomicsWaitTest019
-     * @tc.desc Nested arrow function wrapper for BigInt64Array wait
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow function wrapper for BigInt64Array wait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -751,12 +751,12 @@ export default function atomicsWaitTest() {
     });
 
     /**
+     * @tc.name   atomicsWaitTest020
      * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0020
-     * @tc.name atomicsWaitTest020
-     * @tc.desc Int32Array wait in async worker with arrow function callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Int32Array wait in async worker with arrow function callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsWaitTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);

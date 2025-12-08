@@ -64,12 +64,12 @@ export default function CameraNoPermissionTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_NO_PERMISSION_001
-     * @tc.name      : NoPermission_001
-     * @tc.desc      : no permission-1 param
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   NoPermission_001
+     * @tc.number CAMERA_NO_PERMISSION_001
+     * @tc.desc   no permission-1 param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NoPermission_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'NoPermission_001';
@@ -92,12 +92,12 @@ export default function CameraNoPermissionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_NO_PERMISSION_002
-     * @tc.name      : NoPermission_002
-     * @tc.desc      : no permission-2 params
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   NoPermission_002
+     * @tc.number CAMERA_NO_PERMISSION_002
+     * @tc.desc   no permission-2 params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NoPermission_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'NoPermission_002';

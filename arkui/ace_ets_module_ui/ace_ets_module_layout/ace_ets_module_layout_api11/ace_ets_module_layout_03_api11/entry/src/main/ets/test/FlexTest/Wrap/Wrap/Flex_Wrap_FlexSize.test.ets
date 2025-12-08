@@ -47,10 +47,12 @@ export default function flex_Wrap_FlexSizeTest() {
       console.info("flex_Wrap_FlexSizeTest after each called");
     });
     /**
+     * @tc.name   SUB_ACE_FLEXWRAP_WRAP_1100
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_1100
-     * @tc.name wrap_Wrap_FlexSize
-     * @tc.desc The size of the parent component in the main axis direction
-     *               meets the layout of the child components
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_FLEXWRAP_WRAP_1100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_FLEXWRAP_WRAP_1100] START');
@@ -94,10 +96,12 @@ export default function flex_Wrap_FlexSizeTest() {
 
     });
     /**
+     * @tc.name   SUB_ACE_FLEXWRAP_WRAP_1200
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_1200
-     * @tc.name wrap_Wrap_FlexSize
-     * @tc.desc The size of the parent component in the main axis direction
-     *               is not enough for the layout of the child components,and the cross axis meets
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_FLEXWRAP_WRAP_1200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_FLEXWRAP_WRAP_1200] START');
@@ -142,10 +146,12 @@ export default function flex_Wrap_FlexSizeTest() {
 
     });
     /**
+     * @tc.name   SUB_ACE_FLEXWRAP_WRAP_1300
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_1300
-     * @tc.name wrap_Wrap_FlexSize
-     * @tc.desc The size of the parent component in the main axis direction
-     *               is not enough for the layout of the child componentsand,and the cross axis as well
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_FLEXWRAP_WRAP_1300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_FLEXWRAP_WRAP_1300] START');

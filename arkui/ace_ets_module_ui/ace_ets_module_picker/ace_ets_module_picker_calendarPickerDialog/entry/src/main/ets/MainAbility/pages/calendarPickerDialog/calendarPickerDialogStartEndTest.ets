@@ -14,7 +14,7 @@
  */
 @Entry
 @Component
-struct CalendarPickerDialogExample {
+struct CalendarPickerDialogStartEndTestPage {
   build() {
     Column() {
       Button('Show CalendarPicker Dialog')

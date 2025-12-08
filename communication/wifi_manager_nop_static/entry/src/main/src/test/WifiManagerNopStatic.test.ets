@@ -27,7 +27,6 @@ export default function wifiManagerTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   enableWifiErrCode201Test
          * @tc.number enableWifiErrCode201Test
          * @tc.desc   Test enableWifiErrCode201Test API functionality
@@ -53,7 +52,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   disableWifiErrCode201Test
          * @tc.number disableWifiErrCode201Test
          * @tc.desc   Test disableWifiErrCode201Test API functionality
@@ -79,7 +77,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   isConnectedErrCode201Test
          * @tc.number isConnectedErrCode201Test
          * @tc.desc   Test isConnectedErrCode201Test API functionality
@@ -106,7 +103,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getIpInfoErrCode201Test
          * @tc.number getIpInfoErrCode201Test
          * @tc.desc   Test getIpInfoErrCode201Test API functionality
@@ -133,7 +129,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getScanInfoListErrCode201Test
          * @tc.number getScanInfoListErrCode201Test
          * @tc.desc   Test getScanInfoListErrCode201Test API functionality
@@ -160,7 +155,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   isMeteredHotspotErrCode201Test
          * @tc.number isMeteredHotspotErrCode201Test
          * @tc.desc   Test isMeteredHotspotErrCode201Test API functionality
@@ -187,7 +181,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getIpv6InfoErrCode201Test
          * @tc.number getIpv6InfoErrCode201Test
          * @tc.desc   Test getIpv6InfoErrCode201Test API functionality
@@ -214,7 +207,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getSignalLevelErrCode201Test
          * @tc.number getSignalLevelErrCode201Test
          * @tc.desc   Test getSignalLevelErrCode201Test API functionality
@@ -240,7 +232,6 @@ export default function wifiManagerTest() {
             done();
         })
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getLinkedInfoPromise201Test
          * @tc.number getLinkedInfoPromise201Test
          * @tc.desc   Test getLinkedInfoPromise201Test API functionality
@@ -266,7 +257,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getLinkedInfoCallback201Test
          * @tc.number getLinkedInfoCallback201Test
          * @tc.desc   Test getLinkedInfoCallback201Test API functionality
@@ -301,7 +291,6 @@ export default function wifiManagerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getLinkedInfoSync201Test
          * @tc.number getLinkedInfoSync201Test
          * @tc.desc   Test getLinkedInfoSync201Test API functionality

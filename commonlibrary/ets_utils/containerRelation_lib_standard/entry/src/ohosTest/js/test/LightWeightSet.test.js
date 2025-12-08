@@ -18,8 +18,12 @@ export default function LightWeightSetTest() {
 describe("LightWeightSetTest", function () {
               
   /**
-   * @tc.name: testConstructor001
-   * @tc.desc: Create an LightWeightSet instance. For example: let lightWeightSet = new LightWeightSet().
+   * @tc.name   testConstructor001
+   * @tc.number testConstructor001
+   * @tc.desc   Create an LightWeightSet instance. For example: let lightWeightSet = new LightWeightSet().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testConstructor001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     try {
@@ -33,8 +37,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd002
-   * @tc.desc: Add element to LightWeightSet instance. For example: lightWeightSet.add(1).
+   * @tc.name   testAdd002
+   * @tc.number testAdd002
+   * @tc.desc   Add element to LightWeightSet instance. For example: lightWeightSet.add(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -44,8 +52,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd003
-   * @tc.desc: Add element to LightWeightSet instance. For example: lightWeightSet.add("a").
+   * @tc.name   testAdd003
+   * @tc.number testAdd003
+   * @tc.desc   Add element to LightWeightSet instance. For example: lightWeightSet.add("a").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -55,9 +67,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd004
-   * @tc.desc: Add element to LightWeightSet instance. 
-   * For example: let a = [1, 2, 3, 4]; lightWeightSet.add(a).
+   * @tc.name   testAdd004
+   * @tc.number testAdd004
+   * @tc.desc   Add element to LightWeightSet instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -68,9 +83,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd005
-   * @tc.desc: Add element to LightWeightSet instance. 
-   * For example: let a = {name: "lili", age: "13"}; lightWeightSet.add(a).
+   * @tc.name   testAdd005
+   * @tc.number testAdd005
+   * @tc.desc   Add element to LightWeightSet instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -81,8 +99,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd006
-   * @tc.desc: Add element to LightWeightSet instance. For example: let c = false; lightWeightSet.add(c).
+   * @tc.name   testAdd006
+   * @tc.number testAdd006
+   * @tc.desc   Add element to LightWeightSet instance. For example: let c = false; lightWeightSet.add(c).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -93,8 +115,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testLength007
-   * @tc.desc: Get the number of element in the LightWeightSet instance. For example: lightWeightSet.length.
+   * @tc.name   testLength007
+   * @tc.number testLength007
+   * @tc.desc   Get the number of element in the LightWeightSet instance. For example: lightWeightSet.length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testLength007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -108,8 +134,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAddAll008
-   * @tc.desc: Copy all element from one LightWeightSet to another.
+   * @tc.name   testAddAll008
+   * @tc.number testAddAll008
+   * @tc.desc   Copy all element from one LightWeightSet to another.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAddAll008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -135,8 +165,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testHasAll009
-   * @tc.desc: Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.name   testHasAll009
+   * @tc.number testHasAll009
+   * @tc.desc   Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testHasAll009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -153,8 +187,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testHasAll010
-   * @tc.desc: Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.name   testHasAll010
+   * @tc.number testHasAll010
+   * @tc.desc   Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testHasAll010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -170,8 +208,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testHas011
-   * @tc.desc: Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.name   testHas011
+   * @tc.number testHas011
+   * @tc.desc   Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testHas011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -187,8 +229,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testEntries012
-   * @tc.desc: Get all key value pairs collection in lightWeightSet.
+   * @tc.name   testEntries012
+   * @tc.number testEntries012
+   * @tc.desc   Get all key value pairs collection in lightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testEntries012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -206,8 +252,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testGetIndexOf013
-   * @tc.desc: Get the index according to the specified element. For example: lightWeightSet.getIndexOf(2).
+   * @tc.name   testGetIndexOf013
+   * @tc.number testGetIndexOf013
+   * @tc.desc   Get the index according to the specified element. For example: lightWeightSet.getIndexOf(2).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetIndexOf013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -221,8 +271,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testIsEmpty014
-   * @tc.desc: Determine whether the lightWeightSet instance is empty. For example: lightWeightSet.isEmpty().
+   * @tc.name   testIsEmpty014
+   * @tc.number testIsEmpty014
+   * @tc.desc   Determine whether the lightWeightSet instance is empty. For example: lightWeightSet.isEmpty().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testIsEmpty014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -236,8 +290,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testRemove015
-   * @tc.desc: Delete elements according to key. For example: lightWeightMap.remove(1).
+   * @tc.name   testRemove015
+   * @tc.number testRemove015
+   * @tc.desc   Delete elements according to key. For example: lightWeightMap.remove(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemove015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -259,8 +317,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testRemoveAt016
-   * @tc.desc: Delete elements according to index. For example: lightWeightSet.removeAt(1).
+   * @tc.name   testRemoveAt016
+   * @tc.number testRemoveAt016
+   * @tc.desc   Delete elements according to index. For example: lightWeightSet.removeAt(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemoveAt016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -282,8 +344,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testClear017
-   * @tc.desc: Clear all elements in LightWeightSet. For example: lightWeightSet.clear().
+   * @tc.name   testClear017
+   * @tc.number testClear017
+   * @tc.desc   Clear all elements in LightWeightSet. For example: lightWeightSet.clear().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testClear017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -298,8 +364,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testForEach018
-   * @tc.desc: Traverse all elements in the LightWeightSet instance.
+   * @tc.name   testForEach018
+   * @tc.number testForEach018
+   * @tc.desc   Traverse all elements in the LightWeightSet instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testForEach018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let lightWeightSet = new LightWeightSet();
@@ -319,9 +389,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testToString019
-   * @tc.desc: Use "," to splice the elements in the LightWeightSet instance into a string. 
-   * For example: lightWeightSet.toString().
+   * @tc.name   testToString019
+   * @tc.number testToString019
+   * @tc.desc   Use "," to splice the elements in the LightWeightSet instance into a string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testToString019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -333,8 +406,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testToArray020
-   * @tc.desc: Convert an lightWeightSet instance to an array. For example: lightWeightSet.toArray().
+   * @tc.name   testToArray020
+   * @tc.number testToArray020
+   * @tc.desc   Convert an lightWeightSet instance to an array. For example: lightWeightSet.toArray().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testToArray020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -351,8 +428,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testGetValueAt021
-   * @tc.desc:  Get the element according to the corresponding index. For example: lightWeightSet.getValueAt(1).
+   * @tc.name   testGetValueAt021
+   * @tc.number testGetValueAt021
+   * @tc.desc   Get the element according to the corresponding index. For example: lightWeightSet.getValueAt(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGetValueAt021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -366,8 +447,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testIterator022
-   * @tc.desc: Iterate over all elements in the LightWeightSet.
+   * @tc.name   testIterator022
+   * @tc.number testIterator022
+   * @tc.desc   Iterate over all elements in the LightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIterator022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -387,8 +472,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testValues023
-   * @tc.desc: Get a collection of all the values in the LightWeightSet. For example: lightWeightSet.values().
+   * @tc.name   testValues023
+   * @tc.number testValues023
+   * @tc.desc   Get a collection of all the values in the LightWeightSet. For example: lightWeightSet.values().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testValues023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -406,8 +495,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd024
-   * @tc.desc: Add element to LightWeightSet instance. For example: lightWeightSet.add(null).
+   * @tc.name   testAdd024
+   * @tc.number testAdd024
+   * @tc.desc   Add element to LightWeightSet instance. For example: lightWeightSet.add(null).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -417,8 +510,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd025
-   * @tc.desc: Add element to LightWeightSet instance. For example: lightWeightSet.add(1.23).
+   * @tc.name   testAdd025
+   * @tc.number testAdd025
+   * @tc.desc   Add element to LightWeightSet instance. For example: lightWeightSet.add(1.23).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -428,8 +525,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testHasAll026
-   * @tc.desc: Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.name   testHasAll026
+   * @tc.number testHasAll026
+   * @tc.desc   Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testHasAll026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -446,8 +547,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testHasAll027
-   * @tc.desc: Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.name   testHasAll027
+   * @tc.number testHasAll027
+   * @tc.desc   Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testHasAll027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -464,8 +569,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testRemove028
-   * @tc.desc: Delete elements according to key. For example: lightWeightMap.remove(3).
+   * @tc.name   testRemove028
+   * @tc.number testRemove028
+   * @tc.desc   Delete elements according to key. For example: lightWeightMap.remove(3).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemove028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -474,8 +583,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testRemoveAt029
-   * @tc.desc: Delete elements according to index. For example: lightWeightSet.removeAt(1).
+   * @tc.name   testRemoveAt029
+   * @tc.number testRemoveAt029
+   * @tc.desc   Delete elements according to index. For example: lightWeightSet.removeAt(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveAt029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -484,9 +597,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testIncreaseCapacityTo030
-   * @tc.desc: Expand the LightWeightSet capacity to the specified value. 
-   * For example: lightWeightSet.increaseCapacityTo(3).
+   * @tc.name   testIncreaseCapacityTo030
+   * @tc.number testIncreaseCapacityTo030
+   * @tc.desc   Expand the LightWeightSet capacity to the specified value.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIncreaseCapacityTo030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -506,9 +622,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testIncreaseCapacityTo031
-   * @tc.desc: Expand the LightWeightSet capacity to the specified value. 
-   * For example: lightWeightSet.increaseCapacityTo("qwe").
+   * @tc.name   testIncreaseCapacityTo031
+   * @tc.number testIncreaseCapacityTo031
+   * @tc.desc   Expand the LightWeightSet capacity to the specified value.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIncreaseCapacityTo031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -528,8 +647,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testRemoveAt032
-   * @tc.desc: Delete elements according to index. For example: lightWeightSet.removeAt("a").
+   * @tc.name   testRemoveAt032
+   * @tc.number testRemoveAt032
+   * @tc.desc   Delete elements according to index. For example: lightWeightSet.removeAt("a").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveAt032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -544,9 +667,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testIncreaseCapacityTo033
-   * @tc.desc: Expand the LightWeightSet capacity to the specified value. 
-   * For example: lightWeightSet.increaseCapacityTo(20).
+   * @tc.name   testIncreaseCapacityTo033
+   * @tc.number testIncreaseCapacityTo033
+   * @tc.desc   Expand the LightWeightSet capacity to the specified value.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIncreaseCapacityTo033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -560,8 +686,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testGetValueAt034
-   * @tc.desc: Get the element according to the corresponding index. For example: lightWeightSet.getValueAt("a").
+   * @tc.name   testGetValueAt034
+   * @tc.number testGetValueAt034
+   * @tc.desc   Get the element according to the corresponding index. For example: lightWeightSet.getValueAt("a").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGetValueAt034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -581,8 +711,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testIsEmpty035
-   * @tc.desc: Determine whether the lightWeightSet instance is empty. For example: lightWeightSet.isEmpty().
+   * @tc.name   testIsEmpty035
+   * @tc.number testIsEmpty035
+   * @tc.desc   Determine whether the lightWeightSet instance is empty. For example: lightWeightSet.isEmpty().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIsEmpty035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -597,8 +731,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd036
-   * @tc.desc: Add element to LightWeightSet instance.
+   * @tc.name   testAdd036
+   * @tc.number testAdd036
+   * @tc.desc   Add element to LightWeightSet instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -612,8 +750,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd037
-   * @tc.desc: Add element to LightWeightSet instance. For example: lightWeightSet.add("").
+   * @tc.name   testAdd037
+   * @tc.number testAdd037
+   * @tc.desc   Add element to LightWeightSet instance. For example: lightWeightSet.add("").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -623,8 +765,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testAdd038
-   * @tc.desc: Add element to LightWeightSet instance. For example: lightWeightSet.add("$").
+   * @tc.name   testAdd038
+   * @tc.number testAdd038
+   * @tc.desc   Add element to LightWeightSet instance. For example: lightWeightSet.add("$").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -634,8 +780,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testClear039
-   * @tc.desc: Clear all elements in LightWeightSet. For example: lightWeightSet.clear().
+   * @tc.name   testClear039
+   * @tc.number testClear039
+   * @tc.desc   Clear all elements in LightWeightSet. For example: lightWeightSet.clear().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testClear039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -652,8 +802,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testRemove040
-   * @tc.desc: Delete elements according to key. For example: lightWeightMap.remove("A").
+   * @tc.name   testRemove040
+   * @tc.number testRemove040
+   * @tc.desc   Delete elements according to key. For example: lightWeightMap.remove("A").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemove040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -667,8 +821,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testIterator41
-   * @tc.desc: Iterate over all elements in the LightWeightSet.
+   * @tc.name   testIterator41
+   * @tc.number testIterator41
+   * @tc.desc   Iterate over all elements in the LightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIterator41", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -691,8 +849,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testEqual42
-   * @tc.desc: Compare lightweightmap and specified object for equality. For example: lightWeightSet.equal(obj).
+   * @tc.name   testEqual42
+   * @tc.number testEqual42
+   * @tc.desc   Compare lightweightmap and specified object for equality. For example: lightWeightSet.equal(obj).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testEqual42", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -705,8 +867,12 @@ describe("LightWeightSetTest", function () {
   });
               
   /**
-   * @tc.name: testEqual43
-   * @tc.desc: Compare lightweightmap and specified object for equality. For example: lightWeightSet.equal(obj).
+   * @tc.name   testEqual43
+   * @tc.number testEqual43
+   * @tc.desc   Compare lightweightmap and specified object for equality. For example: lightWeightSet.equal(obj).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testEqual43", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -719,8 +885,12 @@ describe("LightWeightSetTest", function () {
   });
 
   /**
-   * @tc.name: testAddAll044
-   * @tc.desc: Copy all element from one LightWeightSet to another.
+   * @tc.name   testAddAll044
+   * @tc.number testAddAll044
+   * @tc.desc   Copy all element from one LightWeightSet to another.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAddAll044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -738,8 +908,12 @@ describe("LightWeightSetTest", function () {
   });
 
   /**
-   * @tc.name: testHasAll045
-   * @tc.desc: Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.name   testHasAll045
+   * @tc.number testHasAll045
+   * @tc.desc   Judge whether a lightWeightSet contains all elements in another lightWeightSet.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testHasAll045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();
@@ -757,12 +931,12 @@ describe("LightWeightSetTest", function () {
   });
 
   /**
-   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTSET_01000
-   * @tc.name: testEntries046
-   * @tc.desc: Iterate over all elements of the LightWeightSet instance. For example: LightWeightSet.entries().
-   * @tc.size: MediumTest
-   * @tc.type: Function
-   * @tc.level: Level 2
+   * @tc.name   testEntries046
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTSET_01000
+   * @tc.desc   Iterate over all elements of the LightWeightSet instance. For example: LightWeightSet.entries().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testEntries046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let lightWeightSet = new LightWeightSet();

@@ -66,13 +66,13 @@ class DrawingNativeCanvasPart5Test : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4800
- * @tc.name: testCanvasQuickRejectPathNull
- * @tc.desc: test for testCanvasQuickRejectPathNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasQuickRejectPathNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4800
+ * @tc.desc   test for testCanvasQuickRejectPathNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectPathNull, Function | SmallTest | Level3)
 {
@@ -101,13 +101,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectPathNull, Function |
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4801
- * @tc.name: testCanvasQuickRejectPathNormal
- * @tc.desc: test for testCanvasQuickRejectPathNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testCanvasQuickRejectPathNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4801
+ * @tc.desc   test for testCanvasQuickRejectPathNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectPathNormal, Function | SmallTest | Level1)
 {
@@ -142,13 +142,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectPathNormal, Function
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4802
- * @tc.name: testCanvasQuickRejectPathCalls
- * @tc.desc: test for testCanvasQuickRejectPathCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testCanvasQuickRejectPathCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4802
+ * @tc.desc   test for testCanvasQuickRejectPathCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectPathCalls, Function | SmallTest | Level2)
 {
@@ -173,13 +173,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectPathCalls, Function 
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4900
- * @tc.name: testCanvasQuickRejectRectNull
- * @tc.desc: test for testCanvasQuickRejectRectNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasQuickRejectRectNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4900
+ * @tc.desc   test for testCanvasQuickRejectRectNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectRectNull, Function | SmallTest | Level3)
 {
@@ -208,13 +208,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectRectNull, Function |
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4901
- * @tc.name: testCanvasQuickRejectRectNormal
- * @tc.desc: test for testCanvasQuickRejectRectNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testCanvasQuickRejectRectNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4901
+ * @tc.desc   test for testCanvasQuickRejectRectNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectRectNormal, Function | SmallTest | Level1)
 {
@@ -248,13 +248,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectRectNormal, Function
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4902
- * @tc.name: testCanvasQuickRejectRectCalls
- * @tc.desc: test for testCanvasQuickRejectRectCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testCanvasQuickRejectRectCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_4902
+ * @tc.desc   test for testCanvasQuickRejectRectCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectRectCalls, Function | SmallTest | Level2)
 {
@@ -274,13 +274,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasQuickRejectRectCalls, Function 
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5000
- * @tc.name: testCanvasDrawArcWithCenterNull
- * @tc.desc: test for testCanvasDrawArcWithCenterNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawArcWithCenterNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5000
+ * @tc.desc   test for testCanvasDrawArcWithCenterNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawArcWithCenterNull, Function | SmallTest | Level3)
 {
@@ -302,13 +302,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawArcWithCenterNull, Function
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5001
- * @tc.name: testCanvasDrawArcWithCenterNormal
- * @tc.desc: test for testCanvasDrawArcWithCenterNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testCanvasDrawArcWithCenterNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5001
+ * @tc.desc   test for testCanvasDrawArcWithCenterNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawArcWithCenterNormal, Function | SmallTest | Level1)
 {
@@ -340,13 +340,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawArcWithCenterNormal, Functi
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5002
- * @tc.name: testCanvasDrawArcWithCenterCalls
- * @tc.desc: test for testCanvasDrawArcWithCenterCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testCanvasDrawArcWithCenterCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5002
+ * @tc.desc   test for testCanvasDrawArcWithCenterCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawArcWithCenterCalls, Function | SmallTest | Level2)
 {
@@ -364,13 +364,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawArcWithCenterCalls, Functio
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5100
- * @tc.name: testCanvasDrawNestedRoundRectNull
- * @tc.desc: test for testCanvasDrawNestedRoundRectNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawNestedRoundRectNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5100
+ * @tc.desc   test for testCanvasDrawNestedRoundRectNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawNestedRoundRectNull, Function | SmallTest | Level3)
 {
@@ -400,13 +400,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawNestedRoundRectNull, Functi
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5101
- * @tc.name: testCanvasDrawNestedRoundRectNormal
- * @tc.desc: test for testCanvasDrawNestedRoundRectNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testCanvasDrawNestedRoundRectNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5101
+ * @tc.desc   test for testCanvasDrawNestedRoundRectNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawNestedRoundRectNormal, Function | SmallTest | Level1)
 {
@@ -436,13 +436,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawNestedRoundRectNormal, Func
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5102
- * @tc.name: testCanvasDrawNestedRoundRectCalls
- * @tc.desc: test for testCanvasDrawNestedRoundRectCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testCanvasDrawNestedRoundRectCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5102
+ * @tc.desc   test for testCanvasDrawNestedRoundRectCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawNestedRoundRectCalls, Function | SmallTest | Level2)
 {
@@ -466,13 +466,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawNestedRoundRectCalls, Funct
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5200
- * @tc.name: testCanvasDrawPixelMapNineNull
- * @tc.desc: test for testCanvasDrawPixelMapNineNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapNineNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5200
+ * @tc.desc   test for testCanvasDrawPixelMapNineNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapNineNull, Function | SmallTest | Level3)
 {
@@ -527,13 +527,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapNineNull, Function 
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5201
- * @tc.name: testCanvasDrawPixelMapNineNormal
- * @tc.desc: test for testCanvasDrawPixelMapNineNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testCanvasDrawPixelMapNineNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5201
+ * @tc.desc   test for testCanvasDrawPixelMapNineNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapNineNormal, Function | SmallTest | Level1)
 {
@@ -582,13 +582,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapNineNormal, Functio
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5202
- * @tc.name: testCanvasDrawPixelMapNineCalls
- * @tc.desc: test for testCanvasDrawPixelMapNineCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testCanvasDrawPixelMapNineCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5202
+ * @tc.desc   test for testCanvasDrawPixelMapNineCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapNineCalls, Function | SmallTest | Level2)
 {
@@ -639,13 +639,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapNineCalls, Function
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5300
- * @tc.name: testCanvasCreateWithPixelMapNormal
- * @tc.desc: test for testCanvasCreateWithPixelMapNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testCanvasCreateWithPixelMapNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5300
+ * @tc.desc   test for testCanvasCreateWithPixelMapNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasCreateWithPixelMapNormal, Function | SmallTest | Level2)
 {
@@ -681,13 +681,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasCreateWithPixelMapNormal, Funct
     free(bitmapAddr);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5301
- * @tc.name: testCanvasCreateWithPixelMapNull
- * @tc.desc: test for testCanvasCreateWithPixelMapNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasCreateWithPixelMapNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5301
+ * @tc.desc   test for testCanvasCreateWithPixelMapNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasCreateWithPixelMapNull, Function | SmallTest | Level3)
 {
@@ -723,13 +723,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasCreateWithPixelMapNull, Functio
     free(bitmapAddr);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5302
- * @tc.name: testCanvasCreateWithPixelMapMultipleCalls
- * @tc.desc: test for testCanvasCreateWithPixelMapMultipleCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasCreateWithPixelMapMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5302
+ * @tc.desc   test for testCanvasCreateWithPixelMapMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasCreateWithPixelMapMultipleCalls, Function | SmallTest | Level3)
 {
@@ -767,13 +767,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasCreateWithPixelMapMultipleCalls
     free(bitmapAddr);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5400
- * @tc.name: testCanvasDrawPixelMapRectConstraintNormal
- * @tc.desc: test for testCanvasDrawPixelMapRectConstraintNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testCanvasDrawPixelMapRectConstraintNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5400
+ * @tc.desc   test for testCanvasDrawPixelMapRectConstraintNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintNormal, Function | SmallTest | Level2)
 {
@@ -820,13 +820,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintNorma
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5401
- * @tc.name: testCanvasDrawPixelMapRectConstraintNull
- * @tc.desc: test for testCanvasDrawPixelMapRectConstraintNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapRectConstraintNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5401
+ * @tc.desc   test for testCanvasDrawPixelMapRectConstraintNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintNull, Function | SmallTest | Level3)
 {
@@ -879,13 +879,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintNull,
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5402
- * @tc.name: testCanvasDrawPixelMapRectConstraintAbnormal
- * @tc.desc: test for testCanvasDrawPixelMapRectConstraintAbnormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapRectConstraintAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5402
+ * @tc.desc   test for testCanvasDrawPixelMapRectConstraintAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintAbnormal, Function | SmallTest | Level3)
 {
@@ -932,13 +932,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintAbnor
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5403
- * @tc.name: testCanvasDrawPixelMapRectConstraintMultiCalls
- * @tc.desc: test for testCanvasDrawPixelMapRectConstraintMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapRectConstraintMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5403
+ * @tc.desc   test for testCanvasDrawPixelMapRectConstraintMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintMultiCalls, Function | SmallTest | Level3)
 {
@@ -987,13 +987,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintMulti
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5500
- * @tc.name: testCanvasDrawPixelMapMeshNormal
- * @tc.desc: test for testCanvasDrawPixelMapMeshNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5500
+ * @tc.desc   test for testCanvasDrawPixelMapMeshNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNormal, Function | SmallTest | Level0)
 {
@@ -1044,13 +1044,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNormal, Functio
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5501
- * @tc.name: testCanvasDrawPixelMapMeshNull01
- * @tc.desc: test for testCanvasDrawPixelMapMeshNull01
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshNull01
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5501
+ * @tc.desc   test for testCanvasDrawPixelMapMeshNull01
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull01, Function | SmallTest | Level3)
 {
@@ -1106,13 +1106,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull01, Functio
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5502
- * @tc.name: testCanvasDrawPixelMapMeshNull02
- * @tc.desc: test for testCanvasDrawPixelMapMeshNull02
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshNull02
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5502
+ * @tc.desc   test for testCanvasDrawPixelMapMeshNull02
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull02, Function | SmallTest | Level3)
 {
@@ -1168,13 +1168,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull02, Functio
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5503
- * @tc.name: testCanvasDrawPixelMapMeshNull03
- * @tc.desc: test for testCanvasDrawPixelMapMeshNull03
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshNull03
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5503
+ * @tc.desc   test for testCanvasDrawPixelMapMeshNull03
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull03, Function | SmallTest | Level3)
 {
@@ -1230,13 +1230,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull03, Functio
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5504
- * @tc.name: testCanvasDrawPixelMapMeshNull04
- * @tc.desc: test for testCanvasDrawPixelMapMeshNull04
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshNull04
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5504
+ * @tc.desc   test for testCanvasDrawPixelMapMeshNull04
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull04, Function | SmallTest | Level3)
 {
@@ -1283,13 +1283,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull04, Functio
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5505
- * @tc.name: testCanvasDrawPixelMapMeshBindAndUnbind
- * @tc.desc: test for testCanvasDrawPixelMapMeshBindAndUnbind
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshBindAndUnbind
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5505
+ * @tc.desc   test for testCanvasDrawPixelMapMeshBindAndUnbind
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshBindAndUnbind, Function | SmallTest | Level3)
 {
@@ -1340,13 +1340,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshBindAndUnbind, 
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5506
- * @tc.name: testCanvasDrawPixelMapMeshAbnormal01
- * @tc.desc: test for testCanvasDrawPixelMapMeshAbnormal01
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshAbnormal01
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5506
+ * @tc.desc   test for testCanvasDrawPixelMapMeshAbnormal01
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal01, Function | SmallTest | Level3)
 {
@@ -1397,13 +1397,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal01, Fun
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5507
- * @tc.name: testCanvasDrawPixelMapMeshAbnormal02
- * @tc.desc: test for testCanvasDrawPixelMapMeshAbnormal02
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshAbnormal02
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5507
+ * @tc.desc   test for testCanvasDrawPixelMapMeshAbnormal02
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal02, Function | SmallTest | Level3)
 {
@@ -1454,13 +1454,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal02, Fun
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5508
- * @tc.name: testCanvasDrawPixelMapMeshAbnormal03
- * @tc.desc: test for testCanvasDrawPixelMapMeshAbnormal03
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshAbnormal03
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5508
+ * @tc.desc   test for testCanvasDrawPixelMapMeshAbnormal03
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal03, Function | SmallTest | Level3)
 {
@@ -1511,13 +1511,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal03, Fun
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5509
- * @tc.name: testCanvasDrawPixelMapMeshAbnormal04
- * @tc.desc: test for testCanvasDrawPixelMapMeshAbnormal04
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshAbnormal04
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5509
+ * @tc.desc   test for testCanvasDrawPixelMapMeshAbnormal04
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal04, Function | SmallTest | Level3)
 {
@@ -1568,13 +1568,13 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal04, Fun
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5510
- * @tc.name: testCanvasDrawPixelMapMeshMultipleCalls
- * @tc.desc: test for testCanvasDrawPixelMapMeshMultipleCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawPixelMapMeshMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_5510
+ * @tc.desc   test for testCanvasDrawPixelMapMeshMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshMultipleCalls, Function | SmallTest | Level3)
 {

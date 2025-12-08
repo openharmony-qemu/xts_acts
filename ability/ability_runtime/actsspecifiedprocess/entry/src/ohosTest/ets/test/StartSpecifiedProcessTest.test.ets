@@ -61,12 +61,12 @@ export default function StartSpecifiedProcessTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100
-     * @tc.desc      : The testcase is for testing promoteCurrentToCandidateMasterProcess failed and errcode is 16000115.
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100
+     * @tc.desc   The testcase is for testing promoteCurrentToCandidateMasterProcess failed and errcode is 16000115.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100';
@@ -112,12 +112,12 @@ export default function StartSpecifiedProcessTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200
-     * @tc.desc      : The testcase is for testing demoteCurrentFromCandidateMasterProcess failed and errcode is 16000117.         
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200
+     * @tc.desc   The testcase is for testing demoteCurrentFromCandidateMasterProcess failed and errcode is 16000117.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200';
@@ -163,12 +163,12 @@ export default function StartSpecifiedProcessTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300
-     * @tc.desc      : The testcase is for testing promoteCurrentToCandidateMasterProcess success.        
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300
+     * @tc.desc   The testcase is for testing promoteCurrentToCandidateMasterProcess success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300';
@@ -214,12 +214,12 @@ export default function StartSpecifiedProcessTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400
-     * @tc.desc      : The testcase is for testing demoteCurrentFromCandidateMasterProcess falied and errcode is 16000116.
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400
+     * @tc.desc   The testcase is for testing demoteCurrentFromCandidateMasterProcess falied and errcode is 16000116.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400';
@@ -265,12 +265,12 @@ export default function StartSpecifiedProcessTest() {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500
-     * @tc.name       SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500
-     * @tc.desc       The testcase is for testing exitMasterProcessRole falied and errcode is 16000118.
-     * @tc.level      Level 3
-     * @tc.size       MediumTest
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500
+     * @tc.desc   The testcase is for testing exitMasterProcessRole falied and errcode is 16000118.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500';
@@ -317,12 +317,12 @@ export default function StartSpecifiedProcessTest() {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600
-     * @tc.name       SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600
-     * @tc.desc       The testcase is for testing exitMasterProcessRole falied and errcode is 16000119.
-     * @tc.level      Level 3
-     * @tc.size       MediumTest
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600
+     * @tc.desc   The testcase is for testing exitMasterProcessRole falied and errcode is 16000119.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600';

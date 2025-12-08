@@ -40,13 +40,13 @@ export default function ratingStarStyle() {
     });
 
     /**
-    * @tc.number    RatingStarStyle_0100
-    * @tc.name      RatingStarStyle_0100
-    * @tc.desc      createRatingToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   RatingStarStyle_0100
+     * @tc.number RatingStarStyle_0100
+     * @tc.desc   createRatingToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RatingStarStyle_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'RatingStarStyle_0100';
       console.info('[' + tagName + '] START============================');
@@ -63,13 +63,13 @@ export default function ratingStarStyle() {
     });
 
     /**
-    * @tc.number    RatingStarStyle_0200
-    * @tc.name      RatingStarStyle_0200
-    * @tc.desc      createRatingToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   RatingStarStyle_0200
+     * @tc.number RatingStarStyle_0200
+     * @tc.desc   createRatingToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RatingStarStyle_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'RatingStarStyle_0200';
       console.info('[' + tagName + '] START============================');
@@ -86,13 +86,13 @@ export default function ratingStarStyle() {
     });
 
     /**
-    * @tc.number    RatingStarStyle_0300
-    * @tc.name      RatingStarStyle_0300
-    * @tc.desc      createRatingToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   RatingStarStyle_0300
+     * @tc.number RatingStarStyle_0300
+     * @tc.desc   createRatingToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RatingStarStyle_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'RatingStarStyle_0300';
       console.info('[' + tagName + '] START============================');
@@ -109,13 +109,13 @@ export default function ratingStarStyle() {
     });
 
     /**
-    * @tc.number    RatingStarStyle_0400
-    * @tc.name      RatingStarStyle_0400
-    * @tc.desc      createRatingToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   RatingStarStyle_0400
+     * @tc.number RatingStarStyle_0400
+     * @tc.desc   createRatingToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RatingStarStyle_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'RatingStarStyle_0400';
       console.info('[' + tagName + '] START============================');

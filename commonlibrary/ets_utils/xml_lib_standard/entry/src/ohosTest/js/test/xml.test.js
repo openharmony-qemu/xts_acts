@@ -19,12 +19,12 @@ export default function XmlSerializerXmlPullParserTest() {
 describe('XmlSerializerXmlPullParserTest', function () {
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00100
-     * @tc.name: testSetDeclaration001
-     * @tc.desc: Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetDeclaration001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00100
+     * @tc.desc   Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDeclaration001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var arrayBuffer = new ArrayBuffer(2048);
@@ -40,12 +40,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00200
-     * @tc.name: testSetDeclaration002
-     * @tc.desc: Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetDeclaration002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00200
+     * @tc.desc   Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDeclaration002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var arrayBuffer = new ArrayBuffer(2048);
@@ -61,12 +61,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00300
-     * @tc.name: testSetDeclaration003
-     * @tc.desc: Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetDeclaration003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00300
+     * @tc.desc   Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDeclaration003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var arrayBuffer = new ArrayBuffer(2048);
@@ -82,12 +82,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00400
-     * @tc.name: testSetDeclaration004
-     * @tc.desc: Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetDeclaration004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00400
+     * @tc.desc   Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDeclaration004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var arrayBuffer = new ArrayBuffer(2048);
@@ -103,12 +103,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00500
-     * @tc.name: testSetDeclaration005
-     * @tc.desc: Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetDeclaration005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00500
+     * @tc.desc   Writes xml declaration with encoding. For example: <?xml version="1.0" encoding="utf-8"?>.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDeclaration005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var arrayBuffer = new ArrayBuffer(2048);
@@ -124,12 +124,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00600
-     * @tc.name: testStartElement001
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStartElement001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00600
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartElement001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -147,12 +147,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00700
-     * @tc.name: testStartElement002
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStartElement002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00700
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartElement002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -172,12 +172,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00800
-     * @tc.name: testStartElement003
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStartElement003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00800
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartElement003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -197,12 +197,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00900
-     * @tc.name: testStartElement004
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStartElement004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00900
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartElement004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -224,12 +224,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01000
-     * @tc.name: testStartElement005
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStartElement005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01000
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartElement005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -251,12 +251,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01100
-     * @tc.name: testSetAttributes001
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetAttributes001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01100
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAttributes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -275,12 +275,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01200
-     * @tc.name: testSetAttributes002
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetAttributes002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01200
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAttributes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -300,12 +300,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01300
-     * @tc.name: testSetAttributes003
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetAttributes003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01300
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAttributes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -326,12 +326,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01400
-     * @tc.name: testSetAttributes004
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetAttributes004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01400
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAttributes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -353,12 +353,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01500
-     * @tc.name: testSetAttributes005
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetAttributes005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01500
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAttributes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -380,12 +380,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01600
-     * @tc.name: testEndElement001
-     * @tc.desc: Writes end tag of the element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testEndElement001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01600
+     * @tc.desc   Writes end tag of the element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEndElement001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -403,12 +403,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01700
-     * @tc.name: testEndElement002
-     * @tc.desc: Writes end tag of the element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testEndElement002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01700
+     * @tc.desc   Writes end tag of the element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEndElement002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -427,12 +427,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01800
-     * @tc.name: testEndElement003
-     * @tc.desc: Writes end tag of the element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testEndElement003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01800
+     * @tc.desc   Writes end tag of the element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEndElement003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -451,12 +451,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01900
-     * @tc.name: testEndElement004
-     * @tc.desc: Writes end tag of the element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testEndElement004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01900
+     * @tc.desc   Writes end tag of the element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEndElement004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -476,12 +476,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02000
-     * @tc.name: testEndElement005
-     * @tc.desc: Writes end tag of the element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testEndElement005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02000
+     * @tc.desc   Writes end tag of the element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEndElement005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -500,12 +500,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02100
-     * @tc.name: testSetText001
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetText001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02100
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetText001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -525,12 +525,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02200
-     * @tc.name: testSetText002
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetText002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02200
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetText002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -550,12 +550,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02300
-     * @tc.name: testSetText003
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSetText003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02300
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetText003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         const myMAX = 2048;
@@ -575,12 +575,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02400
-     * @tc.name: testSetText004
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02400
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -600,12 +600,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02500
-     * @tc.name: testSetText005
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02500
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -625,12 +625,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02600
-     * @tc.name: testAddEmptyElement001
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02600
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -649,12 +649,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02700
-     * @tc.name: testAddEmptyElement002
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02700
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -673,12 +673,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02800
-     * @tc.name: testAddEmptyElement003
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02800
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -697,12 +697,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02900
-     * @tc.name: testAddEmptyElement004
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02900
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -719,12 +719,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03000
-     * @tc.name: testAddEmptyElement005
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03000
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -744,12 +744,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03100
-     * @tc.name: testSetNamespace001
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03100
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -769,12 +769,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03200
-     * @tc.name: testSetNamespace002
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03200
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -794,12 +794,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03300
-     * @tc.name: testSetNamespace003
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03300
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -819,12 +819,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03400
-     * @tc.name: testSetNamespace004
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03400
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -847,12 +847,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03500
-     * @tc.name: testSetNamespace005
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03500
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -875,12 +875,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03600
-     * @tc.name: testSetComment001
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03600
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -899,12 +899,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03700
-     * @tc.name: testSetComment002
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03700
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -923,12 +923,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03800
-     * @tc.name: testSetComment003
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03800
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -945,12 +945,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03900
-     * @tc.name: testSetComment004
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03900
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -967,12 +967,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04000
-     * @tc.name: testSetComment005
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04000
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -991,12 +991,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04100
-     * @tc.name: testSetDocType001
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04100
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1013,12 +1013,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04200
-     * @tc.name: testSetDocType002
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04200
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1035,12 +1035,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04300
-     * @tc.name: testSetDocType003
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04300
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1059,12 +1059,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04400
-     * @tc.name: testSetDocType004
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04400
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1083,12 +1083,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04500
-     * @tc.name: testSetDocType005
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04500
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1107,12 +1107,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04600
-     * @tc.name: testSetCDATA001
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04600
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1129,12 +1129,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04700
-     * @tc.name: testSetCDATA002
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04700
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1151,12 +1151,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04800
-     * @tc.name: testSetCDATA003
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04800
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1175,12 +1175,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04900
-     * @tc.name: testSetCDATA004
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04900
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1199,12 +1199,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05000
-     * @tc.name: testSetCDATA005
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05000
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -1223,12 +1223,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05100
-     * @tc.name: testParse001
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05100
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var strXml =
@@ -1266,12 +1266,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05200
-     * @tc.name: testParse002
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05200
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var strXml =
@@ -1313,12 +1313,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05300
-     * @tc.name: testParse003
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05300
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1345,12 +1345,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05400
-     * @tc.name: testParse004
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05400
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1377,12 +1377,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05500
-     * @tc.name: testParse005
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05500
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1409,12 +1409,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05600
-     * @tc.name: testParse006
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05600
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1441,12 +1441,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05700
-     * @tc.name: testParse007
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05700
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1473,12 +1473,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05800
-     * @tc.name: testParse008
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05800
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1505,12 +1505,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05900
-     * @tc.name: testParse009
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05900
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1537,12 +1537,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06000
-     * @tc.name: testParse010
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06000
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1570,12 +1570,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06100
-     * @tc.name: testParse011
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06100
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1603,12 +1603,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06200
-     * @tc.name: testParse012
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06200
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1635,12 +1635,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06300
-     * @tc.name: testParse013
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06300
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1668,12 +1668,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06400
-     * @tc.name: testParse014
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06400
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1700,12 +1700,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06500
-     * @tc.name: testParse015
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParse015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06500
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1737,12 +1737,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06600
-     * @tc.name: testEventType001
-     * @tc.desc: Gets the START_DOCUMENT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06600
+     * @tc.desc   Gets the START_DOCUMENT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.START_DOCUMENT;
@@ -1750,12 +1750,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06700
-     * @tc.name: testEventType002
-     * @tc.desc: Gets the END_DOCUMENT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06700
+     * @tc.desc   Gets the END_DOCUMENT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.END_DOCUMENT;
@@ -1763,12 +1763,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06800
-     * @tc.name: testEventType003
-     * @tc.desc: Gets the START_TAG of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06800
+     * @tc.desc   Gets the START_TAG of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.START_TAG;
@@ -1776,12 +1776,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06900
-     * @tc.name: testEventType004
-     * @tc.desc: Gets the END_TAG of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06900
+     * @tc.desc   Gets the END_TAG of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.END_TAG;
@@ -1789,12 +1789,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07000
-     * @tc.name: testEventType005
-     * @tc.desc: Gets the TEXT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07000
+     * @tc.desc   Gets the TEXT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.TEXT;
@@ -1802,12 +1802,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07100
-     * @tc.name: testEventType006
-     * @tc.desc: Gets the CDSECT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07100
+     * @tc.desc   Gets the CDSECT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.CDSECT;
@@ -1815,12 +1815,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07200
-     * @tc.name: testEventType007
-     * @tc.desc: Gets the COMMENT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07200
+     * @tc.desc   Gets the COMMENT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.COMMENT;
@@ -1828,12 +1828,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07300
-     * @tc.name: testEventType008
-     * @tc.desc: Gets the DOCDECL of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07300
+     * @tc.desc   Gets the DOCDECL of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.DOCDECL;
@@ -1841,12 +1841,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07400
-     * @tc.name: testEventType009
-     * @tc.desc: Gets the INSTRUCTION of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07400
+     * @tc.desc   Gets the INSTRUCTION of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.INSTRUCTION;
@@ -1854,12 +1854,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07500
-     * @tc.name: testEventType010
-     * @tc.desc: Gets the ENTITY_REFERENCE of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07500
+     * @tc.desc   Gets the ENTITY_REFERENCE of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.ENTITY_REFERENCE;
@@ -1867,26 +1867,26 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07600
-     * @tc.name: testEventType011
-     * @tc.desc: Gets the WHITESPACE of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEventType011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07600
+     * @tc.desc   Gets the WHITESPACE of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEventType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var event = xml.EventType.WHITESPACE;
         expect(event).assertEqual(10)
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07700
-     * @tc.name: testXmlBusinessError001
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+     /**
+      * @tc.name   testXmlBusinessError001
+      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07700
+      * @tc.desc   To XML text to JavaScript object.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('testXmlBusinessError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             new xml.XmlSerializer(123,"utf-8");
@@ -1896,12 +1896,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07800
-     * @tc.name: testXmlBusinessError002
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07800
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -1913,12 +1913,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07900
-     * @tc.name: testXmlBusinessError003
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07900
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -1931,12 +1931,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08000
-     * @tc.name: testXmlBusinessError004
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08000
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -1950,12 +1950,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08100
-     * @tc.name: testXmlBusinessError005
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08100
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -1969,12 +1969,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08200
-     * @tc.name: testXmlBusinessError006
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08200
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -1989,12 +1989,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08300
-     * @tc.name: testXmlBusinessError007
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08300
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2008,12 +2008,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08400
-     * @tc.name: testXmlBusinessError008
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08400
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2027,12 +2027,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08500
-     * @tc.name: testXmlBusinessError009
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08500
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2046,12 +2046,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08600
-     * @tc.name: testXmlBusinessError010
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08600
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2065,12 +2065,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08700
-     * @tc.name: testXmlBusinessError011
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08700
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2083,12 +2083,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08800
-     * @tc.name: testXmlBusinessError012
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08800
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2101,12 +2101,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_08900
-     * @tc.name: testXmlBusinessError013
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_08900
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2117,12 +2117,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09000
-     * @tc.name: testXmlBusinessError014
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09000
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2134,12 +2134,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09100
-     * @tc.name: testXmlBusinessError015
-     * @tc.desc: To XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09100
+     * @tc.desc   To XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2179,12 +2179,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09200
-     * @tc.name: testXmlBusinessError016
-     * @tc.desc: Parsing XML files.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09200
+     * @tc.desc   Parsing XML files.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2207,12 +2207,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09300
-     * @tc.name: testXmlBusinessError017
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09300
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2228,12 +2228,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09400
-     * @tc.name: testSetText006
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09400
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2253,12 +2253,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09500
-     * @tc.name: testSetText007
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09500
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2278,12 +2278,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09600
-     * @tc.name: testSetText008
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09600
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2303,12 +2303,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09700
-     * @tc.name: testSetText009
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09700
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2328,12 +2328,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09800
-     * @tc.name: testSetText010
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09800
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2353,12 +2353,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_09900
-     * @tc.name: testNodeName001
-     * @tc.desc: Writes a wrong node name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNodeName001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_09900
+     * @tc.desc   Writes a wrong node name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2386,12 +2386,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10000
-     * @tc.name: testNodeName002
-     * @tc.desc: Writes a wrong node name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNodeName002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10000
+     * @tc.desc   Writes a wrong node name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2419,12 +2419,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10100
-     * @tc.name: testParseXml001
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10100
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2454,12 +2454,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10200
-     * @tc.name: testParseXml002
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10200
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2488,12 +2488,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10300
-     * @tc.name: testParseXml003
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10300
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2519,12 +2519,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10400
-     * @tc.name: testParseXml004
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10400
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2551,12 +2551,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10500
-     * @tc.name: testParseXml005
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10500
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2583,12 +2583,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10600
-     * @tc.name: testParseXml006
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10600
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2615,12 +2615,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10700
-     * @tc.name: testParseXml007
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10700
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2648,12 +2648,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10800
-     * @tc.name: testParseXml008
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10800
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2681,12 +2681,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_10900
-     * @tc.name: testParseXml009
-     * @tc.desc: Starts parsing he XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_10900
+     * @tc.desc   Starts parsing he XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2713,12 +2713,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11000
-     * @tc.name: testParseXml010
-     * @tc.desc: Starts parsing he XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11000
+     * @tc.desc   Starts parsing he XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2745,12 +2745,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11100
-     * @tc.name: testParseXml011
-     * @tc.desc: Starts parsing he XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11100
+     * @tc.desc   Starts parsing he XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2777,12 +2777,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11200
-     * @tc.name: testParseXml012
-     * @tc.desc: Starts parsing he XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11200
+     * @tc.desc   Starts parsing he XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2809,12 +2809,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11300
-     * @tc.name: testParseXml013
-     * @tc.desc: Starts parsing he XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11300
+     * @tc.desc   Starts parsing he XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -2848,12 +2848,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11400
-     * @tc.name: testSetAttributes006
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11400
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2873,12 +2873,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11500
-     * @tc.name: testSetAttributes007
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11500
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2898,12 +2898,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11600
-     * @tc.name: testSetAttributes008
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11600
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2923,12 +2923,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11700
-     * @tc.name: testSetAttributes009
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11700
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2948,12 +2948,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11800
-     * @tc.name: testSetAttributes010
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11800
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 1024;
@@ -2973,12 +2973,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_11900
-     * @tc.name: testSetCDATA006
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_11900
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -2997,12 +2997,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12000
-     * @tc.name: testSetCDATA007
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12000
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -3021,12 +3021,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12100
-     * @tc.name: testSetCDATA008
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12100
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -3045,12 +3045,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12200
-     * @tc.name: testSetCDATA009
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12200
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -3069,12 +3069,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12300
-     * @tc.name: testSetCDATA0010
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetCDATA0010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12300
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCDATA0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const myMAX = 2048;
@@ -3093,12 +3093,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12400
-     * @tc.name: testParseXml014
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12400
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3126,12 +3126,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12500
-     * @tc.name: testParseXml015
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12500
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3157,12 +3157,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12600
-     * @tc.name: testParseXml016
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12600
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3190,12 +3190,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12700
-     * @tc.name: testParseXml017
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12700
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3222,12 +3222,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12800
-     * @tc.name: testParseXml018
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12800
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3255,12 +3255,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_12900
-     * @tc.name: testParseXml019
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_12900
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3291,12 +3291,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_13000
-     * @tc.name: testParseXml020
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_13000
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3322,12 +3322,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_13100
-     * @tc.name: testParseXml021
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_13100
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3353,12 +3353,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_13200
-     * @tc.name: testParseXml022
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_13200
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -3380,12 +3380,12 @@ describe('XmlSerializerXmlPullParserTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_13300
-     * @tc.name: testParseXml023
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParseXml023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_13300
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParseXml023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =

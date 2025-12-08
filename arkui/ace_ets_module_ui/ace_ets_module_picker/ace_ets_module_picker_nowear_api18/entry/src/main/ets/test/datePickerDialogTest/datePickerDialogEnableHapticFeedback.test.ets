@@ -45,12 +45,12 @@ export default function EnableHapticFeedback() {
       console.info('EnableHapticFeedback after each called');
     });
     /**
-     * @tc.number    DatePickerDialog_EnableHapticFeedback_001
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   DatePickerDialog_EnableHapticFeedback_001
+     * @tc.number DatePickerDialog_EnableHapticFeedback_001
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DatePickerDialog_EnableHapticFeedback_001', Level.LEVEL1, async (done: Function) => {
       let tagName = 'DatePickerDialog_EnableHapticFeedback_001';
@@ -71,12 +71,12 @@ export default function EnableHapticFeedback() {
     });
 
     /**
-     * @tc.number    DatePickerDialog_EnableHapticFeedback_002
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   DatePickerDialog_EnableHapticFeedback_002
+     * @tc.number DatePickerDialog_EnableHapticFeedback_002
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DatePickerDialog_EnableHapticFeedback_002', Level.LEVEL1, async (done: Function) => {
       let tagName = 'DatePickerDialog_EnableHapticFeedback_002';
@@ -97,12 +97,12 @@ export default function EnableHapticFeedback() {
     });
 
     /**
-     * @tc.number    DatePickerDialog_EnableHapticFeedback_003
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   DatePickerDialog_EnableHapticFeedback_003
+     * @tc.number DatePickerDialog_EnableHapticFeedback_003
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DatePickerDialog_EnableHapticFeedback_003', Level.LEVEL1, async (done: Function) => {
       let tagName = 'DatePickerDialog_EnableHapticFeedback_003';
@@ -123,12 +123,12 @@ export default function EnableHapticFeedback() {
     });
     
     /**
-     * @tc.number    DatePickerDialog_EnableHapticFeedback_004
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   DatePickerDialog_EnableHapticFeedback_004
+     * @tc.number DatePickerDialog_EnableHapticFeedback_004
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DatePickerDialog_EnableHapticFeedback_004', Level.LEVEL1, async (done: Function) => {
       let tagName = 'DatePickerDialog_EnableHapticFeedback_004';

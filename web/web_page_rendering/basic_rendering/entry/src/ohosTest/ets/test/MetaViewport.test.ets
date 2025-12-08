@@ -53,28 +53,28 @@ export default function MetaViewport() {
       done();
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0100
-    * @tc.name       : testMetaViewport001
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport0100
+     * @tc.number Acts_metaViewport_0100
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0100", 150290)
       Utils.registerEvent("metaViewport0100", true, 150300, done);
       waitAndClickComponent("MetaViewport",driver);
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0200
-    * @tc.name       : testMetaViewport002
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport0200
+     * @tc.number Acts_metaViewport_0200
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0200", 150290)
       Utils.registerEvent("metaViewport0200", true, 150310, done);
@@ -82,41 +82,41 @@ export default function MetaViewport() {
 
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0300
-    * @tc.name       : testMetaViewport003
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport0300
+     * @tc.number Acts_metaViewport_0300
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0300", 150290)
       Utils.registerEvent("metaViewport0300", true, 150320, done);
       waitAndClickComponent("MetaViewport",driver);
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0400
-    * @tc.name       : testMetaViewport004
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport0400
+     * @tc.number Acts_metaViewport_0400
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0400", 150290)
       Utils.registerEvent("metaViewport0400", true, 150330, done);
       waitAndClickComponent("MetaViewport",driver);
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0500
-    * @tc.name       : testMetaViewport005
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
+   /**
+    * @tc.name   metaViewport0500
+    * @tc.number Acts_metaViewport_0500
+    * @tc.desc   test MetaViewport
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
     */
    it('metaViewport0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0500", 150290)
@@ -124,71 +124,70 @@ export default function MetaViewport() {
      waitAndClickComponent("MetaViewport",driver);
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0600
-    * @tc.name       : testMetaViewport006
-    *
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport0600
+     * @tc.number Acts_metaViewport_0600
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0600", 150290)
       Utils.registerEvent("metaViewport0600", true, 150350, done);
       waitAndClickComponent("MetaViewport",driver);
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0700
-    * @tc.name       : testMetaViewport007
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport0700
+     * @tc.number Acts_metaViewport_0700
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0700", 150290)
       Utils.registerEvent("metaViewport0700", true, 150360, done);
       waitAndClickComponent("MetaViewport",driver);
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0800
-    * @tc.name       : testMetaViewport008
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport0800
+     * @tc.number Acts_metaViewport_0800
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0800", 150290)
       Utils.registerEvent("metaViewport0800", true, 150370, done);
       waitAndClickComponent("MetaViewport",driver);
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_0900
-    * @tc.name       : testMetaViewport009
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport0900
+     * @tc.number Acts_metaViewport_0900
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0900", 150290)
       Utils.registerEvent("metaViewport0900", true, 150380, done);
       waitAndClickComponent("MetaViewport",driver);
     })
 
-    /*
-    * @tc.number     : Acts_metaViewport_1000
-    * @tc.name       : testMetaViewport010
-    * @tc.desc       : test MetaViewport
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   metaViewport1000
+     * @tc.number Acts_metaViewport_1000
+     * @tc.desc   test MetaViewport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('metaViewport1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport1000", 150290)
       Utils.registerEvent("metaViewport1000", true, 150390, done);

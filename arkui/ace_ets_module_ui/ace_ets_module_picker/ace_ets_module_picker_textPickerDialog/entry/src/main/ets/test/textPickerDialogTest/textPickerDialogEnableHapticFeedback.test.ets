@@ -43,12 +43,12 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number: TextPickerDialog_EnableHapticFeedback_001
-     * @tc.name  : TextPickerDialog_EnableHapticFeedback_001
-     * @tc.desc  : To test the enableHapticFeedback
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextPickerDialog_EnableHapticFeedback_001
+     * @tc.number TextPickerDialog_EnableHapticFeedback_001
+     * @tc.desc   To test the enableHapticFeedback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerDialog_EnableHapticFeedback_001', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TextPickerDialog_EnableHapticFeedback_001';
@@ -71,12 +71,12 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number: TextPickerDialog_EnableHapticFeedback_002
-     * @tc.name  : TextPickerDialog_EnableHapticFeedback_002
-     * @tc.desc  : To test the enableHapticFeedback
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextPickerDialog_EnableHapticFeedback_002
+     * @tc.number TextPickerDialog_EnableHapticFeedback_002
+     * @tc.desc   To test the enableHapticFeedback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerDialog_EnableHapticFeedback_002', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TextPickerDialog_EnableHapticFeedback_002';
@@ -99,12 +99,12 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number: TextPickerDialog_EnableHapticFeedback_003
-     * @tc.name  : TextPickerDialog_EnableHapticFeedback_003
-     * @tc.desc  : To test the enableHapticFeedback
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextPickerDialog_EnableHapticFeedback_003
+     * @tc.number TextPickerDialog_EnableHapticFeedback_003
+     * @tc.desc   To test the enableHapticFeedback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerDialog_EnableHapticFeedback_003', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TextPickerDialog_EnableHapticFeedback_003';
@@ -127,12 +127,12 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number: TextPickerDialog_EnableHapticFeedback_004
-     * @tc.name  : TextPickerDialog_EnableHapticFeedback_004
-     * @tc.desc  : To test the enableHapticFeedback
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextPickerDialog_EnableHapticFeedback_004
+     * @tc.number TextPickerDialog_EnableHapticFeedback_004
+     * @tc.desc   To test the enableHapticFeedback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerDialog_EnableHapticFeedback_004', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TextPickerDialog_EnableHapticFeedback_004';

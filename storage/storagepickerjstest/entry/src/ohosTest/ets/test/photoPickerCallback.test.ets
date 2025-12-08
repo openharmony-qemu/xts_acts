@@ -31,12 +31,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0000
-     * @tc.name   : test_Photopicker_Select_Callback_000
-     * @tc.desc   : select image
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Callback_000
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0000
+     * @tc.desc   select image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Callback_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Callback_000";
@@ -46,12 +46,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await selectWithOption(testNum, done, option, expectSelectNum);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0100
-     * @tc.name   : test_Photopicker_Select_Callback_001
-     * @tc.desc   : select video
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Callback_001
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0100
+     * @tc.desc   select video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Callback_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Callback_001";
@@ -61,12 +61,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await selectWithOption(testNum, done, option, expectSelectNum);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0200
-     * @tc.name   : test_Photopicker_Select_Callback_002
-     * @tc.desc   : select image&video
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Callback_002
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0200
+     * @tc.desc   select image&video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Callback_002", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Callback_002";
@@ -76,12 +76,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await selectWithOption(testNum, done, option, expectSelectNum);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0300
-     * @tc.name   : test_Photopicker_Select_Callback_003
-     * @tc.desc   : select image&video, singleSelect
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 0
+     * @tc.name   test_Photopicker_Select_Callback_003
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0300
+     * @tc.desc   select image&video, singleSelect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Callback_003", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Callback_003";
@@ -92,12 +92,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await selectWithOption(testNum, done, option, expectSelectNum);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0400
-     * @tc.name   : test_Photopicker_Select_Callback_004
-     * @tc.desc   : select image&video, multipleselect
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Photopicker_Select_Callback_004
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0400
+     * @tc.desc   select image&video, multipleselect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Callback_004", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Callback_004";
@@ -108,12 +108,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await selectWithOption(testNum, done, option, expectSelectNum);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0500
-     * @tc.name   : test_Photopicker_Select_Callback_005
-     * @tc.desc   : select image&video, default selectNum
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Callback_005
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0500
+     * @tc.desc   select image&video, default selectNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Callback_005", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Callback_005";
@@ -124,12 +124,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await selectWithOption(testNum, done, option, expectSelectNum);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0600
-     * @tc.name   : test_Photopicker_Select_Callback_006
-     * @tc.desc   : select without option
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Callback_006
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_CALLBACK_0600
+     * @tc.desc   select without option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Callback_006", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Callback_006";
@@ -138,12 +138,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await select(testNum, done, isSelectOriginal, expectSelectNum);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SAVE_CALLBACK_0000
-     * @tc.name   : test_Photopicker_Save_Callback_000
-     * @tc.desc   : save jpg in Pictures
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 0
+     * @tc.name   test_Photopicker_Save_Callback_000
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SAVE_CALLBACK_0000
+     * @tc.desc   save jpg in Pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Save_Callback_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Save_Callback_000";
@@ -153,12 +153,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await saveWithOption(testNum, done, option, saveDir);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SAVE_CALLBACK_0100
-     * @tc.name   : test_Photopicker_Save_Callback_001
-     * @tc.desc   : save mp4 in Videos
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Save_Callback_001
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SAVE_CALLBACK_0100
+     * @tc.desc   save mp4 in Videos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Save_Callback_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Save_Callback_001";
@@ -168,12 +168,12 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await saveWithOption(testNum, done, option, saveDir);
     });
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SAVE_CALLBACK_0200
-     * @tc.name   : test_Photopicker_Save_Callback_002
-     * @tc.desc   : save without option, cancel
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Save_Callback_002
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SAVE_CALLBACK_0200
+     * @tc.desc   save without option, cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Save_Callback_002", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Save_Callback_002";

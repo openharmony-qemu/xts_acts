@@ -82,7 +82,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0200
          * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0200
          * @tc.desc   The interception country code is changed.
@@ -101,7 +100,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0300
          * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0300
          * @tc.desc   The interception country code is changed.
@@ -121,7 +119,6 @@ export default function geolocationTest_6(){
     
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0201
          * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0201
          * @tc.desc   SUB_HSS_LocationSystem_CountryCodeErr_0201
@@ -146,7 +143,6 @@ export default function geolocationTest_6(){
         })
         
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0301
          * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0301
          * @tc.desc   SUB_HSS_LocationSystem_CountryCodeErr_0301
@@ -172,7 +168,6 @@ export default function geolocationTest_6(){
     
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0801
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0801
          * @tc.desc   SUB_HSS_LocationSystem_BatchingErr_0801
@@ -199,7 +194,6 @@ export default function geolocationTest_6(){
         })
         
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0901
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0901
          * @tc.desc   SUB_HSS_LocationSystem_BatchingErr_0901
@@ -227,7 +221,6 @@ export default function geolocationTest_6(){
     
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0800
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0800
          * @tc.desc   Subscribe to cache GNSS locations update messages.
@@ -261,7 +254,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0900
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0900
          * @tc.desc   Unsubscribe to cache GNSS locations update messages.
@@ -294,7 +286,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GnssErr_0100
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0100
          * @tc.desc   Subscribe satellite status changed.
@@ -327,7 +318,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GnssErr_0400
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0400
          * @tc.desc   Unsubscribe satellite status changed.
@@ -360,7 +350,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GnssErr_0200
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0200
          * @tc.desc   Subscribe location changed.
@@ -387,7 +376,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GnssErr_0500
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0500
          * @tc.desc   Unsubscribe location changed.
@@ -412,7 +400,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GnssErr_0300
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0300
          * @tc.desc   Subscribe nmea message changed.
@@ -444,7 +431,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GnssErr_0600
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0600
          * @tc.desc   Unsubscribe nmea message changed.
@@ -476,7 +462,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoFenceErr_0100
          * @tc.number SUB_HSS_LocationSystem_GeoFenceErr_0100
          * @tc.desc   Add a geofence and subscribe geo fence status changed.
@@ -519,7 +504,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoFenceErr_0200
          * @tc.number SUB_HSS_LocationSystem_GeoFenceErr_0200
          * @tc.desc   Remove a geofence and unsubscribe geo fence status changed.
@@ -561,7 +545,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_LocSwitchErr_0100
          * @tc.number SUB_HSS_LocationSystem_LocSwitchErr_0100
          * @tc.desc   Subscribe location switch changed.
@@ -585,7 +568,6 @@ export default function geolocationTest_6(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_LocSwitchErr_0200
          * @tc.number SUB_HSS_LocationSystem_LocSwitchErr_0100
          * @tc.desc   Unsubscribe location switch changed.

@@ -48,15 +48,15 @@ export default function MarqueeNodeTest() {
       console.info("MarqueeNode after each called");
     })
 
-    /**
-     * @tc.number marqueeNode0100
-     * @tc.name Test the FontWeight property of the Marquee component
-     * @tc.desc set the FontWeight property value is  700
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
 
+    /**
+     * @tc.name   marqueeNode0100
+     * @tc.number marqueeNode0100
+     * @tc.desc   marqueeNode0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('marqueeNode0100', Level.LEVEL0, async (done: Function) => {
       console.log('marqueeNode0100: test' + new Date().getTime())
         let tagName = 'marqueeNode0100';
@@ -74,15 +74,15 @@ export default function MarqueeNodeTest() {
         done();
     });
 
-    /**
-     * @tc.number marqueeNode0200
-     * @tc.name Test the MarqueeUpdateStrategy property of the Marquee component
-     * @tc.desc set the MarqueeUpdateStrategy property value is MarqueeUpdateStrategy.DEFAULT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
 
+    /**
+     * @tc.name   marqueeNode0200
+     * @tc.number marqueeNode0200
+     * @tc.desc   marqueeNode0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('marqueeNode0200', Level.LEVEL0, async (done: Function) => {
       let tagName = 'marqueeNode0200';
       console.info('[' + tagName + '] START============================');

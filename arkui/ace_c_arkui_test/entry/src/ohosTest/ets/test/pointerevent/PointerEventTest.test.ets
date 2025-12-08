@@ -26,13 +26,13 @@ export default function pointerEventTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POINTER_EVENT_0100
-     * @tc.name       : testPointerEvent001
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testPointerEvent001
+     * @tc.number SUB_ARKUI_CAPI_POINTER_EVENT_0100
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPointerEvent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testPointerEvent001()).assertEqual(0)

@@ -41,15 +41,15 @@ export default function MovingPhotoView() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_MovingPhotoView_0010
-     * @tc.name       : MovingPhotoView_001
-     * @tc.desc       : MovingPhotoView Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   MovingPhotoView_001
+     * @tc.number MovingPhotoView_001
+     * @tc.desc   MovingPhotoView_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('MovingPhotoView_001', Level.LEVEL3, async function (done) {
 
       console.info('[MovingPhotoView_001] START');
@@ -65,15 +65,15 @@ export default function MovingPhotoView() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_MovingPhotoView_0020
-     * @tc.name       : MovingPhotoView_002
-     * @tc.desc       : MovingPhotoView Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   MovingPhotoView_002
+     * @tc.number MovingPhotoView_002
+     * @tc.desc   MovingPhotoView_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('MovingPhotoView_002', Level.LEVEL3, async function (done) {
 
       console.info('[MovingPhotoView_002] START');

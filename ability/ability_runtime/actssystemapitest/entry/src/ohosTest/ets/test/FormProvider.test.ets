@@ -23,10 +23,12 @@ export default function formProviderTest() {
   describe('formProviderTest', () => {
 
     /**
-     * @tc.number: System_API_Test_Form_Provider_0100
-     * @tc.name: Multi-parameter requestPublishForm system interface interception test in the form of callback
-     * @tc.desc:  Test the third-party application call requestPublishForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Provider_0100
+     * @tc.number System_API_Test_Form_Provider_0100
+     * @tc.desc   Test the third-party application call requestPublishForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Provider_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Provider_0100';
@@ -56,10 +58,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Provider_0200
-     * @tc.name: Multi-parameter requestPublishForm system interface interception test in the form of promise
-     * @tc.desc:  Test the third-party application call requestPublishForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Provider_0200
+     * @tc.number System_API_Test_Form_Provider_0200
+     * @tc.desc   Test the third-party application call requestPublishForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Provider_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Provider_0200';
@@ -87,10 +91,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Provider_0300
-     * @tc.name: promise form requestPublishForm system interface interception test
-     * @tc.desc:  Test the third-party application call requestPublishForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Provider_0300
+     * @tc.number System_API_Test_Form_Provider_0300
+     * @tc.desc   Test the third-party application call requestPublishForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Provider_0300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Provider_0300';
@@ -118,10 +124,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Provider_0400
-     * @tc.name: callback form isRequestPublishFormSupported system interface interception test
-     * @tc.desc:  Test the third-party application call isRequestPublishFormSupported will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Provider_0400
+     * @tc.number System_API_Test_Form_Provider_0400
+     * @tc.desc   Test the third-party application call isRequestPublishFormSupported will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Provider_0400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Provider_0400';
@@ -141,10 +149,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Provider_0500
-     * @tc.name: promise form isRequestPublishFormSupported system interface interception test
-     * @tc.desc:  Test the third-party application call isRequestPublishFormSupported will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Provider_0500
+     * @tc.number System_API_Test_Form_Provider_0500
+     * @tc.desc   Test the third-party application call isRequestPublishFormSupported will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Provider_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Provider_0500';

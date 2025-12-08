@@ -57,12 +57,12 @@ export default function sendableCreateAlphaPixelmapSyncTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_CREATE_ALPHA_PIXEL_MAP_SYNC_001
-     * @tc.name      : createAlphaPixelMapSync_sendable_promise_001
-     * @tc.desc      : createAlphaPixelMapSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAlphaPixelMapSync_sendable_promise_001
+     * @tc.number PIXEL_MAP_CREATE_ALPHA_PIXEL_MAP_SYNC_001
+     * @tc.desc   createAlphaPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAlphaPixelMapSync_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAlphaPixelMapSync_sendable_promise_001';
@@ -72,12 +72,12 @@ export default function sendableCreateAlphaPixelmapSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CREATE_ALPHA_PIXEL_MAP_SYNC_002
-     * @tc.name      : createAlphaPixelMapSync_sendable_promise_002
-     * @tc.desc      : createAlphaPixelMapSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAlphaPixelMapSync_sendable_promise_002
+     * @tc.number PIXEL_MAP_CREATE_ALPHA_PIXEL_MAP_SYNC_002
+     * @tc.desc   createAlphaPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAlphaPixelMapSync_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAlphaPixelMapSync_sendable_promise_002';

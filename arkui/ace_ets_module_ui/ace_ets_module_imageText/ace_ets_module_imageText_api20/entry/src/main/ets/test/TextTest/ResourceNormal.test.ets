@@ -47,13 +47,13 @@ export default function ResourceNormalTest() {
       console.info("ResourceNormalTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         ResourceNormalTest_0010
-    * @tc.desic        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceNormalTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   ResourceNormalTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceNormalTest_0010', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -86,13 +86,13 @@ export default function ResourceNormalTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         ResourceNormalTest0002
-    * @tc.desic        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceNormalTest_0020
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   ResourceNormalTest_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceNormalTest_0020', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -129,13 +129,13 @@ export default function ResourceNormalTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         ResourceNormalTest_0030
-    * @tc.desic        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceNormalTest_0030
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   ResourceNormalTest_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceNormalTest_0030', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

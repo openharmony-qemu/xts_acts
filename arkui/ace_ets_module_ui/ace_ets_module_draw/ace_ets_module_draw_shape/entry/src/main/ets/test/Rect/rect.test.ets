@@ -45,12 +45,12 @@ export default function rectNeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testrectNe0001
-     * @tc.name: testrectNe0001
-     * @tc.desc: RectAPI 
-     * @tc.level: Level 0
-     * @tc.type : Rect
-     * @tc.size : RectTest
+     * @tc.name   testrectNe0001
+     * @tc.number SUB_ARKUI_API_testrectNe0001
+     * @tc.desc   RectAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testrectNe0001', Level.LEVEL0, async () => {
       console.info('rectNe testrectNe0001 START');
@@ -65,12 +65,12 @@ export default function rectNeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testrectNe0002
-     * @tc.name: testrectNe0002
-     * @tc.desc: RectAPI 
-     * @tc.level: Level 0
-     * @tc.type : Rect
-     * @tc.size : RectTest
+     * @tc.name   testrectNe0002
+     * @tc.number SUB_ARKUI_API_testrectNe0002
+     * @tc.desc   RectAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testrectNe0002', Level.LEVEL0, async () => {
       console.info('rectNe testrectNe0002 START');

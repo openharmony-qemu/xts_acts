@@ -43,6 +43,14 @@ export default function animateToTest() {
     afterEach(async () => {
       console.info("animate after each called");
     });
+    /**
+     * @tc.name   animateTest_0100
+     * @tc.number animateTest_0100
+     * @tc.desc   animateTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0100 START');
       let indexEvent: events_emitter.InnerEvent = {
@@ -67,6 +75,14 @@ export default function animateToTest() {
       console.info("animateTest_0100 click result is: " + JSON.stringify(sendEventByKey('button1', 10, "")));
     });
 
+    /**
+     * @tc.name   animateTest_0200
+     * @tc.number animateTest_0200
+     * @tc.desc   animateTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0200 START');
       let indexEvent: events_emitter.InnerEvent = {
@@ -86,6 +102,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_0200 click result is: " + JSON.stringify(sendEventByKey('button2', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_0300
+     * @tc.number animateTest_0300
+     * @tc.desc   animateTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0300 START');
       let indexEvent: events_emitter.InnerEvent = {
@@ -109,6 +133,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_0300 click result is: " + JSON.stringify(sendEventByKey('button3', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_0400
+     * @tc.number animateTest_0400
+     * @tc.desc   animateTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0400 START');
       let indexEvent: events_emitter.InnerEvent = {
@@ -128,6 +160,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_0400 click result is: " + JSON.stringify(sendEventByKey('button4', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_0500
+     * @tc.number animateTest_0500
+     * @tc.desc   animateTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0500 START');
       let indexEvent: events_emitter.InnerEvent = {
@@ -147,6 +187,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_0500 click result is: " + JSON.stringify(sendEventByKey('button5', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_0600
+     * @tc.number animateTest_0600
+     * @tc.desc   animateTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0600', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(10);
       globalThis.value.message.notify({
@@ -174,6 +222,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_0600 click result is: " + JSON.stringify(sendEventByKey('button11', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_0700
+     * @tc.number animateTest_0700
+     * @tc.desc   animateTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0700 START');
       globalThis.value.message.notify({
@@ -201,6 +257,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_0700 click result is: " + JSON.stringify(sendEventByKey('button12', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_0800
+     * @tc.number animateTest_0800
+     * @tc.desc   animateTest_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0800 START');
       globalThis.value.message.notify({
@@ -228,6 +292,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_0800 click result is: " + JSON.stringify(sendEventByKey('button13', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_0900
+     * @tc.number animateTest_0900
+     * @tc.desc   animateTest_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0900', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0900 START');
       globalThis.value.message.notify({
@@ -255,6 +327,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_0900 click result is: " + JSON.stringify(sendEventByKey('button14', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1000
+     * @tc.number animateTest_1000
+     * @tc.desc   animateTest_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1000 START');
       globalThis.value.message.notify({
@@ -282,6 +362,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1000 click result is: " + JSON.stringify(sendEventByKey('button15', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1100
+     * @tc.number animateTest_1100
+     * @tc.desc   animateTest_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1100', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1100 START');
       globalThis.value.message.notify({
@@ -309,6 +397,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1100 click result is: " + JSON.stringify(sendEventByKey('button6', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1200
+     * @tc.number animateTest_1200
+     * @tc.desc   animateTest_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1200', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1200 START');
       globalThis.value.message.notify({
@@ -336,6 +432,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1200 click result is: " + JSON.stringify(sendEventByKey('button7', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1300
+     * @tc.number animateTest_1300
+     * @tc.desc   animateTest_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1300', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1300 START');
       globalThis.value.message.notify({
@@ -363,6 +467,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1300 click result is: " + JSON.stringify(sendEventByKey('button8', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1400
+     * @tc.number animateTest_1400
+     * @tc.desc   animateTest_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1400', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1400 START');
       globalThis.value.message.notify({
@@ -390,6 +502,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1400 click result is: " + JSON.stringify(sendEventByKey('button9', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1500
+     * @tc.number animateTest_1500
+     * @tc.desc   animateTest_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1500', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1500 START');
       globalThis.value.message.notify({
@@ -417,6 +537,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1500 click result is: " + JSON.stringify(sendEventByKey('button10', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1600
+     * @tc.number animateTest_1600
+     * @tc.desc   animateTest_1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1600', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1600 START');
       globalThis.value.message.notify({
@@ -444,6 +572,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1600 click result is: " + JSON.stringify(sendEventByKey('button111', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1700
+     * @tc.number animateTest_1700
+     * @tc.desc   animateTest_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1700', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1700 START');
       globalThis.value.message.notify({
@@ -471,6 +607,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1700 click result is: " + JSON.stringify(sendEventByKey('button121', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1800
+     * @tc.number animateTest_1800
+     * @tc.desc   animateTest_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1800', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1800 START');
       globalThis.value.message.notify({
@@ -498,6 +642,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1800 click result is: " + JSON.stringify(sendEventByKey('button131', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_1900
+     * @tc.number animateTest_1900
+     * @tc.desc   animateTest_1900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1900', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1900 START');
       globalThis.value.message.notify({
@@ -525,6 +677,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_1900 click result is: " + JSON.stringify(sendEventByKey('button141', 10, "")));
     });
+    /**
+     * @tc.name   animateTest_2000
+     * @tc.number animateTest_2000
+     * @tc.desc   animateTest_2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_2000', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_2000 START');
       globalThis.value.message.notify({
@@ -552,12 +712,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_2000 click result is: " + JSON.stringify(sendEventByKey('button151', 10, "")));
     });
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_SR000S6E08_001
-      * @tc.name  : animateTest_2100
-      * @tc.desc  : finishCallbackType Property not set
-      * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   animateTest_2100
+     * @tc.number SUB_ACE_FUNCTION_SR000S6E08_001
+     * @tc.desc   finishCallbackType Property not set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_2100', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_2100 START');
       await CommonFunc.sleep(2);
@@ -582,12 +744,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_2100 click result is: " + JSON.stringify(sendEventByKey('button161', 10, "")));
     });
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_SR000S6E08_002
-      * @tc.name  : animateTest_2200
-      * @tc.desc  : finishCallbackType Property set FinishCallbackType.REMOVED
-      * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   animateTest_2200
+     * @tc.number SUB_ACE_FUNCTION_SR000S6E08_002
+     * @tc.desc   finishCallbackType Property set FinishCallbackType.REMOVED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_2200', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_2200 START');
       let indexEvent: events_emitter.InnerEvent = {
@@ -607,12 +771,14 @@ export default function animateToTest() {
       }
       console.info("animateTest_2200 click result is: " + JSON.stringify(sendEventByKey('button171', 10, "")));
     });
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_SR000S6E08_003
-      * @tc.name  : animateTest_2300
-      * @tc.desc  : finishCallbackType Property set FinishCallbackType.LOGICALLY
-      * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   animateTest_2300
+     * @tc.number SUB_ACE_FUNCTION_SR000S6E08_003
+     * @tc.desc   finishCallbackType Property set FinishCallbackType.LOGICALLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_2300', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_2300 START');
       globalThis.value.message.notify({

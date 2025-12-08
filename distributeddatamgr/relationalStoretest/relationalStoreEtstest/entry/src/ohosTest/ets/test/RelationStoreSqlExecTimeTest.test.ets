@@ -85,7 +85,6 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0110
      * @tc.desc   1. Register callback for statistics
@@ -132,7 +131,6 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0120
      * @tc.desc   1. Register callback for statistics
@@ -180,7 +178,6 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0130
      * @tc.desc   1. Register callback for statistics
@@ -229,7 +226,6 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0140
      * @tc.desc   1. Register callback for statistics
@@ -278,7 +274,6 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0150
      * @tc.desc   1. Register callback for statistics
@@ -321,7 +316,6 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0160
      * @tc.desc   1. Register callback for statistics
@@ -363,7 +357,6 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0170
      * @tc.desc   1. Register callback for statistics
@@ -405,7 +398,6 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0180
      * @tc.desc   1. Register callback for statistics
@@ -447,7 +439,6 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0190
      * @tc.desc   1. Register callback for statistics
@@ -501,7 +492,6 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0200
      * @tc.desc   1. Register callback for statistics
@@ -535,7 +525,6 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreStatistics0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0210
      * @tc.desc   1. Register callback for statistics
@@ -587,7 +576,6 @@ export default function SqlExecutionTimeTest() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:50
       * @tc.name   testRdbStoreStatistics0012
       * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0220
       * @tc.desc   1. Register callback for statistics

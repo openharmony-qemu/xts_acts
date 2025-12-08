@@ -35,10 +35,16 @@ struct Text_ellipsisMode {
         .padding(10)
         .width('100%')
         .copyOption(CopyOptions.InApp)
-        .enableDataDetector(true)
         .textOverflow({ overflow: TextOverflow.Ellipsis })
         .selection(0,1)
         .ellipsisMode(EllipsisMode.START)
+        .height('5%')
+      Button('Set text selection')
+        .onClick(() => {
+          // 变更文本选中起始点、终点
+          this.start = 10
+          this.end = 30
+        }).id('buttonSelect')
         .height('5%')
       Text(this.text1)
         .fontSize(10)
@@ -49,13 +55,6 @@ struct Text_ellipsisMode {
         Text(''+this.start).fontSize(12).margin(0).key('selectionStart').width('40%')
         Text(''+this.end).fontSize(12).margin(0).key('selectionEnd').width('40%')
       }.height('5%')
-      Button('Set text selection')
-        .onClick(() => {
-          // 变更文本选中起始点、终点
-          this.start = 10
-          this.end = 30
-        }).id('buttonSelect')
-        .height('5%')
     }.height('100%')
 
 

@@ -60,14 +60,14 @@ export default function WebViewEnumAndSetWebController() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_GETITEMATINDEX_0100
-    * @tc.name       : testGetItemAtIndex001
-    * @tc.desc       : test GetItemAtIndex
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetItemAtIndex001
+     * @tc.number SUB_WEB_GETITEMATINDEX_0100
+     * @tc.desc   test GetItemAtIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetItemAtIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitGetItemAtIndex", 133250)
       Utils.registerEvent("testGetItemAtIndex001", "FullScreenTest", 133260, done);

@@ -44,10 +44,13 @@ export default function pathNewTest() {
       console.info("pathNe after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testpathNe0001
-     * @tc.desic         acepathNeEtsTest0001
+    /**
+     * @tc.name   testpathNe0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testpathNe0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpathNe0001', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0001 START');
@@ -61,10 +64,13 @@ export default function pathNewTest() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testpathNe0002
-     * @tc.desic         acepathNeEtsTest0002
+    /**
+     * @tc.name   testpathNe0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testpathNe0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpathNe0002', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0002 START');
@@ -78,10 +84,13 @@ export default function pathNewTest() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testpathNe0003
-     * @tc.desic         acepathNeEtsTest0003
+    /**
+     * @tc.name   testpathNe0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testpathNe0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpathNe0003', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0003 START');

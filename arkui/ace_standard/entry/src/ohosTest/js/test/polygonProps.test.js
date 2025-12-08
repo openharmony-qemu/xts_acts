@@ -80,9 +80,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonFillProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonFillProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonFillProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonFillProp START');
@@ -104,9 +107,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonFillOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolygonFillOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonFillOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolygonFillOpacityPropOne START');
@@ -130,9 +136,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonFillOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolygonFillOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonFillOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolygonFillOpacityPropTwo START');
@@ -156,9 +165,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonFillOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolygonFillOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonFillOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolygonFillOpacityPropThree START');
@@ -182,9 +194,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonFillRulePropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolygonFillRulePropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonFillRulePropOne', Level.LEVEL0, async function(done) {
             console.info('testPolygonFillRulePropOne START');
@@ -208,9 +223,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonFillRulePropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolygonFillRulePropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonFillRulePropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolygonFillRulePropTwo START');
@@ -234,9 +252,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolygonOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolygonOpacityPropOne START');
@@ -260,9 +281,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolygonOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolygonOpacityPropTwo START');
@@ -286,9 +310,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolygonOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolygonOpacityPropThree START');
@@ -312,9 +339,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeProp START');
@@ -336,9 +366,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeDashArrayProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeDashArrayProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeDashArrayProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeDashArrayProp START');
@@ -362,9 +395,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeDashOffsetProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeDashOffsetProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeDashOffsetProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeDashOffsetProp START');
@@ -389,9 +425,12 @@ export default function undo() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeLineJoinPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeLineJoinPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeLineJoinPropOne START');
@@ -415,9 +454,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeLineJoinPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeLineJoinPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeLineJoinPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeLineJoinPropTwo START');
@@ -441,9 +483,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeLineJoinPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeLineJoinPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeLineJoinPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeLineJoinPropThree START');
@@ -467,9 +512,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeLineCapPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeLineCapPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeLineCapPropOne START');
@@ -493,9 +541,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeLineCapPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeLineCapPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeLineCapPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeLineCapPropTwo START');
@@ -519,9 +570,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeLineCapPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeLineCapPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeLineCapPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeLineCapPropThree START');
@@ -545,9 +599,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeMiterLimitProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeMiterLimitProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeMiterLimitProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeMiterLimitProp START');
@@ -571,9 +628,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeOpacityPropOne START');
@@ -597,9 +657,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeOpacityPropTwo START');
@@ -623,9 +686,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeOpacityPropThree START');
@@ -649,9 +715,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonStrokeWidthProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonStrokeWidthProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonStrokeWidthProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonStrokeWidthProp START');
@@ -675,9 +744,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonTransformProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonTransformProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonTransformProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonTransformProp START');
@@ -699,9 +771,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonIdProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonIdProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonIdProp START');
@@ -723,9 +798,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolygonPointProp
-         * @tc.desc      ACE
+         * @tc.name   testPolygonPointProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolygonPointProp', Level.LEVEL0, async function(done) {
             console.info('testPolygonPointProp START');

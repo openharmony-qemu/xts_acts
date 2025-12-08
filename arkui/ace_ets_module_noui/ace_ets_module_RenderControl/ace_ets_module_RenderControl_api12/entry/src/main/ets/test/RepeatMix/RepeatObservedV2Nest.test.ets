@@ -59,12 +59,12 @@ export default function RepeatObservedV2Nest() {
     });
 
     /**
+     * @tc.name   RepeatObservedV2Nest_001
      * @tc.number RepeatObservedV2Nest_001
-     * @tc.name RepeatObservedV2Nest_001
-     * @tc.desc Test RepeatObservedV2Nest component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatObservedV2Nest component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatObservedV2Nest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatObservedV2Nest_001] START');

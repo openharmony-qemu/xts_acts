@@ -28,10 +28,13 @@ class TimeUtilsTest : public testing::Test {
 };
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_ASCTIME_0100
-* @tc.name       test asctime api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testAscTime
+ * @tc.number SUB_KERNEL_TIME_API_ASCTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(TimeUtilsTest, testAscTime, Function | MediumTest | Level1)
 {
     struct tm timeptr = {0};
@@ -53,10 +56,13 @@ HWTEST_F(TimeUtilsTest, testAscTime, Function | MediumTest | Level1)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_ASCTIMER_0100
-* @tc.name       test asctimer api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testAscTimeR
+ * @tc.number SUB_KERNEL_TIME_API_ASCTIMER_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(TimeUtilsTest, testAscTimeR, Function | MediumTest | Level1)
 {
     struct tm timeptr = {0};
@@ -75,10 +81,13 @@ HWTEST_F(TimeUtilsTest, testAscTimeR, Function | MediumTest | Level1)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_CTIME_0100
-* @tc.name       test ctime api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCtime
+ * @tc.number SUB_KERNEL_TIME_API_CTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TimeUtilsTest, testCtime, Function | MediumTest | Level2)
 {
     time_t curClock;
@@ -92,10 +101,13 @@ HWTEST_F(TimeUtilsTest, testCtime, Function | MediumTest | Level2)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_CTIME_R_0100
-* @tc.name       test ctime_r api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCtimeR
+ * @tc.number SUB_KERNEL_TIME_API_CTIME_R_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(TimeUtilsTest, testCtimeR, Function | MediumTest | Level3)
 {
     time_t curClock;
@@ -112,10 +124,13 @@ HWTEST_F(TimeUtilsTest, testCtimeR, Function | MediumTest | Level3)
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_TIME_DIFFTIME_0100
-* @tc.name       test difftime api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testDifftime
+ * @tc.number SUB_KERNEL_NDKAPI_TIME_DIFFTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TimeUtilsTest, testDifftime, Function | MediumTest | Level2)
 {
     time_t timeStart, timeEnd;
@@ -136,10 +151,13 @@ HWTEST_F(TimeUtilsTest, testDifftime, Function | MediumTest | Level2)
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_TIME_TIMEGM_0100
-* @tc.name       test timegm api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testTimegm
+ * @tc.number SUB_KERNEL_NDKAPI_TIME_TIMEGM_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(TimeUtilsTest, testTimegm, Function | MediumTest | Level3)
 {
     struct tm timeptr = {0};
@@ -167,10 +185,13 @@ HWTEST_F(TimeUtilsTest, testTimegm, Function | MediumTest | Level3)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_GMTIME_0100
-* @tc.name       test gmtime api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testGmtime
+ * @tc.number SUB_KERNEL_TIME_API_GMTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(TimeUtilsTest, testGmtime, Function | MediumTest | Level3)
 {
     time_t time1 = 18880;
@@ -196,10 +217,13 @@ HWTEST_F(TimeUtilsTest, testGmtime, Function | MediumTest | Level3)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_GMTIMER_0100
-* @tc.name       test gmtime_r api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testGmtimeR
+ * @tc.number SUB_KERNEL_TIME_API_GMTIMER_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(TimeUtilsTest, testGmtimeR, Function | MediumTest | Level3)
 {
     struct tm res = {0};
@@ -219,10 +243,13 @@ HWTEST_F(TimeUtilsTest, testGmtimeR, Function | MediumTest | Level3)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_MKTIME_0100
-* @tc.name       test mktime api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMktime
+ * @tc.number SUB_KERNEL_TIME_API_MKTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TimeUtilsTest, testMktime, Function | MediumTest | Level2)
 {
     struct tm *localTime;
@@ -243,10 +270,13 @@ HWTEST_F(TimeUtilsTest, testMktime, Function | MediumTest | Level2)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_STRFTIME_0100
-* @tc.name       test strftime api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testStrftime
+ * @tc.number SUB_KERNEL_TIME_API_STRFTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(TimeUtilsTest, testStrftime, Function | MediumTest | Level3)
 {
     size_t strftimeBytes = 19;
@@ -285,10 +315,13 @@ HWTEST_F(TimeUtilsTest, testStrftime, Function | MediumTest | Level3)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_STRFTIMEL_0100
-* @tc.name       test strftime_l api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testStrftimeL
+ * @tc.number SUB_KERNEL_TIME_API_STRFTIMEL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TimeUtilsTest, testStrftimeL, Function | MediumTest | Level2)
 {
     struct tm *tm1;
@@ -302,10 +335,13 @@ HWTEST_F(TimeUtilsTest, testStrftimeL, Function | MediumTest | Level2)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_WCSFTIME_0100
-* @tc.name       test wcsftime api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testWcsftime
+ * @tc.number SUB_KERNEL_TIME_API_WCSFTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TimeUtilsTest, testWcsftime, Function | MediumTest | Level2)
 {
     size_t wcsftimeBytes = 33;

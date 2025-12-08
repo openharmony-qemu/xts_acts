@@ -44,12 +44,12 @@ export default function MarqueeUIJsunit() {
 
 
     /**
-     * @tc.number marqueeUIJsunit_0100
      * @tc.name   marqueeUIJsunit_0100
+     * @tc.number marqueeUIJsunit_0100
      * @tc.desc   Return specified page by index value
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('marqueeUIJsunit_0100', Level.LEVEL1, async (done: Function) => {
        console.info('marqueeUIJsunit_0100 START');
@@ -69,15 +69,15 @@ export default function MarqueeUIJsunit() {
        done();
     });
 
-    /**
-     * @tc.number marqueeUIJsunit_0200
-     * @tc.name   marqueeUIJsunit_0200
-     * @tc.desc   Return specified page by index value
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+   /**
+    * @tc.name   marqueeUIJsunit_0200
+    * @tc.number marqueeUIJsunit_0200
+    * @tc.desc   marqueeUIJsunit_0200
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('marqueeUIJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('marqueeUIJsunit_0200 START');
       // modify the type attribute normal value of marquee dynamically
@@ -91,12 +91,12 @@ export default function MarqueeUIJsunit() {
     });
 
     /**
-     * @tc.number marqueeUIJsunit_0300
      * @tc.name   marqueeUIJsunit_0300
+     * @tc.number marqueeUIJsunit_0300
      * @tc.desc   Return specified page by index value
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('marqueeUIJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('marqueeUIJsunit_0400 START');
@@ -126,12 +126,12 @@ export default function MarqueeUIJsunit() {
     });
 
     /**
-     * @tc.number marqueeUIJsunit_0400
      * @tc.name   marqueeUIJsunit_0400
+     * @tc.number marqueeUIJsunit_0400
      * @tc.desc   Return specified page by index value
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('marqueeUIJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('marqueeUIJsunit_0300 START');
@@ -148,12 +148,12 @@ export default function MarqueeUIJsunit() {
 
 
     /**
-     * @tc.number marqueeUIJsunit_0500
      * @tc.name   marqueeUIJsunit_0500
+     * @tc.number marqueeUIJsunit_0500
      * @tc.desc   Return specified page by index value
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('marqueeUIJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('marqueeUIJsunit_0400 START');
@@ -170,14 +170,14 @@ export default function MarqueeUIJsunit() {
     });    
 
 
-      /**
-     * @tc.number marqueeUIJsunit_0600
-     * @tc.name   marqueeUIJsunit_0600
-     * @tc.desc   Return specified page by index value
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
-     */
+   /**
+    * @tc.name   marqueeUIJsunit_0600
+    * @tc.number marqueeUIJsunit_0600
+    * @tc.desc   Return specified page by index value
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('marqueeUIJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('marqueeUIJsunit_0600 START');
       // modify the values partly attribute illegal value of marguee dynamically
@@ -188,14 +188,14 @@ export default function MarqueeUIJsunit() {
       expect(Math.abs(obj.$attrs.step - vp2px(6)) <= 1).assertTrue();
       done();
    });
-    /**
-     * @tc.number marqueeUIJsunit_0700
-     * @tc.name   marqueeUIJsunit_0700
-     * @tc.desc   Return specified page by index value
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
-     */
+   /**
+    * @tc.name   marqueeUIJsunit_0700
+    * @tc.number marqueeUIJsunit_0700
+    * @tc.desc   Return specified page by index value
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('marqueeUIJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('marqueeUIJsunit_0700 START');
       // modify the type attribute normal value of marquee dynamically
@@ -207,12 +207,12 @@ export default function MarqueeUIJsunit() {
       done();   
     });
     /**
-     * @tc.number marqueeUIJsunit_0800
      * @tc.name   marqueeUIJsunit_0800
+     * @tc.number marqueeUIJsunit_0800
      * @tc.desc   Return specified page by index value
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('marqueeUIJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('marqueeUIJsunit_0800 START');

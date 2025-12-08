@@ -161,12 +161,12 @@ export default function networkManagerTest() {
 
 function testGetAllNetworkInterfacesSync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_ALL_NETWORK_INTERFACES_SYNC_JS_0100
-   * @tc.name      : test_get_all_network_interfaces_sync_0100
-   * @tc.desc      : test networkManager getAllNetworkInterfacesSync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_all_network_interfaces_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALL_NETWORK_INTERFACES_SYNC_JS_0100
+   * @tc.desc   test networkManager getAllNetworkInterfacesSync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_all_network_interfaces_sync_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -184,12 +184,12 @@ function testGetAllNetworkInterfacesSync() {
 
 function testGetIpAddressSync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_IP_ADDRESS_SYNC_JS_0100
-   * @tc.name      : test_get_ip_address_sync_0100
-   * @tc.desc      : test networkManager getIpAddressSync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_ip_address_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_IP_ADDRESS_SYNC_JS_0100
+   * @tc.desc   test networkManager getIpAddressSync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_ip_address_sync_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -207,12 +207,12 @@ function testGetIpAddressSync() {
 
 function testGetMacSync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_MAC_SYNC_JS_0100
-   * @tc.name      : test_get_mac_sync_0100
-   * @tc.desc      : test networkManager getMacSync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_mac_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_MAC_SYNC_JS_0100
+   * @tc.desc   test networkManager getMacSync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_mac_sync_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -230,12 +230,12 @@ function testGetMacSync() {
 
 function testIsNetworkInterfaceDisabledSync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_NETWORK_INTERFACE_DISABLE_SYNC_JS_0100
-   * @tc.name      : test_is_network_interface_disable_sync_0100
-   * @tc.desc      : test networkManager isNetworkInterfaceDisabledSync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_network_interface_disable_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_NETWORK_INTERFACE_DISABLE_SYNC_JS_0100
+   * @tc.desc   test networkManager isNetworkInterfaceDisabledSync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_network_interface_disable_sync_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -253,12 +253,12 @@ function testIsNetworkInterfaceDisabledSync() {
 
 function testSetNetworkInterfaceDisabledSync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0100
-   * @tc.name      : test_set_network_interface_disable_sync_0100
-   * @tc.desc      : test networkManager setNetworkInterfaceDisabledSync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_network_interface_disable_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0100
+   * @tc.desc   test networkManager setNetworkInterfaceDisabledSync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_network_interface_disable_sync_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -276,12 +276,12 @@ function testSetNetworkInterfaceDisabledSync() {
 
 function testSetGlobalProxySync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_SYNC_JS_0100
-   * @tc.name      : test_set_global_proxy_sync_0100
-   * @tc.desc      : test networkManager setGlobalProxySync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_global_proxy_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_SYNC_JS_0100
+   * @tc.desc   test networkManager setGlobalProxySync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_global_proxy_sync_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -299,12 +299,12 @@ function testSetGlobalProxySync() {
 
 function testGetGlobalProxySync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_SYNC_JS_0100
-   * @tc.name      : test_get_global_proxy_sync_0100
-   * @tc.desc      : test networkManager getGlobalProxySync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_global_proxy_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_SYNC_JS_0100
+   * @tc.desc   test networkManager getGlobalProxySync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_global_proxy_sync_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -322,12 +322,12 @@ function testGetGlobalProxySync() {
 
 function testAddFirewallRule() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0100
-   * @tc.name      : test_add_firewall_rule_0100
-   * @tc.desc      : test networkManager addFirewallRule with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_firewall_rule_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0100
+   * @tc.desc   test networkManager addFirewallRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_firewall_rule_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -345,12 +345,12 @@ function testAddFirewallRule() {
 
 function testRemoveFirewallRule() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0100
-   * @tc.name      : test_remove_firewall_rule_0100
-   * @tc.desc      : test networkManager removeFirewallRule with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_firewall_rule_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0100
+   * @tc.desc   test networkManager removeFirewallRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_firewall_rule_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -366,12 +366,12 @@ function testRemoveFirewallRule() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0101
-   * @tc.name      : test_remove_firewall_rule_0101
-   * @tc.desc      : test networkManager removeFirewallRule with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_firewall_rule_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0101
+   * @tc.desc   test networkManager removeFirewallRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_firewall_rule_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -389,12 +389,12 @@ function testRemoveFirewallRule() {
 
 function testGetFirewallRules() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_FIREWALL_RULES_JS_0100
-   * @tc.name      : test_get_firewall_rules_0100
-   * @tc.desc      : test networkManager getFirewallRules with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_firewall_rules_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_FIREWALL_RULES_JS_0100
+   * @tc.desc   test networkManager getFirewallRules with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_firewall_rules_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -412,12 +412,12 @@ function testGetFirewallRules() {
 
 function testAddDomainFilterRule() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0100
-   * @tc.name      : test_add_domain_filter_rule_0100
-   * @tc.desc      : test networkManager addDomainFilterRule with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_domain_filter_rule_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0100
+   * @tc.desc   test networkManager addDomainFilterRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_domain_filter_rule_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -435,12 +435,12 @@ function testAddDomainFilterRule() {
 
 function testRemoveDomainFilterRule() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0100
-   * @tc.name      : test_remove_domain_filter_rule_0100
-   * @tc.desc      : test networkManager removeDomainFilterRule with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_domain_filter_rule_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0100
+   * @tc.desc   test networkManager removeDomainFilterRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_domain_filter_rule_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -456,12 +456,12 @@ function testRemoveDomainFilterRule() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0101
-   * @tc.name      : test_remove_domain_filter_rule_0101
-   * @tc.desc      : test networkManager removeDomainFilterRule with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_domain_filter_rule_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0101
+   * @tc.desc   test networkManager removeDomainFilterRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_domain_filter_rule_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -479,12 +479,12 @@ function testRemoveDomainFilterRule() {
 
 function testGetDomainFilterRules() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DOMAIN_FILTER_RULES_JS_0100
-   * @tc.name      : test_get_domain_filter_rules_0100
-   * @tc.desc      : test networkManager getDomainFilterRules with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_domain_filter_rules_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DOMAIN_FILTER_RULES_JS_0100
+   * @tc.desc   test networkManager getDomainFilterRules with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_domain_filter_rules_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -502,12 +502,12 @@ function testGetDomainFilterRules() {
 
 function testSetGlobalProxyForAccount() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_GLOBAL_FOR_ACCOUNT_JS_0100
-   * @tc.name      : test_set_global_proxy_for_account_0100
-   * @tc.desc      : test networkManager setGlobalProxyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_global_proxy_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test networkManager setGlobalProxyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_global_proxy_for_account_0100", Level.LEVEL2, async (done: Function) => {
     if (sysDeviceInfo.deviceType != '2in1') {
@@ -529,12 +529,12 @@ function testSetGlobalProxyForAccount() {
 
 function testGetGlobalProxyForAccount() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0100
-   * @tc.name      : test_get_global_proxy_for_account_0100
-   * @tc.desc      : test networkManager getGlobalProxyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_global_proxy_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test networkManager getGlobalProxyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_global_proxy_for_account_0100", Level.LEVEL2, async (done: Function) => {
     if (sysDeviceInfo.deviceType != '2in1') {
@@ -556,12 +556,12 @@ function testGetGlobalProxyForAccount() {
 
 function testTurnOnMobileData() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_MOBILE_DATA_JS_0001
-   * @tc.name      : test_turnon_mobile_data_0001
-   * @tc.desc      : test wifiManager turnOnMobileData with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_mobile_data_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_MOBILE_DATA_JS_0001
+   * @tc.desc   test wifiManager turnOnMobileData with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_mobile_data_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -577,12 +577,12 @@ function testTurnOnMobileData() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_MOBILE_DATA_JS_0002
-   * @tc.name      : test_turnon_mobile_data_0002
-   * @tc.desc      : test wifiManager turnOnMobileData with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_mobile_data_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_MOBILE_DATA_JS_0002
+   * @tc.desc   test wifiManager turnOnMobileData with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_mobile_data_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -600,12 +600,12 @@ function testTurnOnMobileData() {
 
 function testTurnOffMobileData() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNOFF_MOBILE_DATA_JS_0001
-   * @tc.name      : test_turnoff_mobile_data_0001
-   * @tc.desc      : test wifiManager turnOffMobileData with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnoff_mobile_data_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNOFF_MOBILE_DATA_JS_0001
+   * @tc.desc   test wifiManager turnOffMobileData with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnoff_mobile_data_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -623,12 +623,12 @@ function testTurnOffMobileData() {
 
 function testAddApn() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_APN_JS_0001
-   * @tc.name      : test_add_apn_0001
-   * @tc.desc      : test networkManager addApn with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_apn_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_APN_JS_0001
+   * @tc.desc   test networkManager addApn with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_apn_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -647,12 +647,12 @@ function testAddApn() {
 
 function testDeleteApn() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_DELETE_APN_JS_0001
-   * @tc.name      : test_delete_apn_0001
-   * @tc.desc      : test networkManager deleteApn with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_delete_apn_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_DELETE_APN_JS_0001
+   * @tc.desc   test networkManager deleteApn with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_delete_apn_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -671,12 +671,12 @@ function testDeleteApn() {
 
 function testUpdateApn() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_UPDATE_APN_JS_0001
-   * @tc.name      : test_update_apn_0001
-   * @tc.desc      : test networkManager updateApn with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_update_apn_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_UPDATE_APN_JS_0001
+   * @tc.desc   test networkManager updateApn with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_update_apn_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -695,12 +695,12 @@ function testUpdateApn() {
 
 function testSetPreferredApn() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PREFERRED_APN_JS_0001
-   * @tc.name      : test_set_preferred_apn_0001
-   * @tc.desc      : test networkManager setPreferredApn with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_preferred_apn_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PREFERRED_APN_JS_0001
+   * @tc.desc   test networkManager setPreferredApn with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_preferred_apn_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -719,12 +719,12 @@ function testSetPreferredApn() {
 
 function testQueryApn() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_QUERY_APN_JS_0001
-   * @tc.name      : test_query_apn_0001
-   * @tc.desc      : test networkManager queryApn with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_query_apn_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_QUERY_APN_JS_0001
+   * @tc.desc   test networkManager queryApn with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_query_apn_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -741,12 +741,12 @@ function testQueryApn() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_QUERY_APN_JS_0002
-   * @tc.name      : test_query_apn_0002
-   * @tc.desc      : test networkManager queryApn with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_query_apn_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_QUERY_APN_JS_0002
+   * @tc.desc   test networkManager queryApn with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_query_apn_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);

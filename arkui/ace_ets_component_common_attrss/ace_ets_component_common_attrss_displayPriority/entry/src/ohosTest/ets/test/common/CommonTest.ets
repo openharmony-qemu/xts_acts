@@ -57,10 +57,12 @@ export default class CommonTest {
           }
 
           /**
+           * @tc.name   caseTag
            * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
-           * @tc.name caseTag, like:testPositionAlphabetIndexerSetNumber
-           * @tc.desc Test whether the state of different components
-           *            after modifying their properties meets expectations
+           * @tc.desc   Test whether the state of different components
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL0
            */
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             console.info('[' + caseTag + '] START');

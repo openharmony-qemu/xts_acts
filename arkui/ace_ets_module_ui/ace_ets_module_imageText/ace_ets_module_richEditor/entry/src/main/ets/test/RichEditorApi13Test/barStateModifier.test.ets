@@ -43,12 +43,12 @@ export default function BarStateModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateModifierTest_0010
-     * @tc.name      BarStateModifierTest_0010
-     * @tc.desc      get RichEditorModifier barState: BarState.Auto
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateModifierTest_0010
+     * @tc.number SUB_ACE_BarStateModifierTest_0010
+     * @tc.desc   get RichEditorModifier barState: BarState.Auto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateModifierTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateModifierTest_0010] START');
@@ -61,12 +61,12 @@ export default function BarStateModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateModifierTest_0020
-     * @tc.name      BarStateModifierTest_0020
-     * @tc.desc      set RichEditorModifier barState: BarState.Off
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateModifierTest_0020
+     * @tc.number SUB_ACE_BarStateModifierTest_0020
+     * @tc.desc   set RichEditorModifier barState: BarState.Off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateModifierTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateModifierTest_0020] START');
@@ -79,12 +79,12 @@ export default function BarStateModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateModifierTest_0030
-     * @tc.name      BarStateModifierTest_0030
-     * @tc.desc      set RichEditorModifier barState: BarState.On
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateModifierTest_0030
+     * @tc.number SUB_ACE_BarStateModifierTest_0030
+     * @tc.desc   set RichEditorModifier barState: BarState.On
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateModifierTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateModifierTest_0030] START');
@@ -97,12 +97,12 @@ export default function BarStateModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateModifierTest_0040
-     * @tc.name      BarStateModifierTest_0040
-     * @tc.desc      set RichEditorModifier barState: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateModifierTest_0040
+     * @tc.number SUB_ACE_BarStateModifierTest_0040
+     * @tc.desc   set RichEditorModifier barState: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateModifierTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateModifierTest_0040] START');
@@ -115,12 +115,12 @@ export default function BarStateModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateModifierTest_0050
-     * @tc.name      BarStateModifierTest_0050
-     * @tc.desc      get RichEditorModifier barState: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateModifierTest_0050
+     * @tc.number SUB_ACE_BarStateModifierTest_0050
+     * @tc.desc   get RichEditorModifier barState: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateModifierTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateModifierTest_0050] START');

@@ -50,12 +50,12 @@ export default function requestCacheDownloadHttpUnitTest() {
 
     console.info('====>requestCacheDownloadHttpJSTest Test start');
     /**
-     * @tc.number SUB_Request_cacheDownload_httpHeaders_0100
      * @tc.name   SUB_Request_cacheDownload_httpHeaders_0100
+     * @tc.number SUB_Request_cacheDownload_httpHeaders_0100
      * @tc.desc   Isolated invalid byte.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_httpHeaders_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_httpHeaders_0100 is starting-----------------------");
@@ -91,12 +91,12 @@ export default function requestCacheDownloadHttpUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_httpHeaders_0200
      * @tc.name   SUB_Request_cacheDownload_httpHeaders_0200
+     * @tc.number SUB_Request_cacheDownload_httpHeaders_0200
      * @tc.desc   The second byte is invalid.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Request_cacheDownload_httpHeaders_0200', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_httpHeaders_0200 is starting-----------------------");
@@ -132,12 +132,12 @@ export default function requestCacheDownloadHttpUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_httpHeaders_0300
      * @tc.name   SUB_Request_cacheDownload_httpHeaders_0300
+     * @tc.number SUB_Request_cacheDownload_httpHeaders_0300
      * @tc.desc   SInvalid multi-byte encoding.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Request_cacheDownload_httpHeaders_0300', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_httpHeaders_0300 is starting-----------------------");
@@ -173,12 +173,12 @@ export default function requestCacheDownloadHttpUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_httpHeaders_0400
      * @tc.name   SUB_Request_cacheDownload_httpHeaders_0400
+     * @tc.number SUB_Request_cacheDownload_httpHeaders_0400
      * @tc.desc   Encoding exceeds Unicode range.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Request_cacheDownload_httpHeaders_0400', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_httpHeaders_0400 is starting-----------------------");
@@ -214,12 +214,12 @@ export default function requestCacheDownloadHttpUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_httpHeaders_0500
      * @tc.name   SUB_Request_cacheDownload_httpHeaders_0500
+     * @tc.number SUB_Request_cacheDownload_httpHeaders_0500
      * @tc.desc   special characters.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Request_cacheDownload_httpHeaders_0500', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_httpHeaders_0500 is starting-----------------------");

@@ -58,12 +58,12 @@ export default function ParticleAttributeTest() {
     });
 
     /**
+     * @tc.name   ParticleAttributeTest_001
      * @tc.number ParticleAttributeTest_001
-     * @tc.name ParticleAttributeTest_001
-     * @tc.desc test the particle of attribute
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test the particle of attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleAttributeTest_001', Level.LEVEL0, async (done: Function) => {
       console.info("[ParticleAttributeTest_001] START");

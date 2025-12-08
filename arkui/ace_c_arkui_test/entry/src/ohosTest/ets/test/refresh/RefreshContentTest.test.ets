@@ -26,26 +26,26 @@ export default function refreshContentTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_CONTENT_0100
-     * @tc.name       : testRefreshContent001
-     * @tc.desc       : testing Content for refresh with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshContent001
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_CONTENT_0100
+     * @tc.desc   testing Content for refresh with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshContent001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_CONTENT_0200
-     * @tc.name       : testRefreshContent002
-     * @tc.desc       : testing Content for refresh with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshContent002
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_CONTENT_0200
+     * @tc.desc   testing Content for refresh with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshContent002()).assertEqual(0)

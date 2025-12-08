@@ -17,6 +17,12 @@ import { NodeContent, UIContext } from "@kit.ArkUI";
 export const CreateNodeArkUIPostAsyncUITask: (slot: NodeContent, context: UIContext) => void;
 export const CreateNodeArkUIPostUITask: (slot: NodeContent, context: UIContext) => void;
 export const CreateNodeArkUIPostUITaskAndWait: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeArkUIPostAsyncUITaskResultValueS: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeArkUIPostUITaskResultValueS: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeArkUIPostUITaskAndWaitResultValueS: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeArkUIPostAsyncUITaskResultValueF: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeArkUIPostUITaskResultValueF: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeArkUIPostUITaskAndWaitResultValueF: (slot: NodeContent, context: UIContext) => void;
 export const CreateNodeTreeOnUIThread: (slot: NodeContent, context: UIContext) => void;
 export const DisposeNodeTree: (slot: NodeContent) => void;
 export const testPostOnIdle: (a: string) => void;
@@ -53,3 +59,7 @@ export const createCrossLanguageColumnNode: (content: NodeContent, tag: string) 
 export const createCrossLanguageFlexNode: (content: NodeContent, tag: string) => void;
 export const createCrossLanguageStackNode: (content: NodeContent, tag: string) => void;
 export const createCrossLanguageRelativeContainerNode: (content: NodeContent, tag: string) => void;
+
+export const scrollZoomStartTest: (a: string) => void;
+export const scrollZoomDidTest: (a: string) => void;
+export const scrollZoomStopTest: (a: string) => void;

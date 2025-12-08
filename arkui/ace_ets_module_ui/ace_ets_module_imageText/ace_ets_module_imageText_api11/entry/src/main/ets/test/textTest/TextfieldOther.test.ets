@@ -38,10 +38,13 @@ export default function TextfieldOtherTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0070
-     *@tc.name   Support modifying the textfield showCounter change of Textfield component
-     *@tc.desc   Sets the showCounter property parameter to true and 50
+    /**
+     * @tc.name   ArkUX_Text_Visual_0070
+     * @tc.number ArkUX_Text_Visual_0070
+     * @tc.desc   Sets the showCounter property parameter to true and 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0070', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0070 START');
@@ -68,10 +71,13 @@ export default function TextfieldOtherTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0080
-     *@tc.name   Support modifying the textfield showCounter change of Textfield component
-     *@tc.desc   Sets the showCounter property parameter to false and 0
+    /**
+     * @tc.name   ArkUX_Text_Visual_0080
+     * @tc.number ArkUX_Text_Visual_0080
+     * @tc.desc   Sets the showCounter property parameter to false and 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0080', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0080 START');
@@ -98,10 +104,13 @@ export default function TextfieldOtherTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0090
-     *@tc.name   Support modifying the textfield showCounter change of Textfield component
-     *@tc.desc   Sets the showCounter property parameter to true and 200
+    /**
+     * @tc.name   ArkUX_Text_Visual_0090
+     * @tc.number ArkUX_Text_Visual_0090
+     * @tc.desc   Sets the showCounter property parameter to true and 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0090', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0090 START');
@@ -129,10 +138,13 @@ export default function TextfieldOtherTest() {
     });
 
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0100
-     *@tc.name   Support modifying the textfield showCounter change of Textfield component
-     *@tc.desc   Sets the showCounter property parameter to default value
+    /**
+     * @tc.name   ArkUX_Text_Visual_0100
+     * @tc.number ArkUX_Text_Visual_0100
+     * @tc.desc   Sets the showCounter property parameter to default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0100 START');

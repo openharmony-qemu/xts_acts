@@ -48,10 +48,12 @@ export default function ignoreLayoutSafeArea2() {
     });
 
     /**
-     * @tc.number    ignoreLayoutSafeArea2_0100
-     * @tc.name      ignoreLayoutSafeArea2_0100
-     * @tc.desc      Test Navigation ignoreLayoutSafeArea2
-     * @tc.level     Level 2
+     * @tc.name   ignoreLayoutSafeArea2_0100
+     * @tc.number ignoreLayoutSafeArea2_0100
+     * @tc.desc   Test Navigation ignoreLayoutSafeArea2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ignoreLayoutSafeArea2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[ignoreLayoutSafeArea2_0100] START');

@@ -117,12 +117,12 @@ export default function workerTest() {
   describe('ActsWorkerTest', () => {
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0100
-     * @tc.name       : testWorkerPostMessage001
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   testWorkerPostMessage001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0100
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerPostMessage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage001';
@@ -159,12 +159,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0200
-     * @tc.name       : testWorkerPostMessage002
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   testWorkerPostMessage002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0200
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerPostMessage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage002';
@@ -201,12 +201,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0300
-     * @tc.name       : testWorkerPostMessage003
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   testWorkerPostMessage003
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0300
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerPostMessage003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage003';
@@ -243,12 +243,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0400
-     * @tc.name       : testWorkerPostMessage004
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   testWorkerPostMessage004
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0400
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerPostMessage004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage004';
@@ -285,12 +285,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0500
-     * @tc.name       : testWorkerPostMessage005
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   testWorkerPostMessage005
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0500
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerPostMessage005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage005';
@@ -327,12 +327,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0600
-     * @tc.name       : testWorkerPostMessage006
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage006
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0600
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage006';
@@ -369,12 +369,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0700
-     * @tc.name       : testWorkerPostMessage007
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage007
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0700
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage007';
@@ -412,12 +412,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0800
-     * @tc.name       : testWorkerPostMessage008
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage008
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0800
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage008';
@@ -457,12 +457,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_0900
-     * @tc.name       : testWorkerPostMessage009
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage009
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0900
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage009';
@@ -502,12 +502,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1000
-     * @tc.name       : testWorkerPostMessage010
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage010
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1000
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage010';
@@ -544,12 +544,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1100
-     * @tc.name       : testWorkerPostMessage011
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage011
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1100
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage011';
@@ -591,12 +591,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1200
-     * @tc.name       : testWorkerPostMessageWithSharedSendable001
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1200
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable001';
@@ -633,12 +633,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1300
-     * @tc.name       : testWorkerPostMessageWithSharedSendable002
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1300
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable002';
@@ -675,12 +675,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1400
-     * @tc.name       : testWorkerPostMessageWithSharedSendable003
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable003
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1400
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable003';
@@ -717,12 +717,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1500
-     * @tc.name       : testWorkerPostMessageWithSharedSendable004
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable004
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1500
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable004';
@@ -759,12 +759,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1600
-     * @tc.name       : testWorkerPostMessageWithSharedSendable005
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable005
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1600
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable005';
@@ -801,12 +801,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1700
-     * @tc.name       : testWorkerPostMessageWithSharedSendable006
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable006
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1700
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable006';
@@ -843,12 +843,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1800
-     * @tc.name       : testWorkerPostMessageWithSharedSendable007
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable007
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1800
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable007';
@@ -886,12 +886,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_1900
-     * @tc.name       : testWorkerPostMessageWithSharedSendable008
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable008
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1900
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable008';
@@ -931,12 +931,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_2000
-     * @tc.name       : testWorkerPostMessageWithSharedSendable009
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable009
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2000
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable009';
@@ -976,12 +976,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_2100
-     * @tc.name       : testWorkerPostMessageWithSharedSendable010
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable010
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2100
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable010';
@@ -1018,12 +1018,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_2200
-     * @tc.name       : testWorkerPostMessageWithSharedSendable011
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable011
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2200
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable011';
@@ -1064,12 +1064,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_2300
-     * @tc.name       : testWorkerPostMessageWithSharedSendable012
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable012
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2300
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable012';
@@ -1106,12 +1106,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_2400
-     * @tc.name       : testWorkerPostMessageWithSharedSendable013
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable013
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2400
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable013';
@@ -1148,12 +1148,12 @@ export default function workerTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_2500
-     * @tc.name       : testWorkerPostMessageWithSharedSendable014
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessageWithSharedSendable014
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2500
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessageWithSharedSendable014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessageWithSharedSendable014';

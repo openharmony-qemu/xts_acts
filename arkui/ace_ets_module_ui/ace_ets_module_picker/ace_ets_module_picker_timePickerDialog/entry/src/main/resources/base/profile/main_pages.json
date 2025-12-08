@@ -6,6 +6,18 @@
     "MainAbility/pages/timePickerDialog/timePickerDialogBGColor",
     "MainAbility/pages/timePickerDialog/timePickerDialogEnableHapticFeedback",
     "MainAbility/pages/timePickerDialog/timePickerDialogSelectedArea",
-    "MainAbility/pages/timePickerDialog/timePickerDialogShadow"
+    "MainAbility/pages/timePickerDialog/timePickerDialogShadow",
+    "MainAbility/pages/timePickerDialog/showTimePickerDialogBackgroundEffect",
+    "MainAbility/pages/timePickerDialog/showTimePickerDialogBlurStyleOptions",
+    "MainAbility/pages/timePickerDialog/timePickerDialogBackgroundEffect",
+    "MainAbility/pages/timePickerDialog/timePickerDialogBlurStyleOptions",
+    "MainAbility/pages/timePickerDialog/timePickerDialogOptions",
+    "MainAbility/pages/timePickerDialog/timePickerDialogUI",
+    "MainAbility/pages/timePickerDialog/timePickerDialogWindowProperties",
+    "MainAbility/pages/timePickerDialog/DateTimeOptions",
+    "MainAbility/pages/timePickerDialog/TimePickerDialogAppearText",
+    "MainAbility/pages/timePickerDialog/TimePickerDialogCallback",
+    "MainAbility/pages/timePickerDialog/timePickerDialogAcceptButtonStyle",
+    "MainAbility/pages/timePickerDialog/timePickerDialogCancelButtonStyle"
   ]
 }

@@ -57,12 +57,12 @@ export default function ArrayCombinationTest() {
     })
 
     /**
+     * @tc.name   ArrayCombinationTest001
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0100
-     * @tc.name ArrayCombinationTest001
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface arr {
@@ -83,12 +83,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest002
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0200
-     * @tc.name ArrayCombinationTest002
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr1 = [10, 20];
@@ -105,12 +105,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest003
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0300
-     * @tc.name ArrayCombinationTest003
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [9, 8, 7, 6, 5]
@@ -122,12 +122,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest004
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0400
-     * @tc.name ArrayCombinationTest004
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: Array<number> = Fn004_ArrayCombinationTest();
@@ -135,12 +135,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest005
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0500
-     * @tc.name ArrayCombinationTest005
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = [5, 2, 8, 1];
@@ -159,12 +159,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest006
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0600
-     * @tc.name ArrayCombinationTest006
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sparseArr = [1, , 3, , 5];
@@ -178,12 +178,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest007
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0700
-     * @tc.name ArrayCombinationTest007
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const mixedArr = [2, -3, 4];
@@ -197,12 +197,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest008
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0800
-     * @tc.name ArrayCombinationTest008
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr1 = [1, 2];
@@ -219,12 +219,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest009
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_0900
-     * @tc.name ArrayCombinationTest009
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const numArr = [3, 7, 2, 8, 4];
@@ -240,12 +240,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest010
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1000
-     * @tc.name ArrayCombinationTest010
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dirtyArr = [null, 3, undefined, 1, null, 5];
@@ -259,12 +259,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest011
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1100
-     * @tc.name ArrayCombinationTest011
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const baseArr = [1, 2, 3];
@@ -278,12 +278,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest012
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1200
-     * @tc.name ArrayCombinationTest012
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const strNumArr = [3, 1, 4, 2];
@@ -300,12 +300,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest013
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1300
-     * @tc.name ArrayCombinationTest013
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface arr {
@@ -328,12 +328,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest014
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1400
-     * @tc.name ArrayCombinationTest014
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const strArr = ['a', 'bc', 'def', 'gh', 'ijkl'];
@@ -348,12 +348,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest015
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1500
-     * @tc.name ArrayCombinationTest015
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const numArr = [2, 4, 5, 6, 9];
@@ -369,12 +369,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest016
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1600
-     * @tc.name ArrayCombinationTest016
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: Array<number> = Fn016_ArrayCombinationTest();
@@ -382,12 +382,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest017
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1700
-     * @tc.name ArrayCombinationTest017
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const mixedNums = [-3, 2, -1, 4, 0];
@@ -403,12 +403,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest018
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1800
-     * @tc.name ArrayCombinationTest018
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ['a', 5, 'b', 10, 'c', 15, true, 20, false, 25]
@@ -423,12 +423,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest019
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_1900
-     * @tc.name ArrayCombinationTest019
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: Array<number> = Fn019_ArrayCombinationTest();
@@ -436,12 +436,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest020
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2000
-     * @tc.name ArrayCombinationTest020
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const numStrArr = [7, 2, 5];
@@ -458,12 +458,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest021
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2100
-     * @tc.name ArrayCombinationTest021
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const boolArr = [true, false, true, false, true];
@@ -478,12 +478,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest022
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2200
-     * @tc.name ArrayCombinationTest022
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nums = [2, 6, 3, 7, 4, 8];
@@ -501,12 +501,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest023
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2300
-     * @tc.name ArrayCombinationTest023
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arrA = [1, 2];
@@ -523,12 +523,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest024
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2400
-     * @tc.name ArrayCombinationTest024
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let withoutMiddle: Array<number> = Fn024_ArrayCombinationTest();
@@ -536,12 +536,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest025
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2500
-     * @tc.name ArrayCombinationTest025
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const origin = [3, 5, 7, 4];
@@ -556,12 +556,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest026
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2600
-     * @tc.name ArrayCombinationTest026
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const factors = [2, 3, 4];
@@ -576,12 +576,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest027
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2700
-     * @tc.name ArrayCombinationTest027
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const words = ['cat', 'a', 'ab', 'dog', 'bc'];
@@ -596,12 +596,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest028
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2800
-     * @tc.name ArrayCombinationTest028
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const numbers = [1, 2, 3, 4, 5, 6];
@@ -616,12 +616,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest029
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_2900
-     * @tc.name ArrayCombinationTest029
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dirty = [4, undefined, 1, undefined, 3, 2];
@@ -637,12 +637,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest030
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3000
-     * @tc.name ArrayCombinationTest030
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dirty = [4, undefined, 1, undefined, 3, 2];
@@ -658,12 +658,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest031
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3100
-     * @tc.name ArrayCombinationTest031
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [5, 3, 1, 4, 2]
@@ -674,12 +674,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest032
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3200
-     * @tc.name ArrayCombinationTest032
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, 20, 30]
@@ -691,12 +691,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest033
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3300
-     * @tc.name ArrayCombinationTest033
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [7, 1, 9, 4]
@@ -709,12 +709,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest034
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3400
-     * @tc.name ArrayCombinationTest034
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 50, 200]
@@ -725,12 +725,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest035
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3500
-     * @tc.name ArrayCombinationTest035
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 3, 5, 7]
@@ -741,12 +741,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest036
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3600
-     * @tc.name ArrayCombinationTest036
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [8, 4, 2, 6]
@@ -758,12 +758,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest037
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3700
-     * @tc.name ArrayCombinationTest037
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, 2, 5, 8]
@@ -776,12 +776,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest038
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3800
-     * @tc.name ArrayCombinationTest038
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [3, 6, 9, 12]
@@ -793,12 +793,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest039
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_3900
-     * @tc.name ArrayCombinationTest039
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [11, 22, 33, 44]
@@ -809,12 +809,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest040
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4000
-     * @tc.name ArrayCombinationTest040
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 2, 3, 4, 5]
@@ -825,12 +825,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest041
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4100
-     * @tc.name ArrayCombinationTest041
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [5, 4, 3, 2, 1]
@@ -842,12 +842,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest042
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4200
-     * @tc.name ArrayCombinationTest042
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 200, 300]
@@ -859,12 +859,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest043
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4300
-     * @tc.name ArrayCombinationTest043
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [7, 5, 3, 1]
@@ -876,12 +876,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest044
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4400
-     * @tc.name ArrayCombinationTest044
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 10, 100, 1000]
@@ -893,12 +893,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest045
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4500
-     * @tc.name ArrayCombinationTest045
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [2, 4, 6, 8]
@@ -911,12 +911,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest046
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4600
-     * @tc.name ArrayCombinationTest046
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, 20, 30, 40]
@@ -927,12 +927,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest047
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4700
-     * @tc.name ArrayCombinationTest047
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [15, 5, 25, 10]
@@ -944,12 +944,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest048
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4800
-     * @tc.name ArrayCombinationTest048
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 2, 3, 4, 5, 6]
@@ -961,12 +961,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest049
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_4900
-     * @tc.name ArrayCombinationTest049
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [9, 8, 7, 6]
@@ -978,12 +978,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest050
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5000
-     * @tc.name ArrayCombinationTest050
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 200, 300, 400]
@@ -995,12 +995,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest051
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5100
-     * @tc.name ArrayCombinationTest051
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, -5, 20, 0, 15, -3, 25, 30, -10, 5]
@@ -1014,12 +1014,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest052
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5200
-     * @tc.name ArrayCombinationTest052
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 50, 200, 75, 150, 25, 300, 125, 350, 225]
@@ -1032,12 +1032,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest053
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5300
-     * @tc.name ArrayCombinationTest053
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -1051,12 +1051,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest054
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5400
-     * @tc.name ArrayCombinationTest054
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [-10, 5, 0, 15, -5, 20, 10, -15, 25, 30]
@@ -1069,12 +1069,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest055
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5500
-     * @tc.name ArrayCombinationTest055
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
@@ -1087,12 +1087,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest056
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5600
-     * @tc.name ArrayCombinationTest056
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10]
@@ -1106,12 +1106,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest057
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5700
-     * @tc.name ArrayCombinationTest057
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10]
@@ -1125,12 +1125,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest058
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5800
-     * @tc.name ArrayCombinationTest058
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -1144,12 +1144,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest059
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_5900
-     * @tc.name ArrayCombinationTest059
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [5, 1, 7, 3, 9, 2, 4, 6, 8, 10]
@@ -1163,12 +1163,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest060
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6000
-     * @tc.name ArrayCombinationTest060
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [-20, -15, -10, -5, 0, 5, 10, 15, 20, 25]
@@ -1181,12 +1181,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest061
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6100
-     * @tc.name ArrayCombinationTest061
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
@@ -1200,12 +1200,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest062
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6200
-     * @tc.name ArrayCombinationTest062
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
@@ -1218,12 +1218,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest063
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6300
-     * @tc.name ArrayCombinationTest063
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250]
@@ -1237,12 +1237,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest064
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6400
-     * @tc.name ArrayCombinationTest064
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -1253,12 +1253,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest065
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6500
-     * @tc.name ArrayCombinationTest065
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105]
@@ -1271,12 +1271,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest066
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6600
-     * @tc.name ArrayCombinationTest066
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [-30, -20, -10, 0, 10, 20, 30, 40, 50, 60]
@@ -1290,12 +1290,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest067
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6700
-     * @tc.name ArrayCombinationTest067
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 150, 200, 250, 300, 350, 400, 450, 500]
@@ -1308,12 +1308,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest068
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6800
-     * @tc.name ArrayCombinationTest068
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -1326,12 +1326,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest069
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_6900
-     * @tc.name ArrayCombinationTest069
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
@@ -1344,12 +1344,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest070
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7000
-     * @tc.name ArrayCombinationTest070
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100]
@@ -1363,12 +1363,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest071
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7100
-     * @tc.name ArrayCombinationTest071
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = [5, 1, 7, 3, 9];
@@ -1379,12 +1379,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest072
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7200
-     * @tc.name ArrayCombinationTest072
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface arr { v: number };
@@ -1398,12 +1398,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest073
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7300
-     * @tc.name ArrayCombinationTest073
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: Array<number> = Fn073_ArrayCombinationTest();
@@ -1411,12 +1411,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest074
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7400
-     * @tc.name ArrayCombinationTest074
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const mixed = [2, '3', 5, '1', 4];
@@ -1430,12 +1430,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest075
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7500
-     * @tc.name ArrayCombinationTest075
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sparse = [1, , null, 3, , 5];
@@ -1447,12 +1447,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest076
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7600
-     * @tc.name ArrayCombinationTest076
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nums = [1, 2, 3, 4];
@@ -1463,12 +1463,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest077
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7700
-     * @tc.name ArrayCombinationTest077
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fruits = ['apple', 'banana', 'cherry', 'date'];
@@ -1480,12 +1480,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest078
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7800
-     * @tc.name ArrayCombinationTest078
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bools = [true, false, true, true, false];
@@ -1500,12 +1500,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest079
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_7900
-     * @tc.name ArrayCombinationTest079
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface arr {
@@ -1527,12 +1527,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest080
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8000
-     * @tc.name ArrayCombinationTest080
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: Array<number> = Fn080_ArrayCombinationTest();
@@ -1540,12 +1540,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest081
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8100
-     * @tc.name ArrayCombinationTest081
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nums = [7, 2, 8, 2, 9];
@@ -1558,12 +1558,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest082
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8200
-     * @tc.name ArrayCombinationTest082
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const evens = [4, 6, 8, 10];
@@ -1579,12 +1579,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest083
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8300
-     * @tc.name ArrayCombinationTest083
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface arr { x: number }
@@ -1599,12 +1599,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest084
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8400
-     * @tc.name ArrayCombinationTest084
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: Array<number> = Fn084_ArrayCombinationTest();
@@ -1612,12 +1612,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest085
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8500
-     * @tc.name ArrayCombinationTest085
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const animals = ['cat', 'dog', 'bird', 'fish'];
@@ -1629,12 +1629,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest086
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8600
-     * @tc.name ArrayCombinationTest086
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nums = [10, 20, 30, 40];
@@ -1648,12 +1648,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest087
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8700
-     * @tc.name ArrayCombinationTest087
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface arr { id: number };
@@ -1667,12 +1667,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest088
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8800
-     * @tc.name ArrayCombinationTest088
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const negatives = [-3, 2, -5, 1, -1];
@@ -1687,12 +1687,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest089
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_8900
-     * @tc.name ArrayCombinationTest089
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, -5, 20, 0, 15, -3, 25, 30, -10, 5, 1.5, -2.5]
@@ -1706,12 +1706,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest090
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9000
-     * @tc.name ArrayCombinationTest090
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, -50, 200, 75, -25, 150, -100, 300, 50, -75]
@@ -1725,12 +1725,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest091
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9100
-     * @tc.name ArrayCombinationTest091
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]
@@ -1745,12 +1745,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest092
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9200
-     * @tc.name ArrayCombinationTest092
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [-10, 5, 0, 15, -5, 20, 10, -15, 25, 30, -20, 35]
@@ -1763,12 +1763,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest093
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9300
-     * @tc.name ArrayCombinationTest093
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -1782,12 +1782,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest094
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9400
-     * @tc.name ArrayCombinationTest094
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 'apple', 2, 'banana', 3, 'cherry', true, false, null, undefined]
@@ -1801,12 +1801,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest095
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9500
-     * @tc.name ArrayCombinationTest095
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
@@ -1820,12 +1820,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest096
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9600
-     * @tc.name ArrayCombinationTest096
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23]
@@ -1839,12 +1839,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest097
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9700
-     * @tc.name ArrayCombinationTest097
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200]
@@ -1857,12 +1857,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest098
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9800
-     * @tc.name ArrayCombinationTest098
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
@@ -1874,12 +1874,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest099
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_9900
-     * @tc.name ArrayCombinationTest099
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125]
@@ -1893,12 +1893,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest100
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10000
-     * @tc.name ArrayCombinationTest100
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -1913,12 +1913,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest101
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10100
-     * @tc.name ArrayCombinationTest101
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dates = [new Date(2023, 5, 1), new Date(2024, 2, 15), new Date(2023, 11, 30)];
@@ -1932,12 +1932,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest102
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10200
-     * @tc.name ArrayCombinationTest102
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: Array<number> = Fn102_ArrayCombinationTest();
@@ -1945,12 +1945,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest103
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10300
-     * @tc.name ArrayCombinationTest103
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const mixed = [6, '8', 3, '5', 9];
@@ -1965,12 +1965,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest104
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10400
-     * @tc.name ArrayCombinationTest104
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const funcs: Array<(a: number) => number> = [(a) => a + 1, (a) => a * 2, (a) => a - 3];
@@ -1985,12 +1985,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest105
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10500
-     * @tc.name ArrayCombinationTest105
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: Array<number> = Fn105_ArrayCombinationTest();
@@ -1998,12 +1998,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest106
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10600
-     * @tc.name ArrayCombinationTest106
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fruits = ['orange', 'Banana', 'apple', 'Grape'];
@@ -2016,12 +2016,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest107
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10700
-     * @tc.name ArrayCombinationTest107
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fruits = ['orange', 'Banana', 'apple', 'Grape'];
@@ -2034,12 +2034,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest108
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10800
-     * @tc.name ArrayCombinationTest108
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const withNaN = [3, NaN, 1, NaN, 5];
@@ -2055,12 +2055,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest109
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_10900
-     * @tc.name ArrayCombinationTest109
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface arr1 { val: number }
@@ -2078,12 +2078,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest110
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11000
-     * @tc.name ArrayCombinationTest110
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const ofArr = Array.of(9, 3, 7, 1, 5);
@@ -2098,12 +2098,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest111
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11100
-     * @tc.name ArrayCombinationTest111
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 50, 200, 75, 150, 25, 300, 125, 350, 225, 400, 450]
@@ -2117,12 +2117,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest112
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11200
-     * @tc.name ArrayCombinationTest112
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12]
@@ -2136,12 +2136,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest113
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11300
-     * @tc.name ArrayCombinationTest113
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200]
@@ -2156,12 +2156,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest114
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11400
-     * @tc.name ArrayCombinationTest114
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [5, 1, 7, 3, 9, 2, 4, 6, 8, 10, 12, 14]
@@ -2175,12 +2175,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest115
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11500
-     * @tc.name ArrayCombinationTest115
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [-20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35]
@@ -2194,12 +2194,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest116
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11600
-     * @tc.name ArrayCombinationTest116
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125]
@@ -2213,12 +2213,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest117
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11700
-     * @tc.name ArrayCombinationTest117
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
@@ -2232,12 +2232,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest118
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11800
-     * @tc.name ArrayCombinationTest118
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23]
@@ -2252,12 +2252,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest119
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_11900
-     * @tc.name ArrayCombinationTest119
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 15]
@@ -2271,12 +2271,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest120
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12000
-     * @tc.name ArrayCombinationTest120
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [10, -5, 20, 0, 15, -3, 25, 30, -10, 5, 1.5, -2.5]
@@ -2290,12 +2290,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest121
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12100
-     * @tc.name ArrayCombinationTest121
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, 'apple', 2, 'banana', 3, 'cherry', true, false, null, undefined]
@@ -2309,12 +2309,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest122
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12200
-     * @tc.name ArrayCombinationTest122
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [true, '10', false, '20', 30, '40', 50, '60', 70, '80']
@@ -2329,12 +2329,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest123
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12300
-     * @tc.name ArrayCombinationTest123
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ['a', 5, 'b', 10, 'c', 15, true, 20, false, 25]
@@ -2348,12 +2348,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest124
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12400
-     * @tc.name ArrayCombinationTest124
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [null, 100, undefined, 200, '300', 400, '500', 600]
@@ -2368,12 +2368,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest125
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12500
-     * @tc.name ArrayCombinationTest125
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [true, '5', false, '10', 15, '20', 25, '30', 35, '40']
@@ -2387,12 +2387,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest126
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12600
-     * @tc.name ArrayCombinationTest126
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [1, '2', 3, '4', 5, '6', '7', 8, '9', 10]
@@ -2406,12 +2406,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest127
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12700
-     * @tc.name ArrayCombinationTest127
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [null, 2.5, undefined, 3.7, '4.1', 5.3, '6.9', 7.5]
@@ -2426,12 +2426,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest128
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12800
-     * @tc.name ArrayCombinationTest128
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [true, 'a', false, 'b', 10, 'c', 20, 'd', 30]
@@ -2445,12 +2445,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest129
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_12900
-     * @tc.name ArrayCombinationTest129
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ['x', 100, 'y', 200, 'z', 300, true, 400, false, 500]
@@ -2465,12 +2465,12 @@ export default function ArrayCombinationTest() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest130
      * @tc.number SUB_BUILTINS_ARRAYCOMBINATION_TEST_13000
-     * @tc.name ArrayCombinationTest130
-     * @tc.desc Combination use case of all interfaces in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Combination use case of all interfaces in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = [null, '1', undefined, '2', 3, '4', 5, '6', 7, '8']

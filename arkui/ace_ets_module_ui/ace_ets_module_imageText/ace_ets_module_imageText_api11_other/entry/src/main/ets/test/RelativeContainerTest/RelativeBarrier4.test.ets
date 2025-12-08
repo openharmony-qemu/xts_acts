@@ -42,14 +42,15 @@ export default function RelativeBarrier4() {
       console.info("RelativeBarrier4 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0310
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeBarrier4_001
+     * @tc.number RelativeBarrier4_001
+     * @tc.desc   RelativeBarrier4_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeBarrier4_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeBarrier4_001] START');
 

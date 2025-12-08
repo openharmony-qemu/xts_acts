@@ -141,12 +141,12 @@ export default function imageSourceGetImageInfoTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_001
-     * @tc.name      : imageSource_getImageInfo_callback_001
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfo_callback_001
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_001
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfo_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfo_callback_001';
@@ -158,12 +158,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_002
-     * @tc.name      : imageSource_getImageInfo_callback_002
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfo_callback_002
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_002
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfo_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfo_callback_002';
@@ -175,12 +175,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_003
-     * @tc.name      : imageSource_getImageInfo_callback_003
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfo_callback_003
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_003
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfo_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfo_callback_003';
@@ -191,12 +191,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_004
-     * @tc.name      : imageSource_getImageInfo_callback_004
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfo_callback_004
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_004
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfo_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfo_callback_004';
@@ -207,12 +207,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_005
-     * @tc.name      : imageSource_getImageInfo_promise_001
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfo_promise_001
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_005
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfo_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfo_promise_001';
@@ -224,12 +224,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_006
-     * @tc.name      : imageSource_getImageInfo_promise_002
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfo_promise_002
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_006
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfo_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfo_promise_002';
@@ -241,12 +241,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_007
-     * @tc.name      : imageSource_getImageInfo_promise_003
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfo_promise_003
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_007
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfo_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfo_promise_003';
@@ -257,12 +257,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_008
-     * @tc.name      : imageSource_getImageInfo_promise_004
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfo_promise_004
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_008
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfo_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfo_promise_004';
@@ -273,12 +273,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_001
-     * @tc.name      : imageSource_getImageInfoSync_promise_001
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfoSync_promise_001
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_001
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfoSync_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfoSync_promise_001';
@@ -289,12 +289,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_002
-     * @tc.name      : imageSource_getImageInfoSync_promise_002
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfoSync_promise_002
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_002
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfoSync_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfoSync_promise_002';
@@ -306,12 +306,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_003
-     * @tc.name      : imageSource_getImageInfoSync_promise_003
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfoSync_promise_003
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_003
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfoSync_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfoSync_promise_003';
@@ -322,12 +322,12 @@ export default function imageSourceGetImageInfoTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_004
-     * @tc.name      : imageSource_getImageInfoSync_promise_004
-     * @tc.desc      : imageSource_getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getImageInfoSync_promise_004
+     * @tc.number IMAGE_SOURCE_GET_IMAGE_INFO_SYNC_004
+     * @tc.desc   imageSource_getImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getImageInfoSync_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getImageInfoSync_promise_004';

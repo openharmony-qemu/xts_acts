@@ -20,9 +20,12 @@ export default function Telephony_NetManager_NetWorkTest() {
 describe("Telephony_NetManager_NetWorkTest", function () {
 
     /**
+     * @tc.name   Telephony_NetManager_NetWorkTest_GetType_NoPermission_0100
      * @tc.number Telephony_NetManager_NetWorkTest_GetType_NoPermission_0100
-     * @tc.name Whether GetType method is called successfully without permission
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetManager_NetWorkTest_GetType_NoPermission_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         network.getType({
@@ -41,9 +44,12 @@ describe("Telephony_NetManager_NetWorkTest", function () {
     });
 
     /**
+     * @tc.name   Telephony_NetManager_NetWorkTest_GetType_NoPermission_0200
      * @tc.number Telephony_NetManager_NetWorkTest_GetType_NoPermission_0200
-     * @tc.name Whether to call GetType method again without permission
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetManager_NetWorkTest_GetType_NoPermission_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         network.getType({
@@ -62,9 +68,12 @@ describe("Telephony_NetManager_NetWorkTest", function () {
     });
 
     /**
+     * @tc.name   Telephony_NetManager_NetWorkTest_Subscribe_NoPermission_0100
      * @tc.number Telephony_NetManager_NetWorkTest_Subscribe_NoPermission_0100
-     * @tc.name Whether the subscribe method is called successfully without permission
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetManager_NetWorkTest_Subscribe_NoPermission_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         network.subscribe({
@@ -81,9 +90,12 @@ describe("Telephony_NetManager_NetWorkTest", function () {
     });
 
     /**
+     * @tc.name   Telephony_NetManager_NetWorkTest_Subscribe_NoPermission_0200
      * @tc.number Telephony_NetManager_NetWorkTest_Subscribe_NoPermission_0200
-     * @tc.name Whether to call the subscribe method again without permission
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetManager_NetWorkTest_Subscribe_NoPermission_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         network.subscribe({

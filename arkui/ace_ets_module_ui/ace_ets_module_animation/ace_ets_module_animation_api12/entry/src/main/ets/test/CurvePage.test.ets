@@ -50,10 +50,12 @@ export default function CurvePage() {
 
 
     /**
-     * @tc.number    CurvePage_0100
-     * @tc.name      CurvePage_0100
-     * @tc.desc      Test Curve easeInOut
-     * @tc.level     Level 0
+     * @tc.name   CurvePage_0100
+     * @tc.number CurvePage_0100
+     * @tc.desc   Test Curve easeInOut
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CurvePage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('CurvePage_0100 START');
@@ -75,10 +77,12 @@ export default function CurvePage() {
     });
 
     /**
-     * @tc.number    CurvePage_0200
-     * @tc.name      CurvePage_0200
-     * @tc.desc      Test Curve FastOutSlowIn
-     * @tc.level     Level 0
+     * @tc.name   CurvePage_0200
+     * @tc.number CurvePage_0200
+     * @tc.desc   Test Curve FastOutSlowIn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CurvePage_0200', Level.LEVEL0, async (done: Function) => {
       console.info('CurvePage_0200 START');
@@ -100,10 +104,12 @@ export default function CurvePage() {
     });
 
     /**
-     * @tc.number    CurvePage_0300
-     * @tc.name      CurvePage_0100
-     * @tc.desc      Test Curve springMotion
-     * @tc.level     Level 0
+     * @tc.name   CurvePage_0300
+     * @tc.number CurvePage_0300
+     * @tc.desc   Test Curve springMotion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CurvePage_0300', Level.LEVEL0, async (done: Function) => {
       console.info('CurvePage_0300 START');
@@ -125,10 +131,12 @@ export default function CurvePage() {
     });
 
     /**
-     * @tc.number    CurvePage_0400
-     * @tc.name      CurvePage_0400
-     * @tc.desc      Test Curve responsiveSpringMotion
-     * @tc.level     Level 0
+     * @tc.name   CurvePage_0400
+     * @tc.number CurvePage_0400
+     * @tc.desc   Test Curve responsiveSpringMotion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CurvePage_0400', Level.LEVEL0, async (done: Function) => {
       console.info('CurvePage_0400 START');

@@ -169,12 +169,12 @@ export default function ImageGetComponentTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_001
-     * @tc.name      : Image_getComponent_promise_001
-     * @tc.desc      : Image_getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Image_getComponent_promise_001
+     * @tc.number IMAGE_GET_COMPONENT_001
+     * @tc.desc   Image_getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Image_getComponent_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Image_getComponent_promise_001';
@@ -182,12 +182,12 @@ export default function ImageGetComponentTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_002  //TODO 中断
-     * @tc.name      : Image_getComponent_abnormal_promise_001
-     * @tc.desc      : Image_getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Image_getComponent_abnormal_promise_001
+     * @tc.number IMAGE_GET_COMPONENT_002  //TODO 中断
+     * @tc.desc   Image_getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('Image_getComponent_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Image_getComponent_abnormal_promise_001';
@@ -196,12 +196,12 @@ export default function ImageGetComponentTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_003  //TODO 中断
-     * @tc.name      : Image_getComponent_abnormal_promise_002
-     * @tc.desc      : Image_getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Image_getComponent_abnormal_promise_002
+     * @tc.number IMAGE_GET_COMPONENT_003  //TODO 中断
+     * @tc.desc   Image_getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('Image_getComponent_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'Image_getComponent_abnormal_promise_002';
@@ -210,12 +210,12 @@ export default function ImageGetComponentTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_004  //TODO 中断
-     * @tc.name      : Image_getComponent_abnormal_promise_003
-     * @tc.desc      : Image_getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Image_getComponent_abnormal_promise_003
+     * @tc.number IMAGE_GET_COMPONENT_004  //TODO 中断
+     * @tc.desc   Image_getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('Image_getComponent_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'Image_getComponent_abnormal_promise_003';
@@ -224,12 +224,12 @@ export default function ImageGetComponentTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_005
-     * @tc.name      : Image_getComponent_callback_001
-     * @tc.desc      : Image_getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Image_getComponent_callback_001
+     * @tc.number IMAGE_GET_COMPONENT_005
+     * @tc.desc   Image_getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Image_getComponent_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Image_getComponent_callback_001';
@@ -237,12 +237,12 @@ export default function ImageGetComponentTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_006  //TODO 中断
-     * @tc.name      : Image_getComponent_abnormal_callback_001
-     * @tc.desc      : Image_getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Image_getComponent_abnormal_callback_001
+     * @tc.number IMAGE_GET_COMPONENT_006  //TODO 中断
+     * @tc.desc   Image_getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('Image_getComponent_abnormal_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Image_getComponent_abnormal_callback_001';
@@ -251,12 +251,12 @@ export default function ImageGetComponentTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_007  //TODO 中断
-     * @tc.name      : Image_getComponent_abnormal_callback_002
-     * @tc.desc      : Image_getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Image_getComponent_abnormal_callback_002
+     * @tc.number IMAGE_GET_COMPONENT_007  //TODO 中断
+     * @tc.desc   Image_getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('Image_getComponent_abnormal_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'Image_getComponent_abnormal_callback_002';
@@ -265,12 +265,12 @@ export default function ImageGetComponentTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_008  //TODO 中断
-     * @tc.name      : Image_getComponent_abnormal_callback_003
-     * @tc.desc      : Image_getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Image_getComponent_abnormal_callback_003
+     * @tc.number IMAGE_GET_COMPONENT_008  //TODO 中断
+     * @tc.desc   Image_getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('Image_getComponent_abnormal_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'Image_getComponent_abnormal_callback_003';

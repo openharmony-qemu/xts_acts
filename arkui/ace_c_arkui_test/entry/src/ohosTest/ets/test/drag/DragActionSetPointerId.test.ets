@@ -28,13 +28,13 @@ export default function DragActionSetPointerIdTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragActionSetPointerId_0100
-     * @tc.name       : DragActionSetPointerIdTest001
-     * @tc.desc       : testing DragActionSetPointerId
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionSetPointerIdTest001
+     * @tc.number SUB_ARKUI_CAPI_DragActionSetPointerId_0100
+     * @tc.desc   testing DragActionSetPointerId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionSetPointerIdTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragActionSetPointerIdTest001 START');

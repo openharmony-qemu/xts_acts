@@ -61,12 +61,12 @@ export default function fractionStops() {
     });
 
     /**
+     * @tc.name   fractionStops_0100
      * @tc.number fractionStops_0100
-     * @tc.name fractionStops_0100
-     * @tc.desc test api of systemBarEffect
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test api of systemBarEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('fractionStops_0100', Level.LEVEL2, async (done: Function) => {
       console.info('fractionStops_0100 START');

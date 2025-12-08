@@ -47,9 +47,12 @@ export default function ColumnSetVisibility_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSetVisibilityNoneVisible
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_2000
-     * @tc.name testColumnSetVisibilityNoneVisible
-     * @tc.desc The subcomponents set visibility.none and visibility.visible.
+     * @tc.desc   The subcomponents set visibility.none and visibility.visible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSetVisibilityNoneVisible',  Level.LEVEL0, async () => {
       console.info('new testColumnSetVisibilityNoneVisible START');
@@ -84,9 +87,12 @@ export default function ColumnSetVisibility_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSetVisibilityHiddenVisible
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_2100
-     * @tc.name testColumnSetVisibilityHiddenVisible
-     * @tc.desc The subcomponents set visibility.hidden and visibility.visible.
+     * @tc.desc   The subcomponents set visibility.hidden and visibility.visible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSetVisibilityHiddenVisible',  Level.LEVEL0, async () => {
       console.info('new testColumnSetVisibilityHiddenVisible START');
@@ -117,9 +123,12 @@ export default function ColumnSetVisibility_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSetVisibilityVisible
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_2200
-     * @tc.name testColumnSetVisibilityVisible
-     * @tc.desc The subcomponents both set visibility.visible.
+     * @tc.desc   The subcomponents both set visibility.visible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSetVisibilityVisible',  Level.LEVEL0, async () => {
       console.info('new testColumnSetVisibilityVisible START');
@@ -150,9 +159,12 @@ export default function ColumnSetVisibility_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSetVisibilityVisibleNone
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_2300
-     * @tc.name testColumnSetVisibilityVisibleNone
-     * @tc.desc The subcomponents set visibility.visible and visibility.none.
+     * @tc.desc   The subcomponents set visibility.visible and visibility.none.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSetVisibilityVisibleNone',  Level.LEVEL0, async () => {
       console.info('new testColumnSetVisibilityVisibleNone START');

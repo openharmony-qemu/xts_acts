@@ -49,14 +49,14 @@ async function runTestCaseWithJudgeHasSimCard(testCaseName: string, done: () => 
 export default function observerManagerSimStateTest1() {
   describe('ObserverManagerSimStateTest1', () => {
 
-    /* *
-      * @tc.number: SUB_Telephony_Observer_SimStateChangeOnOptions_1700
-      * @tc.name  : testTelephonyObserverSimStateChangeOnOptions1700
-      * @tc.desc  : Subscribe to sim state change events with options.
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 1
-      */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOnOptions1700
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_1700
+     * @tc.desc   Subscribe to sim state change events with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOnOptions1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOnOptions1700';
       console.info(`${caseName} test start`);
@@ -75,14 +75,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SimStateChangeOff_0300
-    * @tc.name  : testTelephonyObserverSimStateChangeOff0300
-    * @tc.desc  : Unsubscribe to sim state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOff0300
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOff_0300
+     * @tc.desc   Unsubscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOff0300';
       console.info(`${caseName} test start`);
@@ -106,14 +106,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SimStateChangeOff_0400
-    * @tc.name  : testTelephonyObserverSimStateChangeOff0400
-    * @tc.desc  : Unsubscribe to sim state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOff0400
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOff_0400
+     * @tc.desc   Unsubscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOff0400';
       console.info(`${caseName} test start`);
@@ -135,14 +135,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_IccAccountInfoChangeOn_0100
-    * @tc.name  : testTelephonyObserverIccAccountInfoChangeOn0100
-    * @tc.desc  : Subscribe to accountInfo of icc change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOn0100
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOn_0100
+     * @tc.desc   Subscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverIccAccountInfoChangeOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOn0100';
       let simState = sim.getSimStateSync(0);
@@ -170,14 +170,14 @@ export default function observerManagerSimStateTest1() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_IccAccountInfoChangeOff_0400
-    * @tc.name  : testTelephonyObserverIccAccountInfoChangeOff0400
-    * @tc.desc  : Unsubscribe to accountInfo of icc change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOff0400
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOff_0400
+     * @tc.desc   Unsubscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverIccAccountInfoChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOff0400';
       console.info(`${caseName} test start`);

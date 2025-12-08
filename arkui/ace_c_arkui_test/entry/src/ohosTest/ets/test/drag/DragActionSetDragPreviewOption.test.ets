@@ -28,13 +28,13 @@ export default function DragActionSetDragPreviewOptionTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragActionSetDragPreviewOption_0100
-     * @tc.name       : DragActionSetDragPreviewOptionTest001
-     * @tc.desc       : testing DragActionSetDragPreviewOption
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionSetDragPreviewOptionTest001
+     * @tc.number SUB_ARKUI_CAPI_DragActionSetDragPreviewOption_0100
+     * @tc.desc   testing DragActionSetDragPreviewOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionSetDragPreviewOptionTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragActionSetDragPreviewOptionTest001 START');

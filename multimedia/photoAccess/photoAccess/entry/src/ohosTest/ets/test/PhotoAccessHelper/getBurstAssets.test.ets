@@ -45,12 +45,12 @@ export default function getBurstAssetsTest () {
       await pushCreateAsset(testContext, fileNameList);
     });
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_001
-     * @tc.name      : get_image_burst_assets_001
-     * @tc.desc      : getBurstAssets image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_burst_assets_image_001
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_001
+     * @tc.desc   getBurstAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_burst_assets_image_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_image_001";
@@ -80,12 +80,12 @@ export default function getBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_002
-     * @tc.name      : get_burst_assets_video_001
-     * @tc.desc      : getBurstAssets video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_burst_assets_video_001
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_002
+     * @tc.desc   getBurstAssets video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_burst_assets_video_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_video_001";
@@ -115,12 +115,12 @@ export default function getBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_003
-     * @tc.name      : get_image_burst_assets_003
-     * @tc.desc      : getBurstAssets by burstKey not exist
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_image_burst_assets_003
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_003
+     * @tc.desc   getBurstAssets by burstKey not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_image_burst_assets_003", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_image_003";
@@ -141,12 +141,12 @@ export default function getBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_004
-     * @tc.name      : get_burst_asset_by_subtype_001
-     * @tc.desc      : getBurstAssets by subtype
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_burst_asset_by_subtype_001
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_004
+     * @tc.desc   getBurstAssets by subtype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_burst_asset_by_subtype_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_asset_by_subtype_001";
@@ -169,12 +169,12 @@ export default function getBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_002
-     * @tc.name      : get_burst_assets_image_002
-     * @tc.desc      : getBurstAssets image,burstKey is [123123],error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_burst_assets_image_002
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_002
+     * @tc.desc   getBurstAssets image,burstKey is [123123],error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("get_burst_assets_image_002", Level.LEVEL2, async (done: Function) => {
       const testNum = "get_burst_assets_image_002";
@@ -194,12 +194,12 @@ export default function getBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_003
-     * @tc.name      : get_burst_assets_image_003
-     * @tc.desc      : getBurstAssets image,ops is undefined,error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_burst_assets_image_003
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_003
+     * @tc.desc   getBurstAssets image,ops is undefined,error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("get_burst_assets_image_003", Level.LEVEL2, async (done: Function) => {
       const testNum = "get_burst_assets_image_003";

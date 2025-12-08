@@ -42,12 +42,12 @@ export default function ParagraphSpacingTest() {
     });
 
     /**
-     * @tc.number    ParagraphSpacingTest_0010
-     * @tc.name      ParagraphSpacingTest_0010
-     * @tc.desc      test StyledString paragraphSpacing: LengthMetrics.vp(10)
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ParagraphSpacingTest_0010
+     * @tc.number ParagraphSpacingTest_0010
+     * @tc.desc   test StyledString paragraphSpacing: LengthMetrics.vp(10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParagraphSpacingTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[ParagraphSpacingTest_0010] START');
@@ -60,12 +60,12 @@ export default function ParagraphSpacingTest() {
     });
 
     /**
-     * @tc.number    ParagraphSpacingTest_0020
-     * @tc.name      ParagraphSpacingTest_0020
-     * @tc.desc      test StyledString paragraphSpacing: new LengthMetrics(20, LengthUnit.VP)
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ParagraphSpacingTest_0020
+     * @tc.number ParagraphSpacingTest_0020
+     * @tc.desc   test StyledString paragraphSpacing: new LengthMetrics(20, LengthUnit.VP)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParagraphSpacingTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[ParagraphSpacingTest_0020] START');
@@ -78,12 +78,12 @@ export default function ParagraphSpacingTest() {
     });
 
     /**
-     * @tc.number    ParagraphSpacingTest_0030
-     * @tc.name      ParagraphSpacingTest_0030
-     * @tc.desc      test StyledString paragraphSpacing: LengthMetrics.vp(-10)
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ParagraphSpacingTest_0030
+     * @tc.number ParagraphSpacingTest_0030
+     * @tc.desc   test StyledString paragraphSpacing: LengthMetrics.vp(-10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParagraphSpacingTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[ParagraphSpacingTest_0030] START');
@@ -96,12 +96,12 @@ export default function ParagraphSpacingTest() {
     });
 
     /**
-     * @tc.number    ParagraphSpacingTest_0040
-     * @tc.name      ParagraphSpacingTest_0040
-     * @tc.desc      test StyledString paragraphSpacing: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ParagraphSpacingTest_0040
+     * @tc.number ParagraphSpacingTest_0040
+     * @tc.desc   test StyledString paragraphSpacing: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParagraphSpacingTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[ParagraphSpacingTest_0040] START');

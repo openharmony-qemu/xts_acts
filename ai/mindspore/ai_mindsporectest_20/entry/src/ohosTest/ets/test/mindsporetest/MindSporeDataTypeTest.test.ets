@@ -23,14 +23,14 @@ export default function MindSporeDataTypeTest() {
   describe('MindSporeDataTypeTest', () => {
     beforeAll(async (done: Function) => {
     });
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_UNKNOWN_0100
-       * @tc.name       : testdatatypetest_001
-       * @tc.desc       : testing OH_AI_DATATYPE_UNKNOWN interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_001
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_UNKNOWN_0100
+     * @tc.desc   testing OH_AI_DATATYPE_UNKNOWN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -46,14 +46,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_OBJECTTYPE_STRING_0100
-       * @tc.name       : testdatatypetest_002
-       * @tc.desc       : testing OH_AI_DATATYPE_OBJECTTYPE_STRING interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_002
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_OBJECTTYPE_STRING_0100
+     * @tc.desc   testing OH_AI_DATATYPE_OBJECTTYPE_STRING interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -69,14 +69,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_BOOL_0100
-       * @tc.name       : testdatatypetest_007
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_BOOL interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_007
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_BOOL_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_BOOL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -92,14 +92,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_INT8_0100
-       * @tc.name       : testdatatypetest_008
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_INT8 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_008
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_INT8_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_INT8 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -115,14 +115,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_INT16_0100
-       * @tc.name       : testdatatypetest_009
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_INT16 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_009
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_INT16_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_INT16 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -138,14 +138,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_INT32_0100
-       * @tc.name       : testdatatypetest_010
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_INT32 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_010
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_INT32_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_INT32 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -161,14 +161,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_INT64_0100
-       * @tc.name       : testdatatypetest_011
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_INT64 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_011
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_INT64_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_INT64 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -184,14 +184,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_UINT8_0100
-       * @tc.name       : testdatatypetest_012
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_UINT8 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_012
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_UINT8_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_UINT8 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -207,14 +207,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_UINT16_0100
-       * @tc.name       : testdatatypetest_013
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_UINT16 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_013
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_UINT16_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_UINT16 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -230,14 +230,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_UINT32_0100
-       * @tc.name       : testdatatypetest_014
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_UINT32 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_014
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_UINT32_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_UINT32 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -253,14 +253,14 @@ export default function MindSporeDataTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_UINT64_0100
-       * @tc.name       : testdatatypetest_015
-       * @tc.desc       : testing OH_AI_DATATYPE_NUMBERTYPE_UINT64 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testdatatypetest_015
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DATATYPE_NUMBERTYPE_UINT64_0100
+     * @tc.desc   testing OH_AI_DATATYPE_NUMBERTYPE_UINT64 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testdatatypetest_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

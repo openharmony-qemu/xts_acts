@@ -19,18 +19,21 @@ struct RouterPage {
     })
   }
   onPageShow(): void {
+    native.GetRouterStateOnShow()
     message:''+native.GetRouterPageNodeState()
     promptAction.showToast({
       message:''+native.GetRouterPageNodeStateResult(2)
     })
   }
   onPageHide(): void {
+    native.GetRouterStateOnHide()
     message:''+native.GetRouterPageNodeState()
     promptAction.showToast({
       message:''+native.GetRouterPageNodeStateResult(3)
     })
   }
   onBackPress(): boolean | void {
+    native.GetRouterStateOnBackPressed()
     message:''+native.GetRouterPageNodeState()
     promptAction.showToast({
       message:''+native.GetRouterPageNodeStateResult(4)

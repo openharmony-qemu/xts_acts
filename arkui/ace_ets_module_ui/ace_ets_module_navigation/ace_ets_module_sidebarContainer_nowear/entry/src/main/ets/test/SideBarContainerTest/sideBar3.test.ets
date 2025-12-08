@@ -44,10 +44,13 @@ export default function sideBarShowSideBarJsunit() {
       console.info("sideBarShowSideBar after each called");
     });
 
-    /*
-     * @tc.number       testsideBarShowSideBar0001
-     * @tc.name         testsideBarShowSideBar0001
-     * @tc.desc        acesideBarShowSideBarEtsTest0001
+    /**
+     * @tc.name   testsideBarShowSideBar0001
+     * @tc.number testsideBarShowSideBar0001
+     * @tc.desc   acesideBarShowSideBarEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsideBarShowSideBar0001',  Level.LEVEL0, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0001 START');
@@ -61,10 +64,13 @@ export default function sideBarShowSideBarJsunit() {
 
     });
 
-    /*
-     * @tc.number       testsideBarShowSideBar0002
-     * @tc.name         testsideBarShowSideBar0002
-     * @tc.desc        acesideBarShowSideBarEtsTest0002
+    /**
+     * @tc.name   testsideBarShowSideBar0002
+     * @tc.number testsideBarShowSideBar0002
+     * @tc.desc   acesideBarShowSideBarEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsideBarShowSideBar0002',  Level.LEVEL0, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0002 START');
@@ -78,10 +84,13 @@ export default function sideBarShowSideBarJsunit() {
 
     });
 
-    /*
-     * @tc.number       testsideBarShowSideBar0003
-     * @tc.name         testsideBarShowSideBar0003
-     * @tc.desc        acesideBarShowSideBarEtsTest0003
+    /**
+     * @tc.name   testsideBarShowSideBar0003
+     * @tc.number testsideBarShowSideBar0003
+     * @tc.desc   acesideBarShowSideBarEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsideBarShowSideBar0003',  Level.LEVEL0, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0003 START');

@@ -32,6 +32,14 @@ describe('ActsGetWantTest', function () {
         }, 1500);
     });
 
+    /**
+     * @tc.name   ACTS_RemoteObject_0100
+     * @tc.number ACTS_RemoteObject_0100
+     * @tc.desc   ACTS_RemoteObject_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_RemoteObject_0100', Level.LEVEL0, async function(done) {
         let wantRemoteOjbect = new WantRemoteObject("wantRemoteObject");
 
@@ -66,6 +74,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_0100
+     * @tc.number ACTS_GetWant_0100
+     * @tc.desc   ACTS_GetWant_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_0100', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want: {
@@ -119,6 +135,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_0200
+     * @tc.number ACTS_GetWant_0200
+     * @tc.desc   ACTS_GetWant_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_0200', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want: {
@@ -165,6 +189,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_0300
+     * @tc.number ACTS_GetWant_0300
+     * @tc.desc   ACTS_GetWant_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_0300', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -225,6 +257,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_0500
+     * @tc.number ACTS_GetWant_0500
+     * @tc.desc   ACTS_GetWant_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_0500', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -284,6 +324,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_0600
+     * @tc.number ACTS_GetWant_0600
+     * @tc.desc   ACTS_GetWant_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_0600', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -340,6 +388,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_0700
+     * @tc.number ACTS_GetWant_0700
+     * @tc.desc   ACTS_GetWant_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_0700', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -399,6 +455,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_0800
+     * @tc.number ACTS_GetWant_0800
+     * @tc.desc   ACTS_GetWant_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_0800', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -455,6 +519,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_0900
+     * @tc.number ACTS_GetWant_0900
+     * @tc.desc   ACTS_GetWant_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_0900', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -514,6 +586,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_1000
+     * @tc.number ACTS_GetWant_1000
+     * @tc.desc   ACTS_GetWant_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1000', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -570,6 +650,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_1100
+     * @tc.number ACTS_GetWant_1100
+     * @tc.desc   ACTS_GetWant_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1100', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -627,6 +715,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_1200
+     * @tc.number ACTS_GetWant_1200
+     * @tc.desc   ACTS_GetWant_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1200', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -681,6 +777,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_1300
+     * @tc.number ACTS_GetWant_1300
+     * @tc.desc   ACTS_GetWant_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1300', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -740,6 +844,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_1400
+     * @tc.number ACTS_GetWant_1400
+     * @tc.desc   ACTS_GetWant_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1400', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -796,6 +908,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_1500
+     * @tc.number ACTS_GetWant_1500
+     * @tc.desc   ACTS_GetWant_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1500', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -855,6 +975,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_1600
+     * @tc.number ACTS_GetWant_1600
+     * @tc.desc   ACTS_GetWant_1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1600', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -911,6 +1039,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_1700
+     * @tc.number ACTS_GetWant_1700
+     * @tc.desc   ACTS_GetWant_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1700', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -970,6 +1106,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_1900
+     * @tc.number ACTS_GetWant_1900
+     * @tc.desc   ACTS_GetWant_1900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_1900', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -1029,6 +1173,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_2100
+     * @tc.number ACTS_GetWant_2100
+     * @tc.desc   ACTS_GetWant_2100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_2100', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -1088,6 +1240,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_2200
+     * @tc.number ACTS_GetWant_2200
+     * @tc.desc   ACTS_GetWant_2200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_2200', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -1144,6 +1304,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by promise)
+    /**
+     * @tc.name   ACTS_GetWant_2300
+     * @tc.number ACTS_GetWant_2300
+     * @tc.desc   ACTS_GetWant_2300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_2300', Level.LEVEL0, async function (done) {
             featureAbility.startAbilityForResult({
                 want:
@@ -1203,6 +1371,14 @@ describe('ActsGetWantTest', function () {
     //  @tc.name: getWant : get want in current ability
     //  @tc.desc:Start the ability through startabilityforresult,
     //           and then use terminateselfwithresult to return the data (by callback)
+    /**
+     * @tc.name   ACTS_GetWant_2400
+     * @tc.number ACTS_GetWant_2400
+     * @tc.desc   ACTS_GetWant_2400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetWant_2400', Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult({
             want:
@@ -1255,11 +1431,13 @@ describe('ActsGetWantTest', function () {
             })
     })
         
-     /*
-     * @tc.number  ACTS_GetWant_2500
-     * @tc.name    Misconfigured bundlename validation
-     * @tc.desc    Function test (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_GetWant_2500
+     * @tc.number ACTS_GetWant_2500
+     * @tc.desc   Function test (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GetWant_2500", Level.LEVEL0, async function(done){
         featureAbility.startAbilityForResult({
@@ -1316,11 +1494,13 @@ describe('ActsGetWantTest', function () {
         })
     });
 
-    /*
-     * @tc.number  ACTS_GetWant_2600
-     * @tc.name    Misconfigured bundlename validation
-     * @tc.desc    Function test (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_GetWant_2600
+     * @tc.number ACTS_GetWant_2600
+     * @tc.desc   Function test (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GetWant_2600", Level.LEVEL0, async function(done){
         featureAbility.startAbilityForResult({
@@ -1374,11 +1554,14 @@ describe('ActsGetWantTest', function () {
             })
     });
 
-    /**
-     * @tc.number: SUB_AA_OpenHarmony_wantConstantEnumeration_0100
-     * @tc.name: Check the enumerated value ACTION_IMAGE_CAPTURE of wantConstant.
-     * @tc.desc: Check the enumerated value ACTION_IMAGE_CAPTURE of wantConstant.
-     */
+     /**
+      * @tc.name   SUB_AA_OpenHarmony_wantConstantEnumeration_0100
+      * @tc.number SUB_AA_OpenHarmony_wantConstantEnumeration_0100
+      * @tc.desc   Check the enumerated value ACTION_IMAGE_CAPTURE of wantConstant.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_AA_OpenHarmony_wantConstantEnumeration_0100', Level.LEVEL0, async function (done) {
         console.log("SUB_AA_OpenHarmony_wantConstantEnumeration_0100 --- start")
         let image = wantConstant.Action.ACTION_IMAGE_CAPTURE
@@ -1388,9 +1571,12 @@ describe('ActsGetWantTest', function () {
         })
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_wantConstantEnumeration_0200
-     * @tc.name: Check the enumerated value ACTION_VIDEO_CAPTURE of wantConstant.
-     * @tc.desc: Check the enumerated value ACTION_VIDEO_CAPTURE of wantCconstant.
+     * @tc.name   SUB_AA_OpenHarmony_wantConstantEnumeration_0200
+     * @tc.number SUB_AA_OpenHarmony_wantConstantEnumeration_0200
+     * @tc.desc   Check the enumerated value ACTION_VIDEO_CAPTURE of wantCconstant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_wantConstantEnumeration_0200', Level.LEVEL0, async function (done) {
         console.log("SUB_AA_OpenHarmony_wantConstantEnumeration_0200 --- start")
@@ -1401,9 +1587,12 @@ describe('ActsGetWantTest', function () {
     })
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_wantConstantEnumeration_0300
-     * @tc.name: Check the enumerated value ACTION_APP_ACCOUNT_OAUTH of wantConstant.
-     * @tc.desc: Check the enumerated value ACTION_APP_ACCOUNT_OAUTH of wantConstant.
+     * @tc.name   SUB_AA_OpenHarmony_wantConstantEnumeration_0300
+     * @tc.number SUB_AA_OpenHarmony_wantConstantEnumeration_0300
+     * @tc.desc   Check the enumerated value ACTION_APP_ACCOUNT_OAUTH of wantConstant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_wantConstantEnumeration_0300', Level.LEVEL0, async function (done) {
     console.log("SUB_AA_OpenHarmony_wantConstantEnumeration_0300 --- start")

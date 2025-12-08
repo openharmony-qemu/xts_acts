@@ -57,7 +57,6 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testSystemApiQueryDeviceInfoNormal001
      * @tc.number SUB_Driver_Ext_DevManSysApiNormal_0100
      * @tc.desc   verify SystemApi of queryDeviceInfo
@@ -83,7 +82,6 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testSystemApiQueryDriverInfoNormal001
      * @tc.number SUB_Driver_Ext_DevManSysApiNormal_0100
      * @tc.desc   verify SystemApi of queryDriverInfo

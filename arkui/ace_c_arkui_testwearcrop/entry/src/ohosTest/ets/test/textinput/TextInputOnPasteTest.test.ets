@@ -26,14 +26,14 @@ export default function textInputOnPasteTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONPASTE_0100
-    * @tc.name       : testTextInputOnPaste001
-    * @tc.desc       : test onPaste event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnPaste001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONPASTE_0100
+     * @tc.desc   test onPaste event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnPaste001', Level.LEVEL1, async  (done: Function) => {
       focusControl.requestFocus('OnPasteTestTextInput')
       await Utils.sleep(1000)

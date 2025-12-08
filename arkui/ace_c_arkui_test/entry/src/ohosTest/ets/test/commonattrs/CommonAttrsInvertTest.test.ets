@@ -26,78 +26,78 @@ export default function commonAttrsInvertTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0100
-     * @tc.name       : testCommonAttrsInvert001
-     * @tc.desc       : testing invert for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsInvert001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0100
+     * @tc.desc   testing invert for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsInvert001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsInvert001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0200
-     * @tc.name       : testCommonAttrsInvert002
-     * @tc.desc       : testing invert for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsInvert002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0200
+     * @tc.desc   testing invert for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsInvert002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsInvert002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0300
-     * @tc.name       : testCommonAttrsInvert003
-     * @tc.desc       : testing invert for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsInvert003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0300
+     * @tc.desc   testing invert for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsInvert003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsInvert003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0400
-     * @tc.name       : testCommonAttrsInvert004
-     * @tc.desc       : testing invert for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsInvert004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0400
+     * @tc.desc   testing invert for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsInvert004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsInvert004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0500
-     * @tc.name       : testCommonAttrsInvert005
-     * @tc.desc       : testing invert for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsInvert005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0500
+     * @tc.desc   testing invert for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsInvert005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsInvert005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0600
-     * @tc.name       : testCommonAttrsInvert006
-     * @tc.desc       : testing invert for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsInvert006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_INVERT_0600
+     * @tc.desc   testing invert for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsInvert006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsInvert006()).assertEqual(0)

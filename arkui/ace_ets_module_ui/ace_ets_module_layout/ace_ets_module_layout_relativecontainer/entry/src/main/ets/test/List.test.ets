@@ -47,6 +47,38 @@ import RelativeContainerApi from './RelativeContainer/RelativeContainerApi.test'
 import RelativeContainerLocalizedDirectionStartTest from './RelativeContainer/RelativeContainerLocalizedDirectionStartTest.test'
 import RelativeContainerStartApi from './RelativeContainer/RelativeContainerStartApi.test'
 
+import RelativeGuideLine from './RelativeContainerTest/RelativeGuideLine.test'
+import RelativeGuideLine2 from './RelativeContainerTest/RelativeGuideLine2.test'
+import RelativeGuideLine3 from './RelativeContainerTest/RelativeGuideLine3.test'
+import RelativeGuideLine4 from './RelativeContainerTest/RelativeGuideLine4.test'
+import RelativeGuideLine5 from './RelativeContainerTest/RelativeGuideLine5.test'
+import RelativeGuideLine6 from './RelativeContainerTest/RelativeGuideLine6.test'
+import RelativeGuideLine7 from './RelativeContainerTest/RelativeGuideLine7.test'
+import RelativeChain from './RelativeContainerTest/RelativeChain.test'
+import RelativeChain2 from './RelativeContainerTest/RelativeChain2.test'
+import RelativeChain3 from './RelativeContainerTest/RelativeChain3.test'
+import RelativeChain4 from './RelativeContainerTest/RelativeChain4.test'
+import RelativeChain5 from './RelativeContainerTest/RelativeChain5.test'
+import RelativeChain6 from './RelativeContainerTest/RelativeChain6.test'
+import RelativeChain7 from './RelativeContainerTest/RelativeChain7.test'
+import RelativeChain8 from './RelativeContainerTest/RelativeChain8.test'
+import RelativeChain9 from './RelativeContainerTest/RelativeChain9.test'
+import RelativeChain10 from './RelativeContainerTest/RelativeChain10.test'
+import RelativeChain11 from './RelativeContainerTest/RelativeChain11.test'
+import RelativeChain12 from './RelativeContainerTest/RelativeChain12.test'
+import RelativeBarrier from './RelativeContainerTest/RelativeBarrier.test'
+import RelativeBarrier2 from './RelativeContainerTest/RelativeBarrier2.test'
+import RelativeBarrier3 from './RelativeContainerTest/RelativeBarrier3.test'
+import RelativeBarrier4 from './RelativeContainerTest/RelativeBarrier4.test'
+import RelativeBarrier5 from './RelativeContainerTest/RelativeBarrier5.test'
+import RelativeBarrier6 from './RelativeContainerTest/RelativeBarrier6.test'
+import RelativeBarrier7 from './RelativeContainerTest/RelativeBarrier7.test'
+import RelativeBarrier8 from './RelativeContainerTest/RelativeBarrier8.test'
+import RelativeBorder from './RelativeContainerTest/RelativeBorder.test'
+import RelativePadding from './RelativeContainerTest/RelativePadding.test'
+import RelativeContainer from './RelativeContainerTest/RelativeContainer.test'
+import relativeCTest from "./RelativeContainerTest/relative/relative.test"
+
 export default function testsuite() {
   RelativeContainer_Level()
   RelativeContainer_Vertical()
@@ -67,4 +99,36 @@ export default function testsuite() {
   RelativeContainerApi();
   RelativeContainerLocalizedDirectionStartTest();
   RelativeContainerStartApi();
+
+  RelativeGuideLine()
+  RelativeGuideLine2()
+  RelativeGuideLine3()
+  RelativeGuideLine4()
+  RelativeGuideLine5()
+  RelativeGuideLine6()
+  RelativeGuideLine7()
+  RelativeChain()
+  RelativeChain2()
+  RelativeChain3()
+  RelativeChain4()
+  RelativeChain5()
+  RelativeChain6()
+  RelativeChain7()
+  RelativeChain8()
+  RelativeChain9()
+  RelativeChain10()
+  RelativeChain11()
+  RelativeChain12()
+  RelativeBarrier()
+  RelativeBarrier2()
+  RelativeBarrier3()
+  RelativeBarrier4()
+  RelativeBarrier5()
+  RelativeBarrier6()
+  RelativeBarrier7()
+  RelativeBarrier8()
+  RelativePadding()
+  RelativeBorder()
+  RelativeContainer()
+  relativeCTest()
 }

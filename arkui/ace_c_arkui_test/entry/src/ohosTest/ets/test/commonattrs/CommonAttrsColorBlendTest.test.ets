@@ -26,65 +26,65 @@ export default function commonAttrsColorBlendTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0100
-     * @tc.name       : testCommonAttrsColorBlend001
-     * @tc.desc       : testing color blend for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsColorBlend001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0100
+     * @tc.desc   testing color blend for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsColorBlend001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsColorBlend001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0200
-     * @tc.name       : testCommonAttrsColorBlend002
-     * @tc.desc       : testing color blend for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsColorBlend002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0200
+     * @tc.desc   testing color blend for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsColorBlend002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsColorBlend002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0300
-     * @tc.name       : testCommonAttrsColorBlend003
-     * @tc.desc       : testing color blend for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsColorBlend003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0300
+     * @tc.desc   testing color blend for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsColorBlend003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsColorBlend003()).assertEqual(0)
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0400
-     * @tc.name       : testCommonAttrsColorBlend004
-     * @tc.desc       : testing color blend for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsColorBlend004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0400
+     * @tc.desc   testing color blend for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsColorBlend004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsColorBlend004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0500
-     * @tc.name       : testCommonAttrsColorBlend005
-     * @tc.desc       : testing resetAttribute color blend for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsColorBlend005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_COLORBLEND_0500
+     * @tc.desc   testing resetAttribute color blend for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsColorBlend005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsColorBlend005()).assertEqual(0)

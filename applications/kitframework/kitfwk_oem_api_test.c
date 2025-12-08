@@ -72,9 +72,12 @@ static BOOL KitFwkOemApiTestSuiteTearDown(void)
 #ifndef TOKEN_PERSIST_TEST
 
 /**
- * @tc.name : TestReadAuthServerInfo
- * @tc.desc : test case of OEMReadAuthServerInfo api.
-              no assert for this case, comiple ok means test pass.
+ * @tc.name   TestReadAuthServerInfo
+ * @tc.number TestReadAuthServerInfo
+ * @tc.desc   test case of OEMReadAuthServerInfo api.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestReadAuthServerInfo, Function | MediumTest | Level0)
 {
@@ -94,8 +97,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestReadAuthServerInfo, Function | MediumT
 }
 
 /**
- * @tc.name : TestLoadKitInfos
- * @tc.desc : test that string return from OEMLoadKitInfos is a valid json string
+ * @tc.name   TestLoadKitInfos
+ * @tc.number TestLoadKitInfos
+ * @tc.desc   test that string return from OEMLoadKitInfos is a valid json string
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestLoadKitInfos, Function | MediumTest | Level0)
 {
@@ -117,8 +124,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestLoadKitInfos, Function | MediumTest | 
 }
 
 /**
- * @tc.name : TestIsOverTemperatureLimit
- * @tc.desc : test case of temperature api.
+ * @tc.name   TestIsOverTemperatureLimit
+ * @tc.number TestIsOverTemperatureLimit
+ * @tc.desc   test case of temperature api.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestIsOverTemperatureLimit, Function | MediumTest | Level0)
 {
@@ -128,8 +139,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestIsOverTemperatureLimit, Function | Med
 }
 
 /**
- * @tc.name: TestResetFlagApi
- * @tc.desc: test case of the reset flag related api: create, check
+ * @tc.name   TestResetFlagApi
+ * @tc.number TestResetFlagApi
+ * @tc.desc   test case of the reset flag related api: create, check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestResetFlagApi, Function | MediumTest | Level0)
 {
@@ -150,8 +165,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestResetFlagApi, Function | MediumTest | 
 }
 
 /**
- * @tc.name: TestAuthStatusApi
- * @tc.desc: test case of the authStatus related api: read, write, delete, check
+ * @tc.name   TestAuthStatusApi
+ * @tc.number TestAuthStatusApi
+ * @tc.desc   test case of the authStatus related api: read, write, delete, check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestAuthStatusApi, Function | MediumTest | Level0)
 {
@@ -200,8 +219,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestAuthStatusApi, Function | MediumTest |
 }
 
 /**
- * @tc.name: TestTicketApi
- * @tc.desc: test case of the ticket related api: read, write, delete, check
+ * @tc.name   TestTicketApi
+ * @tc.number TestTicketApi
+ * @tc.desc   test case of the ticket related api: read, write, delete, check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestTicketApi, Function | MediumTest | Level0)
 {
@@ -249,8 +272,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestTicketApi, Function | MediumTest | Lev
 }
 
 /**
- * @tc.name: TestTokenApi
- * @tc.desc: test case of the token related api: read, write
+ * @tc.name   TestTokenApi
+ * @tc.number TestTokenApi
+ * @tc.desc   test case of the token related api: read, write
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestTokenApi, Function | MediumTest | Level0)
 {
@@ -293,8 +320,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestTokenApi, Function | MediumTest | Leve
 }
 
 /**
- * @tc.name: TestGetAckeyApi
- * @tc.desc: Check whether the Ackey can be obtained.
+ * @tc.name   TestGetAckeyApi
+ * @tc.number TestGetAckeyApi
+ * @tc.desc   Check whether the Ackey can be obtained.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestGetAckeyApi, Function | MediumTest | Level0)
 {
@@ -306,8 +337,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestGetAckeyApi, Function | MediumTest | L
 }
 
 /**
- * @tc.name: TestGetProdIdApi
- * @tc.desc: Check whether the ProdId can be obtained.
+ * @tc.name   TestGetProdIdApi
+ * @tc.number TestGetProdIdApi
+ * @tc.desc   Check whether the ProdId can be obtained.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestGetProdIdApi, Function | MediumTest | Level0)
 {
@@ -318,8 +353,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestGetProdIdApi, Function | MediumTest | 
 }
 
 /**
- * @tc.name: TestGetProdKeyApi
- * @tc.desc: Check whether the Prodkey can be obtained.
+ * @tc.name   TestGetProdKeyApi
+ * @tc.number TestGetProdKeyApi
+ * @tc.desc   Check whether the Prodkey can be obtained.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestGetProdKeyApi, Function | MediumTest | Level0)
 {
@@ -332,8 +371,12 @@ LITE_TEST_CASE(KitFwkOemApiTestSuite, TestGetProdKeyApi, Function | MediumTest |
 #else  // defined TOKEN_PERSIST_TEST
 
 /**
- * @tc.name: TestIfTokenPersist
- * @tc.desc: test case of the token related api: read, write
+ * @tc.name   TestIfTokenPersist
+ * @tc.number TestIfTokenPersist
+ * @tc.desc   test case of the token related api: read, write
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(KitFwkOemApiTestSuite, TestIfTokenPersist, Function | MediumTest | Level0)
 {

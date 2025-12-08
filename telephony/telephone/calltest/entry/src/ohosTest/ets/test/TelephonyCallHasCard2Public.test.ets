@@ -70,12 +70,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_HasVoiceCapability_0100
-     * @tc.name   : testTelephonyCallManagerHasVoiceCapability0100
-     * @tc.desc   : Check that the current device has a voice call capability api7+.
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerHasVoiceCapability0100
+     * @tc.number SUB_Telephony_CallManager_HasVoiceCapability_0100
+     * @tc.desc   Check that the current device has a voice call capability api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerHasVoiceCapability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerHasVoiceCapability0100';
@@ -94,12 +94,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0100
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber0100
-     * @tc.desc   : Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0100
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0100
+     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber0100';
@@ -119,12 +119,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0300
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber0300
-     * @tc.desc   : Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0300
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0300
+     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber0300';
@@ -144,12 +144,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0400
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber0400
-     * @tc.desc   : Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0400
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0400
+     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber0400';
@@ -169,12 +169,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0500
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber0500
-     * @tc.desc   : Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0500
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0500
+     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber0500';
@@ -194,12 +194,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0600
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber0600
-     * @tc.desc   : Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0600
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0600
+     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber0600';
@@ -219,12 +219,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0700
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber0700
-     * @tc.desc   : Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0700
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0700
+     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber0700';
@@ -244,12 +244,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0800
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber0800
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0800
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0800
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber0800';
@@ -272,12 +272,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1000
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber1000
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1000
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1000
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1000';
@@ -301,12 +301,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1100
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber1100
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1100
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1100
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1100';
@@ -330,12 +330,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1200
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber1200
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1200
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1200
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1200';
@@ -359,12 +359,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1300
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber1300
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1300
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1300
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1300';
@@ -388,12 +388,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1400
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber1400
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1400
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1400
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1400';
@@ -416,12 +416,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1800
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber1800
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1800
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1800
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1800';
@@ -451,12 +451,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2000
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber2000
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber2000
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2000
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber2000';
@@ -486,12 +486,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2200
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber2200
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber2200
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2200
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber2200';
@@ -509,12 +509,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2400
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber2400
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber2400
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2400
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber2400';
@@ -535,12 +535,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2600
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber2600
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber2600
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2600
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber2600';
@@ -561,12 +561,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2700
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber2700
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber2700
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2700
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber2700';
@@ -585,12 +585,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2800
-     * @tc.name   : testTelephonyCallManagerIsEmergencyPhoneNumber2800
-     * @tc.desc   : Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber2800
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2800
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerIsEmergencyPhoneNumber2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber2800';
@@ -612,12 +612,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0100
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0100
-     * @tc.desc   : Formatting the phone numbers. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0100
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0100
+     * @tc.desc   Formatting the phone numbers. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0100';
@@ -643,12 +643,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0200
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0200
-     * @tc.desc   : Formatting the phone numbers. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0200
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0200
+     * @tc.desc   Formatting the phone numbers. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0200';
@@ -674,12 +674,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0300
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0300
-     * @tc.desc   : Formatting the phone numbers. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0300
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0300
+     * @tc.desc   Formatting the phone numbers. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0300';
@@ -705,12 +705,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0400
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0400
-     * @tc.desc   : Formatting the phone numbers. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0400
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0400
+     * @tc.desc   Formatting the phone numbers. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0400';
@@ -736,12 +736,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0450
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0450
-     * @tc.desc   : Formatting the phone numbers. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0450
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0450
+     * @tc.desc   Formatting the phone numbers. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0450';
@@ -767,12 +767,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0500
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0500
-     * @tc.desc   : Formatting the phone numbers. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0500
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0500
+     * @tc.desc   Formatting the phone numbers. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0500';
@@ -798,12 +798,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0600
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0600
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0600
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0600
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0600';
@@ -832,12 +832,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0700
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0700
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0700
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0700
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0700';
@@ -866,12 +866,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0800
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0800
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0800
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0800
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0800';
@@ -900,12 +900,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_0900
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber0900
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber0900
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0900
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber0900';
@@ -935,12 +935,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_1000
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber1000
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber1000
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1000
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1000';
@@ -970,12 +970,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_1100
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber1100
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber1100
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1100
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1100';
@@ -1002,12 +1002,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_1200
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber1200
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber1200
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1200
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1200';
@@ -1034,12 +1034,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_1300
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber1300
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber1300
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1300
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1300';
@@ -1066,12 +1066,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_1400
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber1400
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber1400
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1400
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1400';
@@ -1099,12 +1099,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_1500
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber1500
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber1500
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1500
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1500';
@@ -1131,12 +1131,12 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumber_1600
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumber1600
-     * @tc.desc   : Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber1600
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1600
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumber1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1600';

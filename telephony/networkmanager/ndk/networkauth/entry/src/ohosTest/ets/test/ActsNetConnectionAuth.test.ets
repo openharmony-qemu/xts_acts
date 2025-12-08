@@ -98,12 +98,12 @@ const OH_HTTP_VERSION = 505;
 export default function ActsNetConnectionAuth() {
   describe('ActsNetConnectionAuth', () => {
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_0900
-     * @tc.name    : testNetworkManagerHttpRequestAuth0900
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth0900
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_0900
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth0900';
@@ -120,12 +120,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1000
-     * @tc.name    : testNetworkManagerHttpRequestAuth1000  
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1000
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1000
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1000';
@@ -142,12 +142,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1100
-     * @tc.name    : testNetworkManagerHttpRequestAuth1100
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1100
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1100
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1100';
@@ -164,12 +164,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1200
-     * @tc.name    : testNetworkManagerHttpRequestAuth1200
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1200
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1200
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1200';
@@ -186,12 +186,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1300
-     * @tc.name    : testNetworkManagerHttpRequestAuth1300
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1300
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1300
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1300';
@@ -209,12 +209,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1400
-     * @tc.name    : testNetworkManagerHttpRequestAuth1400
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1400
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1400
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1400';
@@ -231,12 +231,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1500
-     * @tc.name    : testNetworkManagerHttpRequestAuth1500
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1500
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1500
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1500';
@@ -253,12 +253,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1600
-     * @tc.name    : testNetworkManagerHttpRequestAuth1600
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1600
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1600
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1600';
@@ -275,12 +275,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1700
-     * @tc.name    : testNetworkManagerHttpRequestAuth1700
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1700
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1700
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1700';
@@ -297,12 +297,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1800
-     * @tc.name    : testNetworkManagerHttpRequestAuth1800
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth1800
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_1800
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1800';
@@ -318,15 +318,15 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_1900
-     * @tc.name    : testNetworkManagerHttpRequestAuth1900
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
 
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth1900
+     * @tc.number testNetworkManagerHttpRequestAuth1900
+     * @tc.desc   testNetworkManagerHttpRequestAuth1900
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkManagerHttpRequestAuth1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth1900';
       try {
@@ -342,12 +342,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2000
-     * @tc.name    : testNetworkManagerHttpRequestAuth2000
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerHttpRequestAuth2000
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_2000
+     * @tc.desc   test Http_Request error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerHttpRequestAuth2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2000';
@@ -365,14 +365,14 @@ export default function ActsNetConnectionAuth() {
 
 
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2100
-     * @tc.name    : testNetworkManagerHttpRequestAuth2100
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2100
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2100
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2100';
       try {
@@ -387,14 +387,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2200
-     * @tc.name    : testNetworkManagerHttpRequestAuth2200
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2200
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2200
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2200';
       try {
@@ -409,14 +409,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2300
-     * @tc.name    : testNetworkManagerHttpRequestAuth2300
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2300
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2300
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2300';
       try {
@@ -431,14 +431,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2400
-     * @tc.name    : testNetworkManagerHttpRequestAuth2400
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2400
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2400
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2400';
       try {
@@ -454,14 +454,14 @@ export default function ActsNetConnectionAuth() {
     })
 
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2500
-     * @tc.name    : testNetworkManagerHttpRequestAuth2500
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2500
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2500
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2500';
       try {
@@ -476,14 +476,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2600
-     * @tc.name    : testNetworkManagerHttpRequestAuth2600
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2600
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2600
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2600';
       try {
@@ -498,14 +498,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2700
-     * @tc.name    : testNetworkManagerHttpRequestAuth2700
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2700
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2700
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2700';
       try {
@@ -520,14 +520,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2800
-     * @tc.name    : testNetworkManagerHttpRequestAuth2800
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2800
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2800
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2800';
       try {
@@ -542,14 +542,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_2900
-     * @tc.name    : testNetworkManagerHttpRequestAuth2900
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth2900
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_2900
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth2900';
       try {
@@ -564,14 +564,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3000
-     * @tc.name    : testNetworkManagerHttpRequestAuth3000
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3000
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3000
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3000';
       try {
@@ -586,14 +586,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
   
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3100
-     * @tc.name    : testNetworkManagerHttpRequestAuth3100
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3100
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3100
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3100';
       try {
@@ -608,14 +608,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-        /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3200
-     * @tc.name    : testNetworkManagerHttpRequestAuth3200
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3200
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3200
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3200';
       try {
@@ -630,14 +630,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3300
-     * @tc.name    : testNetworkManagerHttpRequestAuth3300
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3300
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3300
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3300';
       try {
@@ -652,14 +652,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3400
-     * @tc.name    : testNetworkManagerHttpRequestAuth3400
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3400
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3400
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3400';
       try {
@@ -674,14 +674,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-        /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3500
-     * @tc.name    : testNetworkManagerHttpRequestAuth3500
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3500
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3500
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3500';
       try {
@@ -696,14 +696,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3600
-     * @tc.name    : testNetworkManagerHttpRequestAuth3600
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3600
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3600
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3600';
       try {
@@ -718,14 +718,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3700
-     * @tc.name    : testNetworkManagerHttpRequestAuth3700
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3700
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3700
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3700';
       try {
@@ -740,14 +740,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-        /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3800
-     * @tc.name    : testNetworkManagerHttpRequestAuth3800
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3800
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3800
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3800';
       try {
@@ -762,14 +762,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_3900
-     * @tc.name    : testNetworkManagerHttpRequestAuth3900
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth3900
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_3900
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth3900';
       try {
@@ -784,14 +784,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_4000
-     * @tc.name    : testNetworkManagerHttpRequestAuth4000
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth4000
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_4000
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth4000';
       try {
@@ -806,14 +806,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_4100
-     * @tc.name    : testNetworkManagerHttpRequestAuth4100
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth4100
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_4100
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth4100';
       try {
@@ -828,14 +828,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_4200
-     * @tc.name    : testNetworkManagerHttpRequestAuth4200
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth4200
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_4200
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth4200';
       try {
@@ -850,14 +850,14 @@ export default function ActsNetConnectionAuth() {
       }
     })
 
-    /**
-     * @tc.number  : SUB_NetworkManager_Http_Request_Auth_4300
-     * @tc.name    : testNetworkManagerHttpRequestAuth4300
-     * @tc.desc    : test Http_Request error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
+      /**
+       * @tc.name   testNetworkManagerHttpRequestAuth4300
+       * @tc.number SUB_NetworkManager_Http_Request_Auth_4300
+       * @tc.desc   test Http_Request error code
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL2
+       */
       it('testNetworkManagerHttpRequestAuth4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerHttpRequestAuth4300';
       try {
@@ -873,12 +873,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Web_Socket_0100
-     * @tc.name    : testNetworkManagerWebSocket0100
-     * @tc.desc    : test Web_Socket error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerWebSocket0100
+     * @tc.number SUB_NetworkManager_Web_Socket_0100
+     * @tc.desc   test Web_Socket error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerWebSocket0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerWebSocket0100';
@@ -895,12 +895,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Web_Socket_0200
-     * @tc.name    : testNetworkManagerWebSocket0200
-     * @tc.desc    : test Web_Socket error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerWebSocket0200
+     * @tc.number SUB_NetworkManager_Web_Socket_0200
+     * @tc.desc   test Web_Socket error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerWebSocket0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerWebSocket0200';
@@ -917,12 +917,12 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Web_Socket_0300
-     * @tc.name    : testNetworkManagerWebSocket0300
-     * @tc.desc    : test Web_Socket error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerWebSocket0300
+     * @tc.number SUB_NetworkManager_Web_Socket_0300
+     * @tc.desc   test Web_Socket error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerWebSocket0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerWebSocket0300';
@@ -939,12 +939,12 @@ export default function ActsNetConnectionAuth() {
       })
 
     /**
-     * @tc.number  : SUB_NetworkManager_Web_Socket_0500
-     * @tc.name    : testNetworkManagerWebSocket0500
-     * @tc.desc    : test Web_Socket error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
+     * @tc.name   testNetworkManagerWebSocket0500
+     * @tc.number SUB_NetworkManager_Web_Socket_0500
+     * @tc.desc   test Web_Socket error code
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkManagerWebSocket0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkManagerWebSocket0500';

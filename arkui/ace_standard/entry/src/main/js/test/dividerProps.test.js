@@ -80,9 +80,12 @@ export default function dividerPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerIdProp
-         * @tc.desc      ACE
+         * @tc.name   testDividerIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerIdProp', Level.LEVEL0, async function(done) {
             console.info('testDividerIdProp START');
@@ -98,9 +101,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerClassProp
-         * @tc.desc      ACE
+         * @tc.name   testDividerClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerClassProp', Level.LEVEL0, async function(done) {
             console.info('testDividerClassProp START');
@@ -117,9 +123,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testDividerClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testDividerClassPropNone START');
@@ -137,9 +146,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerRefProp
-         * @tc.desc      ACE
+         * @tc.name   testDividerRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerRefProp', Level.LEVEL0, async function(done) {
             console.info('testDividerRefProp START');
@@ -156,9 +168,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testDividerRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testDividerRefPropNone START');
@@ -176,9 +191,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerDataProp
-         * @tc.desc      ACE
+         * @tc.name   testDividerDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerDataProp', Level.LEVEL0, async function(done) {
             console.info('testDividerDataProp START');
@@ -196,9 +214,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testDividerDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testDividerDataPropNone START');
@@ -216,9 +237,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testDividerClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testDividerClickEffectPropSmall START');
@@ -235,9 +259,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testDividerClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testDividerClickEffectPropMedium START');
@@ -254,9 +281,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testDividerClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testDividerClickEffectPropLarge START');
@@ -273,9 +303,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testDividerClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testDividerClickEffectPropNone START');
@@ -293,9 +326,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testDividerDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testDividerDirPropRtl START');
@@ -312,9 +348,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testDividerDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testDividerDirPropLtr START');
@@ -331,9 +370,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testDividerDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testDividerDirPropAuto START');
@@ -350,9 +392,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testDividerDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testDividerDirPropNone START');
@@ -369,9 +414,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testDividerForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerForPropNull', Level.LEVEL0, async function(done) {
             console.info('testDividerForPropNull START');
@@ -389,9 +437,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testDividerForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerForPropOne', Level.LEVEL0, async function(done) {
             console.info('testDividerForPropOne START');
@@ -409,9 +460,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testDividerForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerForPropThree', Level.LEVEL0, async function(done) {
             console.info('testDividerForPropThree START');
@@ -429,9 +483,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testDividerIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testDividerIfPropTrue START');
@@ -449,9 +506,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testDividerShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testDividerShowPropTrue START');
@@ -469,9 +529,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testDividerShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testDividerShowPropFalse START');
@@ -489,9 +552,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testDividerShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testDividerShowPropNone START');
@@ -509,9 +575,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerVerticalTrue
-         * @tc.desc      ACE
+         * @tc.name   testDividerVerticalTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerVerticalTrue', Level.LEVEL0, async function(done) {
             console.info('testDividerVerticalTrue START');
@@ -529,9 +598,12 @@ export default function dividerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerVerticalFalse
-         * @tc.desc      ACE
+         * @tc.name   testDividerVerticalFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerVerticalFalse', Level.LEVEL0, async function(done) {
             console.info('testDividerVerticalFalse START');

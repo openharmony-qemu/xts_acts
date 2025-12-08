@@ -43,6 +43,14 @@ export default function ActionsheetDialogAJsunit() {
     });
 
 
+    /**
+     * @tc.name   ActionsheetDialogAJsunit_0100
+     * @tc.number ActionsheetDialogAJsunit_0100
+     * @tc.desc   ActionsheetDialogAJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActionsheetDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('ActionsheetDialogAJsunit_0100 START');

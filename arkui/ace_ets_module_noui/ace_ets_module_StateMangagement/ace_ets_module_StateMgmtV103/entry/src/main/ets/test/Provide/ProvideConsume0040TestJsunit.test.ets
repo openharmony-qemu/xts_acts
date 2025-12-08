@@ -46,12 +46,12 @@ export default function ProvideConsume0040TestJsunit() {
     });
 
     /**
-     * @tc.number    ProvideConsume0040TestJsunit_001
-     * @tc.name      ProvideConsume0040TestJsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ProvideConsume0040TestJsunit_001
+     * @tc.number ProvideConsume0040TestJsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ProvideConsume0040TestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideConsume0040TestJsunit_001] START');

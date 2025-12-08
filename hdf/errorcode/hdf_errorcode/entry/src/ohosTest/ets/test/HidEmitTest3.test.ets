@@ -51,7 +51,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLFINGER_0100
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLFINGER_0100
      * @tc.desc   Test HidCreateDeviceKeyCodeTOOLFINGER.
@@ -73,7 +72,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLMOUSE_0200
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLMOUSE_0200
      * @tc.desc   Test HidCreateDeviceKeyCodeTOOLMOUSE.
@@ -95,7 +93,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLLENS_0300
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLLENS_0300
      * @tc.desc   Test HidCreateDeviceKeyCodeTOOLLENS.
@@ -117,7 +114,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLQUINTTAP_0400
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLQUINTTAP_0400
      * @tc.desc   Test HidCreateDeviceKeyCodeTOOLQUINTTAP.
@@ -139,7 +135,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeSTYLUS3_0500
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeSTYLUS3_0500
      * @tc.desc   Test HidCreateDeviceKeyCodeSTYLUS3.
@@ -161,7 +156,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeSTYLUS2_0600
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeSTYLUS2_0600
      * @tc.desc   Test HidCreateDeviceKeyCodeSTYLUS2.
@@ -183,7 +177,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLDOUBLETAP_0700
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLDOUBLETAP_0700
      * @tc.desc   Test HidCreateDeviceKeyCodeTOOLDOUBLETAP.
@@ -205,7 +198,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLTRIPLETAP_0800
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLTRIPLETAP_0800
      * @tc.desc   Test HidCreateDeviceKeyCodeTOOLTRIPLETAP.
@@ -227,7 +219,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLQUADTAP_0900
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeTOOLQUADTAP_0900
      * @tc.desc   Test HidCreateDeviceKeyCodeTOOLQUADTAP.
@@ -249,7 +240,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeWHEEL_1000
      * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeWHEEL_1000
      * @tc.desc   Test HidCreateDeviceKeyCodeWHEEL.
@@ -271,7 +261,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSZ_1100
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSZ_1100
      * @tc.desc   Test HidCreateDeviceABSZ.
@@ -293,7 +282,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSRX_1200
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSRX_1200
      * @tc.desc   Test HidCreateDeviceABSRX.
@@ -315,7 +303,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSRY_1300
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSRY_1300
      * @tc.desc   Test HidCreateDeviceABSRY.
@@ -337,7 +324,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSRZ_1400
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSRZ_1400
      * @tc.desc   Test HidCreateDeviceABSRZ.
@@ -359,7 +345,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSTHROTTLE_1500
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSTHROTTLE_1500
      * @tc.desc   Test HidCreateDeviceABSTHROTTLE.
@@ -381,7 +366,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSRUDDER_1600
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSRUDDER_1600
      * @tc.desc   Test HidCreateDeviceABSRUDDER.
@@ -403,7 +387,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSWHEEL_1700
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSWHEEL_1700
      * @tc.desc   Test HidCreateDeviceABSWHEEL.
@@ -426,7 +409,6 @@ export default function ActsHidEmitCodeTest3() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSGAS_1800
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSGAS_1800
      * @tc.desc   Test HidCreateDeviceABSGAS.
@@ -448,7 +430,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSBRAKE_1900
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSBRAKE_1900
      * @tc.desc   Test HidCreateDeviceABSBRAKE.
@@ -470,7 +451,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSHAT0X_2000
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSHAT0X_2000
      * @tc.desc   Test HidCreateDeviceABSHAT0X.
@@ -492,7 +472,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSHAT0Y_2100
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSHAT0Y_2100
      * @tc.desc   Test HidCreateDeviceABSHAT0Y.
@@ -514,7 +493,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSHAT1X_2200
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSHAT1X_2200
      * @tc.desc   Test HidCreateDeviceABSHAT1X.
@@ -536,7 +514,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSHAT1Y_2300
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSHAT1Y_2300
      * @tc.desc   Test HidCreateDeviceABSHAT1Y.
@@ -558,7 +535,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSHAT2X_2400
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSHAT2X_2400
      * @tc.desc   Test HidCreateDeviceABSHAT2X.
@@ -580,7 +556,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSHAT2Y_2500
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSHAT2Y_2500
      * @tc.desc   Test HidCreateDeviceABSHAT2Y.
@@ -602,7 +577,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSHAT3X_2600
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSHAT3X_2600
      * @tc.desc   Test HidCreateDeviceABSHAT3X.
@@ -624,7 +598,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSHAT3Y_2700
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSHAT3Y_2700
      * @tc.desc   Test HidCreateDeviceABSHAT3Y.
@@ -646,7 +619,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSDISTANCE_2800
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSDISTANCE_2800
      * @tc.desc   Test HidCreateDeviceABSDISTANCE.
@@ -668,7 +640,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSTILTX_2900
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSTILTX_2900
      * @tc.desc   Test HidCreateDeviceABSTILTX.
@@ -690,7 +661,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSTILTY_3000
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSTILTY_3000
      * @tc.desc   Test HidCreateDeviceABSTILTY.
@@ -712,7 +682,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSTOOLWIDTH_3100
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSTOOLWIDTH_3100
      * @tc.desc   Test HidCreateDeviceABSTOOLWIDTH.
@@ -734,7 +703,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSVOLUME_3200
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSVOLUME_3200
      * @tc.desc   Test HidCreateDeviceABSVOLUME.
@@ -756,7 +724,6 @@ export default function ActsHidEmitCodeTest3() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceABSMISC_3300
      * @tc.number SUB_Driver_Ext_HidCreateDeviceABSMISC_3300
      * @tc.desc   Test HidCreateDeviceABSMISC.

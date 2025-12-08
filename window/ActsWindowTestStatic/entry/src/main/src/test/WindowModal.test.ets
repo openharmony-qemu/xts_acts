@@ -61,12 +61,12 @@ export default function WindowModalTest() {
         })
 
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0900
-         * @tc.name        test_setSubWindowModal_ModalityType_enum_static_0100
-         * @tc.desc        test_setSubWindowModal_ModalityType_enum
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level0
+         * @tc.name   test_setSubWindowModal_ModalityType_enum_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0900
+         * @tc.desc   test_setSubWindowModal_ModalityType_enum
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("test_setSubWindowModal_ModalityType_enum_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr:string = "test_setSubWindowModal_ModalityType_enum_static_0100";

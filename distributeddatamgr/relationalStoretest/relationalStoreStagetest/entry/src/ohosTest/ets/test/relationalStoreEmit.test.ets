@@ -70,7 +70,6 @@ export default function relationalStoreEmitTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreDistributed0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0400
      * @tc.desc   relationalStore emit test

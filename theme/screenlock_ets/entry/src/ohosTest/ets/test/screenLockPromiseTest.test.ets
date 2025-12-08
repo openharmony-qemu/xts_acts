@@ -27,7 +27,6 @@ export default function ScreenLockPromiseTest(){
     });   
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_MISC_THEME_screenLock_API_Promise_001
      * @tc.number SUB_MISC_THEME_screenLock_API_Promise_001
      * @tc.desc   Test ScreenLock API functionality.
@@ -52,7 +51,6 @@ export default function ScreenLockPromiseTest(){
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_MISC_THEME_screenLock_API_Promise_002
      * @tc.number SUB_MISC_THEME_screenLock_API_Promise_002
      * @tc.desc   Test ScreenLock API functionality.
@@ -77,7 +75,6 @@ export default function ScreenLockPromiseTest(){
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_MISC_THEME_screenLock_API_Promise_003
      * @tc.number SUB_MISC_THEME_screenLock_API_Promise_003
      * @tc.desc   Test ScreenLock API functionality.
@@ -101,7 +98,6 @@ export default function ScreenLockPromiseTest(){
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_MISC_THEME_screenLock_API_Promise_004
      * @tc.number SUB_MISC_THEME_screenLock_API_Promise_004
      * @tc.desc   Test ScreenLock API functionality.

@@ -59,10 +59,13 @@ export default function webViewControllerPart3Test() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_010
-     *tc.name getHitTest
-     *tc.desic Gets the type of HitTest
+    /**
+     * @tc.name   getHitTest
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_010
+     * @tc.desc   getHitTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getHitTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetHitTest", EVENT_ID_SET_SUITE_KEY);

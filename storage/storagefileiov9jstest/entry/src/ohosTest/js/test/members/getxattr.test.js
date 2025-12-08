@@ -23,15 +23,13 @@ export default function fileIOGetxattr() {
 describe('fileIO_test_getxattr', function () {
 
   /**
+   * @tc.name   test_FileIO_Getxattr_Sync_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_Sync_0100
-   * @tc.name test_FileIO_Getxattr_Sync_001
-   * @tc.desc Test getxattr() interface.
-   * This interface shall work properly in normal case.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test getxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Getxattr_Sync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('test_FileIO_Getxattr_Sync_001');
     let attrKey = 'user.comment';
@@ -49,16 +47,14 @@ describe('fileIO_test_getxattr', function () {
     }
    });
 
-   /**
+  /**
+   * @tc.name   test_FileIO_Getxattr_Sync_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_Sync_0200
-   * @tc.name test_FileIO_Getxattr_Sync_002
-   * @tc.desc Test getxattr() interface.
-   * Invalid argument.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test getxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Getxattr_Sync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('test_FileIO_Getxattr_Sync_002');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -73,15 +69,13 @@ describe('fileIO_test_getxattr', function () {
    });
 
   /**
+   * @tc.name   test_FileIO_Getxattr_ASync_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_ASync_0100
-   * @tc.name test_FileIO_Getxattr_ASync_001
-   * @tc.desc Test getxattr() interface.
-   * This interface shall work properly in normal case.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test getxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Getxattr_ASync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
    let fpath = await nextFileName('test_FileIO_Getxattr_ASync_001');
    let attrKey = 'user.comment';
@@ -104,15 +98,13 @@ describe('fileIO_test_getxattr', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Getxattr_ASync_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_ASync_0200
-   * @tc.name test_FileIO_Getxattr_ASync_002
-   * @tc.desc Test getxattr() interface.
-   * Invalid argument.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test getxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Getxattr_ASync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('test_FileIO_Getxattr_ASync_002');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();

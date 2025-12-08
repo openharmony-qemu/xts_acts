@@ -26,10 +26,12 @@ export default function appManagerTest() {
   describe('appManagerTest', () => {
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0100
-     * @tc.name: appManager.on public interface interception test
-     * @tc.desc: Test the third-party application without permission call appManager.on will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0100
+     * @tc.number System_API_Test_App_Manager_0100
+     * @tc.desc   Test the third-party application without permission call appManager.on will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0100';
@@ -67,10 +69,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0200
-     * @tc.name: Multi-parameter appManager.on public interface interception test
-     * @tc.desc: Test the third-party application without permission call appManager.on will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0200
+     * @tc.number System_API_Test_App_Manager_0200
+     * @tc.desc   Test the third-party application without permission call appManager.on will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0200';
@@ -109,10 +113,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0300
-     * @tc.name: callback form getForegroundApplications system interface interception test
-     * @tc.desc: Test the third-party application call getForegroundApplications will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0300
+     * @tc.number System_API_Test_App_Manager_0300
+     * @tc.desc   Test the third-party application call getForegroundApplications will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0300';
@@ -124,10 +130,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0400
-     * @tc.name: promise form getForegroundApplications system interface interception test
-     * @tc.desc: Test the third-party application call getForegroundApplications will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0400
+     * @tc.number System_API_Test_App_Manager_0400
+     * @tc.desc   Test the third-party application call getForegroundApplications will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0400';
@@ -145,10 +153,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0500
-     * @tc.name: callback form killProcessWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call killProcessWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0500
+     * @tc.number System_API_Test_App_Manager_0500
+     * @tc.desc   Test the third-party application call killProcessWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0500';
@@ -162,10 +172,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0600
-     * @tc.name: promise form killProcessWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call killProcessWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0600
+     * @tc.number System_API_Test_App_Manager_0600
+     * @tc.desc   Test the third-party application call killProcessWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0600';
@@ -185,10 +197,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0700
-     * @tc.name: callback form killProcessesByBundleName public interface interception test
-     * @tc.desc: Test the third-party application without permission call killProcessesByBundleName will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0700
+     * @tc.number System_API_Test_App_Manager_0700
+     * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0700';
@@ -201,10 +215,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0800
-     * @tc.name: promise form killProcessesByBundleName public interface interception test
-     * @tc.desc: Test the third-party application without permission call killProcessesByBundleName will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0800
+     * @tc.number System_API_Test_App_Manager_0800
+     * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0800';
@@ -223,10 +239,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_0900
-     * @tc.name: callback form clearUpApplicationData system interface interception test
-     * @tc.desc: Test the third-party application call clearUpApplicationData will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_0900
+     * @tc.number System_API_Test_App_Manager_0900
+     * @tc.desc   Test the third-party application call clearUpApplicationData will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_0900', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0900';
@@ -239,10 +257,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_1000
-     * @tc.name: promise form clearUpApplicationData system interface interception test
-     * @tc.desc: Test the third-party application call clearUpApplicationData will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_1000
+     * @tc.number System_API_Test_App_Manager_1000
+     * @tc.desc   Test the third-party application call clearUpApplicationData will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_1000', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1000';
@@ -262,10 +282,12 @@ export default function appManagerTest() {
 
 
     /**
-     * @tc.number: System_API_Test_App_Manager_1100
-     * @tc.name: callback form GetProcessMemoryByPid system interface interception test
-     * @tc.desc: Test the third-party application call GetProcessMemoryByPid will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_1100
+     * @tc.number System_API_Test_App_Manager_1100
+     * @tc.desc   Test the third-party application call GetProcessMemoryByPid will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_1100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1100';
@@ -278,10 +300,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_1200
-     * @tc.name: promise form GetProcessMemoryByPid system interface interception test
-     * @tc.desc: Test the third-party application call GetProcessMemoryByPid will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_1200
+     * @tc.number System_API_Test_App_Manager_1200
+     * @tc.desc   Test the third-party application call GetProcessMemoryByPid will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_1200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1200';
@@ -300,10 +324,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_1300
-     * @tc.name: callback form getRunningProcessInfoByBundleName system interface interception test
-     * @tc.desc: Test the third-party application call getRunningProcessInfoByBundleName will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_1300
+     * @tc.number System_API_Test_App_Manager_1300
+     * @tc.desc   Test the third-party application call getRunningProcessInfoByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_1300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1300';
@@ -316,10 +342,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_1400
-     * @tc.name: promise form getRunningProcessInfoByBundleName system interface interception test
-     * @tc.desc: Test the third-party application call getRunningProcessInfoByBundleName will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_1400
+     * @tc.number System_API_Test_App_Manager_1400
+     * @tc.desc   Test the third-party application call getRunningProcessInfoByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_1400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1400';
@@ -338,10 +366,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_1500
-     * @tc.name: callback form getRunningProcessInfoByBundleName system interface interception test
-     * @tc.desc: Test the third-party application call getRunningProcessInfoByBundleName will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_1500
+     * @tc.number System_API_Test_App_Manager_1500
+     * @tc.desc   Test the third-party application call getRunningProcessInfoByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_1500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1500';
@@ -355,10 +385,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_App_Manager_1600
-     * @tc.name: promise form getRunningProcessInfoByBundleName system interface interception test
-     * @tc.desc: Test the third-party application call getRunningProcessInfoByBundleName will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_App_Manager_1600
+     * @tc.number System_API_Test_App_Manager_1600
+     * @tc.desc   Test the third-party application call getRunningProcessInfoByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_1600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1600';
@@ -379,10 +411,12 @@ export default function appManagerTest() {
 
 
     /**
-     * @tc.number: Public_API_Test_App_Manager_0100
-     * @tc.name: ProcessState enum public interface test
-     * @tc.desc: Test the third-party application get ProcessState enum will be right
-     * @tc.level 3
+     * @tc.name   Public_API_Test_App_Manager_0100
+     * @tc.number Public_API_Test_App_Manager_0100
+     * @tc.desc   Test the third-party application get ProcessState enum will be right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Public_API_Test_App_Manager_0100', Level.LEVEL0, (done: Function) => {
       expect(appManager.ProcessState.STATE_CREATE).assertEqual(0);
@@ -394,10 +428,12 @@ export default function appManagerTest() {
     })
 
     /**
-     * @tc.number: Public_API_Test_App_Manager_0200
-     * @tc.name: ApplicationState enum public interface test
-     * @tc.desc: Test the third-party application get ApplicationState enum will be right
-     * @tc.level 3
+     * @tc.name   Public_API_Test_App_Manager_0200
+     * @tc.number Public_API_Test_App_Manager_0200
+     * @tc.desc   Test the third-party application get ApplicationState enum will be right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Public_API_Test_App_Manager_0200', Level.LEVEL0, (done: Function) => {
       expect(appManager.ApplicationState.STATE_CREATE).assertEqual(0);
@@ -408,13 +444,13 @@ export default function appManagerTest() {
       done();
     })
 
-        /*
-     * @tc.number : SUB_Ability_AbilityBase_AppManager_0100
-     * @tc.name   : Test the return value of the isRunningInStabilityTest interface(Promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_0100
+     * @tc.number SUB_Ability_AbilityBase_AppManager_0100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0100`;
@@ -440,13 +476,13 @@ export default function appManagerTest() {
         }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AppManager_0200
-     * @tc.name   : Test the return value of the isRunningInStabilityTest interface(CallBack).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_0200
+     * @tc.number SUB_Ability_AbilityBase_AppManager_0200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_0200', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_AA_ChildProcessManager_startChildProcess_0300`;
@@ -468,13 +504,13 @@ export default function appManagerTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AppManager_0400
-     * @tc.name   : Verify that isAppRunning is called when no permission is available(appCloneIndex).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_0400
+     * @tc.number SUB_Ability_AbilityBase_AppManager_0400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_0400', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0400`;
@@ -496,13 +532,13 @@ export default function appManagerTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AppManager_0500
-     * @tc.name   : Verify that isAppRunning is called when no permission is available(no appCloneIndex)).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_0500
+     * @tc.number SUB_Ability_AbilityBase_AppManager_0500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_0500', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0500`;
@@ -523,13 +559,13 @@ export default function appManagerTest() {
         done();
       }
     });
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AppManager_0600
-     * @tc.name   : Verify that off is called when no permission is available(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_0600
+     * @tc.number SUB_Ability_AbilityBase_AppManager_0600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_0600', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0600`;
@@ -550,13 +586,13 @@ export default function appManagerTest() {
         done();
       }
     });
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AppManager_0700
-     * @tc.name   : Verify that off is called when no permission is available(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_0700
+     * @tc.number SUB_Ability_AbilityBase_AppManager_0700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_0700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0700`;
@@ -573,13 +609,13 @@ export default function appManagerTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AppManager_0900
-     * @tc.name   : Verify isRamConstrainedDevice(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_0900
+     * @tc.number SUB_Ability_AbilityBase_AppManager_0900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_0900', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0700`;
@@ -601,13 +637,13 @@ export default function appManagerTest() {
       }
     });
     
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AppManager_1000
-     * @tc.name   : Verify isRamConstrainedDevice(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_1000
+     * @tc.number SUB_Ability_AbilityBase_AppManager_1000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_1000', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_AppManager_1000`;
@@ -633,11 +669,13 @@ export default function appManagerTest() {
     });
 
      /**
-     * @tc.number: System_API_Test_App_Manager_1700
-     * @tc.name: promise form killProcessesByBundleName public interface interception test
-     * @tc.desc: Test the third-party application without permission call killProcessesByBundleName will be blocked
-     * @tc.level 3
-     */
+      * @tc.name   System_API_Test_App_Manager_1700
+      * @tc.number System_API_Test_App_Manager_1700
+      * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('System_API_Test_App_Manager_1700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1700';
       let bundleName = "com.ohos.applicationsss";

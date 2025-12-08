@@ -49,12 +49,12 @@ export default function swipeRefresherPageTest() {
     })
 
     /**
+     * @tc.name   swipeRefresherPageTest_0100
      * @tc.number swipeRefresherPageTest
-     * @tc.name swipeRefresherPageTest_0100
-     * @tc.desc Test swipeRefresherPage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test swipeRefresherPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swipeRefresherPageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[swipeRefresherPageTest_0100] START');

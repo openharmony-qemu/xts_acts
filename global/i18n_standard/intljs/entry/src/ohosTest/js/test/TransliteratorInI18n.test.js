@@ -57,7 +57,6 @@ describe('TransliteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_0100
      * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0100
      * @tc.desc   get the ID value
@@ -81,7 +80,6 @@ describe('TransliteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_0200
      * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0200
      * @tc.desc   get the instance value
@@ -97,7 +95,6 @@ describe('TransliteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_0300
      * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0300
      * @tc.desc   get the transform value
@@ -114,7 +111,6 @@ describe('TransliteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_0400
      * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0400
      * @tc.desc   get the transform value
@@ -131,7 +127,6 @@ describe('TransliteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_0500
      * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0500
      * @tc.desc   get the transform value
@@ -148,7 +143,6 @@ describe('TransliteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_0600
      * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0600
      * @tc.desc   get the transform value
@@ -165,7 +159,6 @@ describe('TransliteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_0700
      * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0700
      * @tc.desc   get the transform value
@@ -182,7 +175,6 @@ describe('TransliteratorInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_0800
      * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0800
      * @tc.desc   get the transform value

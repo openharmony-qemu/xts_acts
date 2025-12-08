@@ -21,6 +21,11 @@
     {
       "type": "ShellKit",
       "run-command": [
+          "power-shell wakeup",
+          "power-shell setmode 602",
+          "uinput -T -m 300 1279 280 200",
+          "power-shell timeout -o 864000000",
+          "uinput -T -m 300 1279 280 200",
           "setenforce 0"
       ],
       "teardown-command": [

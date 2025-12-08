@@ -63,13 +63,13 @@ export default function sheetBorderWidth() {
     });
 
     /**
+     * @tc.name   sheetBorderWidth_0100
      * @tc.number SUB_ACE_sheetBorderWidth_0100
-     * @tc.name sheetBorderWidth_0100
-     * @tc.desc To test the sheetBorderWidth:10
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the sheetBorderWidth:10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sheetBorderWidth_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('sheetBorderWidth_0100 START');
       let driver = await Driver.create()
@@ -101,13 +101,13 @@ export default function sheetBorderWidth() {
 
 
     /**
+     * @tc.name   sheetBorderWidth_0200
      * @tc.number SUB_ACE_sheetBorderWidth_0200
-     * @tc.name sheetBorderWidth_0200
-     * @tc.desc To test the sheetBorderWidth
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the sheetBorderWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sheetBorderWidth_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('sheetBorderWidth_0200 START');
       let driver = await Driver.create()
@@ -138,13 +138,13 @@ export default function sheetBorderWidth() {
     });
 
     /**
+     * @tc.name   sheetBorderWidth_0300
      * @tc.number SUB_ACE_sheetBorderWidth_0300
-     * @tc.name sheetBorderWidth_0300
-     * @tc.desc To test the sheetBorderWidth:undefined
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the sheetBorderWidth:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sheetBorderWidth_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('sheetBorderWidth_0300 START');
       let driver = await Driver.create()

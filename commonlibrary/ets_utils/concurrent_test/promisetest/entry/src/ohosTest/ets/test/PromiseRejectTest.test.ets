@@ -42,12 +42,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0100
      * @tc.number SUB_PROMISE_REJECT_TEST_0100
-     * @tc.name PromiseRejectTest0100
-     * @tc.desc test null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -96,12 +96,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0200
      * @tc.number SUB_PROMISE_REJECT_TEST_0200
-     * @tc.name PromiseRejectTest0200
-     * @tc.desc test undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -151,12 +151,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0300
      * @tc.number SUB_PROMISE_REJECT_TEST_0300
-     * @tc.name PromiseRejectTest0300
-     * @tc.desc test string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -207,12 +207,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0400
      * @tc.number SUB_PROMISE_REJECT_TEST_0400
-     * @tc.name PromiseRejectTest0400
-     * @tc.desc test number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -257,12 +257,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0500
      * @tc.number SUB_PROMISE_REJECT_TEST_0500
-     * @tc.name PromiseRejectTest0500
-     * @tc.desc test boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -309,12 +309,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0600
      * @tc.number SUB_PROMISE_REJECT_TEST_0600
-     * @tc.name PromiseRejectTest0600
-     * @tc.desc test bigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test bigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -359,12 +359,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0700
      * @tc.number SUB_PROMISE_REJECT_TEST_0700
-     * @tc.name PromiseRejectTest0700
-     * @tc.desc test object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -422,12 +422,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0800
      * @tc.number SUB_PROMISE_REJECT_TEST_0800
-     * @tc.name PromiseRejectTest0800
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -482,12 +482,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest0900
      * @tc.number SUB_PROMISE_REJECT_TEST_0900
-     * @tc.name PromiseRejectTest0900
-     * @tc.desc test string[]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test string[]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -528,12 +528,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1000
      * @tc.number SUB_PROMISE_REJECT_TEST_1000
-     * @tc.name PromiseRejectTest1000
-     * @tc.desc test string[]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test string[]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -574,12 +574,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1100
      * @tc.number SUB_PROMISE_REJECT_TEST_1100
-     * @tc.name PromiseRejectTest1100
-     * @tc.desc test Error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -628,12 +628,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1200
      * @tc.number SUB_PROMISE_REJECT_TEST_1200
-     * @tc.name PromiseRejectTest1200
-     * @tc.desc test value = Array(1000000).fill('test')
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test value = Array(1000000).fill('test')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -682,12 +682,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1300
      * @tc.number SUB_PROMISE_REJECT_TEST_1300
-     * @tc.name PromiseRejectTest1300
-     * @tc.desc test Promise.resolve
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Promise.resolve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -745,12 +745,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1400
      * @tc.number SUB_PROMISE_REJECT_TEST_1400
-     * @tc.name PromiseRejectTest1400
-     * @tc.desc test Promise.reject
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Promise.reject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -808,12 +808,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1500
      * @tc.number SUB_PROMISE_REJECT_TEST_1500
-     * @tc.name PromiseRejectTest1500
-     * @tc.desc test new Promise resolve
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test new Promise resolve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -873,12 +873,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1600
      * @tc.number SUB_PROMISE_REJECT_TEST_1600
-     * @tc.name PromiseRejectTest1600
-     * @tc.desc test throw new Error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test throw new Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -938,12 +938,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1700
      * @tc.number SUB_PROMISE_REJECT_TEST_1700
-     * @tc.name PromiseRejectTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -992,12 +992,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1800
      * @tc.number SUB_PROMISE_REJECT_TEST_1800
-     * @tc.name PromiseRejectTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1046,12 +1046,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest1900
      * @tc.number SUB_PROMISE_REJECT_TEST_1900
-     * @tc.name PromiseRejectTest1900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1102,12 +1102,12 @@ export default function PromiseRejectTest() {
 
 
     /**
+     * @tc.name   PromiseRejectTest2000
      * @tc.number SUB_PROMISE_REJECT_TEST_2000
-     * @tc.name PromiseRejectTest2000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseRejectTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

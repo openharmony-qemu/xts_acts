@@ -42,12 +42,12 @@ export default function SpanUIJsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0100
-     * @tc.name      spanUIJsunit_0100
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0100
+     * @tc.number SUB_ACE_spanUIJsunit_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0100 START');
@@ -66,12 +66,12 @@ export default function SpanUIJsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0200
-     * @tc.name      spanUIJsunit_0200
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0200
+     * @tc.number SUB_ACE_spanUIJsunit_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0200 START');
@@ -90,12 +90,12 @@ export default function SpanUIJsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0300
-     * @tc.name      spanUIJsunit_0300
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0300
+     * @tc.number SUB_ACE_spanUIJsunit_0300
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0300 START');
@@ -110,12 +110,12 @@ export default function SpanUIJsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0400
-     * @tc.name      spanUIJsunit_0400
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0400
+     * @tc.number SUB_ACE_spanUIJsunit_0400
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0400 START');
@@ -130,12 +130,12 @@ export default function SpanUIJsunitTest() {
       done();
     }); 
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0500
-     * @tc.name      spanUIJsunit_0500
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0500
+     * @tc.number SUB_ACE_spanUIJsunit_0500
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0500 START');
@@ -153,12 +153,12 @@ export default function SpanUIJsunitTest() {
       done();
     }); 
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0600
-     * @tc.name      spanUIJsunit_0600
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0600
+     * @tc.number SUB_ACE_spanUIJsunit_0600
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0600 START');
@@ -176,12 +176,12 @@ export default function SpanUIJsunitTest() {
       done();
     }); 
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0700
-     * @tc.name      spanUIJsunit_0700
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0700
+     * @tc.number SUB_ACE_spanUIJsunit_0700
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0700 START');
@@ -204,12 +204,12 @@ export default function SpanUIJsunitTest() {
       done();
     }); 
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0800
-     * @tc.name      spanUIJsunit_0800
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0800
+     * @tc.number SUB_ACE_spanUIJsunit_0800
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0800 START');
@@ -232,12 +232,12 @@ export default function SpanUIJsunitTest() {
       done();
     }); 
     /**
-     * @tc.number    SUB_ACE_spanUIJsunit_0900
-     * @tc.name      spanUIJsunit_0900
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanUIJsunit_0900
+     * @tc.number SUB_ACE_spanUIJsunit_0900
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('spanUIJsunit_0900', Level.LEVEL1, async (done: Function) => {
       console.info('spanUIJsunit_0900 START');

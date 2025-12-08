@@ -47,7 +47,6 @@ export default function btBleServerNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattServerSendResponseNop
      * @tc.number testGattServerSendResponseNop
      * @tc.desc   test gatt server sendResponse without permission
@@ -78,7 +77,6 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattServerNotifyCharacteristicChangedNop
      * @tc.number testGattServerNotifyCharacteristicChangedNop
      * @tc.desc   test gatt server notifyCharacteristicChanged by promise without permission
@@ -107,7 +105,6 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattServerNotifyCharacteristicChangedAsyncCallbackNop
      * @tc.number testGattServerNotifyCharacteristicChangedAsyncCallbackNop
      * @tc.desc   test gatt server notifyCharacteristicChanged by async callback without permission
@@ -148,7 +145,6 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattServerCloseNop
      * @tc.number testGattServerCloseNop
      * @tc.desc   test gatt server close without permission
@@ -169,7 +165,6 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattServerAddServiceNop
      * @tc.number testGattServerAddServiceNop
      * @tc.desc   test gatt server addService without permission
@@ -211,7 +206,6 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattServerRemoveServiceNop
      * @tc.number testGattServerRemoveServiceNop
      * @tc.desc   test gatt server removeService without permission
@@ -232,7 +226,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientConnectNop
      * @tc.number testGattClientConnectNop
      * @tc.desc   test gatt client connect without permission
@@ -253,7 +246,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientDisconnectNop
      * @tc.number testGattClientDisconnectNop
      * @tc.desc   test gatt client disconnect without permission
@@ -274,7 +266,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientCloseNop
      * @tc.number testGattClientCloseNop
      * @tc.desc   test gatt client close without permission
@@ -294,7 +285,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientGetDeviceNameCallbackNop
      * @tc.number testGattClientGetDeviceNameCallbackNop
      * @tc.desc   test gatt client getDeviceName callback without permission
@@ -327,7 +317,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientGetDeviceNamePromiseNop
      * @tc.number testGattClientGetDeviceNamePromiseNop
      * @tc.desc   test gatt client getDeviceName promise without permission
@@ -349,7 +338,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientGetServicesCallbackNop
      * @tc.number testGattClientGetServicesCallbackNop
      * @tc.desc   test gatt client getServices callback without permission
@@ -382,7 +370,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientGetServicesPromiseNop
      * @tc.number testGattClientGetServicesPromiseNop
      * @tc.desc   test gatt client getServices promise without permission
@@ -404,7 +391,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientReadCharacteristicValueCallbackNop
      * @tc.number testGattClientReadCharacteristicValueCallbackNop
      * @tc.desc   test gatt client readCharacteristicValue callback without permission
@@ -452,7 +438,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGattClientReadCharacteristicValuePromiseNop
      * @tc.number testGattClientReadCharacteristicValuePromiseNop
      * @tc.desc   test gatt client readCharacteristicValue promise without permission
@@ -488,7 +473,6 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGetRssiValueCallbackNop
      * @tc.number testGetRssiValueCallbackNop
      * @tc.desc   test gatt client getRssiValue callback without permission
@@ -520,7 +504,6 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGetRssiValuePromiseNop
      * @tc.number testGetRssiValuePromiseNop
      * @tc.desc   test gatt client getRssiValue promise without permission
@@ -542,7 +525,6 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testSetBLEMtuSizeNop
      * @tc.number testSetBLEMtuSizeNop
      * @tc.desc   test gatt client setBLEMtuSize without permission

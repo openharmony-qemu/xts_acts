@@ -65,12 +65,12 @@ export default function deleteAssetsChangeRequestTest() {
     };
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_URI_CHANGE_REQUEST_0000
-     * @tc.name      : delete_assets_uri_change_request_000
-     * @tc.desc      : delete 1 asset by uri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   delete_assets_uri_change_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_URI_CHANGE_REQUEST_0000
+     * @tc.desc   delete 1 asset by uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('delete_assets_uri_change_request_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'delete_assets_uri_change_request_000';
@@ -88,12 +88,12 @@ export default function deleteAssetsChangeRequestTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_URI_CHANGE_REQUEST_0100
-     * @tc.name      : delete_assets_uri_change_request_001
-     * @tc.desc      : delete 5 assets by uri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   delete_assets_uri_change_request_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_URI_CHANGE_REQUEST_0100
+     * @tc.desc   delete 5 assets by uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('delete_assets_uri_change_request_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'delete_assets_uri_change_request_001';
@@ -110,14 +110,14 @@ export default function deleteAssetsChangeRequestTest() {
       }
     });
 
-    /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_URI_CHANGE_REQUEST_0200
-     * @tc.name      : delete_assets_uri_change_request_002
-     * @tc.desc      : delete  assets by []
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+        /**
+         * @tc.name   delete_assets_uri_change_request_002
+         * @tc.number SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_URI_CHANGE_REQUEST_0200
+         * @tc.desc   delete  assets by []
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('delete_assets_uri_change_request_002', Level.LEVEL2, async (done: Function) => {
           const testNum = 'delete_assets_uri_change_request_002';
           try {
@@ -135,12 +135,12 @@ export default function deleteAssetsChangeRequestTest() {
         });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_OBJ_CHANGE_REQUEST_0000
-     * @tc.name      : delete_assets_obj_change_request_000
-     * @tc.desc      : delete 1 asset by object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   delete_assets_obj_change_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_OBJ_CHANGE_REQUEST_0000
+     * @tc.desc   delete 1 asset by object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('delete_assets_obj_change_request_000', Level.LEVEL2, async (done: Function) => {
       const testNum = 'delete_assets_obj_change_request_000';
@@ -157,12 +157,12 @@ export default function deleteAssetsChangeRequestTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_OBJ_CHANGE_REQUEST_0100
-     * @tc.name      : delete_assets_obj_change_request_001
-     * @tc.desc      : delete 5 assets by object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   delete_assets_obj_change_request_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_OBJ_CHANGE_REQUEST_0100
+     * @tc.desc   delete 5 assets by object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('delete_assets_obj_change_request_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'delete_assets_obj_change_request_001';
@@ -179,12 +179,12 @@ export default function deleteAssetsChangeRequestTest() {
     });
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_OBJ_CHANGE_REQUEST_0200
-     * @tc.name      : delete_assets_obj_change_request_002
-     * @tc.desc      : delete empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   delete_assets_obj_change_request_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_OBJ_CHANGE_REQUEST_0200
+     * @tc.desc   delete empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('delete_assets_obj_change_request_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'delete_assets_obj_change_request_002';

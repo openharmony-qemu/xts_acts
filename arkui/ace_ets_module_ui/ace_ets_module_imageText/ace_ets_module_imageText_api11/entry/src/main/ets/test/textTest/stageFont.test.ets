@@ -55,6 +55,14 @@ export default function stageFontTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   Stage_Font_0100
+     * @tc.number Stage_Font_0100
+     * @tc.desc   Stage_Font_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Stage_Font_0100', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0100 START');
       setTimeout(() => {
@@ -75,6 +83,14 @@ export default function stageFontTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   Stage_Font_0200
+     * @tc.number Stage_Font_0200
+     * @tc.desc   Stage_Font_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Stage_Font_0200', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0200 START');
       setTimeout(() => {
@@ -94,6 +110,14 @@ export default function stageFontTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   Stage_Font_0300
+     * @tc.number Stage_Font_0300
+     * @tc.desc   Stage_Font_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Stage_Font_0300', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0300 START');
       setTimeout(() => {
@@ -113,6 +137,14 @@ export default function stageFontTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   Stage_Font_0400
+     * @tc.number Stage_Font_0400
+     * @tc.desc   Stage_Font_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Stage_Font_0400', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0400 START');
       setTimeout(() => {
@@ -132,6 +164,14 @@ export default function stageFontTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   Stage_Font_0500
+     * @tc.number Stage_Font_0500
+     * @tc.desc   Stage_Font_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Stage_Font_0500', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0500 START');
       setTimeout(() => {
@@ -151,6 +191,14 @@ export default function stageFontTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   Stage_Font_0600
+     * @tc.number Stage_Font_0600
+     * @tc.desc   Stage_Font_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Stage_Font_0600', Level.LEVEL2, async (done: Function) => {
       let fontRegister:ESObject = globalThis.uiContent.getFont();
       console.info('Stage_Font_0600 START');
@@ -164,6 +212,14 @@ export default function stageFontTest() {
       done();
     });
 
+    /**
+     * @tc.name   Stage_Font_0700
+     * @tc.number Stage_Font_0700
+     * @tc.desc   Stage_Font_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Stage_Font_0700', Level.LEVEL2, async (done: Function) => {
       let fontRegister:ESObject = globalThis.uiContent.getFont();
       console.info('Stage_Font_0700 START');
@@ -177,6 +233,14 @@ export default function stageFontTest() {
       done();
     });
 
+    /**
+     * @tc.name   Stage_Font_0800
+     * @tc.number Stage_Font_0800
+     * @tc.desc   Stage_Font_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Stage_Font_0800', Level.LEVEL2, async (done: Function) => {
       let fontRegister:ESObject = globalThis.uiContent.getFont();
       console.info('Stage_Font_0800 START');

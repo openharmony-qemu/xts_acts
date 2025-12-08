@@ -19,6 +19,12 @@ import GraphicTextEnum from './GraphicTextEnum.test';
 import GraphicTextATest from './GraphicTextA.test';
 import GraphicTextBTest from './GraphicTextB.test';
 import GraphicTextClass from './GraphicTextClass.test';
+import GraphicTextProperty from './GraphicTextProperty.test';
+import TextLineParagraphTest from './TextLineParagraphTest.test';
+import TextGetFontDescTest from './TextGetFontDescTest.test';
+import TextRunTest from './TextRunTest.test';
+import TextTextLineTest from './TextTextLineTest.test';
+import GraphicTextNewAPI from './GraphicTextNewAPI.test';
 export default function testsuite() {
   GraphicTextInterface();
   GraphicTextParagraphBuilder();
@@ -27,4 +33,10 @@ export default function testsuite() {
   GraphicTextATest();
   GraphicTextBTest();
   GraphicTextClass();
+  GraphicTextProperty();
+  TextLineParagraphTest();
+  TextGetFontDescTest();
+  TextRunTest();
+  TextTextLineTest();
+  GraphicTextNewAPI();
 }

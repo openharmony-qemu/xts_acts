@@ -60,12 +60,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       console.log(msg + ' beforeEach end!!!');
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0090
-     * @tc.name      : testGetWindowTransitionAnimationNotSet
-     * @tc.desc      : Obtain the configuration of window transition animations in specific scenarios.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowTransitionAnimationNotSet
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0090
+     * @tc.desc   Obtain the configuration of window transition animations in specific scenarios.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowTransitionAnimationNotSet', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowTransitionAnimationNotSet';
@@ -90,12 +90,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0010
-     * @tc.name      : testSetWindowTransitionAnimationNormal
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetWindowTransitionAnimationNormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0010
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowTransitionAnimationNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testSetWindowTransitionAnimationNormal';
@@ -137,12 +137,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0120
-     * @tc.name      : testSetWindowTransitionAnimationNormal2
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetWindowTransitionAnimationNormal2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0120
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowTransitionAnimationNormal2', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testSetWindowTransitionAnimationNormal2';
@@ -185,12 +185,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0130
-     * @tc.name      : testSetWindowTransitionAnimationCurveSpring
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTransitionAnimationCurveSpring
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0130
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTransitionAnimationCurveSpring', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowTransitionAnimationCurveSpring';
@@ -233,12 +233,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0140
-     * @tc.name      : testSetWindowTransitionAnimationCurveBezier
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTransitionAnimationCurveBezier
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0140
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTransitionAnimationCurveBezier', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowTransitionAnimationCurveBezier';
@@ -281,12 +281,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0170
-     * @tc.name      : testSetWindowTransitionAnimationCurveBezierAbnormal
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTransitionAnimationCurveBezierAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0170
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTransitionAnimationCurveBezierAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowTransitionAnimationCurveBezierAbnormal';
@@ -329,12 +329,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0020
-     * @tc.name      : testSetWindowTransitionAnimationWindowStateAbnormal
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTransitionAnimationWindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0020
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTransitionAnimationWindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowTransitionAnimationWindowStateAbnormal';
@@ -382,12 +382,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0030
-     * @tc.name      : testSetWindowTransitionAnimationSubWindow
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTransitionAnimationSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0030
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTransitionAnimationSubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowTransitionAnimationSubWindow';
@@ -435,12 +435,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0040
-     * @tc.name      : testSetWindowTransitionAnimationUndefined
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTransitionAnimationUndefined
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0040
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTransitionAnimationUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowTransitionAnimationUndefined';
@@ -479,12 +479,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0050
-     * @tc.name      : testGetWindowTransitionAnimationNormal
-     * @tc.desc      : Obtain the configuration of window transition animations in specific scenarios.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testGetWindowTransitionAnimationNormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0050
+     * @tc.desc   Obtain the configuration of window transition animations in specific scenarios.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowTransitionAnimationNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testGetWindowTransitionAnimationNormal';
@@ -540,12 +540,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0060
-     * @tc.name      : testGetWindowTransitionAnimationWindowStateAbnormal
-     * @tc.desc      : Obtain the configuration of window transition animations in specific scenarios.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowTransitionAnimationWindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0060
+     * @tc.desc   Obtain the configuration of window transition animations in specific scenarios.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowTransitionAnimationWindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowTransitionAnimationWindowStateAbnormal';
@@ -575,12 +575,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0070
-     * @tc.name      : testGetWindowTransitionAnimationSubWindow
-     * @tc.desc      : Obtain the configuration of window transition animations in specific scenarios.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowTransitionAnimationSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0070
+     * @tc.desc   Obtain the configuration of window transition animations in specific scenarios.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowTransitionAnimationSubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowTransitionAnimationSubWindow';
@@ -610,12 +610,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0080
-     * @tc.name      : testGetWindowTransitionAnimationParameterError
-     * @tc.desc      : Obtain the configuration of window transition animations in specific scenarios.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowTransitionAnimationParameterError
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0080
+     * @tc.desc   Obtain the configuration of window transition animations in specific scenarios.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowTransitionAnimationParameterError', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowTransitionAnimationParameterError';
@@ -672,12 +672,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0100
-     * @tc.name      : testSetWindowTransitionAnimationDurationError
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTransitionAnimationDurationError
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0100
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTransitionAnimationDurationError', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowTransitionAnimationDurationError';
@@ -720,12 +720,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0110
-     * @tc.name      : testSetWindowTransitionAnimationOpacityError
-     * @tc.desc      : Add transition animations to the Windows in specific scenes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTransitionAnimationOpacityError
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0110
+     * @tc.desc   Add transition animations to the Windows in specific scenes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTransitionAnimationOpacityError', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowTransitionAnimationOpacityError';
@@ -768,12 +768,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0150
-     * @tc.name      : testStartAbilityAnimationNormal
-     * @tc.desc      : Test the application by pulling up the fade-in and fade-out animation effects
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testStartAbilityAnimationNormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0150
+     * @tc.desc   Test the application by pulling up the fade-in and fade-out animation effects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStartAbilityAnimationNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async () => {
       let caseName = 'testStartAbilityAnimationNormal';
@@ -812,12 +812,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0160
-     * @tc.name      : testStartAbilityAnimationDefaultValue
-     * @tc.desc      : Test the application by pulling up the fade-in and fade-out animation effects
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testStartAbilityAnimationDefaultValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0160
+     * @tc.desc   Test the application by pulling up the fade-in and fade-out animation effects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStartAbilityAnimationDefaultValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async () => {
       let caseName = 'testStartAbilityAnimationDefaultValue';

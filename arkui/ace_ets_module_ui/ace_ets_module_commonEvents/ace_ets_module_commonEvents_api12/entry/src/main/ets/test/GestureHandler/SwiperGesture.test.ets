@@ -48,12 +48,12 @@ export default function SwiperGestureHandlerTest() {
     });
 
     /**
-     * @tc.number    SwiperGestureHandler_0010
-     * @tc.name      SwiperGestureHandlerOptions
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SwiperGestureHandler_0010
+     * @tc.number SwiperGestureHandler_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SwiperGestureHandler_0010', Level.LEVEL0, async (done: Function) => {
       console.info('SwiperGestureHandler_0010 START');

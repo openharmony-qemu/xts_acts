@@ -41,12 +41,12 @@ export default function builtinsArrayFindIndexTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0100
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0100
-     * @tc.name builtinsArrayFindIndexTest0100
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -58,12 +58,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0101
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0101
-     * @tc.name builtinsArrayFindIndexTest0101
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayFindIndexTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -75,12 +75,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0102
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0102
-     * @tc.name builtinsArrayFindIndexTest0102
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -95,12 +95,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0103
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0103
-     * @tc.name builtinsArrayFindIndexTest0103
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, , 3];
@@ -112,12 +112,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0104
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0104
-     * @tc.name builtinsArrayFindIndexTest0104
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [];
@@ -129,12 +129,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0105
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0105
-     * @tc.name builtinsArrayFindIndexTest0105
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [5];
@@ -146,12 +146,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0106
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0106
-     * @tc.name builtinsArrayFindIndexTest0106
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -163,12 +163,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0107
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0107
-     * @tc.name builtinsArrayFindIndexTest0107
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -185,12 +185,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0108
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0108
-     * @tc.name builtinsArrayFindIndexTest0108
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3];
@@ -207,12 +207,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0109
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0109
-     * @tc.name builtinsArrayFindIndexTest0109
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = ['a', 'b', 'c'];
@@ -224,12 +224,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0110
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0110
-     * @tc.name builtinsArrayFindIndexTest0110
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface Item {
@@ -250,12 +250,12 @@ export default function builtinsArrayFindIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFindIndexTest0111
      * @tc.number SUB_BUILTINS_ARRAY_FIND_INDEX_TEST_0111
-     * @tc.name builtinsArrayFindIndexTest0111
-     * @tc.desc Test findIndex method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [null, undefined, 3]

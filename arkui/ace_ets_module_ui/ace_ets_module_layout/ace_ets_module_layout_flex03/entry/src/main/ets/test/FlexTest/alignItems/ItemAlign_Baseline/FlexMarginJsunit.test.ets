@@ -45,9 +45,12 @@ export default function flexMargin_BaselineJsunit() {
     });
 
     /**
+     * @tc.name   testItemAlignBaselineParentSetMargin
      * @tc.number SUB_ACE_FLEXALIGNITEMS_BASELINE_0500
-     * @tc.name testItemAlignBaselineParentSetMargin
-     * @tc.desc Parent component set margin attribute.
+     * @tc.desc   Parent component set margin attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testItemAlignBaselineParentSetMargin',  Level.LEVEL0, async () => {
       console.info('new testItemAlignBaselineParentSetMargin START');

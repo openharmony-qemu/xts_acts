@@ -259,12 +259,12 @@ export default function Object16Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   Object16Test001
      * @tc.number SUB_BUILTINS_Object16_TEST_0100
-     * @tc.name Object16Test001
-     * @tc.desc test object create (direct and inherited property)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create (direct and inherited property)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn01_testNaNEquality();
@@ -272,12 +272,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test002
      * @tc.number SUB_BUILTINS_Object16_TEST_0200
-     * @tc.name Object16Test002
-     * @tc.desc test object create (null prototype)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create (null prototype)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn02_testSignedZeroInequality();
@@ -285,12 +285,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test003
      * @tc.number SUB_BUILTINS_Object16_TEST_0300
-     * @tc.name Object16Test003
-     * @tc.desc test reference type equality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reference type equality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn03_testReferenceTypeEquality();
@@ -298,12 +298,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test004
      * @tc.number SUB_BUILTINS_Object16_TEST_0400
-     * @tc.name Object16Test004
-     * @tc.desc test string same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn04_testStringSameValue();
@@ -311,12 +311,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test005
      * @tc.number SUB_BUILTINS_Object16_TEST_0500
-     * @tc.name Object16Test005
-     * @tc.desc test number same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test number same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn05_testNumberSameValue();
@@ -324,12 +324,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test006
      * @tc.number SUB_BUILTINS_Object16_TEST_0600
-     * @tc.name Object16Test006
-     * @tc.desc test boolean same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test boolean same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn06_testBooleanSameValue();
@@ -337,12 +337,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test007
      * @tc.number SUB_BUILTINS_Object16_TEST_0700
-     * @tc.name Object16Test007
-     * @tc.desc test null equality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test null equality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn07_testNullEquality();
@@ -350,12 +350,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test008
      * @tc.number SUB_BUILTINS_Object16_TEST_0800
-     * @tc.name Object16Test008
-     * @tc.desc test undefined equality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test undefined equality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn08_testUndefinedEquality();
@@ -363,12 +363,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test009
      * @tc.number SUB_BUILTINS_Object16_TEST_0900
-     * @tc.name Object16Test009
-     * @tc.desc test symbol same instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol same instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn09_testSymbolSameInstance();
@@ -376,12 +376,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test010
      * @tc.number SUB_BUILTINS_Object16_TEST_1000
-     * @tc.name Object16Test010
-     * @tc.desc test bigint same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test bigint same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn10_testBigIntSameValue();
@@ -389,12 +389,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test011
      * @tc.number SUB_BUILTINS_Object16_TEST_1100
-     * @tc.name Object16Test011
-     * @tc.desc test primitive vs wrapper
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test primitive vs wrapper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn11_testPrimitiveVsWrapper();
@@ -402,12 +402,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test012
      * @tc.number SUB_BUILTINS_Object16_TEST_1200
-     * @tc.name Object16Test012
-     * @tc.desc test array different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn12_testArrayDifferentInstance();
@@ -415,12 +415,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test013
      * @tc.number SUB_BUILTINS_Object16_TEST_1300
-     * @tc.name Object16Test013
-     * @tc.desc test function different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn13_testFunctionDifferentInstance();
@@ -428,12 +428,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test014
      * @tc.number SUB_BUILTINS_Object16_TEST_1400
-     * @tc.name Object16Test014
-     * @tc.desc test date same instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test date same instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn14_testDateSameInstance();
@@ -441,12 +441,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test015
      * @tc.number SUB_BUILTINS_Object16_TEST_1500
-     * @tc.name Object16Test015
-     * @tc.desc test NaN vs falsy values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test NaN vs falsy values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn15_testNaNvsFalsyValues();
@@ -454,12 +454,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test016
      * @tc.number SUB_BUILTINS_Object16_TEST_1600
-     * @tc.name Object16Test016
-     * @tc.desc test positive zero vs others
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test positive zero vs others
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn16_testPositiveZeroVsOthers();
@@ -467,12 +467,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test017
      * @tc.number SUB_BUILTINS_Object16_TEST_1700
-     * @tc.name Object16Test017
-     * @tc.desc test nested object reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested object reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn17_testNestedObjReference();
@@ -480,12 +480,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test018
      * @tc.number SUB_BUILTINS_Object16_TEST_1800
-     * @tc.name Object16Test018
-     * @tc.desc test regexp different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test regexp different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn18_testRegExpDifferentInstance();
@@ -493,12 +493,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test019
      * @tc.number SUB_BUILTINS_Object16_TEST_1900
-     * @tc.name Object16Test019
-     * @tc.desc test primitive vs converted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test primitive vs converted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn19_testPrimitiveVsConverted();
@@ -506,12 +506,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test020
      * @tc.number SUB_BUILTINS_Object16_TEST_2000
-     * @tc.name Object16Test020
-     * @tc.desc test undefined vs uninitialized
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test undefined vs uninitialized
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn20_testUndefinedVsUninitialized();
@@ -519,12 +519,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test021
      * @tc.number SUB_BUILTINS_Object16_TEST_2100
-     * @tc.name Object16Test021
-     * @tc.desc test empty object reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test empty object reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn21_testEmptyObjReference();
@@ -532,12 +532,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test022
      * @tc.number SUB_BUILTINS_Object16_TEST_2200
-     * @tc.name Object16Test022
-     * @tc.desc test empty array reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test empty array reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn22_testEmptyArrayReference();
@@ -545,12 +545,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test023
      * @tc.number SUB_BUILTINS_Object16_TEST_2300
-     * @tc.name Object16Test023
-     * @tc.desc test symbol vs string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol vs string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn23_testSymbolVsString();
@@ -558,12 +558,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test024
      * @tc.number SUB_BUILTINS_Object16_TEST_2400
-     * @tc.name Object16Test024
-     * @tc.desc test bigint vs number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test bigint vs number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn24_testBigIntVsNumber();
@@ -571,12 +571,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test025
      * @tc.number SUB_BUILTINS_Object16_TEST_2500
-     * @tc.name Object16Test025
-     * @tc.desc test date vs timestamp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test date vs timestamp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn25_testDateVsTimestamp();
@@ -584,12 +584,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test026
      * @tc.number SUB_BUILTINS_Object16_TEST_2600
-     * @tc.name Object16Test026
-     * @tc.desc test true vs one
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test true vs one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn26_testTrueVsOne();
@@ -597,12 +597,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test027
      * @tc.number SUB_BUILTINS_Object16_TEST_2700
-     * @tc.name Object16Test027
-     * @tc.desc test false vs zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test false vs zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn27_testFalseVsZero();
@@ -610,12 +610,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test028
      * @tc.number SUB_BUILTINS_Object16_TEST_2800
-     * @tc.name Object16Test028
-     * @tc.desc test string true vs boolean true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string true vs boolean true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn28_testStrTrueVsBoolTrue();
@@ -623,12 +623,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test029
      * @tc.number SUB_BUILTINS_Object16_TEST_2900
-     * @tc.name Object16Test029
-     * @tc.desc test string false vs boolean false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string false vs boolean false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn29_testStrFalseVsBoolFalse();
@@ -636,24 +636,24 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test030
      * @tc.number SUB_BUILTINS_Object16_TEST_3000
-     * @tc.name Object16Test030
-     * @tc.desc test null vs zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test null vs zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn30_testNullVsZero();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object16Test031
      * @tc.number SUB_BUILTINS_Object16_TEST_3100
-     * @tc.name Object16Test031
-     * @tc.desc test undefined vs empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test undefined vs empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn31_testUndefinedVsEmptyStr();
@@ -661,12 +661,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test032
      * @tc.number SUB_BUILTINS_Object16_TEST_3200
-     * @tc.name Object16Test032
-     * @tc.desc test nested array instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested array instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn32_testNestedArrayInstance();
@@ -674,12 +674,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test033
      * @tc.number SUB_BUILTINS_Object16_TEST_3300
-     * @tc.name Object16Test033
-     * @tc.desc test function vs arrow function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function vs arrow function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn33_testFunctionVsArrowFunc();
@@ -687,12 +687,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test034
      * @tc.number SUB_BUILTINS_Object16_TEST_3400
-     * @tc.name Object16Test034
-     * @tc.desc test regexp different flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test regexp different flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn34_testRegExpDifferentFlags();
@@ -700,12 +700,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test035
      * @tc.number SUB_BUILTINS_Object16_TEST_3500
-     * @tc.name Object16Test035
-     * @tc.desc test symbol for same key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol for same key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn35_testSymbolForSameKey();
@@ -713,12 +713,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test036
      * @tc.number SUB_BUILTINS_Object16_TEST_3600
-     * @tc.name Object16Test036
-     * @tc.desc test different bigint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test different bigint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn36_testDifferentBigInt();
@@ -726,12 +726,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test037
      * @tc.number SUB_BUILTINS_Object16_TEST_3700
-     * @tc.name Object16Test037
-     * @tc.desc test infinity vs negative infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test infinity vs negative infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn37_testInfinityVsNegativeInfinity();
@@ -739,12 +739,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test038
      * @tc.number SUB_BUILTINS_Object16_TEST_3800
-     * @tc.name Object16Test038
-     * @tc.desc test same infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test same infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn38_testSameInfinity();
@@ -752,12 +752,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test039
      * @tc.number SUB_BUILTINS_Object16_TEST_3900
-     * @tc.name Object16Test039
-     * @tc.desc test object property change reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object property change reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn39_testObjPropChangeReference();
@@ -765,12 +765,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test040
      * @tc.number SUB_BUILTINS_Object16_TEST_4000
-     * @tc.name Object16Test040
-     * @tc.desc test array element change reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array element change reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn40_testArrayElemChangeReference();
@@ -778,12 +778,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test041
      * @tc.number SUB_BUILTINS_Object16_TEST_4100
-     * @tc.name Object16Test041
-     * @tc.desc test template string vs normal string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test template string vs normal string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn41_testTemplateStrVsNormalStr();
@@ -791,12 +791,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test042
      * @tc.number SUB_BUILTINS_Object16_TEST_4200
-     * @tc.name Object16Test042
-     * @tc.desc test different template vs normal string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test different template vs normal string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn42_testDifferentTemplateVsNormalStr();
@@ -804,12 +804,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test043
      * @tc.number SUB_BUILTINS_Object16_TEST_4300
-     * @tc.name Object16Test043
-     * @tc.desc test boolean vs boolean wrapper
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test boolean vs boolean wrapper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn43_testBoolVsBooleanWrapper();
@@ -817,12 +817,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test044
      * @tc.number SUB_BUILTINS_Object16_TEST_4400
-     * @tc.name Object16Test044
-     * @tc.desc test null vs boolean null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test null vs boolean null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn44_testNullVsBooleanNull();
@@ -830,12 +830,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test045
      * @tc.number SUB_BUILTINS_Object16_TEST_4500
-     * @tc.name Object16Test045
-     * @tc.desc test undefined vs boolean undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test undefined vs boolean undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn45_testUndefinedVsBooleanUndefined();
@@ -843,12 +843,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test046
      * @tc.number SUB_BUILTINS_Object16_TEST_4600
-     * @tc.name Object16Test046
-     * @tc.desc test nested object inner change
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested object inner change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn46_testNestedObjInnerChange();
@@ -856,12 +856,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test047
      * @tc.number SUB_BUILTINS_Object16_TEST_4700
-     * @tc.name Object16Test047
-     * @tc.desc test same set instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test same set instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn47_testSameSetInstance();
@@ -869,12 +869,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test048
      * @tc.number SUB_BUILTINS_Object16_TEST_4800
-     * @tc.name Object16Test048
-     * @tc.desc test same map instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test same map instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn48_testSameMapInstance();
@@ -882,12 +882,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test049
      * @tc.number SUB_BUILTINS_Object16_TEST_4900
-     * @tc.name Object16Test049
-     * @tc.desc test different number wrapper
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test different number wrapper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn49_testDifferentNumberWrapper();
@@ -895,12 +895,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test050
      * @tc.number SUB_BUILTINS_Object16_TEST_5000
-     * @tc.name Object16Test050
-     * @tc.desc test different string wrapper
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test different string wrapper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn50_testDifferentStringWrapper();
@@ -908,12 +908,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test051
      * @tc.number SUB_BUILTINS_Object16_TEST_5100
-     * @tc.name Object16Test051
-     * @tc.desc test infinity vs number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test infinity vs number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn51_testInfinityVsNumber();
@@ -921,12 +921,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test052
      * @tc.number SUB_BUILTINS_Object16_TEST_5200
-     * @tc.name Object16Test052
-     * @tc.desc test negative infinity vs number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test negative infinity vs number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn52_testNegativeInfinityVsNumber();
@@ -934,12 +934,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test053
      * @tc.number SUB_BUILTINS_Object16_TEST_5300
-     * @tc.name Object16Test053
-     * @tc.desc test symbol vs symbol for different key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol vs symbol for different key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn53_testSymbolVsSymbolForDifferentKey();
@@ -947,12 +947,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test054
      * @tc.number SUB_BUILTINS_Object16_TEST_5400
-     * @tc.name Object16Test054
-     * @tc.desc test bigint vs string same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test bigint vs string same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn54_testBigIntVsStrSameValue();
@@ -960,12 +960,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test055
      * @tc.number SUB_BUILTINS_Object16_TEST_5500
-     * @tc.name Object16Test055
-     * @tc.desc test date vs string date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test date vs string date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn55_testDateVsStrDate();
@@ -973,12 +973,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test056
      * @tc.number SUB_BUILTINS_Object16_TEST_5600
-     * @tc.name Object16Test056
-     * @tc.desc test empty set different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test empty set different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn56_testEmptySetDifferentInstance();
@@ -986,12 +986,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test057
      * @tc.number SUB_BUILTINS_Object16_TEST_5700
-     * @tc.name Object16Test057
-     * @tc.desc test empty map different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test empty map different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn57_testEmptyMapDifferentInstance();
@@ -999,12 +999,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test058
      * @tc.number SUB_BUILTINS_Object16_TEST_5800
-     * @tc.name Object16Test058
-     * @tc.desc test set add element reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test set add element reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn58_testSetAddElemReference();
@@ -1012,12 +1012,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test059
      * @tc.number SUB_BUILTINS_Object16_TEST_5900
-     * @tc.name Object16Test059
-     * @tc.desc test map add entry reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test map add entry reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn59_testMapAddEntryReference();
@@ -1025,24 +1025,24 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test060
      * @tc.number SUB_BUILTINS_Object16_TEST_6000
-     * @tc.name Object16Test060
-     * @tc.desc test string vs object wrapped string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string vs object wrapped string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn60_testStrVsObjectWrappedStr();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object16Test061
      * @tc.number SUB_BUILTINS_Object16_TEST_6100
-     * @tc.name Object16Test061
-     * @tc.desc test number vs object wrapped number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test number vs object wrapped number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn61_testNumVsObjectWrappedNum();
@@ -1050,12 +1050,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test062
      * @tc.number SUB_BUILTINS_Object16_TEST_6200
-     * @tc.name Object16Test062
-     * @tc.desc test boolean vs object wrapped boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test boolean vs object wrapped boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn62_testBoolVsObjectWrappedBool();
@@ -1063,12 +1063,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test063
      * @tc.number SUB_BUILTINS_Object16_TEST_6300
-     * @tc.name Object16Test063
-     * @tc.desc test nested set different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested set different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn63_testNestedSetDifferentInstance();
@@ -1076,12 +1076,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test064
      * @tc.number SUB_BUILTINS_Object16_TEST_6400
-     * @tc.name Object16Test064
-     * @tc.desc test nested map different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested map different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn64_testNestedMapDifferentInstance();
@@ -1089,12 +1089,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test065
      * @tc.number SUB_BUILTINS_Object16_TEST_6500
-     * @tc.name Object16Test065
-     * @tc.desc test function different parameters same logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function different parameters same logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn65_testFuncDifferentParamsSameLogic();
@@ -1102,12 +1102,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test066
      * @tc.number SUB_BUILTINS_Object16_TEST_6600
-     * @tc.name Object16Test066
-     * @tc.desc test generator function different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test generator function different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn66_testGeneratorFuncDifferentInstance();
@@ -1115,12 +1115,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test067
      * @tc.number SUB_BUILTINS_Object16_TEST_6700
-     * @tc.name Object16Test067
-     * @tc.desc test async function different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test async function different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn67_testAsyncFuncDifferentInstance();
@@ -1128,12 +1128,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test068
      * @tc.number SUB_BUILTINS_Object16_TEST_6800
-     * @tc.name Object16Test068
-     * @tc.desc test regexp vs string regexp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test regexp vs string regexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn68_testRegExpVsStrRegExp();
@@ -1141,12 +1141,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test069
      * @tc.number SUB_BUILTINS_Object16_TEST_6900
-     * @tc.name Object16Test069
-     * @tc.desc test bigint vs bigint result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test bigint vs bigint result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn69_testBigIntVsBigIntResult();
@@ -1154,12 +1154,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test070
      * @tc.number SUB_BUILTINS_Object16_TEST_7000
-     * @tc.name Object16Test070
-     * @tc.desc test array vs array like
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array vs array like
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn70_testArrayVsArrayLike();
@@ -1167,12 +1167,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test071
      * @tc.number SUB_BUILTINS_Object16_TEST_7100
-     * @tc.name Object16Test071
-     * @tc.desc test string vs unicode same content
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string vs unicode same content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn71_testStrVsUnicodeSameContent();
@@ -1180,12 +1180,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test072
      * @tc.number SUB_BUILTINS_Object16_TEST_7200
-     * @tc.name Object16Test072
-     * @tc.desc test string vs unicode different content
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string vs unicode different content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn72_testStrVsUnicodeDifferentContent();
@@ -1193,12 +1193,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test073
      * @tc.number SUB_BUILTINS_Object16_TEST_7300
-     * @tc.name Object16Test073
-     * @tc.desc test object prototype change reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object prototype change reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn73_testObjProtoChangeReference();
@@ -1206,12 +1206,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test074
      * @tc.number SUB_BUILTINS_Object16_TEST_7400
-     * @tc.name Object16Test074
-     * @tc.desc test frozen object vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen object vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn74_testFrozenObjVsOriginal();
@@ -1219,12 +1219,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test075
      * @tc.number SUB_BUILTINS_Object16_TEST_7500
-     * @tc.name Object16Test075
-     * @tc.desc test sealed object vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test sealed object vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn75_testSealedObjVsOriginal();
@@ -1232,12 +1232,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test076
      * @tc.number SUB_BUILTINS_Object16_TEST_7600
-     * @tc.name Object16Test076
-     * @tc.desc test non-extensible object vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-extensible object vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn76_testNonExtensibleObjVsOriginal();
@@ -1245,12 +1245,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test077
      * @tc.number SUB_BUILTINS_Object16_TEST_7700
-     * @tc.name Object16Test077
-     * @tc.desc test set delete element reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test set delete element reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn77_testSetDeleteElemReference();
@@ -1258,12 +1258,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test078
      * @tc.number SUB_BUILTINS_Object16_TEST_7800
-     * @tc.name Object16Test078
-     * @tc.desc test map delete entry reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test map delete entry reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn78_testMapDeleteEntryReference();
@@ -1271,12 +1271,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test079
      * @tc.number SUB_BUILTINS_Object16_TEST_7900
-     * @tc.name Object16Test079
-     * @tc.desc test symbol to string vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol to string vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn79_testSymbolToStringVsOriginal();
@@ -1284,12 +1284,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test080
      * @tc.number SUB_BUILTINS_Object16_TEST_8000
-     * @tc.name Object16Test080
-     * @tc.desc test bigint to string vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test bigint to string vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn80_testBigIntToStringVsOriginal();
@@ -1297,12 +1297,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test081
      * @tc.number SUB_BUILTINS_Object16_TEST_8100
-     * @tc.name Object16Test081
-     * @tc.desc test class instances different
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class instances different
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn81_testClassInstancesDifferent();
@@ -1310,12 +1310,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test082
      * @tc.number SUB_BUILTINS_Object16_TEST_8200
-     * @tc.name Object16Test082
-     * @tc.desc test class instances same reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class instances same reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn82_testClassInstancesSameReference();
@@ -1323,12 +1323,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test083
      * @tc.number SUB_BUILTINS_Object16_TEST_8300
-     * @tc.name Object16Test083
-     * @tc.desc test array buffer different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array buffer different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn83_testArrayBufferDifferentInstance();
@@ -1336,12 +1336,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test084
      * @tc.number SUB_BUILTINS_Object16_TEST_8400
-     * @tc.name Object16Test084
-     * @tc.desc test array buffer same reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array buffer same reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn84_testArrayBufferSameReference();
@@ -1349,12 +1349,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test085
      * @tc.number SUB_BUILTINS_Object16_TEST_8500
-     * @tc.name Object16Test085
-     * @tc.desc test typed array different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test typed array different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn85_testTypedArrayDifferentInstance();
@@ -1362,12 +1362,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test086
      * @tc.number SUB_BUILTINS_Object16_TEST_8600
-     * @tc.name Object16Test086
-     * @tc.desc test typed array shared buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test typed array shared buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn86_testTypedArraySharedBuffer();
@@ -1375,12 +1375,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test087
      * @tc.number SUB_BUILTINS_Object16_TEST_8700
-     * @tc.name Object16Test087
-     * @tc.desc test promise different instance same state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise different instance same state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn87_testPromiseDifferentInstanceSameState();
@@ -1388,12 +1388,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test088
      * @tc.number SUB_BUILTINS_Object16_TEST_8800
-     * @tc.name Object16Test088
-     * @tc.desc test promise same reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise same reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn88_testPromiseSameReference();
@@ -1401,12 +1401,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test089
      * @tc.number SUB_BUILTINS_Object16_TEST_8900
-     * @tc.name Object16Test089
-     * @tc.desc test weak set different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test weak set different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn89_testWeakSetDifferentInstance();
@@ -1414,12 +1414,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test090
      * @tc.number SUB_BUILTINS_Object16_TEST_9000
-     * @tc.name Object16Test090
-     * @tc.desc test weak map different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test weak map different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn90_testWeakMapDifferentInstance();
@@ -1427,12 +1427,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test092
      * @tc.number SUB_BUILTINS_Object16_TEST_9200
-     * @tc.name Object16Test092
-     * @tc.desc test number vs scientific notation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test number vs scientific notation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn92_testNumberVsScientificNotation();
@@ -1440,12 +1440,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test093
      * @tc.number SUB_BUILTINS_Object16_TEST_9300
-     * @tc.name Object16Test093
-     * @tc.desc test number vs scientific notation different values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test number vs scientific notation different values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn93_testNumberVsScientificNotationDifferent();
@@ -1453,12 +1453,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test094
      * @tc.number SUB_BUILTINS_Object16_TEST_9400
-     * @tc.name Object16Test094
-     * @tc.desc test function vs bound function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function vs bound function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn94_testFuncVsBoundFunc();
@@ -1466,12 +1466,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test095
      * @tc.number SUB_BUILTINS_Object16_TEST_9500
-     * @tc.name Object16Test095
-     * @tc.desc test symbol vs key for string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol vs key for string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn95_testSymbolVsKeyForString();
@@ -1479,12 +1479,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test096
      * @tc.number SUB_BUILTINS_Object16_TEST_9600
-     * @tc.name Object16Test096
-     * @tc.desc test date vs toISOString result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test date vs toISOString result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn96_testDateVsToISOString();
@@ -1492,12 +1492,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test097
      * @tc.number SUB_BUILTINS_Object16_TEST_9700
-     * @tc.name Object16Test097
-     * @tc.desc test empty object vs Object.create(null) object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test empty object vs Object.create(null) object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn97_testEmptyObjVsCreateNullObj();
@@ -1505,12 +1505,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test098
      * @tc.number SUB_BUILTINS_Object16_TEST_9800
-     * @tc.name Object16Test098
-     * @tc.desc test array vs spread new array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array vs spread new array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn98_testArrayVsSpreadNewArray();
@@ -1518,12 +1518,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test099
      * @tc.number SUB_BUILTINS_Object16_TEST_9900
-     * @tc.name Object16Test099
-     * @tc.desc test object vs spread new object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object vs spread new object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn99_testObjVsSpreadNewObj();
@@ -1531,12 +1531,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test100
      * @tc.number SUB_BUILTINS_Object16_TEST_10000
-     * @tc.name Object16Test100
-     * @tc.desc test NaN vs Number.NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test NaN vs Number.NaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn100_testNaNVsNumberNaN();
@@ -1544,12 +1544,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test101
      * @tc.number SUB_BUILTINS_Object16_TEST_10100
-     * @tc.name Object16Test101
-     * @tc.desc test max safe integer same values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test max safe integer same values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn101_testMaxSafeIntegerSame();
@@ -1557,12 +1557,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test102
      * @tc.number SUB_BUILTINS_Object16_TEST_10200
-     * @tc.name Object16Test102
-     * @tc.desc test max safe integer exceed values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test max safe integer exceed values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn102_testMaxSafeIntegerExceed();
@@ -1570,12 +1570,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test103
      * @tc.number SUB_BUILTINS_Object16_TEST_10300
-     * @tc.name Object16Test103
-     * @tc.desc test min safe integer same values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test min safe integer same values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn103_testMinSafeIntegerSame();
@@ -1583,12 +1583,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test107
      * @tc.number SUB_BUILTINS_Object16_TEST_10700
-     * @tc.name Object16Test107
-     * @tc.desc test RegExp lastIndex change effect
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test RegExp lastIndex change effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn107_testRegExpLastIndexChange();
@@ -1596,12 +1596,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test108
      * @tc.number SUB_BUILTINS_Object16_TEST_10800
-     * @tc.name Object16Test108
-     * @tc.desc test function different name same logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function different name same logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn108_testFuncDifferentNameSameLogic();
@@ -1609,12 +1609,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test109
      * @tc.number SUB_BUILTINS_Object16_TEST_10900
-     * @tc.name Object16Test109
-     * @tc.desc test anonymous vs named function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test anonymous vs named function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn109_testAnonymousVsNamedFunc();
@@ -1622,12 +1622,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test110
      * @tc.number SUB_BUILTINS_Object16_TEST_11000
-     * @tc.name Object16Test110
-     * @tc.desc test Array.from vs original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array.from vs original array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn110_testArrayFromVsOriginal();
@@ -1635,12 +1635,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test111
      * @tc.number SUB_BUILTINS_Object16_TEST_11100
-     * @tc.name Object16Test111
-     * @tc.desc test Object.assign vs original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.assign vs original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn111_testObjectAssignVsOriginal();
@@ -1648,12 +1648,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test112
      * @tc.number SUB_BUILTINS_Object16_TEST_11200
-     * @tc.name Object16Test112
-     * @tc.desc test JSON.parse vs original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test JSON.parse vs original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn112_testJsonParseVsOriginal();
@@ -1661,12 +1661,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test113
      * @tc.number SUB_BUILTINS_Object16_TEST_11300
-     * @tc.name Object16Test113
-     * @tc.desc test symbol vs object with Symbol.toStringTag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol vs object with Symbol.toStringTag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn113_testSymbolVsWithStringTag();
@@ -1674,12 +1674,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test114
      * @tc.number SUB_BUILTINS_Object16_TEST_11400
-     * @tc.name Object16Test114
-     * @tc.desc test BigInt vs minimum value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test BigInt vs minimum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn114_testBigIntVsMinValue();
@@ -1687,12 +1687,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test115
      * @tc.number SUB_BUILTINS_Object16_TEST_11500
-     * @tc.name Object16Test115
-     * @tc.desc test Date.now() vs new Date() timestamp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Date.now() vs new Date() timestamp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn115_testDateNowVsNewDateTimestamp();
@@ -1700,12 +1700,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test116
      * @tc.number SUB_BUILTINS_Object16_TEST_11600
-     * @tc.name Object16Test116
-     * @tc.desc test Set values iterator vs Set instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Set values iterator vs Set instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn116_testSetValuesIteratorVsSet();
@@ -1713,12 +1713,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test117
      * @tc.number SUB_BUILTINS_Object16_TEST_11700
-     * @tc.name Object16Test117
-     * @tc.desc test Map entries iterator vs Map instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Map entries iterator vs Map instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn117_testMapEntriesIteratorVsMap();
@@ -1726,12 +1726,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test118
      * @tc.number SUB_BUILTINS_Object16_TEST_11800
-     * @tc.name Object16Test118
-     * @tc.desc test class static vs instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class static vs instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn118_testClassStaticVsInstanceProp();
@@ -1739,12 +1739,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test119
      * @tc.number SUB_BUILTINS_Object16_TEST_11900
-     * @tc.name Object16Test119
-     * @tc.desc test subclass vs superclass instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test subclass vs superclass instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn119_testSubClassVsSuperClassInstance();
@@ -1752,24 +1752,24 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test120
      * @tc.number SUB_BUILTINS_Object16_TEST_12000
-     * @tc.name Object16Test120
-     * @tc.desc test ArrayBuffer slice vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ArrayBuffer slice vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn120_testArrayBufferSliceVsOriginal();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object16Test121
      * @tc.number SUB_BUILTINS_Object16_TEST_12100
-     * @tc.name Object16Test121
-     * @tc.desc test TypedArray subarray vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TypedArray subarray vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn121_testTypedArraySubarrayVsOriginal();
@@ -1777,12 +1777,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test122
      * @tc.number SUB_BUILTINS_Object16_TEST_12200
-     * @tc.name Object16Test122
-     * @tc.desc test Promise.all vs original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.all vs original array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn122_testPromiseAllVsOriginalArray();
@@ -1790,12 +1790,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test123
      * @tc.number SUB_BUILTINS_Object16_TEST_12300
-     * @tc.name Object16Test123
-     * @tc.desc test WeakSet add vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WeakSet add vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn123_testWeakSetAddVsOriginal();
@@ -1803,12 +1803,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test124
      * @tc.number SUB_BUILTINS_Object16_TEST_12400
-     * @tc.name Object16Test124
-     * @tc.desc test WeakMap set vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WeakMap set vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn124_testWeakMapSetVsOriginal();
@@ -1816,12 +1816,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test125
      * @tc.number SUB_BUILTINS_Object16_TEST_12500
-     * @tc.name Object16Test125
-     * @tc.desc test string trim vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string trim vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn125_testStringTrimVsOriginal();
@@ -1829,12 +1829,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test126
      * @tc.number SUB_BUILTINS_Object16_TEST_12600
-     * @tc.name Object16Test126
-     * @tc.desc test array reverse vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array reverse vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn126_testArrayReverseVsOriginal();
@@ -1842,12 +1842,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test127
      * @tc.number SUB_BUILTINS_Object16_TEST_12700
-     * @tc.name Object16Test127
-     * @tc.desc test object different descriptors same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object different descriptors same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn127_testObjDifferentDescriptorsSameValue();
@@ -1855,12 +1855,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test128
      * @tc.number SUB_BUILTINS_Object16_TEST_12800
-     * @tc.name Object16Test128
-     * @tc.desc test positive infinity vs Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test positive infinity vs Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn128_testPositiveInfinityVsInfinity();
@@ -1868,12 +1868,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test129
      * @tc.number SUB_BUILTINS_Object16_TEST_12900
-     * @tc.name Object16Test129
-     * @tc.desc test negative infinity vs NegativeInfinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test negative infinity vs NegativeInfinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn129_testNegativeInfinityVsNegativeInfinity();
@@ -1881,12 +1881,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test130
      * @tc.number SUB_BUILTINS_Object16_TEST_13000
-     * @tc.name Object16Test130
-     * @tc.desc test symbol same description different instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol same description different instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn130_testSymbolSameDescriptionDifferentInstance();
@@ -1894,12 +1894,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test131
      * @tc.number SUB_BUILTINS_Object16_TEST_13100
-     * @tc.name Object16Test131
-     * @tc.desc test array fill vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array fill vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn131_testArrayFillVsOriginal();
@@ -1907,12 +1907,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test132
      * @tc.number SUB_BUILTINS_Object16_TEST_13200
-     * @tc.name Object16Test132
-     * @tc.desc test Object.keys vs original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.keys vs original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn132_testObjectKeysVsOriginal();
@@ -1920,12 +1920,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test133
      * @tc.number SUB_BUILTINS_Object16_TEST_13300
-     * @tc.name Object16Test133
-     * @tc.desc test Object.values vs original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.values vs original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn133_testObjectValuesVsOriginal();
@@ -1933,12 +1933,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test134
      * @tc.number SUB_BUILTINS_Object16_TEST_13400
-     * @tc.name Object16Test134
-     * @tc.desc test Object.entries vs original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.entries vs original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn134_testObjectEntriesVsOriginal();
@@ -1946,12 +1946,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test135
      * @tc.number SUB_BUILTINS_Object16_TEST_13500
-     * @tc.name Object16Test135
-     * @tc.desc test string concat vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string concat vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn135_testStringConcatVsOriginal();
@@ -1959,12 +1959,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test136
      * @tc.number SUB_BUILTINS_Object16_TEST_13600
-     * @tc.name Object16Test136
-     * @tc.desc test array concat vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn136_testArrayConcatVsOriginal();
@@ -1972,12 +1972,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test137
      * @tc.number SUB_BUILTINS_Object16_TEST_13700
-     * @tc.name Object16Test137
-     * @tc.desc test parseInt vs original string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test parseInt vs original string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn137_testParseIntVsOriginalStr();
@@ -1985,12 +1985,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test138
      * @tc.number SUB_BUILTINS_Object16_TEST_13800
-     * @tc.name Object16Test138
-     * @tc.desc test parseFloat vs original string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test parseFloat vs original string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn138_testParseFloatVsOriginalStr();
@@ -1998,12 +1998,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test139
      * @tc.number SUB_BUILTINS_Object16_TEST_13900
-     * @tc.name Object16Test139
-     * @tc.desc test boolean conversion vs original number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test boolean conversion vs original number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn139_testBooleanConversionVsOriginalNum();
@@ -2011,12 +2011,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test140
      * @tc.number SUB_BUILTINS_Object16_TEST_14000
-     * @tc.name Object16Test140
-     * @tc.desc test string conversion vs original boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string conversion vs original boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn140_testStringConversionVsOriginalBool();
@@ -2024,12 +2024,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test141
      * @tc.number SUB_BUILTINS_Object16_TEST_14100
-     * @tc.name Object16Test141
-     * @tc.desc test number conversion vs original boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test number conversion vs original boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn141_testNumberConversionVsOriginalBool();
@@ -2037,12 +2037,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test142
      * @tc.number SUB_BUILTINS_Object16_TEST_14200
-     * @tc.name Object16Test142
-     * @tc.desc test class method this change instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class method this change instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn142_testClassMethodThisChangeInstance();
@@ -2050,12 +2050,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test143
      * @tc.number SUB_BUILTINS_Object16_TEST_14300
-     * @tc.name Object16Test143
-     * @tc.desc test proxy vs original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy vs original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn143_testProxyVsOriginalObj();
@@ -2063,12 +2063,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test144
      * @tc.number SUB_BUILTINS_Object16_TEST_14400
-     * @tc.name Object16Test144
-     * @tc.desc test Reflect.get vs original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Reflect.get vs original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn144_testReflectGetVsOriginalObj();
@@ -2076,12 +2076,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test145
      * @tc.number SUB_BUILTINS_Object16_TEST_14500
-     * @tc.name Object16Test145
-     * @tc.desc test Reflect.set vs original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Reflect.set vs original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn145_testReflectSetVsOriginalObj();
@@ -2089,12 +2089,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test146
      * @tc.number SUB_BUILTINS_Object16_TEST_14600
-     * @tc.name Object16Test146
-     * @tc.desc test Date setTime vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Date setTime vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn146_testDateSetTimeVsOriginal();
@@ -2102,12 +2102,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test147
      * @tc.number SUB_BUILTINS_Object16_TEST_14700
-     * @tc.name Object16Test147
-     * @tc.desc test Set clear vs original instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Set clear vs original instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn147_testSetClearVsOriginalInstance();
@@ -2115,12 +2115,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test148
      * @tc.number SUB_BUILTINS_Object16_TEST_14800
-     * @tc.name Object16Test148
-     * @tc.desc test Map clear vs original instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Map clear vs original instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn148_testMapClearVsOriginalInstance();
@@ -2128,12 +2128,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test149
      * @tc.number SUB_BUILTINS_Object16_TEST_14900
-     * @tc.name Object16Test149
-     * @tc.desc test Symbol.for vs Symbol same key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Symbol.for vs Symbol same key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn149_testSymbolForVsSymbolSameKey();
@@ -2141,24 +2141,24 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test150
      * @tc.number SUB_BUILTINS_Object16_TEST_15000
-     * @tc.name Object16Test150
-     * @tc.desc test Symbol.keyFor vs Symbol.for
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Symbol.keyFor vs Symbol.for
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn150_testSymbolKeyForVsSymbolFor();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object16Test151
      * @tc.number SUB_BUILTINS_Object16_TEST_15100
-     * @tc.name Object16Test151
-     * @tc.desc test BigInt conversion vs original number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test BigInt conversion vs original number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn151_testBigIntConversionVsOriginalNum();
@@ -2166,12 +2166,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test152
      * @tc.number SUB_BUILTINS_Object16_TEST_15200
-     * @tc.name Object16Test152
-     * @tc.desc test BigInt conversion vs original string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test BigInt conversion vs original string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn152_testBigIntConversionVsOriginalStr();
@@ -2179,12 +2179,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test153
      * @tc.number SUB_BUILTINS_Object16_TEST_15300
-     * @tc.name Object16Test153
-     * @tc.desc test array flat vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array flat vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn153_testArrayFlatVsOriginal();
@@ -2192,12 +2192,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test154
      * @tc.number SUB_BUILTINS_Object16_TEST_15400
-     * @tc.name Object16Test154
-     * @tc.desc test array filter vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array filter vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn154_testArrayFilterVsOriginal();
@@ -2205,12 +2205,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test155
      * @tc.number SUB_BUILTINS_Object16_TEST_15500
-     * @tc.name Object16Test155
-     * @tc.desc test array map vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array map vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn155_testArrayMapVsOriginal();
@@ -2218,12 +2218,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test156
      * @tc.number SUB_BUILTINS_Object16_TEST_15600
-     * @tc.name Object16Test156
-     * @tc.desc test string slice vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string slice vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn156_testStringSliceVsOriginal();
@@ -2231,12 +2231,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test157
      * @tc.number SUB_BUILTINS_Object16_TEST_15700
-     * @tc.name Object16Test157
-     * @tc.desc test string substring vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string substring vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn157_testStringSubstringVsOriginal();
@@ -2244,12 +2244,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test158
      * @tc.number SUB_BUILTINS_Object16_TEST_15800
-     * @tc.name Object16Test158
-     * @tc.desc test string substr vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string substr vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn158_testStringSubstrVsOriginal();
@@ -2257,12 +2257,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test159
      * @tc.number SUB_BUILTINS_Object16_TEST_15900
-     * @tc.name Object16Test159
-     * @tc.desc test number epsilon vs close value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test number epsilon vs close value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn159_testNumberEpsilonVsCloseValue();
@@ -2270,12 +2270,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test160
      * @tc.number SUB_BUILTINS_Object16_TEST_16000
-     * @tc.name Object16Test160
-     * @tc.desc test empty string vs String.toString()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test empty string vs String.toString()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn160_testEmptyStrVsStringToString();
@@ -2283,12 +2283,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test161
      * @tc.number SUB_BUILTINS_Object16_TEST_16100
-     * @tc.name Object16Test161
-     * @tc.desc test string toUpperCase vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string toUpperCase vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn161_testStringToUpperVsOriginal();
@@ -2296,12 +2296,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test162
      * @tc.number SUB_BUILTINS_Object16_TEST_16200
-     * @tc.name Object16Test162
-     * @tc.desc test string toLowerCase vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string toLowerCase vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn162_testStringToLowerVsOriginal();
@@ -2309,12 +2309,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test163
      * @tc.number SUB_BUILTINS_Object16_TEST_16300
-     * @tc.name Object16Test163
-     * @tc.desc test array pop vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array pop vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn163_testArrayPopVsOriginal();
@@ -2322,12 +2322,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test164
      * @tc.number SUB_BUILTINS_Object16_TEST_16400
-     * @tc.name Object16Test164
-     * @tc.desc test array push vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array push vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn164_testArrayPushVsOriginal();
@@ -2335,12 +2335,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test165
      * @tc.number SUB_BUILTINS_Object16_TEST_16500
-     * @tc.name Object16Test165
-     * @tc.desc test array shift vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array shift vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn165_testArrayShiftVsOriginal();
@@ -2348,12 +2348,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test166
      * @tc.number SUB_BUILTINS_Object16_TEST_16600
-     * @tc.name Object16Test166
-     * @tc.desc test array unshift vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array unshift vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn166_testArrayUnshiftVsOriginal();
@@ -2361,12 +2361,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test167
      * @tc.number SUB_BUILTINS_Object16_TEST_16700
-     * @tc.name Object16Test167
-     * @tc.desc test number toString() vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test number toString() vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn167_testNumberToStringVsOriginal();
@@ -2374,12 +2374,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test168
      * @tc.number SUB_BUILTINS_Object16_TEST_16800
-     * @tc.name Object16Test168
-     * @tc.desc test boolean toString() vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test boolean toString() vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn168_testBooleanToStringVsOriginal();
@@ -2387,12 +2387,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test169
      * @tc.number SUB_BUILTINS_Object16_TEST_16900
-     * @tc.name Object16Test169
-     * @tc.desc test BigInt toString() vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test BigInt toString() vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn169_testBigIntToStringVsOriginal();
@@ -2400,12 +2400,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test170
      * @tc.number SUB_BUILTINS_Object16_TEST_17000
-     * @tc.name Object16Test170
-     * @tc.desc test Date toDateString() vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Date toDateString() vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn170_testDateToDateStrVsOriginal();
@@ -2413,12 +2413,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test171
      * @tc.number SUB_BUILTINS_Object16_TEST_17100
-     * @tc.name Object16Test171
-     * @tc.desc test Date toTimeString() vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Date toTimeString() vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn171_testDateToTimeStrVsOriginal();
@@ -2426,12 +2426,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test172
      * @tc.number SUB_BUILTINS_Object16_TEST_17200
-     * @tc.name Object16Test172
-     * @tc.desc test Proxy array vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Proxy array vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn172_testProxyArrayVsOriginal();
@@ -2439,12 +2439,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test173
      * @tc.number SUB_BUILTINS_Object16_TEST_17300
-     * @tc.name Object16Test173
-     * @tc.desc test Reflect.deleteProperty vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Reflect.deleteProperty vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn173_testReflectDeleteVsOriginal();
@@ -2452,12 +2452,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test174
      * @tc.number SUB_BUILTINS_Object16_TEST_17400
-     * @tc.name Object16Test174
-     * @tc.desc test frozen object reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen object reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn174_testFrozenObjReference();
@@ -2465,12 +2465,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test175
      * @tc.number SUB_BUILTINS_Object16_TEST_17500
-     * @tc.name Object16Test175
-     * @tc.desc test sealed object reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test sealed object reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn175_testSealedObjReference();
@@ -2478,12 +2478,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test176
      * @tc.number SUB_BUILTINS_Object16_TEST_17600
-     * @tc.name Object16Test176
-     * @tc.desc test class getter vs instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class getter vs instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn176_testClassGetterVsInstance();
@@ -2491,12 +2491,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test177
      * @tc.number SUB_BUILTINS_Object16_TEST_17700
-     * @tc.name Object16Test177
-     * @tc.desc test class setter vs instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class setter vs instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn177_testClassSetterVsInstance();
@@ -2504,12 +2504,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test178
      * @tc.number SUB_BUILTINS_Object16_TEST_17800
-     * @tc.name Object16Test178
-     * @tc.desc test TypedArray set() vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TypedArray set() vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn178_testTypedArraySetVsOriginal();
@@ -2517,24 +2517,24 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test180
      * @tc.number SUB_BUILTINS_Object16_TEST_18000
-     * @tc.name Object16Test180
-     * @tc.desc test Promise.resolve(primitive) vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.resolve(primitive) vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn180_testPromiseResolvePrimVsOriginal();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object16Test181
      * @tc.number SUB_BUILTINS_Object16_TEST_18100
-     * @tc.name Object16Test181
-     * @tc.desc test Promise.reject error vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.reject error vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn181_testPromiseRejectErrVsOriginal();
@@ -2542,12 +2542,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test182
      * @tc.number SUB_BUILTINS_Object16_TEST_18200
-     * @tc.name Object16Test182
-     * @tc.desc test WeakSet delete vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WeakSet delete vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn182_testWeakSetDeleteVsOriginal();
@@ -2555,12 +2555,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test183
      * @tc.number SUB_BUILTINS_Object16_TEST_18300
-     * @tc.name Object16Test183
-     * @tc.desc test WeakMap delete vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WeakMap delete vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn183_testWeakMapDeleteVsOriginal();
@@ -2568,12 +2568,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test184
      * @tc.number SUB_BUILTINS_Object16_TEST_18400
-     * @tc.name Object16Test184
-     * @tc.desc test string includes vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string includes vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn184_testStringIncludesVsOriginal();
@@ -2581,12 +2581,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test185
      * @tc.number SUB_BUILTINS_Object16_TEST_18500
-     * @tc.name Object16Test185
-     * @tc.desc test array includes vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array includes vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn185_testArrayIncludesVsOriginal();
@@ -2594,12 +2594,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test186
      * @tc.number SUB_BUILTINS_Object16_TEST_18600
-     * @tc.name Object16Test186
-     * @tc.desc test Set has vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Set has vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn186_testSetHasVsOriginal();
@@ -2607,12 +2607,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test187
      * @tc.number SUB_BUILTINS_Object16_TEST_18700
-     * @tc.name Object16Test187
-     * @tc.desc test Map has vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Map has vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn187_testMapHasVsOriginal();
@@ -2620,12 +2620,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test188
      * @tc.number SUB_BUILTINS_Object16_TEST_18800
-     * @tc.name Object16Test188
-     * @tc.desc test Symbol valueOf vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Symbol valueOf vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn188_testSymbolValueOfVsOriginal();
@@ -2633,12 +2633,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test189
      * @tc.number SUB_BUILTINS_Object16_TEST_18900
-     * @tc.name Object16Test189
-     * @tc.desc test BigInt valueOf vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test BigInt valueOf vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn189_testBigIntValueOfVsOriginal();
@@ -2646,12 +2646,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test190
      * @tc.number SUB_BUILTINS_Object16_TEST_19000
-     * @tc.name Object16Test190
-     * @tc.desc test Number valueOf vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Number valueOf vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn190_testNumberValueOfVsOriginal();
@@ -2659,12 +2659,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test191
      * @tc.number SUB_BUILTINS_Object16_TEST_19100
-     * @tc.name Object16Test191
-     * @tc.desc test array sort vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array sort vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn191_testArraySortVsOriginal();
@@ -2672,12 +2672,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test192
      * @tc.number SUB_BUILTINS_Object16_TEST_19200
-     * @tc.name Object16Test192
-     * @tc.desc test array splice vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array splice vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn192_testArraySpliceVsOriginal();
@@ -2685,12 +2685,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test193
      * @tc.number SUB_BUILTINS_Object16_TEST_19300
-     * @tc.name Object16Test193
-     * @tc.desc test string replace vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string replace vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn193_testStringReplaceVsOriginal();
@@ -2698,12 +2698,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test194
      * @tc.number SUB_BUILTINS_Object16_TEST_19400
-     * @tc.name Object16Test194
-     * @tc.desc test string match vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string match vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn194_testStringMatchVsOriginal();
@@ -2711,12 +2711,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test195
      * @tc.number SUB_BUILTINS_Object16_TEST_19500
-     * @tc.name Object16Test195
-     * @tc.desc test RegExp test vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test RegExp test vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn195_testRegExpTestVsOriginal();
@@ -2724,12 +2724,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test196
      * @tc.number SUB_BUILTINS_Object16_TEST_19600
-     * @tc.name Object16Test196
-     * @tc.desc test RegExp exec vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test RegExp exec vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn196_testRegExpExecVsOriginal();
@@ -2737,12 +2737,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test197
      * @tc.number SUB_BUILTINS_Object16_TEST_19700
-     * @tc.name Object16Test197
-     * @tc.desc test getPrototypeOf vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test getPrototypeOf vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn197_testGetPrototypeOfVsOriginal();
@@ -2750,12 +2750,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test198
      * @tc.number SUB_BUILTINS_Object16_TEST_19800
-     * @tc.name Object16Test198
-     * @tc.desc test setPrototypeOf vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test setPrototypeOf vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn198_testSetPrototypeOfVsOriginal();
@@ -2763,12 +2763,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test199
      * @tc.number SUB_BUILTINS_Object16_TEST_19900
-     * @tc.name Object16Test199
-     * @tc.desc test function call vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function call vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn199_testFuncCallVsOriginal();
@@ -2776,12 +2776,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test200
      * @tc.number SUB_BUILTINS_Object16_TEST_20000
-     * @tc.name Object16Test200
-     * @tc.desc test function apply vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function apply vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn200_testFuncApplyVsOriginal();
@@ -2789,12 +2789,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test201
      * @tc.number SUB_BUILTINS_Object16_TEST_20100
-     * @tc.name Object16Test201
-     * @tc.desc test array reduce vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array reduce vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn201_testArrayReduceVsOriginal();
@@ -2802,12 +2802,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test202
      * @tc.number SUB_BUILTINS_Object16_TEST_20200
-     * @tc.name Object16Test202
-     * @tc.desc test array every vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array every vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn202_testArrayEveryVsOriginal();
@@ -2815,12 +2815,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test203
      * @tc.number SUB_BUILTINS_Object16_TEST_20300
-     * @tc.name Object16Test203
-     * @tc.desc test array some vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array some vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn203_testArraySomeVsOriginal();
@@ -2828,12 +2828,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test204
      * @tc.number SUB_BUILTINS_Object16_TEST_20400
-     * @tc.name Object16Test204
-     * @tc.desc test Set size vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Set size vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn204_testSetSizeVsOriginal();
@@ -2841,12 +2841,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test205
      * @tc.number SUB_BUILTINS_Object16_TEST_20500
-     * @tc.name Object16Test205
-     * @tc.desc test Map size vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Map size vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn205_testMapSizeVsOriginal();
@@ -2854,12 +2854,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test207
      * @tc.number SUB_BUILTINS_Object16_TEST_20700
-     * @tc.name Object16Test207
-     * @tc.desc test ArrayBuffer byteLength vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ArrayBuffer byteLength vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn207_testArrayBufferByteLengthVsOriginal();
@@ -2867,12 +2867,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test208
      * @tc.number SUB_BUILTINS_Object16_TEST_20800
-     * @tc.name Object16Test208
-     * @tc.desc test TypedArray byteLength vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TypedArray byteLength vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn208_testTypedArrayByteLengthVsOriginal();
@@ -2880,12 +2880,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test209
      * @tc.number SUB_BUILTINS_Object16_TEST_20900
-     * @tc.name Object16Test209
-     * @tc.desc test Date timezoneOffset vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Date timezoneOffset vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn209_testDateTimezoneOffsetVsOriginal();
@@ -2893,24 +2893,24 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test210
      * @tc.number SUB_BUILTINS_Object16_TEST_21000
-     * @tc.name Object16Test210
-     * @tc.desc test Promise then vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise then vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn210_testPromiseThenVsOriginal();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object16Test211
      * @tc.number SUB_BUILTINS_Object16_TEST_21100
-     * @tc.name Object16Test211
-     * @tc.desc test Promise.catch vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.catch vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn211_testPromiseCatchVsOriginal();
@@ -2918,12 +2918,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test212
      * @tc.number SUB_BUILTINS_Object16_TEST_21200
-     * @tc.name Object16Test212
-     * @tc.desc test Proxy get return value vs Proxy instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Proxy get return value vs Proxy instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn212_testProxyGetReturnVsProxy();
@@ -2931,12 +2931,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test213
      * @tc.number SUB_BUILTINS_Object16_TEST_21300
-     * @tc.name Object16Test213
-     * @tc.desc test Proxy set return value vs Proxy instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Proxy set return value vs Proxy instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn213_testProxySetReturnVsProxy();
@@ -2944,12 +2944,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test214
      * @tc.number SUB_BUILTINS_Object16_TEST_21400
-     * @tc.name Object16Test214
-     * @tc.desc test Reflect.construct vs constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Reflect.construct vs constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn214_testReflectConstructVsCtor();
@@ -2957,12 +2957,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test215
      * @tc.number SUB_BUILTINS_Object16_TEST_21500
-     * @tc.name Object16Test215
-     * @tc.desc test Reflect.apply vs function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Reflect.apply vs function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn215_testReflectApplyVsFunc();
@@ -2970,12 +2970,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test216
      * @tc.number SUB_BUILTINS_Object16_TEST_21600
-     * @tc.name Object16Test216
-     * @tc.desc test string padStart vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string padStart vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn216_testStringPadStartVsOriginal();
@@ -2983,12 +2983,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test217
      * @tc.number SUB_BUILTINS_Object16_TEST_21700
-     * @tc.name Object16Test217
-     * @tc.desc test string padEnd vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test string padEnd vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn217_testStringPadEndVsOriginal();
@@ -2996,12 +2996,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test218
      * @tc.number SUB_BUILTINS_Object16_TEST_21800
-     * @tc.name Object16Test218
-     * @tc.desc test array flatMap vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array flatMap vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn218_testArrayFlatMapVsOriginal();
@@ -3009,12 +3009,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test219
      * @tc.number SUB_BUILTINS_Object16_TEST_21900
-     * @tc.name Object16Test219
-     * @tc.desc test Object.defineProperty vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.defineProperty vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn219_testDefinePropertyVsOriginal();
@@ -3022,12 +3022,12 @@ export default function Object16Test() {
     });
 
     /**
+     * @tc.name   Object16Test220
      * @tc.number SUB_BUILTINS_Object16_TEST_22000
-     * @tc.name Object16Test220
-     * @tc.desc test Object.defineProperties vs original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.defineProperties vs original
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object16Test220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn220_testDefinePropertiesVsOriginal();

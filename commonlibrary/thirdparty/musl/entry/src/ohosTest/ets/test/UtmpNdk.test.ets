@@ -25,12 +25,12 @@ export default function utmpNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UTMP_SETUTENT_0100
-     * @tc.name       : testMuslUtmpSetutent001
-     * @tc.desc       : test setutent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUtmpSetutent001
+     * @tc.number SUB_THIRDPARTY_MUSL_UTMP_SETUTENT_0100
+     * @tc.desc   test setutent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUtmpSetutent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = utmp.setutent();

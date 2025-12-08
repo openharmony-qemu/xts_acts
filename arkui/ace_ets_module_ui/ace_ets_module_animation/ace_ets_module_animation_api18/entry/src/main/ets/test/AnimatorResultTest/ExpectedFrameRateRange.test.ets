@@ -58,12 +58,12 @@ export default function ExpectedFrameRateRange() {
       console.info('ExpectedFrameRateRange after each called');
     });
     /**
+     * @tc.name   ExpectedFrameRateRange
      * @tc.number sExpectedFrameRateRange_001
-     * @tc.name testBack
-     * @tc.desc test min、 max、expected value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test min、 max、expected value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ExpectedFrameRateRange', Level.LEVEL3, async (done: Function) => {
       console.info('[ExpectedFrameRateRange_001] START');

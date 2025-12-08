@@ -33,9 +33,12 @@ export default function abilityTest() {
             setTimeout(() => { done(); }, 3000)
         })
         /**
-         * @tc.number: ACTS_getAbilityInfo_0400
-         * @tc.name: Starting singleton ability the second time does triggers onNewWant.
-         * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+         * @tc.name   ACTS_getAbilityInfo_0400
+         * @tc.number ACTS_getAbilityInfo_0400
+         * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getAbilityInfo_0400', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getAbilityInfo_0400 --- start")

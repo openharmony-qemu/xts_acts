@@ -46,10 +46,13 @@ export default function stepperAction001() {
       console.info("stepperAction001 after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_UI_COMPONENT_NAV_STEPPER_ACTION_0010
-     * @tc.name         stepperAction0010
-     * @tc.desic         stepperAction0010
+    /**
+     * @tc.name   stepperAction0010
+     * @tc.number SUB_ACE_UI_COMPONENT_NAV_STEPPER_ACTION_0010
+     * @tc.desc   stepperAction0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperAction0010',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperAction0010 START');

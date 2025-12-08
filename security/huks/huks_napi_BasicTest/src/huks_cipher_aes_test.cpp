@@ -94,9 +94,12 @@ static struct OH_Huks_Param g_decryptParams019[] = {
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 /**
- * @tc.name: HuksCipherAESTest.Security_HUKS_NAPI_Cipher_AES_0100
- * @tc.desc: alg-AES pur-ENCRYPT&DECRYPT mod-CBC pad-NONE size-256.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Cipher_AES_0100
+ * @tc.number Security_HUKS_NAPI_Cipher_AES_0100
+ * @tc.desc   alg-AES pur-ENCRYPT&DECRYPT mod-CBC pad-NONE size-256.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksCipherAESTest, Security_HUKS_NAPI_Cipher_AES_0100, TestSize.Level0)
 {
@@ -124,9 +127,12 @@ HWTEST_F(HuksCipherAESTest, Security_HUKS_NAPI_Cipher_AES_0100, TestSize.Level0)
 }
 
 /**
- * @tc.name: HuksCipherAESTest.Security_HUKS_NAPI_Cipher_AES_0200
- * @tc.desc: alg-AES pur-ENCRYPT&DECRYPT mod-CBC pad-PKCS7 size-256. Decrypt-Abort
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Cipher_AES_0200
+ * @tc.number Security_HUKS_NAPI_Cipher_AES_0200
+ * @tc.desc   alg-AES pur-ENCRYPT&DECRYPT mod-CBC pad-PKCS7 size-256. Decrypt-Abort
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksCipherAESTest, Security_HUKS_NAPI_Cipher_AES_0200, TestSize.Level0)
 {

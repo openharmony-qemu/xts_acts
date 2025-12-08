@@ -55,6 +55,14 @@ export default function ArcSwiperDemo() {
             console.info("afterAll case");
         });
 
+    /**
+     * @tc.name   arcSwiperTest002
+     * @tc.number arcSwiperTest002
+     * @tc.desc   arcSwiperTest002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('arcSwiperTest002',  Level.LEVEL0, async (done: Function) => {
       console.info('arcSwiperTest002 START');
       setTimeout(() => {

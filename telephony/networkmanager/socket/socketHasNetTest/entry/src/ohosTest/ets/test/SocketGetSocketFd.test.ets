@@ -134,13 +134,13 @@ function ExpectTrue(exp: boolean): void {
 export default function SocketGetSocketFdTest() {
   describe('SocketGetSocketFdTest', async () => {
 
-    /*
-     * @tc.number : SUB_Netmanager_Connection_GetSocketFd_0100
-     * @tc.name   : testNetmanagerConnectionGetSocketFd0100
-     * @tc.desc   : Test whether getfd can be invoked normally
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+    /**
+     * @tc.name   testNetmanagerConnectionGetSocketFd0100
+     * @tc.number SUB_Netmanager_Connection_GetSocketFd_0100
+     * @tc.desc   Test whether getfd can be invoked normally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetmanagerConnectionGetSocketFd0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetmanagerConnectionGetSocketFd0100';
@@ -167,12 +167,12 @@ export default function SocketGetSocketFdTest() {
     });
 
     /**
-     * @tc.number : SUB_Netmanager_Connection_GetSocketFd_0200
-     * @tc.name   : testNetmanagerConnectionGetSocketFd0200
-     * @tc.desc   : Test whether getfd can be invoked normally
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetmanagerConnectionGetSocketFd0200
+     * @tc.number SUB_Netmanager_Connection_GetSocketFd_0200
+     * @tc.desc   Test whether getfd can be invoked normally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetmanagerConnectionGetSocketFd0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetmanagerConnectionGetSocketFd0200';
@@ -208,12 +208,12 @@ export default function SocketGetSocketFdTest() {
     });
 
     /**
-     * @tc.number : SUB_Netmanager_Connection_GetSocketFd_0300
-     * @tc.name   : testNetmanagerConnectionGetSocketFd0300
-     * @tc.desc   : Test whether getfd can be invoked normally
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetmanagerConnectionGetSocketFd0300
+     * @tc.number SUB_Netmanager_Connection_GetSocketFd_0300
+     * @tc.desc   Test whether getfd can be invoked normally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetmanagerConnectionGetSocketFd0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetmanagerConnectionGetSocketFd0300';
@@ -263,12 +263,12 @@ export default function SocketGetSocketFdTest() {
 
 
     /**
-     * @tc.number : SUB_Netmanager_Connection_GetSocketFd_0400
-     * @tc.name   : testNetmanagerConnectionGetSocketFd0400
-     * @tc.desc   : Test whether getfd can be invoked normally
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetmanagerConnectionGetSocketFd0400
+     * @tc.number SUB_Netmanager_Connection_GetSocketFd_0400
+     * @tc.desc   Test whether getfd can be invoked normally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetmanagerConnectionGetSocketFd0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetmanagerConnectionGetSocketFd0400';
@@ -359,12 +359,12 @@ export default function SocketGetSocketFdTest() {
     })
 
     /**
-     * @tc.number : SUB_Netmanager_Connection_GetSocketFd_0500
-     * @tc.name   : testNetmanagerConnectionGetSocketFd0500
-     * @tc.desc   : Test whether getfd can be invoked normally
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetmanagerConnectionGetSocketFd0500
+     * @tc.number SUB_Netmanager_Connection_GetSocketFd_0500
+     * @tc.desc   Test whether getfd can be invoked normally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetmanagerConnectionGetSocketFd0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetmanagerConnectionGetSocketFd0500';
@@ -457,12 +457,12 @@ export default function SocketGetSocketFdTest() {
       }
     })
     /**
-     * @tc.number : SUB_Netmanager_Connection_GetSocketFd_0600
-     * @tc.name   : testNetmanagerConnectionGetSocketFd0600
-     * @tc.desc   : Test whether getfd can be invoked normally
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetmanagerConnectionGetSocketFd0600
+     * @tc.number SUB_Netmanager_Connection_GetSocketFd_0600
+     * @tc.desc   Test whether getfd can be invoked normally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetmanagerConnectionGetSocketFd0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetmanagerConnectionGetSocketFd0600';

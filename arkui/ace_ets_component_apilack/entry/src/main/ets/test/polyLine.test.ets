@@ -44,10 +44,13 @@ export default function polyLineNeJsunit() {
       console.info("polyLineNe after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testpolyLineNe0001
-     * @tc.desic         acepolyLineNeEtsTest0001
+    /**
+     * @tc.name   testpolyLineNe0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testpolyLineNe0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolyLineNe0001', Level.LEVEL0, async () => {
       console.info('polyLineNe testpolyLineNe0001 START');
@@ -61,10 +64,13 @@ export default function polyLineNeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testpolyLineNe0002
-     * @tc.desic         acepolyLineNeEtsTest0002
+    /**
+     * @tc.name   testpolyLineNe0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testpolyLineNe0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolyLineNe0002', Level.LEVEL0, async () => {
       console.info('polyLineNe testpolyLineNe0002 START');

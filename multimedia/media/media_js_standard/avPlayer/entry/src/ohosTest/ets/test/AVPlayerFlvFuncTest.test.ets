@@ -179,14 +179,14 @@ export default function AVPlayerFlvFuncTest() {
       await mediaTestBase.clearRouter()
     });
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_0100
-        * @tc.name      : 001.test
-        * @tc.desc      : seiMessageReceived test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_0100
+     * @tc.desc   seiMessageReceived test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_0100', Level.LEVEL0,async (done: Function) => {
       const videoSrc = 'http://media.iyuns.top:1003/live/SEI-H264.flv';
       payloadTypes = [5];

@@ -46,10 +46,12 @@ export default function flex_AlignContent_SpaceAround_TextSizeTest() {
       console.info("Flex_AlignContent_SpaceAround_TextSizeTest after each called");
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundTextSizeMeet
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEAROUND_1100
-     * @tc.name testFlexAlignContentSpaceAroundTextSizeMeet
-     * @tc.desc The size of the parent component in the cross direction meets the layout
-     *               of the child components when the height and width of parent component changed
+     * @tc.desc   The size of the parent component in the cross direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundTextSizeMeet',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundTextSizeMeet] START');
@@ -89,10 +91,12 @@ export default function flex_AlignContent_SpaceAround_TextSizeTest() {
 
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundTextSizeOverflow
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEAROUND_1200
-     * @tc.name testFlexAlignContentSpaceAroundTextSizeOverflow
-     * @tc.desc The size of the parent component in the cross direction is not enough for the layout
-     *               of the child components when the height and width of parent component changed
+     * @tc.desc   The size of the parent component in the cross direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundTextSizeOverflow',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundTextSizeOverflow] START');

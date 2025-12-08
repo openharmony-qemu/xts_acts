@@ -56,12 +56,12 @@ export default function CustomLayoutUniqueidTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_CustomLayoutUniqueidTest_0100
-     * @tc.name: CustomLayoutUniqueidTest_0100
-     * @tc.desc: CommonCustomAPI 
-     * @tc.level: Level 1
-     * @tc.type : CommonCustom
-     * @tc.size : CommonCustomTest
+     * @tc.name   CustomLayoutUniqueidTest_0100
+     * @tc.number SUB_ARKUI_API_CustomLayoutUniqueidTest_0100
+     * @tc.desc   CommonCustomAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CustomLayoutUniqueidTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[CustomLayoutUniqueidTest_0100] START');
@@ -89,12 +89,12 @@ export default function CustomLayoutUniqueidTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_CustomLayoutUniqueidTest_0200
-     * @tc.name: CustomLayoutUniqueidTest_0200
-     * @tc.desc: CommonCustomAPI 
-     * @tc.level: Level 1
-     * @tc.type : CommonCustom
-     * @tc.size : CommonCustomTest
+     * @tc.name   CustomLayoutUniqueidTest_0200
+     * @tc.number SUB_ARKUI_API_CustomLayoutUniqueidTest_0200
+     * @tc.desc   CommonCustomAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CustomLayoutUniqueidTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('CustomLayoutUniqueidTest_0200 START');

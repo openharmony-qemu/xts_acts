@@ -68,9 +68,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_3850
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_3850
-     * @tc.desc  use NotificationRequest type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_3850
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_3850
+     * @tc.desc   use NotificationRequest type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_3850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -142,9 +145,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_3950
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_3950
-     * @tc.desc  use NotificationLongTextContent type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_3950
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_3950
+     * @tc.desc   use NotificationLongTextContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_3950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -204,9 +210,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4050
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4050
-     * @tc.desc  use NotificationBasicContent type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4050
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4050
+     * @tc.desc   use NotificationBasicContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -263,9 +272,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4150
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4150
-     * @tc.desc  use NotificationMultiLineContent type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4150
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4150
+     * @tc.desc   use NotificationMultiLineContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -324,9 +336,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4250
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4250
-     * @tc.desc  use NotificationActionButton type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4250
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4250
+     * @tc.desc   use NotificationActionButton type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,9 +426,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4350
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4350
-     * @tc.desc  use NotificationTemplate type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4350
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4350
+     * @tc.desc   use NotificationTemplate type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -482,9 +500,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4450
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4450
-     * @tc.desc  use DistributedOptions type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4450
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4450
+     * @tc.desc   use DistributedOptions type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -549,9 +570,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4550
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4550
-     * @tc.desc  use NotificationBasicContent type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4550
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4550
+     * @tc.desc   use NotificationBasicContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -630,10 +654,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
 
 
     /**
-         * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4650
-         * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4650
-         * @tc.desc  use NotificationMultiLineContent type
-         */
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4650
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4650
+     * @tc.desc   use NotificationMultiLineContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ans_Publish_Publish_Static_4650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4650 ===>'
@@ -677,9 +704,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4750
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4750
-     * @tc.desc  use BundleOption type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4750
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4750
+     * @tc.desc   use BundleOption type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -700,9 +730,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4850
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4850
-     * @tc.desc  use NotificationFlags type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4850
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4850
+     * @tc.desc   use NotificationFlags type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

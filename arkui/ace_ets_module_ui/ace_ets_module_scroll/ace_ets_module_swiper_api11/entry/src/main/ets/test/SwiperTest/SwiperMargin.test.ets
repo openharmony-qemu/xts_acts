@@ -43,10 +43,13 @@ export default function SwiperMarginTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Swiper_0100
-     *tc.name   Set Swiper's nextMargin and prevMargin with negative
-     *tc.desc   Set Swiper's nextMargin and prevMargin with negative
+    /**
+     * @tc.name   ArkUI_Swiper_0100
+     * @tc.number ArkUI_Swiper_0100
+     * @tc.desc   Set Swiper's nextMargin and prevMargin with negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Swiper_0100', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_Swiper_0100'
@@ -62,10 +65,13 @@ export default function SwiperMarginTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUI_Swiper_0200
-     *tc.name   Set Swiper's nextMargin and prevMargin with positive
-     *tc.desc   Set Swiper's nextMargin and prevMargin with positive
+    /**
+     * @tc.name   ArkUI_Swiper_0200
+     * @tc.number ArkUI_Swiper_0200
+     * @tc.desc   Set Swiper's nextMargin and prevMargin with positive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Swiper_0200', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_Swiper_0200'
@@ -80,10 +86,13 @@ export default function SwiperMarginTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUI_Swiper_0300
-     *tc.name   Set Swiper's nextMargin and prevMargin with string
-     *tc.desc   Set Swiper's nextMargin and prevMargin with string
+    /**
+     * @tc.name   ArkUI_Swiper_0300
+     * @tc.number ArkUI_Swiper_0300
+     * @tc.desc   Set Swiper's nextMargin and prevMargin with string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Swiper_0300', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_Swiper_0300'
@@ -99,10 +108,13 @@ export default function SwiperMarginTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUI_Swiper_0400
-     *tc.name   Set Swiper's nextMargin and prevMargin with Resource
-     *tc.desc   Set Swiper's nextMargin and prevMargin with Resource
+    /**
+     * @tc.name   ArkUI_Swiper_0400
+     * @tc.number ArkUI_Swiper_0400
+     * @tc.desc   Set Swiper's nextMargin and prevMargin with Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Swiper_0400', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_Swiper_0400'

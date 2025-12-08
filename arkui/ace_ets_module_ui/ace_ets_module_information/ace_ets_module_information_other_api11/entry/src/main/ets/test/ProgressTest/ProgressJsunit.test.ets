@@ -57,9 +57,12 @@ export default function progressJsunit() {
     });
 
     /**
+     * @tc.name   testGetProgressAttr010
      * @tc.number SUB_ACE_BASIC_ETS_API_0960
-     * @tc.name testGetProgressAttr010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetProgressAttr010', Level.LEVEL0, async (done: Function) => {
       console.info('testGetProgressAttr START');
@@ -79,9 +82,12 @@ export default function progressJsunit() {
     });
 
     /**
+     * @tc.name   testGetProgressAttr020
      * @tc.number SUB_ACE_BASIC_ETS_API_0970
-     * @tc.name testGetProgressAttr020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetProgressAttr020', Level.LEVEL0, async (done: Function) => {
       console.info('testGetProgressAttr2 START');
@@ -96,9 +102,12 @@ export default function progressJsunit() {
     });
 
     /**
+     * @tc.name   testGetProgressAttr030
      * @tc.number SUB_ACE_BASIC_ETS_API_0970
-     * @tc.name testGetProgressAttr030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetProgressAttr030', Level.LEVEL0, async (done: Function) => {
       console.info('testGetProgressAttr3 START');
@@ -113,9 +122,12 @@ export default function progressJsunit() {
     });
 
     /**
+     * @tc.name   testGetProgressAttr040
      * @tc.number SUB_ACE_BASIC_ETS_API_0970
-     * @tc.name testGetProgressAttr040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetProgressAttr040', Level.LEVEL0, async (done: Function) => {
       console.info('testGetProgressAttr4 START');
@@ -130,9 +142,12 @@ export default function progressJsunit() {
     });
 
     /**
+     * @tc.name   testGetProgressAttr050
      * @tc.number SUB_ACE_BASIC_ETS_API_0970
-     * @tc.name testGetProgressAttr050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetProgressAttr050', Level.LEVEL0, async (done: Function) => {
       console.info('testGetProgressAttr5 START');

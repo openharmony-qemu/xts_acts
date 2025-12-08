@@ -59,12 +59,12 @@ export default function getObjectByPositionTest () {
     }
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Obj_By_Position_001
-     * @tc.name      : getObjectByPosition_promise_000
-     * @tc.desc      : getObjectByPosition image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getObjectByPosition_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Get_Obj_By_Position_001
+     * @tc.desc   getObjectByPosition image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getObjectByPosition_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getObjectByPosition_promise_000';
@@ -73,12 +73,12 @@ export default function getObjectByPositionTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Obj_By_Position_002
-     * @tc.name      : getObjectByPosition_promise_001
-     * @tc.desc      : getObjectByPosition video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getObjectByPosition_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_Obj_By_Position_002
+     * @tc.desc   getObjectByPosition video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getObjectByPosition_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getObjectByPosition_promise_001';

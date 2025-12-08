@@ -34,7 +34,6 @@ export default function MultimodalInputKeyCodeTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_SWITCHVIDEOMODE_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_SWITCHVIDEOMODE_0100
      * @tc.desc   Test keycode KEYCODE_SWITCHVIDEOMODE.
@@ -57,7 +56,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_SEARCH_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_SEARCH_0100
      * @tc.desc   Test keycode KEYCODE_SEARCH.
@@ -80,7 +78,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_MEDIA_RECORD_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_MEDIA_RECORD_0100
      * @tc.desc   Test keycode KEYCODE_MEDIA_RECORD.
@@ -103,7 +100,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_ASSISTANT_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_ASSISTANT_0100
      * @tc.desc   Test keycode KEYCODE_ASSISTANT.
@@ -126,7 +122,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100
      * @tc.desc   Test keycode KEYCODE_DAGGER_CLICK.
@@ -149,7 +144,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_DAGGER_DOUBLE_CLICK_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_DAGGER_DOUBLE_CLICK_0100
      * @tc.desc   Test keycode KEYCODE_DAGGER_DOUBLE_CLICK.
@@ -172,7 +166,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_DAGGER_LONG_PRESS_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_DAGGER_LONG_PRESS_0100
      * @tc.desc   Test keycode KEYCODE_DAGGER_LONG_PRESS.
@@ -195,7 +188,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_A_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_A_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_A.
@@ -218,7 +210,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_B_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_B_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_B.
@@ -241,7 +232,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_X_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_X_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_X.
@@ -264,7 +254,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_Y_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_Y_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_Y.
@@ -287,7 +276,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_L1_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_L1_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_L1.
@@ -310,7 +298,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_R1_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_R1_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_R1.
@@ -333,7 +320,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_L2_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_L2_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_L2.
@@ -356,7 +342,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_R2_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_R2_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_R2.
@@ -379,7 +364,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_SELECT_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_SELECT_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_SELECT.
@@ -402,7 +386,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_START_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_START_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_START.
@@ -425,7 +408,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_MODE_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_MODE_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_MODE.
@@ -448,7 +430,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBL_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBL_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_THUMBL.
@@ -471,7 +452,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBR_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBR_0100
      * @tc.desc   Test keycode KEYCODE_BUTTON_THUMBR.
@@ -494,7 +474,6 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_DIV_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_DIV_0100
      * @tc.desc   Test keycode KEYCODE_DIV.

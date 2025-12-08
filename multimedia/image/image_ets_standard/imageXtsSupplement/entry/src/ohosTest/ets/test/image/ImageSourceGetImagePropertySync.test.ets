@@ -96,12 +96,12 @@ export default function getImagePropertySyncTest() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0001
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0001
-     * @tc.desc     验证获取图片GPS_VERSION_ID属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0001
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0001
+     * @tc.desc   验证获取图片GPS_VERSION_ID属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0001';
@@ -112,12 +112,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0002
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0002
-     * @tc.desc     验证获取图片NEW_SUBFILE_TYPE属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0002
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0002
+     * @tc.desc   验证获取图片NEW_SUBFILE_TYPE属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0002';
@@ -128,12 +128,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0003
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0003
-     * @tc.desc     验证获取图片SUBFILE_TYPE属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0003
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0003
+     * @tc.desc   验证获取图片SUBFILE_TYPE属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0003';
@@ -144,12 +144,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0004
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0004
-     * @tc.desc     验证获取图片IMAGE_WIDTH属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0004
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0004
+     * @tc.desc   验证获取图片IMAGE_WIDTH属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0004', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0004';
@@ -160,12 +160,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0005
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0005
-     * @tc.desc     验证获取图片IMAGE_LENGTH属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0005
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0005
+     * @tc.desc   验证获取图片IMAGE_LENGTH属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0005', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0005';
@@ -176,12 +176,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0006
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0006
-     * @tc.desc     验证获取图片BITS_PER_SAMPLE属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0006
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0006
+     * @tc.desc   验证获取图片BITS_PER_SAMPLE属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0006', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0006';
@@ -192,12 +192,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0007
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0007
-     * @tc.desc     验证获取图片COMPRESSION属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0007
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0007
+     * @tc.desc   验证获取图片COMPRESSION属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0007', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0007';
@@ -208,12 +208,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0008
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0008
-     * @tc.desc     验证获取图片PHOTOMETRIC_INTERPRETATION属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0008
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0008
+     * @tc.desc   验证获取图片PHOTOMETRIC_INTERPRETATION属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0008', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0008';
@@ -224,12 +224,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0009
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0009
-     * @tc.desc     验证获取图片IMAGE_DESCRIPTION属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0009
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0009
+     * @tc.desc   验证获取图片IMAGE_DESCRIPTION属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0009', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0009';
@@ -240,12 +240,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0010
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0010
-     * @tc.desc     验证获取图片MAKE属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0010
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0010
+     * @tc.desc   验证获取图片MAKE属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0010', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0010';
@@ -256,12 +256,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0011
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0011
-     * @tc.desc     验证获取图片MODEL属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0011
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0011
+     * @tc.desc   验证获取图片MODEL属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0011', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0011';
@@ -272,12 +272,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0012
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0012
-     * @tc.desc     验证获取图片STRIP_OFFSETS属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0012
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0012
+     * @tc.desc   验证获取图片STRIP_OFFSETS属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0012', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0012';
@@ -288,12 +288,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0013
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0013
-     * @tc.desc     验证获取图片ORIENTATION属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0013
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0013
+     * @tc.desc   验证获取图片ORIENTATION属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0013', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0013';
@@ -304,12 +304,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0014
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0014
-     * @tc.desc     验证获取图片SAMPLES_PER_PIXEL属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0014
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0014
+     * @tc.desc   验证获取图片SAMPLES_PER_PIXEL属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0014', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0014';
@@ -320,12 +320,12 @@ export default function getImagePropertySyncTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0015
-     * @tc.name     SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0015
-     * @tc.desc     验证获取图片ROWS_PER_STRIP属性的同步接口返回值正确性
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0015
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0015
+     * @tc.desc   验证获取图片ROWS_PER_STRIP属性的同步接口返回值正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0015', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_GET_IMAGE_PROPERTY_SYNC_0015';

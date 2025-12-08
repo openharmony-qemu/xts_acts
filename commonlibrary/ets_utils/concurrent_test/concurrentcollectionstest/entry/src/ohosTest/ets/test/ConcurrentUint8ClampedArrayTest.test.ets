@@ -137,12 +137,12 @@ export default function Uint8ClampedArrayTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0100
-     * @tc.name      : test_Uint8ClampedArray_001
-     * @tc.desc      : test_Uint8ClampedArray_001 - test uint8ClampedArray constructor and basic operations
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_001
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0100
+     * @tc.desc   test_Uint8ClampedArray_001 - test uint8ClampedArray constructor and basic operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -171,12 +171,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0200
-     * @tc.name      : test_Uint8ClampedArray_002
-     * @tc.desc      : test_Uint8ClampedArray_002 - test uint8ClampedArray from method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_002
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0200
+     * @tc.desc   test_Uint8ClampedArray_002 - test uint8ClampedArray from method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -205,12 +205,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0300
-     * @tc.name      : test_Uint8ClampedArray_003
-     * @tc.desc      : test_Uint8ClampedArray_003 - test uint8ClampedArray from with array parameter
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_003
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0300
+     * @tc.desc   test_Uint8ClampedArray_003 - test uint8ClampedArray from with array parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -239,12 +239,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0400
-     * @tc.name      : test_Uint8ClampedArray_004
-     * @tc.desc      : test_Uint8ClampedArray_004 - test uint8ClampedArray copyWithin method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_004
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0400
+     * @tc.desc   test_Uint8ClampedArray_004 - test uint8ClampedArray copyWithin method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -273,12 +273,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0500
-     * @tc.name      : test_Uint8ClampedArray_005
-     * @tc.desc      : test_Uint8ClampedArray_005 - test uint8ClampedArray from with Array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_005
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0500
+     * @tc.desc   test_Uint8ClampedArray_005 - test uint8ClampedArray from with Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -307,12 +307,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0600
-     * @tc.name      : test_Uint8ClampedArray_006
-     * @tc.desc      : test_Uint8ClampedArray_006 - test uint8ClampedArray from with Set
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_006
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0600
+     * @tc.desc   test_Uint8ClampedArray_006 - test uint8ClampedArray from with Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -341,12 +341,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0700
-     * @tc.name      : test_Uint8ClampedArray_007
-     * @tc.desc      : test_Uint8ClampedArray_007 - test uint8ClampedArray from with mapping function
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_007
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0700
+     * @tc.desc   test_Uint8ClampedArray_007 - test uint8ClampedArray from with mapping function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -378,12 +378,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0800
-     * @tc.name      : test_Uint8ClampedArray_008
-     * @tc.desc      : test_Uint8ClampedArray_008 - test uint8ClampedArray of method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_008
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0800
+     * @tc.desc   test_Uint8ClampedArray_008 - test uint8ClampedArray of method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -416,12 +416,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0900
-     * @tc.name      : test_Uint8ClampedArray_009
-     * @tc.desc      : test_Uint8ClampedArray_009 - test uint8ClampedArray copyWithin result
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_009
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_0900
+     * @tc.desc   test_Uint8ClampedArray_009 - test uint8ClampedArray copyWithin result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -450,12 +450,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1000
-     * @tc.name      : test_Uint8ClampedArray_010
-     * @tc.desc      : test_Uint8ClampedArray_010 - test uint8ClampedArray with ArrayBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_010
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1000
+     * @tc.desc   test_Uint8ClampedArray_010 - test uint8ClampedArray with ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -486,12 +486,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1100
-     * @tc.name      : test_Uint8ClampedArray_011
-     * @tc.desc      : test_Uint8ClampedArray_011 - test uint8ClampedArray some and every methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_011
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1100
+     * @tc.desc   test_Uint8ClampedArray_011 - test uint8ClampedArray some and every methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -520,12 +520,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1200
-     * @tc.name      : test_Uint8ClampedArray_012
-     * @tc.desc      : test_Uint8ClampedArray_012 - test uint8ClampedArray fill method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_012
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1200
+     * @tc.desc   test_Uint8ClampedArray_012 - test uint8ClampedArray fill method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -557,12 +557,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1300
-     * @tc.name      : test_Uint8ClampedArray_013
-     * @tc.desc      : test_Uint8ClampedArray_013 - test uint8ClampedArray filter and find methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_013
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1300
+     * @tc.desc   test_Uint8ClampedArray_013 - test uint8ClampedArray filter and find methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -591,12 +591,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1400
-     * @tc.name      : test_Uint8ClampedArray_014
-     * @tc.desc      : test_Uint8ClampedArray_014 - test uint8ClampedArray findIndex and indexOf methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_014
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1400
+     * @tc.desc   test_Uint8ClampedArray_014 - test uint8ClampedArray findIndex and indexOf methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -625,12 +625,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1500
-     * @tc.name      : test_Uint8ClampedArray_015
-     * @tc.desc      : test_Uint8ClampedArray_015 - test uint8ClampedArray forEach method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_015
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1500
+     * @tc.desc   test_Uint8ClampedArray_015 - test uint8ClampedArray forEach method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -659,12 +659,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1600
-     * @tc.name      : test_Uint8ClampedArray_016
-     * @tc.desc      : test_Uint8ClampedArray_016 - test uint8ClampedArray lastIndexOf and join methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_016
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1600
+     * @tc.desc   test_Uint8ClampedArray_016 - test uint8ClampedArray lastIndexOf and join methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -693,12 +693,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1700
-     * @tc.name      : test_Uint8ClampedArray_017
-     * @tc.desc      : test_Uint8ClampedArray_017 - test uint8ClampedArray map method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_017
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1700
+     * @tc.desc   test_Uint8ClampedArray_017 - test uint8ClampedArray map method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -727,12 +727,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1800
-     * @tc.name      : test_Uint8ClampedArray_018
-     * @tc.desc      : test_Uint8ClampedArray_018 - test uint8ClampedArray reduce methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_018
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1800
+     * @tc.desc   test_Uint8ClampedArray_018 - test uint8ClampedArray reduce methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -761,12 +761,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1900
-     * @tc.name      : test_Uint8ClampedArray_019
-     * @tc.desc      : test_Uint8ClampedArray_019 - test uint8ClampedArray reduceRight methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_019
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_1900
+     * @tc.desc   test_Uint8ClampedArray_019 - test uint8ClampedArray reduceRight methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -795,12 +795,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2000
-     * @tc.name      : test_Uint8ClampedArray_020
-     * @tc.desc      : test_Uint8ClampedArray_020 - test uint8ClampedArray reverse method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_020
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_2000
+     * @tc.desc   test_Uint8ClampedArray_020 - test uint8ClampedArray reverse method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -828,12 +828,12 @@ export default function Uint8ClampedArrayTest() {
         done()
       })
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2100
-     * @tc.name      : test_Uint8ClampedArray_021
-     * @tc.desc      : test_Uint8ClampedArray_021 - test uint8ClampedArray set method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_021
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_2100
+     * @tc.desc   test_Uint8ClampedArray_021 - test uint8ClampedArray set method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -865,12 +865,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2200
-     * @tc.name      : test_Uint8ClampedArray_022
-     * @tc.desc      : test_Uint8ClampedArray_022 - test uint8ClampedArray slice method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_022
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_2200
+     * @tc.desc   test_Uint8ClampedArray_022 - test uint8ClampedArray slice method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -899,12 +899,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2300
-     * @tc.name      : test_Uint8ClampedArray_023
-     * @tc.desc      : test_Uint8ClampedArray_023 - test uint8ClampedArray sort method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_023
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_2300
+     * @tc.desc   test_Uint8ClampedArray_023 - test uint8ClampedArray sort method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -936,12 +936,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2400
-     * @tc.name      : test_Uint8ClampedArray_024
-     * @tc.desc      : test_Uint8ClampedArray_024 - test uint8ClampedArray subarray method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_024
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_2400
+     * @tc.desc   test_Uint8ClampedArray_024 - test uint8ClampedArray subarray method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -970,12 +970,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2500
-     * @tc.name      : test_Uint8ClampedArray_025
-     * @tc.desc      : test_Uint8ClampedArray_025 - test uint8ClampedArray at and includes methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_025
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_2500
+     * @tc.desc   test_Uint8ClampedArray_025 - test uint8ClampedArray at and includes methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1004,12 +1004,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2600
-     * @tc.name      : test_Uint8ClampedArray_026
-     * @tc.desc      : test_Uint8ClampedArray_026 - test uint8ClampedArray entries method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_026
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_2600
+     * @tc.desc   test_Uint8ClampedArray_026 - test uint8ClampedArray entries method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1038,12 +1038,12 @@ export default function Uint8ClampedArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2700
-     * @tc.name      : test_Uint8ClampedArray_027
-     * @tc.desc      : test_Uint8ClampedArray_027 - test uint8ClampedArray keys and values methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Uint8ClampedArray_027
+     * @tc.number SUB_CONCURRENT_UINT8CLAMPED_TEST_2700
+     * @tc.desc   test_Uint8ClampedArray_027 - test uint8ClampedArray keys and values methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Uint8ClampedArray_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

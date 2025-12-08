@@ -45,12 +45,12 @@ export default function textPickerGradientHeightTest() {
     });
 
     /**
-     * @tc.number textPickerGradientHeightTestTest_0100
      * @tc.name   textPickerGradientHeightTestTest_0100
+     * @tc.number textPickerGradientHeightTestTest_0100
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textPickerGradientHeightTestTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('textPickerGradientHeightTestText_0100 START');

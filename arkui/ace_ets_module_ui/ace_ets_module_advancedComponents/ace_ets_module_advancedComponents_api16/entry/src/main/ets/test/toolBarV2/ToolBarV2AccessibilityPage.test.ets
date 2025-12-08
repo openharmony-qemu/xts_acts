@@ -50,12 +50,12 @@ export default function toolBarV2AccessibilityTest() {
     })
 
     /**
-     * @tc.number ToolBarV2AccessibilityPageTest
      * @tc.name   ToolBarV2AccessibilityPageTest_0100
+     * @tc.number ToolBarV2AccessibilityPageTest
      * @tc.desc   Test ToolBarV2AccessibilityPage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ToolBarV2AccessibilityPageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

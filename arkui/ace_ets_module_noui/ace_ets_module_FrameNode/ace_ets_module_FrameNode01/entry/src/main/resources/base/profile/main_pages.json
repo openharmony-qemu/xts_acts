@@ -27,7 +27,6 @@
         "MainAbility/pages/FrameNode/createNodeText",
         "MainAbility/pages/FrameNode/setMeasureSize",
         "MainAbility/pages/FrameNode/commonEventTest1",
-        "MainAbility/pages/FrameNode/RELOAD",
         "MainAbility/pages/FrameNode/expectedUpdateInterval",
         "MainAbility/pages/FrameNode/attachNodeAdapter",
         "MainAbility/pages/FrameNode/getAttachedFrameNodeById",

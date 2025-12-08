@@ -46,12 +46,12 @@ export default function shortcutKeyJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Shortcut_Key_0100
      * @tc.number ArkUI_Shortcut_Key_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Shortcut_Key_0100', Level.LEVEL0, async (done: Function) => {
       let CASE = 'ArkUI_Shortcut_Key_0100'

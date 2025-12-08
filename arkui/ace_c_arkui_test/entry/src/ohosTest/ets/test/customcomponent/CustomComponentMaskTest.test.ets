@@ -26,210 +26,208 @@ export default function customComponentMaskTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0100
-     * @tc.name       : testCustomComponentMask001
-     * @tc.desc       : testing transform for common with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0100
+     * @tc.desc   testing transform for common with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0200
-     * @tc.name       : testCustomComponentMask002
-     * @tc.desc       : testing transform for common with 'zero' value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0200
+     * @tc.desc   testing transform for common with 'zero' value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0300
-     * @tc.name       : testCustomComponentMask003
-     * @tc.desc       : testing mask for common with negative value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentMask003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0300
+     * @tc.desc   testing mask for common with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0400
-     * @tc.name       : testCustomComponentMask004
-     * @tc.desc       : testing mask for common with
-     *           'The width of the rectangular corner is greater than the width of
-     * the rectangle'
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0400
+     * @tc.desc   testing mask for common with
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0500
-     * @tc.name       : testCustomComponentMask005
-     * @tc.desc       : testing mask for common with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0500
+     * @tc.desc   testing mask for common with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0600
-     * @tc.name       : testCustomComponentMask006
-     * @tc.desc       : testing mask for common with negative value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentMask006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0600
+     * @tc.desc   testing mask for common with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0700
-     * @tc.name       : testCustomComponentMask007
-     * @tc.desc       : testing mask for common with 'zero' value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask007
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0700
+     * @tc.desc   testing mask for common with 'zero' value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0800
-     * @tc.name       : testCustomComponentMask008
-     * @tc.desc       : testing mask for common with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask008
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0800
+     * @tc.desc   testing mask for common with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0900
-     * @tc.name       : testCustomComponentMask009
-     * @tc.desc       : testing mask for common with ’zero‘ value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask009
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_0900
+     * @tc.desc   testing mask for common with ’zero‘ value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1000
-     * @tc.name       : testCustomComponentMask010
-     * @tc.desc       : testing mask for common with negative value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentMask010
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1000
+     * @tc.desc   testing mask for common with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1100
-     * @tc.name       : testCustomComponentMask011
-     * @tc.desc       : testing mask for common with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask011
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1100
+     * @tc.desc   testing mask for common with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1200
-     * @tc.name       : testCustomComponentMask012
-     * @tc.desc       : testing mask for common with 'zero' value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask012
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1200
+     * @tc.desc   testing mask for common with 'zero' value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask012()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1300
-     * @tc.name       : testCustomComponentMask013
-     * @tc.desc       : testing mask for common with negative value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentMask013
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1300
+     * @tc.desc   testing mask for common with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask013', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask013()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1400
-     * @tc.name       : testCustomComponentMask014
-     * @tc.desc       : testing mask for common with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask014
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1400
+     * @tc.desc   testing mask for common with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask014', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask014()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1500
-     * @tc.name       : testCustomComponentMask015
-     * @tc.desc       : testing mask for common with 'zero' value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMask015
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1500
+     * @tc.desc   testing mask for common with 'zero' value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask015', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask015()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1600
-     * @tc.name       : testCustomComponentMask016
-     * @tc.desc       : testing mask for common with negative value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentMask016
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MASK_1600
+     * @tc.desc   testing mask for common with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMask016', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMask016()).assertEqual(0)

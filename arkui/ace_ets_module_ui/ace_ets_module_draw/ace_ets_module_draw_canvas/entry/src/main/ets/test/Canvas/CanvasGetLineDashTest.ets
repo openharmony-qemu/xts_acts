@@ -42,12 +42,12 @@ export default function CanvasGetLineDashTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_CanvasGetLineDashTest_0100
-     * @tc.name: CanvasGetLineDashTest_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 1
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   CanvasGetLineDashTest_0100
+     * @tc.number SUB_ARKUI_API_CanvasGetLineDashTest_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CanvasGetLineDashTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[CanvasGetLineDashTest_0100] START');
@@ -64,12 +64,12 @@ export default function CanvasGetLineDashTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_CanvasGetLineDashTest_0200
-     * @tc.name: CanvasGetLineDashTest_0200
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 1
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   CanvasGetLineDashTest_0200
+     * @tc.number SUB_ARKUI_API_CanvasGetLineDashTest_0200
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CanvasGetLineDashTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[CanvasGetLineDashTest_0200] START');

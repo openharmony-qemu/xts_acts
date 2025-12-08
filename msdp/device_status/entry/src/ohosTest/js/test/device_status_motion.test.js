@@ -80,7 +80,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0100
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0100
      * @tc.desc   motion callback interface test
@@ -103,7 +102,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0200
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0200
      * @tc.desc   motion callback interface test
@@ -126,7 +124,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0300
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0300
      * @tc.desc   motion callback interface test
@@ -152,7 +149,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0400
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0400
      * @tc.desc   motion callback interface test
@@ -175,7 +171,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0500
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0500
      * @tc.desc   motion callback interface test
@@ -198,7 +193,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0600
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0600
      * @tc.desc   motion callback interface test
@@ -226,7 +220,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0700
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0700
      * @tc.desc   motion callback interface test
@@ -251,7 +244,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0800
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0800
      * @tc.desc   motion callback interface test
@@ -282,7 +274,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0900
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0900
      * @tc.desc   motion callback interface test
@@ -308,7 +299,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1000
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1000
      * @tc.desc   motion callback interface test
@@ -331,7 +321,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1100
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1100
      * @tc.desc   motion callback interface test
@@ -354,7 +343,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1200
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1200
      * @tc.desc   motion callback interface test
@@ -387,7 +375,6 @@ export default function DeviceStatusMotionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1300
      * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1300
      * @tc.desc   motion callback interface test

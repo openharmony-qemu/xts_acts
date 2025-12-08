@@ -43,12 +43,12 @@ export default function StyledString14Test() {
     });
 
     /**
-     * @tc.number    StyledString14Test_0100
-     * @tc.name      StyledString14Test_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   StyledString14Test_0100
+     * @tc.number StyledString14Test_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StyledString14Test_0100', Level.LEVEL2, async (done: Function) => {
       console.info('StyledString14Test_0100 START');
@@ -72,12 +72,12 @@ export default function StyledString14Test() {
     });
 
     /**
-     * @tc.number    StyledString14Test_0200
-     * @tc.name      StyledString14Test_0200
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   StyledString14Test_0200
+     * @tc.number StyledString14Test_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StyledString14Test_0200', Level.LEVEL2, async (done: Function) => {
       console.info('StyledString14Test_0200 START');

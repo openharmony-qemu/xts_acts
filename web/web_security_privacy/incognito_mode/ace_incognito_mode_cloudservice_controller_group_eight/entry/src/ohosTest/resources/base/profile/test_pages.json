@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/TestWebViewCookie",
-    "testability/pages/TestWebViewGeolocation"
+    "testability/pages/TestWebViewGeolocation",
+    "testability/pages/WebCookieManagerCookie"
   ]
 }

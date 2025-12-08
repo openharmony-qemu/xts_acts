@@ -40,12 +40,12 @@ export default function createNodeDivider() {
       done();
     });
     /**
-     * @tc.number    createNodeDivider_0100
-     * @tc.name      createNodeDivider_0100
-     * @tc.desc      frameNode: createNodeDividerToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeDivider_0100
+     * @tc.number createNodeDivider_0100
+     * @tc.desc   frameNode: createNodeDividerToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeDivider_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeDivider_0100 START');

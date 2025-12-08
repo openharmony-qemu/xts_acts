@@ -73,7 +73,7 @@ export default function imagePacking() {
     });
 
     let getImageSourceData = (fileName: string) => {
-      let globalImagesource: image.ImageSource;
+      let globalImagesource: image.ImageSource | undefined;
       try {
         const path: string = filesDir + "/" + fileName;
         globalImagesource = image.createImageSource(path);
@@ -88,7 +88,7 @@ export default function imagePacking() {
     let isSupportImageFormat = (fileName: string, format: string) => {
       let filePath = ""
       let isSupportFormat = false;
-      let globalImagesource: image.ImageSource;
+      let globalImagesource: image.ImageSource | undefined;
       try {
         filePath = filesDir + "/" + fileName;
         globalImagesource = image.createImageSource(filePath);
@@ -147,15 +147,19 @@ export default function imagePacking() {
         expect(loopcount[image.PropertyKey.GIF_LOOP_COUNT] != null).assertTrue();
         let GIFloopCount = loopcount[image.PropertyKey.GIF_LOOP_COUNT] as string;
         let imageInfo = imgSource.getImageInfoSync();
-        console.info(`checkPackingForSequenceResult delayTimes ${delayTimes}`);
-        console.info(`checkPackingForSequenceResult disposalTypes ${disposalTypes}`);
-        console.info(`checkPackingForSequenceResult loopcount ${loopcount}`);
-        console.info(`checkPackingForSequenceResult height ${imageInfo.size.height}`);
-        console.info(`checkPackingForSequenceResult width ${imageInfo.size.width}`);
-        console.info(`checkPackingForSequenceResult mimeType ${imageInfo.mimeType}`);
-        expect(imageInfo.size.width == pictureSize.width).assertTrue();
-        expect(imageInfo.size.height == pictureSize.height).assertTrue();
-        expect(imageInfo.mimeType == "image/gif").assertTrue();
+        if (imageInfo == undefined) {
+          expect(false).assertTrue();
+        } else {
+          console.info(`checkPackingForSequenceResult delayTimes ${delayTimes}`);
+          console.info(`checkPackingForSequenceResult disposalTypes ${disposalTypes}`);
+          console.info(`checkPackingForSequenceResult loopcount ${loopcount}`);
+          console.info(`checkPackingForSequenceResult height ${imageInfo.size.height}`);
+          console.info(`checkPackingForSequenceResult width ${imageInfo.size.width}`);
+          console.info(`checkPackingForSequenceResult mimeType ${imageInfo.mimeType}`);
+          expect(imageInfo.size.width == pictureSize.width).assertTrue();
+          expect(imageInfo.size.height == pictureSize.height).assertTrue();
+          expect(imageInfo.mimeType == "image/gif").assertTrue();
+        }
         console.info(`checkPackingForSequenceResult loopcount1 ${GIFloopCount}`);
         console.info(`checkPackingForSequenceResult loopcount2 ${packingOptions.loopCount}`);
         //对比编码前后的 loopCount
@@ -193,7 +197,9 @@ export default function imagePacking() {
           }
         }
       }
-      await imgSource.release();
+      if (imgSource != undefined) {
+        await imgSource.release();
+      }
     }
 
     let testPackingForSequencePromise = (done: () => void, testNum: string, pictureSize: image.Size,
@@ -267,16 +273,12 @@ export default function imagePacking() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_STATIC_0100
-      * @tc.desc    createImagePacker
-      *                 1.create ImageSource
-      *                 2.call packing
-      *                 3.return array
-      *                 4.callbackcall return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_STATIC_0100
+     * @tc.desc   createImagePacker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_STATIC_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_STATIC_0100");
@@ -306,15 +308,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_STATIC_0100
-      * @tc.desc    release ImagePacker - promise
-      *                 1.create ImagePacker
-      *                 2.call release
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_STATIC_0100
+     * @tc.desc   release ImagePacker - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void) => {
       const imagePackerApi = image.createImagePacker();
@@ -336,15 +335,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_STATIC_0100
-      * @tc.desc    release ImagePacker - callback
-      *                 1.create ImagePacker
-      *                 2.call release
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_STATIC_0100
+     * @tc.desc   release ImagePacker - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void) => {
       const imagePackerApi = image.createImagePacker();
@@ -361,16 +357,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0100
-      * @tc.desc    test the packing interface uses many PixelMaps
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0100
+     * @tc.desc   test the packing interface uses many PixelMaps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -391,16 +383,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0200
-      * @tc.desc    test the packing interface uses PixelMap
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0200
+     * @tc.desc   test the packing interface uses PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -421,16 +409,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0300
-      * @tc.desc    test the packing interface configuration delaytimes
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0300
+     * @tc.desc   test the packing interface configuration delaytimes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -448,16 +432,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0400
-      * @tc.desc    test the packing interface configuration loop
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0400
+     * @tc.desc   test the packing interface configuration loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -475,16 +455,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0500
-      * @tc.desc    test the packing interface no disposalTypes and no loopCount
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0500
+     * @tc.desc   test the packing interface no disposalTypes and no loopCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -502,16 +478,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0600
-      * @tc.desc    test the packing interface frameCount less than PixelMapList
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0600
+     * @tc.desc   test the packing interface frameCount less than PixelMapList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -529,16 +501,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0700
-      * @tc.desc    test the packing interface frameCount more than PixelMapList
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0700
+     * @tc.desc   test the packing interface frameCount more than PixelMapList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -556,16 +524,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0800
-      * @tc.desc    test the packing interface delayTimeList less than PixelMapList
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0800
+     * @tc.desc   test the packing interface delayTimeList less than PixelMapList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -583,16 +547,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0900
-      * @tc.desc    test the packing interface delayTimeList more than PixelMapList
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0900
+     * @tc.desc   test the packing interface delayTimeList more than PixelMapList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -610,16 +570,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1000
-      * @tc.desc    test the packing interface disposalTypes less than PixelMapList
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1000
+     * @tc.desc   test the packing interface disposalTypes less than PixelMapList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -637,16 +593,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1100
-      * @tc.desc    test the packing interface disposalTypes more than PixelMapList
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1100
+     * @tc.desc   test the packing interface disposalTypes more than PixelMapList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -664,16 +616,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1200
-      * @tc.desc    test the packing interface uses test.bmp
-      *               : 1.Create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1200
+     * @tc.desc   test the packing interface uses test.bmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -694,16 +642,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1300
-      * @tc.desc    test the packing interface uses test.jpg
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1300
+     * @tc.desc   test the packing interface uses test.jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -724,16 +668,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1400
-      * @tc.desc    test the packing interface uses test.ico
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1400
+     * @tc.desc   test the packing interface uses test.ico
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -754,16 +694,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1500
-      * @tc.desc    test the packing interface uses test.svg
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1500
+     * @tc.desc   test the packing interface uses test.svg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -784,16 +720,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1600
-      * @tc.desc    test the packing interface uses test.dng
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1600
+     * @tc.desc   test the packing interface uses test.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -814,16 +746,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1700
-      * @tc.desc    test the packing interface uses test.jpeg
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1700
+     * @tc.desc   test the packing interface uses test.jpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -844,16 +772,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1800
-      * @tc.desc    test the packing interface uses test.webp
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1800
+     * @tc.desc   test the packing interface uses test.webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -874,16 +798,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1900
-      * @tc.desc    test the packing interface uses HDRVividSingleLayer.heic
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1900
+     * @tc.desc   test the packing interface uses HDRVividSingleLayer.heic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -910,16 +830,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0100
-      * @tc.desc    test the packing interface passed wrong frameCount
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0100
+     * @tc.desc   test the packing interface passed wrong frameCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -937,16 +853,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0200
-      * @tc.desc    test the packing interface passed wrong delayTimeList
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0200
+     * @tc.desc   test the packing interface passed wrong delayTimeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -964,16 +876,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0300
-      * @tc.desc    test the packing interface passed wrong disposalTypes
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0300
+     * @tc.desc   test the packing interface passed wrong disposalTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -991,16 +899,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0400
-      * @tc.desc    test the packing interface passed wrong loopCount
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0400
+     * @tc.desc   test the packing interface passed wrong loopCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -1018,16 +922,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0500
-      * @tc.desc    test the packing interface passed wrong loopCount
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0500
+     * @tc.desc   test the packing interface passed wrong loopCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {
@@ -1045,16 +945,12 @@ export default function imagePacking() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_STATIC_0100
-      * @tc.desc    test the packingMultiFrames interface passed empty pixelMapList
-      *               : 1.create PixelMap List
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packingMultiFrames
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_STATIC_0100
+     * @tc.desc   test the packingMultiFrames interface passed empty pixelMapList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportGifEncode) {

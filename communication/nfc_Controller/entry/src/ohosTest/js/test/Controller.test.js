@@ -45,7 +45,6 @@ export default function nfcControllerTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_0100
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0100
          * @tc.desc   Register the NFC switch status event and enable the NFC switch.
@@ -64,7 +63,6 @@ export default function nfcControllerTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_0200
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0200
          * @tc.desc   Check whether the NFC function is enabled.
@@ -84,7 +82,6 @@ export default function nfcControllerTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_0300
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0300
          * @tc.desc   Check whether the NFC function is enabled.
@@ -104,7 +101,6 @@ export default function nfcControllerTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_0400
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0400
          * @tc.desc   Check whether the NFC function is enabled on the device.
@@ -132,7 +128,6 @@ export default function nfcControllerTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_0500
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0500
          * @tc.desc   Querying the Status When NFC Is Enabled

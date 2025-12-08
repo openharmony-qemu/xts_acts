@@ -46,12 +46,12 @@ export default function Matrix2DTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testMatrix2D_0010
-     * @tc.name: testMatrix2D_0010
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   testMatrix2D_0010
+     * @tc.number SUB_ARKUI_API_testMatrix2D_0010
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrix2D_0010', Level.LEVEL0, async (done:Function) => {
       console.info('[testMatrix2D_0010] START');

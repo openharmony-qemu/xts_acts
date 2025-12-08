@@ -59,12 +59,12 @@ export default function RepeatGridBoolean() {
     });
 
     /**
+     * @tc.name   RepeatGridBoolean_001
      * @tc.number RepeatGridBoolean_001
-     * @tc.name RepeatGridBoolean_001
-     * @tc.desc Test RepeatGridBoolean component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatGridBoolean component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatGridBoolean_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatGridBoolean_001] START');

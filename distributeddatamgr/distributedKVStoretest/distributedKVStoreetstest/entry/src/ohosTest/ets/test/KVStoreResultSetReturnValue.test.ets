@@ -143,7 +143,6 @@ export default function KVStoreResultSetReturnValue(){
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0100
      * @tc.desc   getResultSet getCount
@@ -166,7 +165,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0200
      * @tc.desc   getResultSet getPosition
@@ -196,7 +194,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0300
      * @tc.desc   getResultSet is not null , moveToFirst return true
@@ -219,7 +216,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0400
      * @tc.desc   getResultSet is null , moveToFirst return false
@@ -251,7 +247,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0500
      * @tc.desc   getResultSet is not null , moveToLast return true
@@ -274,7 +269,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0600
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0600
      * @tc.desc   getResultSet is null , moveToLast return false
@@ -306,7 +300,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0700
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0700
      * @tc.desc   getResultSet is not null , moveToNext return true
@@ -329,7 +322,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0800
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0800
      * @tc.desc   getResultSet is null , moveToNext return false
@@ -361,7 +353,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest0900
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0900
      * @tc.desc   getResultSet is not null , moveToPrevious return true
@@ -386,7 +377,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1000
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1000
      * @tc.desc   getResultSet is null , moveToPrevious return false
@@ -418,7 +408,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1100
      * @tc.desc   getResultSet not Exceeded the maximum , move return true
@@ -441,7 +430,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1200
      * @tc.desc   getResultSet Exceeded the maximum , move return false
@@ -464,7 +452,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1300
      * @tc.desc   getResultSet Parameter error , move return 401
@@ -486,7 +473,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1400
      * @tc.desc   getResultSet not Exceeded the maximum , moveToPosition return true
@@ -509,7 +495,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1500
      * @tc.desc   getResultSet Exceeded the maximum , moveToPosition return false
@@ -532,7 +517,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1600
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1600
      * @tc.desc   getResultSet param error , moveToPosition return 401
@@ -554,7 +538,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1700
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1700
      * @tc.desc   getResultSet isFirst , is First return true
@@ -579,7 +562,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1800
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1800
      * @tc.desc   getResultSet isFirst , is not First return false
@@ -602,7 +584,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest1900
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1900
      * @tc.desc   getResultSet isLast , is Last return true
@@ -627,7 +608,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest2000
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2000
      * @tc.desc   getResultSet isLast , is not Last return false
@@ -650,7 +630,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest2100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2100
      * @tc.desc   getResultSet isBeforeFirst , is BeforeFirst return true
@@ -673,7 +652,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest2200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2200
      * @tc.desc   getResultSet isBeforeFirst , is not BeforeFirst return false
@@ -698,7 +676,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest2300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2300
      * @tc.desc   getResultSet isAfterLast , is  AfterLast return true
@@ -727,7 +704,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest2400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2400
      * @tc.desc   getResultSet isAfterLast , is not AfterLast return false
@@ -752,7 +728,6 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   DisKVResultReturnValueTest2500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2500
      * @tc.desc   getResultSet getEntry

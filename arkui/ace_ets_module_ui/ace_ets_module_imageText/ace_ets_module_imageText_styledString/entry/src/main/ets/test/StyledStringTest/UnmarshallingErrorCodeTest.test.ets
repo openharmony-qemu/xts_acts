@@ -43,12 +43,12 @@ export default function UnmarshallingErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UnmarshallingErrorCodeTest_0010
-     * @tc.name      UnmarshallingErrorCodeTest_0010
-     * @tc.desc      test StyledString Unmarshalling ErrorCode: 401
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UnmarshallingErrorCodeTest_0010
+     * @tc.number SUB_ACE_UnmarshallingErrorCodeTest_0010
+     * @tc.desc   test StyledString Unmarshalling ErrorCode: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UnmarshallingErrorCodeTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[UnmarshallingErrorCodeTest_0010] START');

@@ -33,11 +33,13 @@ export default function callTest() {
   };
 
   describe('callTest', () => {
-    /*
-     * @tc.number  CallTest_0100
-     * @tc.name    The deviceid passed in is null, so the installation free process is implemented
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   CallTest_0100
+     * @tc.number CallTest_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("CallTest_0100", Level.LEVEL0, async (done: Function) => {
       console.info("------------start CallTest_0100-------------");

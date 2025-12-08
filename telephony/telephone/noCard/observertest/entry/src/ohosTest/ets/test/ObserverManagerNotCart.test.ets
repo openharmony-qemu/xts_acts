@@ -31,13 +31,13 @@ let callNumber: string = '15595310612';
 
 export default function observerManagerNotCartTest() {
   describe('ObserverManagerNotCartTest', () => {
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOn_0600
-     * @tc.name  : testTelephonyObserverCallStateChangeOn0600
-     * @tc.desc  : Subscribe to call status change event.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testTelephonyObserverCallStateChangeOn0600
+     * @tc.number SUB_Telephony_Observer_CallStateChangeOn_0600
+     * @tc.desc   Subscribe to call status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyObserverCallStateChangeOn0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOn0600';

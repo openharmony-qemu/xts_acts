@@ -26,39 +26,39 @@ export default function swiperWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_WIDTH_0100
-     * @tc.name       : testSwiperWidth001
-     * @tc.desc       : testing width for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperWidth001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_WIDTH_0100
+     * @tc.desc   testing width for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_WIDTH_0200
-     * @tc.name       : testSwiperWidth002
-     * @tc.desc       : testing width for swiper with normal abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperWidth002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_WIDTH_0200
+     * @tc.desc   testing width for swiper with normal abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_WIDTH_0300
-     * @tc.name       : testSwiperWidth003
-     * @tc.desc       : testing width for swiper with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperWidth003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_WIDTH_0300
+     * @tc.desc   testing width for swiper with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperWidth003()).assertEqual(0)

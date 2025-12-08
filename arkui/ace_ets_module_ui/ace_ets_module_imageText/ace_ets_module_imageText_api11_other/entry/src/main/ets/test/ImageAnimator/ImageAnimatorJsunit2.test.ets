@@ -45,6 +45,14 @@ export default function imageAnimatorJsunitt(){
       console.info("imageAnimator after each called");
     })
 
+    /**
+     * @tc.name   imageAnimatorTest_0100
+     * @tc.number imageAnimatorTest_0100
+     * @tc.desc   imageAnimatorTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAnimatorTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('imageAnimatorTest_0100 START');
       await CommonFunc.sleep(1500);
@@ -67,6 +75,14 @@ export default function imageAnimatorJsunitt(){
       console.info('imageAnimatorTest_0100 END');
     });
 
+    /**
+     * @tc.name   imageAnimatorTest_0200
+     * @tc.number imageAnimatorTest_0200
+     * @tc.desc   imageAnimatorTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAnimatorTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('imageAnimatorTest_0200 START');
       await CommonFunc.sleep(1500);
@@ -90,6 +106,14 @@ export default function imageAnimatorJsunitt(){
       console.info('imageAnimatorTest_0200 END');
     });
 
+    /**
+     * @tc.name   imageAnimatorTest_0300
+     * @tc.number imageAnimatorTest_0300
+     * @tc.desc   imageAnimatorTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAnimatorTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('imageAnimatorTest_0300 START');
       await CommonFunc.sleep(1500);
@@ -113,6 +137,14 @@ export default function imageAnimatorJsunitt(){
       console.info('imageAnimatorTest_0300 END');
     });
 
+    /**
+     * @tc.name   imageAnimatorTest_0400
+     * @tc.number imageAnimatorTest_0400
+     * @tc.desc   imageAnimatorTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAnimatorTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('imageAnimatorTest_0400 START');
       await CommonFunc.sleep(1500);
@@ -135,6 +167,14 @@ export default function imageAnimatorJsunitt(){
       console.info('imageAnimatorTest_0400 END');
     });
 
+    /**
+     * @tc.name   imageAnimatorTest_0500
+     * @tc.number imageAnimatorTest_0500
+     * @tc.desc   imageAnimatorTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAnimatorTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('imageAnimatorTest_0500 START');
       await CommonFunc.sleep(1500);
@@ -157,6 +197,14 @@ export default function imageAnimatorJsunitt(){
       console.info('imageAnimatorTest_0500 END');
     });
 
+    /**
+     * @tc.name   imageAnimatorTest_0600
+     * @tc.number imageAnimatorTest_0600
+     * @tc.desc   imageAnimatorTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAnimatorTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('imageAnimatorTest_0600 START');
       await CommonFunc.sleep(1500);
@@ -179,6 +227,14 @@ export default function imageAnimatorJsunitt(){
       done();
     });
 
+    /**
+     * @tc.name   imageAnimatorTest_0700
+     * @tc.number imageAnimatorTest_0700
+     * @tc.desc   imageAnimatorTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAnimatorTest_0700', Level.LEVEL1, async (done: Function) => {
       console.info('imageAnimatorTest_0700 START');
       try {

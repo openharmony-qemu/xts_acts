@@ -175,7 +175,6 @@ export default function geolocationTest_LocErr(){
     
     
          /**
-          * @generated.time 2025-11-09 20:53:27
           * @tc.name   SUB_HSS_LocationSystem_SingleLocErr_0100
           * @tc.number SUB_HSS_LocationSystem_SingleLocErr_0100
           * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
@@ -205,7 +204,6 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_SingleLocErr_0200
          * @tc.number SUB_HSS_LocationSystem_SingleLocErr_0200
          * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
@@ -229,7 +227,6 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_SendCommandErr_0100
          * @tc.number SUB_HSS_SendCommandErr_0100
          * @tc.desc   An incorrect extended command is sent to each component of the location service subsystem.
@@ -257,7 +254,6 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_SendCommandErr_0200
          * @tc.number SUB_HSS_SendCommandErr_0200
          * @tc.desc   An incorrect extended command is sent to each component of the location service subsystem.
@@ -281,7 +277,6 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0100
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0100
          * @tc.desc   An incorrect parameter is used to obtain the number of GNSS cache locations reported at a time.
@@ -317,7 +312,6 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0400
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0400
          * @tc.desc   All prepared GNSS locations are returned to the application and the underlying buffers are cleared.
@@ -353,7 +347,6 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0500
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0500
          * @tc.desc   All prepared GNSS locations are returned to the application and the underlying buffers are cleared.
@@ -384,7 +377,6 @@ export default function geolocationTest_LocErr(){
         })
         
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   testGeolocationManagerConfig001
          * @tc.number SUB_HSS_LOCATIONSYSTEM_Config_0001
          * @tc.desc   Test Config value.
@@ -458,7 +450,6 @@ export default function geolocationTest_LocErr(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   testAddGnssGeofence05
          * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0500
          * @tc.desc   Test the function of locating the validity period of the fence.
@@ -518,7 +509,6 @@ export default function geolocationTest_LocErr(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   testRemoveGnssGeofence06
          * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0600
          * @tc.desc   Test the function of locating the validity period of the fence.

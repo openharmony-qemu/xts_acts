@@ -23,6 +23,7 @@ import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, TEST_TOKEN_ID, TEST_CLIP
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
+import common from '@ohos.enterprise.common';
 
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';
@@ -148,17 +149,20 @@ export default function securityManagerTest() {
     
     testSetPermissionManagedState();
     testGetPermissionManagedState();
+
+    testSetExternalSourceExtensionsPolicy();
+    testGetExternalSourceExtensionsPolicy();
   })
 }
 
 function testGetSecurityStatus() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0100
-   * @tc.name      : test_get_security_status_0100
-   * @tc.desc      : test securityManager without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_security_status_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0100
+   * @tc.desc   test securityManager without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_security_status_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -171,12 +175,12 @@ function testGetSecurityStatus() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0101
-   * @tc.name      : test_get_security_status_0101
-   * @tc.desc      : test securityManager with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_security_status_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0101
+   * @tc.desc   test securityManager with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_security_status_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -192,12 +196,12 @@ function testGetSecurityStatus() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0103
-   * @tc.name      : test_get_security_status_0103
-   * @tc.desc      : test securityManager unsupported item
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_security_status_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0103
+   * @tc.desc   test securityManager unsupported item
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_security_status_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -213,12 +217,12 @@ function testGetSecurityStatus() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0104
-   * @tc.name      : test_get_security_status_0104
-   * @tc.desc      : test securityManager get patch tag
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_security_status_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0104
+   * @tc.desc   test securityManager get patch tag
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_security_status_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -234,12 +238,12 @@ function testGetSecurityStatus() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0105
-   * @tc.name      : test_get_security_status_0105
-   * @tc.desc      : test securityManager get encryption status
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_security_status_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0105
+   * @tc.desc   test securityManager get encryption status
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_security_status_0105", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -255,12 +259,12 @@ function testGetSecurityStatus() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0106
-   * @tc.name      : test_get_security_status_0106
-   * @tc.desc      : test securityManager get root status
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_security_status_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0106
+   * @tc.desc   test securityManager get root status
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_security_status_0106", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -276,12 +280,12 @@ function testGetSecurityStatus() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0107
-   * @tc.name      : test_get_security_status_0107
-   * @tc.desc      : test securityManager with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_security_status_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0107
+   * @tc.desc   test securityManager with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_security_status_0107", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -299,12 +303,12 @@ function testGetSecurityStatus() {
 
 function testSetPasswordPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0100
-   * @tc.name      : test_set_password_policy_0100
-   * @tc.desc      : test securityManager setPasswordPolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_password_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0100
+   * @tc.desc   test securityManager setPasswordPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_password_policy_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -317,12 +321,12 @@ function testSetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0101
-   * @tc.name      : test_set_password_policy_0101
-   * @tc.desc      : test securityManager setPasswordPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_password_policy_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0101
+   * @tc.desc   test securityManager setPasswordPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_password_policy_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -338,12 +342,12 @@ function testSetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0102
-   * @tc.name      : test_set_password_policy_0102
-   * @tc.desc      : test securityManager setPasswordPolicy with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_password_policy_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0102
+   * @tc.desc   test securityManager setPasswordPolicy with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_password_policy_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -359,12 +363,12 @@ function testSetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0104
-   * @tc.name      : test_set_password_policy_0104
-   * @tc.desc      : test securityManager setPasswordPolicy no policy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_password_policy_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0104
+   * @tc.desc   test securityManager setPasswordPolicy no policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_password_policy_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -380,12 +384,12 @@ function testSetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0105
-   * @tc.name      : test_set_password_policy_0105
-   * @tc.desc      : test securityManager setPasswordPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_password_policy_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0105
+   * @tc.desc   test securityManager setPasswordPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_password_policy_0105", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -400,12 +404,12 @@ function testSetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0106
-   * @tc.name      : test_set_password_policy_0106
-   * @tc.desc      : test securityManager setPasswordPolicy with max validityPeriod
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_password_policy_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0106
+   * @tc.desc   test securityManager setPasswordPolicy with max validityPeriod
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_password_policy_0106", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -423,12 +427,12 @@ function testSetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0107
-   * @tc.name      : test_set_password_policy_0107
-   * @tc.desc      : test securityManager setPasswordPolicy with out of range validityPeriod
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_password_policy_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0107
+   * @tc.desc   test securityManager setPasswordPolicy with out of range validityPeriod
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_password_policy_0107", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -445,12 +449,12 @@ function testSetPasswordPolicy() {
 
 function testGetPasswordPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PASSWORD_POLICY_JS_0100
-   * @tc.name      : test_get_password_policy_0100
-   * @tc.desc      : test securityManager getPasswordPolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_password_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_POLICY_JS_0100
+   * @tc.desc   test securityManager getPasswordPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_password_policy_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -463,12 +467,12 @@ function testGetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PASSWORD_POLICY_JS_0101
-   * @tc.name      : test_get_password_policy_0101
-   * @tc.desc      : test securityManager getPasswordPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_password_policy_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_POLICY_JS_0101
+   * @tc.desc   test securityManager getPasswordPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_password_policy_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -484,12 +488,12 @@ function testGetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PASSWORD_POLICY_JS_0102
-   * @tc.name      : test_get_password_policy_0102
-   * @tc.desc      : test securityManager getPasswordPolicy with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_password_policy_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_POLICY_JS_0102
+   * @tc.desc   test securityManager getPasswordPolicy with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_password_policy_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -505,12 +509,12 @@ function testGetPasswordPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PASSWORD_POLICY_JS_0103
-   * @tc.name      : test_get_password_policy_0103
-   * @tc.desc      : test securityManager getPasswordPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_password_policy_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_POLICY_JS_0103
+   * @tc.desc   test securityManager getPasswordPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_password_policy_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -532,12 +536,12 @@ function testGetPasswordPolicy() {
 
 function testInstallUserCertificate() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0100
-   * @tc.name      : test_install_user_certificate_0100
-   * @tc.desc      : test securityManager installUserCertificate without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0100
+   * @tc.desc   test securityManager installUserCertificate without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -550,12 +554,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0101
-   * @tc.name      : test_install_user_certificate_0101
-   * @tc.desc      : test securityManager installUserCertificate with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0101
+   * @tc.desc   test securityManager installUserCertificate with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -571,12 +575,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0102
-   * @tc.name      : test_install_user_certificate_0102
-   * @tc.desc      : test securityManager installUserCertificate with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0102
+   * @tc.desc   test securityManager installUserCertificate with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -592,12 +596,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0103
-   * @tc.name      : test_install_user_certificate_0103
-   * @tc.desc      : test securityManager installUserCertificate invalid cert
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0103
+   * @tc.desc   test securityManager installUserCertificate invalid cert
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -613,12 +617,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0104
-   * @tc.name      : test_install_user_certificate_0104
-   * @tc.desc      : test securityManager installUserCertificate
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0104
+   * @tc.desc   test securityManager installUserCertificate
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -635,12 +639,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0105
-   * @tc.name      : test_install_user_certificate_0105
-   * @tc.desc      : test securityManager installUserCertificate with max alias
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0105
+   * @tc.desc   test securityManager installUserCertificate with max alias
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0105", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -657,12 +661,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0106
-   * @tc.name      : test_install_user_certificate_0106
-   * @tc.desc      : test securityManager installUserCertificate with invalid alias
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0106
+   * @tc.desc   test securityManager installUserCertificate with invalid alias
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0106", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -678,12 +682,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0201
-   * @tc.name      : test_install_user_certificate_0201
-   * @tc.desc      : test securityManager installUserCertificate  with normal admin and specific valid accountId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0201
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0201
+   * @tc.desc   test securityManager installUserCertificate  with normal admin and specific valid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0201", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -699,12 +703,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0202
-   * @tc.name      : test_install_user_certificate_0202
-   * @tc.desc      : test securityManager installUserCertificate with invalid admin and specific valid accountId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0202
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0202
+   * @tc.desc   test securityManager installUserCertificate with invalid admin and specific valid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0202", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -720,12 +724,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0203
-   * @tc.name      : test_install_user_certificate_0203
-   * @tc.desc      : test securityManager installUserCertificate invalid cert with specific valid accountId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0203
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0203
+   * @tc.desc   test securityManager installUserCertificate invalid cert with specific valid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0203", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -741,12 +745,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0204
-   * @tc.name      : test_install_user_certificate_0204
-   * @tc.desc      : test securityManager installUserCertificate with specific valid accountId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0204
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0204
+   * @tc.desc   test securityManager installUserCertificate with specific valid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0204", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -763,12 +767,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0205
-   * @tc.name      : test_install_user_certificate_0205
-   * @tc.desc      : test securityManager installUserCertificate with specific invalid accountId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0205
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0205
+   * @tc.desc   test securityManager installUserCertificate with specific invalid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0205", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -784,12 +788,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0206
-   * @tc.name      : test_install_user_certificate_0206
-   * @tc.desc      : test securityManager installUserCertificate with max alias and specific valid accountId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0206
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0206
+   * @tc.desc   test securityManager installUserCertificate with max alias and specific valid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0206", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -808,12 +812,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0207
-   * @tc.name      : test_install_user_certificate_0207
-   * @tc.desc      : test securityManager installUserCertificate with invalid alias
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0207
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0207
+   * @tc.desc   test securityManager installUserCertificate with invalid alias
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0207", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -829,12 +833,12 @@ function testInstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0208
-   * @tc.name      : test_install_user_certificate_0208
-   * @tc.desc      : test securityManager installUserCertificate  without active admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_install_user_certificate_0208
+   * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_USER_CERTIFICATE_JS_0208
+   * @tc.desc   test securityManager installUserCertificate  without active admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_install_user_certificate_0208", Level.LEVEL2, async (done: Function) => {
     try {
@@ -849,12 +853,12 @@ function testInstallUserCertificate() {
 
 function testGetUserCertificates() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USER_CERTIFICATES_SYNC_JS_0101
-   * @tc.name      : test_get_user_certificates_sync_0101
-   * @tc.desc      : test securityManager getUserCertificatesSync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_user_certificates_sync_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_CERTIFICATES_SYNC_JS_0101
+   * @tc.desc   test securityManager getUserCertificatesSync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_user_certificates_sync_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -870,12 +874,12 @@ function testGetUserCertificates() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USER_CERTIFICATES_SYNC_JS_0102
-   * @tc.name      : test_get_user_certificates_sync_0102
-   * @tc.desc      : test securityManager getUserCertificatesSync with invalid admin param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_user_certificates_sync_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_CERTIFICATES_SYNC_JS_0102
+   * @tc.desc   test securityManager getUserCertificatesSync with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_user_certificates_sync_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -891,12 +895,12 @@ function testGetUserCertificates() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USER_CERTIFICATES_SYNC_JS_0103
-   * @tc.name      : test_get_user_certificates_sync_0103
-   * @tc.desc      : test securityManager getUserCertificatesSync success
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_user_certificates_sync_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_CERTIFICATES_SYNC_JS_0103
+   * @tc.desc   test securityManager getUserCertificatesSync success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_user_certificates_sync_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -912,12 +916,12 @@ function testGetUserCertificates() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USER_CERTIFICATES_SYNC_JS_0104
-   * @tc.name      : test_get_user_certificates_sync_0104
-   * @tc.desc      : test securityManager getUserCertificatesSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_security_status_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_CERTIFICATES_SYNC_JS_0104
+   * @tc.desc   test securityManager getUserCertificatesSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_security_status_0104", Level.LEVEL2, async (done: Function) => {
     try {
@@ -932,12 +936,12 @@ function testGetUserCertificates() {
 
 function testUninstallUserCertificate() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0100
-   * @tc.name      : test_uninstall_user_certificate_0100
-   * @tc.desc      : test securityManager uninstallUserCertificate without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_uninstall_user_certificate_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0100
+   * @tc.desc   test securityManager uninstallUserCertificate without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_uninstall_user_certificate_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -950,12 +954,12 @@ function testUninstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0101
-   * @tc.name      : test_uninstall_user_certificate_0101
-   * @tc.desc      : test securityManager uninstallUserCertificate with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_uninstall_user_certificate_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0101
+   * @tc.desc   test securityManager uninstallUserCertificate with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_uninstall_user_certificate_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -971,12 +975,12 @@ function testUninstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0102
-   * @tc.name      : test_uninstall_user_certificate_0102
-   * @tc.desc      : test securityManager uninstallUserCertificate with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_uninstall_user_certificate_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0102
+   * @tc.desc   test securityManager uninstallUserCertificate with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_uninstall_user_certificate_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -992,12 +996,12 @@ function testUninstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0103
-   * @tc.name      : test_uninstall_user_certificate_0103
-   * @tc.desc      : test securityManager uninstallUserCertificate with invalid path
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_uninstall_user_certificate_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0103
+   * @tc.desc   test securityManager uninstallUserCertificate with invalid path
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_uninstall_user_certificate_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1013,12 +1017,12 @@ function testUninstallUserCertificate() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0104
-   * @tc.name      : test_uninstall_user_certificate_0104
-   * @tc.desc      : test securityManager uninstallUserCertificate
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_uninstall_user_certificate_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0104
+   * @tc.desc   test securityManager uninstallUserCertificate
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_uninstall_user_certificate_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1036,12 +1040,12 @@ function testUninstallUserCertificate() {
 
 function testSetClipboardPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0100
-   * @tc.name      : test_set_clipboard_policy_0100
-   * @tc.desc      : test securityManager setAppClipboardPolicy without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0100
+   * @tc.desc   test securityManager setAppClipboardPolicy without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1054,12 +1058,12 @@ function testSetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0200
-   * @tc.name      : test_set_clipboard_policy_0200
-   * @tc.desc      : test securityManager setAppClipboardPolicy without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0200
+   * @tc.desc   test securityManager setAppClipboardPolicy without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1075,12 +1079,12 @@ function testSetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0300
-   * @tc.name      : test_set_clipboard_policy_0300
-   * @tc.desc      : test securityManager setAppClipboardPolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0300
+   * @tc.desc   test securityManager setAppClipboardPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0300", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1093,12 +1097,12 @@ function testSetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0400
-   * @tc.name      : test_set_clipboard_policy_0400
-   * @tc.desc      : test securityManager setAppClipboardPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0400
+   * @tc.desc   test securityManager setAppClipboardPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1114,12 +1118,12 @@ function testSetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0500
-   * @tc.name      : test_set_clipboard_policy_0500
-   * @tc.desc      : test securityManager setAppClipboardPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0500
+   * @tc.desc   test securityManager setAppClipboardPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1135,12 +1139,12 @@ function testSetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0600
-   * @tc.name      : test_set_clipboard_policy_0600
-   * @tc.desc      : test securityManager setAppClipboardPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0600
+   * @tc.desc   test securityManager setAppClipboardPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1157,12 +1161,12 @@ function testSetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0700
-   * @tc.name      : test_set_clipboard_policy_0700
-   * @tc.desc      : test securityManager setAppClipboardPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0700
+   * @tc.desc   test securityManager setAppClipboardPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0700", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1179,12 +1183,12 @@ function testSetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0800
-   * @tc.name      : test_set_clipboard_policy_0800
-   * @tc.desc      : test securityManager setAppClipboardPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0800
+   * @tc.desc   test securityManager setAppClipboardPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0800", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1201,12 +1205,12 @@ function testSetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0900
-   * @tc.name      : test_set_clipboard_policy_0900
-   * @tc.desc      : test securityManager setAppClipboardPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0900
+   * @tc.desc   test securityManager setAppClipboardPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_0900", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1225,12 +1229,12 @@ function testSetClipboardPolicy() {
 
 function testGetClipboardPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_JS_0100
-   * @tc.name      : test_get_clipboard_policy_0100
-   * @tc.desc      : test securityManager getAppClipboardPolicy without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_JS_0100
+   * @tc.desc   test securityManager getAppClipboardPolicy without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1243,12 +1247,12 @@ function testGetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0200
-   * @tc.name      : test_get_clipboard_policy_0200
-   * @tc.desc      : test securityManager getAppClipboardPolicy without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0200
+   * @tc.desc   test securityManager getAppClipboardPolicy without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1264,12 +1268,12 @@ function testGetClipboardPolicy() {
   });
   
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0300
-   * @tc.name      : test_get_clipboard_policy_0300
-   * @tc.desc      : test securityManager getAppClipboardPolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0300
+   * @tc.desc   test securityManager getAppClipboardPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_0300", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1282,12 +1286,12 @@ function testGetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_JS_0400
-   * @tc.name      : test_get_clipboard_policy_0400
-   * @tc.desc      : test securityManager getAppClipboardPolicy without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_JS_0400
+   * @tc.desc   test securityManager getAppClipboardPolicy without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_0400", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1300,12 +1304,12 @@ function testGetClipboardPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0500
-   * @tc.name      : test_get_clipboard_policy_0500
-   * @tc.desc      : test securityManager getAppClipboardPolicy without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0500
+   * @tc.desc   test securityManager getAppClipboardPolicy without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1321,12 +1325,12 @@ function testGetClipboardPolicy() {
   });
   
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0600
-   * @tc.name      : test_get_clipboard_policy_0600
-   * @tc.desc      : test securityManager getAppClipboardPolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_JS_0600
+   * @tc.desc   test securityManager getAppClipboardPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1348,12 +1352,12 @@ function testSetClipboardPolicyByBundleName() {
     done();
   })
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0100
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0100
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0100
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1366,12 +1370,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0200
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0200
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0200
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1387,12 +1391,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0300
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0300
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0300
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0300", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1405,12 +1409,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0400
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0400
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName without  bundleName and userId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0400
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName without  bundleName and userId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1426,12 +1430,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0500
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0500
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName without userId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0500
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName without userId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1447,12 +1451,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0600
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0600
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName without bundleName
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0600
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName without bundleName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1468,12 +1472,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0700
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0700
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName without policy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0700
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName without policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0700", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1489,12 +1493,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0800
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0800
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName policy is IN_APP
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0800
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is IN_APP
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0800", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1512,12 +1516,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0900
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_0900
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName with invalid bundleName
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0900
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName with invalid bundleName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_0900", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1533,12 +1537,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1000
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_1000
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName policy is DEFAULT
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1000
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is DEFAULT
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_1000", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1557,12 +1561,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1100
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_1100
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName policy is LOCAL_DEVICE
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1100
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is LOCAL_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_1100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1581,12 +1585,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1200
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_1200
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1200
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_1200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1605,12 +1609,12 @@ function testSetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1300
-   * @tc.name      : test_set_clipboard_policy_by_bundle_name_1300
-   * @tc.desc      : test securityManager setAppClipboardPolicyByBundleName policy is UNKNOWN
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1300
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is UNKNOWN
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_clipboard_policy_by_bundle_name_1300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1633,12 +1637,12 @@ function testGetClipboardPolicyByBundleName() {
     done();
   })
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0100
-   * @tc.name      : test_get_clipboard_policy_by_bundle_name_0100
-   * @tc.desc      : test securityManager getAppClipboardPolicyByBundleName without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0100
+   * @tc.desc   test securityManager getAppClipboardPolicyByBundleName without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_by_bundle_name_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1651,12 +1655,12 @@ function testGetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0200
-   * @tc.name      : test_get_clipboard_policy_by_bundle_name_0200
-   * @tc.desc      : test securityManager getAppClipboardPolicyByBundleName without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0200
+   * @tc.desc   test securityManager getAppClipboardPolicyByBundleName without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_by_bundle_name_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1672,12 +1676,12 @@ function testGetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0300
-   * @tc.name      : test_get_clipboard_policy_by_bundle_name_0300
-   * @tc.desc      : test securityManager getAppClipboolicyByBundleName without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0300
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_by_bundle_name_0300", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1690,12 +1694,12 @@ function testGetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0400
-   * @tc.name      : test_get_clipboard_policy_by_bundle_name_0400
-   * @tc.desc      : test securityManager getAppClipboolicyByBundleName without bundleName
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0400
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without bundleName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_by_bundle_name_0400", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1708,12 +1712,12 @@ function testGetClipboardPolicyByBundleName() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0500
-   * @tc.name      : test_get_clipboard_policy_by_bundle_name_0500
-   * @tc.desc      : test securityManager getAppClipboolicyByBundleName without userId
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0500
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without userId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_by_bundle_name_0500", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1734,12 +1738,12 @@ function testSetWatermarkImage() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0100
-   * @tc.name      : test_set_watermark_image_0100
-   * @tc.desc      : test securityManager setWatermarkImage without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_watermark_image_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0100
+   * @tc.desc   test securityManager setWatermarkImage without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_watermark_image_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1752,12 +1756,12 @@ function testSetWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0101
-   * @tc.name      : test_set_watermark_image_0101
-   * @tc.desc      : test securityManager setWatermarkImage with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_watermark_image_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0101
+   * @tc.desc   test securityManager setWatermarkImage with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_watermark_image_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1773,12 +1777,12 @@ function testSetWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0102
-   * @tc.name      : test_set_watermark_image_0102
-   * @tc.desc      : test securityManager setWatermarkImage with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_watermark_image_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0102
+   * @tc.desc   test securityManager setWatermarkImage with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_watermark_image_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1794,12 +1798,12 @@ function testSetWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0103
-   * @tc.name      : test_set_watermark_image_0103
-   * @tc.desc      : test securityManager setWatermarkImage with bundleName empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_watermark_image_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0103
+   * @tc.desc   test securityManager setWatermarkImage with bundleName empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_watermark_image_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1815,12 +1819,12 @@ function testSetWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0104
-   * @tc.name      : test_set_watermark_image_0104
-   * @tc.desc      : test securityManager setWatermarkImage with source empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_watermark_image_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0104
+   * @tc.desc   test securityManager setWatermarkImage with source empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_watermark_image_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1836,12 +1840,12 @@ function testSetWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0105
-   * @tc.name      : test_set_watermark_image_0105
-   * @tc.desc      : test securityManager setWatermarkImage with accountId empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_watermark_image_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0105
+   * @tc.desc   test securityManager setWatermarkImage with accountId empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_watermark_image_0105", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1857,12 +1861,12 @@ function testSetWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0106
-   * @tc.name      : test_set_watermark_image_0106
-   * @tc.desc      : test securityManager setWatermarkImage
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_watermark_image_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0106
+   * @tc.desc   test securityManager setWatermarkImage
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_watermark_image_0106", Level.LEVEL2, async (done: Function) => {
     if (sysDeviceInfo.deviceType != '2in1') {
@@ -1884,12 +1888,12 @@ function testSetWatermarkImage() {
 
 function testCancelWatermarkImage() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0100
-   * @tc.name      : test_cancel_watermark_image_0100
-   * @tc.desc      : test securityManager cancelWatermarkImage without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_cancel_watermark_image_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0100
+   * @tc.desc   test securityManager cancelWatermarkImage without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_cancel_watermark_image_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1902,12 +1906,12 @@ function testCancelWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0101
-   * @tc.name      : test_cancel_watermark_image_0101
-   * @tc.desc      : test securityManager cancelWatermarkImage with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_cancel_watermark_image_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0101
+   * @tc.desc   test securityManager cancelWatermarkImage with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_cancel_watermark_image_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1923,12 +1927,12 @@ function testCancelWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0102
-   * @tc.name      : test_cancel_watermark_image_0102
-   * @tc.desc      : test securityManager cancelWatermarkImage with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_cancel_watermark_image_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0102
+   * @tc.desc   test securityManager cancelWatermarkImage with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_cancel_watermark_image_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1944,12 +1948,12 @@ function testCancelWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0103
-   * @tc.name      : test_cancel_watermark_image_0103
-   * @tc.desc      : test securityManager cancelWatermarkImage with bundleName empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_cancel_watermark_image_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0103
+   * @tc.desc   test securityManager cancelWatermarkImage with bundleName empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_cancel_watermark_image_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1965,12 +1969,12 @@ function testCancelWatermarkImage() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0104
-   * @tc.name      : test_cancel_watermark_image_0104
-   * @tc.desc      : test securityManager cancelWatermarkImage with accountId empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_cancel_watermark_image_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_CANCEL_WATERMARK_IMAGE_JS_0104
+   * @tc.desc   test securityManager cancelWatermarkImage with accountId empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_cancel_watermark_image_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1988,12 +1992,12 @@ function testCancelWatermarkImage() {
 
 function testSetPermissionManagedState() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0100
-   * @tc.name      : test_set_permission_managed_state_0100
-   * @tc.desc      : test securityManager setPermissionManagedState without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0100
+   * @tc.desc   test securityManager setPermissionManagedState without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -2006,12 +2010,12 @@ function testSetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0200
-   * @tc.name      : test_set_permission_managed_state_0200
-   * @tc.desc      : test securityManager setPermissionManagedState without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0200
+   * @tc.desc   test securityManager setPermissionManagedState without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -2027,12 +2031,12 @@ function testSetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0300
-   * @tc.name      : test_set_permission_managed_state_0300
-   * @tc.desc      : test securityManager setPermissionManagedState without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0300
+   * @tc.desc   test securityManager setPermissionManagedState without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2048,12 +2052,12 @@ function testSetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0400
-   * @tc.name      : test_set_permission_managed_state_0400
-   * @tc.desc      : test securityManager setPermissionManagedState without appInstance
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0400
+   * @tc.desc   test securityManager setPermissionManagedState without appInstance
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2069,12 +2073,12 @@ function testSetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0500
-   * @tc.name      : test_set_permission_managed_state_0500
-   * @tc.desc      : test securityManager setPermissionManagedState without managed state
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0500
+   * @tc.desc   test securityManager setPermissionManagedState without managed state
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2090,12 +2094,12 @@ function testSetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0600
-   * @tc.name      : test_set_permission_managed_state_0600
-   * @tc.desc      : test securityManager setPermissionManagedState with invalid appInstance
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0600
+   * @tc.desc   test securityManager setPermissionManagedState with invalid appInstance
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2110,13 +2114,13 @@ function testSetPermissionManagedState() {
     done();
   });
 
-    /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0700
-   * @tc.name      : test_set_permission_managed_state_0700
-   * @tc.desc      : test securityManager setPermissionManagedState with default permission state
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+  /**
+   * @tc.name   test_set_permission_managed_state_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0700
+   * @tc.desc   test securityManager setPermissionManagedState with default permission state
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0700", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2133,12 +2137,12 @@ function testSetPermissionManagedState() {
 
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0800
-   * @tc.name      : test_set_permission_managed_state_0800
-   * @tc.desc      : test securityManager setPermissionManagedState set granted state
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0800
+   * @tc.desc   test securityManager setPermissionManagedState set granted state
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0800", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2155,12 +2159,12 @@ function testSetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0900
-   * @tc.name      : test_set_permission_managed_state_0900
-   * @tc.desc      : test securityManager setPermissionManagedState set granted state
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0900
+   * @tc.desc   test securityManager setPermissionManagedState set granted state
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_0900", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2178,12 +2182,12 @@ function testSetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_1000
-   * @tc.name      : test_set_permission_managed_state_1000
-   * @tc.desc      : test securityManager setPermissionManagedState set granted state
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_permission_managed_state_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_1000
+   * @tc.desc   test securityManager setPermissionManagedState set granted state
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_permission_managed_state_1000", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2202,12 +2206,12 @@ function testSetPermissionManagedState() {
 
 function testGetPermissionManagedState() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0100
-   * @tc.name      : test_get_permission_managed_state_0100
-   * @tc.desc      : test securityManager getPermissionManagedState without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_permission_managed_state_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0100
+   * @tc.desc   test securityManager getPermissionManagedState without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_permission_managed_state_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -2220,12 +2224,12 @@ function testGetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0200
-   * @tc.name      : test_get_permission_managed_state_0200
-   * @tc.desc      : test securityManager getPermissionManagedState without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_permission_managed_state_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0200
+   * @tc.desc   test securityManager getPermissionManagedState without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_permission_managed_state_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -2241,12 +2245,12 @@ function testGetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0300
-   * @tc.name      : test_get_permission_managed_state_0300
-   * @tc.desc      : test securityManager getPermissionManagedState without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_permission_managed_state_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0300
+   * @tc.desc   test securityManager getPermissionManagedState without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_permission_managed_state_0300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2262,12 +2266,12 @@ function testGetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0400
-   * @tc.name      : test_get_permission_managed_state_0400
-   * @tc.desc      : test securityManager getPermissionManagedState without appInstance
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_permission_managed_state_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0400
+   * @tc.desc   test securityManager getPermissionManagedState without appInstance
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_permission_managed_state_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2283,12 +2287,12 @@ function testGetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0500
-   * @tc.name      : test_get_permission_managed_state_0500
-   * @tc.desc      : test securityManager getPermissionManagedState without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_permission_managed_state_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0500
+   * @tc.desc   test securityManager getPermissionManagedState without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_permission_managed_state_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2304,12 +2308,12 @@ function testGetPermissionManagedState() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0600
-   * @tc.name      : test_get_permission_managed_state_0600
-   * @tc.desc      : test securityManager getPermissionManagedState with invalid appInstance
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_permission_managed_state_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PERMISSION_MANAGED_STATE_JS_0600
+   * @tc.desc   test securityManager getPermissionManagedState with invalid appInstance
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_permission_managed_state_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2320,6 +2324,212 @@ function testGetPermissionManagedState() {
       expect(error.code == 9200012).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetExternalSourceExtensionsPolicy() {
+  /**
+   * @tc.name   test_set_external_source_extensions_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0100
+   * @tc.desc   test securityManager setExternalSourceExtensionsPolicy without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_source_extensions_policy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_external_source_extensions_policy_0100 error.code = ' + error.code);
+      expect(error.code == 9200001 || error.code == 801).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_external_source_extensions_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0200
+   * @tc.desc   test securityManager setExternalSourceExtensionsPolicy with not super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_source_extensions_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_external_source_extensions_policy_0200 error.code = ' + error.code);
+      expect(error.code == 9200002 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_external_source_extensions_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0300
+   * @tc.desc   test securityManager setExternalSourceExtensionsPolicy with empty admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_source_extensions_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(INVALID_WANT, common.ManagedPolicy.FORCE_OPEN);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_external_source_extensions_policy_0300 error.code = ' + error.code);
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_external_source_extensions_policy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0400
+   * @tc.desc   test securityManager setExternalSourceExtensionsPolicy with parameter verification failed
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_source_extensions_policy_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, 3);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_external_source_extensions_policy_0400 error.code = ' + error.code);
+      expect(error.code == 9200012 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_external_source_extensions_policy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0500
+   * @tc.desc   test securityManager setExternalSourceExtensionsPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_source_extensions_policy_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DEFAULT);
+      let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(managedPolicy == common.ManagedPolicy.DEFAULT).assertTrue();
+    } catch (error) {
+      console.info('test_set_external_source_extensions_policy_0500 error.code = ' + error.code);
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetExternalSourceExtensionsPolicy() {
+  /**
+   * @tc.name   test_get_external_source_extensions_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0100
+   * @tc.desc   test securityManager getExternalSourceExtensionsPolicy without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_external_source_extensions_policy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_external_source_extensions_policy_0100 error.code = ' + error.code);
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_external_source_extensions_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0200
+   * @tc.desc   test securityManager getExternalSourceExtensionsPolicy with not super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_external_source_extensions_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_external_source_extensions_policy_0200 error.code = ' + error.code);
+      expect(error.code == 9200002 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_external_source_extensions_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0300
+   * @tc.desc   test securityManager getExternalSourceExtensionsPolicy with empty admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_external_source_extensions_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getExternalSourceExtensionsPolicy(INVALID_WANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_external_source_extensions_policy_0300 error.code = ' + error.code);
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_external_source_extensions_policy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0400
+   * @tc.desc   test securityManager getExternalSourceExtensionsPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_external_source_extensions_policy_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DEFAULT);
+      let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(managedPolicy == common.ManagedPolicy.DEFAULT).assertTrue();
+
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DISALLOW);
+      managedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(managedPolicy == common.ManagedPolicy.DISALLOW).assertTrue();
+
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
+      managedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(managedPolicy == common.ManagedPolicy.FORCE_OPEN).assertTrue();
+    } catch (error) {
+      console.info('test_get_external_source_extensions_policy_0400 error.code = ' + error.code);
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });

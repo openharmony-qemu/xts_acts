@@ -16,13 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import hilog from '@ohos.hilog'
 import napitestex from 'libnapitestex.so'
-import worker, { MessageEvents } from '@ohos.worker';
-
-const DOMAIN = 0x0000;
-declare class ArkTools {
-  static forceFullGC():void;
-}
-
 async function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
@@ -47,9 +40,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiTestEx0001
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0001
-     * @tc.name napiTestEx0001
-     * @tc.desc napiTestEx
+     * @tc.desc   napiTestEx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiTestEx0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBufferCopy();
@@ -58,9 +54,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiBufferTest002
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0002
-     * @tc.name napiBufferTest002
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiBufferTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBuffer();
@@ -69,9 +68,12 @@ export default function napiCheckExTest() {
     })
 
     /**
+     * @tc.name   napiBufferTest003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0003
-     * @tc.name napiBufferTest003
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiBufferTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBufferCopy();
@@ -80,9 +82,12 @@ export default function napiCheckExTest() {
     })
 
     /**
+     * @tc.name   napiBufferTest004
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0004
-     * @tc.name napiBufferTest004
-     * @tc.desc aceNapiEtsTest - Test external buffer creation and finalize callback
+     * @tc.desc   aceNapiEtsTest - Test external buffer creation and finalize callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiBufferTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let externalBuffer: Object = napitestex.CreateExternalBufferTest();
@@ -91,9 +96,12 @@ export default function napiCheckExTest() {
     })
 
     /**
+     * @tc.name   napiBufferTest005
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0005
-     * @tc.name napiBufferTest005
-     * @tc.desc aceNapiEtsTest - Test buffer creation edge cases and error handling
+     * @tc.desc   aceNapiEtsTest - Test buffer creation edge cases and error handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiBufferTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试零长度buffer
@@ -127,9 +135,12 @@ export default function napiCheckExTest() {
     })
 
     /**
+     * @tc.name   napiBufferTest006
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0006
-     * @tc.name napiBufferTest006
-     * @tc.desc aceNapiEtsTest - Test non-ArrayBuffer object detection
+     * @tc.desc   aceNapiEtsTest - Test non-ArrayBuffer object detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiBufferTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试非buffer对象的检测
@@ -145,9 +156,12 @@ export default function napiCheckExTest() {
     })
 
     /**
+     * @tc.name   napiBufferTest007
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0007
-     * @tc.name napiBufferTest007
-     * @tc.desc aceNapiEtsTest - Test multiple operations combination
+     * @tc.desc   aceNapiEtsTest - Test multiple operations combination
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiBufferTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试多种操作的组合
@@ -158,9 +172,12 @@ export default function napiCheckExTest() {
     })
 
     /**
+     * @tc.name   napiBufferTest009
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0009
-     * @tc.name napiBufferTest009
-     * @tc.desc aceNapiEtsTest - Test ArrayBuffer and external ArrayBuffer comparison
+     * @tc.desc   aceNapiEtsTest - Test ArrayBuffer and external ArrayBuffer comparison
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiBufferTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试ArrayBuffer和外部ArrayBuffer的比对
@@ -171,12 +188,12 @@ export default function napiCheckExTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0001
-     * @tc.name      : testArrayBufferTest0001
-     * @tc.desc      : Testing NapiWrapEnhanceTest multi object binding testing.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayBufferTest0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0001
+     * @tc.desc   Testing NapiWrapEnhanceTest multi object binding testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArrayBufferTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testArrayBufferTest0001 START');
@@ -192,12 +209,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0002
-     * @tc.name      : testArrayBufferTest0002
-     * @tc.desc      : Testing ArrayBuffer creation and basic operations.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayBufferTest0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0002
+     * @tc.desc   Testing ArrayBuffer creation and basic operations.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayBufferTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testArrayBufferTest0002 START');
@@ -213,12 +230,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0003
-     * @tc.name      : testArrayBufferTest0003
-     * @tc.desc      : Testing ArrayBuffer data writing and verification.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayBufferTest0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0003
+     * @tc.desc   Testing ArrayBuffer data writing and verification.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayBufferTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testArrayBufferTest0003 START');
@@ -234,12 +251,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0004
-     * @tc.name      : testArrayBufferTest0004
-     * @tc.desc      : Testing ArrayBuffer detach operations.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayBufferTest0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0004
+     * @tc.desc   Testing ArrayBuffer detach operations.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayBufferTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testArrayBufferTest0004 START');
@@ -255,12 +272,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0005
-     * @tc.name      : testArrayBufferTest0005
-     * @tc.desc      : Testing zero-length ArrayBuffer operations.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayBufferTest0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0005
+     * @tc.desc   Testing zero-length ArrayBuffer operations.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayBufferTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testArrayBufferTest0005 START');
@@ -276,12 +293,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0006
-     * @tc.name      : testArrayBufferTest0006
-     * @tc.desc      : Testing ArrayBuffer multiple detach operations.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayBufferTest0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0006
+     * @tc.desc   Testing ArrayBuffer multiple detach operations.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayBufferTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testArrayBufferTest0006 START');
@@ -299,12 +316,12 @@ export default function napiCheckExTest() {
     // ==================== NAPI Number Tests ====================
 
     /**
+     * @tc.name   testNumberCreationAndRetrieval
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_NUMBER_0001
-     * @tc.name testNumberCreationAndRetrieval
-     * @tc.desc Test number creation and retrieval using NAPI functions to ensure correctness
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number creation and retrieval using NAPI functions to ensure correctness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberCreationAndRetrieval', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNumberCreationAndRetrieval START');
@@ -322,12 +339,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testCrossTypeConversion
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_NUMBER_0002
-     * @tc.name testCrossTypeConversion
-     * @tc.desc Test cross-type conversion between different numeric types using NAPI functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test cross-type conversion between different numeric types using NAPI functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCrossTypeConversion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testCrossTypeConversion START');
@@ -345,12 +362,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testBoundaryValues
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_NUMBER_0003
-     * @tc.name testBoundaryValues
-     * @tc.desc Test boundary values for different numeric types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test boundary values for different numeric types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBoundaryValues', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testBoundaryValues START');
@@ -368,12 +385,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testCombinedOperations
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_NUMBER_0004
-     * @tc.name testCombinedOperations
-     * @tc.desc Test combined operations of multiple create and get operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test combined operations of multiple create and get operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCombinedOperations', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testCombinedOperations START');
@@ -391,12 +408,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testTypeConversionAndOverflow
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_NUMBER_0005
-     * @tc.name testTypeConversionAndOverflow
-     * @tc.desc Test type conversion and overflow handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test type conversion and overflow handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTypeConversionAndOverflow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testTypeConversionAndOverflow START');
@@ -414,12 +431,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testLargeNumbersAndPrecision
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_NUMBER_0006
-     * @tc.name testLargeNumbersAndPrecision
-     * @tc.desc Test large numbers and precision handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test large numbers and precision handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLargeNumbersAndPrecision', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testLargeNumbersAndPrecision START');
@@ -437,12 +454,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testBooleanValueHandling
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_NUMBER_0007
-     * @tc.name testBooleanValueHandling
-     * @tc.desc Test boolean value creation and retrieval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test boolean value creation and retrieval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBooleanValueHandling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testBooleanValueHandling START');
@@ -459,12 +476,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testThreadSafety
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_NUMBER_0008
-     * @tc.name testThreadSafety
-     * @tc.desc Test thread safety of NAPI value creation and retrieval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test thread safety of NAPI value creation and retrieval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testThreadSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testThreadSafety START');
@@ -484,12 +501,12 @@ export default function napiCheckExTest() {
     // ==================== NAPI Object Tests ====================
 
     /**
+     * @tc.name   testObjectCreationPrototypeFreezeAndTypeCheck
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0001
-     * @tc.name testObjectCreationPrototypeFreezeAndTypeCheck
-     * @tc.desc Test object creation, prototype retrieval, freezing and type checking functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test object creation, prototype retrieval, freezing and type checking functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectCreationPrototypeFreezeAndTypeCheck', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testObjectCreationPrototypeFreezeAndTypeCheck START');
@@ -507,12 +524,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testObjectTypeTagCreationAndVerification
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0002
-     * @tc.name testObjectTypeTagCreationAndVerification
-     * @tc.desc Test object type tag creation and verification functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test object type tag creation and verification functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectTypeTagCreationAndVerification', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testObjectTypeTagCreationAndVerification START');
@@ -530,12 +547,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testExternalObjectCreationAndValueRetrieval
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0003
-     * @tc.name testExternalObjectCreationAndValueRetrieval
-     * @tc.desc Test external object creation and value retrieval functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test external object creation and value retrieval functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExternalObjectCreationAndValueRetrieval', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testExternalObjectCreationAndValueRetrieval START');
@@ -553,12 +570,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testObjectPropertyOperationsUnderDifferentProtectionLevels
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0004
-     * @tc.name testObjectPropertyOperationsUnderDifferentProtectionLevels
-     * @tc.desc Test object property operations under different protection levels
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test object property operations under different protection levels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectPropertyOperationsUnderDifferentProtectionLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -577,12 +594,12 @@ export default function napiCheckExTest() {
       });
 
     /**
+     * @tc.name   testSymbolCreationAndTypeCheck
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0005
-     * @tc.name testSymbolCreationAndTypeCheck
-     * @tc.desc Test Symbol creation and type checking functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Symbol creation and type checking functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSymbolCreationAndTypeCheck', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testSymbolCreationAndTypeCheck START');
@@ -600,12 +617,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testTypeTagWithExternalObjectCombination
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0006
-     * @tc.name testTypeTagWithExternalObjectCombination
-     * @tc.desc Test type tag with external object combination usage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test type tag with external object combination usage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTypeTagWithExternalObjectCombination', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testTypeTagWithExternalObjectCombination START');
@@ -630,12 +647,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0007
-     * @tc.name testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels
-     * @tc.desc Test Symbol as object property key under different protection levels
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Symbol as object property key under different protection levels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -654,12 +671,12 @@ export default function napiCheckExTest() {
       });
 
     /**
+     * @tc.name   testTypeTagBehaviorInPrototypeChain
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0008
-     * @tc.name testTypeTagBehaviorInPrototypeChain
-     * @tc.desc Test type tag behavior in prototype chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test type tag behavior in prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTypeTagBehaviorInPrototypeChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testTypeTagBehaviorInPrototypeChain START');
@@ -677,12 +694,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testExternalObjectWithPrototypeMethodInteraction
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0009
-     * @tc.name testExternalObjectWithPrototypeMethodInteraction
-     * @tc.desc Test external object interaction with prototype methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test external object interaction with prototype methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExternalObjectWithPrototypeMethodInteraction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testExternalObjectWithPrototypeMethodInteraction START');
@@ -700,12 +717,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testObjectThreadSafety
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0010
-     * @tc.name testObjectThreadSafety
-     * @tc.desc Test thread safety of object-related NAPI functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test thread safety of object-related NAPI functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testObjectThreadSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testObjectThreadSafety START');
@@ -723,12 +740,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testExternalObjectThreadSafety
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0011
-     * @tc.name testExternalObjectThreadSafety
-     * @tc.desc Test thread safety of external object NAPI functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test thread safety of external object NAPI functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExternalObjectThreadSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testExternalObjectThreadSafety START');
@@ -746,12 +763,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   testSymbolThreadSafety
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_OBJECT_0012
-     * @tc.name testSymbolThreadSafety
-     * @tc.desc Test thread safety of Symbol NAPI functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test thread safety of Symbol NAPI functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSymbolThreadSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testSymbolThreadSafety START');
@@ -769,13 +786,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0001
-    * @tc.name      : testBigIntTest0001
-    * @tc.desc      : Testing BigInt creation from int64 value.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0001
+     * @tc.desc   Testing BigInt creation from int64 value.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0001 START');
       try {
@@ -790,13 +807,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0002
-    * @tc.name      : testBigIntTest0002
-    * @tc.desc      : Testing BigInt creation from uint64 value.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0002
+     * @tc.desc   Testing BigInt creation from uint64 value.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0002 START');
       try {
@@ -811,13 +828,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0003
-    * @tc.name      : testBigIntTest0003
-    * @tc.desc      : Testing BigInt creation and retrieval using words interface (positive and negative).
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0003
+     * @tc.desc   Testing BigInt creation and retrieval using words interface (positive and negative).
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0003 START');
       try {
@@ -832,13 +849,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0004
-    * @tc.name      : testBigIntTest0004
-    * @tc.desc      : Testing BigInt boundary values (INT64_MAX, INT64_MIN, UINT64_MAX).
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0004
+     * @tc.desc   Testing BigInt boundary values (INT64_MAX, INT64_MIN, UINT64_MAX).
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0004 START');
       try {
@@ -853,13 +870,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0005
-    * @tc.name      : testBigIntTest0005
-    * @tc.desc      : Testing BigInt error handling (nullptr parameters, non-BigInt values).
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0005
+     * @tc.desc   Testing BigInt error handling (nullptr parameters, non-BigInt values).
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0005 START');
       try {
@@ -874,13 +891,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0006
-    * @tc.name      : testBigIntTest0006
-    * @tc.desc      : Testing BigInt conversion precision (lossless flag verification).
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0006
+     * @tc.desc   Testing BigInt conversion precision (lossless flag verification).
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0006 START');
       try {
@@ -895,13 +912,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0007
-    * @tc.name      : testBigIntTest0007
-    * @tc.desc      : Testing BigInt int64 round-trip correctness verification.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0007
+     * @tc.desc   Testing BigInt int64 round-trip correctness verification.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0007 START');
       try {
@@ -916,13 +933,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0008
-    * @tc.name      : testBigIntTest0008
-    * @tc.desc      : Testing BigInt uint64 round-trip correctness verification.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0008
+     * @tc.desc   Testing BigInt uint64 round-trip correctness verification.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0008 START');
       try {
@@ -937,13 +954,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0009
-    * @tc.name      : testBigIntTest0009
-    * @tc.desc      : Testing BigInt uint64 array words round-trip correctness verification.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0009
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0009
+     * @tc.desc   Testing BigInt uint64 array words round-trip correctness verification.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0009 START');
       try {
@@ -958,13 +975,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0010
-    * @tc.name      : testBigIntTest0010
-    * @tc.desc      : Testing BigInt with negative value.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0010
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0010
+     * @tc.desc   Testing BigInt with negative value.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0010 START');
       try {
@@ -979,13 +996,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0011
-    * @tc.name      : testBigIntTest0011
-    * @tc.desc      : Testing BigInt with maximum int64 value.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0011
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0011
+     * @tc.desc   Testing BigInt with maximum int64 value.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0011 START');
       try {
@@ -1000,13 +1017,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0012
-    * @tc.name      : testBigIntTest0012
-    * @tc.desc      : Testing BigInt with zero value verification.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @tc.name   testBigIntTest0012
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0012
+     * @tc.desc   Testing BigInt with zero value verification.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testBigIntTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0012 START');
       try {
@@ -1021,12 +1038,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
-     * @tc.name    testExtension001
-     * @tc.desc    Testing async task scheduling priority.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension001
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
+     * @tc.desc   Testing async task scheduling priority.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension001 START');
@@ -1041,12 +1058,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002
-     * @tc.name    testExtension002
-     * @tc.desc    Testing thread safe function call with priority.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension002
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002
+     * @tc.desc   Testing thread safe function call with priority.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension002 START');
@@ -1061,12 +1078,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003
-     * @tc.name    testExtension003
-     * @tc.desc    Testing high priority call to tail.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension003
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003
+     * @tc.desc   Testing high priority call to tail.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension003 START');
@@ -1081,12 +1098,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004
-     * @tc.name    testExtension004
-     * @tc.desc    Testing normal priority call to head.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension004
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004
+     * @tc.desc   Testing normal priority call to head.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension004 START');
@@ -1101,12 +1118,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005
-     * @tc.name    testExtension005
-     * @tc.desc    Testing low priority call.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension005
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005
+     * @tc.desc   Testing low priority call.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension005 START');
@@ -1121,12 +1138,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006
-     * @tc.name    testExtension006
-     * @tc.desc    Testing mixed priority execution order.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension006
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006
+     * @tc.desc   Testing mixed priority execution order.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension006 START');
@@ -1141,12 +1158,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007
-     * @tc.name    testExtension007
-     * @tc.desc    Testing same priority isTail effect.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension007
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007
+     * @tc.desc   Testing same priority isTail effect.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension007 START');
@@ -1161,12 +1178,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008
-     * @tc.name    testExtension008
-     * @tc.desc    Testing serialize simple object.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension008
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008
+     * @tc.desc   Testing serialize simple object.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension008 START');
@@ -1181,12 +1198,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009
-     * @tc.name    testExtension009
-     * @tc.desc    Testing serialize with transfer list.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension009
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009
+     * @tc.desc   Testing serialize with transfer list.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension009 START');
@@ -1201,12 +1218,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010
-     * @tc.name    testExtension010
-     * @tc.desc    Testing serialize with clone list.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension010
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010
+     * @tc.desc   Testing serialize with clone list.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension010 START');
@@ -1221,12 +1238,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011
-     * @tc.name    testExtension011
-     * @tc.desc    Testing serialize complex nested object.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension011
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011
+     * @tc.desc   Testing serialize complex nested object.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension011 START');
@@ -1241,12 +1258,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012
-     * @tc.name    testExtension012
-     * @tc.desc    Testing deserialize simple object.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension012
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012
+     * @tc.desc   Testing deserialize simple object.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension012 START');
@@ -1261,12 +1278,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013
-     * @tc.name    testExtension013
-     * @tc.desc    Testing deserialize with transfer data.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension013
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013
+     * @tc.desc   Testing deserialize with transfer data.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension013 START');
@@ -1281,12 +1298,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014
-     * @tc.name    testExtension014
-     * @tc.desc    Testing deserialize with clone data.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension014
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014
+     * @tc.desc   Testing deserialize with clone data.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension014 START');
@@ -1301,12 +1318,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015
-     * @tc.name    testExtension015
-     * @tc.desc    Testing delete valid serialization data.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension015
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015
+     * @tc.desc   Testing delete valid serialization data.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension015 START');
@@ -1321,12 +1338,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036
-     * @tc.name    testExtension036
-     * @tc.desc    Testing async task with promise.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension036
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036
+     * @tc.desc   Testing async task with promise.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension036 START');
@@ -1341,12 +1358,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037
-     * @tc.name    testExtension037
-     * @tc.desc    Testing async task with callback.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension037
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037
+     * @tc.desc   Testing async task with callback.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension037 START');
@@ -1361,12 +1378,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038
-     * @tc.name    testExtension038
-     * @tc.desc    Testing thread safety development.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension038
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038
+     * @tc.desc   Testing thread safety development.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension038 START');
@@ -1381,12 +1398,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039
-     * @tc.name    testExtension039
-     * @tc.desc    Testing native ArkTS object binding.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension039
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039
+     * @tc.desc   Testing native ArkTS object binding.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension039 START');
@@ -1401,12 +1418,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045
-     * @tc.name    testExtension045
-     * @tc.desc    Testing NAPI exception logging and crash analysis.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testExtension045
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045
+     * @tc.desc   Testing NAPI exception logging and crash analysis.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testExtension045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension045 START');
@@ -1421,13 +1438,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0001
-      * @tc.name      : napiDateTest001
-      * @tc.desc      : Testing Date object creation and retrieval with timestamp.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
+     * @tc.name   napiDateTest001
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_DATE_0001
+     * @tc.desc   Testing Date object creation and retrieval with timestamp.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('napiDateTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       // Test Date creation and retrieval
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest001 begin');
@@ -1450,13 +1467,13 @@ export default function napiCheckExTest() {
     })
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0002
-      * @tc.name      : napiDateTest002
-      * @tc.desc      : Testing invalid Date object timestamp acquisition with non-Date objects.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
+     * @tc.name   napiDateTest002
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_DATE_0002
+     * @tc.desc   Testing invalid Date object timestamp acquisition with non-Date objects.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('napiDateTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       // Test Date object type verification
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest002 begin');
@@ -1491,13 +1508,13 @@ export default function napiCheckExTest() {
     })
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0003
-      * @tc.name      : napiDateTest003
-      * @tc.desc      : Testing invalid Date object timestamp acquisition with non-Date objects.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
+     * @tc.name   napiDateTest003
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_DATE_0003
+     * @tc.desc   Testing invalid Date object timestamp acquisition with non-Date objects.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('napiDateTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       // Test passing non-Date objects to Date functions
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest003 begin');
@@ -1518,13 +1535,13 @@ export default function napiCheckExTest() {
     })
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0004
-      * @tc.name      : napiDateTest004
-      * @tc.desc      : Testing invalid Date object timestamp acquisition with various non-Date types.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
+     * @tc.name   napiDateTest004
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_DATE_0004
+     * @tc.desc   Testing invalid Date object timestamp acquisition with various non-Date types.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('napiDateTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       // Test invalid Date object timestamp retrieval
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest004 begin');
@@ -1576,13 +1593,13 @@ export default function napiCheckExTest() {
     })
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0005
-      * @tc.name      : napiDateTest005
-      * @tc.desc      : Testing minimum valid timestamp (0) for Date object creation and retrieval.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
+     * @tc.name   napiDateTest005
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_DATE_0005
+     * @tc.desc   Testing minimum valid timestamp (0) for Date object creation and retrieval.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('napiDateTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       // Test minimum valid timestamp (0)
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest005 begin');
@@ -1615,13 +1632,13 @@ export default function napiCheckExTest() {
     })
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0006
-      * @tc.name      : napiDateTest006
-      * @tc.desc      : Testing maximum valid timestamp for Date object creation and retrieval.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
+     * @tc.name   napiDateTest006
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_DATE_0006
+     * @tc.desc   Testing maximum valid timestamp for Date object creation and retrieval.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('napiDateTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       // Test maximum valid timestamp
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest006 begin');
@@ -1656,13 +1673,13 @@ export default function napiCheckExTest() {
     })
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0007
-      * @tc.name      : napiDateTest007
-      * @tc.desc      : Testing multiple Date object creations and retrievals with different timestamps.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
+     * @tc.name   napiDateTest007
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_DATE_0007
+     * @tc.desc   Testing multiple Date object creations and retrievals with different timestamps.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('napiDateTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       // Test multiple Date object creations and retrievals
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest007 begin');
@@ -1723,13 +1740,13 @@ export default function napiCheckExTest() {
     })
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0008
-      * @tc.name      : napiDateTest008
-      * @tc.desc      : Testing bulk Date object creation and verification with large numbers of objects.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
+     * @tc.name   napiDateTest008
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_DATE_0008
+     * @tc.desc   Testing bulk Date object creation and verification with large numbers of objects.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('napiDateTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       // Test bulk Date object creation and verification
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest008 begin');
@@ -1791,12 +1808,12 @@ export default function napiCheckExTest() {
     })
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0001
-     * @tc.name      testStringTest001
-     * @tc.desc      Test UTF-16 string creation and retrieval using napi_create_string_utf16
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testStringTest001
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0001
+     * @tc.desc   Test UTF-16 string creation and retrieval using napi_create_string_utf16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testUtf16StringCreationAndRetrieval START');
@@ -1812,12 +1829,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0002
-     * @tc.name      testStringTest002
-     * @tc.desc      Test cross-encoding conversion between UTF-8, UTF-16, and Latin1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testStringTest002
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0002
+     * @tc.desc   Test cross-encoding conversion between UTF-8, UTF-16, and Latin1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testCrossEncodingConversion START');
@@ -1833,12 +1850,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0003
-     * @tc.name      testStringTest003
-     * @tc.desc      Test boundary length cases including empty strings and very long strings
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testStringTest003
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0003
+     * @tc.desc   Test boundary length cases including empty strings and very long strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testBoundaryLengthCases START');
@@ -1854,12 +1871,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0004
-     * @tc.name      testStringTest004
-     * @tc.desc      Test encoding compatibility between different string types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testStringTest004
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0004
+     * @tc.desc   Test encoding compatibility between different string types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testEncodingCompatibility START');
@@ -1875,12 +1892,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0005
-     * @tc.name      testStringTest005
-     * @tc.desc      Test buffer size edge cases and boundary conditions
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   testStringTest005
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0005
+     * @tc.desc   Test buffer size edge cases and boundary conditions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testStringTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testBufferSizeEdgeCases START');
@@ -1897,12 +1914,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0006
-     * @tc.name      testStringTest006
-     * @tc.desc      Test error handling robustness with invalid parameters
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   testStringTest006
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0006
+     * @tc.desc   Test error handling robustness with invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testStringTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testErrorHandlingRobustness START');
@@ -1919,12 +1936,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0007
-     * @tc.name      testStringTest007
-     * @tc.desc      Test multi-encoding compatibility operations with mixed API usage
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   testStringTest007
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0007
+     * @tc.desc   Test multi-encoding compatibility operations with mixed API usage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testStringTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testMultiEncodingCompatibilityOperations START');
@@ -1940,12 +1957,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0008
-     * @tc.name      testStringTest008
-     * @tc.desc      Test special character handling including BOM, NULL, and multi-byte characters
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   testStringTest008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0008
+     * @tc.desc   Test special character handling including BOM, NULL, and multi-byte characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testStringTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testSpecialCharacterHandling START');
@@ -1961,12 +1978,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0009
-     * @tc.name      testStringTest009
-     * @tc.desc      Test thread safety simulation of NAPI string operations
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   testStringTest009
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_STRING_0009
+     * @tc.desc   Test thread safety simulation of NAPI string operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStringTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info('testStringSafetySimulation START');
@@ -1982,12 +1999,12 @@ export default function napiCheckExTest() {
     });    
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0004
-     * @tc.name      testPrimitiveTest04
-     * @tc.desc      Boolean conversion chain
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest04
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0004
+     * @tc.desc   Boolean conversion chain
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest04', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest04] START');
@@ -2003,12 +2020,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0005
-     * @tc.name      testPrimitiveTest05
-     * @tc.desc      Multi-level type coercion
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest05
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0005
+     * @tc.desc   Multi-level type coercion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest05', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest05] START');
@@ -2024,12 +2041,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0006
-     * @tc.name      testPrimitiveTest06
-     * @tc.desc      Global object property operations
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest06
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0006
+     * @tc.desc   Global object property operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest06', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest06] START');
@@ -2045,12 +2062,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0007
-     * @tc.name      testPrimitiveTest07
-     * @tc.desc      Global object interactions with null and undefined
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest07
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0007
+     * @tc.desc   Global object interactions with null and undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest07', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest07] START');
@@ -2066,12 +2083,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0008
-     * @tc.name      testPrimitiveTest08
-     * @tc.desc      Extreme value conversion (MAX_VALUE/MIN_VALUE) round-trip
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest08
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0008
+     * @tc.desc   Extreme value conversion (MAX_VALUE/MIN_VALUE) round-trip
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest08', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest08] START');
@@ -2087,12 +2104,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0009
-     * @tc.name      testPrimitiveTest09
-     * @tc.desc      Null/undefined coercion to bool/number/string; ToObject should fail
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest09
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0009
+     * @tc.desc   Null/undefined coercion to bool/number/string; ToObject should fail
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest09', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest09] START');
@@ -2108,12 +2125,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0010
-     * @tc.name      testPrimitiveTest10
-     * @tc.desc      Error conversion: BigInt to number should throw; bool coercion ok
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest10
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0010
+     * @tc.desc   Error conversion: BigInt to number should throw; bool coercion ok
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest10', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest10] START');
@@ -2128,12 +2145,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0011
-     * @tc.name      testPrimitiveTest11
-     * @tc.desc      Object with circular reference; stringify coercion should return string or throw
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest11
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0011
+     * @tc.desc   Object with circular reference; stringify coercion should return string or throw
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest11', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest11] START');
@@ -2149,12 +2166,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0012
-     * @tc.name      testPrimitiveTest12
-     * @tc.desc      Function object coercion to string (source or identifier)
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testPrimitiveTest12
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0012
+     * @tc.desc   Function object coercion to string (source or identifier)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testPrimitiveTest12', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testPrimitiveTest12] START');
@@ -2170,12 +2187,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0001
-     * @tc.name      napiFunctioncallTest001
-     * @tc.desc      Test napi_call_function basic function call
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest001
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0001
+     * @tc.desc   Test napi_call_function basic function call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest001 START');
@@ -2194,12 +2211,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0002
-     * @tc.name      napiFunctioncallTest002
-     * @tc.desc      Test napi_call_function with parameters
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest002
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0002
+     * @tc.desc   Test napi_call_function with parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest002 START');
@@ -2219,12 +2236,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0003
-     * @tc.name      napiFunctioncallTest003
-     * @tc.desc      Test napi_get_cb_info basic callback info
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest003
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0003
+     * @tc.desc   Test napi_get_cb_info basic callback info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest003 START');
@@ -2243,12 +2260,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0004
-     * @tc.name      napiFunctioncallTest004
-     * @tc.desc      Test napi_get_cb_info dynamic argument count
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest004
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0004
+     * @tc.desc   Test napi_get_cb_info dynamic argument count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest004 START');
@@ -2267,12 +2284,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0005
-     * @tc.name      napiFunctioncallTest005
-     * @tc.desc      Test napi_get_cb_info data pointer acquisition
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest005
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0005
+     * @tc.desc   Test napi_get_cb_info data pointer acquisition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest005 START');
@@ -2291,12 +2308,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0006
-     * @tc.name      napiFunctioncallTest006
-     * @tc.desc      Test napi_get_cb_info partial information acquisition
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest006
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0006
+     * @tc.desc   Test napi_get_cb_info partial information acquisition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest006 START');
@@ -2315,12 +2332,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0007
-     * @tc.name      napiFunctioncallTest007
-     * @tc.desc      Test napi_get_cb_info getting various types from ETS
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest007
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0007
+     * @tc.desc   Test napi_get_cb_info getting various types from ETS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest007 START');
@@ -2338,12 +2355,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0008
-     * @tc.name      napiFunctioncallTest008
-     * @tc.desc      Test napi_create_function basic function creation
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0008
+     * @tc.desc   Test napi_create_function basic function creation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest008 START');
@@ -2363,12 +2380,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0009
-     * @tc.name      napiFunctioncallTest009
-     * @tc.desc      Test napi_create_function named function
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest009
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0009
+     * @tc.desc   Test napi_create_function named function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest009 START');
@@ -2387,12 +2404,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0010
-     * @tc.name      napiFunctioncallTest010
-     * @tc.desc      Test napi_create_function with data
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest010
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0010
+     * @tc.desc   Test napi_create_function with data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest010 START');
@@ -2411,12 +2428,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0011
-     * @tc.name      napiFunctioncallTest011
-     * @tc.desc      Test napi_create_function different length names
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest011
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0011
+     * @tc.desc   Test napi_create_function different length names
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest011 START');
@@ -2436,12 +2453,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0012
-     * @tc.name      napiFunctioncallTest012
-     * @tc.desc      Test complete lifecycle test
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   napiFunctioncallTest012
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0012
+     * @tc.desc   Test complete lifecycle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiFunctioncallTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('napiFunctioncallTest012 START');
@@ -2462,12 +2479,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0013
-     * @tc.name      napiFunctioncallTest013
-     * @tc.desc      Test multi-thread napi_create_function
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   napiFunctioncallTest013
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0013
+     * @tc.desc   Test multi-thread napi_create_function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('napiFunctioncallTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('napiFunctioncallTest013 START');
@@ -2491,12 +2508,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0014
-     * @tc.name      napiFunctioncallTest014
-     * @tc.desc      Test multi-thread napi_call_function
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   napiFunctioncallTest014
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0014
+     * @tc.desc   Test multi-thread napi_call_function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('napiFunctioncallTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('napiFunctioncallTest014 START');
@@ -2515,12 +2532,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0015
-     * @tc.name      napiFunctioncallTest015
-     * @tc.desc      Test multi-thread napi_get_cb_info
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   napiFunctioncallTest015
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0015
+     * @tc.desc   Test multi-thread napi_get_cb_info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('napiFunctioncallTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('napiFunctioncallTest015 START');
@@ -2539,12 +2556,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0016
-     * @tc.name      napiFunctioncallTest016
-     * @tc.desc      Test multi-thread comprehensive test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   napiFunctioncallTest016
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0016
+     * @tc.desc   Test multi-thread comprehensive test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('napiFunctioncallTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('napiFunctioncallTest016 START');
@@ -2563,12 +2580,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0001
-     * @tc.name      testOthersAndModuleTest01
-     * @tc.desc      napi_strict_equals different values comparison test
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testOthersAndModuleTest01
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0001
+     * @tc.desc   napi_strict_equals different values comparison test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testOthersAndModuleTest01', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testOthersAndModuleTest01] START');
@@ -2584,12 +2601,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0002
-     * @tc.name      testOthersAndModuleTest02
-     * @tc.desc      napi_strict_equals same type different values comparison test
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testOthersAndModuleTest02
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0002
+     * @tc.desc   napi_strict_equals same type different values comparison test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testOthersAndModuleTest02', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testOthersAndModuleTest02] START');
@@ -2605,12 +2622,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0003
-     * @tc.name      testOthersAndModuleTest03
-     * @tc.desc      Multi-thread node_api_get_module_file_name consistency and thread safety test
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testOthersAndModuleTest03
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0003
+     * @tc.desc   Multi-thread node_api_get_module_file_name consistency and thread safety test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testOthersAndModuleTest03', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testOthersAndModuleTest03] START');
@@ -2626,12 +2643,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0004
-     * @tc.name      testOthersAndModuleTest04
-     * @tc.desc      Mixed multi-thread calls to napi_get_node_version and napi_get_version
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   testOthersAndModuleTest04
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0004
+     * @tc.desc   Mixed multi-thread calls to napi_get_node_version and napi_get_version
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testOthersAndModuleTest04', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[testOthersAndModuleTest04] START');
@@ -2647,12 +2664,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable001
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0001
-     * @tc.name Sendable001
-     * @tc.desc Test TestIsSendable - check if normal object is sendable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestIsSendable - check if normal object is sendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable001 START');
@@ -2668,12 +2685,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable002
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0002
-     * @tc.name Sendable002
-     * @tc.desc Test TestIsSendableTrue - check if sendable object is sendable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestIsSendableTrue - check if sendable object is sendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable002 START');
@@ -2689,12 +2706,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0003
-     * @tc.name Sendable003
-     * @tc.desc Test TestIsSendableNull - check if null/undefined is sendable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestIsSendableNull - check if null/undefined is sendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable003 START');
@@ -2710,12 +2727,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable004
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0004
-     * @tc.name Sendable004
-     * @tc.desc Test TestDefineSendableClass - define basic sendable class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestDefineSendableClass - define basic sendable class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable004 START');
@@ -2731,12 +2748,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable005
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0005
-     * @tc.name Sendable005
-     * @tc.desc Test TestDefineSendableClassInherit - sendable class inheritance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestDefineSendableClassInherit - sendable class inheritance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable005 START');
@@ -2752,12 +2769,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable006
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0006
-     * @tc.name Sendable006
-     * @tc.desc Test TestCreateSendableObject - create sendable object with properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestCreateSendableObject - create sendable object with properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable006 START');
@@ -2773,12 +2790,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable007
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0007
-     * @tc.name Sendable007
-     * @tc.desc Test TestCreateSendableArray - create sendable array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestCreateSendableArray - create sendable array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable007 START');
@@ -2794,12 +2811,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable008
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0008
-     * @tc.name Sendable008
-     * @tc.desc Test TestCreateSendableTypedArray - create sendable typed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestCreateSendableTypedArray - create sendable typed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable008 START');
@@ -2815,12 +2832,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable009
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0009
-     * @tc.name Sendable009
-     * @tc.desc Test TestWrapSendable - basic sendable wrapping test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestWrapSendable - basic sendable wrapping test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable009 START');
@@ -2836,12 +2853,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable010
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0010
-     * @tc.name Sendable010
-     * @tc.desc Test TestWrapSendableWithSize - sendable wrapping with size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestWrapSendableWithSize - sendable wrapping with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable010 START');
@@ -2857,12 +2874,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable011
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0011
-     * @tc.name Sendable011
-     * @tc.desc Test TestWrapEnhance - enhanced wrapping interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestWrapEnhance - enhanced wrapping interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable011 START');
@@ -2878,12 +2895,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable012
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0012
-     * @tc.name Sendable012
-     * @tc.desc Test TestUnwrapSendable - sendable unwrapping test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestUnwrapSendable - sendable unwrapping test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable012 START');
@@ -2899,12 +2916,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable013
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0013
-     * @tc.name Sendable013
-     * @tc.desc Test TestUnwrapSendableMultiple - multiple unwrapping test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestUnwrapSendableMultiple - multiple unwrapping test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable013 START');
@@ -2920,12 +2937,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable014
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0014
-     * @tc.name Sendable014
-     * @tc.desc Test TestRemoveWrapSendable - remove sendable wrapping test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestRemoveWrapSendable - remove sendable wrapping test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable014 START');
@@ -2941,12 +2958,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Sendable015
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0015
-     * @tc.name Sendable015
-     * @tc.desc Test TestComplexSendableStructure - complex sendable structure test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestComplexSendableStructure - complex sendable structure test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sendable015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Sendable015 START');
@@ -2961,13 +2978,13 @@ export default function napiCheckExTest() {
       }
     });   
 
-        /**
+    /**
+     * @tc.name   Class001
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0001
-     * @tc.name Class001
-     * @tc.desc Test TestDefineClass - define simple class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestDefineClass - define simple class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class001 START');
@@ -2983,12 +3000,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class002
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0002
-     * @tc.name Class002
-     * @tc.desc Test TestDefineClassWithProps - define class with properties and methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestDefineClassWithProps - define class with properties and methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class002 START');
@@ -3004,12 +3021,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0003
-     * @tc.name Class003
-     * @tc.desc Test TestDefineClassLengthMismatch - class name length mismatch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestDefineClassLengthMismatch - class name length mismatch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class003 START');
@@ -3025,12 +3042,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class004
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0004
-     * @tc.name Class004
-     * @tc.desc Test TestDefineClassNullName - class name is nullptr
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestDefineClassNullName - class name is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class004 START');
@@ -3046,12 +3063,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class005
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0005
-     * @tc.name Class005
-     * @tc.desc Test TestDefineClassInvalidProps - property count non-zero but properties array is nullptr
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestDefineClassInvalidProps - property count non-zero but properties array is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class005 START');
@@ -3067,12 +3084,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class006
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0006
-     * @tc.name Class006
-     * @tc.desc Test TestNewInstance - create instance with valid constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestNewInstance - create instance with valid constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class006 START');
@@ -3088,12 +3105,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class007
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0007
-     * @tc.name Class007
-     * @tc.desc Test TestNewInstanceWithArgs - create instance with arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestNewInstanceWithArgs - create instance with arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class007 START');
@@ -3109,12 +3126,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class008
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0008
-     * @tc.name Class008
-     * @tc.desc Test TestGetNewTargetConstructor - get new.target in constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestGetNewTargetConstructor - get new.target in constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class008 START');
@@ -3130,12 +3147,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class009
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0009
-     * @tc.name Class009
-     * @tc.desc Test TestGetNewTargetFunction - get new.target in normal function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestGetNewTargetFunction - get new.target in normal function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class009 START');
@@ -3151,12 +3168,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class010
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0010
-     * @tc.name Class010
-     * @tc.desc Test TestWrap - wrap native object to JS object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestWrap - wrap native object to JS object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class010 START');
@@ -3172,12 +3189,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class011
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0011
-     * @tc.name Class011
-     * @tc.desc Test TestWrapWithFinalize - wrap with finalize callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestWrapWithFinalize - wrap with finalize callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class011 START');
@@ -3193,12 +3210,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class012
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0012
-     * @tc.name Class012
-     * @tc.desc Test TestUnwrapNotWrapped - unwrap not wrapped object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestUnwrapNotWrapped - unwrap not wrapped object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class012 START');
@@ -3214,12 +3231,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class013
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0013
-     * @tc.name Class013
-     * @tc.desc Test TestUnwrapWrapped - unwrap wrapped object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestUnwrapWrapped - unwrap wrapped object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class013 START');
@@ -3235,12 +3252,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class014
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0014
-     * @tc.name Class014
-     * @tc.desc Test TestRemoveWrapWrapped - remove wrapped object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestRemoveWrapWrapped - remove wrapped object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class014 START');
@@ -3256,12 +3273,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class015
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0015
-     * @tc.name Class015
-     * @tc.desc Test TestRemoveWrapNotWrapped - remove not wrapped object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestRemoveWrapNotWrapped - remove not wrapped object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class015 START');
@@ -3277,12 +3294,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class016
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0016
-     * @tc.name Class016
-     * @tc.desc Test TestFullLifecycle - full lifecycle test: define class->create instance->wrap->unwrap->remove wrap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestFullLifecycle - full lifecycle test: define class->create instance->wrap->unwrap->remove wrap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class016 START');
@@ -3298,12 +3315,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class017
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0017
-     * @tc.name Class017
-     * @tc.desc Test TestMassWrapUnwrap - mass object wrap/unwrap test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestMassWrapUnwrap - mass object wrap/unwrap test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class017 START');
@@ -3319,12 +3336,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class018
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0018
-     * @tc.name Class018
-     * @tc.desc Test TestMassClassDefine - mass class definition and instantiation test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestMassClassDefine - mass class definition and instantiation test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class018 START');
@@ -3340,12 +3357,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class019
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0019
-     * @tc.name Class019
-     * @tc.desc Test TestClassDefineWithArgs - class definition and instance creation with arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestClassDefineWithArgs - class definition and instance creation with arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class019 START');
@@ -3361,12 +3378,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class020
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0020
-     * @tc.name Class020
-     * @tc.desc Test TestMultiThreadClassDefine - multi-thread concurrent class definition and instantiation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestMultiThreadClassDefine - multi-thread concurrent class definition and instantiation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class020 START');
@@ -3382,12 +3399,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class021
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0021
-     * @tc.name Class021
-     * @tc.desc Test TestMultiThreadWrapUnwrapRace - multi-thread shared object wrap/unwrap race
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestMultiThreadWrapUnwrapRace - multi-thread shared object wrap/unwrap race
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class021 START');
@@ -3403,12 +3420,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class022
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0022
-     * @tc.name Class022
-     * @tc.desc Test TestClassInheritanceWrapping - class inheritance chain with wrapping combination
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestClassInheritanceWrapping - class inheritance chain with wrapping combination
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class022 START');
@@ -3424,12 +3441,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   Class023
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0023
-     * @tc.name Class023
-     * @tc.desc Test TestMultipleWrapUnwrap - multiple wrap and unwrap operations test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test TestMultipleWrapUnwrap - multiple wrap and unwrap operations test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Class023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('Class023 START');
@@ -3448,12 +3465,12 @@ export default function napiCheckExTest() {
   // NAPI Promise Test Cases
   describe('NapiPromiseTests', () => {
     /**
+     * @tc.name   napiPromiseTest001
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0001
-     * @tc.name napiPromiseTest001
-     * @tc.desc 创建并解决Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   创建并解决Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest001 begin');
@@ -3465,12 +3482,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest002
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0002
-     * @tc.name napiPromiseTest002
-     * @tc.desc 创建并拒绝Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   创建并拒绝Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest002 begin');
@@ -3482,12 +3499,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0003
-     * @tc.name napiPromiseTest003
-     * @tc.desc 多次解决或拒绝Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   多次解决或拒绝Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest003 begin');
@@ -3499,12 +3516,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest004
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0004
-     * @tc.name napiPromiseTest004
-     * @tc.desc 检查非Promise对象
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   检查非Promise对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest004 begin');
@@ -3516,12 +3533,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest005
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0005
-     * @tc.name napiPromiseTest005
-     * @tc.desc 异常情况处理
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   异常情况处理
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest005 begin');
@@ -3533,12 +3550,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest006
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0006
-     * @tc.name napiPromiseTest006
-     * @tc.desc Promise与线程安全函数组合
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Promise与线程安全函数组合
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest006 begin');
@@ -3550,12 +3567,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest007
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0007
-     * @tc.name napiPromiseTest007
-     * @tc.desc Promise链式调用
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Promise链式调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest007 begin');
@@ -3567,12 +3584,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest008
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0008
-     * @tc.name napiPromiseTest008
-     * @tc.desc 尝试在promise解决后使用deferred
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   尝试在promise解决后使用deferred
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest008 begin');
@@ -3584,12 +3601,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest009
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0009
-     * @tc.name napiPromiseTest009
-     * @tc.desc 在存在pending exception时操作promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   在存在pending exception时操作promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest009 begin');
@@ -3601,12 +3618,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest010
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0010
-     * @tc.name napiPromiseTest010
-     * @tc.desc Promise作为函数返回值
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Promise作为函数返回值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest010 begin');
@@ -3618,12 +3635,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest011
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0011
-     * @tc.name napiPromiseTest011
-     * @tc.desc 使用Promise方式异步任务开发
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   使用Promise方式异步任务开发
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest011 begin');
@@ -3635,12 +3652,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest012
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0012
-     * @tc.name napiPromiseTest012
-     * @tc.desc 异步任务完成通知测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   异步任务完成通知测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest012 begin');
@@ -3652,12 +3669,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest013
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0013
-     * @tc.name napiPromiseTest013
-     * @tc.desc Promise与线程安全函数上下文共享
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Promise与线程安全函数上下文共享
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest013 begin');
@@ -3669,12 +3686,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   napiPromiseTest014
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0014
-     * @tc.name napiPromiseTest014
-     * @tc.desc 获取和使用libuv事件循环
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   获取和使用libuv事件循环
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiPromiseTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest014 begin');
@@ -3686,12 +3703,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   envlifecycle001
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0001
-     * @tc.name envlifecycle001
-     * @tc.desc Test basic instance data set and get functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test basic instance data set and get functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('envlifecycle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('envlifecycle001 START');
@@ -3708,12 +3725,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   envlifecycle002
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0002
-     * @tc.name envlifecycle002
-     * @tc.desc Test multiple set instance data behavior and finalize callbacks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test multiple set instance data behavior and finalize callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('envlifecycle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('envlifecycle002 START');
@@ -3731,12 +3748,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   envlifecycle003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0003
-     * @tc.name envlifecycle003
-     * @tc.desc Test instance data behavior without finalize callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test instance data behavior without finalize callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('envlifecycle003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('envlifecycle003 START');
@@ -3754,12 +3771,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   envlifecycle005
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0005
-     * @tc.name envlifecycle005
-     * @tc.desc Test large data block set and get operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test large data block set and get operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('envlifecycle005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('envlifecycle005 START');
@@ -3775,12 +3792,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   envlifecycle006
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0006
-     * @tc.name envlifecycle006
-     * @tc.desc Test API calls behavior within finalize callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test API calls behavior within finalize callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('envlifecycle006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('envlifecycle006 START');
@@ -3796,12 +3813,12 @@ export default function napiCheckExTest() {
     });
 
     /**
+     * @tc.name   envlifecycle007
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0007
-     * @tc.name envlifecycle007
-     * @tc.desc Test instance data persistence in long-running environment
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test instance data persistence in long-running environment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('envlifecycle007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('envlifecycle007 START');
@@ -3817,12 +3834,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0100
-     * @tc.name      test_CriticalScope_0001
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiOpenCriticalScopeCheckArg
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiOpenCriticalScopeCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiOpenCriticalScopeCheckArg";
@@ -3839,12 +3856,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0200
-     * @tc.name      test_CriticalScope_0002
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiCloseCriticalScopeDouble
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0200
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiCloseCriticalScopeDouble', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiCloseCriticalScopeDouble";
@@ -3861,12 +3878,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0300
-     * @tc.name      test_CriticalScope_0003
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiCloseCriticalScopeCheckArg
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0300
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiCloseCriticalScopeCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiCloseCriticalScopeCheckArg";
@@ -3883,12 +3900,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0400
-     * @tc.name      test_CriticalScope_0004
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringCheckArg
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0400
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringCheckArg";
@@ -3905,12 +3922,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0500
-     * @tc.name      test_CriticalScope_0005
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringLineStringUTF8Test
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0500
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringLineStringUTF8Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringLineStringUTF8Test";
@@ -3927,12 +3944,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0600
-     * @tc.name      test_CriticalScope_0006
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringLineStringlatin1Test
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0600
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringLineStringlatin1Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringLineStringlatin1Test";
@@ -3949,12 +3966,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0700
-     * @tc.name      test_CriticalScope_0007
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringLineStringTest
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0700
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringLineStringTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringLineStringTest";
@@ -3971,12 +3988,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0800
-     * @tc.name      test_CriticalScope_0008
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringWithoutScopTest
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0800
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringWithoutScopTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringWithoutScopTest";
@@ -3993,12 +4010,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_0900
-     * @tc.name      test_CriticalScope_0009
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringNotString
+     * @tc.number SUB_NAPI_CRITICALSCOPE_0900
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringNotString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringNotString";
@@ -4015,12 +4032,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_1000
-     * @tc.name      test_CriticalScope_0010
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringNotLineString
+     * @tc.number SUB_NAPI_CRITICALSCOPE_1000
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringNotLineString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringNotLineString";
@@ -4038,12 +4055,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_1100
-     * @tc.name      test_CriticalScope_0011
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringLineStringFromEts
+     * @tc.number SUB_NAPI_CRITICALSCOPE_1100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringLineStringFromEts', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringLineStringFromEts";
@@ -4061,12 +4078,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_1200
-     * @tc.name      test_CriticalScope_0012
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringArrayTest
+     * @tc.number SUB_NAPI_CRITICALSCOPE_1200
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringArrayTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringArrayTest";
@@ -4090,12 +4107,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_1300
-     * @tc.name      test_CriticalScope_0013
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringLineStringInErrorEnvTest
+     * @tc.number SUB_NAPI_CRITICALSCOPE_1300
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringLineStringInErrorEnvTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringLineStringInErrorEnvTest";
@@ -4112,12 +4129,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_1400
-     * @tc.name      test_CriticalScope_0014
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringLineStringInContextEnvTest
+     * @tc.number SUB_NAPI_CRITICALSCOPE_1400
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringLineStringInContextEnvTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringLineStringInContextEnvTest";
@@ -4134,12 +4151,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    SUB_NAPI_CRITICALSCOPE_1500
-     * @tc.name      test_CriticalScope_0015
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   napiStringLineStringInArkRuntimeTest
+     * @tc.number SUB_NAPI_CRITICALSCOPE_1500
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiStringLineStringInArkRuntimeTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiStringLineStringInArkRuntimeTest";
@@ -4154,489 +4171,5 @@ export default function napiCheckExTest() {
       }
       done();
     });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0100
-     * @tc.name      test_StrongRef_00001
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiCreateStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiCreateStrongRefCheckArg";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.createStrongRefCheckArg();
-        console.info('napiCreateStrongRefCheckArg value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0200
-     * @tc.name      test_StrongRef_00002
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiCreateStrongRefSingle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiCreateStrongRefSingle";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.createStrongRefSingle(ArkTools.forceFullGC);
-        console.info('napiCreateStrongRefSingle value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0300
-     * @tc.name      test_StrongRef_00003
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiCreateStrongRef2Ref', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiCreateStrongRef2Ref";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.createStrongRef2Ref(ArkTools.forceFullGC);
-        console.info('napiCreateStrongRef2Ref value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0400
-     * @tc.name      test_StrongRef_00004
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiCreateStrongRef2Obj', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiCreateStrongRef2Obj";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.createStrongRef2Obj(ArkTools.forceFullGC);
-        console.info('napiCreateStrongRef2Obj value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0500
-     * @tc.name      test_StrongRef_00005
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiGetStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiGetStrongRefCheckArg";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.getStrongRefCheckArg();
-        console.info('napiGetStrongRefCheckArg value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0600
-     * @tc.name      test_StrongRef_00006
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiGetStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiGetStrongRef";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.getStrongRef();
-        console.info('napiGetStrongRef value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0700
-     * @tc.name      test_StrongRef_00007
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiDeleteStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiDeleteStrongRefCheckArg";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.deleteStrongRefCheckArg();
-        console.info('napiDeleteStrongRefCheckArg value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0800
-     * @tc.name      test_StrongRef_00008
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiDeleteStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiDeleteStrongRef";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.deleteStrongRef(ArkTools.forceFullGC);
-        console.info('napiDeleteStrongRef value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_0900
-     * @tc.name      test_StrongRef_00009
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiDeleteStrongRef2Ref', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiDeleteStrongRef2Ref";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.deleteStrongRef2Ref(ArkTools.forceFullGC);
-        console.info('napiDeleteStrongRef2Ref value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1000
-     * @tc.name      test_StrongRef_00010
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiDeleteStrongRefDouble', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiDeleteStrongRefDouble";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.deleteStrongRefDouble(ArkTools.forceFullGC);
-        console.info('napiDeleteStrongRefDouble value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1100
-     * @tc.name      test_StrongRef_00011
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiRepeateCreateDeleteStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiRepeateCreateDeleteStrongRef";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.repeateCreateDeleteStrongRef();
-        console.info('napiRepeateCreateDeleteStrongRef value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1200
-     * @tc.name      test_StrongRef_00012
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiDeleteUndefindAndCreateRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiDeleteUndefindAndCreateRef";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.deleteUndefindAndCreateRef();
-        console.info('napiDeleteUndefindAndCreateRef value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1300
-     * @tc.name      test_StrongRef_00013
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiOptStrongRefInErrorEnvTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiOptStrongRefInErrorEnvTest";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.optStrongRefInErrorEnvTest(ArkTools.forceFullGC);
-        console.info('napiOptStrongRefInErrorEnvTest value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1400
-     * @tc.name      test_StrongRef_00014
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiOptStrongRefInContextEnvTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiOptStrongRefInContextEnvTest";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.optStrongRefInContextEnvTest();
-        console.info('napiOptStrongRefInContextEnvTest value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1500
-     * @tc.name      test_StrongRef_00015
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiOptStrongRefInArkRuntimeTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiOptStrongRefInArkRuntimeTest";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.optStrongRefInArkRuntimeTest();
-        console.info('napiOptStrongRefInArkRuntimeTest value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1600
-     * @tc.name      test_StrongRef_00016
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiOptStrongRefStress', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiOptStrongRefStress";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.optStrongRefStress();
-        console.info('napiOptStrongRefStress value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1700
-     * @tc.name      test_StrongRef_00017
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiSameObjMutilStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiSameObjMutilStrongRef";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.sameObjMutilStrongRef(ArkTools.forceFullGC);
-        console.info('napiSameObjMutilStrongRef value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1800
-     * @tc.name      test_StrongRef_00018
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiGradualReferenceRelease', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiGradualReferenceRelease";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.gradualReferenceRelease(ArkTools.forceFullGC);
-        console.info('napiGradualReferenceRelease value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_1900
-     * @tc.name      test_StrongRef_00019
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiStrongRefVariousTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiStrongRefVariousTypes";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.strongRefVariousTypes();
-        console.info('napiStrongRefVariousTypes value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_2000
-     * @tc.name      test_StrongRef_00020
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiPostDeleteBehavior', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiPostDeleteBehavior";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.postDeleteBehavior();
-        console.info('napiPostDeleteBehavior value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_2100
-     * @tc.name      test_StrongRef_00021
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiCrossScopeStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiCrossScopeStrongRef";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.crossScopeStrongRef();
-        console.info('napiCrossScopeStrongRef value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_NAPI_STRONGREF_2200
-     * @tc.name      test_StrongRef_00022
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
-     */
-    it('napiManyStrongReferences', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let TAG = "napiManyStrongReferences";
-      console.info(`${TAG} START`);
-      try {
-        let value : boolean = napitestex.manyStrongReferences();
-        console.info('napiManyStrongReferences value is: ' + value);
-        expect(value).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
-      done();
-    });    
   });
 }
