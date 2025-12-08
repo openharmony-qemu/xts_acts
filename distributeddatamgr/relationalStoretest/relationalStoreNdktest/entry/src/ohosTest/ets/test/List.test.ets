@@ -14,7 +14,7 @@
  */
 import rdbTest from './RdbTest.test';
 import relationalstoreTest from './relationalstoreTest.test';
-import reltioanlStoreCorruptedTest from './rdbCorruptedHanlde.test';
+import reltioanlStoreCorruptedTest from './rdbCorruptedHanldeTest';
 
 export default function testsuite() {
   rdbTest();
