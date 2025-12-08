@@ -1969,5 +1969,57 @@ export default function keyedCollections_18Test() {
         console.log('testWeakSet_Add_MultiArgs_Basic_0001 done');
         done();
       });
+
+    /**
+     * @tc.number    SUB_ARK_WEAKSET_ADD_MULTI_0200
+     * @tc.name      testWeakSet_Add_MultiArgs_Callable_0002
+     * @tc.desc      Verify that only the first argument is taken when add() is called with multiple arguments on WeakSet<callable-class>.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testWeakSet_Add_MultiArgs_Callable_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testWeakSet_Add_MultiArgs_Callable_0002 start');
+
+        interface CallableBox { readonly id: string; invoke(): string; }
+        class CallableWrapper implements CallableBox {
+          public id: string;
+          constructor() {
+            this.id = 'call-' + Date.now();
+          }
+          public invoke(): string {
+            return 'callable';
+          }
+        }
+
+        interface WeakSetMulti {
+          add(item: CallableBox, ...rest: never[]): void;
+        }
+
+        class MultiArgWrapper {
+          private ws: WeakSet<CallableBox>;
+          constructor(set: WeakSet<CallableBox>) {
+            this.ws = set;
+          }
+          public addMulti(item: CallableBox): void {
+            (this.ws as WeakSetMulti).add(item, 'extra' as never, 456 as never);
+          }
+        }
+
+        const ws = new WeakSet<CallableBox>();
+        const inst = new CallableWrapper();
+        const wrapper = new MultiArgWrapper(ws);
+
+        let thrown = false;
+        try {
+          wrapper.addMulti(inst);
+        } catch {
+          thrown = true;
+        }
+        expect(!thrown && ws.has(inst)).assertTrue();
+        console.log('testWeakSet_Add_MultiArgs_Callable_0002 done');
+        done();
+      });
   })
 }

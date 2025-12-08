@@ -1965,5 +1965,37 @@ export default function keyedCollections_16Test() {
         done();
       });
 
+
+    /**
+     * @tc.number    SUB_ARK_MAP_SET1_NO_ERR_0400
+     * @tc.name      testMap_Set1_NoErr_Set_0004
+     * @tc.desc      Verify that Map.set() with undefined value throws no exception (Set key)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testMap_Set1_NoErr_Set_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testMap_Set1_NoErr_Set_0004 start');
+
+        interface KeyType extends Set<Date> { __brand: 'set' }
+        const map = new Map<KeyType, string | undefined>();
+
+        class SetKey extends Set<Date> implements KeyType {
+          __brand: 'set' = 'set';
+          constructor() { super(); }
+        }
+        const key = new SetKey();
+
+        let errorThrown = false;
+        try {
+          map.set(key, undefined);
+        } catch (e) {
+          errorThrown = true;
+        }
+        expect(errorThrown).assertFalse();
+        console.log('testMap_Set1_NoErr_Set_0004 done');
+        done();
+      });
   })
 }
