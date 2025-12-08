@@ -28,6 +28,7 @@ import ShowCounterTest from "./showCounterTest/showCounterTest.test";
 import NodeSwiperItemFillpolocyTest from "./swiper/NodeSwiperItemFillpolocy.test"
 import finishAnimationTest from "./swiper/finishAnimationTest.test";
 import imageSpanTest from "./imageSpanTest/ImageSpanTest.test";
+import customKeyboardTest from "./customKeyboard/CustomKeyboardTest.test";
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -46,4 +47,5 @@ export default function testsuite() {
   NodeSwiperItemFillpolocyTest();
   finishAnimationTest();
   imageSpanTest();
+  customKeyboardTest();
 }

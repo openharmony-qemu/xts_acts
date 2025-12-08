@@ -43,3 +43,5 @@ export const showCounterTest: (a: string) => void;
 export const FinishAnimationTest: (a: string) => void;
 
 export const imageSpanTest: (a: string) => void;
+
+export const customKeyboardTest: (a: string) => void;

@@ -96,6 +96,9 @@ import TextVerticalAlignTest from './TextTest/TextVerticalAlign.test';
 import ModifierTextVerticalAlignTest from './TextTest/ModifierTextVerticalAlignTest.test';
 import TextTextDecorationTest from './TextTest/TextTextDecorationTest.test';
 import lineHeight from './TextTest/lineHeight.test';
+import customKeyboardSearchTest from './CustomKeyboardTest/search.test';
+import customKeyboardTextAreaTest from './CustomKeyboardTest/textArea.test';
+import customKeyboardTextInputTest from './CustomKeyboardTest/textInput.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -182,4 +185,7 @@ export default function testsuite() {
   TextTextDecorationTest()
   lineHeight();
   spanExample();
+  customKeyboardSearchTest();
+  customKeyboardTextAreaTest();
+  customKeyboardTextInputTest();
 }
