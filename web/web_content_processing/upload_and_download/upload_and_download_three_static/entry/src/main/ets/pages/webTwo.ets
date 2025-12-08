@@ -22,7 +22,7 @@ import { Callback, RecordData, BusinessError } from '@ohos.base'
 import web_webview from '@ohos.web.webview';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

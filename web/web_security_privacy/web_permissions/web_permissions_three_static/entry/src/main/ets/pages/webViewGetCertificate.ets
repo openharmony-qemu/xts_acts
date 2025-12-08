@@ -59,7 +59,7 @@ function ParseX509CertInfo(x509CertArray?: Array<cert.X509Cert>) {
 }
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

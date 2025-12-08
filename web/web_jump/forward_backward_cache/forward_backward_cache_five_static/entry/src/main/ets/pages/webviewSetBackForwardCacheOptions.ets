@@ -28,7 +28,7 @@ interface PageBeginParam {
   url: string
 }
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 @Entry
 @Component

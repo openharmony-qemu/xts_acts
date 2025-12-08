@@ -23,7 +23,7 @@ import { Callback, RecordData } from '@ohos.base'
 import { BusinessError } from '@ohos.base';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

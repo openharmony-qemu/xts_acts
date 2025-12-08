@@ -28,7 +28,7 @@ import { GlobalContext } from '../../src/test/GlobalContext';
 import webview from '@ohos.web.webview';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

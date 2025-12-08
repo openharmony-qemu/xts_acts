@@ -40,7 +40,7 @@ class testObj {
 }
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

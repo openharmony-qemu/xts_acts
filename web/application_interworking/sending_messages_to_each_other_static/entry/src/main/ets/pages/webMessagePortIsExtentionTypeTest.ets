@@ -31,7 +31,7 @@ import Utils from '../../src/test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 
 class StringFields {
-  private str: string = 'testIsExtentionType001';
+  public str: string = 'testIsExtentionType001';
 }
 
 @Entry

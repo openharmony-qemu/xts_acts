@@ -27,7 +27,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 import image from '@ohos.multimedia.image';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 class WebMessagePortImpl implements webView.WebMessagePort {
