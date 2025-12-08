@@ -108,6 +108,9 @@ import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCre
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
+import ImageGetComponentSupp from './image/ImageGetComponentSupp.test';
+import ImageCreatorDequeueImageSuppTest from './image/ImageDequeueImage.test';
+import ImageCreatePixelMapFromParcelSupp from './image/ImageCreatePixelMapFromParcel.test';
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -204,4 +207,7 @@ export default function testsuite() {
   PictureGetMetadataFirstParameters();
   CreatePixelMapUsingAllocatorAndSync();
   ImageCreateIncrementalSourceSupp();
+  ImageGetComponentSupp();
+  ImageCreatorDequeueImageSuppTest();
+  ImageCreatePixelMapFromParcelSupp();
 }
