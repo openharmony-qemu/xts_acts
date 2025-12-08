@@ -35,6 +35,7 @@
         "MainAbility/pages/TextMenuItemId",
         "MainAbility/pages/TextMenuItemIdEqualsTest",
         "MainAbility/pages/TextMenuType",
-        "MainAbility/pages/RichEditorDelete/RichEditorDelete"
+        "MainAbility/pages/RichEditorDelete/RichEditorDelete",
+        "MainAbility/pages/TextDirectionTest"
     ]
 }
