@@ -21,6 +21,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@ohos.base';
+import deviceInfo from '@ohos.deviceInfo';
 
 let abilityContext: common.UIAbilityContext
 
@@ -1572,7 +1573,7 @@ export default function settingUiJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+    it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isDeviceSupportInputMethod()) {
         done();
         return;
@@ -1598,7 +1599,7 @@ export default function settingUiJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('openInputMethodDetail_invalid_bundleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+    it('openInputMethodDetail_invalid_bundleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isDeviceSupportInputMethod()) {
         done();
         return;
@@ -1624,7 +1625,7 @@ export default function settingUiJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('openInputMethodDetail_invalid_method', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+    it('openInputMethodDetail_invalid_method', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isDeviceSupportInputMethod()) {
         done();
         return;
@@ -1650,7 +1651,7 @@ export default function settingUiJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+    it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isDeviceSupportInputMethod()) {
         done();
         return;
