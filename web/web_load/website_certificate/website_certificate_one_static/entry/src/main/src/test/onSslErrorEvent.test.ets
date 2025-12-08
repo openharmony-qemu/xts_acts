@@ -48,10 +48,12 @@ export default function onCreateNativeMediaPlayer() {
       await Utils.msSleep(2000);
       Utils.registerEvent('testonSslErrorEvent001', 1, 2025321, done);
       await Utils.msSleep(2000);
-      let button = await driver.findComponent(ON.id('WebonSslErrorEventButton'));
+      inspector.sendEventByKey('WebonSslErrorEventButton', 10, '');
       await Utils.msSleep(5000);
-      button?.click();
-      await Utils.msSleep(5000);
+      Utils.emitEvent('emitonSwitchNextPage1', 10)
+      await Utils.msSleep(1000);
+      inspector.sendEventByKey('WebonSslErrorEventButton', 10, '');
+      await Utils.msSleep(4000);
       done();
     })
   })

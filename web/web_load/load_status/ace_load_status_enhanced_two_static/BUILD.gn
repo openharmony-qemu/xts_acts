@@ -13,7 +13,7 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-# xts_acts_arkts1.2/ability/ability_runtime/actsAbilitytest2
+# xts_acts_arkts1.2/web/web_load/load_status/ace_load_status_enhanced_two_static
 ohos_js_app_static_suite("ActsWebLoadStatusEnhancedTwoStaticTest") {
 #   test_hap = true
 #   testonly = true
@@ -22,4 +22,3 @@ ohos_js_app_static_suite("ActsWebLoadStatusEnhancedTwoStaticTest") {
   part_name = "webview"
   subsystem_name = "web"
 }
-
