@@ -92,8 +92,44 @@ namespace CesCapiTest {
         }                                                                                                              \
     } while (0)
 
-const char* const COMMON_EVENT_TEST = "event_test";
+#define ASSERT_TRUE(a)                                                                                                  \
+    {                       \
+        ASSERT_EA(a, true); \
+    }
+
+#define ASSERT_FALSE(a)      \
+    {                        \
+        ASSERT_EA(a, false); \
+    }
+
+#define ASSERT_EA(a, b)                           \
+    {                                             \
+        if (a != b) {                             \
+            OH_LOG_ERROR(LOG_APP, "test failed", a); \
+        }                                         \
+    }
+
+static const char* COMMON_EVENT_TEST = "event_test";
+static const char* KEY_INT = "int";
+static const char* KEY_INT_ARRAY = "int_array";
+static const char* KEY_LONG = "long";
+static const char* KEY_LONG_ARRAY = "long_array";
+static const char* KEY_DOUBLE = "double";
+static const char* KEY_DOUBLE_ARRAY = "double_array";
+static const char* KEY_BOOL = "bool";
+static const char* KEY_BOOL_ARRAY = "bool_array";
+static const char* KEY_CHAR = "char";
+static const char* KEY_CHAR_ARRAY = "char_array";
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
+
+static CommonEvent_SubscribeInfo* subscribeInfo = nullptr;
+static CommonEvent_PublishInfo* publishInfo = nullptr;
+static char* dataStr = nullptr;
+static char* g_publishInfoBN = nullptr;
+static char* g_publishInfoData = nullptr;
+static int32_t g_publishInfoCode = PARAM_0;
+static int32_t g_parametersInt = PARAM_0;
+static CommonEvent_Parameters* parameters = nullptr;
 
 } // namespace CesCapiTest
 #endif // CES_CAPI_XTS_COMMON_TEST_H
