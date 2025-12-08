@@ -18,6 +18,8 @@ group("arkcompiler") {
   if (is_standard_system) {
     deps = [
       "arkts_ani_test_static:ActsArktsAniStaticTest",
+      "arkts_ani_test_static_group1:ActsArktsAniStaticGroup1Test",
+      "arkts_ani_test_static_group2:ActsArktsAniStaticGroup2Test",
       "arkts_module_test:ActsArktsModuleTest",
       "ecmanewfeatures:ActsEcmaNewFeaturesTest",
       "esmodule:esmodule",

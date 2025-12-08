@@ -3480,7 +3480,7 @@ ani_int test_Object_Call_Method_Boolean_By_Name_03([[maybe_unused]] ani_env *env
 
     ani_boolean res = ANI_FALSE;
     ASSERT_EQ(env->Object_CallMethodByName_Boolean(object, "booleanByNameMethod", "ii:x", &res, VAL1, VAL2),
-              ANI_NOT_FOUND);
+              ANI_INVALID_DESCRIPTOR);
     ASSERT_EQ(env->Object_CallMethodByName_Boolean(object, "unknown_function", "ii:z", &res, VAL1, VAL2),
               ANI_NOT_FOUND);
     return ANI_TRUE;
@@ -3925,9 +3925,9 @@ ani_int test_Object_Call_Method_Boolean_By_Name_21([[maybe_unused]] ani_env *env
     for (const auto &methodName : invalidMethodNames) {
         ASSERT_EQ(
             env->Object_CallMethodByName_Boolean(object, "booleanByNameMethod", methodName.data(), &res, VAL1, VAL2),
-            ANI_NOT_FOUND);
+            ANI_INVALID_DESCRIPTOR);
         ASSERT_EQ(env->Object_CallMethodByName_Boolean_A(object, "booleanByNameMethod", methodName.data(), &res, args),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -4001,7 +4001,8 @@ ani_int test_Object_Call_Method_Byte_By_Name_04([[maybe_unused]] ani_env *env, [
     GetMethodDataByte(env, &object);
 
     ani_byte res {};
-    ASSERT_EQ(env->Object_CallMethodByName_Byte(object, "byteByNameMethod", "bb:x", &res, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Byte(object, "byteByNameMethod", "bb:x", &res, VAL1, VAL2),
+                 ANI_INVALID_DESCRIPTOR);
     ASSERT_EQ(env->Object_CallMethodByName_Byte(object, "unknown_function", "bb:b", &res, VAL1, VAL2), ANI_NOT_FOUND);
     return ANI_TRUE;
 }
@@ -4419,9 +4420,9 @@ ani_int test_Object_Call_Method_Byte_By_Name_21([[maybe_unused]] ani_env *env, [
     ani_byte res = 0U;
     for (const auto &methodName : invalidMethodNames) {
         ASSERT_EQ(env->Object_CallMethodByName_Byte(object, "byteByNameMethod", methodName.data(), &res, VAL1, VAL2),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
         ASSERT_EQ(env->Object_CallMethodByName_Byte_A(object, "byteByNameMethod", methodName.data(), &res, args),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -4498,7 +4499,8 @@ ani_int test_Object_Call_Method_Char_By_Name_04([[maybe_unused]] ani_env *env, [
     GetMethodCharData(env, &object);
 
     ani_char res = VAL;
-    ASSERT_EQ(env->Object_CallMethodByName_Char(object, "charByNameMethod", "cc:x", &res, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Char(object, "charByNameMethod", "cc:x", &res, VAL1, VAL2),
+                 ANI_INVALID_DESCRIPTOR);
     ASSERT_EQ(env->Object_CallMethodByName_Char(object, "unknown_function", "cc:c", &res, VAL1, VAL2), ANI_NOT_FOUND);
     return ANI_TRUE;
 }
@@ -4942,9 +4944,9 @@ ani_int test_Object_Call_Method_Char_By_Name_21([[maybe_unused]] ani_env *env, [
 
     for (const auto &methodName : invalidMethodNames) {
         ASSERT_EQ(env->Object_CallMethodByName_Char(object, "charByNameMethod", methodName.data(), &res, VAL1, VAL2),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
         ASSERT_EQ(env->Object_CallMethodByName_Char_A(object, "charByNameMethod", methodName.data(), &res, args),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -5532,8 +5534,10 @@ ani_int test_Object_Call_Method_Double_By_Name_27([[maybe_unused]] ani_env *env,
     const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
 
     for (const auto &methodName : invalidMethodNames) {
-        ASSERT_EQ(env->Object_CallMethodByName_Double(object, methodName.data(), "", &res, VAL1, VAL2), ANI_NOT_FOUND);
-        ASSERT_EQ(env->Object_CallMethodByName_Double_A(object, methodName.data(), "", &res, args), ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Double(object, methodName.data(), "", &res, VAL1, VAL2),
+                     ANI_INVALID_DESCRIPTOR);
+        ASSERT_EQ(env->Object_CallMethodByName_Double_A(object, methodName.data(), "", &res, args),
+                     ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -6117,9 +6121,9 @@ ani_int test_Object_Call_Method_Float_By_Name_27([[maybe_unused]] ani_env *env, 
 
     for (const auto &methodName : invalidMethodNames) {
         ASSERT_EQ(env->Object_CallMethodByName_Float(object, "floatMethod", methodName.data(), &res, VAL1, VAL2),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
         ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", methodName.data(), &res, args),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -6192,7 +6196,8 @@ ani_int test_Object_Call_Method_Int_By_Name_04([[maybe_unused]] ani_env *env, [[
     GetMethodDataInt(env, &object);
 
     ani_int res = 0;
-    ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", "ii:x", &res, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", "ii:x", &res, VAL1, VAL2),
+                 ANI_INVALID_DESCRIPTOR);
     ASSERT_EQ(env->Object_CallMethodByName_Int(object, "unknown_function", "ii:i", &res, VAL1, VAL2), ANI_NOT_FOUND);
     return ANI_TRUE;
 }
@@ -6636,9 +6641,9 @@ ani_int test_Object_Call_Method_Int_By_Name_22([[maybe_unused]] ani_env *env, [[
 
     for (const auto &methodName : invalidMethodNames) {
         ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", methodName.data(), &res, VAL1, VAL2),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
         ASSERT_EQ(env->Object_CallMethodByName_Int_A(object, "intByNameMethod", methodName.data(), &res, args),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -7220,9 +7225,9 @@ ani_int test_Object_Call_Method_Long_By_Name_27([[maybe_unused]] ani_env *env, [
 
     for (const auto &methodName : invalidMethodNames) {
         ASSERT_EQ(env->Object_CallMethodByName_Long(object, "longMethod", methodName.data(), &res, VAL1, VAL2),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
         ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", methodName.data(), &res, args),
-                  ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -7927,8 +7932,9 @@ ani_int test_Object_Call_Method_Ref_By_Name_25([[maybe_unused]] ani_env *env, [[
 
     for (const auto &methodName : invalidMethodNames) {
         ASSERT_EQ(env->Object_CallMethodByName_Ref(object, "getName", methodName.data(), &res, VAL1, VAL2),
-                  ANI_NOT_FOUND);
-        ASSERT_EQ(env->Object_CallMethodByName_Ref_A(object, "getName", methodName.data(), &res, args), ANI_NOT_FOUND);
+                  ANI_INVALID_DESCRIPTOR);
+        ASSERT_EQ(env->Object_CallMethodByName_Ref_A(object, "getName", methodName.data(), &res, args),
+                 ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -8003,7 +8009,7 @@ ani_int test_Object_Call_Method_Short_By_Name_04([[maybe_unused]] ani_env *env, 
 
     ani_short res {};
     ASSERT_EQ(env->Object_CallMethodByName_Short(object, "shortByNameMethod", "ss:x", &res, VAL1, VAL2),
-              ANI_NOT_FOUND);
+              ANI_INVALID_DESCRIPTOR);
     ASSERT_EQ(env->Object_CallMethodByName_Short(object, "unknown_function", "ss:s", &res, VAL1, VAL2), ANI_NOT_FOUND);
     return ANI_TRUE;
 }
@@ -8439,8 +8445,8 @@ ani_int test_Object_Call_Method_Short_By_Name_22([[maybe_unused]] ani_env *env, 
     const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
 
     for (const auto &methodName : invalidMethodNames) {
-        ASSERT_EQ(env->Object_CallMethodByName_Short(object, methodName.data(), "", &res, VAL1, VAL2), ANI_NOT_FOUND);
-        ASSERT_EQ(env->Object_CallMethodByName_Short_A(object, methodName.data(), "", &res, args), ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Short(object, methodName.data(), "", &res, VAL1, VAL2), ANI_INVALID_DESCRIPTOR);
+        ASSERT_EQ(env->Object_CallMethodByName_Short_A(object, methodName.data(), "", &res, args), ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -9004,8 +9010,8 @@ ani_int test_Object_Call_Method_Void_By_Name_24([[maybe_unused]] ani_env *env, [
     const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
 
     for (const auto &methodName : invalidMethodNames) {
-        ASSERT_EQ(env->Object_CallMethodByName_Void(object, methodName.data(), "", VAL1, VAL2), ANI_NOT_FOUND);
-        ASSERT_EQ(env->Object_CallMethodByName_Void_A(object, methodName.data(), "", args), ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Void(object, methodName.data(), "", VAL1, VAL2), ANI_INVALID_DESCRIPTOR);
+        ASSERT_EQ(env->Object_CallMethodByName_Void_A(object, methodName.data(), "", args), ANI_INVALID_DESCRIPTOR);
     }
     return ANI_TRUE;
 }
@@ -9490,7 +9496,7 @@ ani_int test_Object_New_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_ob
     ani_class cls {};
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.MobilePhone", &cls), ANI_OK);
     ani_method ctor {};
-    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "Lstd/core/String;I:V", &ctor), ANI_OK);
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "C{std.core.String}i:", &ctor), ANI_OK);
     ani_string model {};
     ASSERT_EQ(env->String_NewUTF8(m, strlen(m), &model), ANI_OK);
     ani_value args[2U];
