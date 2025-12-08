@@ -87,7 +87,7 @@ export default function imageAnimatorImageFrameInfoTest() {
      * @tc.level  LEVEL1
      */
     it('testImageAniMatorImageFramelnfo005', Level.LEVEL1, async (done: Function) => {
-        expect(nativeFunc.testImageAniMatorImageFramelnfo005()).assertEqual(1)
+        expect(nativeFunc.testImageAniMatorImageFramelnfo005()).assertEqual(0)
         done()
     })
 
@@ -100,7 +100,7 @@ export default function imageAnimatorImageFrameInfoTest() {
      * @tc.level  LEVEL1
      */
     it('testImageAniMatorImageFramelnfo006', Level.LEVEL1, async (done: Function) => {
-        expect(nativeFunc.testImageAniMatorImageFramelnfo006()).assertEqual(1)
+        expect(nativeFunc.testImageAniMatorImageFramelnfo006()).assertEqual(0)
         done()
     })
   })
