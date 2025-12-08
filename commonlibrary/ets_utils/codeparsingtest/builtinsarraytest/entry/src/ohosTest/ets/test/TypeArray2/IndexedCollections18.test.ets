@@ -1976,5 +1976,153 @@ export default function IndexedCollections18Test() {
         done();
         console.log('testTypedArrayFromArrayLike0003 done');
     });
+
+    /**
+     * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0400
+     * @tc.name   testTypedArrayFromArrayLike0004
+     * @tc.desc   Verify Uint8Array creation from standard array.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTypedArrayFromArrayLike0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testTypedArrayFromArrayLike0004 start');
+        const likeArr46: number[] = [255, 128];
+        const arr46 = new Uint8Array(likeArr46);
+        let result1 = arr46[0];
+        let result2 = arr46[1];
+        expect(result1).assertEqual(255);
+        expect(result2).assertEqual(128);
+        done();
+        console.log('testTypedArrayFromArrayLike0004 done');
+    });
+
+    /**
+     * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0500
+     * @tc.name   testTypedArrayFromArrayLike0005
+     * @tc.desc   Verify Float64Array creation from standard array.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTypedArrayFromArrayLike0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testTypedArrayFromArrayLike0005 start');
+
+        const likeArr47: number[] = [3.14159, 2.71828];
+        const arr47 = new Float64Array(likeArr47);
+        const result47 = arr47[0].toFixed(5);
+
+        expect(result47).assertEqual('3.14159');
+        done();
+        console.log('testTypedArrayFromArrayLike0005 done');
+    });
+
+    /**
+     * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0600
+     * @tc.name   testTypedArrayFromArrayLike0006
+     * @tc.desc   Verify Int16Array creation from empty array.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTypedArrayFromArrayLike0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testTypedArrayFromArrayLike0006 start');
+        const likeArr48: number[] = [];
+        const arr48 = new Int16Array(likeArr48);
+        const result48 = arr48.length;
+
+        expect(result48).assertEqual(0);
+        done();
+        console.log('testTypedArrayFromArrayLike0006 done');
+    });
+
+    /**
+     * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0700
+     * @tc.name   testTypedArrayFromArrayLike0007
+     * @tc.desc   Verify Int8Array creation from single element array.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTypedArrayFromArrayLike0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testTypedArrayFromArrayLike0007 start');
+        const likeArr49: number[] = [42];
+        const arr49 = new Int8Array(likeArr49);
+        let result1 = arr49[0];
+        let result2 = arr49.length;
+        expect(result1).assertEqual(42);
+        expect(result2).assertEqual(1);
+        done();
+        console.log('testTypedArrayFromArrayLike0007 done');
+    });
+
+    /**
+     * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0800
+     * @tc.name   testTypedArrayFromArrayLike0008
+     * @tc.desc   Verify Uint16Array creation from multi-element array.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTypedArrayFromArrayLike0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testTypedArrayFromArrayLike0008 start');
+        const likeArr50: number[] = [1000, 2000, 3000];
+        const arr50 = new Uint16Array(likeArr50);
+
+        let result1 = arr50[2];
+        let result2 = arr50.length;
+        expect(result1).assertEqual(3000);
+        expect(result2).assertEqual(3);
+        done();
+        console.log('testTypedArrayFromArrayLike0008 done');
+    });
+
+    /**
+     * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0900
+     * @tc.name   testTypedArrayFromArrayLike0009
+     * @tc.desc   Verify Int32Array creation from large array.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTypedArrayFromArrayLike0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testTypedArrayFromArrayLike0009 start');
+        const likeArr51: number[] = [1000000, 2000000, 3000000];
+        const arr51 = new Int32Array(likeArr51);
+        let result1 = arr51[1];
+        let result2 = arr51.byteLength;
+        expect(result1).assertEqual(2000000);
+        expect(result2).assertEqual(12);
+        done();
+        console.log('testTypedArrayFromArrayLike0009 done');
+    });
+
+    /**
+     * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_1000
+     * @tc.name   testTypedArrayFromArrayLike0010
+     * @tc.desc   Verify Float32Array creation from decimal array.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTypedArrayFromArrayLike0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('testTypedArrayFromArrayLike0010 start');
+
+        const likeArr52: number[] = [1.234, 5.678, 9.012];
+        const arr52 = new Float32Array(likeArr52);
+        let result1 = arr52[0].toFixed(3);
+        let result2 = arr52[2].toFixed(3);
+        expect(result1).assertEqual('1.234');
+        expect(result2).assertEqual('9.012');
+        done();
+        console.log('testTypedArrayFromArrayLike0010 done');
+    });
   })
 }
