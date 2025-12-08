@@ -85,6 +85,9 @@
         "MainAbility/pages/Text/TextTwoJsunit",
         "MainAbility/pages/Text/TextVerticalAlign",
         "MainAbility/pages/Text/TextVerticalAlignModifier",
-        "MainAbility/pages/Text/lineHeight"
+        "MainAbility/pages/Text/lineHeight",
+        "MainAbility/pages/CustomKeyboard/search",
+        "MainAbility/pages/CustomKeyboard/textArea",
+        "MainAbility/pages/CustomKeyboard/textInput"
     ]
 }

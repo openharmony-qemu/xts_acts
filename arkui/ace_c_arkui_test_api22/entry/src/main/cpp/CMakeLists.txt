@@ -34,6 +34,7 @@ add_library(nativerender SHARED
     component/SwiperComponentTest.cpp
     swiper/FinishAnimationTest.cpp
     imageSpanTest/ImageSpanTest.cpp
+    customKeyboard/CustomKeyboardTest.cpp
 )
 
 add_library(nativefunc SHARED

@@ -16,6 +16,7 @@
     "MainAbility/pages/scrollbarTest/scrollbarTest",
     "MainAbility/pages/showCounterTest/showCounterTest",
     "MainAbility/pages/swiper/finishAnimationTest",
-    "MainAbility/pages/imageSpanTest/ImageSpanTest"
+    "MainAbility/pages/imageSpanTest/ImageSpanTest",
+    "MainAbility/pages/customKeyboard/CustomKeyboardTest"
   ]
 }
