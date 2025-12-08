@@ -1303,24 +1303,26 @@ export default function EmitterTest() {
       async (done: () => void): Promise<void> => {
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300 START`)
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300';
+        let count: int = 0;
 
-        for (let i: long = 33000; i < 34000; i++) {
+        for (let i: long = 3300; i < 3400; i++) {
           let innerEvent: emitter.InnerEvent = {
             eventId: i,
             priority: emitter.EventPriority.IMMEDIATE
           }
           let EmitterCallback = (): void => {
             hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
+            count ++;
+            if (count == 100) {
+              for (let i: long = 3300; i < 3400; i++) {
+                expect(emitter.getListenerCount(i)).assertEqual(1)
+              }
+              done()
+            }
           }
           emitter.on(innerEvent, EmitterCallback)
           emitter.emit(innerEvent)
         }
-        for (let i: long = 33000; i < 34000; i++) {
-          expect(emitter.getListenerCount(i)).assertEqual(1)
-        }
-        await Utils.msSleep(1000)
-        console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300 END`)
-        done()
       })
 
     /**
@@ -1335,18 +1337,19 @@ export default function EmitterTest() {
       async (done: () => void): Promise<void> => {
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400 START`)
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400';
-
+        let countEmit: int = 0;
         let EmitterCallback = (): void => {
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
+          countEmit++;
+          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success countEmit = ' + countEmit);
+          if (countEmit == 100) {
+            expect(emitter.getListenerCount("3400")).assertEqual(1);
+            done()
+          }
         }
-        emitter.onEventData("340000", EmitterCallback)
-        for (let i: number = 34000; i < 35000; i++) {
-          emitter.emit("340000")
+        emitter.onEventData("3400", EmitterCallback)
+        for (let i: number = 3400; i < 3500; i++) {
+          emitter.emit("3400")
         }
-        await Utils.msSleep(1000)
-        expect(emitter.getListenerCount("340000")).assertEqual(1)
-        console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400 END`)
-        done()
       })
 
     /**
@@ -1361,30 +1364,40 @@ export default function EmitterTest() {
       async (done: () => void): Promise<void> => {
         console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 START`)
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500';
-
-        let EmitterCallback1 = (): void => {
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on1 success');
-        }
-        let EmitterCallback2 = (): void => {
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on2 success');
-        }
+        let count1:int = 0;
+        let count2:int = 0;
         let innerEvent: emitter.InnerEvent = {
           eventId: 35,
           priority: emitter.EventPriority.IMMEDIATE
         }
+        let EmitterCallback1 = (): void => {
+          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on1 success');
+          count1++;
+          if(count1 == 100 &&count2 == 100 ){
+            expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
+            expect(emitter.getListenerCount("35")).assertEqual(1)
+            console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
+            done()
+          }
+        }
+        let EmitterCallback2 = (): void => {
+          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on2 success');
+          count2++;
+          if(count1 == 100 &&count2 == 100 ){
+            expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
+            expect(emitter.getListenerCount("35")).assertEqual(1)
+            console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
+            done()
+          }
+        }
         emitter.on(innerEvent, EmitterCallback1)
         emitter.onEventData("35", EmitterCallback2)
-        for (let i: number = 35000; i < 36000; i++) {
+        for (let i: number = 3500; i < 3600; i++) {
           emitter.emit(innerEvent)
         }
-        for (let i: number = 35000; i < 36000; i++) {
+        for (let i: number = 3500; i < 3600; i++) {
           emitter.emit("35")
         }
-        await Utils.msSleep(1000)
-        expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
-        expect(emitter.getListenerCount("35")).assertEqual(1)
-        console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
-        done()
       })
 
   
