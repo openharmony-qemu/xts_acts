@@ -28,7 +28,7 @@ namespace OHOS {
 namespace AudioStandard {
 
 // Test function declaration
-int SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100();
+int SumMultimediaAudioOhAudioRendererGetUnderflowCount0100();
 
 class OHAudioCapturerReadCallbackMock {
 public:

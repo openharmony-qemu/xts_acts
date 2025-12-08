@@ -28,7 +28,7 @@ static napi_value createResultValue(napi_env env, int result)
 static napi_value audioNativeTest(napi_env env, napi_callback_info info)
 {
     int result = -1;
-    result = OHOS::AudioStandard::SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100();
+    result = OHOS::AudioStandard::SumMultimediaAudioOhAudioRendererGetUnderflowCount0100();
     return createResultValue(env, result);
 }
 

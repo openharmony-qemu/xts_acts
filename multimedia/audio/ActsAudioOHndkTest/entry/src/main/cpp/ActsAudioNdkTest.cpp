@@ -47,8 +47,7 @@ static void SetupWriteCallback(OHAudioRendererWriteCallbackMock& writeCallbackMo
     int32_t& count, std::mutex& mutex, std::condition_variable& cv)
 {
     writeCallbackMock.Install([&count, &mutex, &cv](OH_AudioRenderer* renderer, void* userData,
-        void* buffer, int32_t bufferLen)
-    {
+        void* buffer, int32_t bufferLen) {
         std::lock_guard<std::mutex> lock(mutex);
         cv.notify_one();
         // only execute twice
@@ -91,7 +90,7 @@ static OH_AudioRenderer* CreateAndConfigureRenderer(
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100()
+int SumMultimediaAudioOhAudioRendererGetUnderflowCount0100()
 {
     OH_LOG_ERROR(LOG_APP, "audio native start");
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
@@ -113,8 +112,7 @@ int SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100()
     }
 
     std::unique_lock<std::mutex> lock(mutex);
-    cv.wait_for(lock, 1s, [&count]
-    {
+    cv.wait_for(lock, 1s, [&count] {
         // count > 1 ensure sleeped
         return count > 1;
     });
