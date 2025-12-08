@@ -44,16 +44,16 @@ export default function nodeList() {
       await CommonFunc.sleep(1000);
       console.info(" nodeList after each called");
     });
-    /* *
-    * @tc.number: SUB_ACE_TYPENODE_LIST_0100
-    * @tc.name  : nodeList_0100
-    * @tc.desc  : List type FrameNode node
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
 
 
+    /**
+     * @tc.name   nodeList_0100
+     * @tc.number nodeList_0100
+     * @tc.desc   nodeList_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('nodeList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('nodeList_0100 START');
       await CommonFunc.sleep(1000);
@@ -68,16 +68,16 @@ export default function nodeList() {
       console.info('[nodeList_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TYPENODE_LISTITEM_0100
-    * @tc.name  : nodeList_0100
-    * @tc.desc  : ListItem type FrameNode node
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
 
 
+    /**
+     * @tc.name   nodeList_0100
+     * @tc.number nodeList_0100
+     * @tc.desc   nodeList_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('nodeList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('nodeList_0100 START');
       await CommonFunc.sleep(1000);

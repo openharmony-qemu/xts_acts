@@ -53,12 +53,12 @@ export default function nativeChildProcessExitTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessExit_0100
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessExit_0100
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessExit_0100
-     * @tc.desc To verify the function of RegisterNativeChildProcessExit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   To verify the function of RegisterNativeChildProcessExit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessExit_0100', Level.LEVEL1, async (done: Function) => {
       let tag = `ACTS_NativeChildProcess_0100`;
@@ -98,12 +98,12 @@ export default function nativeChildProcessExitTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessExit_0200
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessExit_0200
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessExit_0200
-     * @tc.desc To verify the function of UnregisterNativeChildProcessExit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   To verify the function of UnregisterNativeChildProcessExit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessExit_0200', Level.LEVEL1, async (done: Function) => {
       let tag = `ACTS_NativeChildProcess_0200`;
@@ -143,12 +143,12 @@ export default function nativeChildProcessExitTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessExit_0300
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessExit_0300
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessExit_0300
-     * @tc.desc To verify the function of native child process callback after register
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   To verify the function of native child process callback after register
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessExit_0300', Level.LEVEL1, async (done: Function) => {
       let tag = `ACTS_NativeChildProcessExit_0300`;
@@ -180,12 +180,12 @@ export default function nativeChildProcessExitTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeChildProcessExit_0400
      * @tc.number SUB_Ability_AbilityRuntime_NativeChildProcessExit_0400
-     * @tc.name SUB_Ability_AbilityRuntime_NativeChildProcessExit_0400
-     * @tc.desc To verify the function of native child process callback after register
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   To verify the function of native child process callback after register
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_NativeChildProcessExit_0400', Level.LEVEL1, async (done: Function) => {
       let tag = `ACTS_NativeChildProcessExit_0400`;

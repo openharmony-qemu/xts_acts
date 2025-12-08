@@ -34,7 +34,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbDdkConfigDescriptor0100
      * @tc.number SUB_DRIVER_EXT_USBDDKCONFIGDESCRIPTOR_EXTRA_0100
      * @tc.desc   Test UsbDdkConfigDescriptor.
@@ -59,7 +58,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbDdkConfigDescriptor0200
      * @tc.number SUB_DRIVER_EXT_USBDDKCONFIGDESCRIPTOR_EXTRALENGTH_0200
      * @tc.desc   Test UsbDdkConfigDescriptor.
@@ -84,7 +82,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbDdkInterfaceDescriptor0100
      * @tc.number SUB_DRIVER_EXT_USBDDKINTERFACEDESCRIPTOR_EXTRA_0100
      * @tc.desc   Test UsbDdkInterfaceDescriptor.
@@ -109,7 +106,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbDdkInterfaceDescriptor0200
      * @tc.number SUB_DRIVER_EXT_USBDDKINTERFACEDESCRIPTOR_EXTRALENGTH_0200
      * @tc.desc   Test UsbDdkInterfaceDescriptor.
@@ -134,7 +130,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbDdkEndpointDescriptor0100
      * @tc.number SUB_DRIVER_EXT_UsbDdkEndpointDescriptor_EXTRA_0100
      * @tc.desc   Test UsbDdkEndpointDescriptor.
@@ -159,7 +154,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbDdkEndpointDescriptor0200
      * @tc.number SUB_DRIVER_EXT_USBDDKENDPOINTDESCRIPTOR_EXTRALENGTH_0200
      * @tc.desc   Test UsbDdkEndpointDescriptor.
@@ -184,7 +178,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbEndpointDescriptor0100
      * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BLENGTH_0100
      * @tc.desc   Test UsbEndpointDescriptor.
@@ -209,7 +202,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbEndpointDescriptor0200
      * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BDESCRIPTORTYPE_0200
      * @tc.desc   Test UsbEndpointDescriptor.
@@ -234,7 +226,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbEndpointDescriptor0300
      * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BINTERVAL_0300
      * @tc.desc   Test UsbEndpointDescriptor.
@@ -259,7 +250,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbEndpointDescriptor0400
      * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BREFRESH_0400
      * @tc.desc   Test UsbEndpointDescriptor.
@@ -284,7 +274,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbEndpointDescriptor0500
      * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BSYNCHADDRESS_0500
      * @tc.desc   Test UsbEndpointDescriptor.
@@ -309,7 +298,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbInterfaceDescriptor0100
      * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BLENGTH_0100
      * @tc.desc   Test UsbInterfaceDescriptor.
@@ -334,7 +322,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbInterfaceDescriptor0200
      * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BDESCRIPTORTYPE_0200
      * @tc.desc   Test UsbInterfaceDescriptor.
@@ -359,7 +346,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbInterfaceDescriptor0300
      * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BALTERNATESETTING_0300
      * @tc.desc   Test UsbInterfaceDescriptor.
@@ -384,7 +370,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbInterfaceDescriptor0400
      * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACECLASS_0400
      * @tc.desc   Test UsbInterfaceDescriptor.
@@ -409,7 +394,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbInterfaceDescriptor0500
      * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACESUBCLASS_0500
      * @tc.desc   Test UsbInterfaceDescriptor.
@@ -434,7 +418,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbInterfaceDescriptor0600
      * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACEPROTOCOL_0600
      * @tc.desc   Test UsbInterfaceDescriptor.
@@ -459,7 +442,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbInterfaceDescriptor0700
      * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_IINTERFACE_0700
      * @tc.desc   Test UsbInterfaceDescriptor.
@@ -484,7 +466,6 @@ export default function UsbTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbAddress0800
      * @tc.number TestUsbAddress0800
      * @tc.desc   Test UsbAddress0800.
@@ -507,7 +488,6 @@ export default function UsbTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbOffset0900
      * @tc.number TestUsbOffset0900
      * @tc.desc   Test UsbOffset0900.
@@ -530,7 +510,6 @@ export default function UsbTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbSize1000
      * @tc.number TestUsbSize1000
      * @tc.desc   Test UsbSize1000.
@@ -553,7 +532,6 @@ export default function UsbTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbBufferLength1100
      * @tc.number TestUsbBufferLength1100
      * @tc.desc   Test UsbBufferLength1100.
@@ -576,7 +554,6 @@ export default function UsbTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   TestUsbTransferedLength1200
      * @tc.number TestUsbTransferedLength1200
      * @tc.desc   Test UsbTransferedLength1200.

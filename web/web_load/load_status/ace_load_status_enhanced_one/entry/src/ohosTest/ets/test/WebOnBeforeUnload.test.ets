@@ -58,14 +58,14 @@ export default function webOnBeforeUnload() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONBEFOREUNLOAD_ISRELOAD_API_0100
-    * @tc.name       : testOnBeforeUnloadIsReloadTrue
-    * @tc.desc       : test onBeforeUnload isReload true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnBeforeUnloadIsReloadTrue
+     * @tc.number SUB_ACE_WEB_ONBEFOREUNLOAD_ISRELOAD_API_0100
+     * @tc.desc   test onBeforeUnload isReload true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnBeforeUnloadIsReloadTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnBeforeUnloadIsReloadTrue', 141411);
       let isReturn = false;
@@ -77,14 +77,14 @@ export default function webOnBeforeUnload() {
       await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadTrue", true,1000);
       done();
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONBEFOREUNLOAD_ISRELOAD_API_0200
-    * @tc.name       : testOnBeforeUnloadIsReloadFalse
-    * @tc.desc       : test onBeforeUnload isReload false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnBeforeUnloadIsReloadFalse
+     * @tc.number SUB_ACE_WEB_ONBEFOREUNLOAD_ISRELOAD_API_0200
+     * @tc.desc   test onBeforeUnload isReload false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnBeforeUnloadIsReloadFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnBeforeUnloadIsReloadFalse', 141411);
       let isReturn = false;

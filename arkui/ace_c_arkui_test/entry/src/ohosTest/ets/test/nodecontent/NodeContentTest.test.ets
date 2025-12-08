@@ -26,91 +26,91 @@ export default function nodeContentTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_CONTENT_0100
-     * @tc.name       : testMouseEvent001
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeContent001
+     * @tc.number SUB_ARKUI_CAPI_NODE_CONTENT_0100
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testNodeContent001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_CONTENT_0200
-     * @tc.name       : testNodeContent002
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeContent002
+     * @tc.number SUB_ARKUI_CAPI_NODE_CONTENT_0200
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testNodeContent002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_CONTENT_0300
-     * @tc.name       : testNodeContent003
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeContent003
+     * @tc.number SUB_ARKUI_CAPI_NODE_CONTENT_0300
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeContent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testNodeContent003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_CONTENT_0400
-     * @tc.name       : testNodeContent004
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeContent004
+     * @tc.number SUB_ARKUI_CAPI_NODE_CONTENT_0400
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeContent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testNodeContent004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_CONTENT_0500
-     * @tc.name       : testNodeContent005
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeContent005
+     * @tc.number SUB_ARKUI_CAPI_NODE_CONTENT_0500
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeContent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testNodeContent005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_CONTENT_0600
-     * @tc.name       : testNodeContent006
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeContent006
+     * @tc.number SUB_ARKUI_CAPI_NODE_CONTENT_0600
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeContent006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testNodeContent006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_CONTENT_0700
-     * @tc.name       : testNodeContent007
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeContent007
+     * @tc.number SUB_ARKUI_CAPI_NODE_CONTENT_0700
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeContent007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testNodeContent007()).assertEqual(0)

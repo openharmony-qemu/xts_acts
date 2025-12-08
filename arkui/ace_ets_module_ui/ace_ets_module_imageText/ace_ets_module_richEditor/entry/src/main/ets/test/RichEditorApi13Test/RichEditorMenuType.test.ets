@@ -43,13 +43,13 @@ export default function RichEditorMenuType() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_RichEditorMenuType_0100
-     * @tc.name      RichEditorMenuType_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   RichEditorMenuType_0100
+     * @tc.number SUB_ACE_RichEditorMenuType_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorMenuType_0100', Level.LEVEL2, async (done: Function) => {
       console.info('RichEditorMenuType_0100 START');
@@ -63,12 +63,12 @@ export default function RichEditorMenuType() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorMenuType_0200
-     * @tc.name      RichEditorMenuType_0200
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   RichEditorMenuType_0200
+     * @tc.number SUB_ACE_RichEditorMenuType_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorMenuType_0200', Level.LEVEL2, async (done: Function) => {
       console.info('RichEditorMenuType_0200 START');

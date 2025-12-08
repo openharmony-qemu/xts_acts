@@ -107,6 +107,22 @@
     {
       "name": "lineHeight",
       "value": "20vp"
+    },
+    {
+      "name": "font_family_arial",
+      "value": "Arial"
+    },
+    {
+      "name": "fontSize_10",
+      "value": "10"
+    },
+    {
+      "name": "fontSize_30",
+      "value": "30"
+    },
+    {
+      "name": "Text_LineHeight_2fp",
+      "value": "2fp"
     }
   ]
 }

@@ -43,12 +43,12 @@ export default function RichEditorTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorTextVerticalAlignTest_0010
-     * @tc.name      RichEditorTextVerticalAlignTest_0010
-     * @tc.desc      test the attr of RichEditor: TextVerticalAlign.BASELINE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorTextVerticalAlignTest_0010
+     * @tc.number SUB_ACE_RichEditorTextVerticalAlignTest_0010
+     * @tc.desc   test the attr of RichEditor: TextVerticalAlign.BASELINE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorTextVerticalAlignTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorTextVerticalAlignTest_0010] START');
@@ -69,12 +69,12 @@ export default function RichEditorTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorTextVerticalAlignTest_0020
-     * @tc.name      RichEditorTextVerticalAlignTest_0020
-     * @tc.desc      test the attr of RichEditor: TextVerticalAlign.BOTTOM
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorTextVerticalAlignTest_0020
+     * @tc.number SUB_ACE_RichEditorTextVerticalAlignTest_0020
+     * @tc.desc   test the attr of RichEditor: TextVerticalAlign.BOTTOM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorTextVerticalAlignTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorTextVerticalAlignTest_0020] START');
@@ -95,12 +95,12 @@ export default function RichEditorTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorTextVerticalAlignTest_0030
-     * @tc.name      RichEditorTextVerticalAlignTest_0030
-     * @tc.desc      test the attr of RichEditor: TextVerticalAlign.CENTER
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorTextVerticalAlignTest_0030
+     * @tc.number SUB_ACE_RichEditorTextVerticalAlignTest_0030
+     * @tc.desc   test the attr of RichEditor: TextVerticalAlign.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorTextVerticalAlignTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorTextVerticalAlignTest_0030] START');
@@ -121,12 +121,12 @@ export default function RichEditorTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorTextVerticalAlignTest_0040
-     * @tc.name      RichEditorTextVerticalAlignTest_0040
-     * @tc.desc      test the attr of RichEditor: TextVerticalAlign.TOP
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorTextVerticalAlignTest_0040
+     * @tc.number SUB_ACE_RichEditorTextVerticalAlignTest_0040
+     * @tc.desc   test the attr of RichEditor: TextVerticalAlign.TOP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorTextVerticalAlignTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorTextVerticalAlignTest_0040] START');

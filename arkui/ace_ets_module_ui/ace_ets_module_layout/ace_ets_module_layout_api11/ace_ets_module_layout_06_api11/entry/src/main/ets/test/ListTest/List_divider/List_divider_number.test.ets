@@ -64,9 +64,12 @@ export default function List_divider_number() {
 
 
     /**
+     * @tc.name   SUB_ACE_List_divider_number_0100
      * @tc.number SUB_ACE_List_divider_number_0100
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to 0
+     * @tc.desc   Set strokeWidth to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_number_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_number_0100] START');
@@ -88,9 +91,12 @@ export default function List_divider_number() {
 
 
     /**
+     * @tc.name   SUB_ACE_List_divider_number_0200
      * @tc.number SUB_ACE_List_divider_number_0200
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to -5
+     * @tc.desc   Set strokeWidth to -5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_number_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_number_0200] START');
@@ -112,9 +118,12 @@ export default function List_divider_number() {
 
 
     /**
+     * @tc.name   SUB_ACE_List_divider_number_0300
      * @tc.number SUB_ACE_List_divider_number_0300
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to 20
+     * @tc.desc   Set strokeWidth to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_number_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_number_0300] START');
@@ -136,9 +145,12 @@ export default function List_divider_number() {
 
 
     /**
+     * @tc.name   SUB_ACE_List_divider_number_0400
      * @tc.number SUB_ACE_List_divider_number_0400
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to 20,set space to 10
+     * @tc.desc   Set strokeWidth to 20,set space to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_number_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_number_0400] START');

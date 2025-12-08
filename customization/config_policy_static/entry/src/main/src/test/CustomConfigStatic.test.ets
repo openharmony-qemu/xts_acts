@@ -21,12 +21,12 @@ export default function customConfigStaticTest() {
   describe("customConfigStaticTest", () => {
     hilog.info(0x0000, 'testTag', '%{public}s', '*************start customConfigStaticTest*************');
       /**
-       * @tc.number     testGetChannelID_static_0010
-       * @tc.name       testGetChannelID_static_0010
-       * @tc.desc       test Get ChannelID with value
-       * @tc.size       MEDIUM
-       * @tc.type       Function
-       * @tc.level      Level 0
+       * @tc.name   testGetChannelID_static_0010
+       * @tc.number testGetChannelID_static_0010
+       * @tc.desc   test Get ChannelID with value
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testGetChannelID_static_0010', Level.LEVEL0, () => {
           let paramValue: string = "Test-Hw";

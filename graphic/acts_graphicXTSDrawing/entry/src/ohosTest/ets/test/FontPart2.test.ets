@@ -41,12 +41,12 @@ export default function fontPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0800
-     * @tc.name      : testFontCountTextTextNormal
-     * @tc.desc      : Test for testFontCountTextTextNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontCountTextTextNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0800
+     * @tc.desc   Test for testFontCountTextTextNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontCountTextTextNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontCountTextTextNormal';
@@ -99,12 +99,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0801
-     * @tc.name      : testFontCountTextTextNull
-     * @tc.desc      : Test for testFontCountTextTextNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontCountTextTextNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0801
+     * @tc.desc   Test for testFontCountTextTextNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontCountTextTextNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontCountTextTextNull';
@@ -128,12 +128,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0803
-     * @tc.name      : testFontCountTextTextMultipleCalls
-     * @tc.desc      : Test for testFontCountTextTextMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontCountTextTextMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0803
+     * @tc.desc   Test for testFontCountTextTextMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontCountTextTextMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontCountTextTextMultipleCalls';
@@ -152,12 +152,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0900
-     * @tc.name      : testFontSetAndGetEdgingNormal
-     * @tc.desc      : Test for testFontSetAndGetEdgingNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontSetAndGetEdgingNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0900
+     * @tc.desc   Test for testFontSetAndGetEdgingNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontSetAndGetEdgingNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontSetAndGetEdgingNormal';
@@ -195,12 +195,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0901
-     * @tc.name      : testFontSetAndGetEdgingNull
-     * @tc.desc      : Test for testFontSetAndGetEdgingNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetEdgingNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0901
+     * @tc.desc   Test for testFontSetAndGetEdgingNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetEdgingNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetEdgingNull';
@@ -224,12 +224,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0903
-     * @tc.name      : testFontSetAndGetEdgingMultipleCalls
-     * @tc.desc      : Test for testFontSetAndGetEdgingMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetEdgingMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0903
+     * @tc.desc   Test for testFontSetAndGetEdgingMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetEdgingMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetEdgingMultipleCalls';
@@ -270,12 +270,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0904
-     * @tc.name      : testFontSetAndGetEdgingAbnormal
-     * @tc.desc      : Test for testFontSetAndGetEdgingAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetEdgingAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_0904
+     * @tc.desc   Test for testFontSetAndGetEdgingAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetEdgingAbnormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetEdgingAbnormal';
@@ -291,12 +291,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1000
-     * @tc.name      : testFontSetAndGetHintingNormal
-     * @tc.desc      : Test for testFontSetAndGetHintingNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontSetAndGetHintingNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1000
+     * @tc.desc   Test for testFontSetAndGetHintingNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontSetAndGetHintingNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontSetAndGetHintingNormal';
@@ -344,12 +344,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1001
-     * @tc.name      : testFontSetAndGetHintingNull
-     * @tc.desc      : Test for testFontSetAndGetHintingNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetHintingNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1001
+     * @tc.desc   Test for testFontSetAndGetHintingNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetHintingNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetHintingNull';
@@ -373,12 +373,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1003
-     * @tc.name      : testFontSetAndGetHintingMultipleCalls
-     * @tc.desc      : Test for testFontSetAndGetHintingMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetHintingMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1003
+     * @tc.desc   Test for testFontSetAndGetHintingMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetHintingMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetHintingMultipleCalls';
@@ -419,12 +419,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1004
-     * @tc.name      : testFontSetAndGetHintingAbnormal
-     * @tc.desc      : Test for testFontSetAndGetHintingAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetHintingAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1004
+     * @tc.desc   Test for testFontSetAndGetHintingAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetHintingAbnormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetHintingAbnormal';
@@ -440,12 +440,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1100
-     * @tc.name      : testFontSetAndGetScaleXNormal
-     * @tc.desc      : Test for testFontSetAndGetScaleXNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontSetAndGetScaleXNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1100
+     * @tc.desc   Test for testFontSetAndGetScaleXNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontSetAndGetScaleXNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontSetAndGetScaleXNormal';
@@ -493,12 +493,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1101
-     * @tc.name      : testFontSetAndGetScaleXNull
-     * @tc.desc      : Test for testFontSetAndGetScaleXNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetScaleXNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1101
+     * @tc.desc   Test for testFontSetAndGetScaleXNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetScaleXNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetScaleXNull';
@@ -522,12 +522,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1103
-     * @tc.name      : testFontSetAndGetScaleXMultipleCalls
-     * @tc.desc      : Test for testFontSetAndGetScaleXMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetScaleXMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1103
+     * @tc.desc   Test for testFontSetAndGetScaleXMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetScaleXMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetScaleXMultipleCalls';
@@ -566,12 +566,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1200
-     * @tc.name      : testFontSetAndGetSkewXNormal
-     * @tc.desc      : Test for testFontSetAndGetSkewXNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontSetAndGetSkewXNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1200
+     * @tc.desc   Test for testFontSetAndGetSkewXNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontSetAndGetSkewXNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontSetAndGetSkewXNormal';
@@ -619,12 +619,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1201
-     * @tc.name      : testFontSetAndGetSkewXNull
-     * @tc.desc      : Test for testFontSetAndGetSkewXNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetSkewXNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1201
+     * @tc.desc   Test for testFontSetAndGetSkewXNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetSkewXNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetSkewXNull';
@@ -648,12 +648,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1203
-     * @tc.name      : testFontSetAndGetSkewXMultipleCalls
-     * @tc.desc      : Test for testFontSetAndGetSkewXMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndGetSkewXMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1203
+     * @tc.desc   Test for testFontSetAndGetSkewXMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndGetSkewXMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndGetSkewXMultipleCalls';
@@ -692,12 +692,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1300
-     * @tc.name      : testFontIsSubpixelNormal
-     * @tc.desc      : Test for testFontIsSubpixelNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontIsSubpixelNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1300
+     * @tc.desc   Test for testFontIsSubpixelNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontIsSubpixelNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontIsSubpixelNormal';
@@ -725,12 +725,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1303
-     * @tc.name      : testFontIsSubpixelMultipleCalls
-     * @tc.desc      : Test for testFontIsSubpixelMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontIsSubpixelMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1303
+     * @tc.desc   Test for testFontIsSubpixelMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontIsSubpixelMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontIsSubpixelMultipleCalls';
@@ -749,12 +749,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1400
-     * @tc.name      : testFontIsLinearMetricsNormal
-     * @tc.desc      : Test for testFontIsLinearMetricsNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontIsLinearMetricsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1400
+     * @tc.desc   Test for testFontIsLinearMetricsNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontIsLinearMetricsNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontIsLinearMetricsNormal';
@@ -782,12 +782,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1402
-     * @tc.name      : testFontIsLinearMetricsMultipleCalls
-     * @tc.desc      : Test for testFontIsLinearMetricsMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontIsLinearMetricsMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1402
+     * @tc.desc   Test for testFontIsLinearMetricsMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontIsLinearMetricsMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontIsLinearMetricsMultipleCalls';
@@ -806,12 +806,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1500
-     * @tc.name      : testFontIsEmboldenNormal
-     * @tc.desc      : Test for testFontIsEmboldenNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontIsEmboldenNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1500
+     * @tc.desc   Test for testFontIsEmboldenNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontIsEmboldenNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontIsEmboldenNormal';
@@ -839,12 +839,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1502
-     * @tc.name      : testFontIsEmboldenMultipleCalls
-     * @tc.desc      : Test for testFontIsEmboldenMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontIsEmboldenMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1502
+     * @tc.desc   Test for testFontIsEmboldenMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontIsEmboldenMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontIsEmboldenMultipleCalls';
@@ -863,12 +863,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1600
-     * @tc.name      : testFontMeasureSingleCharacterNormal
-     * @tc.desc      : Test for testFontMeasureSingleCharacterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontMeasureSingleCharacterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1600
+     * @tc.desc   Test for testFontMeasureSingleCharacterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontMeasureSingleCharacterNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontMeasureSingleCharacterNormal';
@@ -903,12 +903,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1601
-     * @tc.name      : testFontMeasureSingleCharacterNull
-     * @tc.desc      : Test for testFontMeasureSingleCharacterNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontMeasureSingleCharacterNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1601
+     * @tc.desc   Test for testFontMeasureSingleCharacterNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontMeasureSingleCharacterNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontMeasureSingleCharacterNull';
@@ -932,12 +932,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1603
-     * @tc.name      : testFontMeasureSingleCharacterMultipleCalls
-     * @tc.desc      : Test for testFontMeasureSingleCharacterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontMeasureSingleCharacterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1603
+     * @tc.desc   Test for testFontMeasureSingleCharacterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontMeasureSingleCharacterMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontMeasureSingleCharacterMultipleCalls';
@@ -957,12 +957,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1604
-     * @tc.name      : testFontMeasureSingleCharacterAbnormal
-     * @tc.desc      : Test for testFontMeasureSingleCharacterAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontMeasureSingleCharacterAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1604
+     * @tc.desc   Test for testFontMeasureSingleCharacterAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontMeasureSingleCharacterAbnormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontMeasureSingleCharacterAbnormal';
@@ -986,12 +986,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1700
-     * @tc.name      : testFontSetAndIsBaselineSnapNormal
-     * @tc.desc      : Test for testFontSetAndIsBaselineSnapNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontSetAndIsBaselineSnapNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1700
+     * @tc.desc   Test for testFontSetAndIsBaselineSnapNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontSetAndIsBaselineSnapNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontSetAndIsBaselineSnapNormal';
@@ -1028,12 +1028,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1701
-     * @tc.name      : testFontSetAndIsBaselineSnapNull
-     * @tc.desc      : Test for testFontSetAndIsBaselineSnapNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndIsBaselineSnapNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1701
+     * @tc.desc   Test for testFontSetAndIsBaselineSnapNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndIsBaselineSnapNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndIsBaselineSnapNull';
@@ -1057,12 +1057,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1703
-     * @tc.name      : testFontSetAndIsBaselineSnapMultipleCalls
-     * @tc.desc      : Test for testFontSetAndIsBaselineSnapMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndIsBaselineSnapMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1703
+     * @tc.desc   Test for testFontSetAndIsBaselineSnapMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndIsBaselineSnapMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndIsBaselineSnapMultipleCalls';
@@ -1103,12 +1103,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1800
-     * @tc.name      : testFontSetAndIsForceAutoHintingNormal
-     * @tc.desc      : Test for testFontSetAndIsForceAutoHintingNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontSetAndIsForceAutoHintingNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1800
+     * @tc.desc   Test for testFontSetAndIsForceAutoHintingNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontSetAndIsForceAutoHintingNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontSetAndIsForceAutoHintingNormal';
@@ -1145,12 +1145,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1801
-     * @tc.name      : testFontSetAndIsForceAutoHintingNull
-     * @tc.desc      : Test for testFontSetAndIsForceAutoHintingNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndIsForceAutoHintingNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1801
+     * @tc.desc   Test for testFontSetAndIsForceAutoHintingNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndIsForceAutoHintingNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndIsForceAutoHintingNull';
@@ -1174,12 +1174,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1803
-     * @tc.name      : testFontSetAndIsForceAutoHintingMultipleCalls
-     * @tc.desc      : Test for testFontSetAndIsForceAutoHintingMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndIsForceAutoHintingMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1803
+     * @tc.desc   Test for testFontSetAndIsForceAutoHintingMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndIsForceAutoHintingMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndIsForceAutoHintingMultipleCalls';
@@ -1220,12 +1220,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1900
-     * @tc.name      : testFontSetAndIsEmbeddedBitmapsNormal
-     * @tc.desc      : Test for testFontSetAndIsEmbeddedBitmapsNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontSetAndIsEmbeddedBitmapsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1900
+     * @tc.desc   Test for testFontSetAndIsEmbeddedBitmapsNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontSetAndIsEmbeddedBitmapsNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontSetAndIsEmbeddedBitmapsNormal';
@@ -1262,12 +1262,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1901
-     * @tc.name      : testFontSetAndIsEmbeddedBitmapsNull
-     * @tc.desc      : Test for testFontSetAndIsEmbeddedBitmapsNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndIsEmbeddedBitmapsNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1901
+     * @tc.desc   Test for testFontSetAndIsEmbeddedBitmapsNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndIsEmbeddedBitmapsNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndIsEmbeddedBitmapsNull';
@@ -1291,12 +1291,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1903
-     * @tc.name      : testFontSetAndIsEmbeddedBitmapsMultipleCalls
-     * @tc.desc      : Test for testFontSetAndIsEmbeddedBitmapsMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndIsEmbeddedBitmapsMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1903
+     * @tc.desc   Test for testFontSetAndIsEmbeddedBitmapsMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndIsEmbeddedBitmapsMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testFontSetAndIsEmbeddedBitmapsMultipleCalls';
@@ -1337,12 +1337,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1904
-     * @tc.name      : testFontGetTextPath
-     * @tc.desc      : Test for testFontGetTextPathForCharacterNormal1
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetTextPathForCharacterNormal1
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1904
+     * @tc.desc   Test for testFontGetTextPathForCharacterNormal1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetTextPathForCharacterNormal1' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathForCharacterNormal1';
@@ -1361,12 +1361,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1905
-     * @tc.name      : testFontGetTextPath
-     * @tc.desc      : Test for testFontGetTextPathForCharacterNormal2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetTextPathForCharacterNormal2
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1905
+     * @tc.desc   Test for testFontGetTextPathForCharacterNormal2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetTextPathForCharacterNormal2' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathForCharacterNormal2';
@@ -1384,12 +1384,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1906
-     * @tc.name      : testFontGetTextPath
-     * @tc.desc      : Test for testFontGetTextPathForCharacterNormal3
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetTextPathForCharacterNormal3
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1906
+     * @tc.desc   Test for testFontGetTextPathForCharacterNormal3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetTextPathForCharacterNormal3' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathForCharacterNormal3';
@@ -1406,12 +1406,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1907
-     * @tc.name      : testFontGetTextPath
-     * @tc.desc      : Test for testFontGetTextPathForCharacterNormal4
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetTextPathForCharacterNormal4
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1907
+     * @tc.desc   Test for testFontGetTextPathForCharacterNormal4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetTextPathForCharacterNormal4' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathForCharacterNormal4';
@@ -1433,12 +1433,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1907
-     * @tc.name      : testFontGetTextPath
-     * @tc.desc      : Test for testFontGetTextPathParameterError1
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetTextPathParameterError1
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1907
+     * @tc.desc   Test for testFontGetTextPathParameterError1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetTextPathParameterError1' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathParameterError1';
@@ -1462,12 +1462,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1908
-     * @tc.name      : testFontGetTextPath
-     * @tc.desc      : Test for testFontGetTextPathParameterError2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetTextPathParameterError2
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1908
+     * @tc.desc   Test for testFontGetTextPathParameterError2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetTextPathParameterError2' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathParameterError2';
@@ -1491,12 +1491,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1909
-     * @tc.name      : testFontGetTextPath
-     * @tc.desc      : Test for testFontGetTextPathParameterError3
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetTextPathParameterError3
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1909
+     * @tc.desc   Test for testFontGetTextPathParameterError3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetTextPathParameterError3' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathParameterError3';
@@ -1520,12 +1520,12 @@ export default function fontPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1910
-     * @tc.name      : testFontGetTextPath
-     * @tc.desc      : Test for testFontGetTextPathParameterError4
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetTextPathParameterError4
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_1910
+     * @tc.desc   Test for testFontGetTextPathParameterError4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetTextPathParameterError4' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathParameterError4';

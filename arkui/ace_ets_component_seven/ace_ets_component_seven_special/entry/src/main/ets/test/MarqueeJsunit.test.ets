@@ -42,12 +42,12 @@ export default function marqueeJsunit() {
     });
 
     /**
+     * @tc.name   testMarquee_04001
      * @tc.number testMarquee_04001
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMarquee_04001', Level.LEVEL0, async (done: Function) => {
       console.info('testMarquee_04001 START');
@@ -59,12 +59,12 @@ export default function marqueeJsunit() {
     });
 
     /**
+     * @tc.name   testMarquee_04002
      * @tc.number testMarquee_04002
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMarquee_04002', Level.LEVEL0, async (done: Function) => {
       console.info('testMarquee_04002 START');
@@ -76,12 +76,12 @@ export default function marqueeJsunit() {
     });
 
     /**
+     * @tc.name   testMarquee_04003
      * @tc.number testMarquee_04003
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMarquee_04003', Level.LEVEL0, async (done: Function) => {
       console.info('testMarquee_04003 START');
@@ -93,12 +93,12 @@ export default function marqueeJsunit() {
     });
 
     /**
+     * @tc.name   testMarquee_04004
      * @tc.number testMarquee_04004
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMarquee_04004', Level.LEVEL0, async (done: Function) => {
       console.info('testMarquee_04004 START');
@@ -110,12 +110,12 @@ export default function marqueeJsunit() {
     });
 
     /**
+     * @tc.name   testMarquee_04005
      * @tc.number testMarquee_04005
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMarquee_04005', Level.LEVEL0, async (done: Function) => {
       console.info('testMarquee_04005 START');

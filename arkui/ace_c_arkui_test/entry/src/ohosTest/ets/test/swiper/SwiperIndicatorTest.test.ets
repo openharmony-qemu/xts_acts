@@ -26,143 +26,143 @@ export default function swiperIndicatorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0100
-     * @tc.name       : testSwiperIndicator001
-     * @tc.desc       : testing indicator for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperIndicator001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0100
+     * @tc.desc   testing indicator for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0200
-     * @tc.name       : testSwiperIndicator002
-     * @tc.desc       : testing indicator for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperIndicator002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0200
+     * @tc.desc   testing indicator for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0300
-     * @tc.name       : testSwiperIndicator003
-     * @tc.desc       : testing indicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0300
+     * @tc.desc   testing indicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0400
-     * @tc.name       : testSwiperIndicator004
-     * @tc.desc       : testing indicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0400
+     * @tc.desc   testing indicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0500
-     * @tc.name       : testSwiperIndicator005
-     * @tc.desc       : testing indicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator005
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0500
+     * @tc.desc   testing indicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0600
-     * @tc.name       : testSwiperIndicator006
-     * @tc.desc       : testing indicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator006
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0600
+     * @tc.desc   testing indicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0700
-     * @tc.name       : testSwiperIndicator007
-     * @tc.desc       : testing indicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator007
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0700
+     * @tc.desc   testing indicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0800
-     * @tc.name       : testSwiperIndicator008
-     * @tc.desc       : testing indicator for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator008
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0800
+     * @tc.desc   testing indicator for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0900
-     * @tc.name       : testSwiperIndicator009
-     * @tc.desc       : testing indicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator009
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0900
+     * @tc.desc   testing indicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_1000
-     * @tc.name       : testSwiperIndicator010
-     * @tc.desc       : testing indicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator010
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_1000
+     * @tc.desc   testing indicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_1100
-     * @tc.name       : testSwiperIndicator011
-     * @tc.desc       : testing indicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndicator011
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_1100
+     * @tc.desc   testing indicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndicator011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndicator011()).assertEqual(0)

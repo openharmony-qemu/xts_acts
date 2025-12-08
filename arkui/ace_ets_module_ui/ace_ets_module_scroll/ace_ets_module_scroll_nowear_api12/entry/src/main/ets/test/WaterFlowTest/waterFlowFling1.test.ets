@@ -46,12 +46,12 @@ export default function waterFlowFling1() {
     });
 
     /**
-     * @tc.number    waterFlowFling1_001
-     * @tc.name      waterFlowFling1_001
-     * @tc.desc      When fling is 10, the event callback timing.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlowFling1_0100
+     * @tc.number waterFlowFling1_001
+     * @tc.desc   When fling is 10, the event callback timing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('waterFlowFling1_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[waterFlowFling1_0100] START');

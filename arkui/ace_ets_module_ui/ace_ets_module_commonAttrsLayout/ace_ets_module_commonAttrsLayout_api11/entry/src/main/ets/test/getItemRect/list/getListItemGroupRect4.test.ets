@@ -63,12 +63,14 @@ export default function getListItemGroupRect4() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect4_0100
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set visibility of listItemGroup0 to Visibility.Visible
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect4_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect4_0100
+     * @tc.desc   set index to 0,set visibility of listItemGroup0 to Visibility.Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect4_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect4_0100] START');
@@ -131,12 +133,14 @@ export default function getListItemGroupRect4() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect4_0200
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set visibility of listItemGroup0 to Visibility.Hidden
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect4_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect4_0200
+     * @tc.desc   set index to 0,set visibility of listItemGroup0 to Visibility.Hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect4_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect4_0200] START');
@@ -194,12 +198,14 @@ export default function getListItemGroupRect4() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect4_0300
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set visibility of listItemGroup0 to Visibility.None
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect4_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect4_0300
+     * @tc.desc   set index to 0,set visibility of listItemGroup0 to Visibility.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect4_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect4_0300] START');

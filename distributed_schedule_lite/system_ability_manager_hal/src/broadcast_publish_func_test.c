@@ -122,9 +122,12 @@ static BOOL Broadcast02TestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Publish_0010
- * @tc.name      : Provider can publish a broadcast message
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testPublish0010
+ * @tc.number DMSLite_SAMGR_Publish_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(Broadcast02TestSuite, testPublish0010, Function | MediumTest | Level1)
 {
@@ -153,9 +156,12 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0010, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Publish_0020
- * @tc.name      : Provider failed to publish broadcast for the specified topic not exist  
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testPublish0020
+ * @tc.number DMSLite_SAMGR_Publish_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast02TestSuite, testPublish0020, Function | MediumTest | Level2)
 {
@@ -185,9 +191,12 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0020, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Publish_0030
- * @tc.name      : Provider failed to publish broadcast for len and data not match  
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testPublish0030
+ * @tc.number DMSLite_SAMGR_Publish_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast02TestSuite, testPublish0030, Function | MediumTest | Level2)
 {
@@ -219,9 +228,12 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0030, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Publish_0040
- * @tc.name      : Provider publish broadcast successfully for 0 and max length message  
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testPublish0040
+ * @tc.number DMSLite_SAMGR_Publish_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast02TestSuite, testPublish0040, Function | MediumTest | Level2)
 {
@@ -250,9 +262,12 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0040, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Publish_0050
- * @tc.name      : Provider publish broadcast successfully for no consumer  
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testPublish0050
+ * @tc.number DMSLite_SAMGR_Publish_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast02TestSuite, testPublish0050, Function | MediumTest | Level2)
 {
@@ -280,9 +295,12 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0050, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Publish_0060
- * @tc.name      : Provider publish broadcast successfully for multi consumers  
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testPublish0060
+ * @tc.number DMSLite_SAMGR_Publish_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast02TestSuite, testPublish0060, Function | MediumTest | Level2)
 {
@@ -311,9 +329,12 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0060, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Publish_0070
- * @tc.name      : Provider send broadcast repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testPublish0070
+ * @tc.number DMSLite_SAMGR_Publish_0070
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast02TestSuite, testPublish0070, Function | MediumTest | Level2)
 {

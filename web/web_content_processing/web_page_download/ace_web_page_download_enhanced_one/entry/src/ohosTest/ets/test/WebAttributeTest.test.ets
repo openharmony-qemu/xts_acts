@@ -67,14 +67,14 @@ export default function webAttributeTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_ONDOWNLOADSTART_0100
-    * @tc.name        : testOnDownloadStart001
-    * @tc.desc        : test onDownloadStart normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testOnDownloadStart001
+     * @tc.number SUB_WEB_ONDOWNLOADSTART_0100
+     * @tc.desc   test onDownloadStart normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnDownloadStart001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnDownloadStart", 131550)
       Utils.registerBaseEvent("testOnDownloadStart001", "https://consumer.huawei.com/" +

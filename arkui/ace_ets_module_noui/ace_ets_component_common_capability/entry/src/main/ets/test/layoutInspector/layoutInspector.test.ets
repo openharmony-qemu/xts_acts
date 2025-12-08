@@ -47,12 +47,12 @@ export default function LayoutInspectorTest() {
         });
 
         /**
-         * @tc.number    LayoutInspectorTest_0100
-         * @tc.name      LayoutInspectorTest_0100
-         * @tc.desc      test isLayoutInspector
-         * @tc.level:    Level 1
-         * @tc.type :    isLayoutInspector
-         * @tc.size :
+         * @tc.name   ISLAYOUT_INSPECTOR_0100
+         * @tc.number LayoutInspectorTest_0100
+         * @tc.desc   test isLayoutInspector
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('ISLAYOUT_INSPECTOR_0100', Level.LEVEL1, async (done: Function) => {
             console.info('ISLAYOUT_INSPECTOR_0100 START');
@@ -66,12 +66,12 @@ export default function LayoutInspectorTest() {
         });
         
         /**
-         * @tc.number    LayoutInspectorTest_0200
-         * @tc.name      LayoutInspectorTest_0200
-         * @tc.desc      test not isLayoutInspector
-         * @tc.level:    Level 1
-         * @tc.type :    isLayoutInspector
-         * @tc.size :
+         * @tc.name   ISLAYOUT_INSPECTOR_0200
+         * @tc.number LayoutInspectorTest_0200
+         * @tc.desc   test not isLayoutInspector
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('ISLAYOUT_INSPECTOR_0200', Level.LEVEL1, async (done: Function) => {
             console.info("ISLAYOUT_INSPECTOR_0200 start: ");

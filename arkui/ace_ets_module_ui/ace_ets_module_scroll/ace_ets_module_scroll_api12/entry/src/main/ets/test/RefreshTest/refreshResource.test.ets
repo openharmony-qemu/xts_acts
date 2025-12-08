@@ -43,14 +43,15 @@ export default function refreshResource() {
       done()
     });
 
-    /**
-     * @tc.number    SUB_ACE_RefreshResource_0100
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   refreshResource_0100
+     * @tc.number refreshResource_0100
+     * @tc.desc   refreshResource_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshResource_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshResource_0100] START');
       let strJson: string = getInspectorByKey('refreshResource');
@@ -61,14 +62,15 @@ export default function refreshResource() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_RefreshResource_0200
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   refreshResource_0200
+     * @tc.number refreshResource_0200
+     * @tc.desc   refreshResource_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshResource_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshResource_0200] START');
       try {
@@ -95,14 +97,15 @@ export default function refreshResource() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_RefreshResource_0300
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   refreshResource_0300
+     * @tc.number refreshResource_0300
+     * @tc.desc   refreshResource_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshResource_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshResource_0300] START');
       try {
@@ -129,14 +132,15 @@ export default function refreshResource() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_RefreshResource_0400
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   refreshResource_0400
+     * @tc.number refreshResource_0400
+     * @tc.desc   refreshResource_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshResource_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshResource_0400] START');
       try {
@@ -163,14 +167,15 @@ export default function refreshResource() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_RefreshResource_0500
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   refreshResource_0500
+     * @tc.number refreshResource_0500
+     * @tc.desc   refreshResource_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshResource_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshResource_0500] START');
       try {
@@ -197,14 +202,15 @@ export default function refreshResource() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_RefreshResource_0600
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   refreshResource_0600
+     * @tc.number refreshResource_0600
+     * @tc.desc   refreshResource_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshResource_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshResource_0600] START');
       try {
@@ -231,14 +237,15 @@ export default function refreshResource() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_RefreshResource_0700
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   refreshResource_0700
+     * @tc.number refreshResource_0700
+     * @tc.desc   refreshResource_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshResource_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshResource_0700] START');
       try {

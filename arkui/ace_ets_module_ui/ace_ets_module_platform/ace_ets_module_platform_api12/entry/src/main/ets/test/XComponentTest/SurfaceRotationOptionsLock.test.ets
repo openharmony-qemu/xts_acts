@@ -43,12 +43,12 @@ export default function SurfaceRotationOptionsLockTest() {
     });
 
     /**
-     * @tc.number    SurfaceRotationOptionsLockTest_0010
-     * @tc.name      SurfaceRotationOptionsLockTest_0010
-     * @tc.desc      Xcomponent: get the api of SurfaceRotationOptions.Lock
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SurfaceRotationOptionsLockTest_0010
+     * @tc.number SurfaceRotationOptionsLockTest_0010
+     * @tc.desc   Xcomponent: get the api of SurfaceRotationOptions.Lock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SurfaceRotationOptionsLockTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('SurfaceRotationOptionsLockTest_0010 START');

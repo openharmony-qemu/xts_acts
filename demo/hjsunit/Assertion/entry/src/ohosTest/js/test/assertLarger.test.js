@@ -16,7 +16,6 @@ import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertLarger', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertLargerSuccess
      * @tc.number assertLargerSuccess
      * @tc.desc   assertLargerSuccess
@@ -30,7 +29,6 @@ describe('assertLarger', function () {
         expect(a).assertLarger(b)
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertLargerFail
      * @tc.number assertLargerFail
      * @tc.desc   assertLargerFail

@@ -44,10 +44,12 @@ export default function commonEventTest1() {
       console.info("commonEventTest1 after each called");
     });
     /**
-     * @tc.number    commonEventTest1_0100
-     * @tc.name      commonEventTest1_0100
-     * @tc.desc      Test setOnMouse
-     * @tc.level     Level 2
+     * @tc.name   commonEventTest1_0100
+     * @tc.number commonEventTest1_0100
+     * @tc.desc   Test setOnMouse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('commonEventTest1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('commonEventTest1_0100 START');
@@ -70,10 +72,12 @@ export default function commonEventTest1() {
       done();
     });
     /**
-     * @tc.number    commonEventTest1_0200
-     * @tc.name      commonEventTest1_0200
-     * @tc.desc      Test setOnSizeChange
-     * @tc.level     Level 2
+     * @tc.name   commonEventTest1_0200
+     * @tc.number commonEventTest1_0200
+     * @tc.desc   Test setOnSizeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('commonEventTest1_0200', Level.LEVEL0, async (done: Function) => {
       console.info('commonEventTest1_0200 START');

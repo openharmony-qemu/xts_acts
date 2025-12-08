@@ -74,7 +74,6 @@ export default function LinkEnhanceNoPermission() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100
      * @tc.desc   linkEnhance.createConnection接口权限校验
@@ -106,7 +105,6 @@ export default function LinkEnhanceNoPermission() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_noPermission_createServer_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_noPermission_createServer_0100
      * @tc.desc   linkEnhance.createServer接口权限校验

@@ -41,12 +41,14 @@ export default function sheetTypeContentCoverTest() {
       done()
     });
 
-    /* *
-    * @tc.number: sheetTypeContentCoverTest_001
-    * @tc.name  : sheetTypeContentCoverTest_001
-    * @tc.desc  : Test the sheetTypeContentCoverTest_001 not null
-    * @tc.level : Level 1
-    */
+     /**
+      * @tc.name   sheetTypeContentCoverTest_001
+      * @tc.number sheetTypeContentCoverTest_001
+      * @tc.desc   Test the sheetTypeContentCoverTest_001 not null
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('sheetTypeContentCoverTest_001', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('sheetTypeContentCoverTest_001 START');
       let driver = await Driver.create()

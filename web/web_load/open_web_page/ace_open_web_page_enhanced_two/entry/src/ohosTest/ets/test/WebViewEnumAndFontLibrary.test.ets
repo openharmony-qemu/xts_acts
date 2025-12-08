@@ -59,14 +59,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MIXEDMODENONE_0100
-    * @tc.name       : testMixedModeNone001
-    * @tc.desc       : test MixedModeNone
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMixedModeNone001
+     * @tc.number SUB_WEB_MIXEDMODENONE_0100
+     * @tc.desc   test MixedModeNone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMixedModeNone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMixedModeNone", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -77,14 +77,14 @@ export default function WebViewEnumAndFontLibrary() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MIXEDMODEALL_0100
-    * @tc.name       : testMixedModeAll001
-    * @tc.desc       : test MixedModeAll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMixedModeAll001
+     * @tc.number SUB_WEB_MIXEDMODEALL_0100
+     * @tc.desc   test MixedModeAll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMixedModeAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMixedModeAll", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

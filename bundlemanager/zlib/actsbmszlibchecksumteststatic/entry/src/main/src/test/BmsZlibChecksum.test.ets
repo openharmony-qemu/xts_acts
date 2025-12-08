@@ -25,12 +25,12 @@ export default function bmsZlibChecksumTest() {
   describe('BmsZlibChecksumTest', () => {
 
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_static_0100
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_static_0100
-     * @tc.desc: test createChecksum
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_static_0100
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_static_0100
+     * @tc.desc   test createChecksum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -55,12 +55,12 @@ export default function bmsZlibChecksumTest() {
     });
 
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_static_0200
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_static_0200
-     * @tc.desc: test createChecksumSync
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_static_0200
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_static_0200
+     * @tc.desc   test createChecksumSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -77,12 +77,12 @@ export default function bmsZlibChecksumTest() {
     });
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_static_06
-     * @tc.name       : ACTS_ChecksumTest_static_06
-     * @tc.desc       : test getCrcTable
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ACTS_ChecksumTest_static_06
+     * @tc.number ACTS_ChecksumTest_static_06
+     * @tc.desc   test getCrcTable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("ACTS_ChecksumTest_static_06", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {

@@ -61,10 +61,13 @@ export default function storeWebArchiveSaveFail() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVESAVEFAIL_API_007
-     *tc.name testStoreWebArchiveCallback
-     *tc.desic test storeWebArchiveCallback interface when save file failed.
+    /**
+     * @tc.name   testStoreWebArchiveCallback
+     * @tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVESAVEFAIL_API_007
+     * @tc.desc   testStoreWebArchiveCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchiveCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       Utils.emitEvent("emitStoreWebArchiveCallbackSaveFail", 132230);
@@ -76,10 +79,13 @@ export default function storeWebArchiveSaveFail() {
       await Utils.waitAndClickComponent(driver, 'webcomponent03');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVESAVEFAIL_API_008
-     *tc.name testStoreWebArchivePromise
-     *tc.desic test storeWebArchivePromise interface when save file failed.
+    /**
+     * @tc.name   testStoreWebArchivePromise
+     * @tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVESAVEFAIL_API_008
+     * @tc.desc   testStoreWebArchivePromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchivePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitStoreWebArchivePromiseSaveFail", 132230);

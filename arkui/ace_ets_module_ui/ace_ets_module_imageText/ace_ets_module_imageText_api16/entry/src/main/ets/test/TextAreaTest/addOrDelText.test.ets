@@ -43,11 +43,13 @@ export default function addOrDelText() {
     });
     
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         addOrDelText0001
-     * @tc.desic        The addText and deleteText methods are added to the 
-                          textinput, search, and textarea components.
+    /**
+     * @tc.name   addOrDelText0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   addOrDelText0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addOrDelText0001', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -84,11 +86,13 @@ export default function addOrDelText() {
         done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         addOrDelText0002
-     * @tc.desic        The addText and deleteText methods are added to the 
-                          textinput, search, and textarea components.
+    /**
+     * @tc.name   addOrDelText0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   addOrDelText0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addOrDelText0002', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -134,11 +138,13 @@ export default function addOrDelText() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         addOrDelText0003
-     * @tc.desic        The addText and deleteText methods are added to the 
-                          textinput, search, and textarea components.
+    /**
+     * @tc.name   addOrDelText0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   addOrDelText0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addOrDelText0003', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -180,11 +186,13 @@ export default function addOrDelText() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         addOrDelText0004
-     * @tc.desic        The addText and deleteText methods are added to the 
-                          textinput, search, and textarea components.
+    /**
+     * @tc.name   addOrDelText0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   addOrDelText0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addOrDelText0004', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -226,11 +234,13 @@ export default function addOrDelText() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         addOrDelText0005
-     * @tc.desic        The addText and deleteText methods are added to the 
-                          textinput, search, and textarea components.
+    /**
+     * @tc.name   addOrDelText0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   addOrDelText0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addOrDelText0005', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -272,11 +282,13 @@ export default function addOrDelText() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         addOrDelText0006
-     * @tc.desic        The addText and deleteText methods are added to the 
-                          textinput, search, and textarea components.
+    /**
+     * @tc.name   addOrDelText0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   addOrDelText0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addOrDelText0006', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -318,11 +330,13 @@ export default function addOrDelText() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         addOrDelText0007
-     * @tc.desic        The addText and deleteText methods are added to the 
-                          textinput, search, and textarea components.
+    /**
+     * @tc.name   addOrDelText0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   addOrDelText0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addOrDelText0007', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -365,11 +379,13 @@ export default function addOrDelText() {
     });
 
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         addOrDelText0008
-     * @tc.desic        The addText and deleteText methods are added to the 
-                          textinput, search, and textarea components.
+    /**
+     * @tc.name   addOrDelText0008
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   addOrDelText0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addOrDelText0008', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();

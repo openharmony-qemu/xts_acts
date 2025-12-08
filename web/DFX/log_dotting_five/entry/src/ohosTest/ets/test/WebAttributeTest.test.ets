@@ -40,28 +40,28 @@ export default function webAttributeTest() {
       done()
     });
 
-    /*
-    * @tc.number      : SUB_WEB_ONCONSOLE_0100
-    * @tc.name        : testOnConsole001
-    * @tc.desc        : test onConsole message
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnConsole001
+     * @tc.number SUB_WEB_ONCONSOLE_0100
+     * @tc.desc   test onConsole message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnConsole001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnConsole001", 119060)
       Utils.registerEvent("testOnConsole001", "console test", 119070, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CONSOLEMESSAGE_0100
-    * @tc.name        : testConsoleMessage001
-    * @tc.desc        : test onConsole info
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testConsoleMessage001
+     * @tc.number SUB_WEB_CONSOLEMESSAGE_0100
+     * @tc.desc   test onConsole info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConsoleMessage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitConsoleMessage001", 119060)
       Utils.registerEvent("testConsoleMessage001", 51, 119080, done);

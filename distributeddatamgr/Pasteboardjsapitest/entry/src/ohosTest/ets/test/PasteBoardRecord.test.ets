@@ -68,7 +68,6 @@ export default function pasteBoardRecordTest() {
       error = undefined;
     })
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1000
      * @tc.desc   Test pasteBoard create pixelMap data success
@@ -90,7 +89,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2100
      * @tc.desc   Test pasteBoard create want data success
@@ -108,7 +106,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0200
      * @tc.desc   Test pasteBoard create arrayBuffer data success
@@ -126,7 +123,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1200
      * @tc.desc   Test pasteBoard create string data success
@@ -144,7 +140,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0300
      * @tc.desc   Test pasteBoard create arrayBuffer data success with 1024 bit mimeType
@@ -163,7 +158,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1500
      * @tc.desc   Test pasteBoard create arrayBuffer data success with 512000 bit valueType<string>
@@ -185,7 +179,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0700
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1700
      * @tc.desc   Test pasteBoard create uri data success
@@ -203,7 +196,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0400
      * @tc.desc   Test pasteBoard create string data fail with 1025 bit mimeType
@@ -227,7 +219,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0900
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1400
      * @tc.desc   Test pasteBoard create string data fail,type of mimeType is number
@@ -251,7 +242,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1000
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1300
      * @tc.desc   Test pasteBoard create string data fail,value of mimeType is null
@@ -274,7 +264,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1600
      * @tc.desc   Test pasteBoard create string data fail with one parameter
@@ -298,7 +287,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0900
      * @tc.desc   Test pasteBoard create pixelMap record success
@@ -321,7 +309,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2000
      * @tc.desc   Test pasteBoard create want record success
@@ -342,7 +329,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0100
      * @tc.desc   Test pasteBoard create arrayBuffer record success
@@ -363,7 +349,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1100
      * @tc.desc   Test pasteBoard create string record success
@@ -384,7 +369,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0700
      * @tc.desc   Test pasteBoard create arrayBuffer record success with 1024 bit mimeType
@@ -405,7 +389,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1800
      * @tc.desc   Test pasteBoard create string record success with 512000 bit valueType<string>
@@ -431,7 +414,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0700
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0800
      * @tc.desc   Test pasteBoard create string record fail with 1025 bit mimeType
@@ -455,7 +437,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0600
      * @tc.desc   Test pasteBoard create string record fail,type of mimeType is number
@@ -479,7 +460,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0900
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1900
      * @tc.desc   Test pasteBoard create string record fail with 512001 bit valueType<string>
@@ -506,7 +486,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1000
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0500
      * @tc.desc   Test pasteBoard create string record fail,mimeType is null
@@ -529,7 +508,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2200
      * @tc.desc   Test pasteBoard create string record fail with one parameter
@@ -553,7 +531,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2500
      * @tc.desc   Test pasteBoard add pixelMap record success
@@ -575,7 +552,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2900
      * @tc.desc   Test pasteBoard add want record success
@@ -595,7 +571,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2200
      * @tc.desc   Test pasteBoard add arrayBuffer record success
@@ -615,7 +590,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2600
      * @tc.desc   Test pasteBoard add string record success
@@ -635,7 +609,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2300
      * @tc.desc   Test pasteBoard add record success with 1024 bit mimeType
@@ -655,7 +628,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2000
      * @tc.desc   Test pasteBoard add 600th record success
@@ -677,7 +649,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0700
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2800
      * @tc.desc   Test pasteBoard add record success with 512000 bit valueType<string>
@@ -701,7 +672,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2400
      * @tc.desc   Test pasteBoard add record fail with 1025 bit mimeType
@@ -728,7 +698,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0900
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1900
      * @tc.desc   Test pasteBoard add record fail,type of mimeType is number
@@ -753,7 +722,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2100
      * @tc.desc   Test pasteBoard add 613th record successful
@@ -780,7 +748,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2700
      * @tc.desc   Test pasteBoard add record fail,mimeType is null
@@ -804,7 +771,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_3000
      * @tc.desc   Test pasteBoard add 613th record successful

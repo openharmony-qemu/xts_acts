@@ -69,12 +69,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0100
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1001
-     * @tc.name taskPoolAsyncRunnerErrorTest0100
-     * @tc.desc test Common tasks are exceptional
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Common tasks are exceptional
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -112,12 +112,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0200
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1002
-     * @tc.name taskPoolAsyncRunnerErrorTest0200
-     * @tc.desc test GenericsTask throws exceptions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test GenericsTask throws exceptions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -155,12 +155,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0300
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1003
-     * @tc.name taskPoolAsyncRunnerErrorTest0300
-     * @tc.desc test OnEnqueued callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test OnEnqueued callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -216,12 +216,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0400
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1004
-     * @tc.name taskPoolAsyncRunnerErrorTest0400
-     * @tc.desc test OnStartExecution callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test OnStartExecution callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -277,12 +277,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0500
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1005
-     * @tc.name taskPoolAsyncRunnerErrorTest0500
-     * @tc.desc test OnExecutionFailed callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test OnExecutionFailed callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -338,12 +338,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0600
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST__1006
-     * @tc.name taskPoolAsyncRunnerErrorTest0600
-     * @tc.desc test OnExecutionSucceeded callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test OnExecutionSucceeded callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -399,12 +399,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0700
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1007
-     * @tc.name taskPoolAsyncRunnerErrorTest0700
-     * @tc.desc test OnReceiveData callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test OnReceiveData callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -460,12 +460,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0800
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1008
-     * @tc.name taskPoolAsyncRunnerErrorTest0800
-     * @tc.desc test Then callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Then callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -515,12 +515,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest0900
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1009
-     * @tc.name taskPoolAsyncRunnerErrorTest0900
-     * @tc.desc test Catch callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Catch callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -574,12 +574,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1000
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1010
-     * @tc.name taskPoolAsyncRunnerErrorTest1000
-     * @tc.desc test Finally callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Finally callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -636,12 +636,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
 
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1100
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1011
-     * @tc.name taskPoolAsyncRunnerErrorTest1100
-     * @tc.desc test AsyncLock callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncLock callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -684,12 +684,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1200
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1012
-     * @tc.name taskPoolAsyncRunnerErrorTest1200
-     * @tc.desc test AsyncLock's then callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncLock's then callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -732,12 +732,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1300
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1013
-     * @tc.name taskPoolAsyncRunnerErrorTest1300
-     * @tc.desc test AsyncLock's catch callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncLock's catch callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -780,12 +780,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1400
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1014
-     * @tc.name taskPoolAsyncRunnerErrorTest1400
-     * @tc.desc test AsyncLock's finally callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncLock's finally callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -828,12 +828,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1500
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1015
-     * @tc.name taskPoolAsyncRunnerErrorTest1500
-     * @tc.desc test Promise callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Promise callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -875,12 +875,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1600
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1016
-     * @tc.name taskPoolAsyncRunnerErrorTest1600
-     * @tc.desc test Promise's then callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Promise's then callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -922,12 +922,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1700
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1017
-     * @tc.name taskPoolAsyncRunnerErrorTest1700
-     * @tc.desc test Promise's catch callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Promise's catch callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -969,12 +969,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1800
      * @tc.number SUB_SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1018
-     * @tc.name taskPoolAsyncRunnerErrorTest1800
-     * @tc.desc test Promise's finally callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Promise's finally callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1016,12 +1016,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest1900
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1019
-     * @tc.name taskPoolAsyncRunnerErrorTest1900
-     * @tc.desc test Settimeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Settimeout
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1063,12 +1063,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest2000
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1020
-     * @tc.name taskPoolAsyncRunnerErrorTest2000
-     * @tc.desc test Asynchronous method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1110,12 +1110,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest2500
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1025
-     * @tc.name taskPoolAsyncRunnerErrorTest2500
-     * @tc.desc test Worker callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Worker callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1165,12 +1165,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest2600
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1026
-     * @tc.name taskPoolAsyncRunnerErrorTest2600
-     * @tc.desc test Worker callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Worker callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1220,12 +1220,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest2700
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1027
-     * @tc.name taskPoolAsyncRunnerErrorTest2700
-     * @tc.desc test Taskpool callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Taskpool callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1263,12 +1263,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest2800
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1028
-     * @tc.name taskPoolAsyncRunnerErrorTest2800
-     * @tc.desc test Taskpool's then callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Taskpool's then callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1302,12 +1302,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest2900
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1029
-     * @tc.name taskPoolAsyncRunnerErrorTest2900
-     * @tc.desc test Taskpool's catch callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Taskpool's catch callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1345,12 +1345,12 @@ export default function taskPoolAsyncRunnerErrorTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorTest3000
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1030
-     * @tc.name taskPoolAsyncRunnerErrorTest3000
-     * @tc.desc test Taskpool's fianlly callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Taskpool's fianlly callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {

@@ -40,14 +40,14 @@ export default function TextClockDateTimeOptionsTest() {
       console.info('TextClockDateTimeOptionsTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: TextClockDateTimeOptionsTest_001
-    * @tc.name  : TextClockDateTimeOptionsTest_001
-    * @tc.desc  : To test the dateTimeOptions numeric
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextClockDateTimeOptionsTest_001
+     * @tc.number TextClockDateTimeOptionsTest_001
+     * @tc.desc   To test the dateTimeOptions numeric
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextClockDateTimeOptionsTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('TextClockDateTimeOptionsTest_001 START');
       await Utils.sleep(1000);
@@ -58,14 +58,14 @@ export default function TextClockDateTimeOptionsTest() {
       console.info('[TextClockDateTimeOptionsTest_001] END');
       done();
     });
-    /* *
-    * @tc.number: TextClockDateTimeOptionsTest_002
-    * @tc.name  : TextClockDateTimeOptionsTest_002
-    * @tc.desc  : To test the dateTimeOptions 2-digit
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextClockDateTimeOptionsTest_002
+     * @tc.number TextClockDateTimeOptionsTest_002
+     * @tc.desc   To test the dateTimeOptions 2-digit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextClockDateTimeOptionsTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('TextClockDateTimeOptionsTest_002 START');
       await Utils.sleep(1000);

@@ -52,10 +52,13 @@ export default function webOnFirstContThree() {
       console.info("webOnFirstContThree beforeEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBPATR5_API_0300
-     *tc.name testOnfirstcontentfulpaintloadurlWebc
-     *tc.desc onfirstcontentfulpaint with web load url
+    /**
+     * @tc.name   testOnfirstcontentfulpaintloadurlWebc
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR5_API_0300
+     * @tc.desc   onfirstcontentfulpaint with web load url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnfirstcontentfulpaintloadurlWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitLoadUrlOnfirstcontentfulpaintWebc";

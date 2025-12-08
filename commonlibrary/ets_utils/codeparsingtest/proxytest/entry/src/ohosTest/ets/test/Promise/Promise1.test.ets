@@ -45,12 +45,12 @@ export default function promise1Test() {
     })
 
     /**
+     * @tc.name   promise1Test001
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0100
-     * @tc.name promise1Test001
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -60,12 +60,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test002
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0200
-     * @tc.name promise1Test002
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -75,12 +75,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test003
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0300
-     * @tc.name promise1Test003
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<number>();
@@ -92,12 +92,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test004
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0400
-     * @tc.name promise1Test004
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<number>();
@@ -109,12 +109,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test005
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0500
-     * @tc.name promise1Test005
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -129,12 +129,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test006
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0600
-     * @tc.name promise1Test006
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -144,12 +144,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test007
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0700
-     * @tc.name promise1Test007
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = await handleError();
@@ -157,12 +157,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test008
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0800
-     * @tc.name promise1Test008
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -171,12 +171,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test009
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0900
-     * @tc.name promise1Test009
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<number[]>();
@@ -187,12 +187,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test010
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1000
-     * @tc.name promise1Test010
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -203,12 +203,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test011
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1100
-     * @tc.name promise1Test011
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<[]>();
@@ -217,12 +217,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test012
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1200
-     * @tc.name promise1Test012
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<("fulfilled" | "rejected")[]>();
@@ -235,12 +235,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test013
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1300
-     * @tc.name promise1Test013
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<number>();
@@ -252,12 +252,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test014
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1400
-     * @tc.name promise1Test014
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -270,12 +270,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test015
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1500
-     * @tc.name promise1Test015
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -288,12 +288,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test016
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1600
-     * @tc.name promise1Test016
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -304,12 +304,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test017
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1700
-     * @tc.name promise1Test017
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<boolean>();
@@ -321,12 +321,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test018
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1800
-     * @tc.name promise1Test018
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -335,12 +335,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test019
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_1900
-     * @tc.name promise1Test019
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -351,12 +351,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test020
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2000
-     * @tc.name promise1Test020
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -367,12 +367,12 @@ export default function promise1Test() {
       expect(JSON.stringify(list)).assertEqual('{"0":"order1","1":"order2"}')
     });
     /**
+     * @tc.name   promise1Test021
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2100
-     * @tc.name promise1Test021
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -388,12 +388,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test022
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2200
-     * @tc.name promise1Test022
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | boolean | Error>();
@@ -405,12 +405,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test023
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2300
-     * @tc.name promise1Test023
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | boolean | Error>();
@@ -432,12 +432,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test024
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2400
-     * @tc.name promise1Test024
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -451,12 +451,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test025
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2500
-     * @tc.name promise1Test025
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -471,12 +471,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test026
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2600
-     * @tc.name promise1Test026
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | Error>();
@@ -487,12 +487,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test027
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2700
-     * @tc.name promise1Test027
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -501,12 +501,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test028
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2800
-     * @tc.name promise1Test028
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -515,12 +515,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test029
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_2900
-     * @tc.name promise1Test029
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error | string>();
@@ -529,12 +529,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test030
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_3000
-     * @tc.name promise1Test030
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       flag = 0;
@@ -544,12 +544,12 @@ export default function promise1Test() {
 
 
     /**
+     * @tc.name   promise1Test032
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_3200
-     * @tc.name promise1Test032
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error | string>();
@@ -560,12 +560,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test034
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_3400
-     * @tc.name promise1Test034
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let finallyExecuted = false;
@@ -580,12 +580,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test035
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_3500
-     * @tc.name promise1Test035
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | number>();
@@ -596,12 +596,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test036
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_3600
-     * @tc.name promise1Test036
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | Error>();
@@ -613,12 +613,12 @@ export default function promise1Test() {
 
 
     /**
+     * @tc.name   promise1Test040
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_4000
-     * @tc.name promise1Test040
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<boolean>();
@@ -630,12 +630,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test041
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_4100
-     * @tc.name promise1Test041
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<number>();
@@ -647,12 +647,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test042
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_4200
-     * @tc.name promise1Test042
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<number[]>();
@@ -665,12 +665,12 @@ export default function promise1Test() {
 
 
     /**
+     * @tc.name   promise1Test044
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_4400
-     * @tc.name promise1Test044
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -683,12 +683,12 @@ export default function promise1Test() {
 
 
     /**
+     * @tc.name   promise1Test046
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_4600
-     * @tc.name promise1Test046
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -699,12 +699,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test047
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_4700
-     * @tc.name promise1Test047
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | boolean>();
@@ -717,12 +717,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test048
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_4800
-     * @tc.name promise1Test048
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | boolean | Error>();
@@ -735,12 +735,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test049
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_4900
-     * @tc.name promise1Test049
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | boolean | Error>();
@@ -758,12 +758,12 @@ export default function promise1Test() {
 
 
     /**
+     * @tc.name   promise1Test051
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5100
-     * @tc.name promise1Test051
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -775,12 +775,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test052
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5200
-     * @tc.name promise1Test052
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -792,12 +792,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test053
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5300
-     * @tc.name promise1Test053
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<number>();
@@ -808,12 +808,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test054
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5400
-     * @tc.name promise1Test054
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -824,12 +824,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test055
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5500
-     * @tc.name promise1Test055
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -845,12 +845,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test056
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5600
-     * @tc.name promise1Test056
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -866,12 +866,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test057
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5700
-     * @tc.name promise1Test057
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = await sequentialAwait57();
@@ -879,12 +879,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test058
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5800
-     * @tc.name promise1Test058
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -893,12 +893,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test059
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_5900
-     * @tc.name promise1Test059
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -907,12 +907,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test060
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_6000
-     * @tc.name promise1Test060
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const arr = [1, 'test', true];
@@ -922,12 +922,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test061
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_6100
-     * @tc.name promise1Test061
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | Error>();
@@ -938,12 +938,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test062
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_6200
-     * @tc.name promise1Test062
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<[]>();
@@ -953,12 +953,12 @@ export default function promise1Test() {
 
 
     /**
+     * @tc.name   promise1Test065
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_6500
-     * @tc.name promise1Test065
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -971,12 +971,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test066
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_6600
-     * @tc.name promise1Test066
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<AggregateError | Array<string>>();
@@ -989,12 +989,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test067
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_6700
-     * @tc.name promise1Test067
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -1005,12 +1005,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test068
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_6800
-     * @tc.name promise1Test068
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -1022,12 +1022,12 @@ export default function promise1Test() {
 
 
     /**
+     * @tc.name   promise1Test071
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7100
-     * @tc.name promise1Test071
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -1039,12 +1039,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test072
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7200
-     * @tc.name promise1Test072
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let order = new Array<number>();
@@ -1058,12 +1058,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test073
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7300
-     * @tc.name promise1Test073
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -1078,12 +1078,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test074
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7400
-     * @tc.name promise1Test074
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | Error>();
@@ -1097,12 +1097,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test075
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7500
-     * @tc.name promise1Test075
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | Error>();
@@ -1119,12 +1119,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test076
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7600
-     * @tc.name promise1Test076
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | Error>();
@@ -1144,12 +1144,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test077
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7700
-     * @tc.name promise1Test077
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | Error>();
@@ -1163,12 +1163,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test078
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7800
-     * @tc.name promise1Test078
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | Error>();
@@ -1178,12 +1178,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test079
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_7900
-     * @tc.name promise1Test079
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<boolean>();
@@ -1197,12 +1197,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test081
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_8100
-     * @tc.name promise1Test081
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -1212,12 +1212,12 @@ export default function promise1Test() {
 
 
     /**
+     * @tc.name   promise1Test085
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_8500
-     * @tc.name promise1Test085
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | number>();
@@ -1228,12 +1228,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test086
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_8600
-     * @tc.name promise1Test086
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | number>();
@@ -1245,12 +1245,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test087
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_8700
-     * @tc.name promise1Test087
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | number>();
@@ -1265,12 +1265,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test091
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_9100
-     * @tc.name promise1Test091
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | number>();
@@ -1284,12 +1284,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test092
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_9200
-     * @tc.name promise1Test092
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | number>();
@@ -1300,12 +1300,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test093
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_9300
-     * @tc.name promise1Test093
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string | number>();
@@ -1318,12 +1318,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test094
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_9400
-     * @tc.name promise1Test094
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<Error>();
@@ -1335,12 +1335,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test095
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_9500
-     * @tc.name promise1Test095
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -1355,12 +1355,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test096
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_9600
-     * @tc.name promise1Test096
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -1372,12 +1372,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test099
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_9900
-     * @tc.name promise1Test099
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();
@@ -1391,12 +1391,12 @@ export default function promise1Test() {
     });
 
     /**
+     * @tc.name   promise1Test100
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_10000
-     * @tc.name promise1Test100
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('promise1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let list = new ArrayList<string>();

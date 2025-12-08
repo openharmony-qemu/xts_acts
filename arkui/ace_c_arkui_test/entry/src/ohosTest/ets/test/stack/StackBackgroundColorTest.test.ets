@@ -26,39 +26,39 @@ export default function stackBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDCOLOR_0100
-     * @tc.name       : testStackBackgroundColor001
-     * @tc.desc       : testing backgroundColor for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDCOLOR_0200
-     * @tc.name       : testStackBackgroundColor002
-     * @tc.desc       : testing backgroundColor for stack with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for stack with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDCOLOR_0300
-     * @tc.name       : testStackBackgroundColor003
-     * @tc.desc       : testing backgroundColor for stack with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing backgroundColor for stack with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundColor003()).assertEqual(0)

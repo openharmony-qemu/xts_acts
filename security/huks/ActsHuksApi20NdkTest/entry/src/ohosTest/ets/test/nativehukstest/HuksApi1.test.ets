@@ -28,13 +28,13 @@ export default function HuksApiTest1() {
     });
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_KEY_PURPOSE_MAC_0100
-       * @tc.name    testOH_HUKS_KEY_PURPOSE_MAC0100
-       * @tc.desc    testing OH_HUKS_KEY_PURPOSE_MAC interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_KEY_PURPOSE_MAC0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_KEY_PURPOSE_MAC_0100
+     * @tc.desc   testing OH_HUKS_KEY_PURPOSE_MAC interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_KEY_PURPOSE_MAC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -51,13 +51,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_DIGEST_SM3_0100
-       * @tc.name    testOH_HUKS_DIGEST_SM30100
-       * @tc.desc    testing OH_HUKS_DIGEST_SM3 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_DIGEST_SM30100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_DIGEST_SM3_0100
+     * @tc.desc   testing OH_HUKS_DIGEST_SM3 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_DIGEST_SM30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -74,13 +74,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_DIGEST_SHA224_0100
-       * @tc.name    testOH_HUKS_DIGEST_SHA2240100
-       * @tc.desc    testing OH_HUKS_DIGEST_SHA224 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_DIGEST_SHA2240100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_DIGEST_SHA224_0100
+     * @tc.desc   testing OH_HUKS_DIGEST_SHA224 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_DIGEST_SHA2240100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -97,13 +97,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_DIGEST_SHA512_0100
-       * @tc.name    testOH_HUKS_DIGEST_SHA5120100
-       * @tc.desc    testing OH_HUKS_DIGEST_SHA512 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_DIGEST_SHA5120100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_DIGEST_SHA512_0100
+     * @tc.desc   testing OH_HUKS_DIGEST_SHA512 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_DIGEST_SHA5120100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -120,13 +120,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_PADDING_PKCS1_V1_5_0100
-       * @tc.name    testOH_HUKS_PADDING_PKCS1_V1_50100
-       * @tc.desc    testing OH_HUKS_PADDING_PKCS1_V1_5 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_PADDING_PKCS1_V1_50100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_PADDING_PKCS1_V1_5_0100
+     * @tc.desc   testing OH_HUKS_PADDING_PKCS1_V1_5 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_PADDING_PKCS1_V1_50100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -143,13 +143,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_PADDING_PKCS5_0100
-       * @tc.name    testOH_HUKS_PADDING_PKCS50100
-       * @tc.desc    testing OH_HUKS_PADDING_PKCS5 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_PADDING_PKCS50100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_PADDING_PKCS5_0100
+     * @tc.desc   testing OH_HUKS_PADDING_PKCS5 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_PADDING_PKCS50100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -166,13 +166,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_PADDING_PKCS7_0100
-       * @tc.name    testOH_HUKS_PADDING_PKCS70100
-       * @tc.desc    testing OH_HUKS_PADDING_PKCS7 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_PADDING_PKCS70100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_PADDING_PKCS7_0100
+     * @tc.desc   testing OH_HUKS_PADDING_PKCS7 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_PADDING_PKCS70100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -189,13 +189,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_PADDING_ISO_IEC_9796_2_0100
-       * @tc.name    testOH_HUKS_PADDING_ISO_IEC_9796_20100
-       * @tc.desc    testing OH_HUKS_PADDING_ISO_IEC_9796_2 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_PADDING_ISO_IEC_9796_20100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_PADDING_ISO_IEC_9796_2_0100
+     * @tc.desc   testing OH_HUKS_PADDING_ISO_IEC_9796_2 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_PADDING_ISO_IEC_9796_20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -212,13 +212,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_PADDING_ISO_IEC_9797_1_0100
-       * @tc.name    testOH_HUKS_PADDING_ISO_IEC_9797_10100
-       * @tc.desc    testing OH_HUKS_PADDING_ISO_IEC_9797_1 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_PADDING_ISO_IEC_9797_10100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_PADDING_ISO_IEC_9797_1_0100
+     * @tc.desc   testing OH_HUKS_PADDING_ISO_IEC_9797_1 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_PADDING_ISO_IEC_9797_10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -235,13 +235,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_MODE_CBC_0100
-       * @tc.name    testOH_HUKS_MODE_CBC0100
-       * @tc.desc    testing OH_HUKS_MODE_CBC interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_MODE_CBC0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_MODE_CBC_0100
+     * @tc.desc   testing OH_HUKS_MODE_CBC interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_MODE_CBC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -258,13 +258,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_MODE_CTR_0100
-       * @tc.name    testOH_HUKS_MODE_CTR0100
-       * @tc.desc    testing OH_HUKS_MODE_CTR interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_MODE_CTR0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_MODE_CTR_0100
+     * @tc.desc   testing OH_HUKS_MODE_CTR interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_MODE_CTR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -281,13 +281,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_MODE_OFB_0100
-       * @tc.name    testOH_HUKS_MODE_OFB0100
-       * @tc.desc    testing OH_HUKS_MODE_OFB interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_MODE_OFB0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_MODE_OFB_0100
+     * @tc.desc   testing OH_HUKS_MODE_OFB interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_MODE_OFB0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -304,13 +304,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_MODE_CFB_0100
-       * @tc.name    testOH_HUKS_MODE_CFB0100
-       * @tc.desc    testing OH_HUKS_MODE_CFB interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_MODE_CFB0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_MODE_CFB_0100
+     * @tc.desc   testing OH_HUKS_MODE_CFB interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_MODE_CFB0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -327,13 +327,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_MODE_CCM_0100
-       * @tc.name    testOH_HUKS_MODE_CCM0100
-       * @tc.desc    testing OH_HUKS_MODE_CCM interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_MODE_CCM0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_MODE_CCM_0100
+     * @tc.desc   testing OH_HUKS_MODE_CCM interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_MODE_CCM0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -350,13 +350,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_RSA_KEY_SIZE_512_0100
-       * @tc.name    testOH_HUKS_RSA_KEY_SIZE_5120100
-       * @tc.desc    testing OH_HUKS_RSA_KEY_SIZE_512 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_RSA_KEY_SIZE_5120100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_RSA_KEY_SIZE_512_0100
+     * @tc.desc   testing OH_HUKS_RSA_KEY_SIZE_512 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_RSA_KEY_SIZE_5120100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -373,13 +373,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_RSA_KEY_SIZE_768_0100
-       * @tc.name    testOH_HUKS_RSA_KEY_SIZE_7680100
-       * @tc.desc    testing OH_HUKS_RSA_KEY_SIZE_768 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_RSA_KEY_SIZE_7680100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_RSA_KEY_SIZE_768_0100
+     * @tc.desc   testing OH_HUKS_RSA_KEY_SIZE_768 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_RSA_KEY_SIZE_7680100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -396,13 +396,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_RSA_KEY_SIZE_3072_0100
-       * @tc.name    testOH_HUKS_RSA_KEY_SIZE_30720100
-       * @tc.desc    testing OH_HUKS_RSA_KEY_SIZE_3072 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_RSA_KEY_SIZE_30720100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_RSA_KEY_SIZE_3072_0100
+     * @tc.desc   testing OH_HUKS_RSA_KEY_SIZE_3072 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_RSA_KEY_SIZE_30720100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -419,13 +419,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ECC_KEY_SIZE_224_0100
-       * @tc.name    testOH_HUKS_ECC_KEY_SIZE_2240100
-       * @tc.desc    testing OH_HUKS_ECC_KEY_SIZE_224 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ECC_KEY_SIZE_2240100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ECC_KEY_SIZE_224_0100
+     * @tc.desc   testing OH_HUKS_ECC_KEY_SIZE_224 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ECC_KEY_SIZE_2240100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -446,13 +446,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ECC_KEY_SIZE_256_0100
-       * @tc.name    testOH_HUKS_ECC_KEY_SIZE_2560100
-       * @tc.desc    testing OH_HUKS_ECC_KEY_SIZE_256 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ECC_KEY_SIZE_2560100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ECC_KEY_SIZE_256_0100
+     * @tc.desc   testing OH_HUKS_ECC_KEY_SIZE_256 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ECC_KEY_SIZE_2560100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -469,13 +469,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ECC_KEY_SIZE_384_0100
-       * @tc.name    testOH_HUKS_ECC_KEY_SIZE_3840100
-       * @tc.desc    testing OH_HUKS_ECC_KEY_SIZE_384 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ECC_KEY_SIZE_3840100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ECC_KEY_SIZE_384_0100
+     * @tc.desc   testing OH_HUKS_ECC_KEY_SIZE_384 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ECC_KEY_SIZE_3840100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -492,13 +492,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ECC_KEY_SIZE_521_0100
-       * @tc.name    testOH_HUKS_ECC_KEY_SIZE_5210100
-       * @tc.desc    testing OH_HUKS_ECC_KEY_SIZE_521 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ECC_KEY_SIZE_5210100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ECC_KEY_SIZE_521_0100
+     * @tc.desc   testing OH_HUKS_ECC_KEY_SIZE_521 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ECC_KEY_SIZE_5210100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -515,13 +515,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_AES_KEY_SIZE_128_0100
-       * @tc.name    testOH_HUKS_AES_KEY_SIZE_1280100
-       * @tc.desc    testing OH_HUKS_AES_KEY_SIZE_128 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_AES_KEY_SIZE_1280100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_AES_KEY_SIZE_128_0100
+     * @tc.desc   testing OH_HUKS_AES_KEY_SIZE_128 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_AES_KEY_SIZE_1280100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -538,13 +538,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_AES_KEY_SIZE_192_0100
-       * @tc.name    testOH_HUKS_AES_KEY_SIZE_1920100
-       * @tc.desc    testing OH_HUKS_AES_KEY_SIZE_192 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_AES_KEY_SIZE_1920100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_AES_KEY_SIZE_192_0100
+     * @tc.desc   testing OH_HUKS_AES_KEY_SIZE_192 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_AES_KEY_SIZE_1920100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -561,13 +561,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_AES_KEY_SIZE_512_0100
-       * @tc.name    testOH_HUKS_AES_KEY_SIZE_5120100
-       * @tc.desc    testing OH_HUKS_AES_KEY_SIZE_512 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_AES_KEY_SIZE_5120100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_AES_KEY_SIZE_512_0100
+     * @tc.desc   testing OH_HUKS_AES_KEY_SIZE_512 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_AES_KEY_SIZE_5120100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -584,13 +584,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_DH_KEY_SIZE_2048_0100
-       * @tc.name    testOH_HUKS_DH_KEY_SIZE_20480100
-       * @tc.desc    testing OH_HUKS_DH_KEY_SIZE_2048 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_DH_KEY_SIZE_20480100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_DH_KEY_SIZE_2048_0100
+     * @tc.desc   testing OH_HUKS_DH_KEY_SIZE_2048 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_DH_KEY_SIZE_20480100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -607,13 +607,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_DH_KEY_SIZE_3072_0100
-       * @tc.name    testOH_HUKS_DH_KEY_SIZE_30720100
-       * @tc.desc    testing OH_HUKS_DH_KEY_SIZE_3072 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_DH_KEY_SIZE_30720100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_DH_KEY_SIZE_3072_0100
+     * @tc.desc   testing OH_HUKS_DH_KEY_SIZE_3072 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_DH_KEY_SIZE_30720100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -634,13 +634,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_DH_KEY_SIZE_4096_0100
-       * @tc.name    testOH_HUKS_DH_KEY_SIZE_40960100
-       * @tc.desc    testing OH_HUKS_DH_KEY_SIZE_4096 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_DH_KEY_SIZE_40960100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_DH_KEY_SIZE_4096_0100
+     * @tc.desc   testing OH_HUKS_DH_KEY_SIZE_4096 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_DH_KEY_SIZE_40960100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -661,13 +661,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_SM2_KEY_SIZE_256_0100
-       * @tc.name    testOH_HUKS_SM2_KEY_SIZE_2560100
-       * @tc.desc    testing OH_HUKS_SM2_KEY_SIZE_256 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_SM2_KEY_SIZE_2560100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_SM2_KEY_SIZE_256_0100
+     * @tc.desc   testing OH_HUKS_SM2_KEY_SIZE_256 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_SM2_KEY_SIZE_2560100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -684,13 +684,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_SM4_KEY_SIZE_128_0100
-       * @tc.name    testOH_HUKS_SM4_KEY_SIZE_1280100
-       * @tc.desc    testing OH_HUKS_SM4_KEY_SIZE_128 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_SM4_KEY_SIZE_1280100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_SM4_KEY_SIZE_128_0100
+     * @tc.desc   testing OH_HUKS_SM4_KEY_SIZE_128 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_SM4_KEY_SIZE_1280100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -707,13 +707,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_DES_KEY_SIZE_64_0100
-       * @tc.name    testOH_HUKS_DES_KEY_SIZE_640100
-       * @tc.desc    testing OH_HUKS_DES_KEY_SIZE_64 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_DES_KEY_SIZE_640100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_DES_KEY_SIZE_64_0100
+     * @tc.desc   testing OH_HUKS_DES_KEY_SIZE_64 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_DES_KEY_SIZE_640100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -730,13 +730,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_3DES_KEY_SIZE_128_0100
-       * @tc.name    testOH_HUKS_3DES_KEY_SIZE_1280100
-       * @tc.desc    testing OH_HUKS_3DES_KEY_SIZE_128 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_3DES_KEY_SIZE_1280100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_3DES_KEY_SIZE_128_0100
+     * @tc.desc   testing OH_HUKS_3DES_KEY_SIZE_128 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_3DES_KEY_SIZE_1280100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -753,13 +753,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_3DES_KEY_SIZE_192_0100
-       * @tc.name    testOH_HUKS_3DES_KEY_SIZE_1920100
-       * @tc.desc    testing OH_HUKS_3DES_KEY_SIZE_192 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_3DES_KEY_SIZE_1920100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_3DES_KEY_SIZE_192_0100
+     * @tc.desc   testing OH_HUKS_3DES_KEY_SIZE_192 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_3DES_KEY_SIZE_1920100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -780,13 +780,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_ECC_0100
-       * @tc.name    testOH_HUKS_ALG_ECC0100
-       * @tc.desc    testing OH_HUKS_ALG_ECC interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_ECC0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_ECC_0100
+     * @tc.desc   testing OH_HUKS_ALG_ECC interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_ECC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -803,13 +803,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_HMAC_0100
-       * @tc.name    testOH_HUKS_ALG_HMAC0100
-       * @tc.desc    testing OH_HUKS_ALG_HMAC interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_HMAC0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_HMAC_0100
+     * @tc.desc   testing OH_HUKS_ALG_HMAC interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_HMAC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -826,13 +826,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_ED25519_0100
-       * @tc.name    testOH_HUKS_ALG_ED255190100
-       * @tc.desc    testing OH_HUKS_ALG_ED25519 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_ED255190100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_ED25519_0100
+     * @tc.desc   testing OH_HUKS_ALG_ED25519 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_ED255190100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -849,13 +849,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_DH_0100
-       * @tc.name    testOH_HUKS_ALG_DH0100
-       * @tc.desc    testing OH_HUKS_ALG_DH interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_DH0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_DH_0100
+     * @tc.desc   testing OH_HUKS_ALG_DH interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_DH0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -872,13 +872,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_SM2_0100
-       * @tc.name    testOH_HUKS_ALG_SM20100
-       * @tc.desc    testing OH_HUKS_ALG_SM2 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_SM20100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_SM2_0100
+     * @tc.desc   testing OH_HUKS_ALG_SM2 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_SM20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -895,13 +895,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_SM3_0100
-       * @tc.name    testOH_HUKS_ALG_SM30100
-       * @tc.desc    testing OH_HUKS_ALG_SM3 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_SM30100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_SM3_0100
+     * @tc.desc   testing OH_HUKS_ALG_SM3 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_SM30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -918,13 +918,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_SM4_0100
-       * @tc.name    testOH_HUKS_ALG_SM40100
-       * @tc.desc    testing OH_HUKS_ALG_SM4 interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_SM40100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_SM4_0100
+     * @tc.desc   testing OH_HUKS_ALG_SM4 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_SM40100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -941,13 +941,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_DES_0100
-       * @tc.name    testOH_HUKS_ALG_DES0100
-       * @tc.desc    testing OH_HUKS_ALG_DES interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_DES0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_DES_0100
+     * @tc.desc   testing OH_HUKS_ALG_DES interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_DES0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -964,13 +964,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_ALG_3DES_0100
-       * @tc.name    testOH_HUKS_ALG_3DES0100
-       * @tc.desc    testing OH_HUKS_ALG_3DES interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_ALG_3DES0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_ALG_3DES_0100
+     * @tc.desc   testing OH_HUKS_ALG_3DES interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_ALG_3DES0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -987,13 +987,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING_0100
-       * @tc.name    testOH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING0100
-       * @tc.desc    testing OH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING_0100
+     * @tc.desc   testing OH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1010,13 +1010,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_STORAGE_TEMP_0100
-       * @tc.name    testOH_HUKS_STORAGE_TEMP0100
-       * @tc.desc    testing OH_HUKS_STORAGE_TEMP interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_STORAGE_TEMP0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_STORAGE_TEMP_0100
+     * @tc.desc   testing OH_HUKS_STORAGE_TEMP interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_STORAGE_TEMP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1033,13 +1033,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_STORAGE_ONLY_USED_IN_HUKS_0100
-       * @tc.name    testOH_HUKS_STORAGE_ONLY_USED_IN_HUKS0100
-       * @tc.desc    testing OH_HUKS_STORAGE_ONLY_USED_IN_HUKS interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_STORAGE_ONLY_USED_IN_HUKS0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_STORAGE_ONLY_USED_IN_HUKS_0100
+     * @tc.desc   testing OH_HUKS_STORAGE_ONLY_USED_IN_HUKS interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_STORAGE_ONLY_USED_IN_HUKS0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1056,13 +1056,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_STORAGE_KEY_EXPORT_ALLOWED_0100
-       * @tc.name    testOH_HUKS_STORAGE_KEY_EXPORT_ALLOWED0100
-       * @tc.desc    testing OH_HUKS_STORAGE_KEY_EXPORT_ALLOWED interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_STORAGE_KEY_EXPORT_ALLOWED0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_STORAGE_KEY_EXPORT_ALLOWED_0100
+     * @tc.desc   testing OH_HUKS_STORAGE_KEY_EXPORT_ALLOWED interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_STORAGE_KEY_EXPORT_ALLOWED0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1079,13 +1079,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_KEY_TYPE_PUBLIC_KEY_0100
-       * @tc.name    testOH_HUKS_KEY_TYPE_PUBLIC_KEY0100
-       * @tc.desc    testing OH_HUKS_KEY_TYPE_PUBLIC_KEY interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_KEY_TYPE_PUBLIC_KEY0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_KEY_TYPE_PUBLIC_KEY_0100
+     * @tc.desc   testing OH_HUKS_KEY_TYPE_PUBLIC_KEY interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_KEY_TYPE_PUBLIC_KEY0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1102,13 +1102,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_KEY_TYPE_PRIVATE_KEY_0100
-       * @tc.name    testOH_HUKS_KEY_TYPE_PRIVATE_KEY0100
-       * @tc.desc    testing OH_HUKS_KEY_TYPE_PRIVATE_KEY interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_KEY_TYPE_PRIVATE_KEY0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_KEY_TYPE_PRIVATE_KEY_0100
+     * @tc.desc   testing OH_HUKS_KEY_TYPE_PRIVATE_KEY interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_KEY_TYPE_PRIVATE_KEY0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1125,13 +1125,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_KEY_TYPE_KEY_PAIR_0100
-       * @tc.name    testOH_HUKS_KEY_TYPE_KEY_PAIR0100
-       * @tc.desc    testing OH_HUKS_KEY_TYPE_KEY_PAIR interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_KEY_TYPE_KEY_PAIR0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_KEY_TYPE_KEY_PAIR_0100
+     * @tc.desc   testing OH_HUKS_KEY_TYPE_KEY_PAIR interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_KEY_TYPE_KEY_PAIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1148,13 +1148,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_RSA_PSS_SALT_LEN_DIGEST_0100
-       * @tc.name    testOH_HUKS_RSA_PSS_SALT_LEN_DIGEST0100
-       * @tc.desc    testing OH_HUKS_RSA_PSS_SALT_LEN_DIGEST interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_RSA_PSS_SALT_LEN_DIGEST0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_RSA_PSS_SALT_LEN_DIGEST_0100
+     * @tc.desc   testing OH_HUKS_RSA_PSS_SALT_LEN_DIGEST interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_RSA_PSS_SALT_LEN_DIGEST0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1171,13 +1171,13 @@ export default function HuksApiTest1() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_HUKS_RSA_PSS_SALT_LEN_MAX_0100
-       * @tc.name    testOH_HUKS_RSA_PSS_SALT_LEN_MAX0100
-       * @tc.desc    testing OH_HUKS_RSA_PSS_SALT_LEN_MAX interface
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_HUKS_RSA_PSS_SALT_LEN_MAX0100
+     * @tc.number SUB_SECURITY_HUKS_OH_HUKS_RSA_PSS_SALT_LEN_MAX_0100
+     * @tc.desc   testing OH_HUKS_RSA_PSS_SALT_LEN_MAX interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_HUKS_RSA_PSS_SALT_LEN_MAX0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

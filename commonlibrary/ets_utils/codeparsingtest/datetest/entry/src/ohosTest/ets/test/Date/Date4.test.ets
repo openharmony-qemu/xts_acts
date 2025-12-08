@@ -31,12 +31,12 @@ export default function Date4Test() {
     })
 
     /**
+     * @tc.name   Date4Test_001
      * @tc.number SUB_BUILTINS_Date4_TEST_0100
-     * @tc.name Date4Test_001
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate1 = new Date(2024, 5, 15, 14, 30, 45, 123);
@@ -53,12 +53,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_002
      * @tc.number SUB_BUILTINS_Date4_TEST_0200
-     * @tc.name Date4Test_002
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate2 = new Date(2000, 0, 1, 0, 0, 0, 0);
@@ -73,12 +73,12 @@ export default function Date4Test() {
       expect(testDate2.getTime()).assertEqual(946656000000);
     });
     /**
+     * @tc.name   Date4Test_003
      * @tc.number SUB_BUILTINS_Date4_TEST_0300
-     * @tc.name Date4Test_003
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate3 = new Date("2023-12-31T15:59:59.999Z");
@@ -94,12 +94,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_004
      * @tc.number SUB_BUILTINS_Date4_TEST_0400
-     * @tc.name Date4Test_004
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate4 = new Date(2024, 1, 29, 8, 15, 30, 456);
@@ -115,12 +115,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_005
      * @tc.number SUB_BUILTINS_Date4_TEST_0500
-     * @tc.name Date4Test_005
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate5 = new Date(2023, 7, 31, 18, 45, 12, 789);
@@ -136,12 +136,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_006
      * @tc.number SUB_BUILTINS_Date4_TEST_0600
-     * @tc.name Date4Test_006
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate6 = new Date(2024, 3, 30, 22, 10, 59, 100);
@@ -157,12 +157,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_007
      * @tc.number SUB_BUILTINS_Date4_TEST_0700
-     * @tc.name Date4Test_007
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate7 = new Date(2025, 2, 10, 12, 0, 0, 0);
@@ -178,12 +178,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_008
      * @tc.number SUB_BUILTINS_Date4_TEST_0800
-     * @tc.name Date4Test_008
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate8 = new Date(2023, 10, 5, 3, 20, 40, 600);
@@ -199,12 +199,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_009
      * @tc.number SUB_BUILTINS_Date4_TEST_0900
-     * @tc.name Date4Test_009
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate9 = new Date(2024, 8, 18, 15, 59, 59, 999);
@@ -220,12 +220,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_010
      * @tc.number SUB_BUILTINS_Date4_TEST_1000
-     * @tc.name Date4Test_010
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate10 = new Date(2023, 6, 22, 23, 59, 59, 500);
@@ -241,12 +241,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_011
      * @tc.number SUB_BUILTINS_Date4_TEST_1100
-     * @tc.name Date4Test_011
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate11 = new Date(2023, 1, 28, 10, 30, 15, 222);
@@ -262,12 +262,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_012
      * @tc.number SUB_BUILTINS_Date4_TEST_1200
-     * @tc.name Date4Test_012
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate12 = new Date(2024, 11, 31, 23, 59, 59, 999);
@@ -283,12 +283,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_013
      * @tc.number SUB_BUILTINS_Date4_TEST_1300
-     * @tc.name Date4Test_013
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate13 = new Date(2025, 4, 15, 9, 45, 30, 777);
@@ -304,12 +304,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_014
      * @tc.number SUB_BUILTINS_Date4_TEST_1400
-     * @tc.name Date4Test_014
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate14 = new Date(2023, 8, 10, 16, 20, 45, 333);
@@ -325,12 +325,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_015
      * @tc.number SUB_BUILTINS_Date4_TEST_1500
-     * @tc.name Date4Test_015
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate15 = new Date(2024, 6, 8, 14, 59, 59, 999);
@@ -346,12 +346,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_016
      * @tc.number SUB_BUILTINS_Date4_TEST_1600
-     * @tc.name Date4Test_016
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate16 = new Date(2025, 0, 1, 6, 10, 20, 555);
@@ -367,12 +367,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_017
      * @tc.number SUB_BUILTINS_Date4_TEST_1700
-     * @tc.name Date4Test_017
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate17 = new Date(2023, 5, 30, 21, 35, 50, 888);
@@ -388,12 +388,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_018
      * @tc.number SUB_BUILTINS_Date4_TEST_1800
-     * @tc.name Date4Test_018
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate18 = new Date(2024, 2, 20, 0, 0, 0, 1);
@@ -409,12 +409,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_019
      * @tc.number SUB_BUILTINS_Date4_TEST_1900
-     * @tc.name Date4Test_019
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate19 = new Date("2024-10-01T00:00:00.000Z");
@@ -430,12 +430,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_020
      * @tc.number SUB_BUILTINS_Date4_TEST_2000
-     * @tc.name Date4Test_020
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate20 = new Date(2025, 7, 12, 19, 40, 30, 999);
@@ -451,12 +451,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_021
      * @tc.number SUB_BUILTINS_Date4_TEST_2100
-     * @tc.name Date4Test_021
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate21 = new Date(2025, 1, 1, 11, 25, 40, 150);
@@ -472,12 +472,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_022
      * @tc.number SUB_BUILTINS_Date4_TEST_2200
-     * @tc.name Date4Test_022
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate22 = new Date(2026, 0, 1, 7, 50, 10, 600);
@@ -493,12 +493,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_023
      * @tc.number SUB_BUILTINS_Date4_TEST_2300
-     * @tc.name Date4Test_023
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate23 = new Date(2023, 11, 15, 19, 10, 35, 450);
@@ -514,12 +514,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_024
      * @tc.number SUB_BUILTINS_Date4_TEST_2400
-     * @tc.name Date4Test_024
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate24 = new Date(2024, 4, 25, 2, 40, 55, 800);
@@ -535,12 +535,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_025
      * @tc.number SUB_BUILTINS_Date4_TEST_2500
-     * @tc.name Date4Test_025
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate25 = new Date(2025, 6, 30, 14, 0, 0, 200);
@@ -556,12 +556,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_026
      * @tc.number SUB_BUILTINS_Date4_TEST_2600
-     * @tc.name Date4Test_026
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate26 = new Date(2023, 2, 15, 10, 55, 25, 750);
@@ -577,12 +577,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_027
      * @tc.number SUB_BUILTINS_Date4_TEST_2700
-     * @tc.name Date4Test_027
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate27 = new Date(2024, 5, 15, 16, 30, 40, 300);
@@ -598,12 +598,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_028
      * @tc.number SUB_BUILTINS_Date4_TEST_2800
-     * @tc.name Date4Test_028
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate28 = new Date("2025-04-01T12:00:00.000Z");
@@ -619,12 +619,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_029
      * @tc.number SUB_BUILTINS_Date4_TEST_2900
-     * @tc.name Date4Test_029
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate29 = new Date(2023, 7, 20, 15, 25, 50, 500);
@@ -640,12 +640,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_030
      * @tc.number SUB_BUILTINS_Date4_TEST_3000
-     * @tc.name Date4Test_030
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate30 = new Date(2024, 8, 30, 20, 0, 10, 900);
@@ -660,12 +660,12 @@ export default function Date4Test() {
       expect(testDate30.getTime()).assertEqual(1727697610900);
     });
     /**
+     * @tc.name   Date4Test_031
      * @tc.number SUB_BUILTINS_Date4_TEST_3100
-     * @tc.name Date4Test_031
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate31 = new Date(2023, 1, 15, 8, 40, 20, 180);
@@ -681,12 +681,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_032
      * @tc.number SUB_BUILTINS_Date4_TEST_3200
-     * @tc.name Date4Test_032
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate32 = new Date(2024, 1, 15, 13, 15, 45, 620);
@@ -702,12 +702,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_033
      * @tc.number SUB_BUILTINS_Date4_TEST_3300
-     * @tc.name Date4Test_033
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate33 = new Date(2024, 11, 1, 11, 30, 55, 340);
@@ -723,12 +723,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_034
      * @tc.number SUB_BUILTINS_Date4_TEST_3400
-     * @tc.name Date4Test_034
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate34 = new Date(2025, 0, 20, 1, 59, 59, 999);
@@ -744,12 +744,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_035
      * @tc.number SUB_BUILTINS_Date4_TEST_3500
-     * @tc.name Date4Test_035
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate35 = new Date(2023, 9, 5, 15, 30, 59, 999);
@@ -765,12 +765,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_036
      * @tc.number SUB_BUILTINS_Date4_TEST_3600
-     * @tc.name Date4Test_036
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate36 = new Date("2024-05-01T20:00:00.000Z");
@@ -786,12 +786,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_037
      * @tc.number SUB_BUILTINS_Date4_TEST_3700
-     * @tc.name Date4Test_037
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate37 = new Date(2025, 2, 30, 18, 20, 30, 760);
@@ -807,12 +807,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_038
      * @tc.number SUB_BUILTINS_Date4_TEST_3800
-     * @tc.name Date4Test_038
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate38 = new Date(2023, 8, 29, 22, 45, 15, 280);
@@ -828,12 +828,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_039
      * @tc.number SUB_BUILTINS_Date4_TEST_3900
-     * @tc.name Date4Test_039
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate39 = new Date(2024, 6, 15, 9, 59, 59, 450);
@@ -849,12 +849,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_040
      * @tc.number SUB_BUILTINS_Date4_TEST_4000
-     * @tc.name Date4Test_040
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate40 = new Date(2025, 5, 1, 23, 59, 59, 890);
@@ -870,12 +870,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_041
      * @tc.number SUB_BUILTINS_Date4_TEST_4100
-     * @tc.name Date4Test_041
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate41 = new Date(2025, 1, 25, 14, 20, 35, 120);
@@ -891,12 +891,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_042
      * @tc.number SUB_BUILTINS_Date4_TEST_4200
-     * @tc.name Date4Test_042
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate42 = new Date(2024, 1, 28, 17, 50, 10, 650);
@@ -912,12 +912,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_043
      * @tc.number SUB_BUILTINS_Date4_TEST_4300
-     * @tc.name Date4Test_043
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate43 = new Date(2023, 0, 31, 5, 15, 40, 380);
@@ -933,12 +933,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_044
      * @tc.number SUB_BUILTINS_Date4_TEST_4400
-     * @tc.name Date4Test_044
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate44 = new Date(2024, 3, 10, 3, 45, 59, 999);
@@ -954,12 +954,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_045
      * @tc.number SUB_BUILTINS_Date4_TEST_4500
-     * @tc.name Date4Test_045
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate45 = new Date(2025, 7, 5, 17, 59, 59, 720);
@@ -975,12 +975,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_046
      * @tc.number SUB_BUILTINS_Date4_TEST_4600
-     * @tc.name Date4Test_046
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate46 = new Date("2023-12-31T18:00:00.000Z");
@@ -996,12 +996,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_047
      * @tc.number SUB_BUILTINS_Date4_TEST_4700
-     * @tc.name Date4Test_047
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate47 = new Date(2024, 4, 16, 10, 30, 25, 410);
@@ -1017,12 +1017,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_048
      * @tc.number SUB_BUILTINS_Date4_TEST_4800
-     * @tc.name Date4Test_048
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate48 = new Date(2023, 5, 16, 21, 15, 50, 830);
@@ -1038,12 +1038,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_049
      * @tc.number SUB_BUILTINS_Date4_TEST_4900
-     * @tc.name Date4Test_049
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate49 = new Date(2025, 8, 20, 11, 59, 59, 260);
@@ -1059,12 +1059,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_050
      * @tc.number SUB_BUILTINS_Date4_TEST_5000
-     * @tc.name Date4Test_050
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate50 = new Date(2024, 9, 31, 23, 59, 59, 999);
@@ -1080,12 +1080,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_051
      * @tc.number SUB_BUILTINS_Date4_TEST_5100
-     * @tc.name Date4Test_051
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate51 = new Date(2023, 1, 27, 9, 10, 25, 190);
@@ -1101,12 +1101,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_052
      * @tc.number SUB_BUILTINS_Date4_TEST_5200
-     * @tc.name Date4Test_052
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate52 = new Date(2024, 1, 27, 16, 40, 50, 730);
@@ -1122,12 +1122,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_053
      * @tc.number SUB_BUILTINS_Date4_TEST_5300
-     * @tc.name Date4Test_053
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate53 = new Date(2025, 0, 2, 4, 25, 15, 360);
@@ -1143,12 +1143,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_054
      * @tc.number SUB_BUILTINS_Date4_TEST_5400
-     * @tc.name Date4Test_054
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate54 = new Date(2024, 5, 10, 2, 59, 0, 510);
@@ -1164,12 +1164,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_055
      * @tc.number SUB_BUILTINS_Date4_TEST_5500
-     * @tc.name Date4Test_055
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate55 = new Date(2023, 10, 20, 15, 59, 0, 870);
@@ -1185,12 +1185,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_056
      * @tc.number SUB_BUILTINS_Date4_TEST_5600
-     * @tc.name Date4Test_056
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate56 = new Date("2025-03-15T06:00:00.000Z");
@@ -1206,12 +1206,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_057
      * @tc.number SUB_BUILTINS_Date4_TEST_5700
-     * @tc.name Date4Test_057
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate57 = new Date(2024, 7, 10, 19, 35, 40, 240);
@@ -1227,12 +1227,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_058
      * @tc.number SUB_BUILTINS_Date4_TEST_5800
-     * @tc.name Date4Test_058
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate58 = new Date(2023, 8, 10, 11, 20, 30, 690);
@@ -1248,12 +1248,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_059
      * @tc.number SUB_BUILTINS_Date4_TEST_5900
-     * @tc.name Date4Test_059
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate59 = new Date(2025, 6, 5, 11, 0, 55, 420);
@@ -1269,12 +1269,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_060
      * @tc.number SUB_BUILTINS_Date4_TEST_6000
-     * @tc.name Date4Test_060
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate60 = new Date(2024, 11, 10, 23, 0, 59, 999);
@@ -1289,12 +1289,12 @@ export default function Date4Test() {
       expect(testDate60.getTime()).assertEqual(1733842859999);
     });
     /**
+     * @tc.name   Date4Test_061
      * @tc.number SUB_BUILTINS_Date4_TEST_6100
-     * @tc.name Date4Test_061
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate61 = new Date(2025, 1, 5, 10, 45, 15, 130);
@@ -1310,12 +1310,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_062
      * @tc.number SUB_BUILTINS_Date4_TEST_6200
-     * @tc.name Date4Test_062
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate62 = new Date(2024, 1, 5, 18, 20, 30, 670);
@@ -1331,12 +1331,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_063
      * @tc.number SUB_BUILTINS_Date4_TEST_6300
-     * @tc.name Date4Test_063
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate63 = new Date(2023, 11, 29, 6, 10, 50, 390);
@@ -1352,12 +1352,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_064
      * @tc.number SUB_BUILTINS_Date4_TEST_6400
-     * @tc.name Date4Test_064
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate64 = new Date(2024, 6, 20, 1, 30, 59, 999);
@@ -1373,12 +1373,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_065
      * @tc.number SUB_BUILTINS_Date4_TEST_6500
-     * @tc.name Date4Test_065
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate65 = new Date(2025, 8, 5, 16, 45, 59, 740);
@@ -1394,12 +1394,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_066
      * @tc.number SUB_BUILTINS_Date4_TEST_6600
-     * @tc.name Date4Test_066
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate66 = new Date("2024-04-20T10:50:00.000Z");
@@ -1415,12 +1415,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_067
      * @tc.number SUB_BUILTINS_Date4_TEST_6700
-     * @tc.name Date4Test_067
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate67 = new Date(2023, 4, 21, 14, 25, 35, 250);
@@ -1436,12 +1436,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_068
      * @tc.number SUB_BUILTINS_Date4_TEST_6800
-     * @tc.name Date4Test_068
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate68 = new Date(2024, 5, 21, 20, 50, 15, 850);
@@ -1457,12 +1457,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_069
      * @tc.number SUB_BUILTINS_Date4_TEST_6900
-     * @tc.name Date4Test_069
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate69 = new Date(2025, 9, 10, 9, 59, 0, 430);
@@ -1478,12 +1478,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_070
      * @tc.number SUB_BUILTINS_Date4_TEST_7000
-     * @tc.name Date4Test_070
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate70 = new Date(2023, 7, 30, 23, 0, 59, 999);
@@ -1499,12 +1499,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_071
      * @tc.number SUB_BUILTINS_Date4_TEST_7100
-     * @tc.name Date4Test_071
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate71 = new Date(2023, 1, 20, 11, 30, 40, 160);
@@ -1520,12 +1520,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_072
      * @tc.number SUB_BUILTINS_Date4_TEST_7200
-     * @tc.name Date4Test_072
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate72 = new Date(2024, 1, 20, 19, 15, 25, 700);
@@ -1541,12 +1541,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_073
      * @tc.number SUB_BUILTINS_Date4_TEST_7300
-     * @tc.name Date4Test_073
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate73 = new Date(2025, 0, 3, 5, 40, 10, 320);
@@ -1562,12 +1562,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_074
      * @tc.number SUB_BUILTINS_Date4_TEST_7400
-     * @tc.name Date4Test_074
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate74 = new Date(2024, 4, 15, 1, 0, 35, 540);
@@ -1583,12 +1583,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_075
      * @tc.number SUB_BUILTINS_Date4_TEST_7500
-     * @tc.name Date4Test_075
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate75 = new Date(2023, 9, 15, 16, 0, 50, 880);
@@ -1604,12 +1604,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_076
      * @tc.number SUB_BUILTINS_Date4_TEST_7600
-     * @tc.name Date4Test_076
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate76 = new Date("2025-02-10T14:30:59.000Z");
@@ -1625,12 +1625,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_077
      * @tc.number SUB_BUILTINS_Date4_TEST_7700
-     * @tc.name Date4Test_077
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate77 = new Date(2024, 6, 11, 10, 20, 45, 280);
@@ -1646,12 +1646,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_078
      * @tc.number SUB_BUILTINS_Date4_TEST_7800
-     * @tc.name Date4Test_078
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate78 = new Date(2023, 7, 11, 21, 45, 15, 820);
@@ -1667,12 +1667,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_079
      * @tc.number SUB_BUILTINS_Date4_TEST_7900
-     * @tc.name Date4Test_079
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate79 = new Date(2025, 7, 15, 8, 59, 59, 460);
@@ -1688,12 +1688,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_080
      * @tc.number SUB_BUILTINS_Date4_TEST_8000
-     * @tc.name Date4Test_080
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate80 = new Date(2024, 10, 30, 23, 59, 0, 999);
@@ -1709,12 +1709,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_081
      * @tc.number SUB_BUILTINS_Date4_TEST_8100
-     * @tc.name Date4Test_081
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate81 = new Date(2023, 1, 1, 7, 25, 30, 140);
@@ -1730,12 +1730,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_082
      * @tc.number SUB_BUILTINS_Date4_TEST_8200
-     * @tc.name Date4Test_082
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate82 = new Date(2024, 1, 1, 15, 50, 15, 680);
@@ -1751,12 +1751,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_083
      * @tc.number SUB_BUILTINS_Date4_TEST_8300
-     * @tc.name Date4Test_083
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate83 = new Date(2024, 11, 30, 10, 15, 40, 370);
@@ -1772,12 +1772,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_084
      * @tc.number SUB_BUILTINS_Date4_TEST_8400
-     * @tc.name Date4Test_084
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate84 = new Date(2023, 8, 15, 2, 29, 30, 500);
@@ -1793,12 +1793,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_085
      * @tc.number SUB_BUILTINS_Date4_TEST_8500
-     * @tc.name Date4Test_085
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate85 = new Date(2025, 5, 15, 16, 39, 45, 750);
@@ -1814,12 +1814,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_086
      * @tc.number SUB_BUILTINS_Date4_TEST_8600
-     * @tc.name Date4Test_086
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate86 = new Date("2023-11-01T20:00:00.000Z");
@@ -1835,12 +1835,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_087
      * @tc.number SUB_BUILTINS_Date4_TEST_8700
-     * @tc.name Date4Test_087
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate87 = new Date(2024, 2, 31, 19, 45, 20, 290);
@@ -1856,12 +1856,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_088
      * @tc.number SUB_BUILTINS_Date4_TEST_8800
-     * @tc.name Date4Test_088
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate88 = new Date(2023, 5, 30, 11, 10, 55, 860);
@@ -1877,12 +1877,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_089
      * @tc.number SUB_BUILTINS_Date4_TEST_8900
-     * @tc.name Date4Test_089
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate89 = new Date(2025, 0, 15, 11, 29, 30, 480);
@@ -1898,12 +1898,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_090
      * @tc.number SUB_BUILTINS_Date4_TEST_9000
-     * @tc.name Date4Test_090
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate90 = new Date(2024, 7, 31, 23, 29, 45, 999);
@@ -1918,12 +1918,12 @@ export default function Date4Test() {
       expect(testDate90.getTime()).assertEqual(1725118185999);
     });
     /**
+     * @tc.name   Date4Test_091
      * @tc.number SUB_BUILTINS_Date4_TEST_9100
-     * @tc.name Date4Test_091
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate91 = new Date(2025, 1, 21, 8, 35, 20, 170);
@@ -1939,12 +1939,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_092
      * @tc.number SUB_BUILTINS_Date4_TEST_9200
-     * @tc.name Date4Test_092
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate92 = new Date(2024, 1, 21, 17, 10, 45, 710);
@@ -1960,12 +1960,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_093
      * @tc.number SUB_BUILTINS_Date4_TEST_9300
-     * @tc.name Date4Test_093
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate93 = new Date(2023, 0, 5, 6, 50, 15, 350);
@@ -1981,12 +1981,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_094
      * @tc.number SUB_BUILTINS_Date4_TEST_9400
-     * @tc.name Date4Test_094
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate94 = new Date(2024, 3, 25, 3, 19, 59, 520);
@@ -2002,12 +2002,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_095
      * @tc.number SUB_BUILTINS_Date4_TEST_9500
-     * @tc.name Date4Test_095
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate95 = new Date(2025, 8, 25, 15, 49, 59, 890);
@@ -2023,12 +2023,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_096
      * @tc.number SUB_BUILTINS_Date4_TEST_9600
-     * @tc.name Date4Test_096
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate96 = new Date("2024-12-31T10:00:00.000Z");
@@ -2044,12 +2044,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_097
      * @tc.number SUB_BUILTINS_Date4_TEST_9700
-     * @tc.name Date4Test_097
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate97 = new Date(2023, 6, 5, 10, 5, 30, 260);
@@ -2065,12 +2065,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_098
      * @tc.number SUB_BUILTINS_Date4_TEST_9800
-     * @tc.name Date4Test_098
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate98 = new Date(2024, 8, 5, 20, 35, 15, 840);
@@ -2087,12 +2087,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_099
      * @tc.number SUB_BUILTINS_Date4_TEST_9900
-     * @tc.name Date4Test_099
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate99 = new Date(2025, 2, 15, 9, 59, 30, 470);
@@ -2108,12 +2108,12 @@ export default function Date4Test() {
     });
 
     /**
+     * @tc.name   Date4Test_100
      * @tc.number SUB_BUILTINS_Date4_TEST_10000
-     * @tc.name Date4Test_100
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date4Test_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate100 = new Date(2023, 11, 15, 23, 59, 30, 999);

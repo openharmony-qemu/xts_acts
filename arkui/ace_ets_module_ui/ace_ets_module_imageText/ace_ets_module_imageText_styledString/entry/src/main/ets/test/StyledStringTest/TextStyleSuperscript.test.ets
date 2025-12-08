@@ -47,14 +47,14 @@ export default function TextStyleSuperscriptTest() {
       console.info("TextStyleSuperscriptTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextStyleSuperscriptTest_0010
-    * @tc.name         TextStyleSuperscriptTest_0010
-    * @tc.desc         test TextStyle superscript: SuperscriptStyle.NORMAL
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextStyleSuperscriptTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextStyleSuperscriptTest_0010
+     * @tc.desc   test TextStyle superscript: SuperscriptStyle.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextStyleSuperscriptTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextStyleSuperscriptTest_0010] START');
       let driver = Driver.create();
@@ -68,14 +68,14 @@ export default function TextStyleSuperscriptTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextStyleSuperscriptTest_0020
-    * @tc.name         TextStyleSuperscriptTest_0020
-    * @tc.desc         test TextStyle superscript: SuperscriptStyle.SUPERSCRIPT
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextStyleSuperscriptTest_0020
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextStyleSuperscriptTest_0020
+     * @tc.desc   test TextStyle superscript: SuperscriptStyle.SUPERSCRIPT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextStyleSuperscriptTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextStyleSuperscriptTest_0020] START');
       let driver = Driver.create();
@@ -89,14 +89,14 @@ export default function TextStyleSuperscriptTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextStyleSuperscriptTest_0030
-    * @tc.name         TextStyleSuperscriptTest_0030
-    * @tc.desc         test TextStyle superscript: SuperscriptStyle.SUBSCRIPT
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextStyleSuperscriptTest_0030
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextStyleSuperscriptTest_0030
+     * @tc.desc   test TextStyle superscript: SuperscriptStyle.SUBSCRIPT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextStyleSuperscriptTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[TextStyleSuperscriptTest_0030] START');
       let driver = Driver.create();

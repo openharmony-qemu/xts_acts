@@ -47,9 +47,12 @@ export default function AlignCenter_AddLayoutWeight() {
     });
 
     /**
+     * @tc.name   testFlexAlignCenterTextLayoutWeight01
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_1200
-     * @tc.name testFlexAlignCenterTextLayoutWeight01
-     * @tc.desc The window displays all subcomponents that set different layoutWeight properties
+     * @tc.desc   The window displays all subcomponents that set different layoutWeight properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterTextLayoutWeight01',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterTextLayoutWeight01] START');
@@ -95,9 +98,12 @@ export default function AlignCenter_AddLayoutWeight() {
 
     });
     /**
+     * @tc.name   testFlexAlignCenterTextLayoutWeight02
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_1600
-     * @tc.name testFlexAlignCenterTextLayoutWeight02
-     * @tc.desc Some subcomponents are displayed with different layoutWeight properties
+     * @tc.desc   Some subcomponents are displayed with different layoutWeight properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterTextLayoutWeight02',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterTextLayoutWeight02] START');

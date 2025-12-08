@@ -45,9 +45,12 @@ export default function PushNameRouterTest() {
     });
 
     /**
+     * @tc.name   PushNameRouterTest_0100
      * @tc.number PushNameRouterTest_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   PushNameRouterTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PushNameRouterTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('PushNameRouterTest_0100 START');

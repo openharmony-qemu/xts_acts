@@ -26,7 +26,6 @@ export default function baseDdkNdkJsTest() {
     const DDK_NULL_PTR: number = 28600004;
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkCreateAshmem001
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0100
      * @tc.desc   Operation success
@@ -49,7 +48,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkCreateAshmem002
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0200
      * @tc.desc   Invalid parameter, bufferLen = 0
@@ -72,7 +70,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkCreateAshmem003
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0300
      * @tc.desc   Invalid parameter, name = nullptr
@@ -95,7 +92,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkMapAshmem001
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0400
      * @tc.desc   Operation success
@@ -118,7 +114,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkMapAshmem002
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0500
      * @tc.desc   Null pointer exception, shared memory not created
@@ -141,7 +136,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkMapAshmem003
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0600
      * @tc.desc   Operation failed, ashmemFd = 0
@@ -164,7 +158,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkMapAshmem004
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0700
      * @tc.desc   Invalid operation, ashmemMapType = 0x80
@@ -187,7 +180,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkUnmapAshmem001
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0800
      * @tc.desc   Operation success
@@ -210,7 +202,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkUnmapAshmem002
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0900
      * @tc.desc   Null pointer exception, shared memory not created and mapped
@@ -233,7 +224,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkDestroyAshmem001
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_1000
      * @tc.desc   Operation success
@@ -256,7 +246,6 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDdkDestroyAshmem002
      * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_1100
      * @tc.desc   Null pointer exception, shared memory not created and mapped

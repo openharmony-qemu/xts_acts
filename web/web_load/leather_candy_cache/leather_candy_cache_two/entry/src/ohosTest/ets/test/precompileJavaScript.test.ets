@@ -56,14 +56,14 @@ export default function precompileJavaScriptTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_0100
-    * @tc.name       : testPrecompileJavaScript001
-    * @tc.desc       : test precompileJavaScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPrecompileJavaScript001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_0100
+     * @tc.desc   test precompileJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPrecompileJavaScript001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPrecompileJavaScript001", 148401)
       Utils.registerBaseEvent("testPrecompileJavaScript001", 0, 148410, done,
@@ -73,14 +73,14 @@ export default function precompileJavaScriptTest() {
       Utils.waitAndClickComponent('precompileJavaScriptTestButton',driver)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_0500
-    * @tc.name       : testPrecompileJavaScript005
-    * @tc.desc       : test precompileJavaScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPrecompileJavaScript005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_0500
+     * @tc.desc   test precompileJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPrecompileJavaScript005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPrecompileJavaScript005", 148401)
       Utils.registerBaseEvent("testPrecompileJavaScript005", "401", 148420, done,
@@ -89,14 +89,14 @@ export default function precompileJavaScriptTest() {
         });
       Utils.waitAndClickComponent('precompileJavaScriptTestButton',driver)
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_0600
-    * @tc.name       : testPrecompileJavaScript006
-    * @tc.desc       : test precompileJavaScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPrecompileJavaScript006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_0600
+     * @tc.desc   test precompileJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPrecompileJavaScript006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPrecompileJavaScript006", 148401)
       Utils.registerBaseEvent("testPrecompileJavaScript006", "401", 148430, done,
@@ -106,14 +106,14 @@ export default function precompileJavaScriptTest() {
       Utils.waitAndClickComponent('precompileJavaScriptTestButton',driver)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_1100
-    * @tc.name       : testPrecompileJavaScript011
-    * @tc.desc       : test precompileJavaScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPrecompileJavaScript011
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_1100
+     * @tc.desc   test precompileJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPrecompileJavaScript011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPrecompileJavaScript011", 148401)
       Utils.registerBaseEvent("testPrecompileJavaScript011", 0, 148440, done,

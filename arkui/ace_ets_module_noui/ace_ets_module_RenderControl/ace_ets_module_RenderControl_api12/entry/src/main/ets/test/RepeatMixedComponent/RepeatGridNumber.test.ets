@@ -59,12 +59,12 @@ export default function RepeatGridNumber() {
     });
 
     /**
+     * @tc.name   RepeatGridNumber_001
      * @tc.number RepeatGridNumber_001
-     * @tc.name RepeatGridNumber_001
-     * @tc.desc Test RepeatGridNumber component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatGridNumber component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatGridNumber_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatGridNumber_001] START');

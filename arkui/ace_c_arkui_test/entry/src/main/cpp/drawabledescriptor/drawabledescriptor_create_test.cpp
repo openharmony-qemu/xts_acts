@@ -139,4 +139,36 @@ static napi_value TestDrawableDescriptorCreate003(napi_env env, napi_callback_in
     NAPI_END;
 }
 
+static napi_value TestDrawableDescriptorCreate004(napi_env env, napi_callback_info info)
+{
+    auto descriptor = OH_ArkUI_DrawableDescriptor_CreateFromPixelMap(nullptr);
+    ASSERT_OBJ(descriptor, nullptr);
+
+    NAPI_END;
+}
+
+static napi_value TestDrawableDescriptorCreate005(napi_env env, napi_callback_info info)
+{
+    auto descriptor = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(nullptr, 0);
+    ASSERT_OBJ(descriptor, nullptr);
+
+    NAPI_END;
+}
+
+static napi_value TestDrawableDescriptorCreate006(napi_env env, napi_callback_info info)
+{
+    auto descriptor = OH_ArkUI_DrawableDescriptor_GetStaticPixelMap(nullptr);
+    ASSERT_OBJ(descriptor, nullptr);
+
+    NAPI_END;
+}
+
+static napi_value TestDrawableDescriptorCreate007(napi_env env, napi_callback_info info)
+{
+    auto descriptor = OH_ArkUI_DrawableDescriptor_GetAnimatedPixelMapArray(nullptr);
+    ASSERT_OBJ(descriptor, nullptr);
+
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest

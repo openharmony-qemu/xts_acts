@@ -128,13 +128,13 @@ function sendAbleSetFun(sendAble: Set<string>): Promise<Set<string>> {
 
 export default function taskPoolSendableTest() {
   describe('taskPoolSendableTest', (): void => {
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0100
-     * @tc.name  : testSendableExecute_static_0100
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0100
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -160,13 +160,13 @@ export default function taskPoolSendableTest() {
       });
 
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0200
-     * @tc.name  : testSendableExecute_static_0200
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0200
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -191,13 +191,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0300
-     * @tc.name  : testSendableExecute_static_0300
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0300
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -222,13 +222,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0400
-     * @tc.name  : testSendableExecute_static_0400
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0400
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -253,13 +253,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0500
-     * @tc.name  : testSendableExecute_static_0500
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0500
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -285,13 +285,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0600
-     * @tc.name  : testSendableExecute_static_0600
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0600
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -322,13 +322,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0700
-     * @tc.name  : testSendableExecute_static_0700
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0700
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -357,13 +357,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0800
-     * @tc.name  : testSendableExecute_static_0800
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0800
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -387,13 +387,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0900
-     * @tc.name  : testSendableExecute_static_0900
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_0900
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -418,13 +418,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_1000
-     * @tc.name  : testSendableExecute_static_1000
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_1000
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,13 +449,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_1100
-     * @tc.name  : testSendableExecute_static_1100
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_1100
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,13 +487,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_1200
-     * @tc.name  : testSendableExecute_static_1200
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_1200
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -526,13 +526,13 @@ export default function taskPoolSendableTest() {
         console.log(`${caseName} test end `);
       });
 
-    /* *
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_1300
-     * @tc.name  : testSendableExecute_static_1300
-     * @tc.desc  : Sendable class can only inherit from Sendable class.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testSendableExecute_static_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_SendableExecute_1300
+     * @tc.desc   Sendable class can only inherit from Sendable class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableExecute_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

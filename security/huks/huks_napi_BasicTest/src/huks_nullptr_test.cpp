@@ -46,9 +46,12 @@ static struct OH_Huks_Blob *blobNullptr = nullptr;
 static struct OH_Huks_CertChain *certChainNullptr = nullptr;
 
 /**
- * @tc.name: HuksNullptrTest.Security_HUKS_NAPI_nullptr_0100
- * @tc.desc: use nullptr.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_nullptr_0100
+ * @tc.number Security_HUKS_NAPI_nullptr_0100
+ * @tc.desc   use nullptr.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksNullptrTest, Security_HUKS_NAPI_nullptr_0100, TestSize.Level0)
 {

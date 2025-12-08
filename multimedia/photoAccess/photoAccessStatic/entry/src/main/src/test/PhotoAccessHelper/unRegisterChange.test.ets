@@ -37,12 +37,12 @@ export default function unRegisterChangeTest() {
       await sleep(1000);
     });
     /**
-      * @tc.number  SUB_PHOTOACCESS_UNREGISTERCHANGE_STATIC_0100
-      * @tc.name    unRegisterChange_static_001
-      * @tc.desc    unRegister listening motify file title
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   unRegisterChange_static_001
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_STATIC_0100
+     * @tc.desc   unRegister listening motify file title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unRegisterChange_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -73,12 +73,12 @@ export default function unRegisterChangeTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_UNREGISTERCHANGE_STATIC_1500
-      * @tc.name    unRegisterChange_static_015
-      * @tc.desc    unRegister remove all listening
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   unRegisterChange_static_015
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_STATIC_1500
+     * @tc.desc   unRegister remove all listening
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('unRegisterChange_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -113,12 +113,12 @@ export default function unRegisterChangeTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_UNREGISTERCHANGE_STATIC_CALLBACK_STATIC_0000
-      * @tc.name    unRegisterChange_static_callback_static_000
-      * @tc.desc    unRegister remove specified callback
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   unRegisterChange_static_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_STATIC_CALLBACK_STATIC_0000
+     * @tc.desc   unRegister remove specified callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('unRegisterChange_static_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

@@ -42,12 +42,12 @@ export default function GetChangedPointerId() {
     });
 
     /**
+     * @tc.name   Touch_0100
      * @tc.number Touch_0100
-     * @tc.name Touch_0100
-     * @tc.desc test whether the nextFocus is effective
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   test whether the nextFocus is effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Touch_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);

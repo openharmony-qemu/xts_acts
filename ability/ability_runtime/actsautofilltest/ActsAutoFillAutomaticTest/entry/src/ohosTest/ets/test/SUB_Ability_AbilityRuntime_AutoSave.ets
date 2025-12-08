@@ -24,11 +24,12 @@ export default function abilityTest() {
   describe('ActsAutoSaveTest', () => {
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AutoSave_0100
-     * @tc.name: RequestAutoSave Interface : onSaveRequestSuccess
-     * @tc.desc: Manually call the RequestAutoSave interface and trigger success callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_AutoSave_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AutoSave_0100
+     * @tc.desc   Manually call the RequestAutoSave interface and trigger success callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AutoSave_0100', Level.LEVEL0, async (done:Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_0100_TAG';

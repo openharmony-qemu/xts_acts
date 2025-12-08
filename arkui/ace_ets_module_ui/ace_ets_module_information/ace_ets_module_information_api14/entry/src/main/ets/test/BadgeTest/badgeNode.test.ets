@@ -48,12 +48,12 @@ export default function BadgeNodeTest() {
     })
    
     /**
-     * @tc.number    badgeNode0100
-     * @tc.name      badgeNode0100
-     * @tc.desc      frameNode: createNodebadgeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   badgeNode0100
+     * @tc.number badgeNode0100
+     * @tc.desc   frameNode: createNodebadgeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('badgeNode0100', Level.LEVEL2, async (done: Function) => {
 

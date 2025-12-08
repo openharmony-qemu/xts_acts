@@ -42,15 +42,15 @@ export default function StyledStringApiTest() {
       console.info("StyledStringApi after each called");
     });
 
-    /**
-     * @tc.number    styledStringApi_001
-     * @tc.name      styledStringApi_001
-     * @tc.desc      appendStyledString test of Styled_String
-     * @tc.level     Level 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     */
 
+    /**
+     * @tc.name   styledStringApi_001
+     * @tc.number styledStringApi_001
+     * @tc.desc   styledStringApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('styledStringApi_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[styledStringApi_001] START');
 
@@ -74,15 +74,15 @@ export default function StyledStringApiTest() {
 
     });
 
-    /**
-     * @tc.number    styledStringApi_002
-     * @tc.name      styledStringApi_002
-     * @tc.desc      appendStyledString test of Styled_String
-     * @tc.level     Level 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     */
 
+    /**
+     * @tc.name   styledStringApi_002
+     * @tc.number styledStringApi_002
+     * @tc.desc   styledStringApi_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('styledStringApi_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[styledStringApi_002] START');
 

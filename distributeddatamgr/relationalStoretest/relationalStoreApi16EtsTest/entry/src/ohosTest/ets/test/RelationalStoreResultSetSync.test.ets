@@ -90,7 +90,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0100
      * @tc.desc   uerySharingResource test
@@ -158,7 +157,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0200
      * @tc.desc   querySharingResource test
@@ -217,7 +215,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0300
      * @tc.desc   uerySharingResource test
@@ -254,7 +251,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0400
      * @tc.desc   uerySharingResource test
@@ -289,7 +285,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0500
      * @tc.desc   uerySharingResource test
@@ -328,7 +323,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0600
      * @tc.desc   uerySharingResource test
@@ -365,7 +359,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0700
      * @tc.desc   uerySharingResource test
@@ -402,7 +395,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0800
      * @tc.desc   uerySharingResource test
@@ -437,7 +429,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0900
      * @tc.desc   uerySharingResource test
@@ -472,7 +463,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1000
      * @tc.desc   uerySharingResource test
@@ -507,7 +497,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1100
      * @tc.desc   uerySharingResource test
@@ -575,7 +564,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1200
      * @tc.desc   uerySharingResource test
@@ -634,7 +622,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1300
      * @tc.desc   uerySharingResource test
@@ -674,7 +661,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1400
      * @tc.desc   uerySharingResource test
@@ -713,7 +699,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1500
      * @tc.desc   uerySharingResource test
@@ -749,7 +734,6 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSync1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1600
      * @tc.desc   uerySharingResource test

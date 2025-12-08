@@ -59,28 +59,28 @@ export default function webMessagePortErrorCode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_POSTMESSAGEEVENTEXT_0100
-    * @tc.name       : testPostMessageEventExtError001
-    * @tc.desc       : test postMessageEventExt error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testPostMessageEventExtError001
+     * @tc.number SUB_WEB_ERRORCODE_POSTMESSAGEEVENTEXT_0100
+     * @tc.desc   test postMessageEventExt error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPostMessageEventExtError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testPostMessageEventExtError001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testPostMessageEventExtError001", '17100010', 123310, done);
       Utils.waitAndClickComponent(driver, "WebMessagePortErrorCodeButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_CREATEWEBMESSAGEPORTS_0100
-    * @tc.name       : testCreateWebMessagePortsError001
-    * @tc.desc       : test createWebMessagePorts error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testCreateWebMessagePortsError001
+     * @tc.number SUB_WEB_ERRORCODE_CREATEWEBMESSAGEPORTS_0100
+     * @tc.desc   test createWebMessagePorts error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testCreateWebMessagePortsError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testCreateWebMessagePortsError001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testCreateWebMessagePortsError001", '17100001', 123320, done);

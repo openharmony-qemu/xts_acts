@@ -47,9 +47,12 @@ export default function AlignSpaceEvenly_AddLayoutWeight() {
     });
 
     /**
+     * @tc.name   testFlexAlignSpaceEvenlyLayoutWeight01
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_1200
-     * @tc.name testFlexAlignSpaceEvenlyLayoutWeight01
-     * @tc.desc The interface displays all subcomponents that set different layoutWeight properties
+     * @tc.desc   The interface displays all subcomponents that set different layoutWeight properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignSpaceEvenlyLayoutWeight01',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignSpaceEvenlyLayoutWeight01] START');
@@ -95,9 +98,12 @@ export default function AlignSpaceEvenly_AddLayoutWeight() {
 
     });
     /**
+     * @tc.name   testFlexAlignSpaceEvenlyLayoutWeight02
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_1300
-     * @tc.name testFlexAlignSpaceEvenlyLayoutWeight02
-     * @tc.desc Some subcomponents are displayed with different layoutWeight properties
+     * @tc.desc   Some subcomponents are displayed with different layoutWeight properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignSpaceEvenlyLayoutWeight02',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignSpaceEvenlyLayoutWeight02] START');

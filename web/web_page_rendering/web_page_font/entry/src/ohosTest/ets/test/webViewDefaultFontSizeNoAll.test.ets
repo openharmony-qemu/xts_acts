@@ -57,10 +57,13 @@ export default function webViewDefaultFontSizeNoAll() {
       done();
     })
    
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0600
-     *tc.name testNoDefaultFontSizeAndNoMinFontSize
-     *tc.desc test with no set defaultfontsize or minfontsize
+    /**
+     * @tc.name   testNoDefaultFontSizeAndNoMinFontSize
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0600
+     * @tc.desc   test with no set defaultfontsize or minfontsize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNoDefaultFontSizeAndNoMinFontSize',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitdefaultFontSizeAndminFontSizeNoAll", 150280);

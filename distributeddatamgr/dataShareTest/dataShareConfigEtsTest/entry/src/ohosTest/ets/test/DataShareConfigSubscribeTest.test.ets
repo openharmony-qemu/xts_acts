@@ -78,7 +78,6 @@ export default function dataShareConfigSubscribeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest001
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0680
      * @tc.desc   single uri
@@ -109,7 +108,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest002
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0690
      * @tc.desc   single uri
@@ -141,7 +139,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0700
      * @tc.desc   single uri
@@ -173,7 +170,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest004
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0710
      * @tc.desc   single uri
@@ -200,7 +196,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest005
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0720
      * @tc.desc   single uri
@@ -230,7 +225,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest006
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0730
      * @tc.desc   single uri
@@ -260,7 +254,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest007
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0740
      * @tc.desc   single uri
@@ -286,7 +279,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest008
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0750
      * @tc.desc   single uri
@@ -312,7 +304,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest009
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0760
      * @tc.desc   single uri
@@ -342,7 +333,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest010
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0770
      * @tc.desc   single uri
@@ -372,7 +362,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest011
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0780
      * @tc.desc   single uri
@@ -402,7 +391,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest012
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0790
      * @tc.desc   single uri
@@ -432,7 +420,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest013
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0800
      * @tc.desc   single uri
@@ -462,7 +449,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest014
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0810
      * @tc.desc   single uri
@@ -489,7 +475,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0820
      * @tc.desc   single uri
@@ -516,7 +501,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest016
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0830
      * @tc.desc   single uri
@@ -546,7 +530,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest017
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0840
      * @tc.desc   single uri
@@ -576,7 +559,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest018
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0850
      * @tc.desc   single uri
@@ -625,7 +607,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest019
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0860
      * @tc.desc   single uri
@@ -667,7 +648,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest020
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0870
      * @tc.desc   single uri
@@ -717,7 +697,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest021
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0880
      * @tc.desc   single uri
@@ -760,7 +739,6 @@ export default function dataShareConfigSubscribeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigSubscribeTest022
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0950
      * @tc.desc   single uri

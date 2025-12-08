@@ -18,6 +18,7 @@ group("ActsWebCustomDnsTest") {
       "custom_dns_one:ActsWebCustomDnsOneTest",
       "custom_dns_one_static:ActsWebCustomDnsOneStaticTest",
       "custom_dns_two:ActsWebCustomDnsTwoTest",
+      "custom_dns_two_static:ActsWebCustomDnsTwoStaticTest",
     ]
   }
 }

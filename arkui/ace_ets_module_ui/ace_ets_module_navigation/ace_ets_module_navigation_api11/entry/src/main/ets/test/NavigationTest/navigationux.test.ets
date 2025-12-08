@@ -41,10 +41,13 @@ export default function navigationuxtest() {
       done()
     });
 
-    /*
-     *tc.number ArkUX_Stage_Navigation_0100
-     *tc.name   Add interfaces to control the disable and active states on the toolbar
-     *tc.desc   Gets the toolbarConfiguration value undefined
+    /**
+     * @tc.name   ArkUX_Stage_Navigation_0100
+     * @tc.number ArkUX_Stage_Navigation_0100
+     * @tc.desc   Gets the toolbarConfiguration value undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Navigation_0100',  Level.LEVEL0, async  (done:Function) =>{
       console.info('ArkUX_Stage_Navigation_0100 START');

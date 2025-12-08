@@ -31,13 +31,13 @@ export default function variableOperationsTest() {
     }
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_LONG_0100
-    * @tc.name      test_Variable_SetValue_Long_0001
-    * @tc.desc      set long value normal
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Long_0001
+     * @tc.number VARIABLE_SETVALUE_LONG_0100
+     * @tc.desc   set long value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Long_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Long_0001 start');
@@ -50,13 +50,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_LONG_0200
-    * @tc.name      test_Variable_SetValue_Long_0002
-    * @tc.desc      invalid env, return normal
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Long_0002
+     * @tc.number VARIABLE_SETVALUE_LONG_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Long_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Long_0002 start');
@@ -69,13 +69,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_LONG_0300
-    * @tc.name      test_Variable_SetValue_Long_0003
-    * @tc.desc      find variable float, return invalid type
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Long_0003
+     * @tc.number VARIABLE_SETVALUE_LONG_0300
+     * @tc.desc   find variable float, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Long_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Long_0003 start');
@@ -88,13 +88,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_LONG_0400
-    * @tc.name      test_Variable_SetValue_Long_0004
-    * @tc.desc      find variable nullptr, return invalid args
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Long_0004
+     * @tc.number VARIABLE_SETVALUE_LONG_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Long_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Long_0004 start');
@@ -107,13 +107,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_LONG_0500
-    * @tc.name      test_Variable_SetValue_Long_0005
-    * @tc.desc      find variable double type, get value false
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Long_0005
+     * @tc.number VARIABLE_SETVALUE_LONG_0500
+     * @tc.desc   find variable double type, get value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Long_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Long_0005 start');
@@ -126,13 +126,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_LONG_0700
-    * @tc.name      test_Variable_SetValue_Long_0007
-    * @tc.desc      find variable bool, set(3L, 0, -9) and get value composite test
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Long_0007
+     * @tc.number VARIABLE_SETVALUE_LONG_0700
+     * @tc.desc   find variable bool, set(3L, 0, -9) and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Long_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Long_0007 start');
@@ -145,13 +145,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_LONG_0900
-    * @tc.name      test_Variable_SetValue_Long_0009
-    * @tc.desc      find variable long, set long and testval and get value composite test
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Long_0009
+     * @tc.number VARIABLE_SETVALUE_LONG_0900
+     * @tc.desc   find variable long, set long and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Long_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Long_0009 start');
@@ -164,13 +164,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_INT_0100
-    * @tc.name      test_Variable_SetValue_Int_0001
-    * @tc.desc      set int value normal
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Int_0001
+     * @tc.number VARIABLE_SETVALUE_INT_0100
+     * @tc.desc   set int value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Int_0001 start');
@@ -183,13 +183,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_INT_0200
-    * @tc.name      test_Variable_SetValue_Int_0002
-    * @tc.desc      invalid env, return normal
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Int_0002
+     * @tc.number VARIABLE_SETVALUE_INT_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Int_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Int_0002 start');
@@ -202,13 +202,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_INT_0300
-    * @tc.name      test_Variable_SetValue_Int_0003
-    * @tc.desc      find variable float, return invalid type
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Int_0003
+     * @tc.number VARIABLE_SETVALUE_INT_0300
+     * @tc.desc   find variable float, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Int_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Int_0003 start');
@@ -221,13 +221,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_INT_0400
-    * @tc.name      test_Variable_SetValue_Int_0004
-    * @tc.desc      find variable nullptr, return invalid args
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Int_0004
+     * @tc.number VARIABLE_SETVALUE_INT_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Int_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Int_0004 start');
@@ -240,13 +240,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_INT_0500
-    * @tc.name      test_Variable_SetValue_Int_0005
-    * @tc.desc      find variable long type, get value false
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Int_0005
+     * @tc.number VARIABLE_SETVALUE_INT_0500
+     * @tc.desc   find variable long type, get value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Int_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Int_0005 start');
@@ -259,13 +259,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_INT_0700
-    * @tc.name      test_Variable_SetValue_Int_0007
-    * @tc.desc      find variable bool, set(3U, 0, -9) and get value composite test
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Int_0007
+     * @tc.number VARIABLE_SETVALUE_INT_0700
+     * @tc.desc   find variable bool, set(3U, 0, -9) and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Int_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Int_0007 start');
@@ -278,13 +278,13 @@ export default function variableOperationsTest() {
       });
 
     /**
-    * @tc.number    VARIABLE_SETVALUE_INT_0900
-    * @tc.name      test_Variable_SetValue_Int_0009
-    * @tc.desc      find variable int, set int and testval and get value composite test
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   test_Variable_SetValue_Int_0009
+     * @tc.number VARIABLE_SETVALUE_INT_0900
+     * @tc.desc   find variable int, set int and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Variable_SetValue_Int_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Variable_SetValue_Int_0009 start');
@@ -297,12 +297,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0100
-     * @tc.name      test_Variable_SetValue_Double_0001
-     * @tc.desc      set double value normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Double_0001
+     * @tc.number VARIABLE_SETVALUE_DOUBLE_0100
+     * @tc.desc   set double value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Double_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0200
-     * @tc.name      test_Variable_SetValue_Double_0002
-     * @tc.desc      invalid env, return normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Double_0002
+     * @tc.number VARIABLE_SETVALUE_DOUBLE_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Double_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -335,12 +335,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0300
-     * @tc.name      test_Variable_SetValue_Double_0003
-     * @tc.desc      find variable int, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Double_0003
+     * @tc.number VARIABLE_SETVALUE_DOUBLE_0300
+     * @tc.desc   find variable int, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Double_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -353,13 +353,13 @@ export default function variableOperationsTest() {
         console.log('test_Variable_SetValue_Double_0003 end');
       });
 
-     /**
-     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0400
-     * @tc.name      test_Variable_SetValue_Double_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_Variable_SetValue_Double_0004
+     * @tc.number VARIABLE_SETVALUE_DOUBLE_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Double_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0500
-     * @tc.name      test_Variable_SetValue_Double_0005
-     * @tc.desc      find variable bool type, get value false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Double_0005
+     * @tc.number VARIABLE_SETVALUE_DOUBLE_0500
+     * @tc.desc   find variable bool type, get value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Double_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,12 +392,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0700
-     * @tc.name      test_Variable_SetValue_Double_0007
-     * @tc.desc      find variable bool, set(3.14F, 0, -9.42F) and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Double_0007
+     * @tc.number VARIABLE_SETVALUE_DOUBLE_0700
+     * @tc.desc   find variable bool, set(3.14F, 0, -9.42F) and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Double_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0900
-     * @tc.name      test_Variable_SetValue_Double_0009
-     * @tc.desc      find variable double, set double and testval and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Double_0009
+     * @tc.number VARIABLE_SETVALUE_DOUBLE_0900
+     * @tc.desc   find variable double, set double and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Double_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_REF_0100
-     * @tc.name      test_Variable_GetValue_Ref_0001
-     * @tc.desc      find variable string, get value is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Ref_0001
+     * @tc.number VARIABLE_GETVALUE_REF_0100
+     * @tc.desc   find variable string, get value is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_REF_0200
-     * @tc.name      test_Variable_GetValue_Ref_0002
-     * @tc.desc      find variable string, three args, first is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Ref_0002
+     * @tc.number VARIABLE_GETVALUE_REF_0200
+     * @tc.desc   find variable string, three args, first is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_REF_0300
-     * @tc.name      test_Variable_GetValue_Ref_0003
-     * @tc.desc      find variable bool, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Ref_0003
+     * @tc.number VARIABLE_GETVALUE_REF_0300
+     * @tc.desc   find variable bool, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_REF_0400
-     * @tc.name      test_Variable_GetValue_Ref_0004
-     * @tc.desc      find variable {}, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Ref_0004
+     * @tc.number VARIABLE_GETVALUE_REF_0400
+     * @tc.desc   find variable {}, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -506,12 +506,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_REF_0500
-     * @tc.name      test_Variable_GetValue_Ref_0005
-     * @tc.desc      find variable string, result is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Ref_0005
+     * @tc.number VARIABLE_GETVALUE_REF_0500
+     * @tc.desc   find variable string, result is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -525,12 +525,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_DOUBLE_0100
-     * @tc.name      test_Variable_GetValue_Double_0001
-     * @tc.desc      find variable double, get value is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Double_0001
+     * @tc.number VARIABLE_GETVALUE_DOUBLE_0100
+     * @tc.desc   find variable double, get value is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Double_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -544,12 +544,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_DOUBLE_0200
-     * @tc.name      test_Variable_GetValue_Double_0002
-     * @tc.desc      find variable double, three args, first is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Double_0002
+     * @tc.number VARIABLE_GETVALUE_DOUBLE_0200
+     * @tc.desc   find variable double, three args, first is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Double_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_DOUBLE_0300
-     * @tc.name      test_Variable_GetValue_Double_0003
-     * @tc.desc      find variable bool, get value invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Double_0003
+     * @tc.number VARIABLE_GETVALUE_DOUBLE_0300
+     * @tc.desc   find variable bool, get value invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Double_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,12 +582,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_DOUBLE_0400
-     * @tc.name      test_Variable_GetValue_Double_0004
-     * @tc.desc      find variable nullptr, invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Double_0004
+     * @tc.number VARIABLE_GETVALUE_DOUBLE_0400
+     * @tc.desc   find variable nullptr, invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Double_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -601,12 +601,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_DOUBLE_0500
-     * @tc.name      test_Variable_GetValue_Double_0005
-     * @tc.desc      find variable double, result is nullptr, invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Double_0005
+     * @tc.number VARIABLE_GETVALUE_DOUBLE_0500
+     * @tc.desc   find variable double, result is nullptr, invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Double_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BOOLEAN_0100
-     * @tc.name      test_Variable_GetValue_Boolean_0001
-     * @tc.desc      find variable for bool, get value is bool
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Boolean_0001
+     * @tc.number VARIABLE_GETVALUE_BOOLEAN_0100
+     * @tc.desc   find variable for bool, get value is bool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Boolean_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -639,12 +639,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BOOLEAN_0200
-     * @tc.name      test_Variable_GetValue_Boolean_0002
-     * @tc.desc      variable is nullptr, get value is invalid
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Boolean_0002
+     * @tc.number VARIABLE_GETVALUE_BOOLEAN_0200
+     * @tc.desc   variable is nullptr, get value is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Boolean_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -658,12 +658,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BOOLEAN_0300
-     * @tc.name      test_Variable_GetValue_Boolean_0003
-     * @tc.desc      variable is string, get value is invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Boolean_0003
+     * @tc.number VARIABLE_GETVALUE_BOOLEAN_0300
+     * @tc.desc   variable is string, get value is invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Boolean_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -677,12 +677,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BOOLEAN_0400
-     * @tc.name      test_Variable_GetValue_Boolean_0004
-     * @tc.desc      variable is nullptr, get value is invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Boolean_0004
+     * @tc.number VARIABLE_GETVALUE_BOOLEAN_0400
+     * @tc.desc   variable is nullptr, get value is invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Boolean_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -696,12 +696,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BOOLEAN_0500
-     * @tc.name      test_Variable_GetValue_Boolean_0005
-     * @tc.desc      result is nullptr, get value is invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Boolean_0005
+     * @tc.number VARIABLE_GETVALUE_BOOLEAN_0500
+     * @tc.desc   result is nullptr, get value is invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Boolean_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -715,12 +715,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_INT_0100
-     * @tc.name      test_Variable_GetValue_Int_0001
-     * @tc.desc      find variable int, get value normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Int_0001
+     * @tc.number VARIABLE_GETVALUE_INT_0100
+     * @tc.desc   find variable int, get value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -734,12 +734,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_INT_0200
-     * @tc.name      test_Variable_GetValue_Int_0002
-     * @tc.desc      find variable int, three args, first is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Int_0002
+     * @tc.number VARIABLE_GETVALUE_INT_0200
+     * @tc.desc   find variable int, three args, first is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Int_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -753,12 +753,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_INT_0300
-     * @tc.name      test_Variable_GetValue_Int_0003
-     * @tc.desc      find variable bool, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Int_0003
+     * @tc.number VARIABLE_GETVALUE_INT_0300
+     * @tc.desc   find variable bool, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Int_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -772,12 +772,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_INT_0400
-     * @tc.name      test_Variable_GetValue_Int_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Int_0004
+     * @tc.number VARIABLE_GETVALUE_INT_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Int_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -791,12 +791,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_INT_0500
-     * @tc.name      test_Variable_GetValue_Int_0005
-     * @tc.desc      find variable int, result is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Int_0005
+     * @tc.number VARIABLE_GETVALUE_INT_0500
+     * @tc.desc   find variable int, result is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Int_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -810,12 +810,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_LONG_0100
-     * @tc.name      test_Variable_GetValue_Long_0001
-     * @tc.desc      find variable long, get value is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Long_0001
+     * @tc.number VARIABLE_GETVALUE_LONG_0100
+     * @tc.desc   find variable long, get value is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Long_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -829,12 +829,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_LONG_0200
-     * @tc.name      test_Variable_GetValue_Long_0002
-     * @tc.desc      find variable long, three args, first is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Long_0002
+     * @tc.number VARIABLE_GETVALUE_LONG_0200
+     * @tc.desc   find variable long, three args, first is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Long_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -848,12 +848,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_LONG_0300
-     * @tc.name      test_Variable_GetValue_Long_0003
-     * @tc.desc      find variable bool, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Long_0003
+     * @tc.number VARIABLE_GETVALUE_LONG_0300
+     * @tc.desc   find variable bool, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Long_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -867,12 +867,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_LONG_0400
-     * @tc.name      test_Variable_GetValue_Long_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Long_0004
+     * @tc.number VARIABLE_GETVALUE_LONG_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Long_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -886,12 +886,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_LONG_0500
-     * @tc.name      test_Variable_GetValue_Long_0005
-     * @tc.desc      find variable long, result is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Long_0005
+     * @tc.number VARIABLE_GETVALUE_LONG_0500
+     * @tc.desc   find variable long, result is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Long_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -905,12 +905,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BOOLEAN_0100
-     * @tc.name      test_Variable_SetValue_Boolean_0001
-     * @tc.desc      set boolean value normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Boolean_0001
+     * @tc.number VARIABLE_SETVALUE_BOOLEAN_0100
+     * @tc.desc   set boolean value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Boolean_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -924,12 +924,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BOOLEAN_0200
-     * @tc.name      test_Variable_SetValue_Boolean_0002
-     * @tc.desc      invalid env, return normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Boolean_0002
+     * @tc.number VARIABLE_SETVALUE_BOOLEAN_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Boolean_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -943,12 +943,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BOOLEAN_0300
-     * @tc.name      test_Variable_SetValue_Boolean_0003
-     * @tc.desc      find variable byte, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Boolean_0003
+     * @tc.number VARIABLE_SETVALUE_BOOLEAN_0300
+     * @tc.desc   find variable byte, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Boolean_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -962,12 +962,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BOOLEAN_0400
-     * @tc.name      test_Variable_SetValue_Boolean_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Boolean_0004
+     * @tc.number VARIABLE_SETVALUE_BOOLEAN_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Boolean_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -981,12 +981,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BOOLEAN_0500
-     * @tc.name      test_Variable_SetValue_Boolean_0005
-     * @tc.desc      find variable int type, get value false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Boolean_0005
+     * @tc.number VARIABLE_SETVALUE_BOOLEAN_0500
+     * @tc.desc   find variable int type, get value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Boolean_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1000,12 +1000,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BOOLEAN_0700
-     * @tc.name      test_Variable_SetValue_Boolean_0007
-     * @tc.desc      find variable bool, set(true,false,true) and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Boolean_0007
+     * @tc.number VARIABLE_SETVALUE_BOOLEAN_0700
+     * @tc.desc   find variable bool, set(true,false,true) and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Boolean_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1019,12 +1019,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BOOLEAN_0900
-     * @tc.name      test_Variable_SetValue_Boolean_0009
-     * @tc.desc      find variable bool, set bool and testval and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Boolean_0009
+     * @tc.number VARIABLE_SETVALUE_BOOLEAN_0900
+     * @tc.desc   find variable bool, set bool and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Boolean_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1038,12 +1038,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_CHAR_0100
-     * @tc.name      test_Variable_SetValue_Char_0001
-     * @tc.desc      set char value normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Char_0001
+     * @tc.number VARIABLE_SETVALUE_CHAR_0100
+     * @tc.desc   set char value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Char_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1057,12 +1057,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_CHAR_0200
-     * @tc.name      test_Variable_SetValue_Char_0002
-     * @tc.desc      invalid env, return normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Char_0002
+     * @tc.number VARIABLE_SETVALUE_CHAR_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Char_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1076,12 +1076,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_CHAR_0300
-     * @tc.name      test_Variable_SetValue_Char_0003
-     * @tc.desc      find variable double, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Char_0003
+     * @tc.number VARIABLE_SETVALUE_CHAR_0300
+     * @tc.desc   find variable double, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Char_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1095,12 +1095,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_CHAR_0400
-     * @tc.name      test_Variable_SetValue_Char_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Char_0004
+     * @tc.number VARIABLE_SETVALUE_CHAR_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Char_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1114,12 +1114,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_CHAR_0500
-     * @tc.name      test_Variable_SetValue_Char_0005
-     * @tc.desc      find variable double type, get value false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Char_0005
+     * @tc.number VARIABLE_SETVALUE_CHAR_0500
+     * @tc.desc   find variable double type, get value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Char_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1133,12 +1133,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_CHAR_0700
-     * @tc.name      test_Variable_SetValue_Char_0007
-     * @tc.desc      find variable bool, set('X', 'Y', 'Z') and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Char_0007
+     * @tc.number VARIABLE_SETVALUE_CHAR_0700
+     * @tc.desc   find variable bool, set('X', 'Y', 'Z') and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Char_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1152,12 +1152,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_CHAR_0900
-     * @tc.name      test_Variable_SetValue_Char_0009
-     * @tc.desc      ind variable bool, set char and testval and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Char_0009
+     * @tc.number VARIABLE_SETVALUE_CHAR_0900
+     * @tc.desc   ind variable bool, set char and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Char_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1171,12 +1171,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BYTE_0100
-     * @tc.name      test_Variable_SetValue_Byte_0001
-     * @tc.desc      set byte value normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Byte_0001
+     * @tc.number VARIABLE_SETVALUE_BYTE_0100
+     * @tc.desc   set byte value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Byte_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1190,12 +1190,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BYTE_0200
-     * @tc.name      test_Variable_SetValue_Byte_0002
-     * @tc.desc      invalid env, return normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Byte_0002
+     * @tc.number VARIABLE_SETVALUE_BYTE_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Byte_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1209,12 +1209,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BYTE_0300
-     * @tc.name      test_Variable_SetValue_Byte_0003
-     * @tc.desc      find variable double, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Byte_0003
+     * @tc.number VARIABLE_SETVALUE_BYTE_0300
+     * @tc.desc   find variable double, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Byte_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1228,12 +1228,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BYTE_0400
-     * @tc.name      test_Variable_SetValue_Byte_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Byte_0004
+     * @tc.number VARIABLE_SETVALUE_BYTE_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Byte_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1247,12 +1247,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BYTE_0500
-     * @tc.name      test_Variable_SetValue_Byte_0005
-     * @tc.desc      find variable short type, get value false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Byte_0005
+     * @tc.number VARIABLE_SETVALUE_BYTE_0500
+     * @tc.desc   find variable short type, get value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Byte_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1266,12 +1266,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BYTE_0700
-     * @tc.name      test_Variable_SetValue_Byte_0007
-     * @tc.desc      find variable bool, set(40U, 0, -10) and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Byte_0007
+     * @tc.number VARIABLE_SETVALUE_BYTE_0700
+     * @tc.desc   find variable bool, set(40U, 0, -10) and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Byte_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1285,12 +1285,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_BYTE_0900
-     * @tc.name      test_Variable_SetValue_Byte_0009
-     * @tc.desc      find variable byte, set byte and testval and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Byte_0009
+     * @tc.number VARIABLE_SETVALUE_BYTE_0900
+     * @tc.desc   find variable byte, set byte and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Byte_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1304,12 +1304,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_SHORT_0100
-     * @tc.name      test_Variable_SetValue_Short_0001
-     * @tc.desc      set short value normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Short_0001
+     * @tc.number VARIABLE_SETVALUE_SHORT_0100
+     * @tc.desc   set short value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Short_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1323,12 +1323,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_SHORT_0200
-     * @tc.name      test_Variable_SetValue_Short_0002
-     * @tc.desc      invalid env, return normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Short_0002
+     * @tc.number VARIABLE_SETVALUE_SHORT_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Short_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1342,12 +1342,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_SHORT_0300
-     * @tc.name      test_Variable_SetValue_Short_0003
-     * @tc.desc      find variable byte, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Short_0003
+     * @tc.number VARIABLE_SETVALUE_SHORT_0300
+     * @tc.desc   find variable byte, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Short_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1361,12 +1361,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_SHORT_0400
-     * @tc.name      test_Variable_SetValue_Short_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Short_0004
+     * @tc.number VARIABLE_SETVALUE_SHORT_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Short_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1380,12 +1380,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_SHORT_0500
-     * @tc.name      test_Variable_SetValue_Short_0005
-     * @tc.desc      find variable long type, get value false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Short_0005
+     * @tc.number VARIABLE_SETVALUE_SHORT_0500
+     * @tc.desc   find variable long type, get value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Short_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1399,12 +1399,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_SHORT_0700
-     * @tc.name      test_Variable_SetValue_Short_0007
-     * @tc.desc      find variable bool, set(3U, 0, -9) and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Short_0007
+     * @tc.number VARIABLE_SETVALUE_SHORT_0700
+     * @tc.desc   find variable bool, set(3U, 0, -9) and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Short_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1418,12 +1418,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_SHORT_0900
-     * @tc.name      test_Variable_SetValue_Short_0009
-     * @tc.desc      find variable short, set short and testval and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Short_0009
+     * @tc.number VARIABLE_SETVALUE_SHORT_0900
+     * @tc.desc   find variable short, set short and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Short_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1437,12 +1437,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_FLOAT_0100
-     * @tc.name      test_Variable_SetValue_Float_0001
-     * @tc.desc      set float value normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Float_0001
+     * @tc.number VARIABLE_SETVALUE_FLOAT_0100
+     * @tc.desc   set float value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Float_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1456,12 +1456,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_FLOAT_0200
-     * @tc.name      test_Variable_SetValue_Float_0002
-     * @tc.desc      invalid env, return normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Float_0002
+     * @tc.number VARIABLE_SETVALUE_FLOAT_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Float_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1475,12 +1475,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_FLOAT_0300
-     * @tc.name      test_Variable_SetValue_Float_0003
-     * @tc.desc      find variable int, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Float_0003
+     * @tc.number VARIABLE_SETVALUE_FLOAT_0300
+     * @tc.desc   find variable int, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Float_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1494,12 +1494,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_FLOAT_0400
-     * @tc.name      test_Variable_SetValue_Float_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Float_0004
+     * @tc.number VARIABLE_SETVALUE_FLOAT_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Float_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1513,12 +1513,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_FLOAT_0500
-     * @tc.name      test_Variable_SetValue_Float_0005
-     * @tc.desc      find variable double type, get value false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Float_0005
+     * @tc.number VARIABLE_SETVALUE_FLOAT_0500
+     * @tc.desc   find variable double type, get value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Float_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1532,12 +1532,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_FLOAT_0700
-     * @tc.name      test_Variable_SetValue_Float_0007
-     * @tc.desc      find variable bool, set(3.14F, 0, -9.42F) and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Float_0007
+     * @tc.number VARIABLE_SETVALUE_FLOAT_0700
+     * @tc.desc   find variable bool, set(3.14F, 0, -9.42F) and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Float_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1551,12 +1551,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_FLOAT_0900
-     * @tc.name      test_Variable_SetValue_Float_0009
-     * @tc.desc      find variable float, set float and testval and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Float_0009
+     * @tc.number VARIABLE_SETVALUE_FLOAT_0900
+     * @tc.desc   find variable float, set float and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Float_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1570,12 +1570,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_REF_0100
-     * @tc.name      test_Variable_SetValue_Ref_0001
-     * @tc.desc      set ref value normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Ref_0001
+     * @tc.number VARIABLE_SETVALUE_REF_0100
+     * @tc.desc   set ref value normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1589,12 +1589,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_REF_0200
-     * @tc.name      test_Variable_SetValue_Ref_0002
-     * @tc.desc      invalid env, return normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Ref_0002
+     * @tc.number VARIABLE_SETVALUE_REF_0200
+     * @tc.desc   invalid env, return normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1608,12 +1608,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_REF_0300
-     * @tc.name      test_Variable_SetValue_Ref_0003
-     * @tc.desc      find variable short, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Ref_0003
+     * @tc.number VARIABLE_SETVALUE_REF_0300
+     * @tc.desc   find variable short, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1627,12 +1627,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_REF_0400
-     * @tc.name      test_Variable_SetValue_Ref_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Ref_0004
+     * @tc.number VARIABLE_SETVALUE_REF_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1646,12 +1646,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_REF_0500
-     * @tc.name      test_Variable_SetValue_Ref_0005
-     * @tc.desc      find variable string type, result is nullptr
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Ref_0005
+     * @tc.number VARIABLE_SETVALUE_REF_0500
+     * @tc.desc   find variable string type, result is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1665,12 +1665,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_REF_0700
-     * @tc.name      test_Variable_SetValue_Ref_0007
-     * @tc.desc      find variable bool, set("abcdefg","xxxx","hello world") and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Ref_0007
+     * @tc.number VARIABLE_SETVALUE_REF_0700
+     * @tc.desc   find variable bool, set("abcdefg","xxxx","hello world") and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Ref_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1684,12 +1684,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_SETVALUE_REF_0900
-     * @tc.name      test_Variable_SetValue_Ref_0009
-     * @tc.desc      find variable string, set string and testval and get value composite test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_SetValue_Ref_0009
+     * @tc.number VARIABLE_SETVALUE_REF_0900
+     * @tc.desc   find variable string, set string and testval and get value composite test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_SetValue_Ref_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1703,12 +1703,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_CHAR_0100
-     * @tc.name      test_Variable_GetValue_Char_0001
-     * @tc.desc      find variable char, get value is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Char_0001
+     * @tc.number VARIABLE_GETVALUE_CHAR_0100
+     * @tc.desc   find variable char, get value is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Char_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1722,12 +1722,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_CHAR_0200
-     * @tc.name      test_Variable_GetValue_Char_0002
-     * @tc.desc      find variable char, three args, first is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Char_0002
+     * @tc.number VARIABLE_GETVALUE_CHAR_0200
+     * @tc.desc   find variable char, three args, first is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Char_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1741,12 +1741,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_CHAR_0300
-     * @tc.name      test_Variable_GetValue_Char_0003
-     * @tc.desc      find variable bool, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Char_0003
+     * @tc.number VARIABLE_GETVALUE_CHAR_0300
+     * @tc.desc   find variable bool, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Char_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1760,12 +1760,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_CHAR_0400
-     * @tc.name      test_Variable_GetValue_Char_0004
-     * @tc.desc      variable is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Char_0004
+     * @tc.number VARIABLE_GETVALUE_CHAR_0400
+     * @tc.desc   variable is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Char_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1779,12 +1779,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_CHAR_0500
-     * @tc.name      test_Variable_GetValue_Char_0005
-     * @tc.desc      variable is char, result is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Char_0005
+     * @tc.number VARIABLE_GETVALUE_CHAR_0500
+     * @tc.desc   variable is char, result is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Char_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1798,12 +1798,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BYTE_0100
-     * @tc.name      test_Variable_GetValue_Byte_0001
-     * @tc.desc      find variable byte, get value is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Byte_0001
+     * @tc.number VARIABLE_GETVALUE_BYTE_0100
+     * @tc.desc   find variable byte, get value is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Byte_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1817,12 +1817,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BYTE_0200
-     * @tc.name      test_Variable_GetValue_Byte_0002
-     * @tc.desc      find variable byte, variable is nullptr, invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Byte_0002
+     * @tc.number VARIABLE_GETVALUE_BYTE_0200
+     * @tc.desc   find variable byte, variable is nullptr, invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Byte_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1836,12 +1836,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BYTE_0300
-     * @tc.name      test_Variable_GetValue_Byte_0003
-     * @tc.desc      find variable bool, invalid type args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Byte_0003
+     * @tc.number VARIABLE_GETVALUE_BYTE_0300
+     * @tc.desc   find variable bool, invalid type args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Byte_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1855,12 +1855,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BYTE_0400
-     * @tc.name      test_Variable_GetValue_Byte_0004
-     * @tc.desc      variable is nullptr, invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Byte_0004
+     * @tc.number VARIABLE_GETVALUE_BYTE_0400
+     * @tc.desc   variable is nullptr, invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Byte_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1874,12 +1874,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_BYTE_0500
-     * @tc.name      test_Variable_GetValue_Byte_0005
-     * @tc.desc      find variable byte, result is nullptr, invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Byte_0005
+     * @tc.number VARIABLE_GETVALUE_BYTE_0500
+     * @tc.desc   find variable byte, result is nullptr, invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Byte_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1893,12 +1893,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_SHORT_0100
-     * @tc.name      test_Variable_GetValue_Short_0001
-     * @tc.desc      find variable short, get value is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Short_0001
+     * @tc.number VARIABLE_GETVALUE_SHORT_0100
+     * @tc.desc   find variable short, get value is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Short_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1912,12 +1912,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_SHORT_0200
-     * @tc.name      test_Variable_GetValue_Short_0002
-     * @tc.desc      find variable short, three args, first is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Short_0002
+     * @tc.number VARIABLE_GETVALUE_SHORT_0200
+     * @tc.desc   find variable short, three args, first is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Short_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1931,12 +1931,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_SHORT_0300
-     * @tc.name      test_Variable_GetValue_Short_0003
-     * @tc.desc      find variable bool, return invalid type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Short_0003
+     * @tc.number VARIABLE_GETVALUE_SHORT_0300
+     * @tc.desc   find variable bool, return invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Short_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1950,12 +1950,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_SHORT_0400
-     * @tc.name      test_Variable_GetValue_Short_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Short_0004
+     * @tc.number VARIABLE_GETVALUE_SHORT_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Short_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1969,12 +1969,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_SHORT_0500
-     * @tc.name      test_Variable_GetValue_Short_0005
-     * @tc.desc      find variable short, result is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Short_0005
+     * @tc.number VARIABLE_GETVALUE_SHORT_0500
+     * @tc.desc   find variable short, result is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Short_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1988,12 +1988,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_FLOAT_0100
-     * @tc.name      test_Variable_GetValue_Float_0001
-     * @tc.desc      find variable float, get value ok
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Float_0001
+     * @tc.number VARIABLE_GETVALUE_FLOAT_0100
+     * @tc.desc   find variable float, get value ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Float_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2007,12 +2007,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_FLOAT_0200
-     * @tc.name      test_Variable_GetValue_Float_0002
-     * @tc.desc      find variable float, three args, first is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Float_0002
+     * @tc.number VARIABLE_GETVALUE_FLOAT_0200
+     * @tc.desc   find variable float, three args, first is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Float_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2026,12 +2026,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_FLOAT_0300
-     * @tc.name      test_Variable_GetValue_Float_0003
-     * @tc.desc      find variable bool, return invalid type args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Float_0003
+     * @tc.number VARIABLE_GETVALUE_FLOAT_0300
+     * @tc.desc   find variable bool, return invalid type args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Float_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2045,12 +2045,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_FLOAT_0400
-     * @tc.name      test_Variable_GetValue_Float_0004
-     * @tc.desc      find variable nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Float_0004
+     * @tc.number VARIABLE_GETVALUE_FLOAT_0400
+     * @tc.desc   find variable nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Float_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2064,12 +2064,12 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    VARIABLE_GETVALUE_FLOAT_0500
-     * @tc.name      test_Variable_GetValue_Float_0005
-     * @tc.desc      find variable float, result is nullptr, return invalid args
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Variable_GetValue_Float_0005
+     * @tc.number VARIABLE_GETVALUE_FLOAT_0500
+     * @tc.desc   find variable float, result is nullptr, return invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Variable_GetValue_Float_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -34,12 +34,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest0200
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_0200
-     * @tc.name builtinsRegExpInstancePropTest0200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest0200';
@@ -53,12 +53,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest0300
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_0300
-     * @tc.name builtinsRegExpInstancePropTest0300
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest0300';
@@ -72,12 +72,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest0400
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_0400
-     * @tc.name builtinsRegExpInstancePropTest0400
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest0400';
@@ -91,12 +91,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest0500
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_0500
-     * @tc.name builtinsRegExpInstancePropTest0500
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest0500';
@@ -111,12 +111,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest0600
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_0600
-     * @tc.name builtinsRegExpInstancePropTest0600
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest0600';
@@ -130,12 +130,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest0700
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_0700
-     * @tc.name builtinsRegExpInstancePropTest0700
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest0700';
@@ -149,12 +149,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest0800
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_0800
-     * @tc.name builtinsRegExpInstancePropTest0800
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest0800';
@@ -170,12 +170,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest0900
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_0900
-     * @tc.name builtinsRegExpInstancePropTest0900
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest0900';
@@ -189,12 +189,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest1000
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_1000
-     * @tc.name builtinsRegExpInstancePropTest1000
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest1000';
@@ -208,12 +208,12 @@ export default function builtinsRegExpInstancePropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpInstancePropTest1100
      * @tc.number SUB_BUILTINS_REGEXP_INSTANCE_PROP_TEST_1100
-     * @tc.name builtinsRegExpInstancePropTest1100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpInstancePropTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpInstancePropTest1100';

@@ -21,91 +21,91 @@ export default function constDynamicImport() {
   describe('ActsAbilityTest', () => {
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0001
-     * @tc.name      : testImportHspName
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testImportHspName
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0001
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testImportHspName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let lib = await import('Sharelibraryhsp')
       expect(lib.add(2, 3)).assertEqual(5)
     })
 
-     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0002
-     * @tc.name      : testImportHspPath
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   testImportHspPath
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0002
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testImportHspPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let lib = await import('Sharelibraryhsp/src/main/ets/utils/Calc')
       expect(lib.add(3, 4)).assertEqual(7)
     })
     
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0003
-     * @tc.name      : testImportHarName
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testImportHarName
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0003
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testImportHarName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let lib = await import('Staticlibraryhar')
       expect(lib.add(2, 3)).assertEqual(5)
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0004
-     * @tc.name      : testImportHarPath
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testImportHarPath
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0004
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testImportHarPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
        let lib = await import('Staticlibraryhar/src/main/ets/Calc')
        expect(lib.add(3, 5)).assertEqual(8)
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0007
-     * @tc.name      : testWithinhapImportPath
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testWithinhapImportPath
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0007
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWithinhapImportPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let lib = await import('../../../main/ets/Calc')
       expect(lib.add(3, 5)).assertEqual(8)
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0008
-     * @tc.name      : testWithinimportHspPath
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testWithinimportHspPath
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0008
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWithinimportHspPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await withinHspTest()
       expect(res).assertTrue()
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0009
-     * @tc.name      : testWithinimportHarPath
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testWithinimportHarPath
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ConstDynamicImport_0009
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWithinimportHarPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await withinHarTest()
       expect(res).assertTrue()

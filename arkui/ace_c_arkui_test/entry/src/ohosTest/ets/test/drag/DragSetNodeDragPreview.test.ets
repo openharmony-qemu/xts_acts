@@ -26,13 +26,13 @@ export default function DragSetNodeDragPreviewTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_SetNodeDragPreview_0100
-     * @tc.name       : SetNodeDragPreviewTest001
-     * @tc.desc       : testing SetNodeDragPreview event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragSetNodeDragPreviewTest001
+     * @tc.number SUB_ARKUI_CAPI_Drag_SetNodeDragPreview_0100
+     * @tc.desc   testing SetNodeDragPreview event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragSetNodeDragPreviewTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_SetNodeDragPreview_001()).assertEqual(0)

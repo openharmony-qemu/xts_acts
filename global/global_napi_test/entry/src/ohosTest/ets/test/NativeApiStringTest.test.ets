@@ -24,7 +24,6 @@ export default function abilityTest() {
       resManager = (GlobalContext.getContext().getObject('yq') as Context);
     })
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getResourceManager_nativeTest_0100
      * @tc.number SUB_GLOBAL_getFileList_0100
      * @tc.desc   getResourceManager with folder
@@ -42,7 +41,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getResourceManager_nativeTest_0200
      * @tc.number SUB_GLOBAL_getRawFileContent_0200
      * @tc.desc   getRawFileContent with file path
@@ -59,7 +57,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getResourceManager_nativeTest_0300
      * @tc.number SUB_GLOBAL_getRawFileDescriptor_0300
      * @tc.desc   getRawFileDescriptor with file path
@@ -78,7 +75,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getResourceManager_nativeTest_0400
      * @tc.number SUB_GLOBAL_getRawFileDescriptor64_0400
      * @tc.desc   getRawFileDescriptor64 with file path
@@ -95,7 +91,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getResourceManager_nativeTest_0500
      * @tc.number SUB_GLOBAL_getRawFileDescriptor64_0500
      * @tc.desc   getRawFileDescriptor64 with file path
@@ -114,7 +109,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   isRawDir_nativeTest_0100
      * @tc.number SUB_GLOBAL_isRawDir_0100
      * @tc.desc   isRawDir with null
@@ -130,7 +124,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getDrawableDescriptor_nativeTest_0100
      * @tc.number SUB_GLOBAL_SUB_GLOBAL_getDrawableDescriptor_0100
      * @tc.desc   getDrawableDescriptor with normal id
@@ -146,7 +139,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getDrawableDescriptorByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getDrawableDescriptorByName_0100
      * @tc.desc   getDrawableDescriptorByName with normal name
@@ -162,7 +154,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getMediaBase64_nativeTest_0100
      * @tc.number SUB_GLOBAL_getMediaBase64_0100
      * @tc.desc   getMediaBase64 with normal id
@@ -178,7 +169,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getMediaBase64ByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getMediaBase64ByName_0100
      * @tc.desc   getMediaBase64ByName with normal name
@@ -194,7 +184,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getMedia_nativeTest_0100
      * @tc.number SUB_GLOBAL_getMedia_0100
      * @tc.desc   getMedia with normal id
@@ -210,7 +199,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getMediaByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getMediaByName_0100
      * @tc.desc   getMediaByName with normal name
@@ -226,7 +214,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getSymbolByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getSymbolByName_0100
      * @tc.desc   getSymbolByName with normal name
@@ -242,7 +229,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getSymbol_nativeTest_0100
      * @tc.number SUB_GLOBAL_getSymbol_0100
      * @tc.desc   getSymbol with normal id
@@ -258,7 +244,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getBoolByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getBoolByName_0100
      * @tc.desc   getBoolByName with normal name
@@ -274,7 +259,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getBool_nativeTest_0100
      * @tc.number SUB_GLOBAL_getBool_0100
      * @tc.desc   getBool with normal id
@@ -290,7 +274,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getPluralStringByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getPluralStringByName_0100
      * @tc.desc   getPluralStringByName with normal name
@@ -306,7 +289,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getPluralString_nativeTest_0100
      * @tc.number SUB_GLOBAL_getPluralString_0100
      * @tc.desc   getPluralString with normal id
@@ -322,7 +304,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getColorByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getColorByName_0100
      * @tc.desc   getColorByName with normal name
@@ -338,7 +319,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getColor_nativeTest_0100
      * @tc.number SUB_GLOBAL_getColor_0100
      * @tc.desc   getColor with normal id
@@ -354,7 +334,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getIntByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getIntByName_0100
      * @tc.desc   getIntByName with normal name
@@ -370,7 +349,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getInt_nativeTest_0100
      * @tc.number SUB_GLOBAL_getInt_0100
      * @tc.desc   getInt with normal id
@@ -386,7 +364,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getFloatByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getFloatByName_0100
      * @tc.desc   getFloatByName with normal name
@@ -402,7 +379,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getFloat_nativeTest_0100
      * @tc.number SUB_GLOBAL_getFloat_0100
      * @tc.desc   getFloat with normal id
@@ -418,7 +394,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getLocales_nativeTest_0100
      * @tc.number SUB_GLOBAL_getLocales_0100
      * @tc.desc   getLocales with object
@@ -434,7 +409,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getConfiguration_nativeTest_0100
      * @tc.number SUB_GLOBAL_getConfiguration_0100
      * @tc.desc   getConfiguration with object
@@ -450,7 +424,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getStringArray_nativeTest_0100
      * @tc.number SUB_GLOBAL_getStringArray_0100
      * @tc.desc   getStringArray with normal id
@@ -466,7 +439,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getStringArrayByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getStringArrayByName_0100
      * @tc.desc   getStringArrayByName with normal name
@@ -482,7 +454,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   releaseStringArray_nativeTest_0100
      * @tc.number SUB_GLOBAL_releaseStringArray_0100
      * @tc.desc   releaseStringArray with object
@@ -498,7 +469,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   releaseConfiguration_nativeTest_0100
      * @tc.number SUB_GLOBAL_releaseConfiguration_0100
      * @tc.desc   releaseConfiguration with object
@@ -514,7 +484,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getStringByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getStringByName_0100
      * @tc.desc   getStringByName with normal name
@@ -530,7 +499,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getString_nativeTest_0100
      * @tc.number SUB_GLOBAL_getString_0100
      * @tc.desc   getString with normal id
@@ -546,7 +514,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getRawFileDescriptorData_nativeTest_0100
      * @tc.number SUB_GLOBAL_getRawFileDescriptorData_0100
      * @tc.desc   getRawFileDescriptorData with normal xml
@@ -562,7 +529,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getLocalesData_nativeTest_0100
      * @tc.number SUB_GLOBAL_getLocalesData_0100
      * @tc.desc   getLocalesData with object
@@ -578,7 +544,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getMediaBase64DataByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getMediaBase64DataByName_0100
      * @tc.desc   getMediaBase64DataByName with normal name
@@ -594,7 +559,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getMediaBase64Data_nativeTest_0100
      * @tc.number SUB_GLOBAL_getMediaBase64Data_0100
      * @tc.desc   getMediaBase64Data with normal id
@@ -610,7 +574,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getMediaData_nativeTest_0100
      * @tc.number SUB_GLOBAL_getMediaData_0100
      * @tc.desc   getMediaData with normal id
@@ -626,7 +589,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getMediaDataByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getMediaDataByName_0100
      * @tc.desc   getMediaDataByName with normal name
@@ -642,7 +604,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getDrawableDescriptorData_nativeTest_0100
      * @tc.number SUB_GLOBAL_getDrawableDescriptorData_0100
      * @tc.desc   getDrawableDescriptorData with normal id
@@ -658,7 +619,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getDrawableDescriptorDataByName_nativeTest_0100
      * @tc.number SUB_GLOBAL_getDrawableDescriptorDataByName_0100
      * @tc.desc   getDrawableDescriptorDataByName with normal name
@@ -674,7 +634,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   addResource_nativeTest_0100
      * @tc.number SUB_GLOBAL_addResource_0100
      * @tc.desc   addResource with null
@@ -690,7 +649,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   removeResource_nativeTest_0100
      * @tc.number SUB_GLOBAL_removeResource_0100
      * @tc.desc   removeResource with null
@@ -706,7 +664,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getRawFileContent_nativeTest_0020
      * @tc.number SUB_GLOBAL_getRawFile_0020
      * @tc.desc   getRawFileContent support seek
@@ -728,7 +685,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringById0790_082
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_0790
      * @tc.desc   OH_ResourceManager_GetIntPluralString with resID
@@ -744,7 +700,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringByName0790_082
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_0790
      * @tc.desc   OH_ResourceManager_GetIntPluralStringByName with resName
@@ -760,7 +715,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringById0790_082
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_0790
      * @tc.desc   OH_ResourceManager_GetDoublePluralString with resID
@@ -777,7 +731,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringByName0790_082
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_0790
      * @tc.desc   OH_ResourceManager_GetDoublePluralStringByName with resName
@@ -794,7 +747,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringById119
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1190
      * @tc.desc   error code 401
@@ -810,7 +762,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringById120
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1210
      * @tc.desc   error code 401
@@ -826,7 +777,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringById125
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1310
      * @tc.desc   error code 9001001
@@ -842,7 +792,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringById126
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1330
      * @tc.desc   error code 9001001
@@ -858,7 +807,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringById127
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1350
      * @tc.desc   error code 9001002
@@ -875,7 +823,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringById128
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1370
      * @tc.desc   error code 9001002
@@ -892,7 +839,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringById129
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1390
      * @tc.desc   error code 9001006
@@ -909,7 +855,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringById130
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1410
      * @tc.desc   error code 9001006
@@ -926,7 +871,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringByName133
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1470
      * @tc.desc   error code 401
@@ -942,7 +886,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringByName134
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1480
      * @tc.desc   error code 401
@@ -958,7 +901,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringByName139
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1530
      * @tc.desc   error code 9001003
@@ -974,7 +916,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringByName140
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1540
      * @tc.desc   error code 9001003
@@ -990,7 +931,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetIntPluralStringByName141
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1550
      * @tc.desc   error code 9001006
@@ -1006,7 +946,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetDoublePluralStringByName142
      * @tc.number SUB_GLOBAL_ResourceManager_Plural_1560
      * @tc.desc   error code 9001006
@@ -1022,7 +961,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   getResourceConfiguration_nativeTest_0100
      * @tc.number SUB_GLOBAL_getResourceConfiguration_0100
      * @tc.desc   getResourceConfiguration with object

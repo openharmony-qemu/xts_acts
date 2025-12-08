@@ -25,15 +25,15 @@ export default function customPropertyTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0100
-     * @tc.name       : testAddCustomProperty001
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testAddCustomProperty001
+     * @tc.number testAddCustomProperty001
+     * @tc.desc   testAddCustomProperty001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testAddCustomProperty001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestAddCustomProperty';
       await Utils.pushPage(`customproperty/${PAGE_TAG}`, done);
@@ -52,13 +52,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRemoveCustomProperty002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemoveCustomProperty002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestRemoveCustomProperty';

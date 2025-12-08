@@ -136,12 +136,12 @@ export default function showAssetsCreationDialogTest() {
       }
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Show_Creations_Dialog_001
-     * @tc.name      : show_asset_create_dialog_001
-     * @tc.desc      : show dialog to add mediaLibrary resource, then not allow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   show_asset_create_dialog_001
+     * @tc.number Sub_PhotoAccess_Helper_Show_Creations_Dialog_001
+     * @tc.desc   show dialog to add mediaLibrary resource, then not allow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("show_asset_create_dialog_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "show_asset_create_dialog_001";
@@ -160,12 +160,12 @@ export default function showAssetsCreationDialogTest() {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Show_Creations_Dialog_002
-     * @tc.name      : show_asset_create_dialog_002
-     * @tc.desc      : show dialog to add mediaLibrary resource, then allow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   show_asset_create_dialog_002
+     * @tc.number Sub_PhotoAccess_Helper_Show_Creations_Dialog_002
+     * @tc.desc   show dialog to add mediaLibrary resource, then allow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("show_asset_create_dialog_002", Level.LEVEL0, async (done: Function) => {
       const testNum = "show_asset_create_dialog_002";
@@ -184,12 +184,12 @@ export default function showAssetsCreationDialogTest() {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Show_Creations_Dialog_003
-     * @tc.name      : show_asset_create_dialog_003
-     * @tc.desc      : show dialog to add mediaLibrary resource, then not allow,fileUriList is undefined,error code is 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   show_asset_create_dialog_003
+     * @tc.number Sub_PhotoAccess_Helper_Show_Creations_Dialog_003
+     * @tc.desc   show dialog to add mediaLibrary resource, then not allow,fileUriList is undefined,error code is 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("show_asset_create_dialog_003", Level.LEVEL2, async (done: Function) => {
       const testNum = "show_asset_create_dialog_003";

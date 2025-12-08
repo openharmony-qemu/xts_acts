@@ -40,12 +40,14 @@ export default function sliderInteractionModeTest() {
       }
       done();
     });
-    /* *
-    * @tc.number: sliderInteractionModeTest_0100
-    * @tc.name  : sliderInteractionModeTest_0100
-    * @tc.desc  : To test that Setting the interaction mode between the user and the slider widget(SliderInteraction.SLIDE_AND_CLICK).
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   sliderInteractionModeTest_0100
+     * @tc.number sliderInteractionModeTest_0100
+     * @tc.desc   To test that Setting the interaction mode between the user and the slider widget(SliderInteraction.SLIDE_AND_CLICK).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sliderInteractionModeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('sliderInteractionModeTest_0100 START');
       let driver = await Driver.create()
@@ -63,12 +65,14 @@ export default function sliderInteractionModeTest() {
       done();
     });
 
-    /* *
-    * @tc.number: sliderInteractionModeTest_0200
-    * @tc.name  : sliderInteractionModeTest_0200
-    * @tc.desc  : To test that Setting the interaction mode between the user and the slider widget(SliderInteraction.SLIDE_ONLY).
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   sliderInteractionModeTest_0200
+     * @tc.number sliderInteractionModeTest_0200
+     * @tc.desc   To test that Setting the interaction mode between the user and the slider widget(SliderInteraction.SLIDE_ONLY).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sliderInteractionModeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('sliderInteractionModeTest_0200 START');
       let driver = await Driver.create()
@@ -86,12 +90,14 @@ export default function sliderInteractionModeTest() {
       done();
     });
 
-    /* *
-    * @tc.number: sliderInteractionModeTest_0300
-    * @tc.name  : sliderInteractionModeTest_0300
-    * @tc.desc  : To test that Setting the interaction mode between the user and the slider widget(SliderInteraction.SLIDE_AND_CLICK_UP).
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   sliderInteractionModeTest_0300
+     * @tc.number sliderInteractionModeTest_0300
+     * @tc.desc   To test that Setting the interaction mode between the user and the slider widget(SliderInteraction.SLIDE_AND_CLICK_UP).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sliderInteractionModeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('sliderInteractionModeTest_0300 START');
       let driver = await Driver.create()

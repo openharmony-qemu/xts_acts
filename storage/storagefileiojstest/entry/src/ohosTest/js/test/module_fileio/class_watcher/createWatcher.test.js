@@ -24,13 +24,12 @@ describe('fileio_createWatcher', function () {
   console.log('fileio_createWatcher test start');
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_000
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0000
-   * @tc.name fileio_test_createWatcher_async_000
-   * @tc.desc Test createWatcher() interface. rename  1 times stopSync()
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface. rename  1 times stopSync()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_createWatcher_async_000');
@@ -62,13 +61,12 @@ describe('fileio_createWatcher', function () {
   });
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_001
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0100
-   * @tc.name fileio_test_createWatcher_async_001
-   * @tc.desc Test createWatcher() interface. write 2 times stopSync()
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface. write 2 times stopSync()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_createWatcher_async_001');
@@ -99,13 +97,12 @@ describe('fileio_createWatcher', function () {
   });
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_002
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0200
-   * @tc.name fileio_test_createWatcher_async_002
-   * @tc.desc Test createWatcher() interface. rename 1 time ,stop()
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface. rename 1 time ,stop()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_createWatcher_async_002');
@@ -136,13 +133,12 @@ describe('fileio_createWatcher', function () {
   });
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_003
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0300
-   * @tc.name fileio_test_createWatcher_async_003
-   * @tc.desc Test createWatcher() interface. rename 2 time ,stop()
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface. rename 2 time ,stop()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_createWatcher_async_003');
@@ -173,13 +169,12 @@ describe('fileio_createWatcher', function () {
   });
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_004
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0400
-   * @tc.name fileio_test_createWatcher_async_004
-   * @tc.desc Test createWatcher() interface.write  2 time ,stop()
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface.write  2 time ,stop()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_createWatcher_async_004');
@@ -212,13 +207,12 @@ describe('fileio_createWatcher', function () {
   });
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_005
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0500
-   * @tc.name fileio_test_createWatcher_async_005
-   * @tc.desc Test createWatcher() interface. rename 3 times stopSync()
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface. rename 3 times stopSync()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_005', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_createWatcher_async_005');
@@ -252,13 +246,12 @@ describe('fileio_createWatcher', function () {
   });
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_006
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0600
-   * @tc.name fileio_test_createWatcher_async_006
-   * @tc.desc Test createWatcher() interface.write 2 times, stop()
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface.write 2 times, stop()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_createWatcher_async_006');
@@ -291,13 +284,12 @@ describe('fileio_createWatcher', function () {
   });
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_007
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0700
-   * @tc.name fileio_test_createWatcher_async_007
-   * @tc.desc Test createWatcher() interface.rename 1 times, write 1 times, stop()
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface.rename 1 times, write 1 times, stop()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_007', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_createWatcher_async_007');
@@ -330,13 +322,12 @@ describe('fileio_createWatcher', function () {
   });
 
   /**
+   * @tc.name   fileio_test_createWatcher_async_008
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0800
-   * @tc.name fileio_test_createWatcher_async_008
-   * @tc.desc Test createWatcher() interface.rename 1 times, write 1 times
-   * @tc.size MEDIUM(中型)
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createWatcher() interface.rename 1 times, write 1 times
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_createWatcher_async_008', Level.LEVEL0, async function (done) {
     console.log('fileio_hash test fileio_test_hash_async_008 start');

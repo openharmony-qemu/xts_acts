@@ -44,6 +44,14 @@ export default function rowJsunit2() {
       console.info("row after each called");
     });
 
+    /**
+     * @tc.name   testRow_100
+     * @tc.number testRow_100
+     * @tc.desc   testRow_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRow_100',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_100] START');
       await Utils.sleep(1000);
@@ -55,6 +63,14 @@ export default function rowJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testRow_200
+     * @tc.number testRow_200
+     * @tc.desc   testRow_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRow_200',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_200] START');
       await Utils.sleep(1000);
@@ -66,6 +82,14 @@ export default function rowJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testRow_300
+     * @tc.number testRow_300
+     * @tc.desc   testRow_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRow_300',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_300] START');
       await Utils.sleep(1000);
@@ -77,6 +101,14 @@ export default function rowJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testRow_400
+     * @tc.number testRow_400
+     * @tc.desc   testRow_400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRow_400',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_400] START');
       await Utils.sleep(1000);
@@ -88,6 +120,14 @@ export default function rowJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testRow_500
+     * @tc.number testRow_500
+     * @tc.desc   testRow_500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRow_500',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_500] START');
       await Utils.sleep(1000);
@@ -99,6 +139,14 @@ export default function rowJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testRow_600
+     * @tc.number testRow_600
+     * @tc.desc   testRow_600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRow_600',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_600] START');
       await Utils.sleep(1000);

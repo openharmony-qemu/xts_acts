@@ -40,14 +40,14 @@ export default function lunarSwitchStyleTest(){
       }
       done();
     });
-    /* *
-    * @tc.number: lunarSwitchStyleTest_0100
-    * @tc.name  : lunarSwitchStyleTest_0100
-    * @tc.desc  : To test the mode of sheet how to avoid keyboard
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   lunarSwitchStyleTest_0100
+     * @tc.number lunarSwitchStyleTest_0100
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lunarSwitchStyleTest_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('lunarSwitchStyleTest_0100 START');
       let driver = await Driver.create()

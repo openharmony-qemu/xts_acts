@@ -74,12 +74,12 @@ export default function createAssetTest () {
     }
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_001
-     * @tc.name      : createImage_promise_000
-     * @tc.desc      : createAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createImage_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_001
+     * @tc.desc   createAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImage_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createImage_promise_000';
@@ -92,12 +92,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_002
-     * @tc.name      : createImage_promise_001
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createImage_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_002
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImage_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createImage_promise_001';
@@ -107,12 +107,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_003
-     * @tc.name      : createImage_promise_003
-     * @tc.desc      : createAsset with invalid extension
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createImage_promise_003
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_003
+     * @tc.desc   createAsset with invalid extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_promise_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createImage_promise_003';
@@ -125,12 +125,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_004
-     * @tc.name      : createImage_promise_005
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createImage_promise_005
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_004
+     * @tc.desc   createAsset with undefined title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_promise_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createImage_promise_005';
@@ -143,12 +143,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_005
-     * @tc.name      : createImage_promise_006
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createImage_promise_006
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_005
+     * @tc.desc   createAsset with undefined CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createImage_promise_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createImage_promise_006';
@@ -159,12 +159,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_006
-     * @tc.name      : createVideo_promise_000
-     * @tc.desc      : createAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideo_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_006
+     * @tc.desc   createAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideo_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createVideo_promise_000';
@@ -177,12 +177,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_007
-     * @tc.name      : createVideo_promise_001
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideo_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_007
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideo_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createVideo_promise_001';
@@ -192,12 +192,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_008
-     * @tc.name      : createVideo_promise_003
-     * @tc.desc      : createAsset with invalid extension
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createVideo_promise_003
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_008
+     * @tc.desc   createAsset with invalid extension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_promise_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createVideo_promise_003';
@@ -210,12 +210,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_009
-     * @tc.name      : createVideo_promise_005
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createVideo_promise_005
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_009
+     * @tc.desc   createAsset with undefined title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_promise_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createVideo_promise_005';
@@ -228,12 +228,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Create_Asset_010
-     * @tc.name      : createVideo_promise_006
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createVideo_promise_006
+     * @tc.number Sub_Photo_Access_Sendable_Create_Asset_010
+     * @tc.desc   createAsset with undefined CreateOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createVideo_promise_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createVideo_promise_006';
@@ -243,12 +243,12 @@ export default function createAssetTest () {
       await createAssetAbnormalPromise1(done, testNum, type, extension, options);
     });
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_SENADABLE_ERROR_CREATE_ASSET_0000
-     * @tc.name      : sendable_error_create_asset_mp4_extension_000
-     * @tc.desc      : createAsset with mp4 extension and IMAGE photoType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_error_create_asset_mp4_extension_000
+     * @tc.number SUB_PHOTO_ACCESS_SENADABLE_ERROR_CREATE_ASSET_0000
+     * @tc.desc   createAsset with mp4 extension and IMAGE photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("sendable_error_create_asset_mp4_extension_000", Level.LEVEL0, async (done: Function) => {
       const testNum = "sendable_error_create_asset_mp4_extension_000";
@@ -270,12 +270,12 @@ export default function createAssetTest () {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_SENADABLE_ERROR_CREATE_ASSET_0100
-     * @tc.name      : sendable_error_create_asset_undefined_photoType_001
-     * @tc.desc      : createAsset with undefined photoType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_error_create_asset_undefined_photoType_001
+     * @tc.number SUB_PHOTO_ACCESS_SENADABLE_ERROR_CREATE_ASSET_0100
+     * @tc.desc   createAsset with undefined photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("sendable_error_create_asset_undefined_photoType_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "sendable_error_create_asset_undefined_photoType_001";

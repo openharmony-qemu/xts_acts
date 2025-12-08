@@ -56,40 +56,52 @@ export default function webviewTerminateRenderProcess() {
       console.info("webviewTerminateRenderProcess beforeEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0100
-     *tc.name testTerminateRenderProcess
-     *tc.desc terminateRenderProcess
+    /**
+     * @tc.name   emitTerminateRenderProcess0100
+     * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0100
+     * @tc.desc   terminateRenderProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitTerminateRenderProcess0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitTerminateRenderProcess0100", 152130)
       Utils.registerEvent("emitTerminateRenderProcess0100", true, 152140, done);
       waitAndClickComponent('TerminateRenderProcess',driver)
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0200
-     *tc.name testTerminateRenderProcess
-     *tc.desc terminateRenderProcess
+    /**
+     * @tc.name   emitTerminateRenderProcess0200
+     * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0200
+     * @tc.desc   terminateRenderProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitTerminateRenderProcess0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitTerminateRenderProcess0200", 152130)
       Utils.registerEvent("emitTerminateRenderProcess0200", true, 152150, done);
       waitAndClickComponent('TerminateRenderProcess',driver)
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0300
-     *tc.name testTerminateRenderProcess
-     *tc.desc terminateRenderProcess
+    /**
+     * @tc.name   emitTerminateRenderProcess0300
+     * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0300
+     * @tc.desc   terminateRenderProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitTerminateRenderProcess0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitTerminateRenderProcess0300", 152130)
       Utils.registerEvent("emitTerminateRenderProcess0300", true, 152160, done);
       waitAndClickComponent('TerminateRenderProcess',driver)
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0400
-     *tc.name testTerminateRenderProcess
-     *tc.desc terminateRenderProcess
+    /**
+     * @tc.name   emitTerminateRenderProcess0400
+     * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0400
+     * @tc.desc   terminateRenderProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitTerminateRenderProcess0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitTerminateRenderProcess0400", 152130)

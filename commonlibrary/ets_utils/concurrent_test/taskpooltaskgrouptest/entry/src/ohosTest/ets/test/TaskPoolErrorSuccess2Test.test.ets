@@ -51,12 +51,12 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupExecute1025
      * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_2500
-     * @tc.name taskPoolTaskErrorSuccessTest1025
-     * @tc.desc test worker error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test worker error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('taskPoolTaskGroupExecute1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
@@ -93,12 +93,12 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupExecute1026
      * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_2600
-     * @tc.name taskPoolTaskErrorSuccessTest1026
-     * @tc.desc test worker-onmessage error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test worker-onmessage error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupExecute1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -140,12 +140,12 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupExecute1027
      * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_2700
-     * @tc.name taskPoolTaskErrorSuccessTest1027
-     * @tc.desc test task-二级-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test task-二级-error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupExecute1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -181,12 +181,12 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupExecute1028
      * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_2800
-     * @tc.name taskPoolTaskErrorSuccessTest1028
-     * @tc.desc test task-二级-error-then
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test task-二级-error-then
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupExecute1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -222,12 +222,12 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupExecute1029
      * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_2900
-     * @tc.name taskPoolTaskErrorSuccessTest1029
-     * @tc.desc test task-二级-error-catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test task-二级-error-catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupExecute1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -263,12 +263,12 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupExecute1030
      * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_3000
-     * @tc.name taskPoolTaskErrorSuccessTest1030
-     * @tc.desc test task-二级-error-catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test task-二级-error-catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupExecute1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 

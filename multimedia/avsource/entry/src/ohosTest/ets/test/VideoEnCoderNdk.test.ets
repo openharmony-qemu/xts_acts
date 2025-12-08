@@ -20,12 +20,12 @@ export default function videoEnCoderNdkTest() {
   describe('AvcodecVideoEncoderTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYMIME_0100
-     * @tc.name       : testOHVideoEncoderCreateByMime001
-     * @tc.desc       : test OH_VideoEncoder_CreateByMime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderCreateByMime001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYMIME_0100
+     * @tc.desc   test OH_VideoEncoder_CreateByMime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderCreateByMime001', Level.LEVEL0, async (done: Function) => {
         try { 
@@ -39,12 +39,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYMIME_0200
-     * @tc.name       : testOHVideoEncoderCreateByMime002
-     * @tc.desc       : test OH_VideoEncoder_CreateByMime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderCreateByMime002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYMIME_0200
+     * @tc.desc   test OH_VideoEncoder_CreateByMime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderCreateByMime002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -58,12 +58,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYMIME_0300
-     * @tc.name       : testOHVideoEncoderCreateByMime003
-     * @tc.desc       : test OH_VideoEncoder_CreateByMime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderCreateByMime003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYMIME_0300
+     * @tc.desc   test OH_VideoEncoder_CreateByMime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderCreateByMime003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderCreateByMimeAbnormal();
@@ -72,12 +72,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYNAME_0100
-     * @tc.name       : testOHVideoEncoderCreateByName001
-     * @tc.desc       : test OH_VideoEncoder_CreateByName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderCreateByName001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYNAME_0100
+     * @tc.desc   test OH_VideoEncoder_CreateByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderCreateByName001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -91,12 +91,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYNAME_0200
-     * @tc.name       : testOHVideoEncoderCreateByName002
-     * @tc.desc       : test OH_VideoEncoder_CreateByName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderCreateByName002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYNAME_0200
+     * @tc.desc   test OH_VideoEncoder_CreateByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderCreateByName002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -110,12 +110,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYNAME_0300
-     * @tc.name       : testOHVideoEncoderCreateByName003
-     * @tc.desc       : test OH_VideoEncoder_CreateByName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderCreateByName003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CREATEBYNAME_0300
+     * @tc.desc   test OH_VideoEncoder_CreateByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderCreateByName003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderCreateByNameAbnormal();
@@ -124,12 +124,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_DESTROY_0100
-     * @tc.name       : testOHVideoEncoderDestroy001
-     * @tc.desc       : test OH_VideoEncoder_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderDestroy001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_DESTROY_0100
+     * @tc.desc   test OH_VideoEncoder_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderDestroy001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -143,12 +143,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_DESTROY_0200
-     * @tc.name       : testOHVideoEncoderDestroy002
-     * @tc.desc       : test OH_VideoEncoder_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderDestroy002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_DESTROY_0200
+     * @tc.desc   test OH_VideoEncoder_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderDestroy002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -162,12 +162,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_DESTROY_0300
-     * @tc.name       : testOHVideoEncoderDestroy003
-     * @tc.desc       : test OH_VideoEncoder_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderDestroy003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_DESTROY_0300
+     * @tc.desc   test OH_VideoEncoder_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderDestroy003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderDestroyAbnormal();
@@ -176,12 +176,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETCALLBACK_0100
-     * @tc.name       : testOHVideoEncoderSetCallback001
-     * @tc.desc       : test OH_VideoEncoder_SetCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderSetCallback001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETCALLBACK_0100
+     * @tc.desc   test OH_VideoEncoder_SetCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderSetCallback001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -195,12 +195,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETCALLBACK_0200
-     * @tc.name       : testOHVideoEncoderSetCallback002
-     * @tc.desc       : test OH_VideoEncoder_SetCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderSetCallback002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETCALLBACK_0200
+     * @tc.desc   test OH_VideoEncoder_SetCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderSetCallback002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -214,12 +214,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETCALLBACK_0300
-     * @tc.name       : testOHVideoEncoderSetCallback003
-     * @tc.desc       : test OH_VideoEncoder_SetCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderSetCallback003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETCALLBACK_0300
+     * @tc.desc   test OH_VideoEncoder_SetCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderSetCallback003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderSetCallbackAbnormal();
@@ -228,12 +228,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_REGISTERCALLBACK_0100
-     * @tc.name       : testOHVideoEncoderRegisterCallback001
-     * @tc.desc       : test OH_VideoEncoder_RegisterCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderRegisterCallback001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_REGISTERCALLBACK_0100
+     * @tc.desc   test OH_VideoEncoder_RegisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderRegisterCallback001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -247,12 +247,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_REGISTERCALLBACK_0200
-     * @tc.name       : testOHVideoEncoderRegisterCallback002
-     * @tc.desc       : test OH_VideoEncoder_RegisterCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderRegisterCallback002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_REGISTERCALLBACK_0200
+     * @tc.desc   test OH_VideoEncoder_RegisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderRegisterCallback002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -266,12 +266,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_REGISTERCALLBACK_0300
-     * @tc.name       : testOHVideoEncoderRegisterCallback003
-     * @tc.desc       : test OH_VideoEncoder_RegisterCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderRegisterCallback003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_REGISTERCALLBACK_0300
+     * @tc.desc   test OH_VideoEncoder_RegisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderRegisterCallback003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderRegisterCallbackAbnormal();
@@ -280,12 +280,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0100
-     * @tc.name       : testOHVideoEncoderConfigure001
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0100
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -299,12 +299,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0200
-     * @tc.name       : testOHVideoEncoderConfigure002
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0200
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -318,12 +318,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0300
-     * @tc.name       : testOHVideoEncoderConfigure003
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0300
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderConfigureAbnormal1();
@@ -332,12 +332,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0400
-     * @tc.name       : testOHVideoEncoderConfigure004
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0400
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure004', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderConfigureAbnormal2();
@@ -346,12 +346,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0500
-     * @tc.name       : testOHVideoEncoderConfigure005
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0500
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure005', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderConfigureAbnormal3();
@@ -360,12 +360,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0600
-     * @tc.name       : testOHVideoEncoderConfigure006
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0600
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure006', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderConfigureAbnormal4();
@@ -374,12 +374,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0700
-     * @tc.name       : testOHVideoEncoderConfigure007
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0700
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure007', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderConfigureAbnormal5();
@@ -388,12 +388,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0800
-     * @tc.name       : testOHVideoEncoderConfigure008
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0800
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure008', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderConfigureAbnormal6();
@@ -402,12 +402,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0900
-     * @tc.name       : testOHVideoEncoderConfigure009
-     * @tc.desc       : test OH_VideoEncoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderConfigure009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_CONFIGURE_0900
+     * @tc.desc   test OH_VideoEncoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderConfigure009', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderConfigureAbnormal7();
@@ -416,12 +416,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0100
-     * @tc.name       : testOHVideoEncoderPrepare001
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0100
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -435,12 +435,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0200
-     * @tc.name       : testOHVideoEncoderPrepare002
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0200
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -454,12 +454,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal1();
@@ -468,12 +468,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare004', Level.LEVEL0, async (done: Function) => {
         try {
@@ -487,12 +487,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare005', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal3();
@@ -501,12 +501,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare006', Level.LEVEL0, async (done: Function) => {
         try {
@@ -520,12 +520,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare007', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal5();
@@ -534,12 +534,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare008', Level.LEVEL0, async (done: Function) => {
         try {
@@ -553,12 +553,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare009', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal7();
@@ -567,12 +567,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare010', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal8();
@@ -581,12 +581,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare011', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal9();
@@ -595,12 +595,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare012', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal10();
@@ -609,12 +609,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare013', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal11();
@@ -623,12 +623,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare014', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal12();
@@ -637,12 +637,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare015', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal13();
@@ -651,12 +651,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare016', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal14();
@@ -665,12 +665,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
-     * @tc.name       : testOHVideoEncoderPrepare003
-     * @tc.desc       : test OH_VideoEncoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPrepare017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PREPARE_0300
+     * @tc.desc   test OH_VideoEncoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPrepare017', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPrepareAbnormal15();
@@ -679,12 +679,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0100
-     * @tc.name       : testOHVideoEncoderStart001
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0100
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -698,12 +698,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0200
-     * @tc.name       : testOHVideoEncoderStart002
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0200
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -717,12 +717,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0300
-     * @tc.name       : testOHVideoEncoderStart003
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0300
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,1,1,1,0,0);
@@ -731,12 +731,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0400
-     * @tc.name       : testOHVideoEncoderStart004
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0400
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart004', Level.LEVEL0, async (done: Function) => {
         try {
@@ -750,12 +750,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0500
-     * @tc.name       : testOHVideoEncoderStart005
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0500
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart005', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,1,1,0,0,0);
@@ -764,12 +764,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0600
-     * @tc.name       : testOHVideoEncoderStart006
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0600
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart006', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,1,0,1,1,0);
@@ -778,12 +778,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0700
-     * @tc.name       : testOHVideoEncoderStart007
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0700
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart007', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,1,0,1,0,0);
@@ -792,12 +792,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0800
-     * @tc.name       : testOHVideoEncoderStart008
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0800
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart008', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,1,0,0,1,0);
@@ -806,12 +806,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0900
-     * @tc.name       : testOHVideoEncoderStart009
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_0900
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart009', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,1,0,0,0,0);
@@ -820,12 +820,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1000
-     * @tc.name       : testOHVideoEncoderStart010
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1000
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart010', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,0,1,1,1,0);
@@ -834,12 +834,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1100
-     * @tc.name       : testOHVideoEncoderStart011
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1100
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart011', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,0,1,1,0,0);
@@ -848,12 +848,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1200
-     * @tc.name       : testOHVideoEncoderStart012
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1200
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart012', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,0,1,0,1,0);
@@ -862,12 +862,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1300
-     * @tc.name       : testOHVideoEncoderStart013
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1300
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart013', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,0,1,0,0,0);
@@ -876,12 +876,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1400
-     * @tc.name       : testOHVideoEncoderStart014
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1400
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart014', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,0,0,1,1,0);
@@ -890,12 +890,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1500
-     * @tc.name       : testOHVideoEncoderStart015
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1500
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart015', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,0,0,1,0,0);
@@ -904,12 +904,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1600
-     * @tc.name       : testOHVideoEncoderStart016
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1600
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart016', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,0,0,0,1,0);
@@ -918,12 +918,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1700
-     * @tc.name       : testOHVideoEncoderStart017
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1700
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart017', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(1,0,0,0,0,0);
@@ -932,12 +932,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1800
-     * @tc.name       : testOHVideoEncoderStart018
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1800
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart018', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,1,1,1,1,0);
@@ -946,12 +946,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1900
-     * @tc.name       : testOHVideoEncoderStart019
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart019
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_1900
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart019', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,1,1,1,0,0);
@@ -960,12 +960,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2000
-     * @tc.name       : testOHVideoEncoderStart020
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart020
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2000
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart020', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,1,1,0,1,0);
@@ -974,12 +974,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2100
-     * @tc.name       : testOHVideoEncoderStart021
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart021
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2100
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart021', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,1,1,0,0,0);
@@ -988,12 +988,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2200
-     * @tc.name       : testOHVideoEncoderStart022
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart022
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2200
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart022', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,1,0,1,1,0);
@@ -1002,12 +1002,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2300
-     * @tc.name       : testOHVideoEncoderStart023
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart023
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2300
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart023', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,1,0,1,0,0);
@@ -1016,12 +1016,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2400
-     * @tc.name       : testOHVideoEncoderStart024
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart024
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2400
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart024', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,1,0,0,1,0);
@@ -1030,12 +1030,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2500
-     * @tc.name       : testOHVideoEncoderStart025
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart025
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2500
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart025', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,1,0,0,0,0);
@@ -1044,12 +1044,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2600
-     * @tc.name       : testOHVideoEncoderStart026
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart026
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2600
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart026', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,0,1,1,1,0);
@@ -1058,12 +1058,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2700
-     * @tc.name       : testOHVideoEncoderStart027
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart027
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2700
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart027', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,0,1,1,0,0);
@@ -1072,12 +1072,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2800
-     * @tc.name       : testOHVideoEncoderStart028
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart028
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2800
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart028', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,0,1,0,1,0);
@@ -1086,12 +1086,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2900
-     * @tc.name       : testOHVideoEncoderStart029
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart029
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_2900
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart029', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,0,1,0,0,0);
@@ -1100,12 +1100,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_3000
-     * @tc.name       : testOHVideoEncoderStart030
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart030
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_3000
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart030', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,0,0,1,1,0);
@@ -1114,12 +1114,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_3100
-     * @tc.name       : testOHVideoEncoderStart031
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart031
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_3100
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart031', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,0,0,1,0,0);
@@ -1128,12 +1128,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_3200
-     * @tc.name       : testOHVideoEncoderStart032
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart032
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_3200
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart032', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,0,0,0,1,0);
@@ -1142,12 +1142,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_3300
-     * @tc.name       : testOHVideoEncoderStart033
-     * @tc.desc       : test OH_VideoEncoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStart033
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_START_3300
+     * @tc.desc   test OH_VideoEncoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStart033', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStart(0,0,0,0,0,0);
@@ -1156,12 +1156,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0100
-     * @tc.name       : testOHVideoEncoderStop001
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0100
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop001', Level.LEVEL0, async (done: Function) => {
         try{
@@ -1175,12 +1175,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0200
-     * @tc.name       : testOHVideoEncoderStop002
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0200
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop002', Level.LEVEL0, async (done: Function) => {
         try{
@@ -1194,12 +1194,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0300
-     * @tc.name       : testOHVideoEncoderStop003
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0300
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,1,1,1,0,0);
@@ -1208,12 +1208,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0400
-     * @tc.name       : testOHVideoEncoderStop004
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0400
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop004', Level.LEVEL0, async (done: Function) => {
         try {
@@ -1227,12 +1227,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0500
-     * @tc.name       : testOHVideoEncoderStop005
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0500
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop005', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,1,1,0,0,0);
@@ -1241,12 +1241,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0600
-     * @tc.name       : testOHVideoEncoderStop006
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0600
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop006', Level.LEVEL0, async (done: Function) => {
         try {
@@ -1260,12 +1260,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0700
-     * @tc.name       : testOHVideoEncoderStop007
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0700
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop007', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,1,0,1,0,0);
@@ -1274,12 +1274,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0800
-     * @tc.name       : testOHVideoEncoderStop008
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0800
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop008', Level.LEVEL0, async (done: Function) => {
         try {
@@ -1293,12 +1293,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0900
-     * @tc.name       : testOHVideoEncoderStop009
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_0900
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop009', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,1,0,0,0,0);
@@ -1307,12 +1307,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1000
-     * @tc.name       : testOHVideoEncoderStop010
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1000
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop010', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,0,1,1,1,0);
@@ -1321,12 +1321,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1100
-     * @tc.name       : testOHVideoEncoderStop011
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1100
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop011', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,0,1,1,0,0);
@@ -1335,12 +1335,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1200
-     * @tc.name       : testOHVideoEncoderStop012
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1200
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop012', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,0,1,0,1,0);
@@ -1349,12 +1349,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1300
-     * @tc.name       : testOHVideoEncoderStop013
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1300
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop013', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,0,1,0,0,0);
@@ -1363,12 +1363,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1400
-     * @tc.name       : testOHVideoEncoderStop014
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1400
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop014', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,0,0,1,1,0);
@@ -1377,12 +1377,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1500
-     * @tc.name       : testOHVideoEncoderStop015
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1500
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop015', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,0,0,1,0,0);
@@ -1391,12 +1391,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1600
-     * @tc.name       : testOHVideoEncoderStop016
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1600
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop016', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,0,0,0,1,0);
@@ -1405,12 +1405,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1700
-     * @tc.name       : testOHVideoEncoderStop017
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1700
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop017', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,1,0,0,0,0,0);
@@ -1419,12 +1419,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1800
-     * @tc.name       : testOHVideoEncoderStop018
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1800
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop018', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,1,1,1,1,0);
@@ -1433,12 +1433,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1900
-     * @tc.name       : testOHVideoEncoderStop019
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop019
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_1900
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop019', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,1,1,1,0,0);
@@ -1447,12 +1447,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2000
-     * @tc.name       : testOHVideoEncoderStop020
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop020
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2000
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop020', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,1,1,0,1,0);
@@ -1461,12 +1461,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2100
-     * @tc.name       : testOHVideoEncoderStop021
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop021
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2100
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop021', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,1,1,0,0,0);
@@ -1475,12 +1475,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2200
-     * @tc.name       : testOHVideoEncoderStop022
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop022
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2200
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop022', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,1,0,1,1,0);
@@ -1489,12 +1489,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2300
-     * @tc.name       : testOHVideoEncoderStop023
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop023
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2300
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop023', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,1,0,1,0,0);
@@ -1503,12 +1503,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2400
-     * @tc.name       : testOHVideoEncoderStop024
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop024
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2400
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop024', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,1,0,0,1,0);
@@ -1517,12 +1517,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2500
-     * @tc.name       : testOHVideoEncoderStop025
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop025
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2500
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop025', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,1,0,0,0,0);
@@ -1531,12 +1531,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2600
-     * @tc.name       : testOHVideoEncoderStop026
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop026
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2600
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop026', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,0,1,1,1,0);
@@ -1545,12 +1545,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2700
-     * @tc.name       : testOHVideoEncoderStop027
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop027
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2700
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop027', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,0,1,1,0,0);
@@ -1559,12 +1559,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2800
-     * @tc.name       : testOHVideoEncoderStop028
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop028
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2800
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop028', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,0,1,0,1,0);
@@ -1573,12 +1573,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2900
-     * @tc.name       : testOHVideoEncoderStop029
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop029
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_2900
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop029', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,0,1,0,0,0);
@@ -1587,12 +1587,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3000
-     * @tc.name       : testOHVideoEncoderStop030
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop030
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3000
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop030', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,0,0,1,1,0);
@@ -1601,12 +1601,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3100
-     * @tc.name       : testOHVideoEncoderStop031
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop031
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3100
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop031', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,0,0,1,0,0);
@@ -1615,12 +1615,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3200
-     * @tc.name       : testOHVideoEncoderStop032
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop032
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3200
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop032', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,0,0,0,1,0);
@@ -1629,12 +1629,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3300
-     * @tc.name       : testOHVideoEncoderStop033
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop033
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3300
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop033', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(1,0,0,0,0,0,0);
@@ -1643,12 +1643,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3400
-     * @tc.name       : testOHVideoEncoderStop034
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop034
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3400
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop034', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,1,1,1,1,0);
@@ -1657,12 +1657,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3500
-     * @tc.name       : testOHVideoEncoderStop035
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop035
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3500
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop035', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,1,1,1,0,0);
@@ -1671,12 +1671,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3600
-     * @tc.name       : testOHVideoEncoderStop036
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop036
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3600
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop036', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,1,1,0,1,0);
@@ -1685,12 +1685,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3700
-     * @tc.name       : testOHVideoEncoderStop037
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop037
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3700
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop037', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,1,1,0,0,0);
@@ -1699,12 +1699,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3800
-     * @tc.name       : testOHVideoEncoderStop038
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop038
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3800
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop038', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,1,0,1,1,0);
@@ -1713,12 +1713,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3900
-     * @tc.name       : testOHVideoEncoderStop039
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop039
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_3900
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop039', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,1,0,1,0,0);
@@ -1727,12 +1727,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4000
-     * @tc.name       : testOHVideoEncoderStop040
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop040
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4000
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop040', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,1,0,0,1,0);
@@ -1741,12 +1741,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4100
-     * @tc.name       : testOHVideoEncoderStop041
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop041
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4100
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop041', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,1,0,0,0,0);
@@ -1755,12 +1755,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4200
-     * @tc.name       : testOHVideoEncoderStop042
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop042
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4200
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop042', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,0,1,1,1,0);
@@ -1769,12 +1769,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4300
-     * @tc.name       : testOHVideoEncoderStop043
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop043
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4300
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop043', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,0,1,1,0,0);
@@ -1783,12 +1783,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4400
-     * @tc.name       : testOHVideoEncoderStop044
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop044
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4400
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop044', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,0,1,0,1,0);
@@ -1797,12 +1797,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4500
-     * @tc.name       : testOHVideoEncoderStop045
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop045
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4500
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop045', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,0,1,0,0,0);
@@ -1811,12 +1811,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4600
-     * @tc.name       : testOHVideoEncoderStop046
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop046
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4600
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop046', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,0,0,1,1,0);
@@ -1825,12 +1825,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4700
-     * @tc.name       : testOHVideoEncoderStop047
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop047
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4700
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop047', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,0,0,1,0,0);
@@ -1839,12 +1839,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4800
-     * @tc.name       : testOHVideoEncoderStop048
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop048
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4800
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop048', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,0,0,0,1,0);
@@ -1853,12 +1853,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4900
-     * @tc.name       : testOHVideoEncoderStop049
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop049
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_4900
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop049', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,1,0,0,0,0,0);
@@ -1867,12 +1867,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5000
-     * @tc.name       : testOHVideoEncoderStop050
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop050
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5000
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop050', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,1,1,1,1,0);
@@ -1881,12 +1881,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5100
-     * @tc.name       : testOHVideoEncoderStop051
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop051
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5100
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop051', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,1,1,1,0,0);
@@ -1895,12 +1895,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5200
-     * @tc.name       : testOHVideoEncoderStop052
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop052
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5200
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop052', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,1,1,0,1,0);
@@ -1909,12 +1909,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5300
-     * @tc.name       : testOHVideoEncoderStop053
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop053
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5300
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop053', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,1,1,0,0,0);
@@ -1923,12 +1923,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5400
-     * @tc.name       : testOHVideoEncoderStop054
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop054
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5400
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop054', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,1,0,1,1,0);
@@ -1937,12 +1937,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5500
-     * @tc.name       : testOHVideoEncoderStop055
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop055
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5500
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop055', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,1,0,1,0,0);
@@ -1951,12 +1951,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5600
-     * @tc.name       : testOHVideoEncoderStop056
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop056
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5600
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop056', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,1,0,0,1,0);
@@ -1965,12 +1965,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5700
-     * @tc.name       : testOHVideoEncoderStop057
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop057
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5700
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop057', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,1,0,0,0,0);
@@ -1979,12 +1979,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5800
-     * @tc.name       : testOHVideoEncoderStop058
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop058
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5800
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop058', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,0,1,1,1,0);
@@ -1993,12 +1993,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5900
-     * @tc.name       : testOHVideoEncoderStop059
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop059
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_5900
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop059', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,0,1,1,0,0);
@@ -2007,12 +2007,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6000
-     * @tc.name       : testOHVideoEncoderStop060
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop060
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6000
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop060', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,0,1,0,1,0);
@@ -2021,12 +2021,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6100
-     * @tc.name       : testOHVideoEncoderStop061
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop061
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6100
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop061', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,0,1,0,0,0);
@@ -2035,12 +2035,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6200
-     * @tc.name       : testOHVideoEncoderStop062
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop062
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6200
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop062', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,0,0,1,1,0);
@@ -2049,12 +2049,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6300
-     * @tc.name       : testOHVideoEncoderStop063
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop063
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6300
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop063', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,0,0,1,0,0);
@@ -2063,12 +2063,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6400
-     * @tc.name       : testOHVideoEncoderStop064
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop064
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6400
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop064', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,0,0,0,1,0);
@@ -2077,12 +2077,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6500
-     * @tc.name       : testOHVideoEncoderStop065
-     * @tc.desc       : test OH_VideoEncoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderStop065
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_STOP_6500
+     * @tc.desc   test OH_VideoEncoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderStop065', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderStop(0,0,0,0,0,0,0);
@@ -2091,12 +2091,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0100
-     * @tc.name       : testOHVideoEncoderFlush001
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0100
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -2110,12 +2110,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0200
-     * @tc.name       : testOHVideoEncoderFlush002
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0200
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -2129,12 +2129,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0300
-     * @tc.name       : testOHVideoEncoderFlush003
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0300
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,1,1,1,0,0);
@@ -2143,12 +2143,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0400
-     * @tc.name       : testOHVideoEncoderFlush004
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0400
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush004', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,1,1,0,1,0);
@@ -2157,12 +2157,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0500
-     * @tc.name       : testOHVideoEncoderFlush005
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0500
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush005', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,1,1,0,0,0);
@@ -2171,12 +2171,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0600
-     * @tc.name       : testOHVideoEncoderFlush006
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0600
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush006', Level.LEVEL0, async (done: Function) => {
         try {
@@ -2190,12 +2190,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0700
-     * @tc.name       : testOHVideoEncoderFlush007
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0700
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush007', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,1,0,1,0,0);
@@ -2204,12 +2204,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0800
-     * @tc.name       : testOHVideoEncoderFlush008
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0800
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush008', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,1,0,0,1,0);
@@ -2218,12 +2218,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0900
-     * @tc.name       : testOHVideoEncoderFlush009
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_0900
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush009', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,1,0,0,0,0);
@@ -2232,12 +2232,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1000
-     * @tc.name       : testOHVideoEncoderFlush010
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1000
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush010', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,0,1,1,1,0);
@@ -2246,12 +2246,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1100
-     * @tc.name       : testOHVideoEncoderFlush011
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1100
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush011', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,0,1,1,0,0);
@@ -2260,12 +2260,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1200
-     * @tc.name       : testOHVideoEncoderFlush012
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1200
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush012', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,0,1,0,1,0);
@@ -2274,12 +2274,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1300
-     * @tc.name       : testOHVideoEncoderFlush013
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1300
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush013', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,0,1,0,0,0);
@@ -2288,12 +2288,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1400
-     * @tc.name       : testOHVideoEncoderFlush014
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1400
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush014', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,0,0,1,1,0);
@@ -2302,12 +2302,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1500
-     * @tc.name       : testOHVideoEncoderFlush015
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1500
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush015', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,0,0,1,0,0);
@@ -2316,12 +2316,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1600
-     * @tc.name       : testOHVideoEncoderFlush016
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1600
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush016', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,0,0,0,1,0);
@@ -2330,12 +2330,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1700
-     * @tc.name       : testOHVideoEncoderFlush017
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1700
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush017', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,1,0,0,0,0,0);
@@ -2344,12 +2344,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1800
-     * @tc.name       : testOHVideoEncoderFlush018
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1800
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush018', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,1,1,1,1,0);
@@ -2358,12 +2358,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1900
-     * @tc.name       : testOHVideoEncoderFlush019
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush019
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_1900
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush019', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,1,1,1,0,0);
@@ -2372,12 +2372,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2000
-     * @tc.name       : testOHVideoEncoderFlush020
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush020
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2000
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush020', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,1,1,0,1,0);
@@ -2386,12 +2386,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2100
-     * @tc.name       : testOHVideoEncoderFlush021
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush021
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2100
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush021', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,1,1,0,0,0);
@@ -2400,12 +2400,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2200
-     * @tc.name       : testOHVideoEncoderFlush022
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush022
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2200
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush022', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,1,0,1,1,0);
@@ -2414,12 +2414,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2300
-     * @tc.name       : testOHVideoEncoderFlush023
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush023
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2300
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush023', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,1,0,1,0,0);
@@ -2428,12 +2428,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2400
-     * @tc.name       : testOHVideoEncoderFlush024
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush024
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2400
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush024', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,1,0,0,1,0);
@@ -2442,12 +2442,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2500
-     * @tc.name       : testOHVideoEncoderFlush025
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush025
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2500
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush025', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,1,0,0,0,0);
@@ -2456,12 +2456,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2600
-     * @tc.name       : testOHVideoEncoderFlush026
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush026
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2600
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush026', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,0,1,1,1,0);
@@ -2470,12 +2470,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2700
-     * @tc.name       : testOHVideoEncoderFlush027
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush027
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2700
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush027', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,0,1,1,0,0);
@@ -2484,12 +2484,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2800
-     * @tc.name       : testOHVideoEncoderFlush028
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush028
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2800
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush028', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,0,1,0,1,0);
@@ -2498,12 +2498,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2900
-     * @tc.name       : testOHVideoEncoderFlush029
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush029
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_2900
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush029', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,0,1,0,0,0);
@@ -2512,12 +2512,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3000
-     * @tc.name       : testOHVideoEncoderFlush030
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush030
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3000
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush030', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,0,0,1,1,0);
@@ -2526,12 +2526,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3100
-     * @tc.name       : testOHVideoEncoderFlush031
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush031
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3100
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush031', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,0,0,1,0,0);
@@ -2540,12 +2540,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3200
-     * @tc.name       : testOHVideoEncoderFlush032
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush032
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3200
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush032', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,0,0,0,1,0);
@@ -2554,12 +2554,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3300
-     * @tc.name       : testOHVideoEncoderFlush033
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush033
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3300
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush033', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(1,0,0,0,0,0,0);
@@ -2568,12 +2568,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3400
-     * @tc.name       : testOHVideoEncoderFlush034
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush034
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3400
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush034', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,1,1,1,1,0);
@@ -2582,12 +2582,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3500
-     * @tc.name       : testOHVideoEncoderFlush035
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush035
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3500
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush035', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,1,1,1,0,0);
@@ -2596,12 +2596,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3600
-     * @tc.name       : testOHVideoEncoderFlush036
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush036
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3600
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush036', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,1,1,0,1,0);
@@ -2610,12 +2610,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3700
-     * @tc.name       : testOHVideoEncoderFlush037
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush037
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3700
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush037', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,1,1,0,0,0);
@@ -2624,12 +2624,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3800
-     * @tc.name       : testOHVideoEncoderFlush038
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush038
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3800
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush038', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,1,0,1,1,0);
@@ -2638,12 +2638,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3900
-     * @tc.name       : testOHVideoEncoderFlush039
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush039
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_3900
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush039', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,1,0,1,0,0);
@@ -2652,12 +2652,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4000
-     * @tc.name       : testOHVideoEncoderFlush040
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush040
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4000
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush040', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,1,0,0,1,0);
@@ -2666,12 +2666,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4100
-     * @tc.name       : testOHVideoEncoderFlush041
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush041
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4100
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush041', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,1,0,0,0,0);
@@ -2680,12 +2680,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4200
-     * @tc.name       : testOHVideoEncoderFlush042
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush042
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4200
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush042', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,0,1,1,1,0);
@@ -2694,12 +2694,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4300
-     * @tc.name       : testOHVideoEncoderFlush043
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush043
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4300
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush043', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,0,1,1,0,0);
@@ -2708,12 +2708,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4400
-     * @tc.name       : testOHVideoEncoderFlush044
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush044
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4400
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush044', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,0,1,0,1,0);
@@ -2722,12 +2722,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4500
-     * @tc.name       : testOHVideoEncoderFlush045
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush045
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4500
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush045', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,0,1,0,0,0);
@@ -2736,12 +2736,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4600
-     * @tc.name       : testOHVideoEncoderFlush046
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush046
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4600
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush046', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,0,0,1,1,0);
@@ -2750,12 +2750,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4700
-     * @tc.name       : testOHVideoEncoderFlush047
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush047
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4700
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush047', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,0,0,1,0,0);
@@ -2764,12 +2764,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4800
-     * @tc.name       : testOHVideoEncoderFlush048
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush048
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4800
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush048', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,0,0,0,1,0);
@@ -2778,12 +2778,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4900
-     * @tc.name       : testOHVideoEncoderFlush049
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush049
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_4900
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush049', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,1,0,0,0,0,0);
@@ -2792,12 +2792,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5000
-     * @tc.name       : testOHVideoEncoderFlush050
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush050
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5000
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush050', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,1,1,1,1,0);
@@ -2806,12 +2806,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5100
-     * @tc.name       : testOHVideoEncoderFlush051
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush051
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5100
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush051', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,1,1,1,0,0);
@@ -2820,12 +2820,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5200
-     * @tc.name       : testOHVideoEncoderFlush052
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush052
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5200
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush052', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,1,1,0,1,0);
@@ -2834,12 +2834,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5300
-     * @tc.name       : testOHVideoEncoderFlush053
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush053
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5300
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush053', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,1,1,0,0,0);
@@ -2848,12 +2848,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5400
-     * @tc.name       : testOHVideoEncoderFlush054
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush054
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5400
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush054', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,1,0,1,1,0);
@@ -2862,12 +2862,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5500
-     * @tc.name       : testOHVideoEncoderFlush055
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush055
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5500
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush055', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,1,0,1,0,0);
@@ -2876,12 +2876,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5600
-     * @tc.name       : testOHVideoEncoderFlush056
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush056
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5600
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush056', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,1,0,0,1,0);
@@ -2890,12 +2890,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5700
-     * @tc.name       : testOHVideoEncoderFlush057
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush057
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5700
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush057', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,1,0,0,0,0);
@@ -2904,12 +2904,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5800
-     * @tc.name       : testOHVideoEncoderFlush058
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush058
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5800
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush058', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,0,1,1,1,0);
@@ -2918,12 +2918,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5900
-     * @tc.name       : testOHVideoEncoderFlush059
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush059
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_5900
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush059', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,0,1,1,0,0);
@@ -2932,12 +2932,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6000
-     * @tc.name       : testOHVideoEncoderFlush060
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush060
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6000
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush060', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,0,1,0,1,0);
@@ -2946,12 +2946,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6100
-     * @tc.name       : testOHVideoEncoderFlush061
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush061
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6100
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush061', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,0,1,0,0,0);
@@ -2960,12 +2960,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6200
-     * @tc.name       : testOHVideoEncoderFlush062
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush062
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6200
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush062', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,0,0,1,1,0);
@@ -2974,12 +2974,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6300
-     * @tc.name       : testOHVideoEncoderFlush063
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush063
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6300
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush063', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,0,0,1,0,0);
@@ -2988,12 +2988,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6400
-     * @tc.name       : testOHVideoEncoderFlush064
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush064
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6400
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush064', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,0,0,0,1,0);
@@ -3002,12 +3002,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6500
-     * @tc.name       : testOHVideoEncoderFlush065
-     * @tc.desc       : test OH_VideoEncoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFlush065
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FLUSH_6500
+     * @tc.desc   test OH_VideoEncoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFlush065', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFlush(0,0,0,0,0,0,0);
@@ -3016,12 +3016,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0100
-     * @tc.name       : testOHVideoEncoderReset001
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0100
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3035,12 +3035,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0200
-     * @tc.name       : testOHVideoEncoderReset002
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0200
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3054,12 +3054,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0300
-     * @tc.name       : testOHVideoEncoderReset003
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0300
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,1,1,1,1,0,0);
@@ -3068,12 +3068,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0400
-     * @tc.name       : testOHVideoEncoderReset004
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0400
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset004', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3087,12 +3087,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0500
-     * @tc.name       : testOHVideoEncoderReset005
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0500
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset005', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,1,1,1,0,0,0);
@@ -3101,12 +3101,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0600
-     * @tc.name       : testOHVideoEncoderReset006
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0600
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset006', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3120,12 +3120,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0700
-     * @tc.name       : testOHVideoEncoderReset007
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0700
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset007', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,1,1,0,1,0,0);
@@ -3134,12 +3134,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0800
-     * @tc.name       : testOHVideoEncoderReset008
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0800
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset008', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3153,12 +3153,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0900
-     * @tc.name       : testOHVideoEncoderReset009
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_0900
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset009', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,1,1,0,0,0,0);
@@ -3167,12 +3167,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1000
-     * @tc.name       : testOHVideoEncoderReset010
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1000
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset010', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3186,12 +3186,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1100
-     * @tc.name       : testOHVideoEncoderReset011
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1100
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset011', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,1,0,1,1,0,0);
@@ -3200,12 +3200,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1200
-     * @tc.name       : testOHVideoEncoderReset012
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1200
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset012', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3219,12 +3219,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1300
-     * @tc.name       : testOHVideoEncoderReset013
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1300
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset013', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,1,0,1,0,0,0);
@@ -3233,12 +3233,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1400
-     * @tc.name       : testOHVideoEncoderReset014
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1400
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset014', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3252,12 +3252,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1500
-     * @tc.name       : testOHVideoEncoderReset015
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1500
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset015', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,1,0,0,1,0,0);
@@ -3266,12 +3266,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1600
-     * @tc.name       : testOHVideoEncoderReset016
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1600
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset016', Level.LEVEL0, async (done: Function) => {
         try {
@@ -3285,12 +3285,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1700
-     * @tc.name       : testOHVideoEncoderReset017
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1700
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset017', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,1,0,0,0,0,0);
@@ -3299,12 +3299,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1800
-     * @tc.name       : testOHVideoEncoderReset018
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1800
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset018', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,1,1,1,1,0);
@@ -3313,12 +3313,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1900
-     * @tc.name       : testOHVideoEncoderReset019
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset019
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_1900
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset019', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,1,1,1,0,0);
@@ -3327,12 +3327,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2000
-     * @tc.name       : testOHVideoEncoderReset020
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset020
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2000
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset020', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,1,1,0,1,0);
@@ -3341,12 +3341,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2100
-     * @tc.name       : testOHVideoEncoderReset021
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset021
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2100
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset021', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,1,1,0,0,0);
@@ -3355,12 +3355,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2200
-     * @tc.name       : testOHVideoEncoderReset022
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset022
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2200
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset022', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,1,0,1,1,0);
@@ -3369,12 +3369,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2300
-     * @tc.name       : testOHVideoEncoderReset023
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset023
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2300
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset023', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,1,0,1,0,0);
@@ -3383,12 +3383,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2400
-     * @tc.name       : testOHVideoEncoderReset024
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset024
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2400
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset024', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,1,0,0,1,0);
@@ -3397,12 +3397,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2500
-     * @tc.name       : testOHVideoEncoderReset025
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset025
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2500
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset025', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,1,0,0,0,0);
@@ -3411,12 +3411,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2600
-     * @tc.name       : testOHVideoEncoderReset026
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset026
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2600
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset026', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,0,1,1,1,0);
@@ -3425,12 +3425,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2700
-     * @tc.name       : testOHVideoEncoderReset027
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset027
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2700
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset027', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,0,1,1,0,0);
@@ -3439,12 +3439,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2800
-     * @tc.name       : testOHVideoEncoderReset028
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset028
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2800
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset028', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,0,1,0,1,0);
@@ -3453,12 +3453,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2900
-     * @tc.name       : testOHVideoEncoderReset029
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset029
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_2900
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset029', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,0,1,0,0,0);
@@ -3467,12 +3467,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3000
-     * @tc.name       : testOHVideoEncoderReset030
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset030
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3000
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset030', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,0,0,1,1,0);
@@ -3481,12 +3481,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3100
-     * @tc.name       : testOHVideoEncoderReset031
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset031
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3100
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset031', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,0,0,1,0,0);
@@ -3495,12 +3495,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3200
-     * @tc.name       : testOHVideoEncoderReset032
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset032
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3200
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset032', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,0,0,0,1,0);
@@ -3509,12 +3509,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3300
-     * @tc.name       : testOHVideoEncoderReset033
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset033
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3300
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset033', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(1,0,0,0,0,0,0);
@@ -3523,12 +3523,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3400
-     * @tc.name       : testOHVideoEncoderReset034
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset034
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3400
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset034', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,1,1,1,1,0);
@@ -3537,12 +3537,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3500
-     * @tc.name       : testOHVideoEncoderReset035
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset035
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3500
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset035', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,1,1,1,0,0);
@@ -3551,12 +3551,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3600
-     * @tc.name       : testOHVideoEncoderReset036
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset036
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3600
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset036', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,1,1,0,1,0);
@@ -3565,12 +3565,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3700
-     * @tc.name       : testOHVideoEncoderReset037
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset037
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3700
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset037', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,1,1,0,0,0);
@@ -3579,12 +3579,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3800
-     * @tc.name       : testOHVideoEncoderReset038
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset038
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3800
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset038', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,1,0,1,1,0);
@@ -3593,12 +3593,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3900
-     * @tc.name       : testOHVideoEncoderReset039
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset039
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_3900
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset039', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,1,0,1,0,0);
@@ -3607,12 +3607,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4000
-     * @tc.name       : testOHVideoEncoderReset040
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset040
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4000
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset040', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,1,0,0,1,0);
@@ -3621,12 +3621,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4100
-     * @tc.name       : testOHVideoEncoderReset041
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset041
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4100
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset041', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,1,0,0,0,0);
@@ -3635,12 +3635,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4200
-     * @tc.name       : testOHVideoEncoderReset042
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset042
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4200
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset042', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,0,1,1,1,0);
@@ -3649,12 +3649,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4300
-     * @tc.name       : testOHVideoEncoderReset043
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset043
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4300
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset043', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,0,1,1,0,0);
@@ -3663,12 +3663,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4400
-     * @tc.name       : testOHVideoEncoderReset044
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset044
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4400
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset044', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,0,1,0,1,0);
@@ -3677,12 +3677,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4500
-     * @tc.name       : testOHVideoEncoderReset045
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset045
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4500
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset045', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,0,1,0,0,0);
@@ -3691,12 +3691,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4600
-     * @tc.name       : testOHVideoEncoderReset046
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset046
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4600
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset046', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,0,0,1,1,0);
@@ -3705,12 +3705,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4700
-     * @tc.name       : testOHVideoEncoderReset047
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset047
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4700
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset047', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,0,0,1,0,0);
@@ -3719,12 +3719,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4800
-     * @tc.name       : testOHVideoEncoderReset048
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset048
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4800
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset048', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,0,0,0,1,0);
@@ -3733,12 +3733,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4900
-     * @tc.name       : testOHVideoEncoderReset049
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset049
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_4900
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset049', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,1,0,0,0,0,0);
@@ -3747,12 +3747,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5000
-     * @tc.name       : testOHVideoEncoderReset050
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset050
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5000
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset050', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,1,1,1,1,0);
@@ -3761,12 +3761,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5100
-     * @tc.name       : testOHVideoEncoderReset051
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset051
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5100
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset051', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,1,1,1,0,0);
@@ -3775,12 +3775,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5200
-     * @tc.name       : testOHVideoEncoderReset052
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset052
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5200
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset052', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,1,1,0,1,0);
@@ -3789,12 +3789,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5300
-     * @tc.name       : testOHVideoEncoderReset053
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset053
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5300
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset053', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,1,1,0,0,0);
@@ -3803,12 +3803,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5400
-     * @tc.name       : testOHVideoEncoderReset054
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset054
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5400
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset054', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,1,0,1,1,0);
@@ -3817,12 +3817,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5500
-     * @tc.name       : testOHVideoEncoderReset055
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset055
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5500
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset055', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,1,0,1,0,0);
@@ -3831,12 +3831,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5600
-     * @tc.name       : testOHVideoEncoderReset056
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset056
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5600
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset056', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,1,0,0,1,0);
@@ -3845,12 +3845,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5700
-     * @tc.name       : testOHVideoEncoderReset057
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset057
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5700
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset057', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,1,0,0,0,0);
@@ -3859,12 +3859,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5800
-     * @tc.name       : testOHVideoEncoderReset058
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset058
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5800
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset058', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,0,1,1,1,0);
@@ -3873,12 +3873,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5900
-     * @tc.name       : testOHVideoEncoderReset059
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset059
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_5900
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset059', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,0,1,1,0,0);
@@ -3887,12 +3887,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6000
-     * @tc.name       : testOHVideoEncoderReset060
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset060
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6000
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset060', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,0,1,0,1,0);
@@ -3901,12 +3901,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6100
-     * @tc.name       : testOHVideoEncoderReset061
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset061
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6100
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset061', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,0,1,0,0,0);
@@ -3915,12 +3915,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6200
-     * @tc.name       : testOHVideoEncoderReset062
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset062
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6200
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset062', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,0,0,1,1,0);
@@ -3929,12 +3929,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6300
-     * @tc.name       : testOHVideoEncoderReset063
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset063
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6300
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset063', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,0,0,1,0,0);
@@ -3943,12 +3943,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6400
-     * @tc.name       : testOHVideoEncoderReset064
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset064
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6400
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset064', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,0,0,0,1,0);
@@ -3957,12 +3957,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6500
-     * @tc.name       : testOHVideoEncoderReset065
-     * @tc.desc       : test OH_VideoEncoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderReset065
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_RESET_6500
+     * @tc.desc   test OH_VideoEncoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderReset065', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderReset(0,0,0,0,0,0,0);
@@ -3971,12 +3971,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0100
-     * @tc.name       : testOHVideoEncoderGetOutputDescription001
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0100
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription001', Level.LEVEL0, async (done: Function) => {
         try{
@@ -3990,12 +3990,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0200
-     * @tc.name       : testOHVideoEncoderGetOutputDescription002
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0200
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4009,12 +4009,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0300
-     * @tc.name       : testOHVideoEncoderGetOutputDescription003
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0300
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,1,1,1,1,0,0);
@@ -4023,12 +4023,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0400
-     * @tc.name       : testOHVideoEncoderGetOutputDescription004
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0400
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription004', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4042,12 +4042,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0500
-     * @tc.name       : testOHVideoEncoderGetOutputDescription005
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription005
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0500
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription005', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,1,1,1,0,0,0);
@@ -4056,12 +4056,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0600
-     * @tc.name       : testOHVideoEncoderGetOutputDescription006
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription006
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0600
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription006', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4075,12 +4075,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0700
-     * @tc.name       : testOHVideoEncoderGetOutputDescription007
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription007
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0700
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription007', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,1,1,0,1,0,0);
@@ -4089,12 +4089,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0800
-     * @tc.name       : testOHVideoEncoderGetOutputDescription008
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription008
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0800
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription008', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4108,12 +4108,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0900
-     * @tc.name       : testOHVideoEncoderGetOutputDescription009
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription009
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_0900
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription009', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,1,1,0,0,0,0);
@@ -4122,12 +4122,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1000
-     * @tc.name       : testOHVideoEncoderGetOutputDescription010
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription010
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1000
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription010', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4141,12 +4141,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1100
-     * @tc.name       : testOHVideoEncoderGetOutputDescription011
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription011
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1100
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription011', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,1,0,1,1,0,0);
@@ -4155,12 +4155,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1200
-     * @tc.name       : testOHVideoEncoderGetOutputDescription012
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1200
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription012', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4174,12 +4174,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1300
-     * @tc.name       : testOHVideoEncoderGetOutputDescription013
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1300
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription013', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,1,0,1,0,0,0);
@@ -4188,12 +4188,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1400
-     * @tc.name       : testOHVideoEncoderGetOutputDescription014
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription014
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1400
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription014', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4207,12 +4207,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1500
-     * @tc.name       : testOHVideoEncoderGetOutputDescription015
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription015
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1500
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription015', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,1,0,0,1,0,0);
@@ -4221,12 +4221,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1600
-     * @tc.name       : testOHVideoEncoderGetOutputDescription016
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription016
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1600
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription016', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4240,12 +4240,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1700
-     * @tc.name       : testOHVideoEncoderGetOutputDescription017
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription017
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1700
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription017', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,1,0,0,0,0,0);
@@ -4254,12 +4254,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1800
-     * @tc.name       : testOHVideoEncoderGetOutputDescription018
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription018
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1800
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription018', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,1,1,1,1,0);
@@ -4268,12 +4268,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1900
-     * @tc.name       : testOHVideoEncoderGetOutputDescription019
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription019
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_1900
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription019', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,1,1,1,0,0);
@@ -4282,12 +4282,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2000
-     * @tc.name       : testOHVideoEncoderGetOutputDescription020
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription020
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2000
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription020', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,1,1,0,1,0);
@@ -4296,12 +4296,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2100
-     * @tc.name       : testOHVideoEncoderGetOutputDescription021
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription021
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2100
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription021', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,1,1,0,0,0);
@@ -4310,12 +4310,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2200
-     * @tc.name       : testOHVideoEncoderGetOutputDescription022
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription022
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2200
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription022', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,1,0,1,1,0);
@@ -4324,12 +4324,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2300
-     * @tc.name       : testOHVideoEncoderGetOutputDescription023
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription023
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2300
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription023', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,1,0,1,0,0);
@@ -4338,12 +4338,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2400
-     * @tc.name       : testOHVideoEncoderGetOutputDescription024
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription024
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2400
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription024', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,1,0,0,1,0);
@@ -4352,12 +4352,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2500
-     * @tc.name       : testOHVideoEncoderGetOutputDescription025
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription025
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2500
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription025', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,1,0,0,0,0);
@@ -4366,12 +4366,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2600
-     * @tc.name       : testOHVideoEncoderGetOutputDescription026
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription026
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2600
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription026', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,0,1,1,1,0);
@@ -4380,12 +4380,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2700
-     * @tc.name       : testOHVideoEncoderGetOutputDescription027
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription027
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2700
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription027', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,0,1,1,0,0);
@@ -4394,12 +4394,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2800
-     * @tc.name       : testOHVideoEncoderGetOutputDescription028
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription028
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2800
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription028', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,0,1,0,1,0);
@@ -4408,12 +4408,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2900
-     * @tc.name       : testOHVideoEncoderGetOutputDescription029
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription029
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_2900
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription029', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,0,1,0,0,0);
@@ -4422,12 +4422,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3000
-     * @tc.name       : testOHVideoEncoderGetOutputDescription030
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription030
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3000
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription030', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,0,0,1,1,0);
@@ -4436,12 +4436,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3100
-     * @tc.name       : testOHVideoEncoderGetOutputDescription031
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription031
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3100
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription031', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,0,0,1,0,0);
@@ -4450,12 +4450,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3200
-     * @tc.name       : testOHVideoEncoderGetOutputDescription032
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription032
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3200
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription032', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,0,0,0,1,0);
@@ -4464,12 +4464,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3300
-     * @tc.name       : testOHVideoEncoderGetOutputDescription033
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription033
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3300
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription033', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(1,0,0,0,0,0,0);
@@ -4478,12 +4478,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3400
-     * @tc.name       : testOHVideoEncoderGetOutputDescription034
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription034
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3400
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription034', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,1,1,1,1,0);
@@ -4492,12 +4492,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3500
-     * @tc.name       : testOHVideoEncoderGetOutputDescription035
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription035
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3500
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription035', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,1,1,1,0,0);
@@ -4506,12 +4506,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3600
-     * @tc.name       : testOHVideoEncoderGetOutputDescription036
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription036
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3600
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription036', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,1,1,0,1,0);
@@ -4520,12 +4520,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3700
-     * @tc.name       : testOHVideoEncoderGetOutputDescription037
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription037
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3700
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription037', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,1,1,0,0,0);
@@ -4534,12 +4534,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3800
-     * @tc.name       : testOHVideoEncoderGetOutputDescription038
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription038
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3800
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription038', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,1,0,1,1,0);
@@ -4548,12 +4548,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3900
-     * @tc.name       : testOHVideoEncoderGetOutputDescription039
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription039
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_3900
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription039', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,1,0,1,0,0);
@@ -4562,12 +4562,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4000
-     * @tc.name       : testOHVideoEncoderGetOutputDescription040
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription040
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4000
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription040', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,1,0,0,1,0);
@@ -4576,12 +4576,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4100
-     * @tc.name       : testOHVideoEncoderGetOutputDescription041
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription041
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4100
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription041', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,1,0,0,0,0);
@@ -4590,12 +4590,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4200
-     * @tc.name       : testOHVideoEncoderGetOutputDescription042
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription042
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4200
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription042', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,0,1,1,1,0);
@@ -4604,12 +4604,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4300
-     * @tc.name       : testOHVideoEncoderGetOutputDescription043
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription043
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4300
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription043', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,0,1,1,0,0);
@@ -4618,12 +4618,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4400
-     * @tc.name       : testOHVideoEncoderGetOutputDescription044
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription044
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4400
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription044', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,0,1,0,1,0);
@@ -4632,12 +4632,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4500
-     * @tc.name       : testOHVideoEncoderGetOutputDescription045
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription045
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4500
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription045', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,0,1,0,0,0);
@@ -4646,12 +4646,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4600
-     * @tc.name       : testOHVideoEncoderGetOutputDescription046
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription046
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4600
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription046', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,0,0,1,1,0);
@@ -4660,12 +4660,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4700
-     * @tc.name       : testOHVideoEncoderGetOutputDescription047
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription047
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4700
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription047', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,0,0,1,0,0);
@@ -4674,12 +4674,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4800
-     * @tc.name       : testOHVideoEncoderGetOutputDescription048
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription048
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4800
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription048', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,0,0,0,1,0);
@@ -4688,12 +4688,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4900
-     * @tc.name       : testOHVideoEncoderGetOutputDescription049
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription049
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_4900
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription049', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,1,0,0,0,0,0);
@@ -4702,12 +4702,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5000
-     * @tc.name       : testOHVideoEncoderGetOutputDescription050
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription050
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5000
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription050', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,1,1,1,1,0);
@@ -4716,12 +4716,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5100
-     * @tc.name       : testOHVideoEncoderGetOutputDescription051
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription051
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5100
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription051', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,1,1,1,0,0);
@@ -4730,12 +4730,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5200
-     * @tc.name       : testOHVideoEncoderGetOutputDescription052
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription052
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5200
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription052', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,1,1,0,1,0);
@@ -4744,12 +4744,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5300
-     * @tc.name       : testOHVideoEncoderGetOutputDescription053
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription053
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5300
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription053', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,1,1,0,0,0);
@@ -4758,12 +4758,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5400
-     * @tc.name       : testOHVideoEncoderGetOutputDescription054
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription054
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5400
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription054', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,1,0,1,1,0);
@@ -4772,12 +4772,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5500
-     * @tc.name       : testOHVideoEncoderGetOutputDescription055
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription055
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5500
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription055', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,1,0,1,0,0);
@@ -4786,12 +4786,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5600
-     * @tc.name       : testOHVideoEncoderGetOutputDescription056
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription056
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5600
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription056', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,1,0,0,1,0);
@@ -4800,12 +4800,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5700
-     * @tc.name       : testOHVideoEncoderGetOutputDescription057
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription057
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5700
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription057', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,1,0,0,0,0);
@@ -4814,12 +4814,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5800
-     * @tc.name       : testOHVideoEncoderGetOutputDescription058
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription058
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5800
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription058', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,0,1,1,1,0);
@@ -4828,12 +4828,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5900
-     * @tc.name       : testOHVideoEncoderGetOutputDescription059
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription059
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_5900
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription059', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,0,1,1,0,0);
@@ -4842,12 +4842,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6000
-     * @tc.name       : testOHVideoEncoderGetOutputDescription060
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription060
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6000
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription060', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,0,1,0,1,0);
@@ -4856,12 +4856,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6100
-     * @tc.name       : testOHVideoEncoderGetOutputDescription061
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription061
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6100
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription061', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,0,1,0,0,0);
@@ -4870,12 +4870,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6200
-     * @tc.name       : testOHVideoEncoderGetOutputDescription062
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription062
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6200
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription062', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,0,0,1,1,0);
@@ -4884,12 +4884,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6300
-     * @tc.name       : testOHVideoEncoderGetOutputDescription063
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription063
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6300
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription063', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,0,0,1,0,0);
@@ -4898,12 +4898,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6400
-     * @tc.name       : testOHVideoEncoderGetOutputDescription064
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription064
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6400
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription064', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,0,0,0,1,0);
@@ -4912,12 +4912,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6500
-     * @tc.name       : testOHVideoEncoderGetOutputDescription065
-     * @tc.desc       : test OH_VideoEncoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetOutputDescription065
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETOUTPUTDESCRIPTION_6500
+     * @tc.desc   test OH_VideoEncoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetOutputDescription065', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetOutputDescription(0,0,0,0,0,0,0);
@@ -4926,12 +4926,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETPARAMETER_0100
-     * @tc.name       : testOHVideoEncoderSetParameter001
-     * @tc.desc       : test OH_VideoEncoder_SetParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderSetParameter001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETPARAMETER_0100
+     * @tc.desc   test OH_VideoEncoder_SetParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderSetParameter001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4945,12 +4945,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETPARAMETER_0200
-     * @tc.name       : testOHVideoEncoderSetParameter002
-     * @tc.desc       : test OH_VideoEncoder_SetParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderSetParameter002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETPARAMETER_0200
+     * @tc.desc   test OH_VideoEncoder_SetParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderSetParameter002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4964,12 +4964,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETPARAMETER_0300
-     * @tc.name       : testOHVideoEncoderSetParameter003
-     * @tc.desc       : test OH_VideoEncoder_SetParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderSetParameter003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_SETPARAMETER_0300
+     * @tc.desc   test OH_VideoEncoder_SetParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderSetParameter003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderSetParameterAbnormal();
@@ -4978,12 +4978,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETINPUTDESCRIPTION_0100
-     * @tc.name       : testOHVideoEncoderGetInputDescription001
-     * @tc.desc       : test OH_VideoEncoder_GetInputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetInputDescription001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETINPUTDESCRIPTION_0100
+     * @tc.desc   test OH_VideoEncoder_GetInputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetInputDescription001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -4997,12 +4997,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETINPUTDESCRIPTION_0200
-     * @tc.name       : testOHVideoEncoderGetInputDescription002
-     * @tc.desc       : test OH_VideoEncoder_GetInputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetInputDescription002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETINPUTDESCRIPTION_0200
+     * @tc.desc   test OH_VideoEncoder_GetInputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetInputDescription002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -5016,12 +5016,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETINPUTDESCRIPTION_0300
-     * @tc.name       : testOHVideoEncoderGetInputDescription003
-     * @tc.desc       : test OH_VideoEncoder_GetInputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderGetInputDescription003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_GETINPUTDESCRIPTION_0300
+     * @tc.desc   test OH_VideoEncoder_GetInputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderGetInputDescription003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderGetInputDescriptionAbnormal();
@@ -5030,12 +5030,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_ISVALID_0100
-     * @tc.name       : testOHVideoEncoderIsValid001
-     * @tc.desc       : test OH_VideoEncoder_IsValid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderIsValid001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_ISVALID_0100
+     * @tc.desc   test OH_VideoEncoder_IsValid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderIsValid001', Level.LEVEL0, async (done: Function) => {
         try {
@@ -5049,12 +5049,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_ISVALID_0200
-     * @tc.name       : testOHVideoEncoderIsValid002
-     * @tc.desc       : test OH_VideoEncoder_IsValid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderIsValid002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_ISVALID_0200
+     * @tc.desc   test OH_VideoEncoder_IsValid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderIsValid002', Level.LEVEL0, async (done: Function) => {
         try {
@@ -5068,12 +5068,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_ISVALID_0300
-     * @tc.name       : testOHVideoEncoderIsValid003
-     * @tc.desc       : test OH_VideoEncoder_IsValid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderIsValid003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_ISVALID_0300
+     * @tc.desc   test OH_VideoEncoder_IsValid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderIsValid003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderIsValidAbnormal();
@@ -5082,12 +5082,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PUSHINPUTBUFFER_0100
-     * @tc.name       : testOHVideoEncoderPushInputBuffer001
-     * @tc.desc       : test OH_VideoEncoder_PushInputBuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderPushInputBuffer001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PUSHINPUTBUFFER_0100
+     * @tc.desc   test OH_VideoEncoder_PushInputBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPushInputBuffer001', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPushInputBuffer();
@@ -5095,13 +5095,13 @@ export default function videoEnCoderNdkTest() {
       done();
     });
 
-       /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PUSHINPUTBUFFER_0200
-     * @tc.name       : testOHVideoEncoderPushInputBuffer002
-     * @tc.desc       : test OH_VideoEncoder_PushInputBuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHVideoEncoderPushInputBuffer002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PUSHINPUTBUFFER_0200
+     * @tc.desc   test OH_VideoEncoder_PushInputBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPushInputBuffer002', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPushInputBufferHEVC();
@@ -5109,13 +5109,13 @@ export default function videoEnCoderNdkTest() {
       done();
     });
 
-       /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PUSHINPUTBUFFER_0300
-     * @tc.name       : testOHVideoEncoderPushInputBuffer003
-     * @tc.desc       : test OH_VideoEncoder_PushInputBuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHVideoEncoderPushInputBuffer003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_PUSHINPUTBUFFER_0300
+     * @tc.desc   test OH_VideoEncoder_PushInputBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderPushInputBuffer003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderPushInputBufferAbnormal();
@@ -5124,12 +5124,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FREEOUTPUTBUFFER_0100
-     * @tc.name       : testOHVideoEncoderFreeOutputBuffer001
-     * @tc.desc       : test OH_VideoEncoder_FreeOutputBuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFreeOutputBuffer001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FREEOUTPUTBUFFER_0100
+     * @tc.desc   test OH_VideoEncoder_FreeOutputBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFreeOutputBuffer001', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFreeOutputBuffer();
@@ -5138,12 +5138,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FREEOUTPUTBUFFER_0200
-     * @tc.name       : testOHVideoEncoderFreeOutputBuffer002
-     * @tc.desc       : test OH_VideoEncoder_FreeOutputBuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFreeOutputBuffer002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FREEOUTPUTBUFFER_0200
+     * @tc.desc   test OH_VideoEncoder_FreeOutputBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFreeOutputBuffer002', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFreeOutputBufferHEVC();
@@ -5152,12 +5152,12 @@ export default function videoEnCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FREEOUTPUTBUFFER_0300
-     * @tc.name       : testOHVideoEncoderFreeOutputBuffer003
-     * @tc.desc       : test OH_VideoEncoder_FreeOutputBuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHVideoEncoderFreeOutputBuffer003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_OH_VIDEOENCODER_FREEOUTPUTBUFFER_0300
+     * @tc.desc   test OH_VideoEncoder_FreeOutputBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoEncoderFreeOutputBuffer003', Level.LEVEL0, async (done: Function) => {
       let result: number = videoencoderndk.oHVideoEncoderFreeOutputBufferAbnormal();

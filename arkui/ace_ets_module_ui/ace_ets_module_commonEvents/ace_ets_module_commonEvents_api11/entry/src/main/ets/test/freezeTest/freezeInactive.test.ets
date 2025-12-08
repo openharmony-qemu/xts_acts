@@ -53,14 +53,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_COMPONENTOPTIONS_FREEZEWHENINACTIVE_0010
-    * @tc.name  : freezeInactive_0100
-    * @tc.desc  : It freezes When the component is in the inactive state.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   freezeInactive_0100
+     * @tc.number SUB_ACE_COMPONENTOPTIONS_FREEZEWHENINACTIVE_0010
+     * @tc.desc   It freezes When the component is in the inactive state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('freezeInactive_0100', Level.LEVEL0, async (done: Function) => {
       console.info('freezeInactive_0100 START');
       await CommonFunc.sleep(1000);

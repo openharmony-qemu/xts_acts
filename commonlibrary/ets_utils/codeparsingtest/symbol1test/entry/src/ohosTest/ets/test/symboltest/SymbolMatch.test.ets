@@ -44,12 +44,12 @@ export default function symbolMatchTestTest() {
     })
 
     /**
+     * @tc.name   RegExpDefaultSymbolMatchTest001
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_001
-     * @tc.name RegExpDefaultSymbolMatchTest001
-     * @tc.desc Verify RegExp's default [Symbol.match] works with String.match()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify RegExp's default [Symbol.match] works with String.match()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpDefaultSymbolMatchTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test001_RegExpDefaultSymbolMatch();
@@ -57,12 +57,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   CustomObjectSymbolMatchTest002
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_002
-     * @tc.name CustomObjectSymbolMatchTest002
-     * @tc.desc Verify custom object's [Symbol.match] overrides String.match()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom object's [Symbol.match] overrides String.match()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomObjectSymbolMatchTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test002_CustomObjectSymbolMatch();
@@ -70,12 +70,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchFalseNonRegexTest003
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_003
-     * @tc.name SymbolMatchFalseNonRegexTest003
-     * @tc.desc Verify [Symbol.match]=false marks object as non-regex for String.startsWith()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match]=false marks object as non-regex for String.startsWith()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchFalseNonRegexTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test003_SymbolMatchFalseNonRegex();
@@ -83,12 +83,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchReceivesTargetStringTest004
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_004
-     * @tc.name SymbolMatchReceivesTargetStringTest004
-     * @tc.desc Verify [Symbol.match] method receives target string as argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match] method receives target string as argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchReceivesTargetStringTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test004_SymbolMatchReceivesTargetString();
@@ -96,12 +96,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchReturnsNullForNoMatchTest005
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_005
-     * @tc.name SymbolMatchReturnsNullForNoMatchTest005
-     * @tc.desc Verify [Symbol.match] returns null for no match (consistent with RegExp)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match] returns null for no match (consistent with RegExp)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchReturnsNullForNoMatchTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test005_SymbolMatchReturnsNullForNoMatch();
@@ -109,12 +109,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   NonFunctionSymbolMatchThrowsTest006
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_006
-     * @tc.name NonFunctionSymbolMatchThrowsTest006
-     * @tc.desc Verify non-function [Symbol.match] (except false) throws TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify non-function [Symbol.match] (except false) throws TypeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonFunctionSymbolMatchThrowsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test006_NonFunctionSymbolMatchThrows();
@@ -122,12 +122,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchWithGlobalFlagLogicTest007
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_007
-     * @tc.name SymbolMatchWithGlobalFlagLogicTest007
-     * @tc.desc Verify custom [Symbol.match] handles global match logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.match] handles global match logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchWithGlobalFlagLogicTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test007_SymbolMatchWithGlobalFlagLogic();
@@ -135,12 +135,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   InheritedSymbolMatchTest008
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_008
-     * @tc.name InheritedSymbolMatchTest008
-     * @tc.desc Verify [Symbol.match] can be inherited via prototype chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match] can be inherited via prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InheritedSymbolMatchTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test008_InheritedSymbolMatch();
@@ -150,12 +150,12 @@ export default function symbolMatchTestTest() {
 
 
     /**
+     * @tc.name   SymbolMatchTrueTreatAsRegexTest010
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_010
-     * @tc.name SymbolMatchTrueTreatAsRegexTest010
-     * @tc.desc Verify only [Symbol.match]=false marks object as non-regex; true/falsy treat as regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify only [Symbol.match]=false marks object as non-regex; true/falsy treat as regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchTrueTreatAsRegexTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test010_SymbolMatchTrueTreatAsRegex();
@@ -163,12 +163,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchReturnsNonArrayTest011
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_011
-     * @tc.name SymbolMatchReturnsNonArrayTest011
-     * @tc.desc Verify custom [Symbol.match] returns non-array result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.match] returns non-array result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchReturnsNonArrayTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test011_SymbolMatchReturnsNonArray();
@@ -176,12 +176,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchFalseWithEndsWithTest012
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_012
-     * @tc.name SymbolMatchFalseWithEndsWithTest012
-     * @tc.desc Verify [Symbol.match]=false works with String.endsWith()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match]=false works with String.endsWith()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchFalseWithEndsWithTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test012_SymbolMatchFalseWithEndsWith();
@@ -189,12 +189,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchFalseWithIncludesTest013
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_013
-     * @tc.name SymbolMatchFalseWithIncludesTest013
-     * @tc.desc Verify [Symbol.match]=false works with String.includes()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match]=false works with String.includes()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchFalseWithIncludesTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test013_SymbolMatchFalseWithIncludes();
@@ -202,12 +202,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchThisBindingTest014
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_014
-     * @tc.name SymbolMatchThisBindingTest014
-     * @tc.desc Verify `this` in [Symbol.match] points to the matcher object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify `this` in [Symbol.match] points to the matcher object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchThisBindingTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test014_SymbolMatchThisBinding();
@@ -215,12 +215,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   OverrideRegExpPrototypeSymbolMatchTest015
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_015
-     * @tc.name OverrideRegExpPrototypeSymbolMatchTest015
-     * @tc.desc Verify overriding RegExp.prototype[Symbol.match] changes default behavior
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify overriding RegExp.prototype[Symbol.match] changes default behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OverrideRegExpPrototypeSymbolMatchTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test015_OverrideRegExpPrototypeSymbolMatch();
@@ -228,12 +228,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchWithEmptyTargetTest016
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_016
-     * @tc.name SymbolMatchWithEmptyTargetTest016
-     * @tc.desc Verify custom [Symbol.match] handles empty target string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.match] handles empty target string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchWithEmptyTargetTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test016_SymbolMatchWithEmptyTarget();
@@ -241,12 +241,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchWithRegexMetacharsTest017
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_017
-     * @tc.name SymbolMatchWithRegexMetacharsTest017
-     * @tc.desc Verify custom [Symbol.match] treats target as raw text (no regex metachar parsing)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.match] treats target as raw text (no regex metachar parsing)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchWithRegexMetacharsTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test017_SymbolMatchWithRegexMetachars();
@@ -254,12 +254,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchThrowsErrorTest018
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_018
-     * @tc.name SymbolMatchThrowsErrorTest018
-     * @tc.desc Verify errors in [Symbol.match] are propagated to caller
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify errors in [Symbol.match] are propagated to caller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchThrowsErrorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test018_SymbolMatchThrowsError();
@@ -267,12 +267,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   MultipleCustomMatchersTest019
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_019
-     * @tc.name MultipleCustomMatchersTest019
-     * @tc.desc Verify multiple custom matchers retain unique logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify multiple custom matchers retain unique logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleCustomMatchersTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test019_MultipleCustomMatchers();
@@ -280,12 +280,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchFalseWithStartsWithPositionTest020
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_020
-     * @tc.name SymbolMatchFalseWithStartsWithPositionTest020
-     * @tc.desc Verify [Symbol.match]=false works with String.startsWith's position parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match]=false works with String.startsWith's position parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchFalseWithStartsWithPositionTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test020_SymbolMatchFalseWithStartsWithPosition();
@@ -293,12 +293,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchReturnsEmptyArrayTest021
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_021
-     * @tc.name SymbolMatchReturnsEmptyArrayTest021
-     * @tc.desc Verify custom [Symbol.match] returns empty array (vs null)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.match] returns empty array (vs null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchReturnsEmptyArrayTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test021_SymbolMatchReturnsEmptyArray();
@@ -306,12 +306,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SubclassOverrideInheritedSymbolMatchTest022
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_022
-     * @tc.name SubclassOverrideInheritedSymbolMatchTest022
-     * @tc.desc Verify subclass's own [Symbol.match] overrides inherited method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass's own [Symbol.match] overrides inherited method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubclassOverrideInheritedSymbolMatchTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test022_SubclassOverrideInheritedSymbolMatch();
@@ -319,12 +319,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchDelegatesToRegExpExecTest023
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_023
-     * @tc.name SymbolMatchDelegatesToRegExpExecTest023
-     * @tc.desc Verify custom [Symbol.match] delegates to RegExp.exec
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.match] delegates to RegExp.exec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchDelegatesToRegExpExecTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test023_SymbolMatchDelegatesToRegExpExec();
@@ -332,12 +332,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchWithUnicodeCharsTest024
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_024
-     * @tc.name SymbolMatchWithUnicodeCharsTest024
-     * @tc.desc Verify custom [Symbol.match] matches Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.match] matches Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchWithUnicodeCharsTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test024_SymbolMatchWithUnicodeChars();
@@ -345,12 +345,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   SymbolMatchFalseObjectToStringTest025
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_025
-     * @tc.name SymbolMatchFalseObjectToStringTest025
-     * @tc.desc Verify [Symbol.match]=false objects use toString() for string comparison
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match]=false objects use toString() for string comparison
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchFalseObjectToStringTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test025_SymbolMatchFalseObjectToString();
@@ -359,12 +359,12 @@ export default function symbolMatchTestTest() {
 
 
     /**
+     * @tc.name   SymbolMatchArgumentCountTest027
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_027
-     * @tc.name SymbolMatchArgumentCountTest027
-     * @tc.desc Verify [Symbol.match] receives exactly one argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.match] receives exactly one argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolMatchArgumentCountTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test027_SymbolMatchArgumentCount();
@@ -372,12 +372,12 @@ export default function symbolMatchTestTest() {
     });
 
     /**
+     * @tc.name   FrozenMatcherSymbolMatchTest028
      * @tc.number SUB_SYMBOL_MATCH_STANDALONE_TEST_028
-     * @tc.name FrozenMatcherSymbolMatchTest028
-     * @tc.desc Verify frozen matcher's [Symbol.match] is callable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify frozen matcher's [Symbol.match] is callable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrozenMatcherSymbolMatchTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolMatchStandaloneTestUtils.test028_FrozenMatcherSymbolMatch();

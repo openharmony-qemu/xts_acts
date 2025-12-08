@@ -41,12 +41,12 @@ export default function Provider5Test() {
       done();
     });
     /**
-     * @tc.number    Provider5Test_0100
-     * @tc.name      Provider5Test_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider5Test_0100
+     * @tc.number Provider5Test_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider5Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Provider5Test_0100 START');
@@ -69,12 +69,12 @@ export default function Provider5Test() {
       done();
     });
     /**
-     * @tc.number    Provider5Test_0200
-     * @tc.name      Provider5Test_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider5Test_0200
+     * @tc.number Provider5Test_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider5Test_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Provider5Test_0200 START');
@@ -97,12 +97,12 @@ export default function Provider5Test() {
       done();
     });
     /**
-     * @tc.number    Provider5Test_0300
-     * @tc.name      Provider5Test_0300
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider5Test_0300
+     * @tc.number Provider5Test_0300
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider5Test_0300', Level.LEVEL0, async (done: Function) => {
       console.info('Provider5Test_0300 START');
@@ -125,12 +125,12 @@ export default function Provider5Test() {
       done();
     });
     /**
-     * @tc.number    Provider5Test_0400
-     * @tc.name      Provider5Test_0400
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider5Test_0400
+     * @tc.number Provider5Test_0400
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider5Test_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Provider5Test_0400 START');
@@ -153,12 +153,12 @@ export default function Provider5Test() {
       done();
     });
     /**
-     * @tc.number    Provider5Test_0500
-     * @tc.name      Provider5Test_0500
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider5Test_0500
+     * @tc.number Provider5Test_0500
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider5Test_0500', Level.LEVEL0, async (done: Function) => {
       console.info('Provider5Test_0500 START');

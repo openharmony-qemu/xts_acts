@@ -55,12 +55,12 @@ export default function RichEditorInterFace001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_INTERFACE_1450
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_INTERFACE_1450
-     * @tc.desc  : bindSelectionMenu Set parameter test RichEditor interface callback
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_INTERFACE_1450
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_INTERFACE_1450
+     * @tc.desc   bindSelectionMenu Set parameter test RichEditor interface callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_INTERFACE_1450',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_INTERFACE_1450 START');
@@ -102,12 +102,12 @@ export default function RichEditorInterFace001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_PC_MENU_0080
-     * @tc.name  : SUB_ACE_UI_PC_MENU_0080
-     * @tc.desc  : Add advanced component SelectionMenu, and set the callback and builder to test the RichEditor menu
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_PC_MENU_0080
+     * @tc.number SUB_ACE_UI_PC_MENU_0080
+     * @tc.desc   Add advanced component SelectionMenu, and set the callback and builder to test the RichEditor menu
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_PC_MENU_0080',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_PC_MENU_0080 START');

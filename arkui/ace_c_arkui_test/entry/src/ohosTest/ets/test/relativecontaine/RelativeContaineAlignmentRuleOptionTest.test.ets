@@ -26,39 +26,39 @@ export default function relativecontaineAlignmentRuleOptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ALIGN_RULES_0100
-     * @tc.name       : testRelativeContaineAlignmentRuleOption001
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRelativeContaineAlignmentRuleOption001
+     * @tc.number SUB_ARKUI_CAPI_ALIGN_RULES_0100
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRelativeContaineAlignmentRuleOption001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRelativeContaineAlignmentRuleOption001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ALIGN_RULES_0200
-     * @tc.name       : testRelativeContaineAlignmentRuleOption002
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRelativeContaineAlignmentRuleOption002
+     * @tc.number SUB_ARKUI_CAPI_ALIGN_RULES_0200
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRelativeContaineAlignmentRuleOption002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRelativeContaineAlignmentRuleOption002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ALIGN_RULES_0300
-     * @tc.name       : testRelativeContaineAlignmentRuleOption003
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRelativeContaineAlignmentRuleOption003
+     * @tc.number SUB_ARKUI_CAPI_ALIGN_RULES_0300
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRelativeContaineAlignmentRuleOption003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRelativeContaineAlignmentRuleOption003()).assertEqual(0)

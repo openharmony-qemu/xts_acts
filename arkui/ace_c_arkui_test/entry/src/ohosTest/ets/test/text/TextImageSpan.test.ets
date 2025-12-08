@@ -25,13 +25,13 @@ export default function textImageSpanTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_IMAGE_SPAN_0100
-     * @tc.name       : textImageSpanTest001
-     * @tc.desc       : testing imageSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textImageSpanTest001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_IMAGE_SPAN_0100
+     * @tc.desc   testing imageSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textImageSpanTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textImageSpanTest001()).assertEqual(0)

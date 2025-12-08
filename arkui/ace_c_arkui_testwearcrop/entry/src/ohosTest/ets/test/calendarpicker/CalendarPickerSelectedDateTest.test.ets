@@ -26,65 +26,65 @@ export default function calendarPickerSelectedDateTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0100
-     * @tc.name: testCalendarPickerSelectedDate001
-     * @tc.desc: testing SelectedDate for calendarPicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerSelectedDate001
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0100
+     * @tc.desc   testing SelectedDate for calendarPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerSelectedDate001', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerSelectedDate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0200
-     * @tc.name: testCalendarPickerSelectedDate002
-     * @tc.desc: testing SelectedDate for calendarPicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testCalendarPickerSelectedDate002
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0200
+     * @tc.desc   testing SelectedDate for calendarPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerSelectedDate002', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerSelectedDate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0300
-     * @tc.name: testCalendarPickerSelectedDate003
-     * @tc.desc: testing SelectedDate for calendarPicker with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerSelectedDate003
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0300
+     * @tc.desc   testing SelectedDate for calendarPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerSelectedDate003', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerSelectedDate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0400
-     * @tc.name: testCalendarPickerSelectedDate004
-     * @tc.desc: testing SelectedDate for calendarPicker with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerSelectedDate004
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0400
+     * @tc.desc   testing SelectedDate for calendarPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerSelectedDate004', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerSelectedDate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0500
-     * @tc.name: testCalendarPickerSelectedDate005
-     * @tc.desc: testing SelectedDate for calendarPicker with Default
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerSelectedDate005
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_SELECTED_DATE_0500
+     * @tc.desc   testing SelectedDate for calendarPicker with Default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerSelectedDate005', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerSelectedDate005()).assertEqual(0)

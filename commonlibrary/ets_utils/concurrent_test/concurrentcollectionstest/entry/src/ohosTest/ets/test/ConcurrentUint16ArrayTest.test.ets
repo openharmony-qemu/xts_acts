@@ -137,12 +137,12 @@ export default function Uint16ArrayTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0100
-     * @tc.name      : test_concurrent_collections_uint16Array_001
-     * @tc.desc      : test_concurrent_collections_uint16Array_001 - test uint16Array constructor and basic operations
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_001
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0100
+     * @tc.desc   test_concurrent_collections_uint16Array_001 - test uint16Array constructor and basic operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -171,12 +171,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0200
-     * @tc.name      : test_concurrent_collections_uint16Array_002
-     * @tc.desc      : test_concurrent_collections_uint16Array_002 - test uint16Array from method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_002
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0200
+     * @tc.desc   test_concurrent_collections_uint16Array_002 - test uint16Array from method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -205,12 +205,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0300
-     * @tc.name      : test_concurrent_collections_uint16Array_003
-     * @tc.desc      : test_concurrent_collections_uint16Array_003 - test uint16Array from with array parameter
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_003
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0300
+     * @tc.desc   test_concurrent_collections_uint16Array_003 - test uint16Array from with array parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -239,12 +239,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0400
-     * @tc.name      : test_concurrent_collections_uint16Array_004
-     * @tc.desc      : test_concurrent_collections_uint16Array_004 - test uint16Array copyWithin method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_004
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0400
+     * @tc.desc   test_concurrent_collections_uint16Array_004 - test uint16Array copyWithin method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -273,12 +273,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0500
-     * @tc.name      : test_concurrent_collections_uint16Array_005
-     * @tc.desc      : test_concurrent_collections_uint16Array_005 - test uint16Array from with Array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_005
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0500
+     * @tc.desc   test_concurrent_collections_uint16Array_005 - test uint16Array from with Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -307,12 +307,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0600
-     * @tc.name      : test_concurrent_collections_uint16Array_006
-     * @tc.desc      : test_concurrent_collections_uint16Array_006 - test uint16Array from with Set
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_006
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0600
+     * @tc.desc   test_concurrent_collections_uint16Array_006 - test uint16Array from with Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -341,12 +341,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0700
-     * @tc.name      : test_concurrent_collections_uint16Array_007
-     * @tc.desc      : test_concurrent_collections_uint16Array_007 - test uint16Array from with mapping function
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_007
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0700
+     * @tc.desc   test_concurrent_collections_uint16Array_007 - test uint16Array from with mapping function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -378,12 +378,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0800
-     * @tc.name      : test_concurrent_collections_uint16Array_008
-     * @tc.desc      : test_concurrent_collections_uint16Array_008 - test uint16Array of method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_008
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0800
+     * @tc.desc   test_concurrent_collections_uint16Array_008 - test uint16Array of method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -416,12 +416,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_0900
-     * @tc.name      : test_concurrent_collections_uint16Array_009
-     * @tc.desc      : test_concurrent_collections_uint16Array_009 - test uint16Array copyWithin result
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_009
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_0900
+     * @tc.desc   test_concurrent_collections_uint16Array_009 - test uint16Array copyWithin result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -450,12 +450,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1000
-     * @tc.name      : test_concurrent_collections_uint16Array_010
-     * @tc.desc      : test_concurrent_collections_uint16Array_010 - test uint16Array with ArrayBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_010
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1000
+     * @tc.desc   test_concurrent_collections_uint16Array_010 - test uint16Array with ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -486,12 +486,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1100
-     * @tc.name      : test_concurrent_collections_uint16Array_011
-     * @tc.desc      : test_concurrent_collections_uint16Array_011 - test uint16Array some and every methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_011
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1100
+     * @tc.desc   test_concurrent_collections_uint16Array_011 - test uint16Array some and every methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -520,12 +520,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1200
-     * @tc.name      : test_concurrent_collections_uint16Array_012
-     * @tc.desc      : test_concurrent_collections_uint16Array_012 - test uint16Array fill method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_012
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1200
+     * @tc.desc   test_concurrent_collections_uint16Array_012 - test uint16Array fill method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -557,12 +557,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1300
-     * @tc.name      : test_concurrent_collections_uint16Array_013
-     * @tc.desc      : test_concurrent_collections_uint16Array_013 - test uint16Array filter and find methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_013
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1300
+     * @tc.desc   test_concurrent_collections_uint16Array_013 - test uint16Array filter and find methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -591,12 +591,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1400
-     * @tc.name      : test_concurrent_collections_uint16Array_014
-     * @tc.desc      : test_concurrent_collections_uint16Array_014 - test uint16Array findIndex and indexOf methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_014
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1400
+     * @tc.desc   test_concurrent_collections_uint16Array_014 - test uint16Array findIndex and indexOf methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -625,12 +625,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1500
-     * @tc.name      : test_concurrent_collections_uint16Array_015
-     * @tc.desc      : test_concurrent_collections_uint16Array_015 - test uint16Array forEach method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_015
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1500
+     * @tc.desc   test_concurrent_collections_uint16Array_015 - test uint16Array forEach method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -659,12 +659,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1600
-     * @tc.name      : test_concurrent_collections_uint16Array_016
-     * @tc.desc      : test_concurrent_collections_uint16Array_016 - test uint16Array lastIndexOf and join methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_016
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1600
+     * @tc.desc   test_concurrent_collections_uint16Array_016 - test uint16Array lastIndexOf and join methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -693,12 +693,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1700
-     * @tc.name      : test_concurrent_collections_uint16Array_017
-     * @tc.desc      : test_concurrent_collections_uint16Array_017 - test uint16Array map method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_017
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1700
+     * @tc.desc   test_concurrent_collections_uint16Array_017 - test uint16Array map method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -727,12 +727,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1800
-     * @tc.name      : test_concurrent_collections_uint16Array_018
-     * @tc.desc      : test_concurrent_collections_uint16Array_018 - test uint16Array reduce methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_018
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1800
+     * @tc.desc   test_concurrent_collections_uint16Array_018 - test uint16Array reduce methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -761,12 +761,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_1900
-     * @tc.name      : test_concurrent_collections_uint16Array_019
-     * @tc.desc      : test_concurrent_collections_uint16Array_019 - test uint16Array reduceRight methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_019
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_1900
+     * @tc.desc   test_concurrent_collections_uint16Array_019 - test uint16Array reduceRight methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -795,12 +795,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_2000
-     * @tc.name      : test_concurrent_collections_uint16Array_020
-     * @tc.desc      : test_concurrent_collections_uint16Array_020 - test uint16Array reverse method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_020
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_2000
+     * @tc.desc   test_concurrent_collections_uint16Array_020 - test uint16Array reverse method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -829,12 +829,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_2100
-     * @tc.name      : test_concurrent_collections_uint16Array_021
-     * @tc.desc      : test_concurrent_collections_uint16Array_021 - test uint16Array set method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_021
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_2100
+     * @tc.desc   test_concurrent_collections_uint16Array_021 - test uint16Array set method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -866,12 +866,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_2200
-     * @tc.name      : test_concurrent_collections_uint16Array_022
-     * @tc.desc      : test_concurrent_collections_uint16Array_022 - test uint16Array slice method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_022
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_2200
+     * @tc.desc   test_concurrent_collections_uint16Array_022 - test uint16Array slice method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -900,12 +900,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_2300
-     * @tc.name      : test_concurrent_collections_uint16Array_023
-     * @tc.desc      : test_concurrent_collections_uint16Array_023 - test uint16Array sort method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_023
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_2300
+     * @tc.desc   test_concurrent_collections_uint16Array_023 - test uint16Array sort method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -937,12 +937,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_2400
-     * @tc.name      : test_concurrent_collections_uint16Array_024
-     * @tc.desc      : test_concurrent_collections_uint16Array_024 - test uint16Array subarray method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_024
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_2400
+     * @tc.desc   test_concurrent_collections_uint16Array_024 - test uint16Array subarray method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -971,12 +971,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_2500
-     * @tc.name      : test_concurrent_collections_uint16Array_025
-     * @tc.desc      : test_concurrent_collections_uint16Array_025 - test uint16Array at and includes methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_025
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_2500
+     * @tc.desc   test_concurrent_collections_uint16Array_025 - test uint16Array at and includes methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1005,12 +1005,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_2600
-     * @tc.name      : test_concurrent_collections_uint16Array_026
-     * @tc.desc      : test_concurrent_collections_uint16Array_026 - test uint16Array entries method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_026
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_2600
+     * @tc.desc   test_concurrent_collections_uint16Array_026 - test uint16Array entries method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1039,12 +1039,12 @@ export default function Uint16ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_UINT16ARRAY_TEST_2700
-     * @tc.name      : test_concurrent_collections_uint16Array_027
-     * @tc.desc      : test_concurrent_collections_uint16Array_027 - test uint16Array keys and values methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_uint16Array_027
+     * @tc.number SUB_CONCURRENT_UINT16ARRAY_TEST_2700
+     * @tc.desc   test_concurrent_collections_uint16Array_027 - test uint16Array keys and values methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_uint16Array_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

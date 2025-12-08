@@ -40,7 +40,6 @@ export default function BatteryServiceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryServiceTest_0100
      * @tc.number SUB_PowerSystem_BatteryService_JSTest_0010
      * @tc.desc   BatteryService stop test
@@ -61,7 +60,6 @@ export default function BatteryServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryServiceTest_0200
      * @tc.number SUB_PowerSystem_BatteryService_JSTest_0020
      * @tc.desc   BatteryService stop test
@@ -82,7 +80,6 @@ export default function BatteryServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryServiceTest_0300
      * @tc.number SUB_PowerSystem_BatteryService_JSTest_0030
      * @tc.desc   BatteryService stop test

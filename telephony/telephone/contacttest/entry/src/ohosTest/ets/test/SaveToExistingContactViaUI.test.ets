@@ -194,12 +194,12 @@ export default function SaveToExistingContactViaUITest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SaveToExistingContactViaUI_0100
-     * @tc.name       : testTelephonyContactSaveToExistingContactViaUI0100
-     * @tc.desc       : Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSaveToExistingContactViaUI0100
+     * @tc.number SUB_Telephony_Contact_SaveToExistingContactViaUI_0100
+     * @tc.desc   Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSaveToExistingContactViaUI0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -261,12 +261,12 @@ export default function SaveToExistingContactViaUITest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SaveToExistingContactViaUI_0200
-     * @tc.name       : testTelephonyContactSaveToExistingContactViaUI0200
-     * @tc.desc       : Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSaveToExistingContactViaUI0200
+     * @tc.number SUB_Telephony_Contact_SaveToExistingContactViaUI_0200
+     * @tc.desc   Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSaveToExistingContactViaUI0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -332,12 +332,12 @@ export default function SaveToExistingContactViaUITest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SaveToExistingContactViaUI_0300
-     * @tc.name       : testTelephonyContactSaveToExistingContactViaUI0300
-     * @tc.desc       : Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSaveToExistingContactViaUI0300
+     * @tc.number SUB_Telephony_Contact_SaveToExistingContactViaUI_0300
+     * @tc.desc   Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSaveToExistingContactViaUI0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);

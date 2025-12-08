@@ -42,12 +42,12 @@ export default function RenderNodeShadowElevationJsSuit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_COMPONENT_RenderNodeShadowElevationJsSuit_0100
-     * @tc.name : RenderNodeShadowElevationJsSuit_0100
-     * @tc.desc : set api
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeShadowElevationJsSuit_0100
+     * @tc.number SUB_ACE_COMPONENT_RenderNodeShadowElevationJsSuit_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderNodeShadowElevationJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RenderNodeShadowElevationJsSuit_0100] START');

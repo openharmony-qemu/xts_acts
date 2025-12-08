@@ -46,13 +46,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2300
-     * @tc.name Test_Security_Button_Save_2300
-     * @tc.desc Test SecurityComponent The button style is a line and the text is described as a download file and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The button style is a line and the text is described as a download file and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2300] START====');
@@ -111,13 +110,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2400
-     * @tc.name Test_Security_Button_Save_2400
-     * @tc.desc Test SecurityComponent The text is described as saving and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text is described as saving and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2400] START====');
@@ -174,13 +172,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2500
-     * @tc.name Test_Security_Button_Save_2500
-     * @tc.desc Test SecurityComponent The text describes saving the image and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text describes saving the image and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2500] START====');
@@ -237,13 +234,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2600
-     * @tc.name Test_Security_Button_Save_2600
-     * @tc.desc Test SecurityComponent The text describes the saved file and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text describes the saved file and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2600] START====');
@@ -300,13 +296,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2700
-     * @tc.name Test_Security_Button_Save_2700
-     * @tc.desc Test SecurityComponent The text description is download and share and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text description is download and share and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2700] START====');
@@ -363,13 +358,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2800
-     * @tc.name Test_Security_Button_Save_2800
-     * @tc.desc Test SecurityComponent The text is described as receiving and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text is described as receiving and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2800] START====');
@@ -426,13 +420,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2900
-     * @tc.name Test_Security_Button_Save_2900
-     * @tc.desc Test SecurityComponent The text describes continued receiving and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text describes continued receiving and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2900] START====');
@@ -489,13 +482,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_3000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_3000
-     * @tc.name Test_Security_Button_Save_3000
-     * @tc.desc Test SecurityComponent The text describes save to gallery and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text describes save to gallery and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_3000] START====');
@@ -556,13 +548,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_3100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_3100
-     * @tc.name Test_Security_Button_Save_3100
-     * @tc.desc Test SecurityComponent The text describes export to gallery and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text describes export to gallery and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_3100] START====');
@@ -623,13 +614,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_3200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_3200
-     * @tc.name Test_Security_Button_Save_3200
-     * @tc.desc Test SecurityComponent The text describes quick save to gallery and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text describes quick save to gallery and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_3200] START====');
@@ -689,14 +679,13 @@ export default function saveComponentTest_1() {
       }
     });
 	
-	  /**
+    /**
+     * @tc.name   Test_Security_Button_Save_3300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_3300
-     * @tc.name Test_Security_Button_Save_3300
-     * @tc.desc Test SecurityComponent The text describes resave to gallery and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text describes resave to gallery and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_3300] START====');
@@ -757,13 +746,12 @@ export default function saveComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_3400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_3400
-     * @tc.name Test_Security_Button_Save_3400
-     * @tc.desc Test SecurityComponent The text describes save all and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent The text describes save all and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_3400] START====');

@@ -111,6 +111,7 @@ group("multimedia") {
       "image/image_ets_standard/imageframework:ActsImageFramework20Test",
       "image/image_ets_standard/imageGetMimeType:image_get_mime_type_hap",
       "image/image_ets_standard/imageNdk:image_ndk_hap",
+      "image/image_ets_standard/imageNDKSupplement:ActsMediaImageNDKSupplementTest",
       "image/image_ets_standard/imagePackToFileGif:image_pack_to_file_gif_hap",
       "image/image_ets_standard/imagePackerExif:image_packer_exif_hap",
       "image/image_ets_standard/imagePicture:image_picture_hap",

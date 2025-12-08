@@ -35,12 +35,12 @@ export default function ActsContextProcessNameTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_processName_0100
-     * @tc.name : SUB_Ability_AbilityRuntime_processName_0100
-     * @tc.desc : UIAbilityContext calls the processName property
-     * @tc.level: Level 2
-     * @tc.type : Function
-     * @tc.size : MediumTest
+     * @tc.name   SUB_Ability_AbilityRuntime_processName_0100
+     * @tc.number SUB_Ability_AbilityRuntime_processName_0100
+     * @tc.desc   UIAbilityContext calls the processName property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_processName_0100', Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_Ability_Ability_Runtime_processName_0100'
@@ -59,12 +59,12 @@ export default function ActsContextProcessNameTest() {
     });
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_processName_0200
-     * @tc.name : SUB_Ability_AbilityRuntime_processName_0200
-     * @tc.desc : applicationContext obtained by context calls the processName property
-     * @tc.level: Level 2
-     * @tc.type : Function
-     * @tc.size : MediumTest
+     * @tc.name   SUB_Ability_AbilityRuntime_processName_0200
+     * @tc.number SUB_Ability_AbilityRuntime_processName_0200
+     * @tc.desc   applicationContext obtained by context calls the processName property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_processName_0200', Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_Ability_Ability_Runtime_processName_0200'
@@ -84,12 +84,12 @@ export default function ActsContextProcessNameTest() {
     });
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_processName_0300
-     * @tc.name : SUB_Ability_AbilityRuntime_processName_0300
-     * @tc.desc : applicationContext obtained by application calls the processName property
-     * @tc.level: Level 2
-     * @tc.type : Function
-     * @tc.size : MediumTest
+     * @tc.name   SUB_Ability_AbilityRuntime_processName_0300
+     * @tc.number SUB_Ability_AbilityRuntime_processName_0300
+     * @tc.desc   applicationContext obtained by application calls the processName property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_processName_0300', Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_Ability_Ability_Runtime_processName_0300'
@@ -107,12 +107,12 @@ export default function ActsContextProcessNameTest() {
     });
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_processName_0400
-     * @tc.name : SUB_Ability_AbilityRuntime_processName_0400
-     * @tc.desc : abilityStage calls the processName property
-     * @tc.level: Level 2
-     * @tc.type : Function
-     * @tc.size : MediumTest
+     * @tc.name   SUB_Ability_AbilityRuntime_processName_0400
+     * @tc.number SUB_Ability_AbilityRuntime_processName_0400
+     * @tc.desc   abilityStage calls the processName property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_processName_0400', Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_Ability_Ability_Runtime_processName_0400'
@@ -131,12 +131,12 @@ export default function ActsContextProcessNameTest() {
     });
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_processName_1500
-     * @tc.name : SUB_Ability_AbilityRuntime_processName_1500
-     * @tc.desc : startAbility to start another application process , get processName
-     * @tc.level: Level 3
-     * @tc.type : Function
-     * @tc.size : MediumTest
+     * @tc.name   SUB_Ability_AbilityRuntime_processName_1500
+     * @tc.number SUB_Ability_AbilityRuntime_processName_1500
+     * @tc.desc   startAbility to start another application process , get processName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_processName_1500', Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_Ability_AbilityRuntime_processName_1500'
@@ -178,12 +178,12 @@ export default function ActsContextProcessNameTest() {
     });
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_processName_3200
-     * @tc.name : SUB_Ability_AbilityRuntime_processName_3200
-     * @tc.desc : createModeAreaContext obtain processName
-     * @tc.level: Level 3
-     * @tc.type : Function
-     * @tc.size : MediumTest
+     * @tc.name   SUB_Ability_AbilityRuntime_processName_3200
+     * @tc.number SUB_Ability_AbilityRuntime_processName_3200
+     * @tc.desc   createModeAreaContext obtain processName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_processName_3200', Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_Ability_Ability_Runtime_processName_3200'

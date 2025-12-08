@@ -44,12 +44,12 @@ export default function exportBigIntTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   exportBigIntTest_0100
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0100
-     * @tc.name exportBigIntTest_0100
-     * @tc.desc test default type export
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test default type export
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('exportBigIntTest_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (Done: Function) => {
       const bigNumber1 = 1234567890123456789012345678901234567890n;
@@ -58,12 +58,12 @@ export default function exportBigIntTest() {
       Done();
     })
     /**
+     * @tc.name   exportBigIntTest_0200
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0200
-     * @tc.name exportBigIntTest_0200
-     * @tc.desc test the default export is defined and exported in a single statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test the default export is defined and exported in a single statement
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportBigIntTest_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const bigInt1 = 1234567890123456789012345678901234567890n;
@@ -73,12 +73,12 @@ export default function exportBigIntTest() {
     })
 
     /**
+     * @tc.name   exportBigIntTest_0300
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0300
-     * @tc.name exportBigIntTest_0300
-     * @tc.desc test define, then export the object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test define, then export the object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportBigIntTest_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       expect(toResult).assertEqual(1234567890123456789012345678901234567890n);
@@ -86,12 +86,12 @@ export default function exportBigIntTest() {
     })
 
     /**
+     * @tc.name   exportBigIntTest_0400
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0400
-     * @tc.name exportBigIntTest_0400
-     * @tc.desc test type derive
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test type derive
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportBigIntTest_0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const obj1: BigIntType = {
@@ -101,12 +101,12 @@ export default function exportBigIntTest() {
       Done();
     })
     /**
+     * @tc.name   exportBigIntTest_0500
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0500
-     * @tc.name exportBigIntTest_0500
-     * @tc.desc test the default export is defined and exported in a single statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test the default export is defined and exported in a single statement
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportBigIntTest_0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const bigInt1 = 1234567890123456789012345678901234567890n;
@@ -115,36 +115,36 @@ export default function exportBigIntTest() {
       Done();
     })
     /**
+     * @tc.name   exportBigIntTest_0600
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0600
-     * @tc.name exportBigIntTest_0600
-     * @tc.desc test define, then export the object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test define, then export the object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportBigIntTest_0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       expect(resultAddBigIntUll).assertEqual(1234567890123456789012345678901234567890n);
       Done();
     })
     /**
+     * @tc.name   exportBigIntTest_0700
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0700
-     * @tc.name exportBigIntTest_0700
-     * @tc.desc test define, export, and alias the object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test define, export, and alias the object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportBigIntTest_0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       expect(sad).assertEqual(1234567890123456789012345678901234567890n);
       Done();
     })
     /**
+     * @tc.name   exportBigIntTest_0800
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0800
-     * @tc.name exportBigIntTest_0800
-     * @tc.desc test export all files, equivalent to transfer export
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test export all files, equivalent to transfer export
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportBigIntTest_0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const bigInt1 = 1234567890123456789012345678901234567890n;
@@ -153,12 +153,12 @@ export default function exportBigIntTest() {
       Done();
     })
     /**
+     * @tc.name   exportBigIntTest_0900
      * @tc.number SUB_EXPORT_BIG_INT_TEST_0900
-     * @tc.name exportBigIntTest_0900
-     * @tc.desc test export file alias
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test export file alias
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportBigIntTest_0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const bigInt1 = 1234567890123456789012345678901234567890n;

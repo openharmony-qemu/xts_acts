@@ -40,13 +40,13 @@ export default function openLinkTest() {
       }, 1000);
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0100
-     * @tc.name   : To verify that the input parameter of addAbilityMonitorSync is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0100
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_0100 start');
@@ -63,13 +63,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0200
-     * @tc.name   : To verify that the input parameter of addAbilityMonitorSync is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0200
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'Ability setTimeout');
@@ -88,13 +88,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0300
-     * @tc.name   : To verify that the input parameter of addAbilityMonitorSync is undefined.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0300
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'Ability setTimeout');
@@ -109,13 +109,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0400
-     * @tc.name   : To verify that the input parameter of removeAbilityMonitor is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0400
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_0400 start');
@@ -132,13 +132,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0500
-     * @tc.name   : To verify that the input parameter of removeAbilityMonitor is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0500
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_0500 start');
@@ -157,13 +157,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0600
-     * @tc.name   : To verify that the input parameter of removeAbilityMonitorSync is undefined.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0600
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_0600 start');
@@ -178,13 +178,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0700
-     * @tc.name   : To verify that the input parameter of addAbilityStageMonitorSync is undefined.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0700
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_0700 start');
@@ -199,13 +199,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0800
-     * @tc.name   : To verify that the input parameter of removeAbilityStageMonitor is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0800
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_0800 start');
@@ -222,13 +222,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_0900
-     * @tc.name   : To verify that the input parameter of removeAbilityStageMonitor is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_0900
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_0900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_0900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_0900 start');
@@ -247,13 +247,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1000
-     * @tc.name   : To verify that the input parameter of removeAbilityStageMonitorSync is undefined.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1000
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1000 start');
@@ -268,13 +268,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1100
-     * @tc.name   : To verify that the input parameter of waitAbilityMonitor is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1100
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1100 start');
@@ -293,13 +293,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1200
-     * @tc.name   : To verify that the input parameter of getAbilityState is undefined.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1200
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1200 start');
@@ -315,13 +315,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1300
-     * @tc.name   : To verify that the input parameter of startAbility is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1300
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1300 start');
@@ -343,13 +343,13 @@ export default function openLinkTest() {
     })
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1400
-     * @tc.name   : To verify that the input parameter of startAbility is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1400
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'Ability setTimeout');
@@ -365,13 +365,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1500
-     * @tc.name   : To verify that the input parameter of doAbilityForeground is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1500
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1500 start');
@@ -393,13 +393,13 @@ export default function openLinkTest() {
     })
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1600
-     * @tc.name   : To verify that the input parameter of doAbilityForeground is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1600
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1600 start');
@@ -415,13 +415,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1700
-     * @tc.name   : To verify that the input parameter of doAbilityBackground is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1700
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1700 start');
@@ -442,13 +442,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1800
-     * @tc.name   : To verify that the input parameter of doAbilityBackground is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1800
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1800 start');
@@ -464,13 +464,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_1900
-     * @tc.name   : To verify that the input parameter message of finishTest is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_1900
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_1900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_1900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_1900 start');
@@ -491,13 +491,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2000
-     * @tc.name   : To verify that the input parameter message of finishTest is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2000
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2000 start');
@@ -513,13 +513,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2100
-     * @tc.name   : To verify that the input parameter code of finishTest is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2100
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2100 start');
@@ -540,13 +540,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2200
-     * @tc.name   : To verify that the input parameter code of finishTest is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2200
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2200 start');
@@ -562,13 +562,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2300
-     * @tc.name   : To verify that the input parameter of addAbilityMonitor is null(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2300
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2300 start');
@@ -586,13 +586,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2400
-     * @tc.name   : To verify that the input parameter of addAbilityMonitor is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2400
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2400 start');
@@ -611,13 +611,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2500
-     * @tc.name   : To verify that the input parameter of addAbilityMonitorSync is null.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2500
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2500 start');
@@ -632,13 +632,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2600
-     * @tc.name   : To verify that the input parameter of removeAbilityMonitor is null(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2600
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2600 start');
@@ -655,13 +655,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2700
-     * @tc.name   : To verify that the input parameter of removeAbilityMonitor is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2700
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2700 start');
@@ -680,13 +680,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2800
-     * @tc.name   : To verify that the input parameter of removeAbilityMonitorSync is null.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2800
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2800 start');
@@ -701,13 +701,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_2900
-     * @tc.name   : To verify that the input parameter of addAbilityStageMonitorSync is null.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_2900
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_2900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2900 start');
@@ -722,13 +722,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3000
-     * @tc.name   : To verify that the input parameter of removeAbilityStageMonitor is null(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3000
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3000 start');
@@ -746,13 +746,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3100
-     * @tc.name   : To verify that the input parameter of removeAbilityStageMonitor is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3100
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3100 start');
@@ -771,13 +771,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3200
-     * @tc.name   : To verify that the input parameter of removeAbilityStageMonitorSync is null.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3200
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3200 start');
@@ -792,13 +792,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3300
-     * @tc.name   : To verify that the input parameter monitor of waitAbilityMonitor is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3300
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3300 start');
@@ -817,13 +817,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3500
-     * @tc.name   : To verify that the input parameter of startAbility is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3500
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3500 start');
@@ -844,13 +844,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3600
-     * @tc.name   : To verify that the input parameter of startAbility is null(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3600
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3600 start');
@@ -866,13 +866,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3700
-     * @tc.name   : To verify that the input parameter of doAbilityForeground is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3700
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3700 start');
@@ -893,13 +893,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3800
-     * @tc.name   : To verify that the input parameter of doAbilityForeground is null(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3800
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3800 start');
@@ -915,13 +915,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_3900
-     * @tc.name   : To verify that the input parameter of doAbilityBackground is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_3900
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_3900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_3900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_3900 start');
@@ -942,13 +942,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_4000
-     * @tc.name   : To verify that the input parameter of doAbilityBackground is null(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4000
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_4000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4000 start');
@@ -964,13 +964,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_4100
-     * @tc.name   : To verify that the input parameter message of finishTest is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4100
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_4100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4100 start');
@@ -992,13 +992,13 @@ export default function openLinkTest() {
     })
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_4200
-     * @tc.name   : To verify that the input parameter message of finishTest is null(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4200
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_4200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4200 start');
@@ -1014,13 +1014,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_4300
-     * @tc.name   : To verify that the input parameter code of finishTest is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4300
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_4300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4300 start');
@@ -1041,13 +1041,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_AbilityDelegatorError_4400
-     * @tc.name   : To verify that the input parameter code of finishTest is null(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4400
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_4400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4400 start');

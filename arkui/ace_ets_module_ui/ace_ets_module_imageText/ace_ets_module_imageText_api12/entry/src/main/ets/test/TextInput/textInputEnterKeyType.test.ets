@@ -49,12 +49,12 @@ export default function textInputEnterKeyTypeTest() {
     }) 
 
     /**
-     * @tc.number  textInputEnterKeyType0100
-     * @tc.name    Test the EnterKeyType property of the textinput component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Go
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0  
+     * @tc.name   textInputEnterKeyType0100
+     * @tc.number textInputEnterKeyType0100
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Go
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEnterKeyType0100',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textInputEnterKeyType0100';
@@ -89,12 +89,12 @@ export default function textInputEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  textInputEnterKeyType0200
-     * @tc.name    Test the EnterKeyType property of the textinput component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Search
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0  
+     * @tc.name   textInputEnterKeyType0200
+     * @tc.number textInputEnterKeyType0200
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Search
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEnterKeyType0200',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textInputEnterKeyType0200';
@@ -129,12 +129,12 @@ export default function textInputEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  textInputEnterKeyType0300
-     * @tc.name    Test the EnterKeyType property of the textinput component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Send
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0  
+     * @tc.name   textInputEnterKeyType0300
+     * @tc.number textInputEnterKeyType0300
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Send
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEnterKeyType0300',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textInputEnterKeyType0300';
@@ -169,12 +169,12 @@ export default function textInputEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  textInputEnterKeyType0400
-     * @tc.name    Test the EnterKeyType property of the textinput component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Next
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0  
+     * @tc.name   textInputEnterKeyType0400
+     * @tc.number textInputEnterKeyType0400
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Next
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEnterKeyType0400',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textInputEnterKeyType0400';
@@ -209,12 +209,12 @@ export default function textInputEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  textInputEnterKeyType0500
-     * @tc.name    Test the EnterKeyType property of the textinput component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Done
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0 
+     * @tc.name   textInputEnterKeyType0500
+     * @tc.number textInputEnterKeyType0500
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Done
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEnterKeyType0500',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textInputEnterKeyType0500';

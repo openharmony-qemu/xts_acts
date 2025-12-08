@@ -53,12 +53,14 @@ export default function LinkHight() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0810
-    * @tc.name  : LinkHight_0100
-    * @tc.desc  : To test that the Link decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   LinkHight_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0810
+     * @tc.desc   To test that the Link decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkHight_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LinkHight_0100 START');
       let driver = await Driver.create()
@@ -74,12 +76,14 @@ export default function LinkHight() {
       console.info('[LinkHight_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0820
-    * @tc.name  : LinkHight_0200
-    * @tc.desc  : To test that the Link decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   LinkHight_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0820
+     * @tc.desc   To test that the Link decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkHight_0200', Level.LEVEL0, async (done: Function) => {
       console.info('LinkHight_0100 START');
       let driver = await Driver.create()
@@ -95,12 +99,14 @@ export default function LinkHight() {
       console.info('[LinkHight_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0830
-    * @tc.name  : LinkHight_0300
-    * @tc.desc  : To test that the Link decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   LinkHight_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0830
+     * @tc.desc   To test that the Link decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkHight_0300', Level.LEVEL0, async (done: Function) => {
       console.info('LinkHight_0100 START');
       let driver = await Driver.create()

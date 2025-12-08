@@ -25,12 +25,12 @@ export default function errNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_ERR_WARN_0100
-     * @tc.name       : testMuslErrWarn001
-     * @tc.desc       : test warn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslErrWarn001
+     * @tc.number SUB_THIRDPARTY_MUSL_ERR_WARN_0100
+     * @tc.desc   test warn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslErrWarn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 13;
@@ -40,12 +40,12 @@ export default function errNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_ERR_WARNX_0100
-     * @tc.name       : testMuslErrWarnx001
-     * @tc.desc       : test warnx
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslErrWarnx001
+     * @tc.number SUB_THIRDPARTY_MUSL_ERR_WARNX_0100
+     * @tc.desc   test warnx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslErrWarnx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 13;

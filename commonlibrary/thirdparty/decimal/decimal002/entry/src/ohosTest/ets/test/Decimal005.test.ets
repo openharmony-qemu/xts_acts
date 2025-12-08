@@ -30,12 +30,12 @@ export default function DecimalTest005() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_random_Func_001
-     * @tc.desc      : Test random
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_random_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test random
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_random_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         let maxDigits = 100;
@@ -53,12 +53,12 @@ export default function DecimalTest005() {
         }
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_random_Func_002
-     * @tc.desc      : Test random
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_random_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test random
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_random_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         let maxDigits = 100;

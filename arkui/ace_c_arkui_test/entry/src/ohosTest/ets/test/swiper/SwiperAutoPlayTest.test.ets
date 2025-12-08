@@ -26,39 +26,39 @@ export default function swiperAutoPlayTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_AUTOPLAY_0100
-     * @tc.name       : testSwiperAutoPlay001
-     * @tc.desc       : testing autoPlay for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperAutoPlay001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_AUTOPLAY_0100
+     * @tc.desc   testing autoPlay for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAutoPlay001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAutoPlay001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_AUTOPLAY_0200
-     * @tc.name       : testSwiperAutoPlay002
-     * @tc.desc       : testing autoPlay for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperAutoPlay002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_AUTOPLAY_0200
+     * @tc.desc   testing autoPlay for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAutoPlay002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAutoPlay002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_AUTOPLAY_0300
-     * @tc.name       : testSwiperAutoPlay003
-     * @tc.desc       : testing autoPlay for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperAutoPlay003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_AUTOPLAY_0300
+     * @tc.desc   testing autoPlay for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAutoPlay003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAutoPlay003()).assertEqual(0)

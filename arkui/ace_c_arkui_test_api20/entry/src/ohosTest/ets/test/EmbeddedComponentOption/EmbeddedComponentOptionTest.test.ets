@@ -25,13 +25,13 @@ export default function EmbeddedComponentOptionTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_EMBEDDEDCOMPONENTOPTION_0100
-     * @tc.name       : testEmbeddedComponentOption001
-     * @tc.desc       : testing EmbeddedComponentOption
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testEmbeddedComponentOption001
+     * @tc.number SUB_ARKUI_CAPI_EMBEDDEDCOMPONENTOPTION_0100
+     * @tc.desc   testing EmbeddedComponentOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEmbeddedComponentOption001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestEmbeddedComponentOption';

@@ -26,26 +26,26 @@ export default function textInputResponseRegionTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_RESPONSEREGION_0100
-     * @tc.name       : testTextInputResponseRegion001
-     * @tc.desc       : testing responseRegion for TextInput
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputResponseRegion001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_RESPONSEREGION_0100
+     * @tc.desc   testing responseRegion for TextInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputResponseRegion001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputResponseRegion001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_RESPONSEREGION_0200
-     * @tc.name       : testTextInputResponseRegion002
-     * @tc.desc       : testing responseRegion for TextInput with more area value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputResponseRegion002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_RESPONSEREGION_0200
+     * @tc.desc   testing responseRegion for TextInput with more area value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputResponseRegion002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputResponseRegion002()).assertEqual(0)

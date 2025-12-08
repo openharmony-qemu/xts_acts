@@ -56,14 +56,14 @@ export default function webOnDataResubmitted() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONDATARESUBMITTED_0100
-    * @tc.name        : testOnDataResubmitted001
-    * @tc.desc        : test onDataResubmitted callback
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testOnDataResubmitted001
+     * @tc.number SUB_WEB_ONDATARESUBMITTED_0100
+     * @tc.desc   test onDataResubmitted callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnDataResubmitted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnDataResubmitted", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -73,14 +73,14 @@ export default function webOnDataResubmitted() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_DATARESUBMISSIONHANDLER_RESEND_0100
-    * @tc.name        : testDataResubmissionHandlerResend001
-    * @tc.desc        : test dataResubmissionHandler.resend
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDataResubmissionHandlerResend001
+     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_RESEND_0100
+     * @tc.desc   test dataResubmissionHandler.resend
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataResubmissionHandlerResend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDataResubmissionHandlerResend", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -90,14 +90,14 @@ export default function webOnDataResubmitted() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_DATARESUBMISSIONHANDLER_CANCEL_0100
-    * @tc.name        : testDataResubmissionHandlerCancel001
-    * @tc.desc        : test dataResubmissionHandler.cancel
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDataResubmissionHandlerCancel001
+     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_CANCEL_0100
+     * @tc.desc   test dataResubmissionHandler.cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataResubmissionHandlerCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDataResubmissionHandlerCancel", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;

@@ -48,10 +48,12 @@ export default function FocusScopePriority12() {
     });
 
     /**
-     * @tc.number    FocusScopePriority12_0100
-     * @tc.name      FocusScopePriority12_0100
-     * @tc.desc      Test FocusScopePriority
-     * @tc.level     Level 2
+     * @tc.name   FocusScopePriority12_0100
+     * @tc.number FocusScopePriority12_0100
+     * @tc.desc   Test FocusScopePriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FocusScopePriority12_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[FocusScopePriority12_0100] START');

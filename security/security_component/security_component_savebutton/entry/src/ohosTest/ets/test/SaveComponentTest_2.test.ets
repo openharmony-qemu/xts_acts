@@ -46,13 +46,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0100
-     * @tc.name Test_Security_Button_SaveScenarios_0100
-     * @tc.desc Test SecurityComponent width attribute value is Normal and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent width attribute value is Normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveScenarios_0100] START====');
@@ -181,13 +180,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0200
-     * @tc.name Test_Security_Button_SaveScenarios_0200
-     * @tc.desc Test SecurityComponent height attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent height attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[TTest_Security_Button_SaveScenarios_0200] START====');
@@ -289,13 +287,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0300
-     * @tc.name Test_Security_Button_SaveScenarios_0300
-     * @tc.desc Test SecurityComponent size.width attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent size.width attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveScenarios_0300] START====');
@@ -400,13 +397,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0400
-     * @tc.name Test_Security_Button_SaveScenarios_0400
-     * @tc.desc Test SecurityComponent size.height attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent size.height attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveScenarios_0400] START====');
@@ -511,13 +507,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0500
-     * @tc.name Test_Security_Button_SaveScenarios_0500
-     * @tc.desc Test SecurityComponent constraintSize.minWidth attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent constraintSize.minWidth attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveScenarios_0500] START====');
@@ -622,13 +617,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0600
-     * @tc.name Test_Security_Button_SaveScenarios_0600
-     * @tc.desc Test SecurityComponent constraintSize.maxWidth attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent constraintSize.maxWidth attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveScenarios_0600] START====');
@@ -733,13 +727,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0700
-     * @tc.name Test_Security_Button_SaveScenarios_0700
-     * @tc.desc Test SecurityComponent constraintSize.minHeight attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent constraintSize.minHeight attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveScenarios_0700] START====');
@@ -844,13 +837,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0800
-     * @tc.name Test_Security_Button_SaveScenarios_0800
-     * @tc.desc Test SecurityComponent constraintSize.maxHeight attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent constraintSize.maxHeight attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveScenarios_0800] START====');
@@ -955,13 +947,12 @@ export default function saveComponentTest_2() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveScenarios_0900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveScenarios_0900
-     * @tc.name Test_Security_Button_SaveScenarios_0900
-     * @tc.desc Test SecurityComponent iconSize attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconSize attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_SaveScenarios_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveScenarios_0900] START====');

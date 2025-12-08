@@ -39,14 +39,14 @@ export default function dataNoPTest() {
     describe("DataNoPTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        /*
-          * @tc.number:SUB_telephony_data_nop0100
-          * @tc.name: testTelephonyDataNop_static_0100
-          * @tc.desc:Using the isCellularDataEnabled (callback) method without permission
-          * @tc.level:Level 0
-          * @tc.type:Function
-          * @tc.size:MediumTest
-          */
+        /**
+         * @tc.name   testTelephonyDataNop_static_0100
+         * @tc.number SUB_telephony_data_nop0100
+         * @tc.desc   Using the isCellularDataEnabled (callback) method without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("testTelephonyDataNop_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataNop_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -71,13 +71,13 @@ export default function dataNoPTest() {
             }
         })
 
-        /*
-         * @tc.number:SUB_telephony_data_nop002
-         * @tc.name: testTelephonyDataNop_static_0200
-         * @tc.desc:Using the isCellularDataEnabled (callback) method without permission
-         * @tc.level:Level 0
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   testTelephonyDataNop_static_0200
+         * @tc.number SUB_telephony_data_nop002
+         * @tc.desc   Using the isCellularDataEnabled (callback) method without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testTelephonyDataNop_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataNop_static_0200';

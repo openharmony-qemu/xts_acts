@@ -43,12 +43,12 @@ export default function barMarginList() {
     });
 
     /**
-     * @tc.number    barMarginList_001
-     * @tc.name      barMarginList_0100
-     * @tc.desc      Set the margins for the scrollbar of the List component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   barMarginList_0100
+     * @tc.number barMarginList_001
+     * @tc.desc   Set the margins for the scrollbar of the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('barMarginList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[barMarginList_0100] START');

@@ -23,14 +23,12 @@ export default function fileIORename() {
 describe('fileIO_fs_rename', function () {
 
   /**
+   * @tc.name   fileIO_test_rename_sync_000
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0000
-   * @tc.name fileIO_test_rename_sync_000
-   * @tc.desc Test renameSync() interfaces.
-   * Rename the file by path, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test renameSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_rename_sync_000');
@@ -48,14 +46,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_sync_001
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0100
-   * @tc.name fileIO_test_rename_sync_001
-   * @tc.desc Test renameSync() interfaces.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test renameSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_rename_sync_001');
@@ -70,14 +66,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_sync_002
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0200
-   * @tc.name fileIO_test_rename_sync_002
-   * @tc.desc Test renameSync() interfaces.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test renameSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_rename_sync_002');
@@ -94,14 +88,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_sync_003
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0300
-   * @tc.name fileIO_test_rename_sync_003
-   * @tc.desc Test renameSync() interfaces.
-   * Illegal second parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test renameSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_rename_sync_003');
@@ -118,14 +110,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_sync_004
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0400
-   * @tc.name fileIO_test_rename_sync_004
-   * @tc.desc Test renameSync() interfaces.
-   * Illegal second parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test renameSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_004', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_rename_sync_004');
@@ -142,14 +132,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_sync_005
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0500
-   * @tc.name fileIO_test_rename_sync_005
-   * @tc.desc Test renameSync() interfaces.
-   * Modify file names across directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test renameSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_005', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_rename_sync_005');
@@ -169,14 +157,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_sync_006
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0600
-   * @tc.name fileIO_test_rename_sync_006
-   * @tc.desc Test renameSync() interfaces.
-   * The length of file name is too long.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test renameSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_006', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_rename_sync_006');
@@ -194,14 +180,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_sync_007
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0700
-   * @tc.name fileIO_test_rename_sync_007
-   * @tc.desc Test rename() interfaces.
-   * Don't have permission to operate on the root directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_007', Level.LEVEL0, async function () {
 
@@ -215,14 +199,12 @@ describe('fileIO_fs_rename', function () {
   });
   
   /**
+   * @tc.name   fileIO_test_rename_sync_008
    * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0800
-   * @tc.name fileIO_test_rename_sync_008
-   * @tc.desc Test rename() interfaces.
-   * Can't modify file names across devices.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_sync_008', Level.LEVEL0, async function () {
     let dstDir = await featureAbility.getContext().getOrCreateDistributedDir();
@@ -240,14 +222,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_000
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0000
-   * @tc.name fileIO_test_rename_async_000
-   * @tc.desc Test rename() interfaces. Promise.
-   * Rename the file by path, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_000');
@@ -266,14 +246,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_001
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0100
-   * @tc.name fileIO_test_rename_async_001
-   * @tc.desc Test rename() interfaces. Callback.
-   * Rename the file by path, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_001');
@@ -297,14 +275,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_002
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0200
-   * @tc.name fileIO_test_rename_async_002
-   * @tc.desc Test rename() interfaces. Promise.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_002');
@@ -320,14 +296,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_003
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0300
-   * @tc.name fileIO_test_rename_async_003
-   * @tc.desc Test rename() interfaces. Callback.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_003');
@@ -347,14 +321,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_004
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0400
-   * @tc.name fileIO_test_rename_async_004
-   * @tc.desc Test rename() interfaces. Promise.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_004');
@@ -372,14 +344,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_005
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0500
-   * @tc.name fileIO_test_rename_async_005
-   * @tc.desc Test rename() interfaces. Promise.
-   * Illegal second parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_005', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_005');
@@ -397,14 +367,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_006
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0600
-   * @tc.name fileIO_test_rename_async_006
-   * @tc.desc Test rename() interfaces. Promise.
-   * Illegal second parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_006');
@@ -422,14 +390,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_007
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0700
-   * @tc.name fileIO_test_rename_async_007
-   * @tc.desc Test rename() interfaces. Promise.
-   * Modify file names across directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_007', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_rename_async_007');
@@ -450,14 +416,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_008
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0800
-   * @tc.name fileIO_test_rename_async_008
-   * @tc.desc Test rename() interfaces. Callback.
-   * Modify file names across directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_008', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_rename_async_008');
@@ -483,14 +447,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_009
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0900
-   * @tc.name fileIO_test_rename_async_009
-   * @tc.desc Test rename() interfaces. Promise
-   * The length of file name is too long.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Promise
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_009', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_009');
@@ -509,14 +471,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_010
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1000
-   * @tc.name fileIO_test_rename_async_010
-   * @tc.desc Test rename() interfaces. Callback
-   * The length of file name is too long.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_010', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_rename_async_010');
@@ -539,14 +499,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_011
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1100
-   * @tc.name fileIO_test_rename_async_011
-   * @tc.desc Test rename() interfaces. Promise.
-   * Don't have permission to operate on the root directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_011', Level.LEVEL0, async function (done) {
 
@@ -561,14 +519,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_012
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1200
-   * @tc.name fileIO_test_rename_async_012
-   * @tc.desc Test rename() interfaces.
-   * Can't modify file names across devices.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_012', Level.LEVEL0, async function (done) {
     let dstDir = await featureAbility.getContext().getOrCreateDistributedDir();
@@ -587,14 +543,12 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rename_async_013
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1300
-   * @tc.name fileIO_test_rename_async_013
-   * @tc.desc Test rename() interfaces.
-   * Can't modify file names across devices.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rename() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rename_async_013', Level.LEVEL0, async function (done) {
     let dstDir = await featureAbility.getContext().getOrCreateDistributedDir();

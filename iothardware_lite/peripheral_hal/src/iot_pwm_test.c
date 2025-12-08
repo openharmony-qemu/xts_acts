@@ -20,12 +20,6 @@
 
 const unsigned int COMPILABILITY_TEST_PWM_PORT = 0xFFFFFFFF;
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is wifiiot
- * @param        : module name is wifiiotlite
- * @param        : test suit name is UtilsFileFuncTestSuite
- */
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotPwmTestSuite);
 
 #ifdef CONFIG_PWM_SUPPORT
@@ -49,9 +43,12 @@ static BOOL IotPwmTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_4000
- * @tc.name      : PWM operation with IoTPwmInit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotPwm001
+ * @tc.number SUB_UTILS_WIFIIOT_API_4000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotPwmTestSuite, testIotPwm001, Function | MediumTest | Level1)
 {
@@ -60,9 +57,12 @@ LITE_TEST_CASE(IotPwmTestSuite, testIotPwm001, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_4100
- * @tc.name      : PWM operation with IoTPwmStart
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotPwm002
+ * @tc.number SUB_UTILS_WIFIIOT_API_4100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotPwmTestSuite, testIotPwm002, Function | MediumTest | Level1)
 {
@@ -74,9 +74,12 @@ LITE_TEST_CASE(IotPwmTestSuite, testIotPwm002, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_4200
- * @tc.name      : PWM operation with IoTPwmStop
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotPwm003
+ * @tc.number SUB_UTILS_WIFIIOT_API_4200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotPwmTestSuite, testIotPwm003, Function | MediumTest | Level1)
 {
@@ -85,9 +88,12 @@ LITE_TEST_CASE(IotPwmTestSuite, testIotPwm003, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_4300
- * @tc.name      : PWM operation with IoTPwmDeinit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotPwm004
+ * @tc.number SUB_UTILS_WIFIIOT_API_4300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotPwmTestSuite, testIotPwm004, Function | MediumTest | Level1)
 {

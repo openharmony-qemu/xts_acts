@@ -48,7 +48,6 @@ export default function DataObjectPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DataObject_setSessionId_Callback_PermissionTest_0100
      * @tc.number SUB_DataObject_setSessionId_Callback_PermissionTest_0100
      * @tc.desc   Test DataObject setSessionId Callback
@@ -72,7 +71,6 @@ export default function DataObjectPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DataObject_setSessionId_Promise_PermissionTest_0100
      * @tc.number SUB_DataObject_setSessionId_Promise_PermissionTest_0100
      * @tc.desc   Test DataObject setSessionId Promise

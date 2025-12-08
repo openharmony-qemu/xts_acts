@@ -25,10 +25,13 @@ export default function ErrcodeTest() {
   describe('ErrcodeTest', () => {
 
     /**
-     * @tc.number  Sub_Bms_getLaunchWant_static_17700072
-     * @tc.name    getLaunchWant_static_17700072
-     * @tc.desc    test errCode 17700072 when call getLaunchWant
-    */
+     * @tc.name   getLaunchWant_static_17700072
+     * @tc.number Sub_Bms_getLaunchWant_static_17700072
+     * @tc.desc   test errCode 17700072 when call getLaunchWant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getLaunchWant_static_17700072', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "getLaunchWant_static_17700072 start");
       try {

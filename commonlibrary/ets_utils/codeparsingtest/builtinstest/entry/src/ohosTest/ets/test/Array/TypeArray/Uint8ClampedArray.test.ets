@@ -54,12 +54,12 @@ export default function Uint8ClampedArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0100
-     * @tc.name       : testUint8ClampedArrayConstructor0001
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray without param.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray without param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0001";
@@ -73,12 +73,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0200
-     * @tc.name       : testUint8ClampedArrayConstructor0002
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with length 0,and set index 0 with 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with length 0,and set index 0 with 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0002";
@@ -93,12 +93,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0300
-     * @tc.name       : testUint8ClampedArrayConstructor0003
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with length 10,and set index 0 with 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with length 10,and set index 0 with 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0003";
@@ -113,12 +113,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0400
-     * @tc.name       : testUint8ClampedArrayConstructor0004
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with length 10,and set index 0 with 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with length 10,and set index 0 with 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0004";
@@ -133,12 +133,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0500
-     * @tc.name       : testUint8ClampedArrayConstructor0005
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with length 10,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with length 10,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0005";
@@ -152,12 +152,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0600
-     * @tc.name       : testUint8ClampedArrayConstructor0006
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with 'q',and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with 'q',and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0006";
@@ -171,12 +171,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0700
-     * @tc.name       : testUint8ClampedArrayConstructor0007
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with '56',and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with '56',and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0007";
@@ -191,12 +191,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0800
-     * @tc.name       : testUint8ClampedArrayConstructor0008
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with array[21,31],and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with array[21,31],and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0008";
@@ -210,12 +210,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0900
-     * @tc.name       : testUint8ClampedArrayConstructor0009
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with array[21,31],and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_0900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with array[21,31],and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0009";
@@ -229,12 +229,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1000
-     * @tc.name       : testUint8ClampedArrayConstructor0010
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with array[21,31],and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with array[21,31],and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0010";
@@ -248,12 +248,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1100
-     * @tc.name       : testUint8ClampedArrayConstructor0011
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with array[21,31],and set value of index 10,get value of index 10.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with array[21,31],and set value of index 10,get value of index 10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0011";
@@ -268,12 +268,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1200
-     * @tc.name       : testUint8ClampedArrayConstructor0012
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray which construct by array [21,31],and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray which construct by array [21,31],and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0012";
@@ -287,12 +287,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1300
-     * @tc.name       : testUint8ClampedArrayConstructor0013
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray which construct by array [21,31],and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray which construct by array [21,31],and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0013";
@@ -306,12 +306,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1400
-     * @tc.name       : testUint8ClampedArrayConstructor0014
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray which construct by array [21,31],and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUint8ClampedArrayConstructor0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray which construct by array [21,31],and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint8ClampedArrayConstructor0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testUint8ClampedArrayConstructor0014";
@@ -325,12 +325,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1500
-     * @tc.name       : testUint8ClampedArrayConstructor0015
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray which construct by array [21,31],and set value of index 10,and get value of index 10.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray which construct by array [21,31],and set value of index 10,and get value of index 10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0015";
@@ -345,12 +345,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1600
-     * @tc.name       : testUint8ClampedArrayConstructor0016
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0016";
@@ -364,12 +364,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1700
-     * @tc.name       : testUint8ClampedArrayConstructor0017
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Array,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Array,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0017";
@@ -383,12 +383,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1800
-     * @tc.name       : testUint8ClampedArrayConstructor0018
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Array,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Array,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0018";
@@ -402,12 +402,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1900
-     * @tc.name       : testUint8ClampedArrayConstructor0019
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with ArrayBuffer,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_1900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with ArrayBuffer,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0019";
@@ -422,12 +422,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2000
-     * @tc.name       : testUint8ClampedArrayConstructor0020
-     * @tc.desc       : Testing Constructor of Int8Array with Uint8Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2000
+     * @tc.desc   Testing Constructor of Int8Array with Uint8Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0020";
@@ -441,12 +441,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2100
-     * @tc.name       : testUint8ClampedArrayConstructor0021
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int8Array,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int8Array,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0021";
@@ -460,12 +460,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2200
-     * @tc.name       : testUint8ClampedArrayConstructor0022
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int8Array,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int8Array,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0022";
@@ -479,12 +479,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2300
-     * @tc.name       : testUint8ClampedArrayConstructor0023
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int8Array,Set array[10] element and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int8Array,Set array[10] element and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0023";
@@ -499,12 +499,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2400
-     * @tc.name       : testUint8ClampedArrayConstructor0024
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0024";
@@ -518,12 +518,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2500
-     * @tc.name       : testUint8ClampedArrayConstructor0025
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0025";
@@ -537,12 +537,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2600
-     * @tc.name       : testUint8ClampedArrayConstructor0026
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0026";
@@ -556,12 +556,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2700
-     * @tc.name       : testUint8ClampedArrayConstructor0027
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array,Set array[10] element and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array,Set array[10] element and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0027";
@@ -576,12 +576,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2800
-     * @tc.name       : testUint8ClampedArrayConstructor0028
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0028";
@@ -595,12 +595,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2900
-     * @tc.name       : testUint8ClampedArrayConstructor0029
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_2900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0029";
@@ -614,12 +614,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3000
-     * @tc.name       : testUint8ClampedArrayConstructor0030
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0030";
@@ -633,13 +633,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3100
-     * @tc.name       : testUint8ClampedArrayConstructor0031
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray,
-     * Set array[10] element and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0031";
@@ -654,12 +653,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3200
-     * @tc.name       : testUint8ClampedArrayConstructor0032
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0032";
@@ -673,12 +672,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3300
-     * @tc.name       : testUint8ClampedArrayConstructor0033
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0033";
@@ -692,12 +691,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3400
-     * @tc.name       : testUint8ClampedArrayConstructor0034
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0034";
@@ -711,13 +710,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3500
-     * @tc.name       : testUint8ClampedArrayConstructor0035
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array,
-     * Set array[10] element and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0035";
@@ -732,12 +730,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3600
-     * @tc.name       : testUint8ClampedArrayConstructor0036
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0036";
@@ -751,12 +749,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3700
-     * @tc.name       : testUint8ClampedArrayConstructor0037
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0037";
@@ -770,12 +768,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3800
-     * @tc.name       : testUint8ClampedArrayConstructor0038
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0038";
@@ -789,13 +787,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3900
-     * @tc.name       : testUint8ClampedArrayConstructor0039
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array,
-     * Set array[10] element and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_3900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0039";
@@ -810,12 +807,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4000
-     * @tc.name       : testUint8ClampedArrayConstructor0040
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0040";
@@ -829,12 +826,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4100
-     * @tc.name       : testUint8ClampedArrayConstructor0041
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0041";
@@ -848,12 +845,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4200
-     * @tc.name       : testUint8ClampedArrayConstructor0042
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0042";
@@ -867,13 +864,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4300
-     * @tc.name       : testUint8ClampedArrayConstructor0043
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array,
-     * Set array[10] element and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0043";
@@ -888,12 +884,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4400
-     * @tc.name       : testUint8ClampedArrayConstructor0044
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0044";
@@ -907,12 +903,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4500
-     * @tc.name       : testUint8ClampedArrayConstructor0045
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0045";
@@ -926,12 +922,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4600
-     * @tc.name       : testUint8ClampedArrayConstructor0046
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0046";
@@ -945,13 +941,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4700
-     * @tc.name       : testUint8ClampedArrayConstructor0047
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array,
-     * Set array[10] element and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0047";
@@ -966,12 +961,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4800
-     * @tc.name       : testUint8ClampedArrayConstructor0048
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigInt64Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigInt64Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0048";
@@ -997,12 +992,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4900
-     * @tc.name       : testUint8ClampedArrayConstructor0049
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigInt64Array,and get value is error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_4900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigInt64Array,and get value is error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0049";
@@ -1018,12 +1013,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5000
-     * @tc.name       : testUint8ClampedArrayConstructor0050
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigUint64Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigUint64Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0050";
@@ -1049,12 +1044,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5100
-     * @tc.name       : testUint8ClampedArrayConstructor0051
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigUint64Array, get value error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigUint64Array, get value error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0051";
@@ -1069,12 +1064,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5200
-     * @tc.name       : testUint8ClampedArrayConstructor0052
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0052";
@@ -1088,12 +1083,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5300
-     * @tc.name       : testUint8ClampedArrayConstructor0053
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0053";
@@ -1107,12 +1102,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5400
-     * @tc.name       : testUint8ClampedArrayConstructor0054
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0054";
@@ -1126,13 +1121,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5500
-     * @tc.name       : testUint8ClampedArrayConstructor0055
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array,
-     * Set array[10] element and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0055";
@@ -1147,12 +1141,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5600
-     * @tc.name       : testUint8ClampedArrayConstructor0056
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with ArrayBuffer,and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with ArrayBuffer,and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0056";
@@ -1169,12 +1163,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5700
-     * @tc.name       : testUint8ClampedArrayConstructor0057
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with ArrayBuffer,and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with ArrayBuffer,and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0057";
@@ -1191,12 +1185,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5800
-     * @tc.name       : testUint8ClampedArrayConstructor0058
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with ArrayBuffer,and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with ArrayBuffer,and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0058";
@@ -1213,12 +1207,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5900
-     * @tc.name       : testUint8ClampedArrayConstructor0059
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with ArrayBuffer,Set array[10] and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_5900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with ArrayBuffer,Set array[10] and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0059";
@@ -1237,12 +1231,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_601400
-     * @tc.name       : testUint8ClampedArrayConstructor0060
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with (ArrayBuffer,0,2),and get value of index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_601400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with (ArrayBuffer,0,2),and get value of index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0060";
@@ -1259,12 +1253,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_6100
-     * @tc.name       : testUint8ClampedArrayConstructor0061
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with (ArrayBuffer,0,2),and get value of index 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_6100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with (ArrayBuffer,0,2),and get value of index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0061";
@@ -1281,12 +1275,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_6200
-     * @tc.name       : testUint8ClampedArrayConstructor0062
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with (ArrayBuffer,0,2),and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_6200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with (ArrayBuffer,0,2),and get value of index 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0062";
@@ -1303,13 +1297,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_6300
-     * @tc.name       : testUint8ClampedArrayConstructor0063
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with (ArrayBuffer,0,2),
-     * Set array[10] and get value of index 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_6300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with (ArrayBuffer,0,2),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0063";
@@ -1327,12 +1320,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_BYTESPERELEMENT_6400
-     * @tc.name       : testUint8ClampedArrayBytesPerElement0064
-     * @tc.desc       : Testing BYTES_PER_ELEMENT of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayBytesPerElement0064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_BYTESPERELEMENT_6400
+     * @tc.desc   Testing BYTES_PER_ELEMENT of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayBytesPerElement0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayBytesPerElement0064";
@@ -1346,12 +1339,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAY_BYTESPERELEMENT_6500
-     * @tc.name       : testUint8ClampedArrayLength0065
-     * @tc.desc       : Testing length of Uint8Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayLength0065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAY_BYTESPERELEMENT_6500
+     * @tc.desc   Testing length of Uint8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayLength0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayLength0065";
@@ -1365,12 +1358,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_6600
-     * @tc.name       : testUint8ClampedArrayFrom0066
-     * @tc.desc       : Testing static function from 'foo' of Int8Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_6600
+     * @tc.desc   Testing static function from 'foo' of Int8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0066";
@@ -1385,12 +1378,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_6700
-     * @tc.name       : testUint8ClampedArrayFrom0067
-     * @tc.desc       : Testing static function from "123" of Int8Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_6700
+     * @tc.desc   Testing static function from "123" of Int8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0067";
@@ -1405,12 +1398,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_6800
-     * @tc.name       : testUint8ClampedArrayFrom0068
-     * @tc.desc       : Testing static function from set() of Int8Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_6800
+     * @tc.desc   Testing static function from set() of Int8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0068";
@@ -1425,12 +1418,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_6900
-     * @tc.name       : testUint8ClampedArrayFrom0069
-     * @tc.desc       : Testing static function from map() of Int8Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_6900
+     * @tc.desc   Testing static function from map() of Int8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0069";
@@ -1445,12 +1438,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_7000
-     * @tc.name       : testUint8ClampedArrayFrom0070
-     * @tc.desc       : Testing static function from of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_7000
+     * @tc.desc   Testing static function from of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0070";
@@ -1466,12 +1459,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7100
-     * @tc.name       : testUint8ClampedArrayOf0071
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7100
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0071";
@@ -1485,12 +1478,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7200
-     * @tc.name       : testUint8ClampedArrayOf0072
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7200
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0072";
@@ -1505,12 +1498,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7300
-     * @tc.name       : testUint8ClampedArrayOf0073
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7300
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0073";
@@ -1525,12 +1518,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7400
-     * @tc.name       : testUint8ClampedArrayOf0074
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7400
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0074";
@@ -1545,12 +1538,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7500
-     * @tc.name       : testUint8ClampedArrayOf0075
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7500
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0075";
@@ -1564,12 +1557,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7600
-     * @tc.name       : testUint8ClampedArrayOf0076
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7600
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0076";
@@ -1583,12 +1576,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7700
-     * @tc.name       : testUint8ClampedArrayOf0077
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7700
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0077";
@@ -1602,12 +1595,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7800
-     * @tc.name       : testUint8ClampedArrayOf0078
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7800
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0078";
@@ -1621,12 +1614,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7900
-     * @tc.name       : testUint8ClampedArrayOf0079
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_7900
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0079";
@@ -1641,12 +1634,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_BYTEOFFSET_8000
-     * @tc.name       : testUint8ClampedArrayByteOffset0080
-     * @tc.desc       : Testing instance property byteOffset of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayByteOffset0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_BYTEOFFSET_8000
+     * @tc.desc   Testing instance property byteOffset of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayByteOffset0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayByteOffset0080";
@@ -1663,12 +1656,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_BYTELENGTH_8100
-     * @tc.name       : testUint8ClampedArrayByteLength0081
-     * @tc.desc       : Testing instance property byteLength of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayByteLength0081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_BYTELENGTH_8100
+     * @tc.desc   Testing instance property byteLength of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayByteLength0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayByteLength0081";
@@ -1685,12 +1678,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_BUFFER_8200
-     * @tc.name       : testUint8ClampedArrayBuffer0082
-     * @tc.desc       : Testing instance property buffer of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayBuffer0082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_BUFFER_8200
+     * @tc.desc   Testing instance property buffer of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayBuffer0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayBuffer0082";
@@ -1707,12 +1700,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_LENGTH_8300
-     * @tc.name       : testUint8ClampedArrayLength0083
-     * @tc.desc       : Testing instance function length of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayLength0083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_LENGTH_8300
+     * @tc.desc   Testing instance function length of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayLength0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayLength0083";
@@ -1729,12 +1722,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8400
-     * @tc.name       : testUint8ClampedArrayConstructor0084
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with string param.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with string param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0084";
@@ -1751,12 +1744,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8500
-     * @tc.name       : testUint8ClampedArrayConstructor0085
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int8Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0085";
@@ -1775,12 +1768,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8600
-     * @tc.name       : testUint8ClampedArrayConstructor0086
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0086";
@@ -1799,12 +1792,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8700
-     * @tc.name       : testUint8ClampedArrayConstructor0087
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0087";
@@ -1823,12 +1816,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8800
-     * @tc.name       : testUint8ClampedArrayConstructor0088
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0088";
@@ -1847,12 +1840,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8900
-     * @tc.name       : testUint8ClampedArrayConstructor0089
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_8900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0089";
@@ -1871,12 +1864,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9000
-     * @tc.name       : testUint8ClampedArrayConstructor0090
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0090";
@@ -1895,12 +1888,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9100
-     * @tc.name       : testUint8ClampedArrayConstructor0091
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0091";
@@ -1919,12 +1912,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9200
-     * @tc.name       : testUint8ClampedArrayConstructor0092
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigInt64Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigInt64Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0092";
@@ -1940,12 +1933,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9300
-     * @tc.name       : testUint8ClampedArrayConstructor0093
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigUint64Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigUint64Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0093";
@@ -1961,12 +1954,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9400
-     * @tc.name       : testUint8ClampedArrayConstructor0094
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0094";
@@ -1985,12 +1978,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_length_9500
-     * @tc.name       : testUint8ClampedArrayLength0095
-     * @tc.desc       : Testing instance function length of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayLength0095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_length_9500
+     * @tc.desc   Testing instance function length of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayLength0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayLength0095";
@@ -2004,12 +1997,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_9600
-     * @tc.name       : testUint8ClampedArrayFrom0096
-     * @tc.desc       : Testing static function from of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_9600
+     * @tc.desc   Testing static function from of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0096";
@@ -2024,12 +2017,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9700
-     * @tc.name       : testUint8ClampedArrayConstructor0097
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0097";
@@ -2050,12 +2043,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9800
-     * @tc.name       : testUint8ClampedArrayConstructor0098
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0098";
@@ -2076,12 +2069,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9900
-     * @tc.name       : testUint8ClampedArrayConstructor0099
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with ArrayBuffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_9900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with ArrayBuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0099";
@@ -2102,12 +2095,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_10000
-     * @tc.name       : testUint8ClampedArrayConstructor0100
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with ArrayBuffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_10000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with ArrayBuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0100";
@@ -2128,12 +2121,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10100
-     * @tc.name       : testUint8ClampedArrayFrom0101
-     * @tc.desc       : Testing static function from of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10100
+     * @tc.desc   Testing static function from of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0101";
@@ -2148,12 +2141,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10200
-     * @tc.name       : testUint8ClampedArrayFrom0102
-     * @tc.desc       : Testing static function from of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10200
+     * @tc.desc   Testing static function from of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0102";
@@ -2168,12 +2161,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10300
-     * @tc.name       : testUint8ClampedArrayFrom0103
-     * @tc.desc       : Testing static function from of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10300
+     * @tc.desc   Testing static function from of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0103";
@@ -2190,12 +2183,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_10400
-     * @tc.name       : testUint8ClampedArrayOf0104
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_10400
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0104";
@@ -2208,12 +2201,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_10500
-     * @tc.name       : testUint8ClampedArrayOf0105
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_10500
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0105";
@@ -2226,12 +2219,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_10600
-     * @tc.name       : testUint8ClampedArrayOf0106
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_10600
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0106";
@@ -2244,12 +2237,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_10700
-     * @tc.name       : testUint8ClampedArrayOf0107
-     * @tc.desc       : Testing static function of of Uint8ClampedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_OF_10700
+     * @tc.desc   Testing static function of of Uint8ClampedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0107";
@@ -2263,12 +2256,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10800
-     * @tc.name       : testUint8ClampedArrayFrom0108
-     * @tc.desc       : Testing static function from range length step + 1 => of Uint8Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10800
+     * @tc.desc   Testing static function from range length step + 1 => of Uint8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0108";
@@ -2286,12 +2279,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10900
-     * @tc.name       : testUint8ClampedArrayFrom0109
-     * @tc.desc       : Testing static function from range length 'A~Z' => of Uint8Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_FROM_10900
+     * @tc.desc   Testing static function from range length 'A~Z' => of Uint8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0109";
@@ -2308,12 +2301,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11000
-     * @tc.name       : testUint8ClampedArrayConstructor0110
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with threshold value([0]),and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with threshold value([0]),and get value of index 0 is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0110";
@@ -2327,13 +2320,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11100
-     * @tc.name       : testUint8ClampedArrayConstructor0111
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with out of bounds value([-1]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with out of bounds value([-1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0111";
@@ -2347,13 +2339,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11200
-     * @tc.name       : testUint8ClampedArrayConstructor0112
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with threshold value([255]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with threshold value([255]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0112";
@@ -2367,13 +2358,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11300
-     * @tc.name       : testUint8ClampedArrayConstructor0113
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with out of bounds value([256]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with out of bounds value([256]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0113";
@@ -2387,13 +2377,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11400
-     * @tc.name       : testUint8ClampedArrayConstructor0114
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int8Array threshold value([-128]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int8Array threshold value([-128]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0114";
@@ -2407,13 +2396,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11500
-     * @tc.name       : testUint8ClampedArrayConstructor0115
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int8Array out of bounds value([-129]),
-     * and get value of index 0 is 127.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int8Array out of bounds value([-129]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0115";
@@ -2427,13 +2415,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11600
-     * @tc.name       : testUint8ClampedArrayConstructor0116
-     * @tc.desc       : Testing Constructor of Uint8Array with Int8Array threshold value([127]),
-     * and get value of index 0 is 127.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11600
+     * @tc.desc   Testing Constructor of Uint8Array with Int8Array threshold value([127]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0116";
@@ -2447,13 +2434,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11700
-     * @tc.name       : testUint8ClampedArrayConstructor0117
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int8Array value([126]),
-     * and get value of index 0 is 126.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0117
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int8Array value([126]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0117";
@@ -2467,13 +2453,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11800
-     * @tc.name       : testUint8ClampedArrayConstructor0118
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int8Array out of bounds value([128]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int8Array out of bounds value([128]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0118";
@@ -2487,13 +2472,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11900
-     * @tc.name       : testUint8ClampedArrayConstructor0119
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array threshold value([0]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_11900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array threshold value([0]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0119";
@@ -2507,13 +2491,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12000
-     * @tc.name       : testUint8ClampedArrayConstructor0120
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array out of bounds value([-1]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array out of bounds value([-1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0120";
@@ -2527,13 +2510,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12100
-     * @tc.name       : testUint8ClampedArrayConstructor0121
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array threshold value([255]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array threshold value([255]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0121";
@@ -2547,13 +2529,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12200
-     * @tc.name       : testUint8ClampedArrayConstructor0122
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array out of bounds value([256]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array out of bounds value([256]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0122";
@@ -2567,13 +2548,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12300
-     * @tc.name       : testUint8ClampedArrayConstructor0123
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint8Array value([254]),
-     * and get value of index 0 is 254.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint8Array value([254]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0123";
@@ -2587,13 +2567,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12400
-     * @tc.name       : testUint8ClampedArrayConstructor0124
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array threshold value([-32768]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array threshold value([-32768]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0124";
@@ -2607,13 +2586,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12500
-     * @tc.name       : testUint8ClampedArrayConstructor0125
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array out of bounds value([-32769]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array out of bounds value([-32769]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0125";
@@ -2627,13 +2605,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12600
-     * @tc.name       : testUint8ClampedArrayConstructor0126
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array threshold value([32767]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array threshold value([32767]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0126";
@@ -2647,13 +2624,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12700
-     * @tc.name       : testUint8ClampedArrayConstructor0127
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array out of bounds value([32768]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array out of bounds value([32768]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0127";
@@ -2667,13 +2643,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12800
-     * @tc.name       : testUint8ClampedArrayConstructor0128
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int16Array value([32766]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int16Array value([32766]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0128";
@@ -2687,13 +2662,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12900
-     * @tc.name       : testUint8ClampedArrayConstructor0129
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array threshold value([0]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_12900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array threshold value([0]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0129";
@@ -2707,13 +2681,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13000
-     * @tc.name       : testUint8ClampedArrayConstructor0130
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array out of bounds value([-1]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array out of bounds value([-1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0130";
@@ -2727,13 +2700,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13100
-     * @tc.name       : testUint8ClampedArrayConstructor0131
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array threshold value([65535]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array threshold value([65535]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0131";
@@ -2747,13 +2719,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13200
-     * @tc.name       : testUint8ClampedArrayConstructor0132
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array out of bounds value([65536]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array out of bounds value([65536]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0132";
@@ -2767,13 +2738,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13300
-     * @tc.name       : testUint8ClampedArrayConstructor0133
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint16Array value([65534]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint16Array value([65534]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0133";
@@ -2787,13 +2757,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13400
-     * @tc.name       : testUint8ClampedArrayConstructor0134
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array threshold value([-2147483648]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array threshold value([-2147483648]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0134";
@@ -2807,13 +2776,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13500
-     * @tc.name       : testUint8ClampedArrayConstructor0135
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array out of bounds value([-2147483649]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array out of bounds value([-2147483649]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0135";
@@ -2827,13 +2795,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13600
-     * @tc.name       : testUint8ClampedArrayConstructor0136
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array threshold value([2147483647]),
-     * and get value of index 0 is -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array threshold value([2147483647]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0136";
@@ -2847,13 +2814,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13700
-     * @tc.name       : testUint8ClampedArrayConstructor0137
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array out of bounds value([2147483648]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array out of bounds value([2147483648]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0137";
@@ -2867,13 +2833,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13800
-     * @tc.name       : testUint8ClampedArrayConstructor0138
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Int32Array value([2147483646]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Int32Array value([2147483646]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0138";
@@ -2887,13 +2852,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13900
-     * @tc.name       : testUint8ClampedArrayConstructor0139
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array threshold value([0]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_13900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array threshold value([0]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0139";
@@ -2907,13 +2871,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14000
-     * @tc.name       : testUint8ClampedArrayConstructor0140
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array out of bounds value([-1]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array out of bounds value([-1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0140";
@@ -2927,13 +2890,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14100
-     * @tc.name       : testUint8ClampedArrayConstructor0141
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array threshold value([4294967295]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array threshold value([4294967295]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0141";
@@ -2947,13 +2909,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14200
-     * @tc.name       : testUint8ClampedArrayConstructor0142
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array out of bounds value([4294967296]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array out of bounds value([4294967296]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0142";
@@ -2967,13 +2928,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14300
-     * @tc.name       : testUint8ClampedArrayConstructor0143
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Uint32Array value([4294967294]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0143
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Uint32Array value([4294967294]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0143";
@@ -2987,13 +2947,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14400
-     * @tc.name       : testUint8ClampedArrayConstructor0144
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array threshold value([-3.4028235 * 10^38]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0144
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array threshold value([-3.4028235 * 10^38]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0144";
@@ -3008,13 +2967,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14500
-     * @tc.name       : testUint8ClampedArrayConstructor0145
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array out of bounds value([-3.4028235 * 10^38 -1]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0145
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array out of bounds value([-3.4028235 * 10^38 -1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0145";
@@ -3029,13 +2987,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14600
-     * @tc.name       : testUint8ClampedArrayConstructor0146
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array threshold value([3.4028235 x 10^38]),
-     * and get value of index 0 is 4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0146
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array threshold value([3.4028235 x 10^38]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0146";
@@ -3050,13 +3007,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14700
-     * @tc.name       : testUint8ClampedArrayConstructor0147
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float32Array out of bounds value([3.4028235 x 10^38 + 1]),
-     * and get value of index 0 is 5.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0147
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float32Array out of bounds value([3.4028235 x 10^38 + 1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0147";
@@ -3071,13 +3027,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14800
-     * @tc.name       : testUint8ClampedArrayConstructor0148
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float64Array threshold value([-1.8e308]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0148
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float64Array threshold value([-1.8e308]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0148";
@@ -3092,13 +3047,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14900
-     * @tc.name       : testUint8ClampedArrayConstructor0149
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float64Array out of bounds value([-1.8e308 -1]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0149
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_14900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float64Array out of bounds value([-1.8e308 -1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0149";
@@ -3113,13 +3067,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15000
-     * @tc.name       : testUint8ClampedArrayConstructor0150
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float64Array threshold value([1.8e308]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15000
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float64Array threshold value([1.8e308]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0150";
@@ -3134,13 +3087,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15100
-     * @tc.name       : testUint8ClampedArrayConstructor0151
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with Float64Array out of bounds value([1.8e308 + 1]),
-     * and get value of index 0 is 255.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0151
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15100
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with Float64Array out of bounds value([1.8e308 + 1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0151";
@@ -3155,13 +3107,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15200
-     * @tc.name       : testUint8ClampedArrayConstructor0152
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigInt64Array threshold value([-(2^63)]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0152
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15200
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigInt64Array threshold value([-(2^63)]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0152";
@@ -3190,13 +3141,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15300
-     * @tc.name       : testUint8ClampedArrayConstructor0153
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigInt64Array out of bounds value([-(2^63) -1]),
-     * and get value of index 0 is 9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0153
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15300
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigInt64Array out of bounds value([-(2^63) -1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0153";
@@ -3225,13 +3175,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15400
-     * @tc.name       : testUint8ClampedArrayConstructor0154
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigInt64Array threshold value([2^63 - 1]),
-     * and get value of index 0 is error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0154
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15400
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigInt64Array threshold value([2^63 - 1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0154";
@@ -3260,13 +3209,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15500
-     * @tc.name       : testUint8ClampedArrayConstructor0155
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigInt64Array out of bounds value([2^63]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0155
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15500
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigInt64Array out of bounds value([2^63]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0155";
@@ -3295,13 +3243,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15600
-     * @tc.name       : testUint8ClampedArrayConstructor0156
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigUint64Array threshold value([0]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0156
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15600
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigUint64Array threshold value([0]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0156";
@@ -3327,13 +3274,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15700
-     * @tc.name       : testUint8ClampedArrayConstructor0157
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigUint64Array out of bounds value([-1]),
-     * and get value of index 0 is 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0157
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15700
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigUint64Array out of bounds value([-1]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0157";
@@ -3361,13 +3307,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15800
-     * @tc.name       : testUint8ClampedArrayConstructor0158
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigUint64Array threshold value([2^64-1n]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0158
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15800
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigUint64Array threshold value([2^64-1n]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0158";
@@ -3395,13 +3340,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15900
-     * @tc.name       : testUint8ClampedArrayConstructor0159
-     * @tc.desc       : Testing Constructor of Uint8ClampedArray with BigUint64Array out of bounds value([2^64n]),
-     * and get value of index 0 is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayConstructor0159
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_15900
+     * @tc.desc   Testing Constructor of Uint8ClampedArray with BigUint64Array out of bounds value([2^64n]),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayConstructor0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayConstructor0159";
@@ -3429,12 +3373,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16000
-     * @tc.name       : testUint8ClampedArrayOf0160
-     * @tc.desc       : Testing static function of, of Uint8ClampedArray value is positive infinity(+infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16000
+     * @tc.desc   Testing static function of, of Uint8ClampedArray value is positive infinity(+infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0160";
@@ -3450,12 +3394,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16100
-     * @tc.name       : testUint8ClampedArrayOf0161
-     * @tc.desc       : Testing static function of, of Uint8ClampedArray value is negative infinity(-infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0161
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16100
+     * @tc.desc   Testing static function of, of Uint8ClampedArray value is negative infinity(-infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0161";
@@ -3471,12 +3415,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16200
-     * @tc.name       : testUint8ClampedArrayOf0162
-     * @tc.desc       : Testing static function of, of Uint8ClampedArray value is (NaN).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0162
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16200
+     * @tc.desc   Testing static function of, of Uint8ClampedArray value is (NaN).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0162";
@@ -3492,12 +3436,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16300
-     * @tc.name       : testUint8ClampedArrayOf0163
-     * @tc.desc       : Testing static function of, of Uint8ClampedArray value is bigint(12345678901234567890n).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0163
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16300
+     * @tc.desc   Testing static function of, of Uint8ClampedArray value is bigint(12345678901234567890n).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0163";
@@ -3515,12 +3459,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16400
-     * @tc.name       : testUint8ClampedArrayOf0164
-     * @tc.desc       : Testing static function of, of Uint8ClampedArray threshold value is MAX_NUMBER(255).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0164
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16400
+     * @tc.desc   Testing static function of, of Uint8ClampedArray threshold value is MAX_NUMBER(255).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0164";
@@ -3534,12 +3478,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16500
-     * @tc.name       : testUint8ClampedArrayOf0165
-     * @tc.desc       : Testing static function of, of Uint8ClampedArray threshold value is MIN_NUMBER(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0165
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16500
+     * @tc.desc   Testing static function of, of Uint8ClampedArray threshold value is MIN_NUMBER(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0165";
@@ -3553,12 +3497,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16600
-     * @tc.name       : testUint8ClampedArrayOf0166
-     * @tc.desc       : Testing static function of, Uint8ClampedArray value is out of bounds (-1).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0166
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16600
+     * @tc.desc   Testing static function of, Uint8ClampedArray value is out of bounds (-1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0166";
@@ -3572,12 +3516,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16700
-     * @tc.name       : testUint8ClampedArrayOf0167
-     * @tc.desc       : Testing static function of, Uint8ClampedArray value is out of bounds (256).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0167
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16700
+     * @tc.desc   Testing static function of, Uint8ClampedArray value is out of bounds (256).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0167";
@@ -3591,12 +3535,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16800
-     * @tc.name       : testUint8ClampedArrayOf0168
-     * @tc.desc       : Testing static function of, Uint8ClampedArray value is normal (254).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0168
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16800
+     * @tc.desc   Testing static function of, Uint8ClampedArray value is normal (254).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0168";
@@ -3610,12 +3554,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16900
-     * @tc.name       : testUint8ClampedArrayOf0169
-     * @tc.desc       : Testing static function of, Uint8ClampedArray value is normal (null).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayOf0169
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYOF_16900
+     * @tc.desc   Testing static function of, Uint8ClampedArray value is normal (null).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayOf0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayOf0169";
@@ -3628,12 +3572,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17000
-     * @tc.name       : testUint8ClampedArrayFrom0170
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (+infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17000
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (+infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0170";
@@ -3649,12 +3593,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17100
-     * @tc.name       : testUint8ClampedArrayFrom0171
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (-infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0171
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17100
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (-infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0171";
@@ -3670,12 +3614,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17200
-     * @tc.name       : testUint8ClampedArrayFrom0172
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (NaN).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0172
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17200
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (NaN).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0172";
@@ -3691,12 +3635,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17300
-     * @tc.name       : testUint8ClampedArrayFrom0173
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal ([1,2,3]).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0173
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17300
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal ([1,2,3]).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0173";
@@ -3712,12 +3656,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17400
-     * @tc.name       : testUint8ClampedArrayFrom0174
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal ([1.1,2.83]).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0174
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17400
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal ([1.1,2.83]).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0174";
@@ -3733,12 +3677,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17500
-     * @tc.name       : testUint8ClampedArrayFrom0175
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal ([12345678901234567890n]).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0175
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17500
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal ([12345678901234567890n]).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0175";
@@ -3755,12 +3699,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17600
-     * @tc.name       : testUint8ClampedArrayFrom0176
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (obj).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0176
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17600
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (obj).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0176";
@@ -3776,12 +3720,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17700
-     * @tc.name       : testUint8ClampedArrayFrom0177
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (obj).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0177
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17700
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (obj).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0177";
@@ -3797,12 +3741,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17800
-     * @tc.name       : testUint8ClampedArrayFrom0178
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (obj).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0178
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17800
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (obj).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0178";
@@ -3816,12 +3760,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17900
-     * @tc.name       : testUint8ClampedArrayFrom0179
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (Sequence).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0179
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_17900
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (Sequence).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0179";
@@ -3836,12 +3780,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18000
-     * @tc.name       : testUint8ClampedArrayFrom0180
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (Sequence).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18000
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (Sequence).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0180";
@@ -3854,12 +3798,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18100
-     * @tc.name       : testUint8ClampedArrayFrom0181
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (Sequence).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0181
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18100
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (Sequence).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0181";
@@ -3873,12 +3817,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18200
-     * @tc.name       : testUint8ClampedArrayFrom0182
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (Non-array-like objects).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0182
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18200
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (Non-array-like objects).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0182";
@@ -3892,12 +3836,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18300
-     * @tc.name       : testUint8ClampedArrayFrom0183
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (Non-iterable objects).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0183
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18300
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (Non-iterable objects).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0183";
@@ -3912,12 +3856,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18400
-     * @tc.name       : testUint8ClampedArrayFrom0184
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (sequence).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0184
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18400
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (sequence).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0184";
@@ -3932,12 +3876,12 @@ export default function Uint8ClampedArrayTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18500
-     * @tc.name       : testUint8ClampedArrayFrom0185
-     * @tc.desc       : Testing static function from => func of Uint8ClampedArray, value is normal (sequence).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint8ClampedArrayFrom0185
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPEDARRAYFROM_18500
+     * @tc.desc   Testing static function from => func of Uint8ClampedArray, value is normal (sequence).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUint8ClampedArrayFrom0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUint8ClampedArrayFrom0185";

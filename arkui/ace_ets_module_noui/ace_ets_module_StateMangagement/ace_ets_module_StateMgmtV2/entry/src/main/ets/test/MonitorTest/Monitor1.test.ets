@@ -41,12 +41,12 @@ export default function Monitor1Test() {
       done();
     });
     /**
-     * @tc.number    Monitor1Test_0100
-     * @tc.name      Monitor1Test_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Monitor1Test_0100
+     * @tc.number Monitor1Test_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Monitor1Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Monitor1Test_0100 START');
@@ -63,12 +63,12 @@ export default function Monitor1Test() {
       done();
     });
     /**
-     * @tc.number    Monitor1Test_0200
-     * @tc.name      Monitor1Test_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Monitor1Test_0200
+     * @tc.number Monitor1Test_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Monitor1Test_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Monitor1Test_0200 START');
@@ -85,12 +85,12 @@ export default function Monitor1Test() {
       done();
     });
     /**
-     * @tc.number    Monitor1Test_0300
-     * @tc.name      Monitor1Test_0300
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Monitor1Test_0300
+     * @tc.number Monitor1Test_0300
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Monitor1Test_0300', Level.LEVEL0, async (done: Function) => {
       console.info('Monitor1Test_0300 START');

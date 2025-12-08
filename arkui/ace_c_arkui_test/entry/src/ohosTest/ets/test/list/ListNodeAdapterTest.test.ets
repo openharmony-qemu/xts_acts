@@ -26,39 +26,39 @@ export default function ListNodeAdapterTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_WIDTH_0100
-     * @tc.name       : testListNodeAdapter001
-     * @tc.desc       : testing width for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNodeAdapter001
+     * @tc.number SUB_ARKUI_CAPI_LIST_WIDTH_0100
+     * @tc.desc   testing width for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNodeAdapter001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNodeAdapter001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_WIDTH_0200
-     * @tc.name       : testListNodeAdapter002
-     * @tc.desc       : testing width for list with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNodeAdapter002
+     * @tc.number SUB_ARKUI_CAPI_LIST_WIDTH_0200
+     * @tc.desc   testing width for list with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNodeAdapter002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNodeAdapter002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_WIDTH_0300
-     * @tc.name       : testListNodeAdapter003
-     * @tc.desc       : testing width for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListNodeAdapter003
+     * @tc.number SUB_ARKUI_CAPI_LIST_WIDTH_0300
+     * @tc.desc   testing width for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNodeAdapter003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNodeAdapter003()).assertEqual(0)

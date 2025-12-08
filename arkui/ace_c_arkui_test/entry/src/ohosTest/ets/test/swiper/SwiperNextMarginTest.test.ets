@@ -26,91 +26,91 @@ export default function swiperNextMarginTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0100
-     * @tc.name       : testSwiperNextMargin001
-     * @tc.desc       : testing nextMargin for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperNextMargin001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0100
+     * @tc.desc   testing nextMargin for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperNextMargin001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperNextMargin001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0200
-     * @tc.name       : testSwiperNextMargin002
-     * @tc.desc       : testing nextMargin for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperNextMargin002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0200
+     * @tc.desc   testing nextMargin for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperNextMargin002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperNextMargin002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0300
-     * @tc.name       : testSwiperNextMargin003
-     * @tc.desc       : testing nextMargin for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperNextMargin003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0300
+     * @tc.desc   testing nextMargin for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperNextMargin003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperNextMargin003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0400
-     * @tc.name       : testSwiperNextMargin004
-     * @tc.desc       : testing nextMargin for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperNextMargin004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0400
+     * @tc.desc   testing nextMargin for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperNextMargin004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperNextMargin004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0500
-     * @tc.name       : testSwiperNextMargin005
-     * @tc.desc       : testing nextMargin for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperNextMargin005
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0500
+     * @tc.desc   testing nextMargin for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperNextMargin005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperNextMargin005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0600
-     * @tc.name       : testSwiperNextMargin006
-     * @tc.desc       : testing nextMargin for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperNextMargin006
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0600
+     * @tc.desc   testing nextMargin for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperNextMargin006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperNextMargin006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0700
-     * @tc.name       : testSwiperNextMargin007
-     * @tc.desc       : testing nextMargin for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperNextMargin007
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_NEXT_MARGIN_0700
+     * @tc.desc   testing nextMargin for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperNextMargin007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperNextMargin007()).assertEqual(0)

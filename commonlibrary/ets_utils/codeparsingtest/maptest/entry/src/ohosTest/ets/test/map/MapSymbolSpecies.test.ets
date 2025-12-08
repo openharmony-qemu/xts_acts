@@ -110,36 +110,36 @@ export default function MapSymbolSpeciesTest() {
     })
 
     /**
+     * @tc.name   MapSymbolSpeciesTest001
      * @tc.number MAP_SYMBOLSPECIES_TEST_001
-     * @tc.name MapSymbolSpeciesTest001
-     * @tc.desc Verify that MapSymbolSpecies() is the Map constructor itself
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that MapSymbolSpecies() is the Map constructor itself
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(MapSymbolSpecies()).assertEqual(Map);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest002
      * @tc.number MAP_SYMBOLSPECIES_TEST_002
-     * @tc.name MapSymbolSpeciesTest002
-     * @tc.desc Verify that species property is a function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that species property is a function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(typeof MapSymbolSpecies()).assertEqual('function');
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest003
      * @tc.number MAP_SYMBOLSPECIES_TEST_003
-     * @tc.name MapSymbolSpeciesTest003
-     * @tc.desc Verify that species constructor creates a new Map instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that species constructor creates a new Map instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const Species = MapSymbolSpecies();
@@ -148,12 +148,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest004
      * @tc.number MAP_SYMBOLSPECIES_TEST_004
-     * @tc.name MapSymbolSpeciesTest004
-     * @tc.desc Verify that species constructor accepts iterable parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that species constructor accepts iterable parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let map: ESObject = MapSymbolSpeciesTest004();
@@ -162,12 +162,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest005
      * @tc.number MAP_SYMBOLSPECIES_TEST_005
-     * @tc.name MapSymbolSpeciesTest005
-     * @tc.desc Verify that map methods returning new maps use the species constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that map methods returning new maps use the species constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original = new Map([[1, 'a'], [2, 'b']]);
@@ -178,12 +178,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest007
      * @tc.number MAP_SYMBOLSPECIES_TEST_007
-     * @tc.name MapSymbolSpeciesTest007
-     * @tc.desc Verify that species can be overridden to return a different constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species can be overridden to return a different constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -193,12 +193,12 @@ export default function MapSymbolSpeciesTest() {
 
 
     /**
+     * @tc.name   MapSymbolSpeciesTest009
      * @tc.number MAP_SYMBOLSPECIES_TEST_009
-     * @tc.name MapSymbolSpeciesTest009
-     * @tc.desc Verify that species is not writable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species is not writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const descriptor = MapSymbolSpeciesTest009();
@@ -206,12 +206,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest010
      * @tc.number MAP_SYMBOLSPECIES_TEST_010
-     * @tc.name MapSymbolSpeciesTest010
-     * @tc.desc Verify that species is not enumerable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species is not enumerable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -219,12 +219,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest011
      * @tc.number MAP_SYMBOLSPECIES_TEST_011
-     * @tc.name MapSymbolSpeciesTest011
-     * @tc.desc Verify that species is configurable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species is configurable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const descriptor = MapSymbolSpeciesTest011();
@@ -233,12 +233,12 @@ export default function MapSymbolSpeciesTest() {
 
 
     /**
+     * @tc.name   MapSymbolSpeciesTest012
      * @tc.number MAP_SYMBOLSPECIES_TEST_012
-     * @tc.name MapSymbolSpeciesTest012
-     * @tc.desc Verify that species works with map spread operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with map spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -250,12 +250,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest013
      * @tc.number MAP_SYMBOLSPECIES_TEST_013
-     * @tc.name MapSymbolSpeciesTest013
-     * @tc.desc Verify that species is used in map.from method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species is used in map.from method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     // it('MapSymbolSpeciesTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
     //   let map = MapSymbolSpeciesTest013();
@@ -265,12 +265,12 @@ export default function MapSymbolSpeciesTest() {
     // });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest014
      * @tc.number MAP_SYMBOLSPECIES_TEST_014
-     * @tc.name MapSymbolSpeciesTest014
-     * @tc.desc Verify that species returns correct type for empty map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that species returns correct type for empty map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let map = MapSymbolSpeciesTest014();
@@ -280,12 +280,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest015
      * @tc.number MAP_SYMBOLSPECIES_TEST_015
-     * @tc.name MapSymbolSpeciesTest015
-     * @tc.desc Verify that species handles non-map iterables
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species handles non-map iterables
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: ESObject = MapSymbolSpeciesTest015();
@@ -295,12 +295,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest016
      * @tc.number MAP_SYMBOLSPECIES_TEST_016
-     * @tc.name MapSymbolSpeciesTest016
-     * @tc.desc Verify that species throws error for invalid iterables
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species throws error for invalid iterables
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const errorThrown = MapSymbolSpeciesTest016();
@@ -309,12 +309,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest017
      * @tc.number MAP_SYMBOLSPECIES_TEST_017
-     * @tc.name MapSymbolSpeciesTest017
-     * @tc.desc Verify that species works with nested maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with nested maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const nestedMap = new Map([[1, new Map([['a', 'b']])]]);
@@ -327,12 +327,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest018
      * @tc.number MAP_SYMBOLSPECIES_TEST_018
-     * @tc.name MapSymbolSpeciesTest018
-     * @tc.desc Verify that overriding species with non-constructor throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that overriding species with non-constructor throws error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const errorThrown = MapSymbolSpeciesTest018();
@@ -340,12 +340,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest019
      * @tc.number MAP_SYMBOLSPECIES_TEST_019
-     * @tc.name MapSymbolSpeciesTest019
-     * @tc.desc Verify that species works with map entries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with map entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, 'a'], [2, 'b']]);
@@ -358,12 +358,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest020
      * @tc.number MAP_SYMBOLSPECIES_TEST_020
-     * @tc.name MapSymbolSpeciesTest020
-     * @tc.desc Verify that species works with map keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with map keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -375,12 +375,12 @@ export default function MapSymbolSpeciesTest() {
 
 
     /**
+     * @tc.name   MapSymbolSpeciesTest022
      * @tc.number MAP_SYMBOLSPECIES_TEST_022
-     * @tc.name MapSymbolSpeciesTest022
-     * @tc.desc Verify that species works with null prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with null prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     // it('MapSymbolSpeciesTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, ():void => {
     //   let arr:object = MapSymbolSpeciesTest022();
@@ -388,12 +388,12 @@ export default function MapSymbolSpeciesTest() {
     // });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest023
      * @tc.number MAP_SYMBOLSPECIES_TEST_023
-     * @tc.name MapSymbolSpeciesTest023
-     * @tc.desc Verify that species constructor works with large maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species constructor works with large maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map<number, string>();
@@ -409,12 +409,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest024
      * @tc.number MAP_SYMBOLSPECIES_TEST_024
-     * @tc.name MapSymbolSpeciesTest024
-     * @tc.desc Verify that species handles maps with object keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species handles maps with object keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: object = MapSymbolSpeciesTest024()
@@ -424,12 +424,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest025
      * @tc.number MAP_SYMBOLSPECIES_TEST_025
-     * @tc.name MapSymbolSpeciesTest025
-     * @tc.desc Verify that species maintains map order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species maintains map order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -438,12 +438,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest026
      * @tc.number MAP_SYMBOLSPECIES_TEST_026
-     * @tc.name MapSymbolSpeciesTest026
-     * @tc.desc Verify that species works with map that has Symbol keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with map that has Symbol keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -451,47 +451,47 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest027
      * @tc.number MAP_SYMBOLSPECIES_TEST_027
-     * @tc.name MapSymbolSpeciesTest027
-     * @tc.desc Verify that species can be set to a function returning Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species can be set to a function returning Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       expect(MapSymbolSpeciesTest027()).assertDeepEquals([true, false]);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest028
      * @tc.number MAP_SYMBOLSPECIES_TEST_028
-     * @tc.name MapSymbolSpeciesTest028
-     * @tc.desc Verify that species is inherited by subclasses
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species is inherited by subclasses
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(MapSymbolSpeciesTest028()).assertEqual(true);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest029
      * @tc.number MAP_SYMBOLSPECIES_TEST_029
-     * @tc.name MapSymbolSpeciesTest029
-     * @tc.desc Verify that child classes can override parent species
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that child classes can override parent species
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(MapSymbolSpeciesTest029()).assertEqual(true);
     });
     /**
+     * @tc.name   MapSymbolSpeciesTest030
      * @tc.number MAP_SYMBOLSPECIES_TEST_030
-     * @tc.name MapSymbolSpeciesTest030
-     * @tc.desc Verify that species works with async iterables (should fail)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with async iterables (should fail)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -501,12 +501,12 @@ export default function MapSymbolSpeciesTest() {
 
 
     /**
+     * @tc.name   MapSymbolSpeciesTest031
      * @tc.number MAP_SYMBOLSPECIES_TEST_031
-     * @tc.name MapSymbolSpeciesTest031
-     * @tc.desc Verify that species constructor throws for non-iterable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species constructor throws for non-iterable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -514,12 +514,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest032
      * @tc.number MAP_SYMBOLSPECIES_TEST_032
-     * @tc.name MapSymbolSpeciesTest032
-     * @tc.desc Verify that species works with Map-like objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with Map-like objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let newMap: ESObject = MapSymbolSpeciesTest032()
@@ -529,12 +529,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest033
      * @tc.number MAP_SYMBOLSPECIES_TEST_033
-     * @tc.name MapSymbolSpeciesTest033
-     * @tc.desc Verify that species preserves key uniqueness
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species preserves key uniqueness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, 'a'], [1, 'b'], [2, 'c']]);
@@ -546,12 +546,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest034
      * @tc.number MAP_SYMBOLSPECIES_TEST_034
-     * @tc.name MapSymbolSpeciesTest034
-     * @tc.desc Verify that species works with empty iterable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that species works with empty iterable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 
@@ -561,12 +561,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest035
      * @tc.number MAP_SYMBOLSPECIES_TEST_035
-     * @tc.name MapSymbolSpeciesTest035
-     * @tc.desc Verify that species is used in custom map concat method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species is used in custom map concat method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -577,24 +577,24 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest036
      * @tc.number MAP_SYMBOLSPECIES_TEST_036
-     * @tc.name MapSymbolSpeciesTest036
-     * @tc.desc Verify that species can return a different collection type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species can return a different collection type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       expect(MapSymbolSpeciesTest036()).assertDeepEquals([false, 2, [[1, 'a'], [2, 'b']]]);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest037
      * @tc.number MAP_SYMBOLSPECIES_TEST_037
-     * @tc.name MapSymbolSpeciesTest037
-     * @tc.desc Verify that species works with frozen maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with frozen maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -604,12 +604,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest038
      * @tc.number MAP_SYMBOLSPECIES_TEST_038
-     * @tc.name MapSymbolSpeciesTest038
-     * @tc.desc Verify that species works with sealed maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with sealed maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -619,12 +619,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest039
      * @tc.number MAP_SYMBOLSPECIES_TEST_039
-     * @tc.name MapSymbolSpeciesTest039
-     * @tc.desc Verify that species constructor handles undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species constructor handles undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let newMap: ESObject = MapSymbolSpeciesTest039();
@@ -633,12 +633,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest040
      * @tc.number MAP_SYMBOLSPECIES_TEST_040
-     * @tc.name MapSymbolSpeciesTest040
-     * @tc.desc Verify that species constructor handles null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species constructor handles null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -648,24 +648,24 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest041
      * @tc.number MAP_SYMBOLSPECIES_TEST_041
-     * @tc.name MapSymbolSpeciesTest041
-     * @tc.desc Verify that species is used in map with custom toJSON method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species is used in map with custom toJSON method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       expect(MapSymbolSpeciesTest041()).assertDeepEquals([true, false]);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest042
      * @tc.number MAP_SYMBOLSPECIES_TEST_042
-     * @tc.name MapSymbolSpeciesTest042
-     * @tc.desc Verify that species works with numbers as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that species works with numbers as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original = new Map([[1, 'one'], [2, 'two'], [3, 'three']]);
@@ -678,12 +678,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest043
      * @tc.number MAP_SYMBOLSPECIES_TEST_043
-     * @tc.name MapSymbolSpeciesTest043
-     * @tc.desc Verify that species works with strings as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that species works with strings as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original = new Map([['a', 1], ['b', 2], ['c', 3]]);
@@ -696,12 +696,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest044
      * @tc.number MAP_SYMBOLSPECIES_TEST_044
-     * @tc.name MapSymbolSpeciesTest044
-     * @tc.desc Verify that species works with boolean as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that species works with boolean as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSymbolSpeciesTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original = new Map([[true, 'yes'], [false, 'no']]);
@@ -713,24 +713,24 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest045
      * @tc.number MAP_SYMBOLSPECIES_TEST_045
-     * @tc.name MapSymbolSpeciesTest045
-     * @tc.desc Verify that species works with mixed key types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with mixed key types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(MapSymbolSpeciesTest045()).assertDeepEquals(['number', 2, 'boolean', 'object', 'symbol']);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest046
      * @tc.number MAP_SYMBOLSPECIES_TEST_046
-     * @tc.name MapSymbolSpeciesTest046
-     * @tc.desc Verify that species works with undefined as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with undefined as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, undefined], [2, undefined]]);
@@ -743,12 +743,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest047
      * @tc.number MAP_SYMBOLSPECIES_TEST_047
-     * @tc.name MapSymbolSpeciesTest047
-     * @tc.desc Verify that species works with null as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with null as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, null], [2, null]]);
@@ -761,12 +761,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest048
      * @tc.number MAP_SYMBOLSPECIES_TEST_048
-     * @tc.name MapSymbolSpeciesTest048
-     * @tc.desc Verify that species works with functions as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with functions as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const func1 = () => 'result1';
@@ -780,12 +780,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest049
      * @tc.number MAP_SYMBOLSPECIES_TEST_049
-     * @tc.name MapSymbolSpeciesTest049
-     * @tc.desc Verify that species works with arrays as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with arrays as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, [1, 2, 3]], [2, ['a', 'b', 'c']]]);
@@ -797,12 +797,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest050
      * @tc.number MAP_SYMBOLSPECIES_TEST_050
-     * @tc.name MapSymbolSpeciesTest050
-     * @tc.desc Verify that species works with objects as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -810,12 +810,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest051
      * @tc.number MAP_SYMBOLSPECIES_TEST_051
-     * @tc.name MapSymbolSpeciesTest051
-     * @tc.desc Verify that species is not enumerable in for...in loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species is not enumerable in for...in loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -824,12 +824,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest052
      * @tc.number MAP_SYMBOLSPECIES_TEST_052
-     * @tc.name MapSymbolSpeciesTest052
-     * @tc.desc Verify that species is found with getOwnPropertySymbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species is found with getOwnPropertySymbols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -838,12 +838,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest053
      * @tc.number MAP_SYMBOLSPECIES_TEST_053
-     * @tc.name MapSymbolSpeciesTest053
-     * @tc.desc Verify that species descriptor has correct attributes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species descriptor has correct attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const descriptor = MapSymbolSpeciesTest053();
@@ -856,12 +856,12 @@ export default function MapSymbolSpeciesTest() {
 
 
     /**
+     * @tc.name   MapSymbolSpeciesTest055
      * @tc.number MAP_SYMBOLSPECIES_TEST_055
-     * @tc.name MapSymbolSpeciesTest055
-     * @tc.desc Verify that species cannot be deleted from Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species cannot be deleted from Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -869,12 +869,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest056
      * @tc.number MAP_SYMBOLSPECIES_TEST_056
-     * @tc.name MapSymbolSpeciesTest056
-     * @tc.desc Verify that species works with subclass instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with subclass instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // let a:ESObject =
@@ -882,12 +882,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest057
      * @tc.number MAP_SYMBOLSPECIES_TEST_057
-     * @tc.name MapSymbolSpeciesTest057
-     * @tc.desc Verify that species can be a subclass constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species can be a subclass constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -895,12 +895,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest058
      * @tc.number MAP_SYMBOLSPECIES_TEST_058
-     * @tc.name MapSymbolSpeciesTest058
-     * @tc.desc Verify that species works with multiple inheritance levels
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with multiple inheritance levels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -908,12 +908,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest059
      * @tc.number MAP_SYMBOLSPECIES_TEST_059
-     * @tc.name MapSymbolSpeciesTest059
-     * @tc.desc Verify that species constructor can be called with new
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species constructor can be called with new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const Species = MapSymbolSpeciesTest059();
@@ -926,12 +926,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest060
      * @tc.number MAP_SYMBOLSPECIES_TEST_060
-     * @tc.name MapSymbolSpeciesTest060
-     * @tc.desc Verify that species constructor called without new throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species constructor called without new throws error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -939,12 +939,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest061
      * @tc.number MAP_SYMBOLSPECIES_TEST_061
-     * @tc.name MapSymbolSpeciesTest061
-     * @tc.desc Verify that species works with map values method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with map values method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -956,12 +956,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest062
      * @tc.number MAP_SYMBOLSPECIES_TEST_062
-     * @tc.name MapSymbolSpeciesTest062
-     * @tc.desc Verify that species works with map entries method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with map entries method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, 'a'], [2, 'b']]);
@@ -974,12 +974,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest063
      * @tc.number MAP_SYMBOLSPECIES_TEST_063
-     * @tc.name MapSymbolSpeciesTest063
-     * @tc.desc Verify that species works after map mutations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works after map mutations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, 'a']]);
@@ -995,12 +995,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest064
      * @tc.number MAP_SYMBOLSPECIES_TEST_064
-     * @tc.name MapSymbolSpeciesTest064
-     * @tc.desc Verify that species creates independent copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species creates independent copy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, 'a']]);
@@ -1014,12 +1014,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest065
      * @tc.number MAP_SYMBOLSPECIES_TEST_065
-     * @tc.name MapSymbolSpeciesTest065
-     * @tc.desc Verify that species copy shares object references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species copy shares object references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let newMap: ESObject = MapSymbolSpeciesTest065();
@@ -1027,24 +1027,24 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest066
      * @tc.number MAP_SYMBOLSPECIES_TEST_066
-     * @tc.name MapSymbolSpeciesTest066
-     * @tc.desc Verify that species works with weak references in keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with weak references in keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       expect(MapSymbolSpeciesTest066()).assertDeepEquals([true, true, true]);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest067
      * @tc.number MAP_SYMBOLSPECIES_TEST_067
-     * @tc.name MapSymbolSpeciesTest067
-     * @tc.desc Verify that species works with nested species
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with nested species
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1053,12 +1053,12 @@ export default function MapSymbolSpeciesTest() {
 
 
     /**
+     * @tc.name   MapSymbolSpeciesTest069
      * @tc.number MAP_SYMBOLSPECIES_TEST_069
-     * @tc.name MapSymbolSpeciesTest069
-     * @tc.desc Verify that species works with this in getter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with this in getter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1066,12 +1066,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest070
      * @tc.number MAP_SYMBOLSPECIES_TEST_070
-     * @tc.name MapSymbolSpeciesTest070
-     * @tc.desc Verify that species getter is called each time
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species getter is called each time
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1082,12 +1082,12 @@ export default function MapSymbolSpeciesTest() {
 
 
     /**
+     * @tc.name   MapSymbolSpeciesTest073
      * @tc.number MAP_SYMBOLSPECIES_TEST_073
-     * @tc.name MapSymbolSpeciesTest073
-     * @tc.desc Verify that species works with recursive map structures
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with recursive map structures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let newMap: ESObject = MapSymbolSpeciesTest073();
@@ -1096,12 +1096,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest074
      * @tc.number MAP_SYMBOLSPECIES_TEST_074
-     * @tc.name MapSymbolSpeciesTest074
-     * @tc.desc Verify that species handles maps with non-array entries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species handles maps with non-array entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1111,12 +1111,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest075
      * @tc.number MAP_SYMBOLSPECIES_TEST_075
-     * @tc.name MapSymbolSpeciesTest075
-     * @tc.desc Verify that species handles maps with invalid entry lengths
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species handles maps with invalid entry lengths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1128,12 +1128,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest076
      * @tc.number MAP_SYMBOLSPECIES_TEST_076
-     * @tc.name MapSymbolSpeciesTest076
-     * @tc.desc Verify that species works with maps containing NaN as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with maps containing NaN as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[NaN, 'not a number']]);
@@ -1145,12 +1145,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest077
      * @tc.number MAP_SYMBOLSPECIES_TEST_077
-     * @tc.name MapSymbolSpeciesTest077
-     * @tc.desc Verify that species works with maps containing 0 and -0 as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with maps containing 0 and -0 as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[0, 'zero'], [-0, 'negative zero']]);
@@ -1163,12 +1163,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest078
      * @tc.number MAP_SYMBOLSPECIES_TEST_078
-     * @tc.name MapSymbolSpeciesTest078
-     * @tc.desc Verify that species works with Date objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with Date objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date1 = new Date(2023, 0, 1);
@@ -1183,12 +1183,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest079
      * @tc.number MAP_SYMBOLSPECIES_TEST_079
-     * @tc.name MapSymbolSpeciesTest079
-     * @tc.desc Verify that species works with RegExp objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with RegExp objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const regex1 = /test/;
@@ -1203,12 +1203,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest080
      * @tc.number MAP_SYMBOLSPECIES_TEST_080
-     * @tc.name MapSymbolSpeciesTest080
-     * @tc.desc Verify that species works with Map instances as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with Map instances as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const keyMap1 = new Map([[1, 'a']]);
@@ -1223,24 +1223,24 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest081
      * @tc.number MAP_SYMBOLSPECIES_TEST_081
-     * @tc.name MapSymbolSpeciesTest081
-     * @tc.desc Verify that species works with Promise objects as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with Promise objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       expect(MapSymbolSpeciesTest081()).assertDeepEquals([true, false]);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest082
      * @tc.number MAP_SYMBOLSPECIES_TEST_082
-     * @tc.name MapSymbolSpeciesTest082
-     * @tc.desc Verify that species works with generator functions as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with generator functions as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1248,12 +1248,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest083
      * @tc.number MAP_SYMBOLSPECIES_TEST_083
-     * @tc.name MapSymbolSpeciesTest083
-     * @tc.desc Verify that species works with BigInt as keys and values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with BigInt as keys and values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const bigKey1 = BigInt(12345678901234567890);
@@ -1268,12 +1268,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest084
      * @tc.number MAP_SYMBOLSPECIES_TEST_084
-     * @tc.name MapSymbolSpeciesTest084
-     * @tc.desc Verify that species works with maps containing Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with maps containing Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[Infinity, 'inf'], [-Infinity, 'neg inf']]);
@@ -1285,24 +1285,24 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest085
      * @tc.number MAP_SYMBOLSPECIES_TEST_085
-     * @tc.name MapSymbolSpeciesTest085
-     * @tc.desc Verify that species works with maps in iframes (simulated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with maps in iframes (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       expect(MapSymbolSpeciesTest085()).assertDeepEquals([true, 'iframe value']);
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest087
      * @tc.number MAP_SYMBOLSPECIES_TEST_087
-     * @tc.name MapSymbolSpeciesTest087
-     * @tc.desc Verify that species works with maps that have been modified after creation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with maps that have been modified after creation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original: Map<number, string> = new Map();
@@ -1322,12 +1322,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest088
      * @tc.number MAP_SYMBOLSPECIES_TEST_088
-     * @tc.name MapSymbolSpeciesTest088
-     * @tc.desc Verify that species works with clear() method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with clear() method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([[1, 'a'], [2, 'b']]);
@@ -1340,12 +1340,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest089
      * @tc.number MAP_SYMBOLSPECIES_TEST_089
-     * @tc.name MapSymbolSpeciesTest089
-     * @tc.desc Verify that species works with maps that have custom prototypes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with maps that have custom prototypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1355,12 +1355,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest091
      * @tc.number MAP_SYMBOLSPECIES_TEST_091
-     * @tc.name MapSymbolSpeciesTest091
-     * @tc.desc Verify that species works with maps that override Symbol.iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with maps that override Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1368,12 +1368,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest092
      * @tc.number MAP_SYMBOLSPECIES_TEST_092
-     * @tc.name MapSymbolSpeciesTest092
-     * @tc.desc Verify that species works with maps that override entries()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with maps that override entries()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let newMap: ESObject = MapSymbolSpeciesTest092();
@@ -1383,12 +1383,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest093
      * @tc.number MAP_SYMBOLSPECIES_TEST_093
-     * @tc.name MapSymbolSpeciesTest093
-     * @tc.desc Verify that species works with async map processing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with async map processing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
 
@@ -1398,12 +1398,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest094
      * @tc.number MAP_SYMBOLSPECIES_TEST_094
-     * @tc.name MapSymbolSpeciesTest094
-     * @tc.desc Verify that species works with maps containing other collections
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with maps containing other collections
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -1411,12 +1411,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest095
      * @tc.number MAP_SYMBOLSPECIES_TEST_095
-     * @tc.name MapSymbolSpeciesTest095
-     * @tc.desc Verify that species works with very large keys and values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with very large keys and values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const largeKey = 'a'.repeat(10000);
@@ -1431,12 +1431,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest096
      * @tc.number MAP_SYMBOLSPECIES_TEST_096
-     * @tc.name MapSymbolSpeciesTest096
-     * @tc.desc Verify that species works with maps containing emojis as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with maps containing emojis as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([['😊', 'smile'], ['👍', 'thumbs up'], ['🔥', 'fire']]);
@@ -1449,12 +1449,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest097
      * @tc.number MAP_SYMBOLSPECIES_TEST_097
-     * @tc.name MapSymbolSpeciesTest097
-     * @tc.desc Verify that species works with maps containing Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that species works with maps containing Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSymbolSpeciesTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Map([
@@ -1474,12 +1474,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest098
      * @tc.number MAP_SYMBOLSPECIES_TEST_098
-     * @tc.name MapSymbolSpeciesTest098
-     * @tc.desc Verify that species works with maps that have been frozen after population
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with maps that have been frozen after population
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1493,12 +1493,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest099
      * @tc.number MAP_SYMBOLSPECIES_TEST_099
-     * @tc.name MapSymbolSpeciesTest099
-     * @tc.desc Verify that species works with maps in a module pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with maps in a module pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1506,12 +1506,12 @@ export default function MapSymbolSpeciesTest() {
     });
 
     /**
+     * @tc.name   MapSymbolSpeciesTest100
      * @tc.number MAP_SYMBOLSPECIES_TEST_100
-     * @tc.name MapSymbolSpeciesTest100
-     * @tc.desc Verify that species works with maps used in a factory pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that species works with maps used in a factory pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSymbolSpeciesTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       expect(MapSymbolSpeciesTest100()).assertDeepEquals([true, false, 'a']);

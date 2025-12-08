@@ -129,12 +129,12 @@ export default function commitModifyTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0000
-      * @tc.name    photoAsset_commitModify_callback_static_000
-      * @tc.desc    modify image displayName
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   photoAsset_commitModify_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0000
+     * @tc.desc   modify image displayName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('photoAsset_commitModify_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -146,12 +146,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0100
-      * @tc.name    photoAsset_commitModify_callback_static_001
-      * @tc.desc    modify image displayName '一...' (83)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0100
+     * @tc.desc   modify image displayName '一...' (83)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -166,12 +166,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0200
-      * @tc.name    photoAsset_commitModify_callback_static_002
-      * @tc.desc    modify image displayName 'aaaaaaa...' (251)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0200
+     * @tc.desc   modify image displayName 'aaaaaaa...' (251)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -186,12 +186,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0300
-      * @tc.name    photoAsset_commitModify_callback_static_003
-      * @tc.desc    modify image uri
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0300
+     * @tc.desc   modify image uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -204,12 +204,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0500
-      * @tc.name    photoAsset_commitModify_callback_static_005
-      * @tc.desc    modify image displayName '二二....jpg' (84)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0500
+     * @tc.desc   modify image displayName '二二....jpg' (84)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -226,12 +226,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0600
-      * @tc.name    photoAsset_commitModify_callback_static_006
-      * @tc.desc    modify image displayName 'bbbbbbb...' (252)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0600
+     * @tc.desc   modify image displayName 'bbbbbbb...' (252)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -249,12 +249,12 @@ export default function commitModifyTest() {
 
     //video
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0700
-      * @tc.name    photoAsset_commitModify_callback_static_007
-      * @tc.desc    modify video displayName
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   photoAsset_commitModify_callback_static_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0700
+     * @tc.desc   modify video displayName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('photoAsset_commitModify_callback_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -266,12 +266,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0800
-      * @tc.name    photoAsset_commitModify_callback_static_008
-      * @tc.desc    modify video displayName '三三...' (83)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_008
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0800
+     * @tc.desc   modify video displayName '三三...' (83)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -286,12 +286,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0900
-      * @tc.name    photoAsset_commitModify_callback_static_009
-      * @tc.desc    modify image displayName 'ccccccc...' (251)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_009
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_0900
+     * @tc.desc   modify image displayName 'ccccccc...' (251)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -306,12 +306,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_1000
-      * @tc.name    photoAsset_commitModify_callback_static_010
-      * @tc.desc    modify image uri
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_010
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_1000
+     * @tc.desc   modify image uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -324,12 +324,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_1200
-      * @tc.name    photoAsset_commitModify_callback_static_012
-      * @tc.desc    modify image displayName '四四...' (84)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_012
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_1200
+     * @tc.desc   modify image displayName '四四...' (84)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -346,12 +346,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_1300
-      * @tc.name    photoAsset_commitModify_callback_static_013
-      * @tc.desc    modify image displayName 'ddddddd...' (252)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_callback_static_013
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_FILE_ASSET_COMMITMODIFY_STATIC_1300
+     * @tc.desc   modify image displayName 'ddddddd...' (252)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_callback_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -368,12 +368,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0000
-      * @tc.name    photoAsset_commitModify_promise_static_000
-      * @tc.desc    modify image displayName
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0000
+     * @tc.desc   modify image displayName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -385,12 +385,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0100
-      * @tc.name    photoAsset_commitModify_promise_static_001
-      * @tc.desc    modify image displayName '五五...' (83)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0100
+     * @tc.desc   modify image displayName '五五...' (83)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -405,12 +405,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0200
-      * @tc.name    photoAsset_commitModify_promise_static_002
-      * @tc.desc    modify image displayName 'eeeeeee...' (251)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0200
+     * @tc.desc   modify image displayName 'eeeeeee...' (251)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -425,12 +425,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0300
-      * @tc.name    photoAsset_commitModify_promise_static_003
-      * @tc.desc    modify image uri
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0300
+     * @tc.desc   modify image uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -443,12 +443,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0400
-      * @tc.name    photoAsset_commitModify_promise_static_004
-      * @tc.desc    modify image photoType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0400
+     * @tc.desc   modify image photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -461,12 +461,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0500
-      * @tc.name    photoAsset_commitModify_promise_static_005
-      * @tc.desc    modify image displayName '六六....jpg' (84)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0500
+     * @tc.desc   modify image displayName '六六....jpg' (84)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -483,12 +483,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0600
-      * @tc.name    photoAsset_commitModify_promise_static_006
-      * @tc.desc    modify image displayName 'fffffff...' (252)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0600
+     * @tc.desc   modify image displayName 'fffffff...' (252)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -506,12 +506,12 @@ export default function commitModifyTest() {
 
     //video
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0700
-      * @tc.name    photoAsset_commitModify_promise_static_007
-      * @tc.desc    modify video displayName
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0700
+     * @tc.desc   modify video displayName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -523,12 +523,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0800
-      * @tc.name    photoAsset_commitModify_promise_static_008
-      * @tc.desc    modify video displayName '七七...' (83)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_008
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0800
+     * @tc.desc   modify video displayName '七七...' (83)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -543,12 +543,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0900
-      * @tc.name    photoAsset_commitModify_promise_static_009
-      * @tc.desc    modify image displayName 'ggggggg...' (251)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_009
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_0900
+     * @tc.desc   modify image displayName 'ggggggg...' (251)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_1000
-      * @tc.name    photoAsset_commitModify_promise_static_010
-      * @tc.desc    modify image uri
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_010
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_1000
+     * @tc.desc   modify image uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -581,12 +581,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_1100
-      * @tc.name    photoAsset_commitModify_promise_static_011
-      * @tc.desc    modify image photoType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_011
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_1100
+     * @tc.desc   modify image photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -599,12 +599,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_1200
-      * @tc.name    photoAsset_commitModify_promise_static_012
-      * @tc.desc    modify image displayName '八八...' (84)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_012
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_1200
+     * @tc.desc   modify image displayName '八八...' (84)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -621,12 +621,12 @@ export default function commitModifyTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_1300
-      * @tc.name    photoAsset_commitModify_promise_static_013
-      * @tc.desc    modify image displayName 'hhhhhhh...' (252)
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   photoAsset_commitModify_promise_static_013
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_FILE_ASSET_COMMITMODIFY_STATIC_1300
+     * @tc.desc   modify image displayName 'hhhhhhh...' (252)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

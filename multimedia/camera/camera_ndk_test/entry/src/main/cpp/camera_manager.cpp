@@ -3360,3 +3360,18 @@ Camera_ErrorCode NDKCamera::MacroStatusChangeTest(void)
         captureSession_, OnMacroStatusChange);
     return ret_;
 }
+
+void OnIsoInfoChange(Camera_CaptureSession* session, int32_t isoValue)
+{
+    LOG("OnIsoInfoChange IsoInfo ENTER");
+}
+
+Camera_ErrorCode NDKCamera::IsoInfoChangeTest(void)
+{
+    LOG("IsoInfoChangeTest begin.");
+    ret_ = OH_CaptureSession_RegisterIsoChangeCallback(
+        captureSession_, OnIsoInfoChange);
+    ret_ = OH_CaptureSession_UnregisterIsoChangeCallback(
+        captureSession_, OnIsoInfoChange);
+    return ret_;
+}

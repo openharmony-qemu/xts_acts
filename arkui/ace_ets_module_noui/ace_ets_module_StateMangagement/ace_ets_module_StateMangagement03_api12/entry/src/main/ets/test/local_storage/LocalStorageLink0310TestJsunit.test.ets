@@ -59,12 +59,12 @@ export default function LocalStorageLink0310TestJsunit() {
     });
 
     /**
+     * @tc.name   LocalStorageLink0310TestJsunit_001
      * @tc.number LocalStorageLink0310TestJsunit_001
-     * @tc.name LocalStorageLink0310TestJsunit_001
-     * @tc.desc Frequently updating and modifying the values of parent components
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageLink0310TestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageLink0310TestJsunit_001] START');
@@ -117,12 +117,12 @@ export default function LocalStorageLink0310TestJsunit() {
       done();
     });
     /**
+     * @tc.name   LocalStorageLink0310TestJsunit_002
      * @tc.number LocalStorageLink0310TestJsunit_002
-     * @tc.name LocalStorageLink0310TestJsunit_002
-     * @tc.desc Frequently updating and modifying the values of parent components
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageLink0310TestJsunit_002', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageLink0310TestJsunit_002] START');

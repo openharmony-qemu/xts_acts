@@ -257,7 +257,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer001
      * @tc.number SUB_USB_HostManager_JS_TranFunc_1000
      * @tc.desc   Positive test: bulk transfer, receive data
@@ -298,7 +297,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer002
      * @tc.number SUB_USB_HostManager_JS_TranFunc_1100
      * @tc.desc   Positive test: bulk transfer, send data
@@ -346,7 +344,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer003
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0400
      * @tc.desc   Undefined option arguments, use default options.
@@ -394,7 +391,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer004
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0500
      * @tc.desc   Null option arguments, use default options.
@@ -440,7 +436,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer801Err001
      * @tc.number SUB_USB_HostManager_JS_TranCompatibilityErr_0500
      * @tc.desc   Null option arguments, use default options.
@@ -490,7 +485,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer005
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0600
      * @tc.desc   Ignore option arguments, use default options.
@@ -537,7 +531,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface001
      * @tc.number SUB_USB_HostManager_JS_Func_0400
      * @tc.desc   Positive test: Get interface, and release
@@ -575,7 +568,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface003
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2100
      * @tc.desc   Test the claimInterface() interface. Undefined option arguments, use default options.
@@ -613,7 +605,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface004
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2200
      * @tc.desc   Test the claimInterface() interface. Null option arguments, use default options.
@@ -651,7 +642,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface005
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2300
      * @tc.desc   Test the claimInterface() interface. Ignore option arguments, use default options.
@@ -689,7 +679,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfiguration001
      * @tc.number SUB_USB_HostManager_JS_Func_1000
      * @tc.desc   Positive test: Set Device Configuration
@@ -718,7 +707,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfiguration002
      * @tc.number SUB_USB_HostManager_JS_Compatibility_3600
      * @tc.desc   Negative test: Set Device Configuration, USBConfig id error 255
@@ -743,7 +731,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterface001
      * @tc.number SUB_USB_HostManager_JS_Func_1100
      * @tc.desc   Positive test: Set device interface
@@ -771,7 +758,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterface002
      * @tc.number SUB_USB_HostManager_JS_Compatibility_4100
      * @tc.desc   Negative test: Set device interface, error tmpInterface.id 234
@@ -801,7 +787,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer001
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0100
      * @tc.desc   Positive test: control transfer, GetDescriptor: cmd 6 target 2 reqType 128 value 512 index 0
@@ -832,7 +817,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer002
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0200
      * @tc.desc   Positive test: control transfer, GetStatus: cmd 0 target 0 reqType 128 value 0 index 0
@@ -863,7 +847,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer005
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0300
      * @tc.desc   Test the bulkTransfer interface. Ignore option arguments, use default options.
@@ -901,7 +884,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer801Err001
      * @tc.number SUB_USB_HostManager_JS_TranCompatibilityErr_0300
      * @tc.desc   Test the bulkTransfer interface. Ignore option arguments, use default options.
@@ -943,7 +925,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer006
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0300
      * @tc.desc   Positive test: control transfer, GetConfiguration: cmd 8 target 0 reqType 128 value 0 index 0
@@ -973,7 +954,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer007
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0400
      * @tc.desc   Positive test: control transfer, GetInterface: cmd 10 target 0 reqType 129 value 0 index 1
@@ -1004,7 +984,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer008
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0500
      * @tc.desc   Positive test: control transfer, ClearFeature: cmd 1 target 0 reqType 0 value 0 index 0
@@ -1034,7 +1013,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer009
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0600
      * @tc.desc   Positive test: control transfer, ClearFeature: cmd 255 target 1 reqType 129 value 512 index 0
@@ -1064,7 +1042,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer010
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0700
      * @tc.desc   Positive test: control transfer, ClearFeature: cmd 255 target 2 reqType 34 value 512 index 0
@@ -1094,7 +1071,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer011
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0800
      * @tc.desc   Positive test: control transfer, ClearFeature: cmd 255 target 3 reqType 67 value 512 index 0
@@ -1124,7 +1100,6 @@ export default function UsbDevicePipeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testControlTransfer012
      * @tc.number SUB_USB_HostManager_JS_TranFunc_0900
      * @tc.desc   Positive test: control transfer, ClearFeature: cmd 255 target 3 reqType 35 value 0 index 0

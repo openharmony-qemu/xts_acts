@@ -155,30 +155,24 @@ export default function imageGetImagePropertySecond() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100
-      * @tc.desc    getImageProperty(DATE_TIME)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(DATE_TIME)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100
+     * @tc.desc   getImageProperty(DATE_TIME)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0100", DATE_TIME, "2019:11:15 20:48:30");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200
-      * @tc.desc    getImageProperty(GPS_TIME_STAMP)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(GPS_TIME_STAMP)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200
+     * @tc.desc   getImageProperty(GPS_TIME_STAMP)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0200",
@@ -186,15 +180,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300
-      * @tc.desc    getImageProperty(GPS_DATE_STAMP)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(GPS_DATE_STAMP)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300
+     * @tc.desc   getImageProperty(GPS_DATE_STAMP)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0300",
@@ -202,15 +193,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400
-      * @tc.desc    getImageProperty(IMAGE_DESCRIPTION)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(IMAGE_DESCRIPTION)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400
+     * @tc.desc   getImageProperty(IMAGE_DESCRIPTION)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0400",
@@ -218,45 +206,36 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500
-      * @tc.desc    getImageProperty(MAKE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(MAKE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500
+     * @tc.desc   getImageProperty(MAKE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0500", MAKE, "HW");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0600
-      * @tc.desc    getImageProperty(MODEL)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(MODEL)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0600
+     * @tc.desc   getImageProperty(MODEL)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0600", MODEL, "STK-LX1");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0700
-      * @tc.desc    getImageProperty(SENSITIVITY_TYPE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SENSITIVITY_TYPE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0700
+     * @tc.desc   getImageProperty(SENSITIVITY_TYPE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0700",
@@ -264,15 +243,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0800
-      * @tc.desc    getImageProperty(RECOMMENDED_EXPOSURE_INDEX)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(RECOMMENDED_EXPOSURE_INDEX)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0800
+     * @tc.desc   getImageProperty(RECOMMENDED_EXPOSURE_INDEX)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0800",
@@ -280,30 +256,24 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0900
-      * @tc.desc    getImageProperty(ISO_SPEED)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(ISO_SPEED)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0900
+     * @tc.desc   getImageProperty(ISO_SPEED)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_0900", ISO_SPEED, "200");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1000
-      * @tc.desc    getImageProperty(APERTURE_VALUE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(APERTURE_VALUE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1000
+     * @tc.desc   getImageProperty(APERTURE_VALUE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1000",
@@ -311,15 +281,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1100
-      * @tc.desc    getImageProperty(EXPOSURE_BIAS_VALUE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(EXPOSURE_BIAS_VALUE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1100
+     * @tc.desc   getImageProperty(EXPOSURE_BIAS_VALUE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1100",
@@ -327,90 +294,72 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1200
-      * @tc.desc    getImageProperty(METERING_MODE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(METERING_MODE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1200
+     * @tc.desc   getImageProperty(METERING_MODE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1200", METERING_MODE, "Pattern");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1300
-      * @tc.desc    getImageProperty(LIGHT_SOURCE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(LIGHT_SOURCE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1300
+     * @tc.desc   getImageProperty(LIGHT_SOURCE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1300", LIGHT_SOURCE, "Daylight");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1400
-      * @tc.desc    getImageProperty(FLASH)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(FLASH)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1400
+     * @tc.desc   getImageProperty(FLASH)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1400", FLASH, "Flash fired, auto mode");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1500
-      * @tc.desc    getImageProperty(FOCAL_LENGTH)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(FOCAL_LENGTH)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1500
+     * @tc.desc   getImageProperty(FOCAL_LENGTH)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1500", FOCAL_LENGTH, "4.0 mm");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1600
-      * @tc.desc    getImageProperty(USER_COMMENT)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(USER_COMMENT)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1600
+     * @tc.desc   getImageProperty(USER_COMMENT)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1600", USER_COMMENT, "gray");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1700
-      * @tc.desc    getImageProperty(PIXEL_X_DIMENSION)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(PIXEL_X_DIMENSION)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1700
+     * @tc.desc   getImageProperty(PIXEL_X_DIMENSION)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1700",
@@ -418,15 +367,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1800
-      * @tc.desc    getImageProperty(PIXEL_Y_DIMENSION)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(PIXEL_Y_DIMENSION)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1800
+     * @tc.desc   getImageProperty(PIXEL_Y_DIMENSION)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1800",
@@ -434,30 +380,24 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1900
-      * @tc.desc    getImageProperty(WHITE_BALANCE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(WHITE_BALANCE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1900
+     * @tc.desc   getImageProperty(WHITE_BALANCE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_1900", WHITE_BALANCE, "Auto white balance");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2000
-      * @tc.desc    getImageProperty(FOCAL_LENGTH_IN_35_MM_FILM)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(FOCAL_LENGTH_IN_35_MM_FILM)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2000
+     * @tc.desc   getImageProperty(FOCAL_LENGTH_IN_35_MM_FILM)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2000",
@@ -465,15 +405,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2100
-      * @tc.desc    getImageProperty(ROLL_ANGLE )
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(ROLL_ANGLE )
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2100
+     * @tc.desc   getImageProperty(ROLL_ANGLE )
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2100",
@@ -481,15 +418,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2200
-      * @tc.desc    getImageProperty(PITCH_ANGLE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(PITCH_ANGLE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2200
+     * @tc.desc   getImageProperty(PITCH_ANGLE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2200",
@@ -497,15 +431,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2300
-      * @tc.desc    getImageProperty(SCENE_FOOD_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_FOOD_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2300
+     * @tc.desc   getImageProperty(SCENE_FOOD_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("food.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2300",
@@ -513,15 +444,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2400
-      * @tc.desc    getImageProperty(SCENE_STAGE_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_STAGE_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2400
+     * @tc.desc   getImageProperty(SCENE_STAGE_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2400",
@@ -529,15 +457,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2500
-      * @tc.desc    getImageProperty(SCENE_BLUESKY_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_BLUESKY_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2500
+     * @tc.desc   getImageProperty(SCENE_BLUESKY_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("bluesky.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2500",
@@ -545,15 +470,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2600
-      * @tc.desc    getImageProperty(SCENE_GREENPLANT_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_GREENPLANT_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2600
+     * @tc.desc   getImageProperty(SCENE_GREENPLANT_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("greenplant.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2600",
@@ -561,15 +483,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2700
-      * @tc.desc    getImageProperty(SCENE_BEACH_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_BEACH_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2700
+     * @tc.desc   getImageProperty(SCENE_BEACH_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2700",
@@ -577,15 +496,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2800
-      * @tc.desc    getImageProperty(SCENE_SNOW_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_SNOW_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2800
+     * @tc.desc   getImageProperty(SCENE_SNOW_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("snow.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2800",
@@ -593,15 +509,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2900
-      * @tc.desc    getImageProperty(SCENE_SUNSET_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_SUNSET_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2900
+     * @tc.desc   getImageProperty(SCENE_SUNSET_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("sunset.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_2900",
@@ -609,15 +522,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3000
-      * @tc.desc    getImageProperty(SCENE_FLOWERS_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_FLOWERS_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3000
+     * @tc.desc   getImageProperty(SCENE_FLOWERS_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("flower.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3000",
@@ -625,15 +535,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3100
-      * @tc.desc    getImageProperty(SCENE_NIGHT_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_NIGHT_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3100
+     * @tc.desc   getImageProperty(SCENE_NIGHT_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("night.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3100",
@@ -641,15 +548,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3200
-      * @tc.desc    getImageProperty(SCENE_TEXT_CONF)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(SCENE_TEXT_CONF)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3200
+     * @tc.desc   getImageProperty(SCENE_TEXT_CONF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("text.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3200",
@@ -657,15 +561,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3300
-      * @tc.desc    getImageProperty(FACE_COUNT)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(FACE_COUNT)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3300
+     * @tc.desc   getImageProperty(FACE_COUNT)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3300",
@@ -673,15 +574,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3400
-      * @tc.desc    getImageProperty(FOCUS_MODE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(FOCUS_MODE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3400
+     * @tc.desc   getImageProperty(FOCUS_MODE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("test_hw.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3400",
@@ -689,15 +587,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3500
-      * @tc.desc    getImageProperty(CAPTURE_MODE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(CAPTURE_MODE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3500
+     * @tc.desc   getImageProperty(CAPTURE_MODE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("food.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3500",
@@ -705,15 +600,12 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3600
-      * @tc.desc    getImageProperty(PHYSICAL_APERTURE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(PHYSICAL_APERTURE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3600
+     * @tc.desc   getImageProperty(PHYSICAL_APERTURE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyPromise("food.jpg", done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_PROMISE_STATIC_3600",
@@ -721,30 +613,24 @@ export default function imageGetImagePropertySecond() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0100
-      * @tc.desc    getImageProperty(PHOTO_MODE)
-      *                 1.create imagesource
-      *                 2.set property
-      *                 3.call getImageProperty(PHOTO_MODE)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0100
+     * @tc.desc   getImageProperty(PHOTO_MODE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyErr(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0100", PHOTO_MODE);
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0200
-      * @tc.desc    getImageProperty(STANDARD_OUTPUT_SENSITIVITY)
-      *                1.create imagesource
-      *                2.set property
-      *                3.call getImageProperty(STANDARD_OUTPUT_SENSITIVITY)
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0200
+     * @tc.desc   getImageProperty(STANDARD_OUTPUT_SENSITIVITY)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getImagePropertyErr(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTY_ERR_STATIC_0200", STANDARD_OUTPUT_SENSITIVITY);

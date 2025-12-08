@@ -47,12 +47,12 @@ export default function InvalidateAttributesTest() {
     });
 
     /**
-     * @tc.number    InvalidateAttributesTest_0100
-     * @tc.name      InvalidateAttributesTest_0100
-     * @tc.desc      InvalidateAttributes Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   InvalidateAttributesTest_0100
+     * @tc.number InvalidateAttributesTest_0100
+     * @tc.desc   InvalidateAttributes Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvalidateAttributesTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('InvalidateAttributesTest_0100 START');

@@ -23,12 +23,12 @@ export default function datatestNoPTest() {
   describe('datatestNoPTest',  () => {
 
     /**
-     * @tc.number : SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_NoP_0100
-     * @tc.name   : testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0100
-     * @tc.desc   : isCellularDataRoamingEnabledSync No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0100
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_NoP_0100
+     * @tc.desc   isCellularDataRoamingEnabledSync No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0100';
@@ -47,12 +47,12 @@ export default function datatestNoPTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Data_IsCellularDataEnabledSync_NoP_0200
-     * @tc.name   : testTelephonyDataIsCellularDataEnabledSyncNoP_0200
-     * @tc.desc   : isCellularDataEnabledSync No permission
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyDataIsCellularDataEnabledSyncNoP_0200
+     * @tc.number SUB_Telephony_Data_IsCellularDataEnabledSync_NoP_0200
+     * @tc.desc   isCellularDataEnabledSync No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyDataIsCellularDataEnabledSyncNoP_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3  ,async (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataEnabledSyncNoP_0200';
@@ -72,12 +72,12 @@ export default function datatestNoPTest() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Data_QueryAllApns_NoP_0300
-     * @tc.name   : testTelephonyDataQueryAllApnsNoP_0300
-     * @tc.desc   : QueryAllApns No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyDataQueryAllApnsNoP_0300
+     * @tc.number SUB_Telephony_Data_QueryAllApns_NoP_0300
+     * @tc.desc   QueryAllApns No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyDataQueryAllApnsNoP_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       let caseName: string = 'testTelephonyDataQueryAllApnsNoP_0300';
@@ -101,12 +101,12 @@ export default function datatestNoPTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Data_QueryApnIds_NoP_0400
-     * @tc.name   : testTelephonyDataQueryApnIdsNoP_0400
-     * @tc.desc   : queryApnIds No permission
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyDataQueryApnIdsNoP_0400
+     * @tc.number SUB_Telephony_Data_QueryApnIds_NoP_0400
+     * @tc.desc   queryApnIds No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyDataQueryApnIdsNoP_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testTelephonyDataQueryApnIdsNoP_0400';
@@ -130,12 +130,12 @@ export default function datatestNoPTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Data_SetPreferredApn_NoP_0500
-     * @tc.name   : testTelephonyDataSetPreferredApnNoP_0500
-     * @tc.desc   : setPreferredApn No permission
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyDataSetPreferredApnNoP_0500
+     * @tc.number SUB_Telephony_Data_SetPreferredApn_NoP_0500
+     * @tc.desc   setPreferredApn No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyDataSetPreferredApnNoP_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testTelephonyDataSetPreferredApnNoP_0500';

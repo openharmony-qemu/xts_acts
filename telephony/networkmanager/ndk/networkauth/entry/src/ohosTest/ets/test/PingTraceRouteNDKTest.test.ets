@@ -57,12 +57,12 @@ export default function PingTraceRouteNDKTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerTraceRoute_0100
      * @tc.number SUB_NetworkManager_TraceRoute_0100
-     * @tc.name testNetworkManagerTraceRoute_0100
-     * @tc.desc Test TraceRoute
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test TraceRoute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerTraceRoute_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerTraceRoute_0100';

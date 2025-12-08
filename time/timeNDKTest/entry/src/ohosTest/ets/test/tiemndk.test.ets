@@ -47,7 +47,6 @@ export default function timeNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Time_TimeManagement_Obtaining_5700
      * @tc.number SUB_Time_TimeManagement_Obtaining_5700.
      * @tc.desc   get zone result.
@@ -64,7 +63,6 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Time_TimeManagement_Obtaining_5500
      * @tc.number SUB_Time_TimeManagement_Obtaining_5500.
      * @tc.desc   get zone result.
@@ -81,7 +79,6 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Time_TimeManagement_Obtaining_5800
      * @tc.number SUB_Time_TimeManagement_Obtaining_5800.
      * @tc.desc   get zone result.
@@ -98,7 +95,6 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Time_TimeManagement_Obtaining_5600
      * @tc.number SUB_Time_TimeManagement_Obtaining_5600.
      * @tc.desc   get zone result.

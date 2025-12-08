@@ -77,7 +77,6 @@ export default function RelationalStoreCustom() {
         });
         console.info(TAG + "*************Unit Test Begin*************");
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomInsert0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Insert_0100
          * @tc.desc   RelationalStore Custom insert test, query 1
@@ -134,7 +133,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomInsert0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Insert_0200
          * @tc.desc   RelationalStore Custom insert test, query 2
@@ -206,7 +204,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomInsert0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Insert_0300
          * @tc.desc   RelationalStore Custom insert test, query 0
@@ -256,7 +253,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomUpdate0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Update_0100
          * @tc.desc   RelationalStore Custom update data exist, query 2
@@ -356,7 +352,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomUpdate0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Update_0200
          * @tc.desc   RelationalStore Custom update not exist, query 0
@@ -432,7 +427,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomDelete0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Delete_0100
          * @tc.desc   RelationalStore Custom Delete not exist, query 1
@@ -524,7 +518,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomDelete0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Delete_0200
          * @tc.desc   RelationalStore Custom Delete  exist, query 0
@@ -599,7 +592,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0100
          * @tc.desc   RelationalStore Custom  1字， query 1
@@ -675,7 +667,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0200
          * @tc.desc   RelationalStore Custom  1字， query 1
@@ -752,7 +743,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0300
          * @tc.desc   RelationalStore Custom  1字 不存在， query 0
@@ -822,7 +812,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0400
          * @tc.desc   RelationalStore Custom  1字 存在， query 0
@@ -891,7 +880,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0500
          * @tc.desc   RelationalStore Custom 2字， query 1
@@ -967,7 +955,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0600
          * @tc.desc   RelationalStore Custom 2字， query 1
@@ -1036,7 +1023,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0700
          * @tc.desc   RelationalStore Custom 2字 不存在， query 0
@@ -1105,7 +1091,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0800
          * @tc.desc   RelationalStore Custom 2字 存在， query 0
@@ -1174,7 +1159,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0900
          * @tc.desc   RelationalStore Custom 3字， query 1
@@ -1250,7 +1234,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1000
          * @tc.desc   RelationalStore Custom 3字， query 0
@@ -1300,7 +1283,6 @@ export default function RelationalStoreCustom() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1100
          * @tc.desc   RelationalStore Custom query 4字
@@ -1369,7 +1351,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1200
          * @tc.desc   RelationalStore Custom query n字俗语
@@ -1438,7 +1419,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1300
          * @tc.desc   RelationalStore Custom query 完整文本
@@ -1507,7 +1487,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1400
          * @tc.desc   RelationalStore Custom query 位置1
@@ -1576,7 +1555,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1500
          * @tc.desc   RelationalStore Custom query 位置1 空格
@@ -1645,7 +1623,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1600
          * @tc.desc   RelationalStore Custom query 位置1 标点
@@ -1715,7 +1692,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1700
          * @tc.desc   RelationalStore Custom query 位置1 标点
@@ -1784,7 +1760,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1800
          * @tc.desc   RelationalStore Custom  create table same name  testCustom, fail
@@ -1841,7 +1816,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery1900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1900
          * @tc.desc   RelationalStore Custom  create table dif name  testCustom
@@ -1963,7 +1937,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery2000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_2000
          * @tc.desc   RelationalStore Custom query 日文
@@ -2022,7 +1995,6 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreCustomQuery2100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_2100
          * @tc.desc   RelationalStore Custom insert not String

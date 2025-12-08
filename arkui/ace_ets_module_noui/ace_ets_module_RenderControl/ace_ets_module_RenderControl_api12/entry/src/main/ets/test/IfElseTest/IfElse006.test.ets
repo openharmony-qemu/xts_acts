@@ -46,12 +46,12 @@ export default function IfElse006() {
     });
 
     /**
-     * @tc.number    IfElse006_001
-     * @tc.name      IfElse006_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   IfElse006_001
+     * @tc.number IfElse006_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('IfElse006_001', Level.LEVEL3, async (done: Function) => {
       console.info('[IfElse006_001] START');

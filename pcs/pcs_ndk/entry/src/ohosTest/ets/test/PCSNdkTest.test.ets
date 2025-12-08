@@ -25,7 +25,6 @@ export default function pcsNdkTest() {
     let SuccessResult1 = 0
     let SuccessResult2 = 1
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSocketApi0100
      * @tc.number G-HARDWARE-0200
      * @tc.desc   【G-HARDWARE-0200】必须支持 IPV4 协议栈,必须提供 Linux BSD Socket API 或者 LWIP BSD Socket API 之一
@@ -45,7 +44,6 @@ export default function pcsNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testC99Standard0100
      * @tc.number G-SOFTWARE-0300
      * @tc.desc   【G-SOFTWARE-0300】C 运行时的 API 必须遵循 C99 standard、POSIX.1.2008 规范。
@@ -70,7 +68,6 @@ export default function pcsNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioDecoding0100
      * @tc.number C-S|STD-SOFTWARE-0804
      * @tc.desc   【C-S|STD-SOFTWARE-0804】必须支持 MP3 格式解码, 支持单/双声道，
@@ -85,7 +82,6 @@ export default function pcsNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioEncoderFlac
      * @tc.number C-S|STD-SOFTWARE-0700
      * @tc.desc   【C-S|STD-SOFTWARE-0700】必须支持PCM/WAV、FLAC、OGG格式的音频编码,
@@ -99,7 +95,6 @@ export default function pcsNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioEncoderAAc
      * @tc.number C-S|STD-SOFTWARE-0701
      * @tc.desc   【C-S|STD-SOFTWARE-0701】必须支持MMEG-2 AAC Main/MPEG-2 AAC LC(Low  Complexity)，
@@ -113,7 +108,6 @@ export default function pcsNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioDecoderAAc
      * @tc.number C-STD-SOFTWARE-0702
      * @tc.desc   【C-STD-SOFTWARE-0702】必须支持MPEG-4 AAC Profile(AAC LC)格式解码,支持单/双声道,支持
@@ -127,7 +121,6 @@ export default function pcsNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioEncoderH264
      * @tc.number C-STD-SOFTWARE-0703
      * @tc.desc   【C-STD-SOFTWARE-0703】必须支持H.264格式Baseline Profile Level3 编码格式, 必须支持SD(尺寸小于720x480)，
@@ -141,7 +134,6 @@ export default function pcsNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioDecoderH264
      * @tc.number C-STD-SOFTWARE-0704
      * @tc.desc   【C-STD-SOFTWARE-0704】必须支持H.264格式Baseline Profile/Main Profile/High Profile 解码，
@@ -156,7 +148,6 @@ export default function pcsNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testHardwareAcceleration0100
      * @tc.number C-ALL-HARDWARE-0201
      * @tc.desc   【C-ALL-HARDWARE-0201】如果支持图形显示，并且支持图形的 2D 或 3D 硬件加速：默认情况下必须启用硬件加速。

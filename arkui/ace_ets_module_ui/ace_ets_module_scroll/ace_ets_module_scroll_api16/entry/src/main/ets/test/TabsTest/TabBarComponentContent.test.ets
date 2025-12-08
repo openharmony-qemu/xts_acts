@@ -43,10 +43,12 @@ export default function TabBarComponentContent() {
     });
 
     /**
-     * @tc.number    TabBarComponentContent_0100
-     * @tc.name      Test tabbar supports ComponentContent
-     * @tc.desc      Test whether ComponentContent is effective on tabbar
-     * @tc.level     Level 2
+     * @tc.name   TabBarComponentContent_0100
+     * @tc.number TabBarComponentContent_0100
+     * @tc.desc   Test whether ComponentContent is effective on tabbar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabBarComponentContent_0100', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -65,10 +67,12 @@ export default function TabBarComponentContent() {
     });
 
     /**
-     * @tc.number    TabBarComponentContent_0200
-     * @tc.name      Test tabbar supports undefined
-     * @tc.desc      Test whether undefined is effective on tabbar
-     * @tc.level     Level 2
+     * @tc.name   TabBarComponentContent_0200
+     * @tc.number TabBarComponentContent_0200
+     * @tc.desc   Test whether undefined is effective on tabbar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabBarComponentContent_0200', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -83,10 +87,12 @@ export default function TabBarComponentContent() {
     });
 
     /**
-     * @tc.number    TabBarComponentContent_0300
-     * @tc.name      Test tabbar supports null
-     * @tc.desc      Test whether null is effective on tabbar
-     * @tc.level     Level 2
+     * @tc.name   TabBarComponentContent_0300
+     * @tc.number TabBarComponentContent_0300
+     * @tc.desc   Test whether null is effective on tabbar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabBarComponentContent_0300', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

@@ -61,14 +61,14 @@ export default function webViewControllerPart2() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SEARCHALLASYNC_0100
-    * @tc.name       : testSearchAllAsync001
-    * @tc.desc       : test searchAllAsync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSearchAllAsync001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SEARCHALLASYNC_0100
+     * @tc.desc   test searchAllAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSearchAllAsync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testSearchAllAsync001", 132040)
       Utils.registerBaseEvent("testSearchAllAsync001", 2, 132050, done,
@@ -78,14 +78,14 @@ export default function webViewControllerPart2() {
       await Utils.waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SEARCHNEXT_0100
-    * @tc.name       : testSearchNext001
-    * @tc.desc       : test searchNext
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSearchNext001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SEARCHNEXT_0100
+     * @tc.desc   test searchNext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSearchNext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSearchNext001", 132040)
       Utils.registerBaseEvent("testSearchNext001", true, 132060, done,
@@ -95,14 +95,14 @@ export default function webViewControllerPart2() {
       await Utils.waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SEARCHNEXT_0200
-    * @tc.name       : testSearchNext002
-    * @tc.desc       : test searchNext
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSearchNext002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SEARCHNEXT_0200
+     * @tc.desc   test searchNext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSearchNext002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSearchNext002", 132040)
       Utils.registerBaseEvent("testSearchNext002", true, 132070, done,
@@ -112,14 +112,14 @@ export default function webViewControllerPart2() {
       await Utils.waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_STOREWEBARCHIVE_0100
-    * @tc.name       : testStoreWebArchive001
-    * @tc.desc       : test storeWebArchive
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStoreWebArchive001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_STOREWEBARCHIVE_0100
+     * @tc.desc   test storeWebArchive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStoreWebArchive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testStoreWebArchive001", 132040)
       Utils.registerBaseEvent("testStoreWebArchive001", "/data/storage/el2/base/index.html.mht", 132080, done,
@@ -129,14 +129,14 @@ export default function webViewControllerPart2() {
       await Utils.waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_STOREWEBARCHIVE_0200
-    * @tc.name       : testStoreWebArchive002
-    * @tc.desc       : test storeWebArchive
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStoreWebArchive002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_STOREWEBARCHIVE_0200
+     * @tc.desc   test storeWebArchive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStoreWebArchive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testStoreWebArchive002", 132040)
       Utils.registerBaseEvent("testStoreWebArchive002", "/data/storage/el2/base/second.html.mht", 132090, done,
@@ -146,14 +146,14 @@ export default function webViewControllerPart2() {
       await Utils.waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_STOREWEBARCHIVE_0300
-    * @tc.name       : testStoreWebArchive003
-    * @tc.desc       : test storeWebArchive
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStoreWebArchive003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_STOREWEBARCHIVE_0300
+     * @tc.desc   test storeWebArchive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStoreWebArchive003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testStoreWebArchive003", 132040)
       Utils.registerBaseEvent("testStoreWebArchive003", "/data/storage/el2/base/index.html.mht", 132100, done,
@@ -163,14 +163,14 @@ export default function webViewControllerPart2() {
       await Utils.waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_STOREWEBARCHIVE_0400
-    * @tc.name       : testStoreWebArchive004
-    * @tc.desc       : test storeWebArchive
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStoreWebArchive004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_STOREWEBARCHIVE_0400
+     * @tc.desc   test storeWebArchive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStoreWebArchive004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testStoreWebArchive004", 132040)
       Utils.registerBaseEvent("testStoreWebArchive004", "/data/storage/el2/base/index.html.mht", 132110, done,

@@ -30,156 +30,156 @@ export default function commonAttrsJustifyContentTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0100
-     * @tc.name: testCommonAttrsJustifyContent001
-     * @tc.desc: testing justifyContent for row with start value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0100
+     * @tc.desc   testing justifyContent for row with start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0200
-     * @tc.name: testCommonAttrsJustifyContent002
-     * @tc.desc: testing justifyContent for row with center value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0200
+     * @tc.desc   testing justifyContent for row with center value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0300
-     * @tc.name: testCommonAttrsJustifyContent003
-     * @tc.desc: testing justifyContent for row with end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0300
+     * @tc.desc   testing justifyContent for row with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0400
-     * @tc.name: testCommonAttrsJustifyContent004
-     * @tc.desc: testing justifyContent for row with space between value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0400
+     * @tc.desc   testing justifyContent for row with space between value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent004()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0500
-     * @tc.name: testCommonAttrsJustifyContent005
-     * @tc.desc: testing justifyContent for row with space around value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0500
+     * @tc.desc   testing justifyContent for row with space around value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent005()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0600
-     * @tc.name: testCommonAttrsJustifyContent006
-     * @tc.desc: testing justifyContent for row with space evenly value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0600
+     * @tc.desc   testing justifyContent for row with space evenly value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent006()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0700
-     * @tc.name: testCommonAttrsJustifyContent007
-     * @tc.desc: testing justifyContent for column with start value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent007
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0700
+     * @tc.desc   testing justifyContent for column with start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent007()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0800
-     * @tc.name: testCommonAttrsJustifyContent008
-     * @tc.desc: testing justifyContent for column with center value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent008
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0800
+     * @tc.desc   testing justifyContent for column with center value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent008()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0900
-     * @tc.name: testCommonAttrsJustifyContent009
-     * @tc.desc: testing justifyContent for column with end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent009
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_0900
+     * @tc.desc   testing justifyContent for column with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent009()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_1000
-     * @tc.name: testCommonAttrsJustifyContent010
-     * @tc.desc: testing justifyContent for column with space between value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent010
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_1000
+     * @tc.desc   testing justifyContent for column with space between value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent010()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_1100
-     * @tc.name: testCommonAttrsJustifyContent011
-     * @tc.desc: testing justifyContent for column with space around value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent011
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_1100
+     * @tc.desc   testing justifyContent for column with space around value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent011()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_1200
-     * @tc.name: testCommonAttrsJustifyContent012
-     * @tc.desc: testing justifyContent for column with space evenly value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsJustifyContent012
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_JUSTIFYCONTENT_1200
+     * @tc.desc   testing justifyContent for column with space evenly value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsJustifyContent012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsJustifyContent012()).assertEqual(0)

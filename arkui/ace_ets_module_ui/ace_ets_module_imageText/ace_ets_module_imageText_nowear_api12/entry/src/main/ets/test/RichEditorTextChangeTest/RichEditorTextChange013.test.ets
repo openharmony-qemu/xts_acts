@@ -55,12 +55,12 @@ export default function RichEditorTextChange013() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0005
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0005
-     * @tc.desc  : Non editing state to editing state (call the add class interface) _onEditingChange callback query eisEditing state query to test RichEditor TextChange
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0005
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0005
+     * @tc.desc   Non editing state to editing state (call the add class interface) _onEditingChange callback query eisEditing state query to test RichEditor TextChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0005',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0005 START');

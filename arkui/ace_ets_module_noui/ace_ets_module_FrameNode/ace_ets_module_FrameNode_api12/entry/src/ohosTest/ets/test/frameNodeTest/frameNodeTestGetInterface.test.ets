@@ -52,16 +52,16 @@ export default function frameNodeGetInterfaceTest() {
       }
       done();
     });
+
+
     /**
-     * @tc.number frameNodeGetNodeType
-     * @tc.name frameNodeGetInterfaceTest_0100
-     * @tc.desc getNodeType Test
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeGetInterfaceTest_0100
+     * @tc.number frameNodeGetInterfaceTest_0100
+     * @tc.desc   frameNodeGetInterfaceTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeGetInterfaceTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0100 START');
       let driver = await Driver.create()
@@ -78,16 +78,16 @@ export default function frameNodeGetInterfaceTest() {
       console.info('[frameNodeGetInterfaceTest_0100] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNodeGetOpacity
-     * @tc.name frameNodeGetInterfaceTest_0200
-     * @tc.desc getOpacity test
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeGetInterfaceTest_0200
+     * @tc.number frameNodeGetInterfaceTest_0200
+     * @tc.desc   frameNodeGetInterfaceTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeGetInterfaceTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0200  START');
       let driver = await Driver.create()
@@ -104,16 +104,16 @@ export default function frameNodeGetInterfaceTest() {
       console.info('[frameNodeGetInterfaceTest_0200] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNodeGetVisible
-     * @tc.name frameNodeGetInterfaceTest_0300
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeGetInterfaceTest_0300
+     * @tc.number frameNodeGetInterfaceTest_0300
+     * @tc.desc   frameNodeGetInterfaceTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeGetInterfaceTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0300 START');
       let driver = await Driver.create()
@@ -130,16 +130,16 @@ export default function frameNodeGetInterfaceTest() {
       console.info('[frameNodeGetInterfaceTest_0300] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNodeIsClipToFrame
-     * @tc.name frameNodeGetInterfaceTest_0400
-     * @tc.desc testIsClipToFrame
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeGetInterfaceTest_0400
+     * @tc.number frameNodeGetInterfaceTest_0400
+     * @tc.desc   frameNodeGetInterfaceTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeGetInterfaceTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0300 START');
       let driver = await Driver.create()
@@ -156,16 +156,16 @@ export default function frameNodeGetInterfaceTest() {
       console.info('[frameNodeGetInterfaceTest_0400] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNodeIsAttached
-     * @tc.name frameNodeGetInterfaceTest_0500
-     * @tc.desc testIsIsAttached
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeGetInterfaceTest_0500
+     * @tc.number frameNodeGetInterfaceTest_0500
+     * @tc.desc   frameNodeGetInterfaceTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeGetInterfaceTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0500 START');
       let driver = await Driver.create()
@@ -182,16 +182,16 @@ export default function frameNodeGetInterfaceTest() {
       console.info('[frameNodeGetInterfaceTest_0500] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNodeGetInspectorInfo
-     * @tc.name frameNodeGetInterfaceTest_0600
-     * @tc.desc testGetInspectorInfo
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeGetInterfaceTest_0600
+     * @tc.number frameNodeGetInterfaceTest_0600
+     * @tc.desc   frameNodeGetInterfaceTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeGetInterfaceTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0600 START');
       let driver = await Driver.create()

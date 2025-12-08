@@ -52,42 +52,42 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DARKMODE_0100
-    * @tc.name       : testDarkMode001
-    * @tc.desc       : test darkMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testDarkMode001
+     * @tc.number SUB_WEB_DARKMODE_0100
+     * @tc.desc   test darkMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDarkMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testDarkMode001", 152250)
       Utils.registerEvent("testDarkMode001", "true", 152260, done);
       sendEventByKey('WebViewControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DARKMODE_0200
-    * @tc.name       : testDarkMode002
-    * @tc.desc       : test darkMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDarkMode002
+     * @tc.number SUB_WEB_DARKMODE_0200
+     * @tc.desc   test darkMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDarkMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDarkMode002", 152250)
       Utils.registerEvent("testDarkMode002", true, 152270, done);
       sendEventByKey('WebViewControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FORCEDARKACCESS_0100
-    * @tc.name       : testForceDarkAccess001
-    * @tc.desc       : test forceDarkAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testForceDarkAccess001
+     * @tc.number SUB_WEB_FORCEDARKACCESS_0100
+     * @tc.desc   test forceDarkAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testForceDarkAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testForceDarkAccess001", 152250)
       Utils.registerEvent("testForceDarkAccess001", "false", 152280, done);

@@ -40,12 +40,12 @@ export default function latticeTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0100
-     * @tc.name      : testLatticeCreateImageLatticeNormal
-     * @tc.desc      : Test for testLatticeCreateImageLatticeNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testLatticeCreateImageLatticeNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0100
+     * @tc.desc   Test for testLatticeCreateImageLatticeNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLatticeCreateImageLatticeNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testLatticeCreateImageLatticeNormal';
@@ -171,12 +171,12 @@ export default function latticeTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0101
-     * @tc.name      : testLatticeCreateImageLatticeAbnormal
-     * @tc.desc      : Test for testLatticeCreateImageLatticeAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLatticeCreateImageLatticeAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0101
+     * @tc.desc   Test for testLatticeCreateImageLatticeAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLatticeCreateImageLatticeAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testLatticeCreateImageLatticeAbnormal';
@@ -335,12 +335,12 @@ export default function latticeTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0102
-     * @tc.name      : testLatticeCreateImageLatticeNull
-     * @tc.desc      : Test for testLatticeCreateImageLatticeNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLatticeCreateImageLatticeNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0102
+     * @tc.desc   Test for testLatticeCreateImageLatticeNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLatticeCreateImageLatticeNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testLatticeCreateImageLatticeNull';
@@ -388,12 +388,12 @@ export default function latticeTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0103
-     * @tc.name      : testLatticeCreateImageLatticeCalls
-     * @tc.desc      : Test for testLatticeCreateImageLatticeCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLatticeCreateImageLatticeCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0103
+     * @tc.desc   Test for testLatticeCreateImageLatticeCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLatticeCreateImageLatticeCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testLatticeCreateImageLatticeCalls';

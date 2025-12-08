@@ -28,7 +28,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_KeyEventTypeTest_0010
      * @tc.number MultimodalInput_KeyEventTypeTest_0010
      * @tc.desc   MultimodalInput_KeyEventTypeTest_0010
@@ -49,7 +48,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_KeyEventTypeTest_0020
      * @tc.number MultimodalInput_KeyEventTypeTest_0020
      * @tc.desc   MultimodalInput_KeyEventTypeTest_0020
@@ -73,7 +71,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_KeyEventTypeTest_0030
      * @tc.number MultimodalInput_KeyEventTypeTest_0030
      * @tc.desc   MultimodalInput_KeyEventTypeTest_0030
@@ -125,7 +122,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_0010
      * @tc.number MultimodalInput_MouseEventTypeTest_0010
      * @tc.desc   MultimodalInput_MouseEventTypeTest_0010
@@ -149,7 +145,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_0020
      * @tc.number MultimodalInput_MouseEventTypeTest_0020
      * @tc.desc   MultimodalInput_MouseEventTypeTest_0020
@@ -167,7 +162,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_00201
      * @tc.number MultimodalInput_MouseEventTypeTest_00201
      * @tc.desc   MultimodalInput_MouseEventTypeTest_00201
@@ -185,7 +179,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_00202
      * @tc.number MultimodalInput_MouseEventTypeTest_00202
      * @tc.desc   MultimodalInput_MouseEventTypeTest_00202
@@ -203,7 +196,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_00203
      * @tc.number MultimodalInput_MouseEventTypeTest_00203
      * @tc.desc   MultimodalInput_MouseEventTypeTest_00203
@@ -221,7 +213,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_00204
      * @tc.number MultimodalInput_MouseEventTypeTest_00204
      * @tc.desc   MultimodalInput_MouseEventTypeTest_00204
@@ -240,7 +231,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_00205
      * @tc.number MultimodalInput_MouseEventTypeTest_00205
      * @tc.desc   MultimodalInput_MouseEventTypeTest_00205
@@ -258,7 +248,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_00206
      * @tc.number MultimodalInput_MouseEventTypeTest_00206
      * @tc.desc   MultimodalInput_MouseEventTypeTest_00206
@@ -276,7 +265,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_00207
      * @tc.number MultimodalInput_MouseEventTypeTest_00207
      * @tc.desc   MultimodalInput_MouseEventTypeTest_00207
@@ -295,7 +283,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_0030
      * @tc.number MultimodalInput_MouseEventTypeTest_0030
      * @tc.desc   MultimodalInput_MouseEventTypeTest_0030
@@ -315,7 +302,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_0040
      * @tc.number MultimodalInput_MouseEventTypeTest_0040
      * @tc.desc   MultimodalInput_MouseEventTypeTest_0040
@@ -337,7 +323,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_MouseEventTypeTest_0050
      * @tc.number MultimodalInput_MouseEventTypeTest_0050
      * @tc.desc   MultimodalInput_MouseEventTypeTest_0050
@@ -408,7 +393,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_TouchEventTypeTest_0010
      * @tc.number MultimodalInput_TouchEventTypeTest_0010
      * @tc.desc   MultimodalInput_TouchEventTypeTest_0010
@@ -429,7 +413,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_TouchEventTypeTest_0020
      * @tc.number MultimodalInput_TouchEventTypeTest_0020
      * @tc.desc   MultimodalInput_TouchEventTypeTest_0020
@@ -454,7 +437,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_TouchEventTypeTest_0030
      * @tc.number MultimodalInput_TouchEventTypeTest_0030
      * @tc.desc   MultimodalInput_TouchEventTypeTest_0030
@@ -474,7 +456,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_TouchEventTypeTest_0040
      * @tc.number MultimodalInput_TouchEventTypeTest_0040
      * @tc.desc   MultimodalInput_TouchEventTypeTest_0040
@@ -533,7 +514,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_TouchEventTypeTest_0050
      * @tc.number MultimodalInput_TouchEventTypeTest_0050
      * @tc.desc   MultimodalInput_TouchEventTypeTest_0050
@@ -585,7 +565,6 @@ export default function MultimodalInputEventTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   MultimodalInput_InputEventTypeTest_0010
      * @tc.number MultimodalInput_InputEventTypeTest_0010
      * @tc.desc   MultimodalInput_InputEventTypeTest_0010

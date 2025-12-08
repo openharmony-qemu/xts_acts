@@ -84,12 +84,12 @@ export default function createMetadataOutputTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_001
-     * @tc.name      : createMetadataOutput_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createMetadataOutput_001
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_001
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createMetadataOutput_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createMetadataOutput_001';
@@ -124,12 +124,12 @@ export default function createMetadataOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_002
-     * @tc.name      : createMetadataOutput_002
-     * @tc.desc      : No abnormal scenarios-new metadataObjectTypes
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createMetadataOutput_002
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_002
+     * @tc.desc   No abnormal scenarios-new metadataObjectTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createMetadataOutput_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'createMetadataOutput_002';
@@ -138,12 +138,12 @@ export default function createMetadataOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_003
-     * @tc.name      : createMetadataOutput_003
-     * @tc.desc      : No abnormal scenarios-sceneMode: SECURE_PHOTO, normal outputCap list
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createMetadataOutput_003
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_003
+     * @tc.desc   No abnormal scenarios-sceneMode: SECURE_PHOTO, normal outputCap list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createMetadataOutput_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createMetadataOutput_003';
@@ -153,12 +153,12 @@ export default function createMetadataOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_004
-     * @tc.name      : createMetadataOutput_abnormal_001
-     * @tc.desc      : metadataObjectTypes->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createMetadataOutput_abnormal_001
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_004
+     * @tc.desc   metadataObjectTypes->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createMetadataOutput_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'createMetadataOutput_abnormal_001';
@@ -166,12 +166,12 @@ export default function createMetadataOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_005
-     * @tc.name      : createMetadataOutput_abnormal_002
-     * @tc.desc      : metadataObjectTypes->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createMetadataOutput_abnormal_002
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_005
+     * @tc.desc   metadataObjectTypes->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createMetadataOutput_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'createMetadataOutput_abnormal_002';

@@ -46,7 +46,6 @@ export default function abilityTest() {
 
     let expResult = "OK"
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_AttachOptions_Create_0100
      * @tc.number SUB_IMF_NDK_AttachOptions_Create_0100
      * @tc.desc   SUB_IMF_NDK_AttachOptions_Create_0100
@@ -62,7 +61,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodController_Attach_0100
      * @tc.number SUB_IMF_NDK_InputMethodController_Attach_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodController_Attach_0100
@@ -78,7 +76,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodController_Detach_0100
      * @tc.number SUB_IMF_NDK_InputMethodController_Detach_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodController_Detach_0100
@@ -94,7 +91,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_ShowKeyboard_0100
      * @tc.number SUB_IMF_NDK_InputMethodProxy_ShowKeyboard_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_ShowKeyboard_0100
@@ -110,7 +106,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_HideKeyboard_0100
      * @tc.number SUB_IMF_NDK_InputMethodProxy_HideKeyboard_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_HideKeyboard_0100
@@ -126,7 +121,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_NotifySelectionChange_0100
      * @tc.number SUB_IMF_NDK_InputMethodProxy_NotifySelectionChange_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_NotifySelectionChange_0100
@@ -142,7 +136,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_NotifyConfigurationChange_0100
      * @tc.number SUB_IMF_NDK_InputMethodProxy_NotifyConfigurationChange_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_NotifyConfigurationChange_0100
@@ -158,7 +151,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_NotifyCursorUpdate_0100
      * @tc.number SUB_IMF_NDK_InputMethodProxy_NotifyCursorUpdate_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_NotifyCursorUpdate_0100
@@ -174,7 +166,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_SendPrivateCommand_0100
      * @tc.number SUB_IMF_NDK_InputMethodProxy_SendPrivateCommand_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_SendPrivateCommand_0100
@@ -190,7 +181,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_PrivateCommand_SetKey_0100
      * @tc.number SUB_IMF_NDK_PrivateCommand_SetKey_0100
      * @tc.desc   SUB_IMF_NDK_PrivateCommand_SetKey_0100
@@ -206,7 +196,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_TextAvoidInfo_Create_0100
      * @tc.number SUB_IMF_NDK_TextAvoidInfo_Create_0100
      * @tc.desc   SUB_IMF_NDK_TextAvoidInfo_Create_0100
@@ -222,7 +211,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_TextConfig_Create_0100
      * @tc.number SUB_IMF_NDK_TextConfig_Create_0100
      * @tc.desc   SUB_IMF_NDK_TextConfig_Create_0100
@@ -238,7 +226,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_TextEditorProxy_Get_0100
      * @tc.number SUB_IMF_NDK_TextEditorProxy_Get_0100
      * @tc.desc   SUB_IMF_NDK_TextEditorProxy_Get_0100
@@ -254,7 +241,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_CursorInfo_Create_0100
      * @tc.number SUB_IMF_NDK_CursorInfo_Create_0100
      * @tc.desc   SUB_IMF_NDK_CursorInfo_Create_0100
@@ -270,7 +256,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodController_Attach_MOUSE
      * @tc.number SUB_IMF_NDK_InputMethodController_Attach_MOUSE
      * @tc.desc   SUB_IMF_NDK_InputMethodController_Attach_MOUSE
@@ -286,7 +271,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodController_Attach_TOUCH
      * @tc.number SUB_IMF_NDK_InputMethodController_Attach_TOUCH
      * @tc.desc   SUB_IMF_NDK_InputMethodController_Attach_TOUCH
@@ -302,7 +286,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodController_Attach_NONE
      * @tc.number SUB_IMF_NDK_InputMethodController_Attach_NONE
      * @tc.desc   SUB_IMF_NDK_InputMethodController_Attach_NONE
@@ -318,7 +301,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_ShowTextInput_NONE
      * @tc.number SUB_IMF_NDK_InputMethodProxy_ShowTextInput_NONE
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_ShowTextInput_NONE
@@ -334,7 +316,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_ShowTextInput_MOUSE
      * @tc.number SUB_IMF_NDK_InputMethodProxy_ShowTextInput_MOUSE
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_ShowTextInput_MOUSE
@@ -350,7 +331,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_ShowTextInput_TOUCH
      * @tc.number SUB_IMF_NDK_InputMethodProxy_ShowTextInput_TOUCH
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_ShowTextInput_TOUCH
@@ -366,7 +346,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER
      * @tc.number SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER
      * @tc.desc   SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER
@@ -382,7 +361,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_NONE
      * @tc.number SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_NONE
      * @tc.desc   SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_NONE
@@ -398,7 +376,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_MOUSE
      * @tc.number SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_MOUSE
      * @tc.desc   SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_MOUSE
@@ -414,7 +391,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_TOUCH
      * @tc.number SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_TOUCH
      * @tc.desc   SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_TOUCH
@@ -430,7 +406,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_OTHER
      * @tc.number SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_OTHER
      * @tc.desc   SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_OTHER
@@ -441,6 +416,36 @@ export default function abilityTest() {
     it('SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_OTHER', Level.LEVEL2, (done: Function) => {
       let result = testNapi.SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_OTHER();
       console.info(`====>SUB_IMF_NDK_AttachOptions_CreateWithRequestKeyboardReason_OTHER result: ${result}`)
+      expect(expResult).assertEqual(result)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100
+     * @tc.number SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100
+     * @tc.desc   SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100', Level.LEVEL2, (done: Function) => {
+      let result = testNapi.SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100();
+      console.info(`====>SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100 result: ${result}`)
+      expect(expResult).assertEqual(result)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200
+     * @tc.number SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200
+     * @tc.desc   SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200', Level.LEVEL2, (done: Function) => {
+      let result = testNapi.SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200();
+      console.info(`====>SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200 result: ${result}`)
       expect(expResult).assertEqual(result)
       done();
     })

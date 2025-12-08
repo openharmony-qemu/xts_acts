@@ -30,7 +30,7 @@ struct textBackgroundStyleTest {
           this.controller.addTextSpan('测试文本')
         })
         .height('20%')
-        .id('RichEditor')
+        .id('RichEditor_textBackgroundStyle')
       Row(){
         Button('updateSpanStyle1')
           .fontSize(10).width('30%').id('updateSpanStyle1')

@@ -46,12 +46,12 @@ export default function ImageContentTransitionEffectTest() {
     });
 
     /**
-     * @tc.number    ImageContentTransitionEffectTest001
-     * @tc.name      ImageContentTransitionEffectTest001
-     * @tc.desc      test the contentTransition:ContentTransitionEffect.OPACITY
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageContentTransitionEffectTest001
+     * @tc.number ImageContentTransitionEffectTest001
+     * @tc.desc   test the contentTransition:ContentTransitionEffect.OPACITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageContentTransitionEffectTest001', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageContentTransitionEffectTest001] START');
@@ -70,12 +70,12 @@ export default function ImageContentTransitionEffectTest() {
     });
 
     /**
-     * @tc.number    ImageContentTransitionEffectTest002
-     * @tc.name      ImageContentTransitionEffectTest002
-     * @tc.desc      test the contentTransition:ContentTransitionEffect.IDENTITY
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageContentTransitionEffectTest002
+     * @tc.number ImageContentTransitionEffectTest002
+     * @tc.desc   test the contentTransition:ContentTransitionEffect.IDENTITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageContentTransitionEffectTest002', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageContentTransitionEffectTest002] START');
@@ -94,12 +94,12 @@ export default function ImageContentTransitionEffectTest() {
     });
 
     /**
-     * @tc.number    ImageContentTransitionEffectTest003
-     * @tc.name      ImageContentTransitionEffectTest003
-     * @tc.desc      test the contentTransition:undefined
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageContentTransitionEffectTest003
+     * @tc.number ImageContentTransitionEffectTest003
+     * @tc.desc   test the contentTransition:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageContentTransitionEffectTest003', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageContentTransitionEffectTest003] START');
@@ -118,12 +118,12 @@ export default function ImageContentTransitionEffectTest() {
     });
 
     /**
-     * @tc.number    ImageContentTransitionEffectTest004
-     * @tc.name      ImageContentTransitionEffectTest004
-     * @tc.desc      test the contentTransition:null
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageContentTransitionEffectTest004
+     * @tc.number ImageContentTransitionEffectTest004
+     * @tc.desc   test the contentTransition:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageContentTransitionEffectTest004', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageContentTransitionEffectTest004] START');

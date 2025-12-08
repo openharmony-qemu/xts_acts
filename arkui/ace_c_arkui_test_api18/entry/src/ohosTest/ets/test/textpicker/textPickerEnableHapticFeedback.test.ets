@@ -26,15 +26,15 @@ export default function textPickerEnableHapticFeedbackTest() {
       done();
     })
 
-   /*
-   * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ENABLEHAPTICFEEDBACK_0100
-   * @tc.name       : testDatePickerEnableHapticFeedback001
-   * @tc.desc       : testing Date Picker EnableHapticFeedback
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
 
+  /**
+   * @tc.name   TestTextPickerEnableHapticFeedback0001
+   * @tc.number TestTextPickerEnableHapticFeedback0001
+   * @tc.desc   TestTextPickerEnableHapticFeedback0001
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('TestTextPickerEnableHapticFeedback0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
     console.info('TestTextPickerEnableHapticFeedback0001 START');
     let PAGE_TAG = 'TextPickerEnableHapticFeedback';
@@ -49,15 +49,15 @@ export default function textPickerEnableHapticFeedbackTest() {
     done();
   });
 
-   /*
-   * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_ENABLEHAPTICFEEDBACK_0200
-   * @tc.name       : testTextPickerEnableHapticFeedback002
-   * @tc.desc       : testing Text Picker EnableHapticFeedback
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
 
+  /**
+   * @tc.name   TestTextPickerEnableHapticFeedback002
+   * @tc.number TestTextPickerEnableHapticFeedback002
+   * @tc.desc   TestTextPickerEnableHapticFeedback002
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('TestTextPickerEnableHapticFeedback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
     console.info('TestTextPickerEnableHapticFeedback0002 START');
     let PAGE_TAG = 'TextPickerEnableHapticFeedback';
@@ -72,15 +72,15 @@ export default function textPickerEnableHapticFeedbackTest() {
     done();
   });
 
-   /*
-   * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_ENABLEHAPTICFEEDBACK_0300
-   * @tc.name       : testTextPickerEnableHapticFeedback003
-   * @tc.desc       : testing Text Picker EnableHapticFeedback
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
 
+  /**
+   * @tc.name   TestTextPickerEnableHapticFeedback0003
+   * @tc.number TestTextPickerEnableHapticFeedback0003
+   * @tc.desc   TestTextPickerEnableHapticFeedback0003
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('TestTextPickerEnableHapticFeedback0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
     console.info('TestTextPickerEnableHapticFeedback0003 START');
     let PAGE_TAG = 'TextPickerEnableHapticFeedback';

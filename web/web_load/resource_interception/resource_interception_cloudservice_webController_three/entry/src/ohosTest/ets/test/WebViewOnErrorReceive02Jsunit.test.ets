@@ -51,12 +51,14 @@ export default function webViewOnErrorReceive02Jsunit() {
             done()
         })
 
-        /*
-        *tc.number SUB_ACE_BASIC_ETS_API_ONERRORRECEIVE_0200
-        *tc.name testOnErrorReceive02
-        *tc.desc test api onErrorReceive  by load html which contain of "<iframe
-                 src="https://wrong.host.badssl.com"></iframe>"
-        */
+        /**
+         * @tc.name   testOnErrorReceive02
+         * @tc.number SUB_ACE_BASIC_ETS_API_ONERRORRECEIVE_0200
+         * @tc.desc   test api onErrorReceive  by load html which contain of "<iframe
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testOnErrorReceive02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
             let isReturn = 0;
             Utils.registerEvent("testOnErrorReceive02", false, 201990, () => { isReturn = 1 });

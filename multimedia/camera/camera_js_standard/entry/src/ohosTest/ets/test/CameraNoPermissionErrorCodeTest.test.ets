@@ -247,12 +247,12 @@ export default function cameraPreconfigTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0200
-     * @tc.name      : test Photo session canpreconfig api with error code 7400201
-     * @tc.desc      : test Photo session canpreconfig api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0200
+     * @tc.desc   test Photo session canpreconfig api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0200--------------");
@@ -270,12 +270,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200
-     * @tc.name      : test Photo session preconfig api with error code 7400201
-     * @tc.desc      : test Photo session preconfig api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200
+     * @tc.desc   test Photo session preconfig api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200--------------");
@@ -293,12 +293,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100
-     * @tc.name      : test video session preconfig api with error code 7400201
-     * @tc.desc      : test video session preconfig api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100
+     * @tc.desc   test video session preconfig api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100', Level.LEVEL2, async (done: Function) => {
         console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100--------------");
@@ -316,12 +316,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_0100
-     * @tc.name      : test video session canpreconfig api with error code 7400201
-     * @tc.desc      : test video session canpreconfig api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_0100
+     * @tc.desc   test video session canpreconfig api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_0100', Level.LEVEL2, async (done: Function) => {
         console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_0100--------------");
@@ -339,12 +339,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0100
-     * @tc.name      : test create camera input api with error code 7400102
-     * @tc.desc      : test create camera input api with error code 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0100
+     * @tc.desc   test create camera input api with error code 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0100--------------");
@@ -365,12 +365,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0200
-     * @tc.name      : test create camera input api with error code 7400201
-     * @tc.desc      : test create camera input api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0200
+     * @tc.desc   test create camera input api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_ERROR_CODE_0200--------------");
@@ -388,12 +388,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_PHOTO_OUTPUT_ERROR_CODE_0100
-     * @tc.name      : test create photo output api with error code 7400101
-     * @tc.desc      : test create photo output api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_PHOTO_OUTPUT_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_PHOTO_OUTPUT_ERROR_CODE_0100
+     * @tc.desc   test create photo output api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_PHOTO_OUTPUT_ERROR_CODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_PHOTO_OUTPUT_ERROR_CODE_0100--------------");
@@ -410,13 +410,13 @@ export default function cameraPreconfigTest() {
       done();
     })
 
-     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_SSESION_ERROR_CODE_0100
-     * @tc.name      : test create ssesion api with error code 7400101
-     * @tc.desc      : test create ssesion api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_SSESION_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_SSESION_ERROR_CODE_0100
+     * @tc.desc   test create ssesion api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_SSESION_ERROR_CODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_SSESION_ERROR_CODE_0100--------------");
@@ -434,12 +434,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0100
-     * @tc.name      : test enable moving photo api with error code 7400201
-     * @tc.desc      : test enable moving photo api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0100
+     * @tc.desc   test enable moving photo api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0100--------------");
@@ -459,12 +459,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0200
-     * @tc.name      : test enable moving photo api with error code 7400101
-     * @tc.desc      : test enable moving photo api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0200
+     * @tc.desc   test enable moving photo api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENABLE_MOVING_PHOTO_0200--------------");
@@ -484,12 +484,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0100
-     * @tc.name      : test enable mirror api with error code 7400103
-     * @tc.desc      : test enable mirror api with error code 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0100
+     * @tc.desc   test enable mirror api with error code 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0100--------------");
@@ -508,12 +508,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0200
-     * @tc.name      : test enable mirror api with error code 7400101
-     * @tc.desc      : test enable mirror api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0200
+     * @tc.desc   test enable mirror api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_0200--------------");
@@ -535,12 +535,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0100
-     * @tc.name      : test set preview rotation api with error code 7400101
-     * @tc.desc      : test set preview rotation api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0100
+     * @tc.desc   test set preview rotation api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0100--------------");
@@ -560,12 +560,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0200
-     * @tc.name      : test set preview rotation api with error code 7400201
-     * @tc.desc      : test set preview rotation api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0200
+     * @tc.desc   test set preview rotation api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SET_PREVIEW_ROTATION_0200--------------");
@@ -585,12 +585,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0100
-     * @tc.name      : test get preview rotation api with error code 7400101
-     * @tc.desc      : test get preview rotation api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0100
+     * @tc.desc   test get preview rotation api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0100--------------");
@@ -610,12 +610,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0200
-     * @tc.name      : test get preview rotation api with error code 7400201
-     * @tc.desc      : test get preview rotation api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0200
+     * @tc.desc   test get preview rotation api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_PREVIEW_ROTATION_0200--------------");
@@ -635,12 +635,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ADD_SECURE_OUTPUT_0100
-     * @tc.name      : test add secure output api with error code 7400101
-     * @tc.desc      : test add secure output api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ADD_SECURE_OUTPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ADD_SECURE_OUTPUT_0100
+     * @tc.desc   test add secure output api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ADD_SECURE_OUTPUT_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ADD_SECURE_OUTPUT_0100--------------");
@@ -660,12 +660,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SET_QUALITY_PRIORITIZATION_0100
-     * @tc.name      : test set quality prioritization api with error code 7400101
-     * @tc.desc      : test set quality prioritization api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_QUALITY_PRIORITIZATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SET_QUALITY_PRIORITIZATION_0100
+     * @tc.desc   test set quality prioritization api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SET_QUALITY_PRIORITIZATION_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SET_QUALITY_PRIORITIZATION_0100--------------");
@@ -684,12 +684,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_START_0100
-     * @tc.name      : test start api with error code 7400103
-     * @tc.desc      : test start api with error code 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_START_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_START_0100
+     * @tc.desc   test start api with error code 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_START_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_START_0100--------------");
@@ -708,12 +708,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_SET_COLOR_SPACE_0100
-     * @tc.name      : test set color space api with error code 7400103
-     * @tc.desc      : test set color space api with error code 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_COLOR_SPACE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_COLOR_SPACE_0100
+     * @tc.desc   test set color space api with error code 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_COLOR_SPACE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_COLOR_SPACE_0100--------------");

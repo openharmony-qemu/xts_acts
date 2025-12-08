@@ -160,7 +160,6 @@ function nCChanged() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0100
        * @tc.desc   Test on and off api10 .
@@ -185,7 +184,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0200
        * @tc.desc   Test on and off api10 .
@@ -210,7 +208,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0100
        * @tc.desc   Test AddService api10.
@@ -256,7 +253,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0300
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0300
        * @tc.desc   Test AddService api10.
@@ -276,7 +272,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0200
        * @tc.desc   Test api10 401 - characteristics of service is null.
@@ -301,7 +296,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0100
        * @tc.desc   Test NotifyCharacteristicChanged api10.
@@ -347,7 +341,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0200
        * @tc.desc   Test NotifyCharacteristicChanged api10.
@@ -391,7 +384,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0300
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0300
        * @tc.desc   Test NotifyCharacteristicChanged api10.
@@ -422,7 +414,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0400
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0400
        * @tc.desc   Test NotifyCharacteristicChanged api10.
@@ -442,7 +433,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0100
        * @tc.desc   Test SendResponse api10.
@@ -474,7 +464,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0200
        * @tc.desc   Test SendResponse api10.
@@ -501,7 +490,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0300
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0300
        * @tc.desc   Test SendResponse 401 -null parameter.
@@ -523,7 +511,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0400
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0400
        * @tc.desc   Test SendResponse 401 -error parameter.
@@ -550,7 +537,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0100
        * @tc.desc   test gattserver on blemtuchange api10.
@@ -579,7 +565,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0200
        * @tc.desc   test gattserver off blemtuchange api10
@@ -608,7 +593,6 @@ function nCChanged() {
       })
 
       /**
-       * @generated.time 2025-11-09 20:49:45
        * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_CLOSE_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_CLOSE_0100
        * @tc.desc   test gattserver close

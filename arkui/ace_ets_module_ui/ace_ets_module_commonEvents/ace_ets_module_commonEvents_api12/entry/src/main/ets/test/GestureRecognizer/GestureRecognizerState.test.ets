@@ -49,10 +49,12 @@ export default function GestureRecognizerState() {
 
 
     /**
-     * @tc.number    GestureRecognizerState_0100
-     * @tc.name      GestureRecognizerState_0100
-     * @tc.desc      Test GestureRecognizerState
-     * @tc.level     Level 2
+     * @tc.name   GestureRecognizerState_0100
+     * @tc.number GestureRecognizerState_0100
+     * @tc.desc   Test GestureRecognizerState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GestureRecognizerState_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GestureRecognizerState_0100 START');

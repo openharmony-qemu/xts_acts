@@ -169,13 +169,12 @@ export default function AVPlayerPostProcessorTest() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100
-      * @tc.desc    test normal super resolution condition
-      *               : 001.test super resolution
-      * @tc.size    MediumTest
-      * @tc.type    () => void test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100
+     * @tc.desc   test normal super resolution condition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let initializedOperation = async () => {
@@ -224,13 +223,12 @@ export default function AVPlayerPostProcessorTest() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200
-      * @tc.desc    test super resolution without enabling it
-      *               : 002.test super resolution
-      * @tc.size    MediumTest
-      * @tc.type    () => void test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200
+     * @tc.desc   test super resolution without enabling it
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let initializedOperation = async () => {
@@ -276,13 +274,12 @@ export default function AVPlayerPostProcessorTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300
-      * @tc.desc    test super resolution invalid parameters
-      *               : 003.test super resolution
-      * @tc.size    MediumTest
-      * @tc.type    () => void test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300
+     * @tc.desc   test super resolution invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let initializedOperation = async () => {

@@ -53,13 +53,13 @@ export default function abilityTest() {
       console.info(`${TAG}: afterAll in`);
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0100
-     * @tc.name      : ON_HANGUP_0100
-     * @tc.desc      : Testing on('hangUp')
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0100
+     * @tc.desc   Testing on('hangUp')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -75,13 +75,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_0100
-     * @tc.name      : ON_HANGUP_0100
-     * @tc.desc      : Testing on('hangUp')
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_0100
+     * @tc.desc   Testing on('hangUp')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -106,13 +106,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_0200
-     * @tc.name      : ON_HANGUP_0100
-     * @tc.desc      : Testing on('hangUp')
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_0200
+     * @tc.desc   Testing on('hangUp')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag: boolean = false;
@@ -143,13 +143,13 @@ export default function abilityTest() {
       }
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0200
-     * @tc.name      : ON_HANGUP_0100
-     * @tc.desc      : Testing on('hangUp')
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0200
+     * @tc.desc   Testing on('hangUp')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -174,13 +174,13 @@ export default function abilityTest() {
       }
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0300
-     * @tc.name      : sessionType: 'audio'
-     * @tc.desc      : sessionType: 'audio'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0300
+     * @tc.desc   sessionType: 'audio'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -196,13 +196,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0400
-     * @tc.name      : sessionType: 'voice_call'
-     * @tc.desc      : sessionType: 'voice_call'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0400
+     * @tc.desc   sessionType: 'voice_call'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -218,13 +218,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0500
-     * @tc.name      : sessionType: 'vioce_call'
-     * @tc.desc      : sessionType: 'vioce_call'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0500
+     * @tc.desc   sessionType: 'vioce_call'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -240,13 +240,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0600
-     * @tc.name      : sessionType: 'vioce_call'
-     * @tc.desc      : sessionType: 'vioce_call'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0600
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0600
+     * @tc.desc   sessionType: 'vioce_call'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPickerOptions : avSession.AVCastPickerOptions = {}
@@ -260,13 +260,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0700
-     * @tc.name      : select()
-     * @tc.desc      : select()
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0700
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0700
+     * @tc.desc   select()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPicker = new avSession.AVCastPickerHelper(context);
@@ -279,13 +279,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800
-     * @tc.desc      : resetCommunicationDevice()
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800
+     * @tc.desc   resetCommunicationDevice()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPicker = new avSession.AVCastPickerHelper(context);

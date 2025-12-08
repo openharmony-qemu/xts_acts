@@ -116,13 +116,13 @@ void NativeTextLineTest::PrepareCreateTextLine(const std::string& text)
     OH_Drawing_TypographyLayout(typography_, maxWidth);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_001
- * @tc.name  : TextLineTest001
- * @tc.desc  : test for the textLine GetGlyphCount
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_001
+ * @tc.desc   test for the textLine GetGlyphCount
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest001, Function | MediumTest | Level0)
 {
@@ -149,13 +149,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest001, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_002
- * @tc.name  : TextLineTest002
- * @tc.desc  : test for the textLine GetGlyphCount
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_002
+ * @tc.desc   test for the textLine GetGlyphCount
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest002, Function | MediumTest | Level0)
 {
@@ -182,13 +182,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest002, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_003
- * @tc.name  : TextLineTest003
- * @tc.desc  : test for the textLine GetGlyphCount
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest003
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_003
+ * @tc.desc   test for the textLine GetGlyphCount
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest003, Function | MediumTest | Level0)
 {
@@ -209,13 +209,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest003, Function | MediumTest | Level0)
     EXPECT_EQ(count, 0);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_004
- * @tc.name  : TextLineTest004
- * @tc.desc  : test for the textLine GetTextRange
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest004
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_004
+ * @tc.desc   test for the textLine GetTextRange
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest004, Function | MediumTest | Level0)
 {
@@ -249,13 +249,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest004, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_005
- * @tc.name  : TextLineTest005
- * @tc.desc  : test for the textLine GetTextRange
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest005
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_005
+ * @tc.desc   test for the textLine GetTextRange
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest005, Function | MediumTest | Level0)
 {
@@ -282,13 +282,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest005, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_006
- * @tc.name  : TextLineTest006
- * @tc.desc  : test for the textLine GetTextRange
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest006
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_006
+ * @tc.desc   test for the textLine GetTextRange
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest006, Function | MediumTest | Level0)
 {
@@ -310,13 +310,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest006, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_007
- * @tc.name  : TextLineTest007
- * @tc.desc  : test for the textLine GetTextRange
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest007
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_007
+ * @tc.desc   test for the textLine GetTextRange
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest007, Function | MediumTest | Level0)
 {
@@ -340,13 +340,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest007, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_008
- * @tc.name  : TextLineTest008
- * @tc.desc  : test for the textLine GetGlyphRuns
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest008
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_008
+ * @tc.desc   test for the textLine GetGlyphRuns
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest008, Function | MediumTest | Level0)
 {
@@ -369,13 +369,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest008, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_009
- * @tc.name  : TextLineTest009
- * @tc.desc  : test for the textLine GetGlyphRuns
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest009
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_009
+ * @tc.desc   test for the textLine GetGlyphRuns
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest009, Function | MediumTest | Level0)
 {
@@ -410,13 +410,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest009, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_010
- * @tc.name  : TextLineTest010
- * @tc.desc  : test for the textLine GetGlyphRuns
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest010
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_010
+ * @tc.desc   test for the textLine GetGlyphRuns
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest010, Function | MediumTest | Level0)
 {
@@ -438,13 +438,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest010, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_011
- * @tc.name  : TextLineTest011
- * @tc.desc  : test for the textLine GetGlyphRuns
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest011
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_011
+ * @tc.desc   test for the textLine GetGlyphRuns
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest011, Function | MediumTest | Level0)
 {
@@ -465,13 +465,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest011, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_012
- * @tc.name  : TextLineTest012
- * @tc.desc  : test for the textLine GetTypographicBounds
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest012
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_012
+ * @tc.desc   test for the textLine GetTypographicBounds
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest012, Function | MediumTest | Level0)
 {
@@ -496,13 +496,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest012, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_013
- * @tc.name  : TextLineTest013
- * @tc.desc  : test for the textLine GetTypographicBounds
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest013
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_013
+ * @tc.desc   test for the textLine GetTypographicBounds
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest013, Function | MediumTest | Level0)
 {
@@ -539,13 +539,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest013, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_014
- * @tc.name  : TextLineTest014
- * @tc.desc  : test for the textLine GetTypographicBounds
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest014
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_014
+ * @tc.desc   test for the textLine GetTypographicBounds
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest014, Function | MediumTest | Level0)
 {
@@ -570,13 +570,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest014, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_015
- * @tc.name  : TextLineTest015
- * @tc.desc  : test for the textLine GetTypographicBounds
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest015
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_015
+ * @tc.desc   test for the textLine GetTypographicBounds
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest015, Function | MediumTest | Level0)
 {
@@ -609,13 +609,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest015, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_016
- * @tc.name  : TextLineTest016
- * @tc.desc  : test for the textLine GetTrailingSpaceWidth
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest016
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_016
+ * @tc.desc   test for the textLine GetTrailingSpaceWidth
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest016, Function | MediumTest | Level0)
 {
@@ -635,13 +635,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest016, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_017
- * @tc.name  : TextLineTest017
- * @tc.desc  : test for the textLine GetTrailingSpaceWidth
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest017
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_017
+ * @tc.desc   test for the textLine GetTrailingSpaceWidth
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest017, Function | MediumTest | Level0)
 {
@@ -667,13 +667,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest017, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_018
- * @tc.name  : TextLineTest018
- * @tc.desc  : test for the textLine GetTrailingSpaceWidth
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest018
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_018
+ * @tc.desc   test for the textLine GetTrailingSpaceWidth
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest018, Function | MediumTest | Level0)
 {
@@ -695,13 +695,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest018, Function | MediumTest | Level0)
     EXPECT_EQ(width, 0.0);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_019
- * @tc.name  : TextLineTest019
- * @tc.desc  : test for the textLine GetOffsetForStringIndex
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest019
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_019
+ * @tc.desc   test for the textLine GetOffsetForStringIndex
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest019, Function | MediumTest | Level0)
 {
@@ -733,13 +733,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest019, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_020
- * @tc.name  : TextLineTest020
- * @tc.desc  : test for the textLine GetOffsetForStringIndex
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest020
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_020
+ * @tc.desc   test for the textLine GetOffsetForStringIndex
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest020, Function | MediumTest | Level0)
 {
@@ -779,13 +779,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest020, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_021
- * @tc.name  : TextLineTest021
- * @tc.desc  : test for the textLine EnumerateCaretOffsets
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest021
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_021
+ * @tc.desc   test for the textLine EnumerateCaretOffsets
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest021, Function | MediumTest | Level0)
 {
@@ -818,13 +818,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest021, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_022
- * @tc.name  : TextLineTest022
- * @tc.desc  : test for the textLine EnumerateCaretOffsets
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest022
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_022
+ * @tc.desc   test for the textLine EnumerateCaretOffsets
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest022, Function | MediumTest | Level0)
 {
@@ -850,13 +850,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest022, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_023
- * @tc.name  : TextLineTest023
- * @tc.desc  : test for the textLine EnumerateCaretOffsets
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest023
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_023
+ * @tc.desc   test for the textLine EnumerateCaretOffsets
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest023, Function | MediumTest | Level0)
 {
@@ -875,13 +875,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest023, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_024
- * @tc.name  : TextLineTest024
- * @tc.desc  : test for the textLine GetAlignmentOffset
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest024
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_024
+ * @tc.desc   test for the textLine GetAlignmentOffset
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest024, Function | MediumTest | Level0)
 {
@@ -914,13 +914,13 @@ HWTEST_F(NativeTextLineTest, TextLineTest024, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_025
- * @tc.name  : TextLineTest025
- * @tc.desc  : test for the textLine GetAlignmentOffset
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TextLineTest025
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_025
+ * @tc.desc   test for the textLine GetAlignmentOffset
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextLineTest, TextLineTest025, Function | MediumTest | Level0)
 {

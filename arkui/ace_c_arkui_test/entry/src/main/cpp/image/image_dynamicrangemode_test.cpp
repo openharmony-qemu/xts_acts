@@ -68,4 +68,30 @@ static napi_value TestImageDynamicRangeMode004(napi_env env, napi_callback_info 
         ARKUI_DYNAMIC_RANGE_MODE_STANDARD);
     NAPI_END;
 }
+
+static napi_value TestImageDynamicRangeMode005(napi_env env, napi_callback_info info)
+{
+    NAPI_START(image, ARKUI_NODE_IMAGE);
+
+    ArkUI_NumberValue value[] = {{.i32 = ARKUI_DYNAMIC_RANGE_MODE_HIGH}};
+    ArkUI_AttributeItem value_item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+    auto ret = nodeAPI->setAttribute(image, NODE_IMAGE_DYNAMIC_RANGE_MODE, &value_item);
+    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(nodeAPI->getAttribute(image, NODE_IMAGE_DYNAMIC_RANGE_MODE)->value[PARAM_0].i32,
+        ARKUI_DYNAMIC_RANGE_MODE_HIGH);
+    NAPI_END;
+}
+
+static napi_value TestImageDynamicRangeMode006(napi_env env, napi_callback_info info)
+{
+    NAPI_START(image, ARKUI_NODE_IMAGE);
+
+    ArkUI_NumberValue value[] = {{.i32 = ARKUI_DYNAMIC_RANGE_MODE_STANDARD}};
+    ArkUI_AttributeItem value_item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+    auto ret = nodeAPI->setAttribute(image, NODE_IMAGE_DYNAMIC_RANGE_MODE, &value_item);
+    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(nodeAPI->getAttribute(image, NODE_IMAGE_DYNAMIC_RANGE_MODE)->value[PARAM_0].i32,
+        ARKUI_DYNAMIC_RANGE_MODE_STANDARD);
+    NAPI_END;
+}
 } // namespace ArkUICapiTest

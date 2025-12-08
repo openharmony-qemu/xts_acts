@@ -40,12 +40,12 @@ export default function createNodeList() {
       done();
     });
     /**
-     * @tc.number    createNodeList_0100
-     * @tc.name      createNodeList_0100
-     * @tc.desc      frameNode: createNodeListToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeList_0100
+     * @tc.number createNodeList_0100
+     * @tc.desc   frameNode: createNodeListToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeList_0100 START');

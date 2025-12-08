@@ -57,14 +57,14 @@ export default function webResourceError() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETERRORINFO_0100
-    * @tc.name       : testGetErrorInfo001
-    * @tc.desc       : test getErrorInfo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetErrorInfo001
+     * @tc.number SUB_WEB_GETERRORINFO_0100
+     * @tc.desc   test getErrorInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetErrorInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetErrorInfo001", 141501)
       let isReturn = false;

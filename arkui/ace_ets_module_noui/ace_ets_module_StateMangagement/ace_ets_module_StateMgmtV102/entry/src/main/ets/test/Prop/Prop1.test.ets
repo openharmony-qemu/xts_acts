@@ -58,14 +58,14 @@ export default function Prop1() {
       router.back()
     });
 
-		/**
-		 * @tc.number    Prop1_0100
-		 * @tc.name      Prop1_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Prop1_0100
+     * @tc.number Prop1_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Prop1_0100 START');
       let driver = await UiDriver.create()
@@ -82,14 +82,14 @@ export default function Prop1() {
 
     });
 
-		/**
-		 * @tc.number    Prop1_0200
-		 * @tc.name      Prop1_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Prop1_0200
+     * @tc.number Prop1_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop1_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Prop1_0200 START');
       let driver = await UiDriver.create()
@@ -106,14 +106,14 @@ export default function Prop1() {
 
     });
 
-		/**
-		 * @tc.number    Prop1_0300
-		 * @tc.name      Prop1_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Prop1_0300
+     * @tc.number Prop1_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop1_0300', Level.LEVEL0, async (done: Function) => {
       console.info('Prop1_0300 START');
       let driver = await UiDriver.create()
@@ -130,14 +130,14 @@ export default function Prop1() {
 
     });
 
-		/**
-		 * @tc.number    Prop1_0400
-		 * @tc.name      Prop1_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Prop1_0400
+     * @tc.number Prop1_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop1_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Prop1_0400 START');
       let driver = await UiDriver.create()
@@ -154,14 +154,14 @@ export default function Prop1() {
 
     });
 
-		/**
-		 * @tc.number    Prop1_0500
-		 * @tc.name      Prop1_0500
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Prop1_0500
+     * @tc.number Prop1_0500
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop1_0500', Level.LEVEL0, async (done: Function) => {
       console.info('Prop1_0500 START');
       let driver = await UiDriver.create()
@@ -178,14 +178,14 @@ export default function Prop1() {
 
     });
 
-		/**
-		 * @tc.number    Prop1_0600
-		 * @tc.name      Prop1_0600
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Prop1_0600
+     * @tc.number Prop1_0600
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop1_0600', Level.LEVEL0, async (done: Function) => {
       console.info('Prop1_0600 START');
       let driver = await UiDriver.create()
@@ -204,14 +204,14 @@ export default function Prop1() {
 
     });
 
-		/**
-		 * @tc.number    Prop1_0700
-		 * @tc.name      Prop1_0700
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Prop1_0700
+     * @tc.number Prop1_0700
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop1_0700', Level.LEVEL0, async (done: Function) => {
       console.info('Prop1_0700 START');
       let driver = await UiDriver.create()
@@ -230,14 +230,14 @@ export default function Prop1() {
 
     });
 
-		/**
-		 * @tc.number    Prop1_0800
-		 * @tc.name      Prop1_0800
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Prop1_0800
+     * @tc.number Prop1_0800
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop1_0800', Level.LEVEL0, async (done: Function) => {
       console.info('Prop1_0800 START');
       let driver = await UiDriver.create()

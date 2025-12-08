@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ class EntryAbility extends UIAbility {
   }
 
   onDestroy(): Promise<void> | undefined {
-    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onDestroy');
     return undefined;
   }
 
@@ -51,8 +51,8 @@ class EntryAbility extends UIAbility {
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
     if (this.context) {
-      hilog.info(0x0000, 'testTag EntryAbility', 'context ok: ' + JSON.stringify(this.context));
-      AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context);
+      hilog.info(0x0000, 'testTag EntryAbility', 'context ok');
+      AppStorage.setOrCreate<common.UIAbilityContext>('UIAbilityContext', this.context);
       hilog.info(0x0000, 'testTag EntryAbility', 'setOrCreate success ');
     } else {
       hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');

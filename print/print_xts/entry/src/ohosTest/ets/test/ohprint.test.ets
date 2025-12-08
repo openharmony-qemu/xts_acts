@@ -20,12 +20,12 @@ import entry from 'libentry.so'
 export default function oHPrintTest() {
   describe('OHPrintTest', () => {
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0100
-     * @tc.name       : testOHPrint001
-     * @tc.desc       : test oHPrintInit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint001
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0100
+     * @tc.desc   test oHPrintInit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint001', Level.LEVEL1, async () => {
       let result: number = await entry.oHPrintInit();
@@ -33,12 +33,12 @@ export default function oHPrintTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0200
-     * @tc.name       : testOHPrint002
-     * @tc.desc       : test oHPrintListener
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint002
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0200
+     * @tc.desc   test oHPrintListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint002', Level.LEVEL1, async () => {
       let result: number = await entry.oHPrintListener();
@@ -46,12 +46,12 @@ export default function oHPrintTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0300
-     * @tc.name       : testOHPrint003
-     * @tc.desc       : test oHPrintDiscovery
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint003
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0300
+     * @tc.desc   test oHPrintDiscovery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint003', Level.LEVEL1, async () => {
       let result: number = await entry.oHPrintDiscovery();
@@ -59,12 +59,12 @@ export default function oHPrintTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0400
-     * @tc.name       : testOHPrint004
-     * @tc.desc       : test oHPrintConnect
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint004
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0400
+     * @tc.desc   test oHPrintConnect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint004', Level.LEVEL1, async () => {
       let result: number = await entry.oHPrintConnect();
@@ -72,12 +72,12 @@ export default function oHPrintTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0500
-     * @tc.name       : testOHPrint005
-     * @tc.desc       : test oHPrintJob
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint005
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0500
+     * @tc.desc   test oHPrintJob
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint005', Level.LEVEL1, async () => {
       let result: number = await entry.oHPrintJob();
@@ -85,12 +85,12 @@ export default function oHPrintTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0600
-     * @tc.name       : testOHPrint006
-     * @tc.desc       : test oHPrintList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint006
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0600
+     * @tc.desc   test oHPrintList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint006', Level.LEVEL1, async () => {
       let result: number = await entry.oHPrintList();
@@ -98,12 +98,12 @@ export default function oHPrintTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0700
-     * @tc.name       : testOHPrint007
-     * @tc.desc       : test oHPrintInfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint007
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0700
+     * @tc.desc   test oHPrintInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint007', Level.LEVEL1, async () => {
       let result: number = await entry.oHPrintInfo();
@@ -111,12 +111,12 @@ export default function oHPrintTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0800
-     * @tc.name       : testOHPrint008
-     * @tc.desc       : test oHPrintProperty
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint008
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0800
+     * @tc.desc   test oHPrintProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint008', Level.LEVEL1, async () => {
       let result: number = await entry.oHPrintProperty();
@@ -124,12 +124,12 @@ export default function oHPrintTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_PRINT_TEST_0900
-     * @tc.name       : testOHPrint009
-     * @tc.desc       : test oHPrintStartPrintByNative
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHPrint009
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_0900
+     * @tc.desc   test oHPrintStartPrintByNative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHPrint009', Level.LEVEL1, async () => {
       let context = AppStorage.get<common.UIAbilityContext>("testContext") as common.UIAbilityContext;

@@ -29,12 +29,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0000
-     * @tc.name   : test_Documentpicker_Select_Callback_000
-     * @tc.desc   : select with option
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_000
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0000
+     * @tc.desc   select with option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_000", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_000";
@@ -42,24 +42,24 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0100
-     * @tc.name   : test_Documentpicker_Select_Callback_001
-     * @tc.desc   : select without option
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_001
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0100
+     * @tc.desc   select without option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_001", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_001";
       await select(testNum, done);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0200
-     * @tc.name   : test_Documentpicker_Select_Callback_002
-     * @tc.desc   : select with option maxSelectNumber
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_002
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0200
+     * @tc.desc   select with option maxSelectNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_002", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_002";
@@ -68,12 +68,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0300
-     * @tc.name   : test_Documentpicker_Select_Callback_003
-     * @tc.desc   : select with option defaultFilePathUri
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_003
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0300
+     * @tc.desc   select with option defaultFilePathUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_003", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_003";
@@ -82,12 +82,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0400
-     * @tc.name   : test_Documentpicker_Select_Callback_004
-     * @tc.desc   : select with option image fileSuffixFilters
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_004
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0400
+     * @tc.desc   select with option image fileSuffixFilters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_004", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_004";
@@ -96,12 +96,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0500
-     * @tc.name   : test_Documentpicker_Select_Callback_005
-     * @tc.desc   : select with option docs fileSuffixFilters
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_005
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0500
+     * @tc.desc   select with option docs fileSuffixFilters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_005", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_005";
@@ -110,12 +110,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0600
-     * @tc.name   : test_Documentpicker_Select_Callback_006
-     * @tc.desc   : select with option video fileSuffixFilters
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_006
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0600
+     * @tc.desc   select with option video fileSuffixFilters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_006", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_006";
@@ -124,12 +124,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0700
-     * @tc.name   : test_Documentpicker_Select_Callback_007
-     * @tc.desc   : select with option audio fileSuffixFilters
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_007
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0700
+     * @tc.desc   select with option audio fileSuffixFilters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_007", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_007";
@@ -138,12 +138,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0800
-     * @tc.name   : test_Documentpicker_Select_Callback_008
-     * @tc.desc   : select with option file parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_008
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0800
+     * @tc.desc   select with option file parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_008", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_008";
@@ -154,12 +154,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0900
-     * @tc.name   : test_Documentpicker_Select_Callback_009
-     * @tc.desc   : select with option folder parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_009
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0900
+     * @tc.desc   select with option folder parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_009", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_009";
@@ -168,12 +168,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1000
-     * @tc.name   : test_Documentpicker_Select_Callback_010
-     * @tc.desc   : select with option mixed parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_010
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1000
+     * @tc.desc   select with option mixed parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_010", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_010";
@@ -183,12 +183,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1100
-     * @tc.name   : test_Documentpicker_Select_Callback_011
-     * @tc.desc   : select with option authMode
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_011
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1100
+     * @tc.desc   select with option authMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_011", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_011";
@@ -198,12 +198,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1200
-     * @tc.name   : test_Documentpicker_Select_Callback_012
-     * @tc.desc   : select with option authMode
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_012
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1200
+     * @tc.desc   select with option authMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_012", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_012";
@@ -212,12 +212,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1300
-     * @tc.name   : test_Documentpicker_Select_Callback_013
-     * @tc.desc   : select with option authMode
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_013
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1300
+     * @tc.desc   select with option authMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_013", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_013";
@@ -228,12 +228,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1400
-     * @tc.name   : test_Documentpicker_Select_Callback_014
-     * @tc.desc   : select with option multiAuthMode
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_014
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1400
+     * @tc.desc   select with option multiAuthMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_014", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_014";
@@ -243,13 +243,13 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
 
-      /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1500
-     * @tc.name   : test_Documentpicker_Select_Callback_015
-     * @tc.desc   : select with option MergeTypeMode.DEFAULT
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+    /**
+     * @tc.name   test_Documentpicker_Select_Callback_015
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1500
+     * @tc.desc   select with option MergeTypeMode.DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_015", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_015";
@@ -259,12 +259,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1600
-     * @tc.name   : test_Documentpicker_Select_Callback_016
-     * @tc.desc   : select with option MergeTypeMode.AUDIO
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_016
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1600
+     * @tc.desc   select with option MergeTypeMode.AUDIO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_016", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_016";
@@ -274,12 +274,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1700
-     * @tc.name   : test_Documentpicker_Select_Callback_017
-     * @tc.desc   : select with option MergeTypeMode.VIDEO
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_017
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1700
+     * @tc.desc   select with option MergeTypeMode.VIDEO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_017", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_017";
@@ -288,13 +288,13 @@ export default function documentPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option);
     });
 
-     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1800
-     * @tc.name   : test_Documentpicker_Select_Callback_018
-     * @tc.desc   : select with option MergeTypeMode.DOCUMENT
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+    /**
+     * @tc.name   test_Documentpicker_Select_Callback_018
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1800
+     * @tc.desc   select with option MergeTypeMode.DOCUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_018", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_018";
@@ -304,12 +304,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1900
-     * @tc.name   : test_Documentpicker_Select_Callback_019
-     * @tc.desc   : select with option MergeTypeMode.PICTURE
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_019
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1900
+     * @tc.desc   select with option MergeTypeMode.PICTURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_019", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_019";
@@ -319,12 +319,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_2000
-     * @tc.name   : test_Documentpicker_Select_Callback_020
-     * @tc.desc   : select with option multiAuthMode
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_020
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_2000
+     * @tc.desc   select with option multiAuthMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_020", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_020";
@@ -334,12 +334,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_2100
-     * @tc.name   : test_Documentpicker_Select_Callback_021
-     * @tc.desc   : select with option multiAuthMode
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Select_Callback_021
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_2100
+     * @tc.desc   select with option multiAuthMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_021", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_021";
@@ -349,12 +349,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0000
-     * @tc.name   : test_Documentpicker_Save_Callback_000
-     * @tc.desc   : save image in Pictures
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 0
+     * @tc.name   test_Documentpicker_Save_Callback_000
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0000
+     * @tc.desc   save image in Pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Documentpicker_Save_Callback_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_000";
@@ -363,12 +363,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0100
-     * @tc.name   : test_Documentpicker_Save_Callback_001
-     * @tc.desc   : save file in Documents
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_001
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0100
+     * @tc.desc   save file in Documents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_001", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_001";
@@ -377,12 +377,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0200
-     * @tc.name   : test_Documentpicker_Save_Callback_002
-     * @tc.desc   : save mp4 in Videos
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Documentpicker_Save_Callback_002
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0200
+     * @tc.desc   save mp4 in Videos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Documentpicker_Save_Callback_002", Level.LEVEL3, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_002";
@@ -391,12 +391,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0300
-     * @tc.name   : test_Documentpicker_Save_Callback_003
-     * @tc.desc   : save mp3 in Audios
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Documentpicker_Save_Callback_003
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0300
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Documentpicker_Save_Callback_003", Level.LEVEL3, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_003";
@@ -405,24 +405,24 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0400
-     * @tc.name   : test_Documentpicker_Save_Callback_004
-     * @tc.desc   : save without option, cancel
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Documentpicker_Save_Callback_004
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0400
+     * @tc.desc   save without option, cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Documentpicker_Save_Callback_004", Level.LEVEL3, async (done: Function) => {
       let testNum = "documentpicker_save_callback_004";
       await saveWithoutSelect(testNum, done);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0500
-     * @tc.name   : test_Documentpicker_Save_Callback_005
-     * @tc.desc   : save png in Pictures
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_005
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0500
+     * @tc.desc   save png in Pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_005", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_005";
@@ -431,12 +431,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0600
-     * @tc.name   : test_Documentpicker_Save_Callback_006
-     * @tc.desc   : save suffix in Pictures
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_006
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0600
+     * @tc.desc   save suffix in Pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_006", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_006";
@@ -445,12 +445,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0700
-     * @tc.name   : test_Documentpicker_Save_Callback_007
-     * @tc.desc   : save suffix in Documents
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_007
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0700
+     * @tc.desc   save suffix in Documents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_007", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_007";
@@ -459,12 +459,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0800
-     * @tc.name   : test_Documentpicker_Save_Callback_008
-     * @tc.desc   : save mp4 in Videos
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_008
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0800
+     * @tc.desc   save mp4 in Videos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_008", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_008";
@@ -473,12 +473,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0900
-     * @tc.name   : test_Documentpicker_Save_Callback_009
-     * @tc.desc   : save mp3 in Audios
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_009
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0900
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_009", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_009";
@@ -487,12 +487,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1000
-     * @tc.name   : test_Documentpicker_Save_Callback_010
-     * @tc.desc   : save option=DOWNLOAD
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_010
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1000
+     * @tc.desc   save option=DOWNLOAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_010", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_010";
@@ -501,12 +501,12 @@ export default function documentPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option);
     });
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1100
-     * @tc.name   : test_Documentpicker_Save_Callback_011
-     * @tc.desc   : save option=DEFAULT
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_011
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1100
+     * @tc.desc   save option=DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_011", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_011";
@@ -516,12 +516,12 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1200
-     * @tc.name   : test_Documentpicker_Save_Callback_012
-     * @tc.desc   : test getSelectdIndex
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Documentpicker_Save_Callback_012
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1200
+     * @tc.desc   test getSelectdIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_012", Level.LEVEL1, async (done: Function) => {
       try {

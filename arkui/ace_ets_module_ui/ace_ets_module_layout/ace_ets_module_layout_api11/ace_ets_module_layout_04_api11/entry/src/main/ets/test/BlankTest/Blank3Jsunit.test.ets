@@ -44,6 +44,14 @@ export default function blank3Jsunit() {
       console.info("blank after each called");
     })
 
+    /**
+     * @tc.name   testBlank01
+     * @tc.number testBlank01
+     * @tc.desc   testBlank01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBlank01',  Level.LEVEL0, async (done: Function) => {
       console.info('[testBlank01] START');
       await Utils.sleep(1000);
@@ -55,6 +63,14 @@ export default function blank3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBlank02
+     * @tc.number testBlank02
+     * @tc.desc   testBlank02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBlank02',  Level.LEVEL0, async (done: Function) => {
       console.info('[testBlank02] START');
       await Utils.sleep(1000);

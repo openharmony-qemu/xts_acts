@@ -20,12 +20,12 @@ export default function NativeGestureTypeTest() {
   describe('NativeGestureTypeTest', () => {
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_LONG_PRESS_GESTURE_0100
-     * @tc.name    : testGetGestureType1
-     * @tc.desc    : Test whether the key LONG_PRESS_GESTURE are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureType1
+     * @tc.number SUB_ARKUI_ACE_ENGINE_LONG_PRESS_GESTURE_0100
+     * @tc.desc   Test whether the key LONG_PRESS_GESTURE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureType1',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -42,12 +42,12 @@ export default function NativeGestureTypeTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_PINCH_GESTURE_0100
-     * @tc.name    : testGetGestureType2
-     * @tc.desc    : Test whether the key PINCH_GESTURE are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureType2
+     * @tc.number SUB_ARKUI_ACE_ENGINE_PINCH_GESTURE_0100
+     * @tc.desc   Test whether the key PINCH_GESTURE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureType2',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -64,12 +64,12 @@ export default function NativeGestureTypeTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ROTATION_GESTURE_0100
-     * @tc.name    : testGetGestureType3
-     * @tc.desc    : Test whether the key ROTATION_GESTURE are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureType3
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ROTATION_GESTURE_0100
+     * @tc.desc   Test whether the key ROTATION_GESTURE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureType3',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -86,12 +86,12 @@ export default function NativeGestureTypeTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_SWIPE_GESTURE_0100
-     * @tc.name    : testGetGestureType4
-     * @tc.desc    : Test whether the key SWIPE_GESTURE are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureType4
+     * @tc.number SUB_ARKUI_ACE_ENGINE_SWIPE_GESTURE_0100
+     * @tc.desc   Test whether the key SWIPE_GESTURE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureType4',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -108,12 +108,12 @@ export default function NativeGestureTypeTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_GROUP_GESTURE_0100
-     * @tc.name    : testGetGestureType5
-     * @tc.desc    : Test whether the key GROUP_GESTURE are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureType5
+     * @tc.number SUB_ARKUI_ACE_ENGINE_GROUP_GESTURE_0100
+     * @tc.desc   Test whether the key GROUP_GESTURE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureType5',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

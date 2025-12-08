@@ -20,6 +20,7 @@ group("DFXTest") {
       "log_dotting:ActsWebLogDottingTest",
       "log_dotting_static:ActsWebLogDottingStaticTest",
       "log_dotting_five:ActsWebLogDottingFiveTest",
+      "log_dotting_five_static:ActsWebLogDottingFiveStaticTest",
       "log_dotting_four:ActsWebLogDottingFourTest",
       "log_dotting_nine:ActsWebLogDottingNineTest",
       "log_dotting_one:ActsWebLogDottingOneTest",
@@ -35,6 +36,7 @@ group("DFXTest") {
       "system_events:ActsWebSystemEventsTest",
       "system_events_static:ActsWebSystemEventsStaticTest",
       "web_page_debug:ActsWebPageDebugTest",
+      "web_page_debug_static:ActsWebPageDebugStaticTest",
     ]
   }
 }

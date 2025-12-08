@@ -46,9 +46,12 @@ export default function Grid_Col_Order_Default() {
       console.info("Grid_Col_Order_Default after each called")
     });
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Order_Default_TEST_0100
      * @tc.number SUB_ACE_Grid_Col_Order_Default_TEST_0100
-     * @tc.name testGridColOrder
-     * @tc.desc GridCol does not set order
+     * @tc.desc   GridCol does not set order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Order_Default_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Order_Default_TEST_0100] START');

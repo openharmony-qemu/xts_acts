@@ -54,13 +54,13 @@ export default function primary() {
     });
 
     /**
+     * @tc.name   primary_0100
      * @tc.number SUB_ACE_primary_0100
-     * @tc.name primary_0100
-     * @tc.desc To test the primary:true
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the primary:true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('primary_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('primary_0100 START');
       let driver = await Driver.create()
@@ -80,13 +80,13 @@ export default function primary() {
     });
 
     /**
+     * @tc.name   primary_0200
      * @tc.number SUB_ACE_primary_0200
-     * @tc.name primary_0200
-     * @tc.desc To test the primary:fasle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the primary:fasle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('primary_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('primary_0200 START');
       let driver = await Driver.create()

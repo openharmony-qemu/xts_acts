@@ -69,7 +69,6 @@ export default function PerfStatEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0100
      * @tc.desc   1. Register callback for perfStat
@@ -105,7 +104,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0200
      * @tc.desc   1. Register callback for perfStat
@@ -138,7 +136,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0300
      * @tc.desc   1. Register callback for perfStat
@@ -166,7 +163,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0400
      * @tc.desc   1. Register callback for perfStat
@@ -194,7 +190,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0500
      * @tc.desc   1. Register callback for perfStat
@@ -220,7 +215,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0600
      * @tc.desc   1. Register callback for perfStat
@@ -247,7 +241,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0700
      * @tc.desc   1. Register callback for perfStat
@@ -273,7 +266,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0800
      * @tc.desc   1. Register callback for perfStat
@@ -299,7 +291,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0900
      * @tc.desc   1. Register callback for perfStat
@@ -326,7 +317,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1000
      * @tc.desc   1. Register callback for perfStat
@@ -362,7 +352,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1100
      * @tc.desc   1. Register callback for perfStat
@@ -401,7 +390,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1200
      * @tc.desc   1. Register callback for perfStat
@@ -440,7 +428,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1300
      * @tc.desc   1. Register callback for perfStat
@@ -479,7 +466,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1400
      * @tc.desc   1. Register callback for perfStat
@@ -517,7 +503,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1500
      * @tc.desc   1. Register callback for perfStat
@@ -551,7 +536,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1600
      * @tc.desc   1. Register callback for perfStat
@@ -597,7 +581,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1700
      * @tc.desc   1. Register callback for perfStat
@@ -632,7 +615,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1800
      * @tc.desc   1. Register callback for perfStat
@@ -676,7 +658,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1900
      * @tc.desc   1. Register callback for perfStat
@@ -703,7 +684,6 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_2000
      * @tc.desc   1. Register callback for perfStat
@@ -744,7 +724,6 @@ export default function PerfStatEtsTest() {
       console.log(TAG + "************* testRdbStorePerfStat0020 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_2100
      * @tc.desc   1. Register callback for perfStat
@@ -770,7 +749,6 @@ export default function PerfStatEtsTest() {
       console.log(TAG + "************* testRdbStorePerfStat0021 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStorePerfStat0022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_2200
      * @tc.desc   1. Register callback for perfStat

@@ -41,12 +41,12 @@ export default function CanvasAttrsTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_CanvasAttrsTest_0100
-     * @tc.name: CanvasAttrsTest_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   CanvasAttrsTest_0100
+     * @tc.number SUB_ARKUI_API_CanvasAttrsTest_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CanvasAttrsTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CanvasAttrsTest_0100 START');

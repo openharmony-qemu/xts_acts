@@ -46,12 +46,12 @@ export default function requestSystemJSUnit() {
     })
 
     /**
-     * @tc.number: ohos.SUB_REQUESTSYSTEM_UPLOAD_API_0001
-     * @tc.name: ohos.SUB_REQUESTSYSTEM_UPLOAD_API_0001
-     * @tc.desc: Upload files.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_REQUESTSYSTEM_UPLOAD_API_0001
+     * @tc.number ohos.SUB_REQUESTSYSTEM_UPLOAD_API_0001
+     * @tc.desc   Upload files.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUESTSYSTEM_UPLOAD_API_0001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUESTSYSTEM_UPLOAD_API_0001 start-----------------------");
@@ -104,12 +104,12 @@ export default function requestSystemJSUnit() {
     });
 
     /**
-     * @tc.number: ohos.SUB_REQUESTSYSTEM_UPLOAD_API_0002
-     * @tc.name: ohos.SUB_REQUESTSYSTEM_UPLOAD_API_0002
-     * @tc.desc: Upload files.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_REQUESTSYSTEM_UPLOAD_API_0002
+     * @tc.number ohos.SUB_REQUESTSYSTEM_UPLOAD_API_0002
+     * @tc.desc   Upload files.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUESTSYSTEM_UPLOAD_API_0002', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUESTSYSTEM_UPLOAD_API_0002 start-----------------------");
@@ -156,12 +156,12 @@ export default function requestSystemJSUnit() {
     });
 
     /**
-     * @tc.number: ohos.SUB_REQUESTSYSTEM_DOWNLOAD_API_0001
-     * @tc.name: ohos.SUB_REQUESTSYSTEM_DOWNLOAD_API_0001
-     * @tc.desc: This API is used to download files.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_REQUESTSYSTEM_DOWNLOAD_API_0001
+     * @tc.number ohos.SUB_REQUESTSYSTEM_DOWNLOAD_API_0001
+     * @tc.desc   This API is used to download files.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUESTSYSTEM_DOWNLOAD_API_0001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUESTSYSTEM_DOWNLOAD_API_0001 start-----------------------");
@@ -196,12 +196,12 @@ export default function requestSystemJSUnit() {
     });
 
     /**
-     * @tc.number: ohos.SUB_REQUESTSYSTEM_DOWNLOADCOMPLETE_API_0001
-     * @tc.name: ohos.SUB_REQUESTSYSTEM_DOWNLOADCOMPLETE_API_0001
-     * @tc.desc: Listens to download task status.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_REQUESTSYSTEM_DOWNLOADCOMPLETE_API_0001
+     * @tc.number ohos.SUB_REQUESTSYSTEM_DOWNLOADCOMPLETE_API_0001
+     * @tc.desc   Listens to download task status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUESTSYSTEM_DOWNLOADCOMPLETE_API_0001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUESTSYSTEM_DOWNLOADCOMPLETE_API_0001 start-----------------------");

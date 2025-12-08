@@ -41,12 +41,12 @@ export default function TestObject() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0100
-     * @tc.name       : testObjectConstructor0001
-     * @tc.desc       : Test the function of the interface constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testObjectConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0100
+     * @tc.desc   Test the function of the interface constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testObjectConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testObjectConstructor0001";
@@ -61,12 +61,12 @@ export default function TestObject() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0200
-     * @tc.name       : testObjectConstructor0002
-     * @tc.desc       : Test the function of the interface constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testObjectConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0200
+     * @tc.desc   Test the function of the interface constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testObjectConstructor0002";
@@ -81,12 +81,12 @@ export default function TestObject() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0300
-     * @tc.name       : testObjectConstructor0003
-     * @tc.desc       : Test the function of the interface constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testObjectConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0300
+     * @tc.desc   Test the function of the interface constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testObjectConstructor0003";
@@ -101,12 +101,12 @@ export default function TestObject() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0400
-     * @tc.name       : testObjectConstructor0004
-     * @tc.desc       : Test the function of the interface constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testObjectConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0400
+     * @tc.desc   Test the function of the interface constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testObjectConstructor0004";
@@ -121,12 +121,12 @@ export default function TestObject() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0500
-     * @tc.name       : testObjectConstructor0005
-     * @tc.desc       : Test the function of the interface constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testObjectConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0500
+     * @tc.desc   Test the function of the interface constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testObjectConstructor0005";
@@ -141,12 +141,12 @@ export default function TestObject() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0600
-     * @tc.name       : testObjectGetOwnPropertyNames0001
-     * @tc.desc       : Test the function of the interface getOwnPropertyNames.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testObjectGetOwnPropertyNames0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0600
+     * @tc.desc   Test the function of the interface getOwnPropertyNames.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectGetOwnPropertyNames0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const TAG = "testObjectGetOwnPropertyNames0001";
@@ -165,12 +165,12 @@ export default function TestObject() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0700
-     * @tc.name       : testObjectGetOwnPropertyNames0002
-     * @tc.desc       : Test the function of the interface getOwnPropertyNames.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testObjectGetOwnPropertyNames0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0700
+     * @tc.desc   Test the function of the interface getOwnPropertyNames.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectGetOwnPropertyNames0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const TAG = "testObjectGetOwnPropertyNames0002";
@@ -188,12 +188,12 @@ export default function TestObject() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0800
-     * @tc.name       : testObjectGetOwnPropertyNames0003
-     * @tc.desc       : Test the function of the interface getOwnPropertyNames.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testObjectGetOwnPropertyNames0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_OBJECT_0800
+     * @tc.desc   Test the function of the interface getOwnPropertyNames.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testObjectGetOwnPropertyNames0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const TAG = "testObjectGetOwnPropertyNames0003";

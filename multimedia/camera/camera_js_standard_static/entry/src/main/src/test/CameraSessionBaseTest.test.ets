@@ -61,7 +61,7 @@ let mVideoConfig: media.AVRecorderConfig = {
   url: 'file:///data/media/CameraSessionBase.mp4',
 };
 
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 
 export default function cameraSessionTest() {
 
@@ -109,7 +109,7 @@ export default function cameraSessionTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -480,12 +480,12 @@ export default function cameraSessionTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_BEGIN_CONFIG_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_BEGIN_CONFIG_STATIC_0100
-      * @tc.desc   Check capture session begin config
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_BEGIN_CONFIG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_BEGIN_CONFIG_STATIC_0100
+     * @tc.desc   Check capture session begin config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_BEGIN_CONFIG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_BEGIN_CONFIG_STATIC_0100--------------");
@@ -502,12 +502,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_INPUT_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_INPUT_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session add input with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_INPUT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_INPUT_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session add input with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_INPUT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_INPUT_PROMISE_STATIC_0100--------------");
@@ -535,12 +535,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session can add input with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session can add input with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_PROMISE_STATIC_0100--------------");
@@ -567,12 +567,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_ERROR_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_ERROR_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session can not add input with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 3
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_ERROR_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_ERROR_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session can not add input with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_ERROR_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_INPUT_ERROR_PROMISE_STATIC_0100--------------");
@@ -603,12 +603,12 @@ export default function cameraSessionTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_OUTPUT_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_OUTPUT_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session add output with promise or not for preview
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_OUTPUT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_OUTPUT_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session add output with promise or not for preview
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_OUTPUT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_OUTPUT_PROMISE_STATIC_0100--------------");
@@ -646,12 +646,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session can add output with promise for preview
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session can add output with promise for preview
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100--------------");
@@ -714,12 +714,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_COMMIT_CONFIG_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_COMMIT_CONFIG_STATIC_0100
-      * @tc.desc   Check capture session commit config
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_COMMIT_CONFIG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_COMMIT_CONFIG_STATIC_0100
+     * @tc.desc   Check capture session commit config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_COMMIT_CONFIG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_COMMIT_CONFIG_STATIC_0100--------------");
@@ -760,12 +760,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_RELEASE_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_RELEASE_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session release with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_RELEASE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_RELEASE_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session release with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_RELEASE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_RELEASE_PROMISE_STATIC_0100--------------");
@@ -778,12 +778,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_START_STOP_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_START_STOP_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session start/stop/release output with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_START_STOP_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_START_STOP_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session start/stop/release output with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_START_STOP_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_START_STOP_PROMISE_STATIC_0100--------------");
@@ -824,12 +824,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_STATIC_0100
-      * @tc.desc   videosession callback on focusStateChange
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_STATIC_0100
+     * @tc.desc   videosession callback on focusStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void>=> {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_STATIC_0100--------------");
@@ -854,12 +854,12 @@ export default function cameraSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100
-      * @tc.desc   videosession callback on error
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100
+     * @tc.desc   videosession callback on error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100--------------");

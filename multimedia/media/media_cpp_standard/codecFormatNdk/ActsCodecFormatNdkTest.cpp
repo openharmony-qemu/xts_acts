@@ -90,9 +90,12 @@ bool ActsCodecFormatNdkTest::SetFormat(struct OH_AVFormat *format, map<string, s
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0100
- * @tc.name      : test codec format set key
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0100
+ * @tc.number SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0100
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsCodecFormatNdkTest, SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0100, TestSize.Level1)
 {
@@ -124,9 +127,12 @@ HWTEST_F(ActsCodecFormatNdkTest, SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0100, TestSiz
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0200
- * @tc.name      : test codec format set and get value
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0200
+ * @tc.number SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0200
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsCodecFormatNdkTest, SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0200, TestSize.Level1)
 {
@@ -175,9 +181,12 @@ HWTEST_F(ActsCodecFormatNdkTest, SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0200, TestSiz
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0300
- * @tc.name      : test codec format set and get buffer
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0300
+ * @tc.number SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0300
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsCodecFormatNdkTest, SUB_MULTIMEDIA_MEDIA_CODEC_FORMAT_0300, TestSize.Level1)
 {

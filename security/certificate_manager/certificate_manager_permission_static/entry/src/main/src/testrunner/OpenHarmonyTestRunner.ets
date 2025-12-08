@@ -21,6 +21,7 @@ import hilog from '@ohos.hilog';
 import { Hypium } from '../../../hypium/index';
 import testsuite from '../test/List.test';
 import type common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
@@ -28,9 +29,24 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export class GlobalContext {
-  public static getContext(): common.Context {
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    return abilityDelegator.getAppContext().getApplicationContext();
+  public static context: common.Context = {} as common.Context;
+
+  public static isContextCreated: boolean = false;
+
+  public async static getContext(): Promise<common.Context> {
+    return new Promise<common.Context>((resolve, reject) => {
+      if (GlobalContext.isContextCreated) {
+        return resolve(GlobalContext.context);
+      }
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      hilog.info(domain, tag, 'beforeAll abilityDelegator');
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.openharmony.certificate_manager_permission.static");
+      setTimeout(()=>{
+        GlobalContext.context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+        GlobalContext.isContextCreated = true;
+        return resolve(GlobalContext.context);
+      }, 4000);
+    })
   }
 }
 
@@ -42,7 +58,7 @@ export class OpenHarmonyTestRunner implements TestRunner {
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
-  public onRun: () => void = () =>  {
+  public onRun: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();

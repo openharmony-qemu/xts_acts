@@ -27,14 +27,14 @@ export default function NodeNapiTest2() {
       await Utils.pushPageNoClear(`nodenapitest/nodenapiTest2`, done);
     });
 
-    /*
-   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeContentFromNapiValue_0100
-   * @tc.name       : testOHArkUIGetNodeContentFromNapiValue0100
-   * @tc.desc       : testing OH_ArkUI_GetNodeContentFromNapiValue interface
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOHArkUIGetNodeContentFromNapiValue0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeContentFromNapiValue_0100
+     * @tc.desc   testing OH_ArkUI_GetNodeContentFromNapiValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNodeContentFromNapiValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -50,14 +50,14 @@ export default function NodeNapiTest2() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeContentFromNapiValue_0200
-       * @tc.name       : testOHArkUIGetNodeContentFromNapiValue0200
-       * @tc.desc       : testing OH_ArkUI_GetNodeContentFromNapiValue interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNodeContentFromNapiValue0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeContentFromNapiValue_0200
+     * @tc.desc   testing OH_ArkUI_GetNodeContentFromNapiValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNodeContentFromNapiValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

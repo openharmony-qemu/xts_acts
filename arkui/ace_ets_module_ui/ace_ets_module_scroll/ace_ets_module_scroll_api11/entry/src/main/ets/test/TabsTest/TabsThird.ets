@@ -103,9 +103,12 @@ export default function tabsThird() {
     })
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0100
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the default values of barGridAlign.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0100
+     * @tc.number ArkUI_Tabs_BarGridAlign_0100
+     * @tc.desc   Gets the default values of barGridAlign.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0100] start");
@@ -131,9 +134,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0200
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:10px.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0200
+     * @tc.number ArkUI_Tabs_BarGridAlign_0200
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:10px.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0200] start");
@@ -166,9 +172,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0300
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:10vp.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0300
+     * @tc.number ArkUI_Tabs_BarGridAlign_0300
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:10vp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0300] start");
@@ -201,9 +210,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0400
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:10.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0400
+     * @tc.number ArkUI_Tabs_BarGridAlign_0400
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0400] start");
@@ -236,9 +248,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0500
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:-2.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0500
+     * @tc.number ArkUI_Tabs_BarGridAlign_0500
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:-2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0500] start");
@@ -271,9 +286,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0600
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:2 ** 16.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0600
+     * @tc.number ArkUI_Tabs_BarGridAlign_0600
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:2 ** 16.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0600] start");
@@ -306,9 +324,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0700
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:10fp.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0700
+     * @tc.number ArkUI_Tabs_BarGridAlign_0700
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:10fp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0700] start");
@@ -341,9 +362,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0800
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:10lpx.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0800
+     * @tc.number ArkUI_Tabs_BarGridAlign_0800
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:10lpx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0800] start");
@@ -376,9 +400,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_0900
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:$r('app.float.BarGridAlign_Test').
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0900
+     * @tc.number ArkUI_Tabs_BarGridAlign_0900
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:$r('app.float.BarGridAlign_Test').
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0900] start");
@@ -394,9 +421,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1000
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:undefined.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1000
+     * @tc.number ArkUI_Tabs_BarGridAlign_1000
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1000] start");
@@ -429,9 +459,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1100
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is margin:null.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1100
+     * @tc.number ArkUI_Tabs_BarGridAlign_1100
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is margin:null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1100] start");
@@ -464,9 +497,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1200
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10px.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1200
+     * @tc.number ArkUI_Tabs_BarGridAlign_1200
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10px.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1200] start");
@@ -499,9 +535,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1300
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10vp.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1300
+     * @tc.number ArkUI_Tabs_BarGridAlign_1300
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10vp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1300] start");
@@ -534,9 +573,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1400
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1400
+     * @tc.number ArkUI_Tabs_BarGridAlign_1400
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1400] start");
@@ -569,9 +611,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1500
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:-2.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1500
+     * @tc.number ArkUI_Tabs_BarGridAlign_1500
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:-2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1500] start");
@@ -604,9 +649,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1600
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:2 ** 16.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1600
+     * @tc.number ArkUI_Tabs_BarGridAlign_1600
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:2 ** 16.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1600] start");
@@ -639,9 +687,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1700
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10fp.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1700
+     * @tc.number ArkUI_Tabs_BarGridAlign_1700
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10fp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1700] start");
@@ -674,9 +725,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1800
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10lpx.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1800
+     * @tc.number ArkUI_Tabs_BarGridAlign_1800
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:10lpx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1800] start");
@@ -709,9 +763,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1900
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:$r('app.float.BarGridAlign_Test').
+     * @tc.name   ArkUI_Tabs_BarGridAlign_1900
+     * @tc.number ArkUI_Tabs_BarGridAlign_1900
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:$r('app.float.BarGridAlign_Test').
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_1900] start");
@@ -727,9 +784,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2000
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:undefined.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_2000
+     * @tc.number ArkUI_Tabs_BarGridAlign_2000
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2000] start");
@@ -762,9 +822,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2100
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is gutter:null.
+     * @tc.name   ArkUI_Tabs_BarGridAlign_2100
+     * @tc.number ArkUI_Tabs_BarGridAlign_2100
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is gutter:null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarGridAlign_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2100] start");
@@ -797,9 +860,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2200
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_2200]
+     * @tc.number ArkUI_Tabs_BarGridAlign_2200
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_2200]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2200] start");
@@ -838,9 +904,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2300
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:3, md:4, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_2300]
+     * @tc.number ArkUI_Tabs_BarGridAlign_2300
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:3, md:4, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_2300]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2300] start");
@@ -879,9 +948,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2400
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:-2, md:4, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_2400]
+     * @tc.number ArkUI_Tabs_BarGridAlign_2400
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:-2, md:4, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_2400]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2400] start");
@@ -920,9 +992,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2500
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:100000, md:4, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_2500]
+     * @tc.number ArkUI_Tabs_BarGridAlign_2500
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:100000, md:4, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_2500]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2500] start");
@@ -961,9 +1036,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2600
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:undefined, md:4, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_2600]
+     * @tc.number ArkUI_Tabs_BarGridAlign_2600
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:undefined, md:4, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_2600]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2600] start");
@@ -1002,9 +1080,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2700
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:null, md:4, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_2700]
+     * @tc.number ArkUI_Tabs_BarGridAlign_2700
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:null, md:4, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_2700]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2700] start");
@@ -1043,9 +1124,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2800
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:3, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_2800]
+     * @tc.number ArkUI_Tabs_BarGridAlign_2800
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:3, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_2800]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2800] start");
@@ -1084,9 +1168,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2900
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:-2, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_2900]
+     * @tc.number ArkUI_Tabs_BarGridAlign_2900
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:-2, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_2900]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_2900] start");
@@ -1125,9 +1212,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_3000
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:100000, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_3000]
+     * @tc.number ArkUI_Tabs_BarGridAlign_3000
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:100000, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_3000]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_3000] start");
@@ -1166,9 +1256,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_3100
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:undefined, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_3100]
+     * @tc.number ArkUI_Tabs_BarGridAlign_3100
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:undefined, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_3100]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_3100] start");
@@ -1207,9 +1300,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_3200
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:null, lg:6.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_3200]
+     * @tc.number ArkUI_Tabs_BarGridAlign_3200
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:null, lg:6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_3200]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_3200] start");
@@ -1248,9 +1344,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_3300
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:5.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_3300]
+     * @tc.number ArkUI_Tabs_BarGridAlign_3300
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_3300]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_3300] start");
@@ -1289,9 +1388,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_3400
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:-2.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_3400]
+     * @tc.number ArkUI_Tabs_BarGridAlign_3400
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:-2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_3400]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_3400] start");
@@ -1330,9 +1432,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_3500
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:100000.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_3500]
+     * @tc.number ArkUI_Tabs_BarGridAlign_3500
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_3500]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_3500] start");
@@ -1371,9 +1476,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_3600
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:undefined.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_3600]
+     * @tc.number ArkUI_Tabs_BarGridAlign_3600
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_3600]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_3600] start");
@@ -1412,9 +1520,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarGridAlign_3700
-     * @tc.name      Tests the BarGridAlign property of the Tabs component.
-     * @tc.desc      Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:null.
+     * @tc.name   [ArkUI_Tabs_BarGridAlign_3700]
+     * @tc.number ArkUI_Tabs_BarGridAlign_3700
+     * @tc.desc   Gets the values of barGridAlign, when the value of the barGridAlign is sm:2, md:4, lg:null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarGridAlign_3700]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_3700] start");
@@ -1453,9 +1564,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarHeight_0100
-     * @tc.name      Tests the BarHeight property of the Tabs component.
-     * @tc.desc      Gets the values of barHeight, when the value of the barHeight is "auto".
+     * @tc.name   ArkUI_Tabs_BarHeight_0100
+     * @tc.number ArkUI_Tabs_BarHeight_0100
+     * @tc.desc   Gets the values of barHeight, when the value of the barHeight is "auto".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarHeight_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarHeight_0100] start");
@@ -1486,9 +1600,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0100
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the default values of barMode.
+     * @tc.name   [ArkUI_Tabs_BarMode_0100]
+     * @tc.number ArkUI_Tabs_BarMode_0100
+     * @tc.desc   Gets the default values of barMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BarMode_0100]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0100] start");
@@ -1503,9 +1620,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0200
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Fixed.
+     * @tc.name   ArkUI_Tabs_BarMode_0200
+     * @tc.number ArkUI_Tabs_BarMode_0200
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Fixed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0200] start");
@@ -1537,9 +1657,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0300
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable.
+     * @tc.name   ArkUI_Tabs_BarMode_0300
+     * @tc.number ArkUI_Tabs_BarMode_0300
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0300] start");
@@ -1571,9 +1694,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0400
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:'10px'.
+     * @tc.name   ArkUI_Tabs_BarMode_0400
+     * @tc.number ArkUI_Tabs_BarMode_0400
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:'10px'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0400] start");
@@ -1606,9 +1732,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0500
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:'10vp'.
+     * @tc.name   ArkUI_Tabs_BarMode_0500
+     * @tc.number ArkUI_Tabs_BarMode_0500
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:'10vp'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0500] start");
@@ -1641,9 +1770,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0600
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:10.
+     * @tc.name   ArkUI_Tabs_BarMode_0600
+     * @tc.number ArkUI_Tabs_BarMode_0600
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0600] start");
@@ -1676,9 +1808,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0700
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:-1.
+     * @tc.name   ArkUI_Tabs_BarMode_0700
+     * @tc.number ArkUI_Tabs_BarMode_0700
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:-1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0700] start");
@@ -1711,9 +1846,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0800
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:100000.
+     * @tc.name   ArkUI_Tabs_BarMode_0800
+     * @tc.number ArkUI_Tabs_BarMode_0800
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0800] start");
@@ -1746,9 +1884,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_0900
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:'10fp'.
+     * @tc.name   ArkUI_Tabs_BarMode_0900
+     * @tc.number ArkUI_Tabs_BarMode_0900
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:'10fp'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0900] start");
@@ -1781,9 +1922,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1000
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:'10lpx'.
+     * @tc.name   ArkUI_Tabs_BarMode_1000
+     * @tc.number ArkUI_Tabs_BarMode_1000
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:'10lpx'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1000] start");
@@ -1816,9 +1960,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1100
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:$r('app.float.BarMode_Test').
+     * @tc.name   ArkUI_Tabs_BarMode_1100
+     * @tc.number ArkUI_Tabs_BarMode_1100
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:$r('app.float.BarMode_Test').
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1100] start");
@@ -1850,9 +1997,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1200
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:undefined.
+     * @tc.name   ArkUI_Tabs_BarMode_1200
+     * @tc.number ArkUI_Tabs_BarMode_1200
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1200] start");
@@ -1885,9 +2035,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1300
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:null.
+     * @tc.name   ArkUI_Tabs_BarMode_1300
+     * @tc.number ArkUI_Tabs_BarMode_1300
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, margin:null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1300] start");
@@ -1920,9 +2073,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1400
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:LayoutStyle.ALWAYS_CENTER.
+     * @tc.name   ArkUI_Tabs_BarMode_1400
+     * @tc.number ArkUI_Tabs_BarMode_1400
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:LayoutStyle.ALWAYS_CENTER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1400] start");
@@ -1955,9 +2111,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1500
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:LayoutStyle.ALWAYS_AVERAGE_SPLIT.
+     * @tc.name   ArkUI_Tabs_BarMode_1500
+     * @tc.number ArkUI_Tabs_BarMode_1500
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:LayoutStyle.ALWAYS_AVERAGE_SPLIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1500] start");
@@ -1990,9 +2149,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1600
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:LayoutStyle.SPACE_BETWEEN_OR_CENTER.
+     * @tc.name   ArkUI_Tabs_BarMode_1600
+     * @tc.number ArkUI_Tabs_BarMode_1600
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:LayoutStyle.SPACE_BETWEEN_OR_CENTER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1600] start");
@@ -2025,9 +2187,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1700
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:undefined.
+     * @tc.name   ArkUI_Tabs_BarMode_1700
+     * @tc.number ArkUI_Tabs_BarMode_1700
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1700] start");
@@ -2060,9 +2225,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1800
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:null.
+     * @tc.name   ArkUI_Tabs_BarMode_1800
+     * @tc.number ArkUI_Tabs_BarMode_1800
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Scrollable, nonScrollableLayoutStyle:null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1800] start");
@@ -2095,9 +2263,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarMode_1900
-     * @tc.name      Tests the BarMode property of the Tabs component.
-     * @tc.desc      Gets the values of barMode, when the value of the barMode is BarMode.Fixed, margin:'10px', nonScrollableLayoutStyle:null.
+     * @tc.name   ArkUI_Tabs_BarMode_1900
+     * @tc.number ArkUI_Tabs_BarMode_1900
+     * @tc.desc   Gets the values of barMode, when the value of the barMode is BarMode.Fixed, margin:'10px', nonScrollableLayoutStyle:null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarMode_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_1900] start");
@@ -2131,9 +2302,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0100
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the default values of subTabBarStylePadding.
+     * @tc.name   [ArkUI_Tabs_SubTabBarStylePadding_0100]
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0100
+     * @tc.desc   Gets the default values of subTabBarStylePadding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_SubTabBarStylePadding_0100]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0100] start");
@@ -2158,9 +2332,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0200
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is 10.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_0200
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0200
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is 10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0200] start");
@@ -2193,9 +2370,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0300
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is '10.00px'.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_0300
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0300
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is '10.00px'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0300] start");
@@ -2228,9 +2408,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0400
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is $r('app.float.SubTabBarStylePadding_Test')).
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_0400
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0400
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is $r('app.float.SubTabBarStylePadding_Test')).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0400] start");
@@ -2246,9 +2429,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0500
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is -1.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_0500
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0500
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0500] start");
@@ -2290,9 +2476,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0600
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is 100000.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_0600
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0600
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is 100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0600] start");
@@ -2325,9 +2514,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0700
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is undefined.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_0700
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0700
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0700] start");
@@ -2369,9 +2561,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0800
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is null.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_0800
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0800
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0800] start");
@@ -2413,9 +2608,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0900
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_0900
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_0900
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0900] start");
@@ -2451,9 +2649,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1000
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:10.00px, right:10.00px, bottom:10.00px, left:10.00px}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1000
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1000
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:10.00px, right:10.00px, bottom:10.00px, left:10.00px}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1000] start");
@@ -2489,9 +2690,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1100
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:$r('app.float.subTabBarStylePadding_Test'), right:$r('app.float.subTabBarStylePadding_Test'), bottom:$r('app.float.subTabBarStylePadding_Test'), left:$r('app.float.subTabBarStylePadding_Test')}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1100
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1100
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:$r('app.float.subTabBarStylePadding_Test'), right:$r('app.float.subTabBarStylePadding_Test'), bottom:$r('app.float.subTabBarStylePadding_Test'), left:$r('app.float.subTabBarStylePadding_Test')}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1100] start");
@@ -2507,9 +2711,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1200
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:-1, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1200
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1200
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:-1, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1200] start");
@@ -2548,9 +2755,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1300
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:100000, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1300
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1300
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:100000, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1300] start");
@@ -2587,9 +2797,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1400
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:undefined, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1400
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1400
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:undefined, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1400] start");
@@ -2628,9 +2841,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1500
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:null, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1500
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1500
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:null, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1500] start");
@@ -2669,9 +2885,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1600
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:-1, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1600
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1600
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:-1, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1600] start");
@@ -2710,9 +2929,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1700
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:100000, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1700
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1700
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:100000, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1700] start");
@@ -2749,9 +2971,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1800
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:undefined, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1800
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1800
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:undefined, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1800] start");
@@ -2790,9 +3015,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1900
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:null, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_1900
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_1900
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:null, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1900] start");
@@ -2831,9 +3059,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2000
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:-1, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_2000
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_2000
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:-1, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2000] start");
@@ -2872,9 +3103,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2100
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:100000, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_2100
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_2100
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:100000, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2100] start");
@@ -2911,9 +3145,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2200
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:undefined, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_2200
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_2200
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:undefined, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_2200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2200] start");
@@ -2952,9 +3189,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2300
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:null, left:6}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_2300
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_2300
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:null, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_2300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2300] start");
@@ -2993,9 +3233,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2400
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:-1}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_2400
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_2400
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:-1}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_2400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2400] start");
@@ -3034,9 +3277,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2500
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:100000}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_2500
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_2500
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:100000}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_2500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2500] start");
@@ -3073,9 +3319,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2600
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:undefined}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_2600
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_2600
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:undefined}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_2600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2600] start");
@@ -3114,9 +3363,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2700
-     * @tc.name      Tests the SubTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:null}.
+     * @tc.name   ArkUI_Tabs_SubTabBarStylePadding_2700
+     * @tc.number ArkUI_Tabs_SubTabBarStylePadding_2700
+     * @tc.desc   Gets the values of subTabBarStylePadding, when the value of the subTabBarStylePadding is {top:6, right:6, bottom:6, left:null}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBarStylePadding_2700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2700] start");
@@ -3155,9 +3407,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0100
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the default values of bottomTabBarStylePadding.
+     * @tc.name   [ArkUI_Tabs_BottomTabBarStylePadding_0100]
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0100
+     * @tc.desc   Gets the default values of bottomTabBarStylePadding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BottomTabBarStylePadding_0100]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0100] start");
@@ -3175,9 +3430,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0200
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is 10.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_0200
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0200
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is 10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0200] start");
@@ -3210,9 +3468,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0300
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is '10.00px'.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_0300
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0300
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is '10.00px'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0300] start");
@@ -3245,9 +3506,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0400
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is $r('app.float.BottomTabBarStylePadding_Test').
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_0400
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0400
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is $r('app.float.BottomTabBarStylePadding_Test').
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0400] start");
@@ -3263,9 +3527,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0500
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is -1.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_0500
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0500
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0500] start");
@@ -3298,9 +3565,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0600
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is 100000.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_0600
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0600
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is 100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0600] start");
@@ -3333,9 +3603,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0700
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_0700
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0700
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0700] start");
@@ -3368,9 +3641,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0800
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_0800
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0800
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0800] start");
@@ -3403,9 +3679,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0900
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_0900
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_0900
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0900] start");
@@ -3441,9 +3720,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1000
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:10.00px, right:10.00px, bottom:10.00px, left:10.00px}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1000
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1000
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:10.00px, right:10.00px, bottom:10.00px, left:10.00px}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1000] start");
@@ -3479,9 +3761,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1100
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:$r('app.float.bottomTabBarStylePadding_Test'), right:$r('app.float.bottomTabBarStylePadding_Test'), bottom:$r('app.float.bottomTabBarStylePadding_Test'), left:$r('app.float.bottomTabBarStylePadding_Test')}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1100
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1100
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:$r('app.float.bottomTabBarStylePadding_Test'), right:$r('app.float.bottomTabBarStylePadding_Test'), bottom:$r('app.float.bottomTabBarStylePadding_Test'), left:$r('app.float.bottomTabBarStylePadding_Test')}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1100] start");
@@ -3497,9 +3782,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1200
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:-1, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1200
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1200
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:-1, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1200] start");
@@ -3535,9 +3823,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1300
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:100000, bottom:6, left:6, right:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1300
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1300
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:100000, bottom:6, left:6, right:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1300] start");
@@ -3573,9 +3864,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1400
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:undefined, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1400
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1400
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:undefined, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1400] start");
@@ -3611,9 +3905,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1500
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:null, right:6, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1500
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1500
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:null, right:6, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1500] start");
@@ -3649,9 +3946,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1600
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:-1, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1600
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1600
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:-1, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1600] start");
@@ -3687,9 +3987,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1700
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:100000, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1700
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1700
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:100000, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1700] start");
@@ -3725,9 +4028,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1800
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:undefined, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1800
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1800
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:undefined, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1800] start");
@@ -3763,9 +4069,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1900
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:null, bottom:6, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_1900
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_1900
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:null, bottom:6, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1900] start");
@@ -3801,9 +4110,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2000
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:-1, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_2000
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_2000
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:-1, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2000] start");
@@ -3839,9 +4151,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2100
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:100000, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_2100
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_2100
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:100000, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2100] start");
@@ -3877,9 +4192,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2200
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:undefined, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_2200
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_2200
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:undefined, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2200] start");
@@ -3915,9 +4233,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2300
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:null, left:6}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_2300
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_2300
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:null, left:6}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2300] start");
@@ -3953,9 +4274,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2400
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:-1}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_2400
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_2400
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:-1}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2400] start");
@@ -3991,9 +4315,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2500
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:100000}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_2500
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_2500
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:100000}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2500] start");
@@ -4029,9 +4356,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2600
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:undefined}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_2600
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_2600
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:undefined}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2600] start");
@@ -4067,9 +4397,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2700
-     * @tc.name      Tests the BottomTabBarStylePadding property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:null}.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStylePadding_2700
+     * @tc.number ArkUI_Tabs_BottomTabBarStylePadding_2700
+     * @tc.desc   Gets the values of bottomTabBarStylePadding, when the value of the bottomTabBarStylePadding is {top:6, right:6, bottom:6, left:null}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2700] start");
@@ -4105,9 +4438,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0100
-     * @tc.name      Tests the BottomTabBarStyleVerticalAlign property of the Tabs component.
-     * @tc.desc      Gets the default values of bottomTabBarStyleVerticalAlign.
+     * @tc.name   [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0100]
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0100
+     * @tc.desc   Gets the default values of bottomTabBarStyleVerticalAlign.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0100]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0100] start");
@@ -4123,9 +4459,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0200
-     * @tc.name      Tests the BottomTabBarStyleVerticalAlign property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is VerticalAlign.Top.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0200
+     * @tc.desc   Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is VerticalAlign.Top.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0200] start");
@@ -4158,9 +4497,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0300
-     * @tc.name      Tests the BottomTabBarStyleVerticalAlign property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is VerticalAlign.Center.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0300
+     * @tc.desc   Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is VerticalAlign.Center.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0300] start");
@@ -4193,9 +4535,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0400
-     * @tc.name      Tests the BottomTabBarStyleVerticalAlign property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is VerticalAlign.Bottom.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0400
+     * @tc.desc   Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is VerticalAlign.Bottom.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0400] start");
@@ -4228,9 +4573,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0500
-     * @tc.name      Tests the BottomTabBarStyleVerticalAlign property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0500
+     * @tc.desc   Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0500] start");
@@ -4263,9 +4611,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0600
-     * @tc.name      Tests the BottomTabBarStyleVerticalAlign property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0600
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0600
+     * @tc.desc   Gets the values of bottomTabBarStyleVerticalAlign, when the value of the bottomTabBarStyleVerticalAlign is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_0600] start");
@@ -4298,9 +4649,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_0100
-     * @tc.name      Tests the BottomTabBarStyleLayoutMode property of the Tabs component.
-     * @tc.desc      Gets the default values of bottomTabBarStyleLayoutMode.
+     * @tc.name   [ArkUI_Tabs_BottomTabBarStyleLayoutMode_0100]
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLayoutMode_0100
+     * @tc.desc   Gets the default values of bottomTabBarStyleLayoutMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BottomTabBarStyleLayoutMode_0100]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_0100] start");
@@ -4316,9 +4670,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_0200
-     * @tc.name      Tests the BottomTabBarStyleLayoutMode property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is LayoutMode.HORIZONTAL.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLayoutMode_0200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLayoutMode_0200
+     * @tc.desc   Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is LayoutMode.HORIZONTAL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_0200] start");
@@ -4351,9 +4708,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_0300
-     * @tc.name      Tests the BottomTabBarStyleLayoutMode property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is LayoutMode.VERTICAL.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLayoutMode_0300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLayoutMode_0300
+     * @tc.desc   Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is LayoutMode.VERTICAL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_0300] start");
@@ -4386,9 +4746,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_0400
-     * @tc.name      Tests the BottomTabBarStyleLayoutMode property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is LayoutMode.AUTO.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLayoutMode_0400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLayoutMode_0400
+     * @tc.desc   Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is LayoutMode.AUTO.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_0400] start");
@@ -4421,9 +4784,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_0500
-     * @tc.name      Tests the BottomTabBarStyleLayoutMode property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLayoutMode_0500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLayoutMode_0500
+     * @tc.desc   Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_0500] start");
@@ -4456,9 +4822,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_0600
-     * @tc.name      Tests the BottomTabBarStyleLayoutMode property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLayoutMode_0600
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLayoutMode_0600
+     * @tc.desc   Gets the values of bottomTabBarStyleLayoutMode, when the value of the bottomTabBarStyleLayoutMode is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_0600] start");
@@ -4491,9 +4860,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0100
-     * @tc.name      Tests the BottomTabBarStyleSymmetricExtensible property of the Tabs component.
-     * @tc.desc      Gets the default values of bottomTabBarStyleSymmetricExtensible.
+     * @tc.name   [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0100]
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0100
+     * @tc.desc   Gets the default values of bottomTabBarStyleSymmetricExtensible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0100]', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0100] start");
@@ -4509,9 +4881,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0200
-     * @tc.name      Tests the BottomTabBarStyleSymmetricExtensible property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleSymmetricExtensible, when the value of the bottomTabBarStyleSymmetricExtensible is true.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0200
+     * @tc.desc   Gets the values of bottomTabBarStyleSymmetricExtensible, when the value of the bottomTabBarStyleSymmetricExtensible is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0200] start");
@@ -4544,9 +4919,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0300
-     * @tc.name      Tests the BottomTabBarStyleSymmetricExtensible property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleSymmetricExtensible, when the value of the bottomTabBarStyleSymmetricExtensible is false.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0300
+     * @tc.desc   Gets the values of bottomTabBarStyleSymmetricExtensible, when the value of the bottomTabBarStyleSymmetricExtensible is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0300] start");
@@ -4579,9 +4957,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0400
-     * @tc.name      Tests the BottomTabBarStyleSymmetricExtensible property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleSymmetricExtensible, when the value of the bottomTabBarStyleSymmetricExtensible is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0400
+     * @tc.desc   Gets the values of bottomTabBarStyleSymmetricExtensible, when the value of the bottomTabBarStyleSymmetricExtensible is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0400] start");
@@ -4614,9 +4995,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0500
-     * @tc.name      Tests the BottomTabBarStyleSymmetricExtensible property of the Tabs component.
-     * @tc.desc      Gets the values of bottomTabBarStyleSymmetricExtensible, when the value of the bottomTabBarStyleSymmetricExtensible is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0500
+     * @tc.desc   Gets the values of bottomTabBarStyleSymmetricExtensible, when the value of the bottomTabBarStyleSymmetricExtensible is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_0500] start");
@@ -4649,9 +5033,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0100
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the default values of bottomTabBarStyleLabelStyle.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0100
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0100
+     * @tc.desc   Gets the default values of bottomTabBarStyleLabelStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0100] start");
@@ -4695,9 +5082,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0200
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is TextOverflow.None.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0200
+     * @tc.desc   Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is TextOverflow.None.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0200] start");
@@ -4731,9 +5121,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0300
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is TextOverflow.Clip.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0300
+     * @tc.desc   Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is TextOverflow.Clip.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0300] start");
@@ -4767,9 +5160,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0400
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is TextOverflow.Ellipsis.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0400
+     * @tc.desc   Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is TextOverflow.Ellipsis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0400] start");
@@ -4803,9 +5199,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0500
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is TextOverflow.MARQUEE.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0500
+     * @tc.desc   Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is TextOverflow.MARQUEE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0500] start");
@@ -4839,9 +5238,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0600
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0600
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0600
+     * @tc.desc   Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0600] start");
@@ -4875,9 +5277,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0700
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0700
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0700
+     * @tc.desc   Gets the values of tabBar.labelStyle.overflow, when the value of the tabBar.labelStyle.overflow is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0700] start");
@@ -4911,9 +5316,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0800
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is 2.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0800
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0800
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0800] start");
@@ -4947,9 +5355,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_0900
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is -1.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_0900
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_0900
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_0900] start");
@@ -4983,9 +5394,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1000
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is 100000.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1000
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1000
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is 100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1000] start");
@@ -5019,9 +5433,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1100
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1100
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1100
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1100] start");
@@ -5055,9 +5472,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1200
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1200
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxLines, when the value of the tabBar.labelStyle.maxLines is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1200] start");
@@ -5091,9 +5511,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1300
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is 3.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1300
+     * @tc.desc   Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1300] start");
@@ -5127,9 +5550,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1400
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is '3.00fp'.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1400
+     * @tc.desc   Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is '3.00fp'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1400] start");
@@ -5163,9 +5589,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1500
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is ($r('app.float.BottomTabBarStyleLabelStyle_minFontSize_Test')).
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1500
+     * @tc.desc   Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is ($r('app.float.BottomTabBarStyleLabelStyle_minFontSize_Test')).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1500] start");
@@ -5182,9 +5611,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1600
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is -1.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1600
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1600
+     * @tc.desc   Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1600] start");
@@ -5218,9 +5650,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1700
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is 100000.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1700
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1700
+     * @tc.desc   Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is 100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1700] start");
@@ -5254,9 +5689,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1800
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1800
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1800
+     * @tc.desc   Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1800] start");
@@ -5290,9 +5728,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_1900
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_1900
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_1900
+     * @tc.desc   Gets the values of tabBar.labelStyle.minFontSize, when the value of the tabBar.labelStyle.minFontSize is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_1900] start");
@@ -5326,9 +5767,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2000
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is 3.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2000
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2000
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2000] start");
@@ -5362,9 +5806,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2100
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is '3.00fp'.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2100
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2100
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is '3.00fp'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2100] start");
@@ -5398,9 +5845,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2200
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is ($r('app.float.BottomTabBarStyleLabelStyle_maxFontSize_Test')).
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2200
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is ($r('app.float.BottomTabBarStyleLabelStyle_maxFontSize_Test')).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2200] start");
@@ -5417,9 +5867,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2300
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is -1.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2300
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2300] start");
@@ -5453,9 +5906,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2400
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is 100000.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2400
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is 100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2400] start");
@@ -5489,9 +5945,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2500
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2500
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2500] start");
@@ -5525,9 +5984,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2600
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2600
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2600
+     * @tc.desc   Gets the values of tabBar.labelStyle.maxFontSize, when the value of the tabBar.labelStyle.maxFontSize is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2600] start");
@@ -5561,9 +6023,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2700
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is TextHeightAdaptivePolicy.MAX_LINES_FIRST.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2700
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2700
+     * @tc.desc   Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is TextHeightAdaptivePolicy.MAX_LINES_FIRST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2700] start");
@@ -5597,9 +6062,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2800
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2800
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2800
+     * @tc.desc   Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2800] start");
@@ -5633,9 +6101,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_2900
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_2900
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_2900
+     * @tc.desc   Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_2900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_2900] start");
@@ -5669,9 +6140,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3000
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3000
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3000
+     * @tc.desc   Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3000] start");
@@ -5705,9 +6179,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3100
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3100
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3100
+     * @tc.desc   Gets the values of tabBar.labelStyle.heightAdaptivePolicy, when the value of the tabBar.labelStyle.heightAdaptivePolicy is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3100] start");
@@ -5741,9 +6218,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3200
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is 15.0.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3200
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is 15.0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3200] start");
@@ -5778,9 +6258,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3300
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is '17.0fp'.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3300
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is '17.0fp'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3300] start");
@@ -5815,9 +6298,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3400
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is 15.0.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3400
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is 15.0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3400] start");
@@ -5835,9 +6321,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3500
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is -1.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3500
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3500] start");
@@ -5880,9 +6369,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3600
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is 100000.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3600
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3600
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is 100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3600] start");
@@ -5917,9 +6409,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3700
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3700
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3700
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3700] start");
@@ -5962,9 +6457,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3800
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3800
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3800
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.size, when the value of the tabBar.labelStyle.font.size is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3800] start");
@@ -6007,9 +6505,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_3900
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Lighter.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_3900
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_3900
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Lighter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_3900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_3900] start");
@@ -6044,9 +6545,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4000
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Normal.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4000
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4000
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4000] start");
@@ -6081,9 +6585,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4100
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Regular.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4100
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4100
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Regular.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4100] start");
@@ -6118,9 +6625,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4200
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Medium.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4200
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Medium.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4200] start");
@@ -6155,9 +6665,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4300
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Bold.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4300
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Bold.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4300] start");
@@ -6192,9 +6705,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4400
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Bolder.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4400
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is FontWeight.Bolder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4400] start");
@@ -6229,9 +6745,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4500
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is 500.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4500
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is 500.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4500] start");
@@ -6266,9 +6785,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4600
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is '2.0fp'.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4600
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4600
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is '2.0fp'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4600] start");
@@ -6303,9 +6825,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4700
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is 150.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4700
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4700
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is 150.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4700] start");
@@ -6340,9 +6865,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4800
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is -1.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4800
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4800
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4800] start");
@@ -6377,9 +6905,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_4900
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is 100000.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_4900
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_4900
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is 100000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_4900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_4900] start");
@@ -6414,9 +6945,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5000
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5000
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5000
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5000] start");
@@ -6451,9 +6985,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5100
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5100
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5100
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.weight, when the value of the tabBar.labelStyle.font.weight is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5100] start");
@@ -6488,9 +7025,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5200
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.family, when the value of the tabBar.labelStyle.font.family is 'HarmonyOS Sans'.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5200
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5200
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.family, when the value of the tabBar.labelStyle.font.family is 'HarmonyOS Sans'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5200] start");
@@ -6525,9 +7065,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5300
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.family, when the value of the tabBar.labelStyle.font.family is ($r('app.string.BottomTabBarStyleLabelStyle_family_Test')).
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5300
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5300
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.family, when the value of the tabBar.labelStyle.font.family is ($r('app.string.BottomTabBarStyleLabelStyle_family_Test')).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5300] start");
@@ -6545,9 +7088,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5400
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.family, when the value of the tabBar.labelStyle.font.family is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5400
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5400
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.family, when the value of the tabBar.labelStyle.font.family is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5400] start");
@@ -6582,9 +7128,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5500
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.family, when the value of the tabBar.labelStyle.font.family is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5500
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5500
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.family, when the value of the tabBar.labelStyle.font.family is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5500] start");
@@ -6619,9 +7168,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5600
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.style, when the value of the tabBar.labelStyle.font.style is FontStyle.Normal.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5600
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5600
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.style, when the value of the tabBar.labelStyle.font.style is FontStyle.Normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5600] start");
@@ -6656,9 +7208,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5700
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.style, when the value of the tabBar.labelStyle.font.style is FontStyle.Italic.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5700
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5700
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.style, when the value of the tabBar.labelStyle.font.style is FontStyle.Italic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5700] start");
@@ -6693,9 +7248,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5800
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.style, when the value of the tabBar.labelStyle.font.style is undefined.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5800
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5800
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.style, when the value of the tabBar.labelStyle.font.style is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5800] start");
@@ -6730,9 +7288,12 @@ export default function tabsThird() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_5900
-     * @tc.name      Tests the BottomTabBarStyleLabelStyle property of the Tabs component.
-     * @tc.desc      Gets the values of tabBar.labelStyle.font.style, when the value of the tabBar.labelStyle.font.style is null.
+     * @tc.name   ArkUI_Tabs_BottomTabBarStyleLabelStyle_5900
+     * @tc.number ArkUI_Tabs_BottomTabBarStyleLabelStyle_5900
+     * @tc.desc   Gets the values of tabBar.labelStyle.font.style, when the value of the tabBar.labelStyle.font.style is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_5900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_5900] start");

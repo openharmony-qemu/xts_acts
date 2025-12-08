@@ -26,26 +26,26 @@ export default function textPickerValueTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_VALUE_0100
-     * @tc.name       : testTextPickerValue001
-     * @tc.desc       : testing value for textPicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPickerValue001
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_VALUE_0100
+     * @tc.desc   testing value for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerValue001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerValue001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_VALUE_0200
-     * @tc.name       : testTextPickerValue002
-     * @tc.desc       : testing value for textPicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPickerValue002
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_VALUE_0200
+     * @tc.desc   testing value for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerValue002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerValue002()).assertEqual(0)

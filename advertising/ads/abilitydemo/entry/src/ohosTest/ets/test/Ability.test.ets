@@ -37,6 +37,14 @@ export default function abilityTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+    /**
+     * @tc.name   assertContain
+     * @tc.number assertContain
+     * @tc.desc   assertContain
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
+     */
     it('assertContain', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');

@@ -44,12 +44,12 @@ export default function waterFlowStopDrag() {
     });
 
     /**
-     * @tc.number    waterFlowStopDrag_001
-     * @tc.name      waterFlowStopDrag_0100
-     * @tc.desc      Triggering onWillStopDragging when the WaterFlow component moves horizontally and leaves the hand.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlowStopDrag_0100
+     * @tc.number waterFlowStopDrag_001
+     * @tc.desc   Triggering onWillStopDragging when the WaterFlow component moves horizontally and leaves the hand.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowStopDrag_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[waterFlowStopDrag_0100] START');
@@ -81,12 +81,12 @@ export default function waterFlowStopDrag() {
     });
 
     /**
-     * @tc.number    waterFlowStopDrag_002
-     * @tc.name      waterFlowStopDrag_0200
-     * @tc.desc      Triggering onWillStopDragging when WaterFlow component moves vertically away from hand.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlowStopDrag_0200
+     * @tc.number waterFlowStopDrag_002
+     * @tc.desc   Triggering onWillStopDragging when WaterFlow component moves vertically away from hand.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowStopDrag_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[waterFlowStopDrag_0200] START');

@@ -51,10 +51,13 @@ protected:
 };
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_BCMP_0100
-* @tc.name       test bcmp api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemBcmp_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_BCMP_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemBcmp_0100, Function | MediumTest | Level1) {
     char str1[] = "this is string1";
     char str2[] = "this is string2";
@@ -68,10 +71,13 @@ HWTEST_F(ActsMemApiTest, testMemBcmp_0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_BCMP_1000
-* @tc.name       test bcmp api NE
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemBcmp_1000
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_BCMP_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemBcmp_1000, Function | MediumTest | Level1) {
     char str1[] = "this is string1";
     char str2[] = "this is string2";
@@ -85,10 +91,13 @@ HWTEST_F(ActsMemApiTest, testMemBcmp_1000, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_BCOPY_0100
-* @tc.name       test bcopy api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemBcopy_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_BCOPY_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemBcopy_0100, Function | MediumTest | Level1) {
     char srcStr[] = "this";
     char destStr[] = "00000000";
@@ -112,10 +121,13 @@ HWTEST_F(ActsMemApiTest, testMemBcopy_0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_BZERO_0100
-* @tc.name       test bzero api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemBzero_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_BZERO_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemBzero_0100, Function | MediumTest | Level1) {
     char srcStr[] = "this is string1";
     char destStr[] = "this is string1";
@@ -141,10 +153,13 @@ HWTEST_F(ActsMemApiTest, testMemBzero_0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MALLOC_USABLE_SIZE_0100
-* @tc.name       test malloc_usable_size api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMallocUsableSize_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MALLOC_USABLE_SIZE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMallocUsableSize_0100, Function | MediumTest | Level1) {
     char *pt = nullptr;
     size_t size;
@@ -165,10 +180,13 @@ HWTEST_F(ActsMemApiTest, testMallocUsableSize_0100, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MALLOC_USABLE_SIZE_1000
-* @tc.name       test malloc_usable_size api exception null
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMallocUsableSize_1000
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MALLOC_USABLE_SIZE_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMallocUsableSize_1000, Function | MediumTest | Level1) {
     size_t size;
 	
@@ -180,10 +198,13 @@ HWTEST_F(ActsMemApiTest, testMallocUsableSize_1000, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MEMCCPY_0100
-* @tc.name       test memccpy api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemCcpy_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCCPY_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemCcpy_0100, Function | MediumTest | Level1) {
     char srcStr[] = "this is str1:stop here";
     char destStr[] = "000000000000000000000000";
@@ -198,10 +219,13 @@ HWTEST_F(ActsMemApiTest, testMemCcpy_0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MEMCCPY_0200
-* @tc.name       test memccpy api not find c
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemCcpy_0200
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCCPY_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemCcpy_0200, Function | MediumTest | Level1) {
     char srcStr[] = "this is str1:stop here";
     char destStr[] = "000000000000000000000000";
@@ -216,10 +240,13 @@ HWTEST_F(ActsMemApiTest, testMemCcpy_0200, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MEMPCPY_0100
-* @tc.name       test mempcpy api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMempcpy_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMPCPY_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMempcpy_0100, Function | MediumTest | Level1) {
     char srcStr[] = "this is str1";
     char destStr[] = "00000000000000000000";
@@ -234,10 +261,13 @@ HWTEST_F(ActsMemApiTest, testMempcpy_0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MEMCHR_0100
-* @tc.name       test memchr api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemchr_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCHR_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemchr_0100, Function | MediumTest | Level1) {
     char srcStr[] = "this is str a;";
     char *pos = nullptr;
@@ -252,10 +282,13 @@ HWTEST_F(ActsMemApiTest, testMemchr_0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MEMCHR_1000
-* @tc.name       test memchr api para len not enough
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemchr_1000
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCHR_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemchr_1000, Function | MediumTest | Level1) {
     char srcStr[] = "this is str a;";
     char *pos = nullptr;
@@ -269,10 +302,13 @@ HWTEST_F(ActsMemApiTest, testMemchr_1000, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MEMCHR_1100
-* @tc.name       test memchr api para c not found
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemchr_1100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCHR_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemchr_1100, Function | MediumTest | Level1) {
     char srcStr[] = "this is str a;";
     char *pos = nullptr;
@@ -286,10 +322,13 @@ HWTEST_F(ActsMemApiTest, testMemchr_1100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MEMMEM_0100
-* @tc.name       test memmem api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemmem_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMMEM_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemmem_0100, Function | MediumTest | Level1) {
     char srcStr[] = "this is str a;";
     char srcSubStr[] = "str";
@@ -309,10 +348,13 @@ HWTEST_F(ActsMemApiTest, testMemmem_0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_MEMMEM_1000
-* @tc.name       test memmem api para not found
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemmem_1000
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMMEM_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemmem_1000, Function | MediumTest | Level1) {
     char srcStr[] = "this is str a;";
     char srcSubStr[] = "strb";
@@ -333,10 +375,13 @@ HWTEST_F(ActsMemApiTest, testMemmem_1000, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_OPEN_MEMSTREAM_0100
-* @tc.name       test open_memstream api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testOpenMemStream_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_OPEN_MEMSTREAM_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testOpenMemStream_0100, Function | MediumTest | Level1) {
     FILE *memStream;
     char *ptr = nullptr;
@@ -363,10 +408,13 @@ HWTEST_F(ActsMemApiTest, testOpenMemStream_0100, Function | MediumTest | Level1)
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_MEM_GETPAGESIZE_0100
-* @tc.name       test getpagesize api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMemGetpagesize_0100
+ * @tc.number SUB_KERNEL_NDKAPI_MEM_GETPAGESIZE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsMemApiTest, testMemGetpagesize_0100, Function | MediumTest | Level1) {
     size_t returnVal;
 

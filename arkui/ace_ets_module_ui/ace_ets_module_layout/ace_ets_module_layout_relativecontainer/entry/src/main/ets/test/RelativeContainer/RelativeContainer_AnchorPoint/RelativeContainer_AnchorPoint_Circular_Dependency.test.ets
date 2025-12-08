@@ -47,9 +47,12 @@ export default function RelativeContainer_AnchorPoint_Circular_Dependency() {
     });
 
     /**
+     * @tc.name   SUB_ACE_RelativeContainer_AnchorPoint_Circular_Dependency_TEST_0100
      * @tc.number SUB_ACE_RelativeContainer_AnchorPoint_Circular_Dependency_TEST_0100
-     * @tc.name testRelativeContainer
-     * @tc.desc Circular dependencies between subcomponents
+     * @tc.desc   Circular dependencies between subcomponents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_RelativeContainer_AnchorPoint_Circular_Dependency_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Circular_Dependency_TEST_0100] START');

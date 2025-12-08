@@ -39,14 +39,14 @@ export default function WebViewEnumAndFontLibrary() {
       console.info('beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORMODE_0100
-    * @tc.name       : testFileSelectorModeStatic001
-    * @tc.desc       : test FileSelectorModeFileOpenMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testFileSelectorModeStatic001
+     * @tc.number SUB_WEB_FILESELECTORMODE_0100
+     * @tc.desc   test FileSelectorModeFileOpenMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testFileSelectorModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);

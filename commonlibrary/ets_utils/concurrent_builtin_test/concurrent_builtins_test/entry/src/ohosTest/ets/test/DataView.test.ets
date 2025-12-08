@@ -75,12 +75,12 @@ export default function DataViewTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0100
-     * @tc.name      : testDataViewSetuint320001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetuint320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint320001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -109,12 +109,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0200
-     * @tc.name      : testDataViewSetuint160002
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetuint160002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint160002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -144,12 +144,12 @@ export default function DataViewTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0300
-     * @tc.name      : testDataViewSetuint80003
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetuint80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint80003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -178,12 +178,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0301
-     * @tc.name      : testDataViewSetInt320001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetInt320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0301
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetInt320001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -212,12 +212,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0302
-     * @tc.name      : testDataViewSetInt160001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetInt160001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0302
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetInt160001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -246,12 +246,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0400
-     * @tc.name      : testDataViewSetInt80003
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetInt80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetInt80003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -280,12 +280,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0500
-     * @tc.name      : testDataViewSetFloat640001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetFloat640001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetFloat640001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -314,12 +314,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0600
-     * @tc.name      : testDataViewGetFloat320001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetFloat320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetFloat320001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -348,12 +348,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0700
-     * @tc.name      : testDataViewSetBigUint64_4100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetBigUint64_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetBigUint64_4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -382,12 +382,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0800
-     * @tc.name      : testDataViewSetBigInt64_4600
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewSetBigInt64_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetBigInt64_4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -416,12 +416,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1000
-     * @tc.name      : testDataViewByteOffset_5100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewByteOffset_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewByteOffset_5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -450,12 +450,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1100
-     * @tc.name      : testDataViewGetBigInt64
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetBigInt64
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetBigInt64', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -484,12 +484,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1200
-     * @tc.name      : testDataViewGetBigUint64
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetBigUint64
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetBigUint64', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -518,12 +518,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1300
-     * @tc.name      : testDataViewGetFloat32
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetFloat32
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetFloat32', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -552,12 +552,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1400
-     * @tc.name      : testDataViewGetFloat64
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetFloat64
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetFloat64', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -586,12 +586,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1500
-     * @tc.name      : testDataViewGetInt8
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetInt8
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetInt8', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1600
-     * @tc.name      : testDataViewGetInt16
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetInt16
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetInt16', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -654,12 +654,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1700
-     * @tc.name      : testDataViewGetInt32
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetInt32
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetInt32', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -688,12 +688,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1800
-     * @tc.name      : testDataViewGetUint8
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetUint8
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetUint8', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -722,12 +722,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1900
-     * @tc.name      : testDataViewGetUint16
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetUint16
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetUint16', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -756,12 +756,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2000
-     * @tc.name      : testDataViewGetUint32
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewGetUint32
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewGetUint32', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -790,12 +790,12 @@ export default function DataViewTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2100
-     * @tc.name      : testDataViewByteLength
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDataViewByteLength
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewByteLength', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

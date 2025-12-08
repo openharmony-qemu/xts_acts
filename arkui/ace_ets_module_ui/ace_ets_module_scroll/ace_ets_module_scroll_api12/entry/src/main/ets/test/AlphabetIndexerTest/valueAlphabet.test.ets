@@ -46,12 +46,12 @@ export default function valueAlphabet() {
     });
 
     /**
-     * @tc.number    valueAlphabet_001
-     * @tc.name      valueAlphabet_0100
-     * @tc.desc      Set the outlier of the AlphabetIndexer for selected.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   valueAlphabet_0100
+     * @tc.number valueAlphabet_001
+     * @tc.desc   Set the outlier of the AlphabetIndexer for selected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('valueAlphabet_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[valueAlphabet_0100] START');
@@ -64,12 +64,12 @@ export default function valueAlphabet() {
     });
 
     /**
-     * @tc.number    valueAlphabet_002
-     * @tc.name      valueAlphabet_0200
-     * @tc.desc      Set the outlier of the AlphabetIndexer for itemBorderRadius.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   valueAlphabet_0200
+     * @tc.number valueAlphabet_002
+     * @tc.desc   Set the outlier of the AlphabetIndexer for itemBorderRadius.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('valueAlphabet_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[valueAlphabet_0200] START');
@@ -86,12 +86,12 @@ export default function valueAlphabet() {
     });
 
     /**
-     * @tc.number    valueAlphabet_001
-     * @tc.name      valueAlphabet_0100
-     * @tc.desc      When selecting the second option, the return values of index and value.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   valueAlphabet_0300
+     * @tc.number valueAlphabet_001
+     * @tc.desc   When selecting the second option, the return values of index and value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('valueAlphabet_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[valueAlphabet_0300] START');

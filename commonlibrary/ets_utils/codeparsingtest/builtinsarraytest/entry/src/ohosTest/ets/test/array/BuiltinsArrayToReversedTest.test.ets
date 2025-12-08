@@ -41,24 +41,24 @@ export default function builtinsArrayToReversedTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1001
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0100
-     * @tc.name builtinsArrayToReversedTest1001
-     * @tc.desc Test number array reversal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test number array reversal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayToReversedTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(toReversedRes([1, 2, 3, 4, 5])).assertDeepEquals([5, 4, 3, 2, 1]);
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1002
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0200
-     * @tc.name builtinsArrayToReversedTest1002
-     * @tc.desc Test string array reversal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string array reversal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toReversedRes(['apple', 'banana', 'cherry']))
@@ -66,36 +66,36 @@ export default function builtinsArrayToReversedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1003
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0300
-     * @tc.name builtinsArrayToReversedTest1003
-     * @tc.desc Test empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toReversedRes([])).assertDeepEquals([]);
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1004
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0400
-     * @tc.name builtinsArrayToReversedTest1004
-     * @tc.desc Test single element array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test single element array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toReversedRes([5])).assertDeepEquals([5]);
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1005
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0500
-     * @tc.name builtinsArrayToReversedTest1005
-     * @tc.desc Test sparse array handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test sparse array handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sparseArray = [1, , 3];
@@ -103,12 +103,12 @@ export default function builtinsArrayToReversedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1006
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0600
-     * @tc.name builtinsArrayToReversedTest1006
-     * @tc.desc Test null/undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test null/undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toReversedRes([1, null, undefined, 3]))
@@ -116,12 +116,12 @@ export default function builtinsArrayToReversedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1007
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0700
-     * @tc.name builtinsArrayToReversedTest1007
-     * @tc.desc Verify basic array reversal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify basic array reversal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let input = [1, 2, 3];
@@ -131,12 +131,12 @@ export default function builtinsArrayToReversedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1008
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0800
-     * @tc.name builtinsArrayToReversedTest1008
-     * @tc.desc Test nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toReversedRes([[1, 2], [3, 4]]))
@@ -144,24 +144,24 @@ export default function builtinsArrayToReversedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1009
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_0900
-     * @tc.name builtinsArrayToReversedTest1009
-     * @tc.desc Test NaN handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test NaN handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toReversedRes([NaN, 2, NaN])).assertDeepEquals([NaN, 2, NaN]);
     });
 
     /**
+     * @tc.name   builtinsArrayToReversedTest1010
      * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_1000
-     * @tc.name builtinsArrayToReversedTest1010
-     * @tc.desc Test object references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test object references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj1: TestA = {

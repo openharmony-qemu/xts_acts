@@ -26,15 +26,15 @@ export default function StyledStringTest(){
       await Utils.pushPage(`styledString/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0100
-     * @tc.name       : StyledStringTest001
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testStyledString001
+     * @tc.number testStyledString001
+     * @tc.desc   testStyledString001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStyledString001', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(1000);
       let driver = await Driver.create();

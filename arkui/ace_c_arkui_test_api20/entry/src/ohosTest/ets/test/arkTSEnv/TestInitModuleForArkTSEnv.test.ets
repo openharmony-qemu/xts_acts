@@ -25,13 +25,13 @@ export default function TestInitModuleForArkTSEnv(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TestInitModuleForArkTSEnv_0100
-     * @tc.name       : TestInitModuleForArkTSEnv_001
-     * @tc.desc       : Test InitModuleForArkTSEnv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   TestInitModuleForArkTSEnv_001
+     * @tc.number SUB_ARKUI_CAPI_TestInitModuleForArkTSEnv_0100
+     * @tc.desc   Test InitModuleForArkTSEnv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestInitModuleForArkTSEnv_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestInitModuleForArkTSEnv()).assertEqual(0)

@@ -34,12 +34,12 @@ export default function ActsUIInputEventNdkTest() {
     })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0101
-     * @tc.name    : testArkUI_UIInputEvent_Type_0101
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0101
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0101
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -57,12 +57,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0102
-     * @tc.name    : testArkUI_UIInputEvent_Type_0102
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0102
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0102
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -80,12 +80,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0103
-     * @tc.name    : testArkUI_UIInputEvent_Type_0103
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0103
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0103
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -103,12 +103,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0104
-     * @tc.name    : testArkUI_UIInputEvent_Type_0104
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0104
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0104
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -126,12 +126,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0106
-     * @tc.name    : testArkUI_UIInputEvent_Type_0106
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0106
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0106
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -149,12 +149,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0107
-     * @tc.name    : testArkUI_UIInputEvent_Type_0107
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0107
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0107
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -172,12 +172,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0108
-     * @tc.name    : testArkUI_UIInputEvent_Type_0108
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0108
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0108
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -195,12 +195,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0109
-     * @tc.name    : testArkUI_UIInputEvent_Type_0109
-     * @tc.desc    : test ArkUI_UIInputEvent_Type with middle mouse click at (300, 200).
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0109
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0109
+     * @tc.desc   test ArkUI_UIInputEvent_Type with middle mouse click at (300, 200).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -218,12 +218,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0110
-     * @tc.name    : testArkUI_UIInputEvent_Type_0110
-     * @tc.desc    : test ArkUI_UIInputEvent_Type with right mouse click at (200, 300).
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0110
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0110
+     * @tc.desc   test ArkUI_UIInputEvent_Type with right mouse click at (200, 300).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -241,12 +241,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0111
-     * @tc.name    : testArkUI_UIInputEvent_Type_0111
-     * @tc.desc    : test ArkUI_UIInputEvent_Type with left mouse click at (400, 350).
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0111
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0111
+     * @tc.desc   test ArkUI_UIInputEvent_Type with left mouse click at (400, 350).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -265,12 +265,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0113
-     * @tc.name    : testArkUI_UIInputEvent_Type_0113
-     * @tc.desc    : test ArkUI_UIInputEvent_Type with middle mouse click at (150, 250) and extended delay.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0113
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0113
+     * @tc.desc   test ArkUI_UIInputEvent_Type with middle mouse click at (150, 250) and extended delay.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -288,12 +288,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0114
-     * @tc.name    : testArkUI_UIInputEvent_Type_0114
-     * @tc.desc    : test ArkUI_UIInputEvent_Type with middle mouse click at (150, 250) and extended delay.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0114
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0114
+     * @tc.desc   test ArkUI_UIInputEvent_Type with middle mouse click at (150, 250) and extended delay.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -310,12 +310,12 @@ export default function ActsUIInputEventNdkTest() {
         }
       });
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0115
-     * @tc.name    : testArkUI_UIInputEvent_Type_0115
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0115
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0115
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -333,12 +333,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0116
-     * @tc.name    : testArkUI_UIInputEvent_Type_0116
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0116
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0116
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -356,12 +356,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0119
-     * @tc.name    : testArkUI_UIInputEvent_Type_0119
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0119
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0119
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -379,12 +379,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0122
-     * @tc.name    : testArkUI_UIInputEvent_Type_0122
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0122
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0122
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -402,12 +402,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0123
-     * @tc.name    : testArkUI_UIInputEvent_Type_0123
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0123
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0123
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -425,12 +425,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0124
-     * @tc.name    : testArkUI_UIInputEvent_Type_0124
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0124
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0124
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -448,12 +448,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0125
-     * @tc.name    : testArkUI_UIInputEvent_Type_0125
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0125
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0125
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -471,12 +471,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0128
-     * @tc.name    : testArkUI_UIInputEvent_Type_0128
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0128
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0128
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -494,12 +494,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0129
-     * @tc.name    : testArkUI_UIInputEvent_Type_0129
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0129
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0129
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -517,12 +517,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0130
-     * @tc.name    : testArkUI_UIInputEvent_Type_0130
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0130
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0130
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -540,12 +540,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0131
-     * @tc.name    : testArkUI_UIInputEvent_Type_0131
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0131
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0131
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -563,12 +563,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0132
-     * @tc.name    : testArkUI_UIInputEvent_Type_0132
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0132
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0132
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -586,12 +586,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0133
-     * @tc.name    : testArkUI_UIInputEvent_Type_0133
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0133
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0133
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -609,12 +609,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0134
-     * @tc.name    : testArkUI_UIInputEvent_Type_0134
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0134
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0134
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -632,12 +632,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0135
-     * @tc.name    : testArkUI_UIInputEvent_Type_0135
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0135
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0135
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -655,12 +655,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0136
-     * @tc.name    : testArkUI_UIInputEvent_Type_0136
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0136
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0136
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -678,12 +678,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0137
-     * @tc.name    : testArkUI_UIInputEvent_Type_0137
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0137
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0137
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -701,12 +701,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0138
-     * @tc.name    : testArkUI_UIInputEvent_Type_0138
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0138
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0138
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -724,12 +724,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0139
-     * @tc.name    : testArkUI_UIInputEvent_Type_0139
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0139
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0139
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -747,12 +747,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0140
-     * @tc.name    : testArkUI_UIInputEvent_Type_0140
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0140
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0140
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -772,12 +772,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0142
-     * @tc.name    : testArkUI_UIInputEvent_Type_0142
-     * @tc.desc    : test ArkUI_UIInputEvent_Type
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0142
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0142
+     * @tc.desc   test ArkUI_UIInputEvent_Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -797,12 +797,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0143
-     * @tc.name    : testArkUI_UIInputEvent_Type_0143
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0143
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0143
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -820,12 +820,12 @@ export default function ActsUIInputEventNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0144
-     * @tc.name    : testArkUI_UIInputEvent_Type_0144
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0144
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0144
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -843,12 +843,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0146
-     * @tc.name    : testArkUI_UIInputEvent_Type_0146
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0146
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0146
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -866,12 +866,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0147
-     * @tc.name    : testArkUI_UIInputEvent_Type_0147
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0147
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0147
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -889,12 +889,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0148
-     * @tc.name    : testArkUI_UIInputEvent_Type_0148
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0148
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0148
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -912,12 +912,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0149
-     * @tc.name    : testArkUI_UIInputEvent_Type_0149
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0149
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0149
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -935,12 +935,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0151
-     * @tc.name    : testArkUI_UIInputEvent_Type_0151
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0151
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0151
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -958,12 +958,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0152
-     * @tc.name    : testArkUI_UIInputEvent_Type_0152
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0152
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0152
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -981,12 +981,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0154
-     * @tc.name    : testArkUI_UIInputEvent_Type_0154
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0154
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0154
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1004,12 +1004,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0155
-     * @tc.name    : testArkUI_UIInputEvent_Type_0155
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0155
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0155
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1027,12 +1027,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0157
-     * @tc.name    : testArkUI_UIInputEvent_Type_0157
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0157
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0157
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1050,12 +1050,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0158
-     * @tc.name    : testArkUI_UIInputEvent_Type_0158
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0158
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0158
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1073,12 +1073,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0160
-     * @tc.name    : testArkUI_UIInputEvent_Type_0160
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0160
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0160
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1096,12 +1096,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0161
-     * @tc.name    : testArkUI_UIInputEvent_Type_0161
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0161
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0161
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1119,12 +1119,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0164
-     * @tc.name    : testArkUI_UIInputEvent_Type_0164
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0164
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0164
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1142,12 +1142,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0166
-     * @tc.name    : testArkUI_UIInputEvent_Type_0166
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0166
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0166
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1165,12 +1165,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0167
-     * @tc.name    : testArkUI_UIInputEvent_Type_0167
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0167
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0167
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1188,12 +1188,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0168
-     * @tc.name    : testArkUI_UIInputEvent_Type_0168
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0168
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0168
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1210,12 +1210,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0169
-     * @tc.name    : testArkUI_UIInputEvent_Type_0169
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0169
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0169
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1233,12 +1233,12 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0170
-     * @tc.name    : testArkUI_UIInputEvent_Type_0170
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUI_UIInputEvent_Type_0170
+     * @tc.number SUB_ArkUI_UIInputEvent_Type_0170
+     * @tc.desc   test ArkUI_UIInputEvent_Type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUI_UIInputEvent_Type_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

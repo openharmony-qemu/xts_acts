@@ -40,13 +40,13 @@ namespace OHOS {
     {
     }
     
-    /*
-     * @tc.number: TestOpenGLmainglTestCase02
-     * @tc.name: TestOpenGLmainglTestCase02
-     * @tc.desc: test for ActsOpenGlMainGl30MasterTest.
-     * @tc.size  : SmallTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TestOpenGLmainglTestCase02
+     * @tc.number TestOpenGLmainglTestCase02
+     * @tc.desc   test for ActsOpenGlMainGl30MasterTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     HWTEST_F(ActsOpenGlMainGl30MasterTest, TestOpenGLmainglTestCase02, Function | MediumTest | Level2)
     {

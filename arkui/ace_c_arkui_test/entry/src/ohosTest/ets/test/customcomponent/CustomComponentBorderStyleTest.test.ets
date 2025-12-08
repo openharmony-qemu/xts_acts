@@ -26,78 +26,78 @@ export default function customComponentBorderStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0100
-     * @tc.name       : testCustomComponentBorderStyle001
-     * @tc.desc       : testing borderStyle for customComponent with ARKUI_BORDER_STYLE_SOLID value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderStyle001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0100
+     * @tc.desc   testing borderStyle for customComponent with ARKUI_BORDER_STYLE_SOLID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0200
-     * @tc.name       : testCustomComponentBorderStyle002
-     * @tc.desc       : testing borderStyle for customComponent with ARKUI_BORDER_STYLE_DASHED value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderStyle002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0200
+     * @tc.desc   testing borderStyle for customComponent with ARKUI_BORDER_STYLE_DASHED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0300
-     * @tc.name       : testCustomComponentBorderStyle003
-     * @tc.desc       : testing borderStyle for customComponent with ARKUI_BORDER_STYLE_DOTTED value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderStyle003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0300
+     * @tc.desc   testing borderStyle for customComponent with ARKUI_BORDER_STYLE_DOTTED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderStyle003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0400
-     * @tc.name       : testCustomComponentBorderStyle004
-     * @tc.desc       : testing borderStyle for customComponent with ARKUI_BORDER_STYLE_SOLID value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderStyle004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0400
+     * @tc.desc   testing borderStyle for customComponent with ARKUI_BORDER_STYLE_SOLID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderStyle004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0500
-     * @tc.name       : testCustomComponentBorderStyle005
-     * @tc.desc       : testing borderStyle for customComponent with ARKUI_BORDER_STYLE_DASHED value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderStyle005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0500
+     * @tc.desc   testing borderStyle for customComponent with ARKUI_BORDER_STYLE_DASHED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderStyle005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0600
-     * @tc.name       : testCustomComponentBorderStyle006
-     * @tc.desc       : testing borderStyle for customComponent with ARKUI_BORDER_STYLE_DOTTED value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderStyle006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERSTYLE_0600
+     * @tc.desc   testing borderStyle for customComponent with ARKUI_BORDER_STYLE_DOTTED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderStyle006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderStyle006()).assertEqual(0)

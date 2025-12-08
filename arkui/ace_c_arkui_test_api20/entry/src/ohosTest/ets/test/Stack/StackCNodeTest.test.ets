@@ -47,10 +47,12 @@ export default function StackCNodeTest() {
     });
 
     /**
-     * @tc.number    StackCNodeTest_0100
-     * @tc.name      StackCNodeTest_0100
-     * @tc.desc      Test StackCNode
-     * @tc.level     Level 1
+     * @tc.name   StackCNodeTest_0100
+     * @tc.number StackCNodeTest_0100
+     * @tc.desc   Test StackCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('StackCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[StackCNodeTest_0100] START');

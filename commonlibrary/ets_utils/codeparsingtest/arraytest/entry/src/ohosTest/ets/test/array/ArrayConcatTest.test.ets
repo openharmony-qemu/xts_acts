@@ -44,12 +44,12 @@ export default function ArrayConcatTest() {
     })
 
     /**
+     * @tc.name   ArrayConcatTestTest001
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0100
-     * @tc.name ArrayConcatTestTest001
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn01_testConcatTwoArrays();
@@ -57,12 +57,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest002
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0200
-     * @tc.name ArrayConcatTestTest002
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn02_testConcatMultipleParams();
@@ -70,12 +70,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest003
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0300
-     * @tc.name ArrayConcatTestTest003
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn03_testConcatNestedArrays();
@@ -83,12 +83,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest004
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0400
-     * @tc.name ArrayConcatTestTest004
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn04_concatEmptyAndNonEmpty();
@@ -96,12 +96,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest005
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0500
-     * @tc.name ArrayConcatTestTest005
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn05_concatMultipleEmptyArrays();
@@ -109,12 +109,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest006
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0600
-     * @tc.name ArrayConcatTestTest006
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn06_concatWithNull();
@@ -122,12 +122,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest007
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0700
-     * @tc.name ArrayConcatTestTest007
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn07_concatWithUndefined();
@@ -135,12 +135,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest008
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0800
-     * @tc.name ArrayConcatTestTest008
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn08_concatWithBooleans();
@@ -148,12 +148,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest009
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_0900
-     * @tc.name ArrayConcatTestTest009
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn09_concatWithNumbers();
@@ -161,12 +161,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest010
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1000
-     * @tc.name ArrayConcatTestTest010
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn10_concatWithStrings();
@@ -174,12 +174,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest011
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1100
-     * @tc.name ArrayConcatTestTest011
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn11_concatWithObjects();
@@ -187,12 +187,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest012
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1200
-     * @tc.name ArrayConcatTestTest012
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn12_concatWithArguments();
@@ -200,12 +200,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest013
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1300
-     * @tc.name ArrayConcatTestTest013
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn13_concatWithArrayLike();
@@ -213,12 +213,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest014
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1400
-     * @tc.name ArrayConcatTestTest014
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn14_concatWithIterable();
@@ -226,12 +226,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest015
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1500
-     * @tc.name ArrayConcatTestTest015
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn15_concatSparseArrays();
@@ -239,12 +239,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest016
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1600
-     * @tc.name ArrayConcatTestTest016
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn16_verifyResultLength();
@@ -252,12 +252,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest017
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1700
-     * @tc.name ArrayConcatTestTest017
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn17_concatWithDateObjects();
@@ -265,12 +265,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest018
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1800
-     * @tc.name ArrayConcatTestTest018
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn18_concatWithRegExp();
@@ -278,12 +278,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest019
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_1900
-     * @tc.name ArrayConcatTestTest019
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn19_concatWithFunctions();
@@ -291,12 +291,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest020
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2000
-     * @tc.name ArrayConcatTestTest020
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn20_concatThreeLevelNestedArrays();
@@ -304,12 +304,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest021
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2100
-     * @tc.name ArrayConcatTestTest021
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn21_concatWithNoArguments();
@@ -317,12 +317,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest022
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2200
-     * @tc.name ArrayConcatTestTest022
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn22_concatWithSingleNonArray();
@@ -330,12 +330,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest023
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2300
-     * @tc.name ArrayConcatTestTest023
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn23_concatWithMultipleNonArrays();
@@ -343,12 +343,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest024
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2400
-     * @tc.name ArrayConcatTestTest024
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn24_concatLargeArrays();
@@ -356,12 +356,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest025
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2500
-     * @tc.name ArrayConcatTestTest025
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn25_concatWithSymbols();
@@ -369,12 +369,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest026
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2600
-     * @tc.name ArrayConcatTestTest026
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn26_concatWithBigInts();
@@ -382,12 +382,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest027
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2700
-     * @tc.name ArrayConcatTestTest027
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn27_concatWithUndefinedElements();
@@ -395,12 +395,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest028
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2800
-     * @tc.name ArrayConcatTestTest028
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn28_concatWithNullElements();
@@ -408,12 +408,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest029
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_2900
-     * @tc.name ArrayConcatTestTest029
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn29_verifyObjectReferences();
@@ -421,12 +421,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest030
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3000
-     * @tc.name ArrayConcatTestTest030
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn30_verifyPrimitiveValues();
@@ -434,12 +434,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest031
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3100
-     * @tc.name ArrayConcatTestTest031
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn31_concatEmptyArrayAtStart();
@@ -447,12 +447,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest032
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3200
-     * @tc.name ArrayConcatTestTest032
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn32_concatFourLevelNestedArrays();
@@ -460,12 +460,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest033
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3300
-     * @tc.name ArrayConcatTestTest033
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn33_concatNonIterableArrayLike();
@@ -473,12 +473,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest034
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3400
-     * @tc.name ArrayConcatTestTest034
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn34_concatWithEmptyString();
@@ -486,12 +486,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest035
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3500
-     * @tc.name ArrayConcatTestTest035
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn35_concatWithLongString();
@@ -499,12 +499,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest036
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3600
-     * @tc.name ArrayConcatTestTest036
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn36_concatWithZero();
@@ -512,12 +512,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest037
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3700
-     * @tc.name ArrayConcatTestTest037
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn37_concatWithNaN();
@@ -525,12 +525,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest038
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3800
-     * @tc.name ArrayConcatTestTest038
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn38_concatWithInfinity();
@@ -538,12 +538,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest039
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_3900
-     * @tc.name ArrayConcatTestTest039
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn39_concatWithEmptyArrayElements();
@@ -551,12 +551,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest040
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4000
-     * @tc.name ArrayConcatTestTest040
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn40_concatMultiDimensionalArrays();
@@ -564,12 +564,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest041
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4100
-     * @tc.name ArrayConcatTestTest041
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn41_concatWithObjectContainingArray();
@@ -577,12 +577,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest042
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4200
-     * @tc.name ArrayConcatTestTest042
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn42_concatWithCircularReference();
@@ -590,12 +590,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest043
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4300
-     * @tc.name ArrayConcatTestTest043
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn43_concatWithMap();
@@ -603,12 +603,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest044
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4400
-     * @tc.name ArrayConcatTestTest044
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn44_concatWithSet();
@@ -616,12 +616,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest045
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4500
-     * @tc.name ArrayConcatTestTest045
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn45_concatWithWeakMap();
@@ -629,12 +629,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest046
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4600
-     * @tc.name ArrayConcatTestTest046
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn46_concatWithWeakSet();
@@ -642,12 +642,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest047
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4700
-     * @tc.name ArrayConcatTestTest047
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn47_concatWithRegExpObjects();
@@ -655,12 +655,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest048
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4800
-     * @tc.name ArrayConcatTestTest048
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn48_concatWithErrorObjects();
@@ -668,12 +668,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest049
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_4900
-     * @tc.name ArrayConcatTestTest049
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn49_concatWithJson();
@@ -681,12 +681,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest050
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5000
-     * @tc.name ArrayConcatTestTest050
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn50_concatWithDateObjects();
@@ -694,12 +694,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest051
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5100
-     * @tc.name ArrayConcatTestTest051
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn51_concatWithArrayBuffer();
@@ -707,12 +707,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest052
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5200
-     * @tc.name ArrayConcatTestTest052
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn52_concatWithTypedArrays();
@@ -720,12 +720,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest053
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5300
-     * @tc.name ArrayConcatTestTest053
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn53_concatWithGenerator();
@@ -733,12 +733,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest054
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5400
-     * @tc.name ArrayConcatTestTest054
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn54_concatWithPromise();
@@ -746,12 +746,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest055
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5500
-     * @tc.name ArrayConcatTestTest055
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn55_concatWithAsyncFunction();
@@ -759,12 +759,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest056
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5600
-     * @tc.name ArrayConcatTestTest056
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn56_concatWithArrowFunctions();
@@ -772,12 +772,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest057
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5700
-     * @tc.name ArrayConcatTestTest057
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn57_concatWithClassInstances();
@@ -785,12 +785,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest058
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5800
-     * @tc.name ArrayConcatTestTest058
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn58_concatWithNumberObjects();
@@ -798,12 +798,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest059
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_5900
-     * @tc.name ArrayConcatTestTest059
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn59_concatWithStringObjects();
@@ -811,12 +811,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest060
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6000
-     * @tc.name ArrayConcatTestTest060
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn60_concatWithBooleanObjects();
@@ -824,12 +824,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest061
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6100
-     * @tc.name ArrayConcatTestTest061
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn61_concatWithEmptyObjects();
@@ -837,12 +837,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest062
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6200
-     * @tc.name ArrayConcatTestTest062
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn62_concatWithArrayPrototype();
@@ -850,12 +850,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest063
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6300
-     * @tc.name ArrayConcatTestTest063
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn63_concatWithUndefinedAndNull();
@@ -863,12 +863,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest064
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6400
-     * @tc.name ArrayConcatTestTest064
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn64_concatWithMultipleNestedArrays();
@@ -876,12 +876,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest065
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6500
-     * @tc.name ArrayConcatTestTest065
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn65_concatSparseAndDenseElements();
@@ -889,12 +889,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest066
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6600
-     * @tc.name ArrayConcatTestTest066
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn66_concatWithArraysOfFunctions();
@@ -902,12 +902,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest067
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6700
-     * @tc.name ArrayConcatTestTest067
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn67_concatWithArraysOfRegExp();
@@ -915,12 +915,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest068
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6800
-     * @tc.name ArrayConcatTestTest068
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn68_concatWithArraysOfDates();
@@ -928,12 +928,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest069
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_6900
-     * @tc.name ArrayConcatTestTest069
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn69_concatWithMixedObjectTypes();
@@ -941,12 +941,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest070
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7000
-     * @tc.name ArrayConcatTestTest070
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn70_concatWithEmptyParameters();
@@ -954,12 +954,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest071
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7100
-     * @tc.name ArrayConcatTestTest071
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn71_concatWithSingleEmptyArray();
@@ -967,12 +967,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest072
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7200
-     * @tc.name ArrayConcatTestTest072
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn72_concatWithMultipleEmptyArrays();
@@ -980,12 +980,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest073
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7300
-     * @tc.name ArrayConcatTestTest073
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn73_concatWithZeroAndNegativeZero();
@@ -993,12 +993,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest074
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7400
-     * @tc.name ArrayConcatTestTest074
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn74_concatWithTrueAndFalse();
@@ -1006,12 +1006,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest075
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7500
-     * @tc.name ArrayConcatTestTest075
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn75_concatWithArraysOfBigInt();
@@ -1019,12 +1019,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest076
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7600
-     * @tc.name ArrayConcatTestTest076
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn76_concatWithArraysOfSymbols();
@@ -1032,12 +1032,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest077
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7700
-     * @tc.name ArrayConcatTestTest077
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn77_concatWithEmptyAndNonEmptyStrings();
@@ -1045,12 +1045,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest078
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7800
-     * @tc.name ArrayConcatTestTest078
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn78_concatWithVariousNumbers();
@@ -1058,12 +1058,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest079
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_7900
-     * @tc.name ArrayConcatTestTest079
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn79_concatThreeLevelNestedArrays();
@@ -1071,12 +1071,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest080
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8000
-     * @tc.name ArrayConcatTestTest080
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn80_concatFourLevelNestedArrays();
@@ -1084,12 +1084,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest081
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8100
-     * @tc.name ArrayConcatTestTest081
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn81_concatWithCircularObjects();
@@ -1097,12 +1097,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest082
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8200
-     * @tc.name ArrayConcatTestTest082
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn82_concatWithMapAndSet();
@@ -1110,12 +1110,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest083
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8300
-     * @tc.name ArrayConcatTestTest083
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn83_concatWithWeakMapAndWeakSet();
@@ -1123,12 +1123,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest084
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8400
-     * @tc.name ArrayConcatTestTest084
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn84_concatWithErrorObjects();
@@ -1136,12 +1136,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest085
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8500
-     * @tc.name ArrayConcatTestTest085
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn85_concatWithBuiltInObjects();
@@ -1149,12 +1149,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest086
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8600
-     * @tc.name ArrayConcatTestTest086
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn86_concatWithCustomObjects();
@@ -1162,12 +1162,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest087
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8700
-     * @tc.name ArrayConcatTestTest087
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn87_concatWithArrayBufferAndTypedArray();
@@ -1175,12 +1175,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest088
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8800
-     * @tc.name ArrayConcatTestTest088
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn88_concatWithGeneratorAndPromise();
@@ -1188,12 +1188,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest089
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_8900
-     * @tc.name ArrayConcatTestTest089
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn89_concatWithVariousFunctionTypes();
@@ -1201,12 +1201,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest090
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9000
-     * @tc.name ArrayConcatTestTest090
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn90_concatWithClassInstances();
@@ -1214,12 +1214,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest091
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9100
-     * @tc.name ArrayConcatTestTest091
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn91_concatWithWrapperObjects();
@@ -1227,12 +1227,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest092
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9200
-     * @tc.name ArrayConcatTestTest092
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn92_concatWithEmptyAndNonEmptyObjects();
@@ -1240,12 +1240,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest093
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9300
-     * @tc.name ArrayConcatTestTest093
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn93_concatWithPrototypes();
@@ -1253,12 +1253,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest094
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9400
-     * @tc.name ArrayConcatTestTest094
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn94_concatVeryLargeArrays();
@@ -1266,12 +1266,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest095
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9500
-     * @tc.name ArrayConcatTestTest095
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn95_concatVerySmallArrays();
@@ -1279,12 +1279,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest096
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9600
-     * @tc.name ArrayConcatTestTest096
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn96_concatWithMixedSpecialValues();
@@ -1292,12 +1292,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest097
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9700
-     * @tc.name ArrayConcatTestTest097
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn97_concatWithRegExpWithFlags();
@@ -1305,12 +1305,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest098
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9800
-     * @tc.name ArrayConcatTestTest098
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn98_concatWithDifferentDates();
@@ -1318,12 +1318,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest099
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_9900
-     * @tc.name ArrayConcatTestTest099
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn99_concatWithSameObjectReferences();
@@ -1331,12 +1331,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest100
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10000
-     * @tc.name ArrayConcatTestTest100
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn100_concatWithSimilarObjects();
@@ -1344,12 +1344,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest101
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10100
-     * @tc.name ArrayConcatTestTest101
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn101_concatWithDifferentFunctionTypes();
@@ -1357,12 +1357,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest102
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10200
-     * @tc.name ArrayConcatTestTest102
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn102_concatWithArrowAndRegularFunctions();
@@ -1370,12 +1370,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest103
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10300
-     * @tc.name ArrayConcatTestTest103
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn103_concatWithClassesAndConstructors();
@@ -1383,12 +1383,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest104
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10400
-     * @tc.name ArrayConcatTestTest104
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn104_concatWithStaticAndInstanceMethods();
@@ -1396,12 +1396,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest105
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10500
-     * @tc.name ArrayConcatTestTest105
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn105_concatWithSymbolProperties();
@@ -1409,12 +1409,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest106
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10600
-     * @tc.name ArrayConcatTestTest106
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn106_concatWithNonEnumerableProperties();
@@ -1422,12 +1422,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest107
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10700
-     * @tc.name ArrayConcatTestTest107
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn107_concatWithMixedEnumerableProperties();
@@ -1435,12 +1435,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest108
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10800
-     * @tc.name ArrayConcatTestTest108
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn108_concatWithGettersAndSetters();
@@ -1448,12 +1448,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest109
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_10900
-     * @tc.name ArrayConcatTestTest109
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn109_concatWithProxyObjects();
@@ -1461,12 +1461,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest110
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11000
-     * @tc.name ArrayConcatTestTest110
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn110_concatWithProxyContainingArray();
@@ -1474,12 +1474,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest111
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11100
-     * @tc.name ArrayConcatTestTest111
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn111_concatWithDifferentEncodedStrings();
@@ -1487,12 +1487,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest112
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11200
-     * @tc.name ArrayConcatTestTest112
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn112_concatWithSymbolKeyObjects();
@@ -1500,12 +1500,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest113
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11300
-     * @tc.name ArrayConcatTestTest113
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn113_concatWithReadOnlyObjects();
@@ -1513,12 +1513,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest114
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11400
-     * @tc.name ArrayConcatTestTest114
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn114_concatWithObjectsWithManyProperties();
@@ -1526,12 +1526,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest115
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11500
-     * @tc.name ArrayConcatTestTest115
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn115_concatWithFunctionReturnValues();
@@ -1539,12 +1539,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest116
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11600
-     * @tc.name ArrayConcatTestTest116
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn116_concatWithDynamicallyGeneratedArrays();
@@ -1552,12 +1552,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest117
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11700
-     * @tc.name ArrayConcatTestTest117
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn117_concatWithObjectsWithComputedProperties();
@@ -1565,12 +1565,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest118
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11800
-     * @tc.name ArrayConcatTestTest118
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn118_concatWithRegExpResults();
@@ -1578,12 +1578,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest119
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_11900
-     * @tc.name ArrayConcatTestTest119
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn119_concatWithDateStrings();
@@ -1591,12 +1591,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest120
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12000
-     * @tc.name ArrayConcatTestTest120
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn120_concatWithArrayBufferViews();
@@ -1604,12 +1604,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest121
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12100
-     * @tc.name ArrayConcatTestTest121
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn121_concatWithArraysOfTypedArrays();
@@ -1617,12 +1617,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest123
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12300
-     * @tc.name ArrayConcatTestTest123
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn123_concatWithBigIntOperations();
@@ -1630,12 +1630,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest124
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12400
-     * @tc.name ArrayConcatTestTest124
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn124_concatWithBoundFunctions();
@@ -1643,12 +1643,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest125
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12500
-     * @tc.name ArrayConcatTestTest125
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn125_concatWithGeneratorResults();
@@ -1656,12 +1656,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest126
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12600
-     * @tc.name ArrayConcatTestTest126
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn126_concatWithPromiseStates();
@@ -1669,12 +1669,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest127
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12700
-     * @tc.name ArrayConcatTestTest127
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn127_concatWithSettledPromises();
@@ -1682,12 +1682,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest128
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12800
-     * @tc.name ArrayConcatTestTest128
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn128_concatWithClassStaticProperties();
@@ -1695,12 +1695,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest129
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_12900
-     * @tc.name ArrayConcatTestTest129
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn129_concatWithClassInstanceMethods();
@@ -1708,12 +1708,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest130
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13000
-     * @tc.name ArrayConcatTestTest130
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn130_concatWithTypeConversionResults();
@@ -1721,12 +1721,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest131
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13100
-     * @tc.name ArrayConcatTestTest131
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn131_concatWithModuleExports();
@@ -1734,12 +1734,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest132
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13200
-     * @tc.name ArrayConcatTestTest132
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn132_concatWithConfigObjects();
@@ -1747,12 +1747,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest133
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13300
-     * @tc.name ArrayConcatTestTest133
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn133_concatWithNestedConfigObjects();
@@ -1760,12 +1760,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest134
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13400
-     * @tc.name ArrayConcatTestTest134
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn134_concatWithErrorStacks();
@@ -1773,12 +1773,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest135
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13500
-     * @tc.name ArrayConcatTestTest135
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn135_concatWithTimerIds();
@@ -1786,12 +1786,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest136
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13600
-     * @tc.name ArrayConcatTestTest136
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn136_concatWithBufferObjects();
@@ -1799,12 +1799,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest137
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13700
-     * @tc.name ArrayConcatTestTest137
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn137_concatWithArithmeticResults();
@@ -1812,12 +1812,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest138
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_13800
-     * @tc.name ArrayConcatTestTest138
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn138_concatWithQueryStringParsed();
@@ -1825,12 +1825,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest140
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14000
-     * @tc.name ArrayConcatTestTest140
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn140_concatWithSetOperations();
@@ -1838,12 +1838,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest141
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14100
-     * @tc.name ArrayConcatTestTest141
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn141_concatWithMapOperations();
@@ -1851,12 +1851,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest142
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14200
-     * @tc.name ArrayConcatTestTest142
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn142_concatWithMathResults();
@@ -1864,12 +1864,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest143
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14300
-     * @tc.name ArrayConcatTestTest143
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn143_concatWithDateCalculations();
@@ -1877,12 +1877,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest144
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14400
-     * @tc.name ArrayConcatTestTest144
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn144_concatWithStringOperations();
@@ -1890,12 +1890,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest145
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14500
-     * @tc.name ArrayConcatTestTest145
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn145_concatWithArrayMethodResults();
@@ -1903,12 +1903,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest146
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14600
-     * @tc.name ArrayConcatTestTest146
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn146_concatWithObjectMethodResults();
@@ -1916,12 +1916,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest147
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14700
-     * @tc.name ArrayConcatTestTest147
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn147_concatWithFunctionParameters();
@@ -1929,12 +1929,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest148
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14800
-     * @tc.name ArrayConcatTestTest148
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn148_concatWithFunctionReturnValues();
@@ -1942,12 +1942,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest149
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_14900
-     * @tc.name ArrayConcatTestTest149
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn149_concatWithAsyncFunctionResults();
@@ -1955,12 +1955,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest150
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15000
-     * @tc.name ArrayConcatTestTest150
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn150_concatWithGeneratorIteration();
@@ -1968,12 +1968,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest151
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15100
-     * @tc.name ArrayConcatTestTest151
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn151_concatWithProxyFunctions();
@@ -1981,12 +1981,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest152
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15200
-     * @tc.name ArrayConcatTestTest152
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn152_concatWithReflectResults();
@@ -1994,12 +1994,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest153
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15300
-     * @tc.name ArrayConcatTestTest153
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn153_concatWithSymbolMethodResults();
@@ -2007,12 +2007,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest154
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15400
-     * @tc.name ArrayConcatTestTest154
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn154_concatWithTypeCheckResults();
@@ -2020,12 +2020,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest155
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15500
-     * @tc.name ArrayConcatTestTest155
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn155_concatWithErrorHandlingResults();
@@ -2033,12 +2033,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest156
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15600
-     * @tc.name ArrayConcatTestTest156
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn156_concatWithBitwiseOperations();
@@ -2046,12 +2046,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest157
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15700
-     * @tc.name ArrayConcatTestTest157
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn157_concatWithLogicalOperations();
@@ -2059,12 +2059,12 @@ export default function ArrayConcatTest() {
     });
 
     /**
+     * @tc.name   ArrayConcatTestTest158
      * @tc.number SUB_BUILTINS_ArrayConcat_TEST_15800
-     * @tc.name ArrayConcatTestTest158
-     * @tc.desc test array concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConcatTestTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayConcat.Fn158_concatWithComparisonResults();

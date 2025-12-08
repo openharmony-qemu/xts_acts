@@ -27,12 +27,12 @@ export default function graphicFontDescriptorTest() {
     beforeAll(() => {})
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
-     * @tc.name      : testMatchingFontDescriptors001
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatchingFontDescriptors001
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchingFontDescriptors001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -56,12 +56,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
-     * @tc.name      : testMatchingFontDescriptors002
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatchingFontDescriptors002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchingFontDescriptors002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
-     * @tc.name      : testMatchingFontDescriptors003
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatchingFontDescriptors003
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchingFontDescriptors003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors003"
@@ -115,12 +115,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
-     * @tc.name      : testMatchingFontDescriptors004
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatchingFontDescriptors004
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchingFontDescriptors004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors004"
@@ -144,12 +144,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
-     * @tc.name      : testMatchingFontDescriptors005
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatchingFontDescriptors005
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchingFontDescriptors005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors005"
@@ -171,12 +171,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
-     * @tc.name      : testMatchingFontDescriptors006
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatchingFontDescriptors006
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchingFontDescriptors006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors006"
@@ -198,12 +198,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
-     * @tc.name      : testMatchingFontDescriptors007
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatchingFontDescriptors007
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchingFontDescriptors007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors007"
@@ -229,12 +229,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
-     * @tc.name      : testMatchingFontDescriptors008
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatchingFontDescriptors008
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchingFontDescriptors008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors008"
@@ -262,12 +262,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_009
-     * @tc.name      : testGetSystemFontFullNamesByType001
-     * @tc.desc      : To test interface getSystemFontFullNamesByType of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSystemFontFullNamesByType001
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_009
+     * @tc.desc   To test interface getSystemFontFullNamesByType of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -291,12 +291,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_010
-     * @tc.name      : testGetSystemFontFullNamesByType002
-     * @tc.desc      : To test interface getSystemFontFullNamesByType of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSystemFontFullNamesByType002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_010
+     * @tc.desc   To test interface getSystemFontFullNamesByType of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -325,12 +325,12 @@ export default function graphicFontDescriptorTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_011
-     * @tc.name      : testGetSystemFontFullNamesByType003
-     * @tc.desc      : To test interface getSystemFontFullNamesByType of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSystemFontFullNamesByType003
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_011
+     * @tc.desc   To test interface getSystemFontFullNamesByType of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -358,12 +358,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_012
-     * @tc.name      : testGetSystemFontFullNamesByType004
-     * @tc.desc      : To test interface getSystemFontFullNamesByType of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSystemFontFullNamesByType004
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_012
+     * @tc.desc   To test interface getSystemFontFullNamesByType of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -387,12 +387,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_013
-     * @tc.name      : testGetSystemFontFullNamesByType005
-     * @tc.desc      : To test interface getSystemFontFullNamesByType of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSystemFontFullNamesByType005
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_013
+     * @tc.desc   To test interface getSystemFontFullNamesByType of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -421,12 +421,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
-     * @tc.name      : testGetSystemFontFullNamesByType006
-     * @tc.desc      : To test interface getSystemFontFullNamesByType of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSystemFontFullNamesByType006
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
+     * @tc.desc   To test interface getSystemFontFullNamesByType of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -450,12 +450,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_015
-     * @tc.name      : testGetSystemFontFullNamesByType007
-     * @tc.desc      : To test interface getSystemFontFullNamesByType of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSystemFontFullNamesByType007
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_015
+     * @tc.desc   To test interface getSystemFontFullNamesByType of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -478,12 +478,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_016
-     * @tc.name      : testGetSystemFontFullNamesByType008
-     * @tc.desc      : To test interface getSystemFontFullNamesByType of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSystemFontFullNamesByType008
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_016
+     * @tc.desc   To test interface getSystemFontFullNamesByType of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -506,12 +506,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_017
-     * @tc.name      : testGetFontDescriptorByFullName001
-     * @tc.desc      : To test interface getFontDescriptorByFullName of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetFontDescriptorByFullName001
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_017
+     * @tc.desc   To test interface getFontDescriptorByFullName of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetFontDescriptorByFullName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -536,12 +536,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_018
-     * @tc.name      : testGetFontDescriptorByFullName002
-     * @tc.desc      : To test interface getFontDescriptorByFullName of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetFontDescriptorByFullName002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_018
+     * @tc.desc   To test interface getFontDescriptorByFullName of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetFontDescriptorByFullName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -565,12 +565,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_019
-     * @tc.name      : testGetFontDescriptorByFullName003
-     * @tc.desc      : To test interface getFontDescriptorByFullName of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetFontDescriptorByFullName003
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_019
+     * @tc.desc   To test interface getFontDescriptorByFullName of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetFontDescriptorByFullName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
@@ -593,12 +593,12 @@ export default function graphicFontDescriptorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_020
-     * @tc.name      : testGetFontDescriptorByFullName004
-     * @tc.desc      : To test interface getFontDescriptorByFullName of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetFontDescriptorByFullName004
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_020
+     * @tc.desc   To test interface getFontDescriptorByFullName of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetFontDescriptorByFullName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {

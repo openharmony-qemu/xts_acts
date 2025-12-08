@@ -38,12 +38,12 @@ export default function graphicTextHadTest() {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_050
-     * @tc.name      : testParagraphStylePropertyFour
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testParagraphStylePropertyFour
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_050
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParagraphStylePropertyFour', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testParagraphStylePropertyFour===="
@@ -143,12 +143,12 @@ export default function graphicTextHadTest() {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_060
-     * @tc.name      : testTextRunGetGlyphs
-     * @tc.desc      : To test Run GetGlyphs interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRunGetGlyphs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_060
+     * @tc.desc   To test Run GetGlyphs interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextRunGetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = '====testTextRunGetGlyphs====';
@@ -183,12 +183,12 @@ export default function graphicTextHadTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_070
-     * @tc.name      : testTextRunGetPositions
-     * @tc.desc      : To test Run GetPositions interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRunGetPositions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_070
+     * @tc.desc   To test Run GetPositions interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextRunGetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = '====testTextRunGetPositions====';
@@ -221,12 +221,12 @@ export default function graphicTextHadTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_080
-     * @tc.name      : testGetSystemFontFullNamesByType
-     * @tc.desc      : Returns the names of all fonts corresponding to the font type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetSystemFontFullNamesByType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_080
+     * @tc.desc   Returns the names of all fonts corresponding to the font type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSystemFontFullNamesByType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {

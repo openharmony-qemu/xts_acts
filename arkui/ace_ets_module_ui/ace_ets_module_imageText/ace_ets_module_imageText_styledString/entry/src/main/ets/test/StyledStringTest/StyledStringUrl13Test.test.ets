@@ -46,12 +46,12 @@ export default function StyledStringUrl13Test() {
         });
         
         /**
-         * @tc.number    StyledStringUrl13Test_0100
-         * @tc.name      StyledStringUrl13Test_0100
-         * @tc.desc      Each styledKey
-         * @tc.level     Level 2
-         * @tc.type
-         * @tc.size
+         * @tc.name   StyledStringUrl13Test_0100
+         * @tc.number StyledStringUrl13Test_0100
+         * @tc.desc   Each styledKey
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('StyledStringUrl13Test_0100', Level.LEVEL2, async (done: Function) => {
             console.info('[StyledStringUrl13Test_0100] START');

@@ -30,12 +30,12 @@ export default function createVideoAssetRequestTest() {
       await sleep(1000);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CREATE_VIDEO_ASSET_REQUEST_0000
-     * @tc.name      : create_video_asset_request_000
-     * @tc.desc      : create video asset request with invalid fileUri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   create_video_asset_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_VIDEO_ASSET_REQUEST_0000
+     * @tc.desc   create video asset request with invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('create_video_asset_request_000', Level.LEVEL2, async (done: Function) => {
       let testNum = 'create_video_asset_request_000';

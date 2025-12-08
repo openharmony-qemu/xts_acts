@@ -67,12 +67,12 @@ export default function ReminderAgentManagerOnlyMainTest() {
         console.info('start################################start');
 
         /**
-         * @tc.number: onlyMainReminderRequestAttribute_0100
-         * @tc.name: onlyMainReminderRequestAttribute_0100
-         * @tc.desc: test ReminderRequest Attribute titleResourceId
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   onlyMainReminderRequestAttribute_0100
+         * @tc.number onlyMainReminderRequestAttribute_0100
+         * @tc.desc   test ReminderRequest Attribute titleResourceId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("onlyMainReminderRequestAttribute_0100", Level.LEVEL3, async function (done) {
             console.info('----------------------onlyMainReminderRequestAttribute_0100---------------------------');
@@ -114,12 +114,12 @@ export default function ReminderAgentManagerOnlyMainTest() {
 
 
         /**
-         * @tc.number: onlyMainReminderRequestAttribute_0200
-         * @tc.name: onlyMainReminderRequestAttribute_0200
-         * @tc.desc: test ReminderRequest Attribute contentResourceId
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   onlyMainReminderRequestAttribute_0200
+         * @tc.number onlyMainReminderRequestAttribute_0200
+         * @tc.desc   test ReminderRequest Attribute contentResourceId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("onlyMainReminderRequestAttribute_0200", Level.LEVEL3, async function (done) {
             console.info('----------------------onlyMainReminderRequestAttribute_0200---------------------------');
@@ -159,12 +159,12 @@ export default function ReminderAgentManagerOnlyMainTest() {
         })
 
         /**
-         * @tc.number: onlyMainReminderRequestAttribute_0300
-         * @tc.name: onlyMainReminderRequestAttribute_0300
-         * @tc.desc: test ReminderRequest Attribute expiredContentResourceId
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   onlyMainReminderRequestAttribute_0300
+         * @tc.number onlyMainReminderRequestAttribute_0300
+         * @tc.desc   test ReminderRequest Attribute expiredContentResourceId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("onlyMainReminderRequestAttribute_0300", Level.LEVEL3, async function (done) {
             console.info('----------------------onlyMainReminderRequestAttribute_0300---------------------------');
@@ -204,12 +204,12 @@ export default function ReminderAgentManagerOnlyMainTest() {
         })
 
         /**
-         * @tc.number: onlyMainReminderRequestAttribute_0400
-         * @tc.name: onlyMainReminderRequestAttribute_0400
-         * @tc.desc: test ReminderRequest Attribute snoozeContentResourceId
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   onlyMainReminderRequestAttribute_0400
+         * @tc.number onlyMainReminderRequestAttribute_0400
+         * @tc.desc   test ReminderRequest Attribute snoozeContentResourceId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("onlyMainReminderRequestAttribute_0400", Level.LEVEL3, async function (done) {
             console.info('----------------------onlyMainReminderRequestAttribute_0400---------------------------');

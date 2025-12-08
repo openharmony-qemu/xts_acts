@@ -584,15 +584,12 @@ export default function imageWebp() {
       };
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_0100
-     * @tc.name      : createPixelMap - promise-webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -643,15 +640,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0100
-     * @tc.name      : createPixelMap - callback-webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -698,15 +692,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_0200
-     * @tc.name      : createPixelMap-promise-webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       try {
@@ -738,15 +729,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0200
-     * @tc.name      : createPixelMap-callback-webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       try {
@@ -771,15 +759,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0300
-     * @tc.name      : createPixelMap-callback -{sampleSize: -1} -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -801,15 +786,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0400
-     * @tc.name      : createPixelMap-callback -{index: -1} -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0400", Level.LEVEL0, async (done: ESObject) => {
       let decodingOptions: ESObject = {
@@ -831,15 +813,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0500
-     * @tc.name      : createPixelMap-callback -{rotate: 500} -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0500", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -861,15 +840,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0600
-     * @tc.name      : createPixelMap-callback -{rotate: -10} -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0600", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -891,15 +867,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0700
-     * @tc.name      : createPixelMap-callback editable: false -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0700", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -921,15 +894,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0800
-     * @tc.name      : createPixelMap-callback -{ size: { height: 1, width: 2 }, x: -1, y: -1 }-webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0800", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -951,15 +921,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0900
-     * @tc.name      : createPixelMap-callback -size: { height: 10000, width: 10000 } -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_0900", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -981,15 +948,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1000
-     * @tc.name      : createPixelMap-callback - sampleSize: -1 -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1000", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -1011,15 +975,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1100
-     * @tc.name      : createPixelMap-callback - index: -1 -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1100", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -1041,15 +1002,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1200
-     * @tc.name      : createPixelMap-callback - desiredPixelFormat: 1 -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1200", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -1070,15 +1028,12 @@ export default function imageWebp() {
       createPixMapPromiseErr(done, "SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1200", decodingOptions);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1300
-     * @tc.name      : createPixelMap-callback - { size: { height: 1, width: 2 }, x: -1, y: -1 } -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1300", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -1100,15 +1055,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1400
-     * @tc.name      : createPixelMap-callback -  size: { height: 10000, width:10000 } -webp
-     * @tc.desc      : 1.create imagesource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.return pixelmap undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_1400", Level.LEVEL0, async (done: Function) => {
       let decodingOptions: ESObject = {
@@ -1130,14 +1082,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_0100
-     * @tc.name      : packing - callback-webp
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_0100
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1147,14 +1097,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_0100
-     * @tc.name      : packing - promise-webp
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_0100
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1164,14 +1112,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0100
-     * @tc.name      : packing - promise-webp-wrong quality
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0100
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0100", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1181,14 +1127,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0200
-     * @tc.name      : packing - promise-webp
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0200
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0200", Level.LEVEL0, async (done: Function) => {
       if (isSupportGifEncode) {
@@ -1203,14 +1147,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0300
-     * @tc.name      : packing - promise-webp-no format
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0300
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0300", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1220,14 +1162,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0400
-     * @tc.name      : packing - promise-webp-no format
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0400
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0400", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1237,14 +1177,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0100
-     * @tc.name      : packing - callback-webp-wrong format
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0100
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0100", Level.LEVEL0, async (done: Function) => {
       if (isSupportGifEncode) {
@@ -1259,14 +1197,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0200
-     * @tc.name      : packing - callback-webp-wrong quality
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0200
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0200", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1276,14 +1212,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0300
-     * @tc.name      : packing - callback-webp-no quality
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0300
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0300", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1293,14 +1227,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0400
-     * @tc.name      : packing - callback-webp-no format
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0400
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0400", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1310,14 +1242,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0500
-     * @tc.name      : packing - callback-webp-quality -1
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0500
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_ERROR_0500", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1327,14 +1257,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0500
-     * @tc.name      : packing - promise-webp-quality -1
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0500
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_0500", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1344,14 +1272,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_0200
-     * @tc.name      : packing - callback-webp-quality 0
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_0200
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1361,14 +1287,12 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_0200
-     * @tc.name      : packing - promise-webp-quality 0
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_0200
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       let packOpts: ESObject = {
@@ -1378,78 +1302,72 @@ export default function imageWebp() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0100
-     * @tc.name      : test getDelayTime promise for one frame webp
-     * @tc.desc      : 1.create one frame webp imagesource
-     *                 2.getDelayTime
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0100
+     * @tc.desc   1.create one frame webp imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       testGetDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0100", "test_large.webp");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0200
-     * @tc.name      : test getDelayTime promise for webp
-     * @tc.desc      : 1.create webp imagesource
-     *                 2.getDelayTime
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0200
+     * @tc.desc   1.create webp imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       testGetDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0200", "moving_test.webp");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0300
-     * @tc.name      : test getDelayTime promise for unsupported jpg
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.getDelayTime
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0300
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       testGetDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_0300", "test.jpg");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0100
-     * @tc.name      : test getDelayTime callback for one frame webp
-     * @tc.desc      : 1.create one frame webp imagesource
-     *                 2.getDelayTime with callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0100
+     * @tc.desc   1.create one frame webp imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       testGetDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0100", "test_large.webp");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0200
-     * @tc.name      : test getDelayTime callback for webp
-     * @tc.desc      : 1.create webp imagesource
-     *                 2.getDelayTime with callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0200
+     * @tc.desc   1.create webp imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       testGetDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0200", "moving_test.webp");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0300
-     * @tc.name      : test getDelayTime callback for unsupported jpg
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.getDelayTime with callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0300
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       testGetDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_0300", "test.jpg");

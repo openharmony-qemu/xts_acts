@@ -56,13 +56,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       })
         done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_setNetErrorCode_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_setNetErrorCode
-     *@tc.desc testWebViewSdkSchemeHandler_setNetErrorCode
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_setNetErrorCode
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_setNetErrorCode_API_0001
+     * @tc.desc   testWebViewSdkSchemeHandler_setNetErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewSdkSchemeHandler_setNetErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_setNetErrorCode", 120030)
@@ -70,13 +70,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_getNetErrorCode_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getNetErrorCode
-     *@tc.desc test SdkSchemeHandler_getNetErrorCode
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getNetErrorCode
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getNetErrorCode_API_0001
+     * @tc.desc   test SdkSchemeHandler_getNetErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewSdkSchemeHandler_getNetErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_getNetErrorCode", 120030)

@@ -73,7 +73,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -104,7 +103,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest001 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0200
      * @tc.desc   query success callback
@@ -137,7 +135,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest002 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0300
      * @tc.desc   querysql executeSql success callback
@@ -178,7 +175,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0400
      * @tc.desc   executesql querysql success callback
@@ -218,7 +214,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest004 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0500
      * @tc.desc   querySqlSync success callback
@@ -246,7 +241,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest005 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0600
      * @tc.desc   backup success callback
@@ -285,7 +279,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest007
      * @tc.number relationalStoreTest007
      * @tc.desc   relationalStoreTest007
@@ -331,7 +324,6 @@ export default function relationalStoreInterfaceTest() {
       console.log(TAG + "************* relationalStoreTest007 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0800
      * @tc.desc   querySync success
@@ -364,7 +356,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0900
      * @tc.desc   executesql success
@@ -392,7 +383,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest009 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1000
      * @tc.desc   querySync success
@@ -421,7 +411,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest010 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1100
      * @tc.desc   query success
@@ -450,7 +439,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest011 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_Int64JsAPITest_2300
      * @tc.desc   Number.MIN_SAFE_INTEGER
@@ -485,7 +473,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest012 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_Int64JsAPITest_2400
      * @tc.desc   Number.MIN_SAFE_INTEGER*10
@@ -521,7 +508,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest013 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_Int64JsAPITest_2500
      * @tc.desc   Number.MAX_SAFE_INTEGER
@@ -556,7 +542,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest014 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_Int64JsAPITest_2600
      * @tc.desc   Number.MAX_SAFE_INTEGER*10
@@ -591,7 +576,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest015 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_Int64JsAPITest_2700
      * @tc.desc   getColumnType test
@@ -626,7 +610,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest016 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_Int64JsAPITest_2800
      * @tc.desc   getColumnType test
@@ -661,7 +644,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest017 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0100
      * @tc.desc   errcode is 14800001
@@ -683,7 +665,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest018 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0200
      * @tc.desc   errcode is 14800014
@@ -706,7 +687,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest019 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0300
      * @tc.desc   errcode is 401
@@ -728,7 +708,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest020 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0400
      * @tc.desc   setLocale para is "zh-CN"
@@ -782,7 +761,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest021 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0500
      * @tc.desc   errcode is 14800001
@@ -816,7 +794,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest022 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0600
      * @tc.desc   setLocale para is "zh-Hans"
@@ -870,7 +847,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest023 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest024
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0700
      * @tc.desc   setLocale para is "zh-Hant"
@@ -924,7 +900,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest024 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0800
      * @tc.desc   setLocale para is "zh"
@@ -978,7 +953,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest025 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetLocale_0900
      * @tc.desc   setLocale para is "es"
@@ -1032,7 +1006,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest026 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1200
      * @tc.desc   insert para greater than 2MB
@@ -1062,7 +1035,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1300
      * @tc.desc   insert para greater than 2MB
@@ -1092,7 +1064,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest029
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1400
      * @tc.desc   insertSync para greater than 2MB
@@ -1122,7 +1093,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1500
      * @tc.desc   insertSync para greater than 2MB
@@ -1152,7 +1122,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1600
      * @tc.desc   insert para greater than 2MB queryLockedRow
@@ -1181,7 +1150,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest031 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest032
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1700
      * @tc.desc   insert para greater than 2MB querySync
@@ -1209,7 +1177,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest032 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest033
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1800
      * @tc.desc   update param greater than 2MB
@@ -1244,7 +1211,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest034
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1900
      * @tc.desc   update param greater than 2MB
@@ -1279,7 +1245,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2000
      * @tc.desc   updateSync param greater than 2MB
@@ -1313,7 +1278,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest035 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testDataChange001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2100
      * @tc.desc   Register callback for dataChange
@@ -1425,7 +1389,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testDataChange002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2200
      * @tc.desc   Register callback for dataChange
@@ -1532,7 +1495,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testEvent001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2300
      * @tc.desc   Register callback for event
@@ -1638,7 +1600,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testEvent002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2400
      * @tc.desc   Register callback for event
@@ -1740,7 +1701,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testStatistics001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2500
      * @tc.desc   Register callback for statistics
@@ -1851,7 +1811,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testStatistics002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2600
      * @tc.desc   Register callback for statistics
@@ -1957,7 +1916,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testSqliteErrorOccurred001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2700
      * @tc.desc   Register callback for sqliteErrorOccurred
@@ -2072,7 +2030,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testSqliteErrorOccurred002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2800
      * @tc.desc   Register callback for sqliteErrorOccurred
@@ -2183,7 +2140,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testPerfStat001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2900
      * @tc.desc   1. Register callback for perfStat
@@ -2294,7 +2250,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testPerfStat002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3000
      * @tc.desc   Register callback for perfStat
@@ -2402,7 +2357,6 @@ export default function relationalStoreInterfaceTest() {
       console.log(TAG + "************* testPerfStat002 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest036
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3100
      * @tc.desc   insert para equal 2MB
@@ -2432,7 +2386,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest037
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3200
      * @tc.desc   insert para equal 2MB
@@ -2462,7 +2415,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest038
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3300
      * @tc.desc   insertSync para equal 2MB
@@ -2492,7 +2444,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest039
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3400
      * @tc.desc   insertSync para equal 2MB
@@ -2522,7 +2473,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest040
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3500
      * @tc.desc   insert para equal 2MB queryLockedRow
@@ -2551,7 +2501,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest040 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest041
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3600
      * @tc.desc   update param equal 2MB
@@ -2586,7 +2535,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest042
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3700
      * @tc.desc   update param equal 2MB
@@ -2621,7 +2569,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest043
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3800
      * @tc.desc   updateSync param equal 2MB
@@ -2656,7 +2603,6 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest044
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3900
      * @tc.desc   goToNextRow test
@@ -2683,7 +2629,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest044 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest045
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4000
      * @tc.desc   goToFirstRow test
@@ -2710,7 +2655,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest045 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest046
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4100
      * @tc.desc   goTo test
@@ -2737,7 +2681,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest046 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest047
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4200
      * @tc.desc   goToRow test
@@ -2764,7 +2707,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest047 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest048
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4300
      * @tc.desc   goToLastRow test
@@ -2791,7 +2733,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest048 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest049
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5900
      * @tc.desc   goToPreviousRow test
@@ -2818,7 +2759,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest049 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest050
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4400
      * @tc.desc   goTo test
@@ -2850,7 +2790,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest050 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest051
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4500
      * @tc.desc   goToRow test
@@ -2882,7 +2821,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest051 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest052
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4600
      * @tc.desc   goToLastRow test
@@ -2914,7 +2852,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest052 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest053
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4700
      * @tc.desc   goToPreviousRow test
@@ -2951,7 +2888,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest053 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest054
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4800
      * @tc.desc   getRows test
@@ -2982,7 +2918,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest054 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest055
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4900
      * @tc.desc   getRows test
@@ -3015,7 +2950,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest055 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest056
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5000
      * @tc.desc   isColumnNull test
@@ -3048,7 +2982,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest056 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest057
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5100
      * @tc.desc   isColumnNull test
@@ -3081,7 +3014,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest057 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest058
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5200
      * @tc.desc   insertSync test
@@ -3110,7 +3042,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest058 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest059
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5300
      * @tc.desc   isTokenizerSupported test
@@ -3134,7 +3065,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest059 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest060
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5400
      * @tc.desc   isTokenizerSupported test
@@ -3166,7 +3096,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest060 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest061
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5500
      * @tc.desc   getColumnName test
@@ -3198,7 +3127,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest061 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest062
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5600
      * @tc.desc   getDouble test
@@ -3231,7 +3159,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest062 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest063
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5700
      * @tc.desc   getBlob test
@@ -3265,7 +3192,6 @@ export default function relationalStoreInterfaceTest() {
       console.info(TAG + "************* relationalStoreTest063 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest064
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5800
      * @tc.desc   getBlob test

@@ -41,12 +41,12 @@ export default function AssetOthers() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_AsUserId_Func_0800
-     * @tc.name       : testAsUseridNoRight800
-     * @tc.desc       : 未申请权限的系统应用，指定前台用户，调用asset接口失败
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_AsUserId_Func_0800
+     * @tc.number SUB_Security_DataSecurity_Asset_AsUserId_Func_0800
+     * @tc.desc   未申请权限的系统应用，指定前台用户，调用asset接口失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_AsUserId_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await aw.assetAddEasy(aw.aliasNameList[0], aw.secretList[0]);
@@ -67,12 +67,12 @@ export default function AssetOthers() {
       done();
     });
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_Database_Func_0500
-     * @tc.name       : testDatabase0500
-     * @tc.desc       : 新asset数据，所有label都能写入2k数据，并且查询成功
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_Database_Func_0500
+     * @tc.number SUB_Security_DataSecurity_Asset_Database_Func_0500
+     * @tc.desc   新asset数据，所有label都能写入2k数据，并且查询成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Database_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -116,12 +116,12 @@ export default function AssetOthers() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_Database_Func_0400
-     * @tc.name       : testDatabase0500
-     * @tc.desc       : 新增和更新asset数据后，查询返回新增/更新时间
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_Database_Func_0400
+     * @tc.number SUB_Security_DataSecurity_Asset_Database_Func_0400
+     * @tc.desc   新增和更新asset数据后，查询返回新增/更新时间
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Database_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await aw.assetAddEasy(aw.aliasNameList[0], aw.secretList[0]);
@@ -142,12 +142,12 @@ export default function AssetOthers() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_Database_Func_0200
-     * @tc.name       : testDatabase0600
-     * @tc.desc       : 新增的仅本地存储字段能写入、更新、查询
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_Database_Func_0200
+     * @tc.number SUB_Security_DataSecurity_Asset_Database_Func_0200
+     * @tc.desc   新增的仅本地存储字段能写入、更新、查询
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Database_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -181,12 +181,12 @@ export default function AssetOthers() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_JS_Func_0100
-     * @tc.name       : testJSFunc0100
-     * @tc.desc       : js接口枚举值检查测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_JS_Func_0100
+     * @tc.number SUB_Security_DataSecurity_Asset_JS_Func_0100
+     * @tc.desc   js接口枚举值检查测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_JS_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();

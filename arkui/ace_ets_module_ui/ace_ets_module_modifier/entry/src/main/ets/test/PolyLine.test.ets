@@ -42,12 +42,12 @@ export default function polyLineJsunit() {
     });
 
     /**
+     * @tc.name   testpolyLine
      * @tc.number testpolyLine
-     * @tc.name Test the properties of components
-     * @tc.desc Set points values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set points values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolyLine', Level.LEVEL0, async (done: Function) => {
       console.info('[testpolyLine] START');
@@ -68,12 +68,12 @@ export default function polyLineJsunit() {
     });
 
     /**
+     * @tc.name   testpolyLine_001
      * @tc.number testpolyLine_001
-     * @tc.name Test the properties of components
-     * @tc.desc Change points values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change points values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolyLine_001', Level.LEVEL0, async (done: Function) => {
       console.info('testpolyLine_001 START');

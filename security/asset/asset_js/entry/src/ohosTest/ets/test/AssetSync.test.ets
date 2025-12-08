@@ -43,12 +43,12 @@ export default function AssetSynctest() {
       // This API supports only one parameter: clear action function.
     });
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0100
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0100
-     * @tc.name 使用同步写入接口，传入正常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(Number(aw.assetAddEasy(aw.aliasNameList[0], aw.secLong)))
@@ -95,12 +95,12 @@ export default function AssetSynctest() {
         .assertEqual(0);
     });
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0600
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0600
-     * @tc.name 使用同步写入接口，传入异常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -146,12 +146,12 @@ export default function AssetSynctest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0200
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0200
-     * @tc.name 使用同步查询接口，传入正常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -174,12 +174,12 @@ export default function AssetSynctest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0700
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0700
-     * @tc.name 使用同步查询接口，传入异常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -216,12 +216,12 @@ export default function AssetSynctest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0300
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0300
-     * @tc.name 使用同步更新接口，传入正常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -241,12 +241,12 @@ export default function AssetSynctest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0800
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0800
-     * @tc.name 使用同步更新接口，传入异常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -312,12 +312,12 @@ export default function AssetSynctest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0400
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0400
-     * @tc.name 使用同步删除接口，传入正常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -340,12 +340,12 @@ export default function AssetSynctest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0900
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0900
-     * @tc.name 使用同步删除接口，传入异常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -374,12 +374,12 @@ export default function AssetSynctest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_0500
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_0500
-     * @tc.name 使用同步接口调用prequerySync和postQuerySync，传入正常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -408,12 +408,12 @@ export default function AssetSynctest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Sync_Func_1000
      * @tc.number SUB_Security_DataSecurity_Asset_Sync_Func_1000
-     * @tc.name 使用同步接口调用prequerySync和postQuerySync，传入异常参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Sync_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();

@@ -20,12 +20,6 @@
 #define TEST_GPIO_SIZE 8
 const unsigned int COMPILABILITY_TEST_GPIO = 0xFFFFFFFF;
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is wifiiot
- * @param        : module name is wifiiotlite
- * @param        : test suit name is UtilsFileFuncTestSuite
- */
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotGpioTestSuite);
 
 /**
@@ -48,9 +42,12 @@ static BOOL IotGpioTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_1800
- * @tc.name      : GPIO operation with IoTGpioInit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio001
+ * @tc.number SUB_UTILS_WIFIIOT_API_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio001, Function | MediumTest | Level1)
 {
@@ -58,9 +55,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio001, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_1900
- * @tc.name      : GPIO operation with IoTGpioSetDir
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio002
+ * @tc.number SUB_UTILS_WIFIIOT_API_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio002, Function | MediumTest | Level1)
 {
@@ -69,9 +69,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio002, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2000
- * @tc.name      : GPIO operation with IoTGpioGetDir
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio003
+ * @tc.number SUB_UTILS_WIFIIOT_API_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio003, Function | MediumTest | Level1)
 {
@@ -80,9 +83,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio003, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2100
- * @tc.name      : GPIO operation with IoTGpioSetOutputVal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio004
+ * @tc.number SUB_UTILS_WIFIIOT_API_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio004, Function | MediumTest | Level1)
 {
@@ -90,9 +96,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio004, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2200
- * @tc.name      : GPIO operation with IoTGpioGetOutputVal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio005
+ * @tc.number SUB_UTILS_WIFIIOT_API_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio005, Function | MediumTest | Level1)
 {
@@ -101,9 +110,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio005, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2300
- * @tc.name      : GPIO operation with IoTGpioGetInputVal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio006
+ * @tc.number SUB_UTILS_WIFIIOT_API_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio006, Function | MediumTest | Level1)
 {
@@ -123,9 +135,12 @@ void IOT_GPIO_CALLBACK_Func(char *arg)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2400
- * @tc.name      : GPIO operation with IoTGpioRegisterIsrFunc
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio007
+ * @tc.number SUB_UTILS_WIFIIOT_API_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio007, Function | MediumTest | Level1)
 {
@@ -137,9 +152,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio007, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2500
- * @tc.name      : GPIO operation with IoTGpioUnregisterIsrFunc
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio008
+ * @tc.number SUB_UTILS_WIFIIOT_API_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio008, Function | MediumTest | Level1)
 {
@@ -147,9 +165,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio008, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2600
- * @tc.name      : GPIO operation with IoTGpioSetIsrMask
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio09
+ * @tc.number SUB_UTILS_WIFIIOT_API_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio09, Function | MediumTest | Level1)
 {
@@ -157,9 +178,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio09, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2700
- * @tc.name      : GPIO operation with IoTGpioSetIsrMode
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio010
+ * @tc.number SUB_UTILS_WIFIIOT_API_2700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio010, Function | MediumTest | Level1)
 {
@@ -167,9 +191,12 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio010, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_2800
- * @tc.name      : GPIO operation with IoTGpioDeinit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIoTGpio011
+ * @tc.number SUB_UTILS_WIFIIOT_API_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio011, Function | MediumTest | Level1)
 {

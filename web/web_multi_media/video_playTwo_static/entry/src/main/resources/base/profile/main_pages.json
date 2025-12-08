@@ -1,5 +1,6 @@
 {
   "src": [
-    "pages/webMediaOption"
+    "pages/webMediaOption",
+    "pages/WebOnFullScreenEnter"
   ]
 }

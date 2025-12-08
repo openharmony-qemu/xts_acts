@@ -42,14 +42,15 @@ export default function SwiperVisibility() {
       console.info("SwiperLoop after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0520
-     * @tc.desc      set loop to false and set autoPlay to false
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0520
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0520
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0520
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0520', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0520] START');
       await CommonFunc.sleep(2000);

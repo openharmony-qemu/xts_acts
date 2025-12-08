@@ -43,12 +43,12 @@ export default function canOverScroll() {
     });
 
     /**
-     * @tc.number    canOverScroll_001
-     * @tc.name      canOverScroll_0100
-     * @tc.desc      Set the canOverscroll property value to true.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   canOverScroll_0100
+     * @tc.number canOverScroll_001
+     * @tc.desc   Set the canOverscroll property value to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('canOverScroll_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[canOverScroll_0100] START');
@@ -72,12 +72,12 @@ export default function canOverScroll() {
     });
 
     /**
-     * @tc.number    canOverScroll_002
-     * @tc.name      canOverScroll_0200
-     * @tc.desc      Set the canOverscroll property value to false.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   canOverScroll_0200
+     * @tc.number canOverScroll_002
+     * @tc.desc   Set the canOverscroll property value to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('canOverScroll_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[canOverScroll_0200] START');
@@ -99,12 +99,12 @@ export default function canOverScroll() {
     });
 
     /**
-     * @tc.number    canOverScroll_003
-     * @tc.name      canOverScroll_0300
-     * @tc.desc      Set the canOverscroll property value to null.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   canOverScroll_0300
+     * @tc.number canOverScroll_003
+     * @tc.desc   Set the canOverscroll property value to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('canOverScroll_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[canOverScroll_0300] START');
@@ -126,12 +126,12 @@ export default function canOverScroll() {
     });
 
     /**
-     * @tc.number    canOverScroll_004
-     * @tc.name      canOverScroll_0400
-     * @tc.desc      Set the canOverscroll property value to undefined.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   canOverScroll_0400
+     * @tc.number canOverScroll_004
+     * @tc.desc   Set the canOverscroll property value to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('canOverScroll_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[canOverScroll_0400] START');

@@ -20,12 +20,12 @@ export default function filegetpath_test() {
 describe('file_uri_test', function () {
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0100
-     * @tc.name       : test_Fileuri_Getpath_001
-     * @tc.desc       : Function of API, get realPath with docs uri. Test normal function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Getpath_001
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0100
+     * @tc.desc   Function of API, get realPath with docs uri. Test normal function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_001', Level.LEVEL0, function () {
       let fileuristr = "file://docs/storage/users/cuurrenUser/Docments/test.txt";
@@ -41,12 +41,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0200
-     * @tc.name       : test_Fileuri_Getpath_002
-     * @tc.desc       : Function of API, get realPath with media uri. Test normal function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Getpath_002
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0200
+     * @tc.desc   Function of API, get realPath with media uri. Test normal function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       try{
@@ -61,12 +61,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0300
-     * @tc.name       : test_Fileuri_Getpath_003
-     * @tc.desc       : Function of API, get realPath with remote devices demo uri.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Getpath_003
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0300
+     * @tc.desc   Function of API, get realPath with remote devices demo uri.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_003', Level.LEVEL0, function () {
       try{
@@ -85,12 +85,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0400
-     * @tc.name       : test_Fileuri_Getpath_004
-     * @tc.desc       : Function of API, get realPath with docs dir uri.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Getpath_004
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0400
+     * @tc.desc   Function of API, get realPath with docs dir uri.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_004', Level.LEVEL0, function () {
       let fileuristr = "file://docs/storage/users/cuurrenUser/Docments";
@@ -106,12 +106,12 @@ describe('file_uri_test', function () {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0500
-     * @tc.name       : test_Fileuri_Getpath_005
-     * @tc.desc       : Function of API, get realPath with media dir uri.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Getpath_005
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0500
+     * @tc.desc   Function of API, get realPath with media dir uri.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       try{
@@ -126,12 +126,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0600
-     * @tc.name       : test_Fileuri_Getpath_006
-     * @tc.desc       : Function of API, get realpath with remote empty networkId.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Fileuri_Getpath_006
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0600
+     * @tc.desc   Function of API, get realpath with remote empty networkId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Fileuri_Getpath_006', Level.LEVEL1, function () {
       try{
@@ -151,12 +151,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0700
-     * @tc.name       : test_Fileuri_Getpath_007
-     * @tc.desc       : Function of API, get realpath with 100 layers of folders , special characters and files.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Getpath_007
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0700
+     * @tc.desc   Function of API, get realpath with 100 layers of folders , special characters and files.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_007', Level.LEVEL0, function () {
       try{
@@ -181,12 +181,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0800
-     * @tc.name       : test_Fileuri_Getpath_008
-     * @tc.desc       : Function of API, get realPath with 100 layers of folders.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Getpath_008
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0800
+     * @tc.desc   Function of API, get realPath with 100 layers of folders.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_008', Level.LEVEL0, function () {
       try{
@@ -205,12 +205,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_0900
-     * @tc.name       : test_Fileuri_Isremoteuri_001
-     * @tc.desc       : Function of API, Test isRemoteUri normal function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Isremoteuri_001
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0900
+     * @tc.desc   Function of API, Test isRemoteUri normal function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Isremoteuri_001', Level.LEVEL0, function () {
       try{
@@ -225,12 +225,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_1000
-     * @tc.name       : test_Fileuri_Isremoteuri_002
-     * @tc.desc       : Function of API, Test isRemoteUri normal function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Isremoteuri_002
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_1000
+     * @tc.desc   Function of API, Test isRemoteUri normal function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Isremoteuri_002', Level.LEVEL0, function () {
       try{
@@ -245,12 +245,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_1100
-     * @tc.name       : test_Fileuri_Isremoteuri_003
-     * @tc.desc       : Function of API, Test isRemoteUri normal function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Isremoteuri_003
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_1100
+     * @tc.desc   Function of API, Test isRemoteUri normal function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Isremoteuri_003', Level.LEVEL0, function () {
       console.log("test_Fileuri_Isremoteuri_003 start")
@@ -266,12 +266,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_1200
-     * @tc.name       : test_Fileuri_Isremoteuri_004
-     * @tc.desc       : Function of API, Test isRemoteUri with 100 layers of folders.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_Fileuri_Isremoteuri_004
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_1200
+     * @tc.desc   Function of API, Test isRemoteUri with 100 layers of folders.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Fileuri_Isremoteuri_004', Level.LEVEL0, function () {
       console.log("test_Fileuri_Isremoteuri_004 start")
@@ -292,12 +292,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_1300
-     * @tc.name       : test_Fileuri_Isremoteuri_005
-     * @tc.desc       : Function of API, Test isRemoteUri with empty networkid.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Fileuri_Isremoteuri_005
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_1300
+     * @tc.desc   Function of API, Test isRemoteUri with empty networkid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Fileuri_Isremoteuri_005', Level.LEVEL1, function () {
       console.log("test_Fileuri_Isremoteuri_005 start")
@@ -313,12 +313,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_1400
-     * @tc.name       : test_Fileuri_Isremoteuri_006
-     * @tc.desc       : Function of API, Test isRemoteUri with invalid invalid.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   fileuri_isremoteuri_006
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_1400
+     * @tc.desc   Function of API, Test isRemoteUri with invalid invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileuri_isremoteuri_006', Level.LEVEL3, function () {
       try{
@@ -333,12 +333,12 @@ describe('file_uri_test', function () {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_FM_FileAPI_FileUri_GetPath_1500
-     * @tc.name       : test_Fileuri_Isremoteuri_007
-     * @tc.desc       : Function of API, Test isRemoteUri with native uri.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Fileuri_Isremoteuri_007
+     * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_1500
+     * @tc.desc   Function of API, Test isRemoteUri with native uri.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Fileuri_Isremoteuri_007', Level.LEVEL1, function () {
       try{

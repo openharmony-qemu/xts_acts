@@ -49,10 +49,12 @@ export default function FolderStackTest1() {
 
 
     /**
-     * @tc.number    FolderStackTest1_0100
-     * @tc.name      FolderStackTest1_0100
-     * @tc.desc      Test FolderStack
-     * @tc.level     Level 2
+     * @tc.name   FolderStackTest1_0100
+     * @tc.number FolderStackTest1_0100
+     * @tc.desc   Test FolderStack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FolderStackTest1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('FolderStackTest1_0100 START');

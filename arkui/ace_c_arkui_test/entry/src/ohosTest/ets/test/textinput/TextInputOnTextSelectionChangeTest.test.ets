@@ -27,14 +27,14 @@ export default function textInputOnTextSelectionChangeTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ON_TEXT_SELECTION_CHANGE_0001
-    * @tc.name       : testTextInputOnTextSelectionChange001
-    * @tc.desc       : test onTextSelectionChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnTextSelectionChange001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ON_TEXT_SELECTION_CHANGE_0001
+     * @tc.desc   test onTextSelectionChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnTextSelectionChange001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnTextSelectionChangeTestTextInput')
       await Utils.sleep(1000)

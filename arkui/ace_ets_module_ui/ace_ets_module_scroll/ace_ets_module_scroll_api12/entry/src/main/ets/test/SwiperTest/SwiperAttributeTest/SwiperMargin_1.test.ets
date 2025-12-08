@@ -56,13 +56,13 @@ export default function SwiperMargin_1() {
       console.info("SwiperMargin_1 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MARIGN_0070
-     * @tc.name       : SwiperMargin_0070
-     * @tc.desc       : set ignoreBlank of prevMargin to false when loop is false and displaymode is stretch
-     * @tc.level      : Level 1
-     * @tc.type       : Function
-     * @tc.size       :
+    /**
+     * @tc.name   SwiperMargin_0070
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MARIGN_0070
+     * @tc.desc   set ignoreBlank of prevMargin to false when loop is false and displaymode is stretch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperMargin_0070', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperMargin_0070] START');
@@ -80,14 +80,14 @@ export default function SwiperMargin_1() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MARIGN_0200
-    * @tc.name       : SwiperMargin_0200
-    * @tc.desc       : set ignoreBlank of nextMargin to false when loop is false and displaymode is stretch
-    * @tc.level      : Level 1
-    * @tc.type       : Function
-    * @tc.size       :
-    */
+    /**
+     * @tc.name   SwiperMargin_0200
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MARIGN_0200
+     * @tc.desc   set ignoreBlank of nextMargin to false when loop is false and displaymode is stretch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperMargin_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperMargin_0200] START');
 

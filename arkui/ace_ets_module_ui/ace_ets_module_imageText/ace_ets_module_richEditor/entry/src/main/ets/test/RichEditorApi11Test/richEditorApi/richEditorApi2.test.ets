@@ -46,12 +46,12 @@ export default function richEditorApi21() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_richEditorApi21_0100
-     * @tc.name      testSpan
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   richEditorApi21_0100
+     * @tc.number SUB_ACE_RICHEDITOR_richEditorApi21_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('richEditorApi21_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[richEditorApi21_0100] START');

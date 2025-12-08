@@ -69,10 +69,13 @@ describe("SensorJsTest_sensor_11", function () {
     let errMessages = ['ReferenceError: string is not defined','TypeError: is not callable','ReferenceError: xxx is not defined']
     let errMessage
 
-     /*
-     * @tc.number:SUB_SensorsSystem_Heart_Rate_JSTest_0010
-     * @tc.name: HeartRate_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest001--------');
@@ -90,10 +93,13 @@ describe("SensorJsTest_sensor_11", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0020
-     * @tc.name: HeartRate_SensorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest002--------');
@@ -107,10 +113,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0030
-     * @tc.name: HeartRate_SensorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest003--------');
@@ -129,10 +138,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0040
-     * @tc.name: HeartRate_SensorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest004--------');
@@ -146,10 +158,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0050
-     * @tc.name: HeartRate_SensorJsTest005
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest005--------');
@@ -167,10 +182,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-   /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0060
-     * @tc.name: HeartRate_SensorJsTest006
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest006--------');
@@ -185,10 +203,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-   /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0070
-     * @tc.name: HeartRate_SensorJsTest007
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest007
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest007--------');
@@ -207,10 +228,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0080
-     * @tc.name: HeartRate_SensorJsTest008
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest008
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest008--------');
@@ -228,10 +252,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0090
-     * @tc.name: HeartRate_SensorJsTest009
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest009
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest009--------');
@@ -249,10 +276,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0100
-     * @tc.name: HeartRate_SensorJsTest010
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest010
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest010--------');
@@ -270,10 +300,13 @@ describe("SensorJsTest_sensor_11", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Heart_Rate_JSTest_0110
-     * @tc.name: HeartRate_SensorJsTest011
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   HeartRate_SensorJsTest011
+     * @tc.number SUB_SensorsSystem_Heart_Rate_JSTest_0110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("HeartRate_SensorJsTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------HeartRate_SensorJsTest011--------');

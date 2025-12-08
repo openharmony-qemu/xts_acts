@@ -53,7 +53,6 @@ export default function relationalStoreDataGroupIdPromise() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_RelationalStore_DataGroupId_Promise_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreJsAPITest_0500
      * @tc.desc   relationalStore getRdbStore dataGroupId null promise test
@@ -79,7 +78,6 @@ export default function relationalStoreDataGroupIdPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_RelationalStore_DataGroupId_Promise_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreJsAPITest_0600
      * @tc.desc   relationalStore getRdbStore dataGroupId undefined callback test
@@ -105,7 +103,6 @@ export default function relationalStoreDataGroupIdPromise() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_RelationalStore_DataGroupId_Promise_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreJsAPITest_0700
      * @tc.desc   relationalStore getRdbStore dataGroupId callback test
@@ -130,7 +127,6 @@ export default function relationalStoreDataGroupIdPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_RelationalStore_DataGroupId_Promise_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreJsAPITest_0800
      * @tc.desc   relationalStore deleteRdbStore dataGroupId callback test

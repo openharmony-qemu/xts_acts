@@ -47,14 +47,14 @@ export default function FocusControlTest2(){
       console.info("FocusControlTest2 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_FocusControlTest_TEST002
-     * @tc.name       : SUB_ARKUI_CAPI_FocusControlTest_TEST002
-     * @tc.desc       : testing button clear focus
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_FocusControlTest_TEST002
+     * @tc.number SUB_ARKUI_CAPI_FocusControlTest_TEST002
+     * @tc.desc   testing button clear focus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARKUI_CAPI_FocusControlTest_TEST002', Level.LEVEL1, async (done: Function) => {
       let driver = await Driver.create();
       // click "transferKey2

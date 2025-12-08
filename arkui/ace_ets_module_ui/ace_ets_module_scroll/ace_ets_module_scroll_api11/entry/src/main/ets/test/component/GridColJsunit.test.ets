@@ -46,12 +46,12 @@ export default function GridColJsunit() {
       console.info("gridcol after each called");
     })
     /**
+     * @tc.name   testGridColOffset01
      * @tc.number testGridColOffset01
-     * @tc.name Test the gridColOffset property of the gridcol component
-     * @tc.desc set the gridColOffset property value is number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the gridColOffset property value is number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridColOffset01', Level.LEVEL1, async (done: Function) => {
       let tagName = 'testGridColOffset01';
@@ -113,12 +113,12 @@ export default function GridColJsunit() {
     });
 
     /**
+     * @tc.name   testGridColSpan02
      * @tc.number testGridColSpan02
-     * @tc.name Test the span property of the gridcol component
-     * @tc.desc set the span property value is 0 、1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the span property value is 0 、1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridColSpan02', Level.LEVEL1, async (done: Function) => {
       let tagName = 'testGridColSpan02';
@@ -180,12 +180,12 @@ export default function GridColJsunit() {
     });
 
     /**
+     * @tc.name   testGridColOrder03
      * @tc.number testGridColOrder03
-     * @tc.name Test the order property of the gridcol component
-     * @tc.desc set the order property value is 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the order property value is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridColOrder03', Level.LEVEL1, async (done: Function) => {
       let tagName = 'testGridColOrder03';

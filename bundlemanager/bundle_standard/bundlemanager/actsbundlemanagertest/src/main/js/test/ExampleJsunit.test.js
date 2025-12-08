@@ -50,9 +50,12 @@ describe('ActsBundleManagerTest', function () {
     });
 
     /**
+     * @tc.name   testGetBundleInfoReqPermissionPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1960
-     * @tc.name testGetBundleInfoReqPermissionPromise
-     * @tc.desc Test getBundleInfo interfaces with one hap.(by promise)
+     * @tc.desc   Test getBundleInfo interfaces with one hap.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetBundleInfoReqPermissionPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let datainfo = await demo.getBundleInfo(NAME1,
@@ -104,9 +107,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundeInfoReqPermissionCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2060
-     * @tc.name testGetBundeInfoReqPermissionCallback
-     * @tc.desc Test getBundleInfo interfaces with one hap.(by callback)
+     * @tc.desc   Test getBundleInfo interfaces with one hap.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetBundeInfoReqPermissionCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         await demo.getBundleInfo(NAME1,
@@ -166,9 +172,12 @@ describe('ActsBundleManagerTest', function () {
     }
 
     /**
+     * @tc.name   testGetBundleInfoMultiHapPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1980
-     * @tc.name testGetBundleInfoMultiHapPromise
-     * @tc.desc Test getBundleInfo interfaces with two haps.(by promise)
+     * @tc.desc   Test getBundleInfo interfaces with two haps.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetBundleInfoMultiHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let datainfo = await demo.getBundleInfo(NAME2, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -190,9 +199,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoMultiHapCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2080
-     * @tc.name testGetBundleInfoMultiHapCallback
-     * @tc.desc Test getBundleInfo interfaces with two haps.(by callback)
+     * @tc.desc   Test getBundleInfo interfaces with two haps.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetBundleInfoMultiHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         await demo.getBundleInfo(NAME2, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent);
@@ -216,10 +228,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
-      * @tc.number Sub_Bms_Framework_Query_AppInfo_2000
-      * @tc.name testGetBundleInfoPromise
-      * @tc.desc Test getBundleInfo interfaces with one hap. (by promise)
-      */
+     * @tc.name   testGetBundleInfoPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2000
+     * @tc.desc   Test getBundleInfo interfaces with one hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetBundleInfoPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let datainfo = await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
         console.info("testGetBundleInfoPromise dataInfo ====" + datainfo);
@@ -258,9 +273,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2100
-     * @tc.name testGetBundleInfoCallback
-     * @tc.desc Test getBundleInfo interfaces with one hap. (by callback)
+     * @tc.desc   Test getBundleInfo interfaces with one hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetBundleInfoCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES |
@@ -303,10 +321,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
-    * @tc.number Sub_Bms_Framework_Query_AppInfo_2020
-    * @tc.name testGetBundleInfoNotExistPromise
-    * @tc.desc Test getBundleInfo interfaces with error hap. (by promise)
-    */
+     * @tc.name   testGetBundleInfoNotExistPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2020
+     * @tc.desc   Test getBundleInfo interfaces with error hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetBundleInfoNotExistPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getBundleInfo('error', demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES).then(datainfo => {
             console.info("testGetBundleInfoNotExistPromise success:" + JSON.stringify(datainfo));
@@ -320,10 +341,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
-    * @tc.number Sub_Bms_Framework_Query_AppInfo_2120
-    * @tc.name testGetBundleInfoNotExistCallback
-    * @tc.desc Test getBundleInfo interfaces with error hap. (by callback)
-    */
+     * @tc.name   testGetBundleInfoNotExistCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2120
+     * @tc.desc   Test getBundleInfo interfaces with error hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetBundleInfoNotExistCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getBundleInfo('error', demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent);
         function OnReceiveEvent(err, datainfo) {
@@ -340,10 +364,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
-   * @tc.number Sub_Bms_Framework_Query_AppInfo_2040
-   * @tc.name testGetBundleInfoInvalidParamPromise
-   * @tc.desc Test getBundleInfo interfaces with none hap. (by promise)
-   */
+     * @tc.name   testGetBundleInfoInvalidParamPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2040
+     * @tc.desc   Test getBundleInfo interfaces with none hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetBundleInfoInvalidParamPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getBundleInfo(' ', demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES).then(datainfo => {
             console.info("testGetBundleInfoInvalidParamPromise success" + JSON.stringify(datainfo));
@@ -357,9 +384,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoInvalidParamCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2140
-     * @tc.name testGetBundleInfoInvalidParamCallback
-     * @tc.desc Test getBundleInfo interfaces with none hap. (by callback)
+     * @tc.desc   Test getBundleInfo interfaces with none hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetBundleInfoInvalidParamCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getBundleInfo(' ', demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent);
@@ -377,9 +407,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoDifferentParamPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2160
-     * @tc.name testGetBundleInfoDifferentParamPromise
-     * @tc.desc Test getBundleInfo interfaces with one hap and different param. (by promise)
+     * @tc.desc   Test getBundleInfo interfaces with one hap and different param. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetBundleInfoDifferentParamPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         let datainfo = await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_DEFAULT)
@@ -403,9 +436,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoDifferentParamCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2180
-     * @tc.name testGetBundleInfoDifferentParamCallback
-     * @tc.desc Test getBundleInfo interfaces with one hap and different param. (by callback)
+     * @tc.desc   Test getBundleInfo interfaces with one hap and different param. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetBundleInfoDifferentParamCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_DEFAULT, OnReceiveEvent)
@@ -435,9 +471,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoSystemAppCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2200
-     * @tc.name testGetBundleInfoSystemAppCallback
-     * @tc.desc Test getBundleInfo interfaces with systemApp.(by callback)
+     * @tc.desc   Test getBundleInfo interfaces with systemApp.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetBundleInfoSystemAppCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let bundleOptions = {
@@ -467,9 +506,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoCurrentUserIdPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2220
-     * @tc.name testGetBundleInfoCurrentUserIdPromise
-     * @tc.desc Test getBundleInfo interface with current userId (by promise).
+     * @tc.desc   Test getBundleInfo interface with current userId (by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetBundleInfoCurrentUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         let bundleOptions = {
@@ -516,9 +558,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoCurrentUserIdCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2240
-     * @tc.name testGetBundleInfoCurrentUserIdCallback
-     * @tc.desc Test getBundleInfo interface with current userId (by callback).
+     * @tc.desc   Test getBundleInfo interface with current userId (by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetBundleInfoCurrentUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         let bundleOptions = {
@@ -565,9 +610,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoOtherUserIdPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2360
-     * @tc.name testGetBundleInfoOtherUserIdPromise
-     * @tc.desc Test getBundleInfo interface with other userId (by promise).
+     * @tc.desc   Test getBundleInfo interface with other userId (by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetBundleInfoOtherUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, {
@@ -584,9 +632,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoOtherUserIdCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2380
-     * @tc.name testGetBundleInfoOtherUserIdCallback
-     * @tc.desc Test getBundleInfo interface with other userId (by callback).
+     * @tc.desc   Test getBundleInfo interface with other userId (by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetBundleInfoOtherUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, {
@@ -629,9 +680,12 @@ describe('ActsBundleManagerTest', function () {
 
 
     /**
+     * @tc.name   testGetApplicationInfoMetaDataPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0220
-     * @tc.name testGetApplicationInfoMetaDataPromise
-     * @tc.desc Test getApplicationInfo interfaces with one hap. (by promise)
+     * @tc.desc   Test getApplicationInfo interfaces with one hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoMetaDataPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getApplicationInfo(NAME1,
@@ -669,9 +723,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoMetaDataCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0320
-     * @tc.name testGetApplicationInfoMetaDataCallback
-     * @tc.desc Test getApplicationInfo interfaces with one hap. (by callback)
+     * @tc.desc   Test getApplicationInfo interfaces with one hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoMetaDataCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getApplicationInfo(NAME1,
@@ -711,9 +768,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoTwoHapPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0240
-     * @tc.name testGetApplicationInfoTwoHapPromise
-     * @tc.desc Test getApplicationInfo interfaces with two haps. (by promise)
+     * @tc.desc   Test getApplicationInfo interfaces with two haps. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoTwoHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let datainfo = await demo.getApplicationInfo(NAME2,
@@ -748,9 +808,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoTwoHapCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0340
-     * @tc.name testGetApplicationInfoTwoHapCallback
-     * @tc.desc Test getApplicationInfo interfaces with two haps. (by callback)
+     * @tc.desc   Test getApplicationInfo interfaces with two haps. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoTwoHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getApplicationInfo(NAME2,
@@ -786,9 +849,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoThereHapPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0260
-     * @tc.name testGetApplicationInfoThereHapPromise
-     * @tc.desc Test getApplicationInfo interfaces with three haps. (by promise)
+     * @tc.desc   Test getApplicationInfo interfaces with three haps. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoThereHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let datainfo = await demo.getApplicationInfo(NAME3, demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
@@ -810,10 +876,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
-    * @tc.number Sub_Bms_Framework_Query_AppInfo_0580
-    * @tc.name testGetApplicationInfoThereHapCallback
-    * @tc.desc Test getApplicationInfo interfaces with three haps. (by callback)
-    */
+     * @tc.name   testGetApplicationInfoThereHapCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_0580
+     * @tc.desc   Test getApplicationInfo interfaces with three haps. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetApplicationInfoThereHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getApplicationInfo(NAME3, demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
             userId, (error, datainfo) => {
@@ -835,9 +904,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoNotExistCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0280
-     * @tc.name testGetApplicationInfoNotExistCallback
-     * @tc.desc Test getApplicationInfo interfaces with error hap. (by promise)
+     * @tc.desc   Test getApplicationInfo interfaces with error hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetApplicationInfoNotExistCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getApplicationInfo(ERROR, demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
@@ -853,9 +925,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoNotExistPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0360
-     * @tc.name testGetApplicationInfoNotExistPromise
-     * @tc.desc Test getApplicationInfo interfaces with error hap. (by callback)
+     * @tc.desc   Test getApplicationInfo interfaces with error hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetApplicationInfoNotExistPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getApplicationInfo(ERROR, demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
@@ -873,9 +948,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoInvalidParamPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0300
-     * @tc.name testGetApplicationInfoInvalidParamPromise
-     * @tc.desc Test getApplicationInfo interfaces with none hap. (by promise)
+     * @tc.desc   Test getApplicationInfo interfaces with none hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetApplicationInfoInvalidParamPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getApplicationInfo('', demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
@@ -891,9 +969,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoInvalidParamCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0380
-     * @tc.name testGetApplicationInfoInvalidParamCallback
-     * @tc.desc Test getApplicationInfo interfaces with none hap. (by callback)
+     * @tc.desc   Test getApplicationInfo interfaces with none hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetApplicationInfoInvalidParamCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.getApplicationInfo('', demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
@@ -911,9 +992,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoDifferentParamPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0400
-     * @tc.name testGetApplicationInfoDifferentParamPromise
-     * @tc.desc Test getApplicationInfo interfaces with one hap and different param. (by promise)
+     * @tc.desc   Test getApplicationInfo interfaces with one hap and different param. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoDifferentParamPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getApplicationInfo(NAME1, demo.BundleFlag.GET_BUNDLE_DEFAULT, userId).then(datainfo => {
@@ -937,9 +1021,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoDifferentParamCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0420
-     * @tc.name testGetApplicationInfoDifferentParamCallback
-     * @tc.desc Test getApplicationInfo interfaces with one hap and different param. (by callback)
+     * @tc.desc   Test getApplicationInfo interfaces with one hap and different param. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoDifferentParamCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getApplicationInfo(NAME1, demo.BundleFlag.GET_BUNDLE_DEFAULT, userId, (error, datainfo) => {
@@ -965,9 +1052,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0440
-     * @tc.name testGetApplicationInfoPromise
-     * @tc.desc Test getApplicationInfo interfaces with one hap. (by promise)
+     * @tc.desc   Test getApplicationInfo interfaces with one hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getApplicationInfo(NAME1, demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
@@ -997,9 +1087,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetApplicationInfoCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0460
-     * @tc.name testGetApplicationInfoCallback
-     * @tc.desc Test getApplicationInfo interfaces with one hap. (by callback)
+     * @tc.desc   Test getApplicationInfo interfaces with one hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetApplicationInfoCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getApplicationInfo(NAME1, demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION, userId,
@@ -1034,9 +1127,12 @@ describe('ActsBundleManagerTest', function () {
 
   
     /**
+     * @tc.name   testQueryAbilityByWantPromise
      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0500
-     * @tc.name testQueryAbilityByWantPromise
-     * @tc.desc Test queryAbilityByWant interfaces with none hap. (by promise)
+     * @tc.desc   Test queryAbilityByWant interfaces with none hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testQueryAbilityByWantPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.queryAbilityByWant(
@@ -1087,9 +1183,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testQueryAbilityByWantCallback
      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0580
-     * @tc.name testQueryAbilityByWantCallback
-     * @tc.desc Test queryAbilityByWant interfaces with none hap. (by callback)
+     * @tc.desc   Test queryAbilityByWant interfaces with none hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testQueryAbilityByWantCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         demo.queryAbilityByWant(
@@ -1142,9 +1241,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testQueryAbilityByWantTwoHapPromise
      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0520
-     * @tc.name testQueryAbilityByWantTwoHapPromise
-     * @tc.desc Test queryAbilityByWant interfaces with two haps. (by promise)
+     * @tc.desc   Test queryAbilityByWant interfaces with two haps. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testQueryAbilityByWantTwoHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let data = await demo.queryAbilityByWant(
@@ -1183,9 +1285,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testQueryAbilityByWantTwoHapCallback
      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0600
-     * @tc.name testQueryAbilityByWantTwoHapCallback
-     * @tc.desc Test queryAbilityByWant interfaces with two haps. (by callback)
+     * @tc.desc   Test queryAbilityByWant interfaces with two haps. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testQueryAbilityByWantTwoHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.queryAbilityByWant(
@@ -1225,9 +1330,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testQueryAbilityByWantThereHapPromise
      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0540
-     * @tc.name testQueryAbilityByWantThereHapPromise
-     * @tc.desc Test queryAbilityByWant interfaces with three haps. (by promise)
+     * @tc.desc   Test queryAbilityByWant interfaces with three haps. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testQueryAbilityByWantThereHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.queryAbilityByWant({
@@ -1291,10 +1399,13 @@ describe('ActsBundleManagerTest', function () {
     }
 
     /**
-    * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0620
-    * @tc.name testQueryAbilityByWantThereHapCallback
-    * @tc.desc Test queryAbilityByWant interfaces with three haps. (by callback)
-    */
+     * @tc.name   testQueryAbilityByWantThereHapCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0620
+     * @tc.desc   Test queryAbilityByWant interfaces with three haps. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueryAbilityByWantThereHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.queryAbilityByWant(
             {
@@ -1356,9 +1467,12 @@ describe('ActsBundleManagerTest', function () {
     }
 
     /**
+     * @tc.name   testQueryAbilityByWantNotExistHapPromise
      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0640
-     * @tc.name testQueryAbilityByWantNotExistHapPromise
-     * @tc.desc Test queryAbilityByWant interfaces with one hap. (by promise)
+     * @tc.desc   Test queryAbilityByWant interfaces with one hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryAbilityByWantNotExistHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.queryAbilityByWant(
@@ -1377,9 +1491,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testQueryAbilityByWantNotExistHapCallback
      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0660
-     * @tc.name testQueryAbilityByWantNotExistHapCallback
-     * @tc.desc Test queryAbilityByWant interfaces with one hap. (by callback)
+     * @tc.desc   Test queryAbilityByWant interfaces with one hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryAbilityByWantNotExistHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.queryAbilityByWant(
@@ -1400,10 +1517,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
-    * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0560
-    * @tc.name testQueryAbilityByWantSystemHapPromise
-    * @tc.desc Test queryAbilityByWant interfaces with system hap. (by promise)
-    */
+     * @tc.name   testQueryAbilityByWantSystemHapPromise
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0560
+     * @tc.desc   Test queryAbilityByWant interfaces with system hap. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testQueryAbilityByWantSystemHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await demo.queryAbilityByWant(
             {
@@ -1421,9 +1541,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testQueryAbilityByWantSystemHapCallback
      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0700
-     * @tc.name testQueryAbilityByWantSystemHapCallback
-     * @tc.desc Test queryAbilityByWant interfaces with system hap. (by callback)
+     * @tc.desc   Test queryAbilityByWant interfaces with system hap. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryAbilityByWantSystemHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         demo.queryAbilityByWant(                                  
@@ -1442,10 +1565,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
-    * @tc.number installErrCodeTest_0100
-    * @tc.name InstallErrorCode::STATUS_FAILED_NO_SPACE_LEFT
-    * @tc.desc Test install errcode STATUS_FAILED_NO_SPACE_LEFT.
-    */
+     * @tc.name   installErrCodeTest_0100
+     * @tc.number installErrCodeTest_0100
+     * @tc.desc   Test install errcode STATUS_FAILED_NO_SPACE_LEFT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('installErrCodeTest_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         expect(demo.InstallErrorCode.SUCCESS).assertEqual(0);
         expect(demo.InstallErrorCode.STATUS_INSTALL_FAILURE).assertEqual(1);
@@ -1471,10 +1597,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
-    * @tc.number AbilityTypeTest_0100
-    * @tc.name InstallErrorCode::STATUS_FAILED_NO_SPACE_LEFT
-    * @tc.desc Test install errcode STATUS_FAILED_NO_SPACE_LEFT.
-    */
+     * @tc.name   AbilityTypeTest_0100
+     * @tc.number AbilityTypeTest_0100
+     * @tc.desc   Test install errcode STATUS_FAILED_NO_SPACE_LEFT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('AbilityTypeTest_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         expect(demo.AbilitySubType.CA).assertEqual(1);
         expect(demo.AbilityType.UNKNOWN).assertEqual(0);

@@ -51,6 +51,14 @@ export default function imageEffectsJsunit() {
       console.info("imageEffects after each called");
     });
 
+    /**
+     * @tc.name   testImageEffects001
+     * @tc.number testImageEffects001
+     * @tc.desc   testImageEffects001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects001', Level.LEVEL2, async (done: Function) => {
       console.info('[testSizeSetting001] START');
       await CommonFunc.sleep(2000);
@@ -61,6 +69,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects002
+     * @tc.number testImageEffects002
+     * @tc.desc   testImageEffects002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects002', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects002] START');
       await CommonFunc.sleep(1000);
@@ -87,6 +103,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects003
+     * @tc.number testImageEffects003
+     * @tc.desc   testImageEffects003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects003', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects003] START');
       await CommonFunc.sleep(1000);
@@ -113,6 +137,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects004
+     * @tc.number testImageEffects004
+     * @tc.desc   testImageEffects004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects004', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects004] START');
       await CommonFunc.sleep(1000);
@@ -139,6 +171,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects005
+     * @tc.number testImageEffects005
+     * @tc.desc   testImageEffects005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects005', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects005] START');
       await CommonFunc.sleep(1000);
@@ -165,6 +205,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects006
+     * @tc.number testImageEffects006
+     * @tc.desc   testImageEffects006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects006', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects006] START');
       await CommonFunc.sleep(2000);
@@ -177,6 +225,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects007
+     * @tc.number testImageEffects007
+     * @tc.desc   testImageEffects007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects007', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects007] START');
       await CommonFunc.sleep(1000);
@@ -210,6 +266,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects008
+     * @tc.number testImageEffects008
+     * @tc.desc   testImageEffects008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects008', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects008] START');
       await CommonFunc.sleep(1000);
@@ -242,6 +306,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects009
+     * @tc.number testImageEffects009
+     * @tc.desc   testImageEffects009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects009', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects009] START');
       await CommonFunc.sleep(1000);
@@ -274,6 +346,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects010
+     * @tc.number testImageEffects010
+     * @tc.desc   testImageEffects010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects010', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects010] START');
       await CommonFunc.sleep(1000);
@@ -306,6 +386,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects011
+     * @tc.number testImageEffects011
+     * @tc.desc   testImageEffects011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects011', Level.LEVEL2, async (done: Function) => {
       console.info('[testSizeSetting011] START');
       await CommonFunc.sleep(2000);
@@ -315,6 +403,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects012
+     * @tc.number testImageEffects012
+     * @tc.desc   testImageEffects012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects012', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects012] START');
       await CommonFunc.sleep(1000);
@@ -341,6 +437,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects013
+     * @tc.number testImageEffects013
+     * @tc.desc   testImageEffects013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects013', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects012] START');
       await CommonFunc.sleep(1000);
@@ -367,6 +471,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects014
+     * @tc.number testImageEffects014
+     * @tc.desc   testImageEffects014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects014', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects014] START');
       await CommonFunc.sleep(1000);
@@ -393,6 +505,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects015
+     * @tc.number testImageEffects015
+     * @tc.desc   testImageEffects015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects015', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects015] START');
       await CommonFunc.sleep(1000);
@@ -419,6 +539,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects016
+     * @tc.number testImageEffects016
+     * @tc.desc   testImageEffects016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects016', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects016] START');
       await CommonFunc.sleep(2000);
@@ -429,6 +557,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects017
+     * @tc.number testImageEffects017
+     * @tc.desc   testImageEffects017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects017', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects017] START');
       await CommonFunc.sleep(1000);
@@ -455,6 +591,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects018
+     * @tc.number testImageEffects018
+     * @tc.desc   testImageEffects018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects018', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects018] START');
       await CommonFunc.sleep(1000);
@@ -481,6 +625,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects019
+     * @tc.number testImageEffects019
+     * @tc.desc   testImageEffects019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects019', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects019] START');
       await CommonFunc.sleep(1000);
@@ -507,6 +659,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects020
+     * @tc.number testImageEffects020
+     * @tc.desc   testImageEffects020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects020', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects020] START');
       await CommonFunc.sleep(1000);
@@ -533,6 +693,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects021
+     * @tc.number testImageEffects021
+     * @tc.desc   testImageEffects021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects021', Level.LEVEL2, async (done: Function) => {
       console.info('[testSizeSetting021] START');
       await CommonFunc.sleep(2000);
@@ -542,6 +710,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects022
+     * @tc.number testImageEffects022
+     * @tc.desc   testImageEffects022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects022', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects022] START');
       await CommonFunc.sleep(1000);
@@ -568,6 +744,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects023
+     * @tc.number testImageEffects023
+     * @tc.desc   testImageEffects023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects023', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects023] START');
       await CommonFunc.sleep(1000);
@@ -594,6 +778,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects024
+     * @tc.number testImageEffects024
+     * @tc.desc   testImageEffects024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects024', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects024] START');
       await CommonFunc.sleep(1000);
@@ -620,6 +812,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects025
+     * @tc.number testImageEffects025
+     * @tc.desc   testImageEffects025
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects025', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects025] START');
       await CommonFunc.sleep(1000);
@@ -646,6 +846,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects026
+     * @tc.number testImageEffects026
+     * @tc.desc   testImageEffects026
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects026', Level.LEVEL2, async (done: Function) => {
       console.info('[testSizeSetting0026] START');
       await CommonFunc.sleep(2000);
@@ -655,6 +863,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects027
+     * @tc.number testImageEffects027
+     * @tc.desc   testImageEffects027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects027', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects027] START');
       await CommonFunc.sleep(1000);
@@ -681,6 +897,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects028
+     * @tc.number testImageEffects028
+     * @tc.desc   testImageEffects028
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects028', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects028] START');
       await CommonFunc.sleep(1000);
@@ -707,6 +931,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects029
+     * @tc.number testImageEffects029
+     * @tc.desc   testImageEffects029
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects029', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects029] START');
       await CommonFunc.sleep(1000);
@@ -733,6 +965,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects030
+     * @tc.number testImageEffects030
+     * @tc.desc   testImageEffects030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects030', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects030] START');
       await CommonFunc.sleep(1000);
@@ -759,6 +999,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects031
+     * @tc.number testImageEffects031
+     * @tc.desc   testImageEffects031
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects031', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects031] START');
       await CommonFunc.sleep(2000);
@@ -769,6 +1017,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects032
+     * @tc.number testImageEffects032
+     * @tc.desc   testImageEffects032
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects032', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects032] START');
       await CommonFunc.sleep(1000);
@@ -795,6 +1051,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects033
+     * @tc.number testImageEffects033
+     * @tc.desc   testImageEffects033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects033', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects033] START');
       await CommonFunc.sleep(1000);
@@ -821,6 +1085,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects034
+     * @tc.number testImageEffects034
+     * @tc.desc   testImageEffects034
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects034', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects034] START');
       await CommonFunc.sleep(1000);
@@ -847,6 +1119,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects035
+     * @tc.number testImageEffects035
+     * @tc.desc   testImageEffects035
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects035', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects035] START');
       await CommonFunc.sleep(1000);
@@ -873,6 +1153,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects036
+     * @tc.number testImageEffects036
+     * @tc.desc   testImageEffects036
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects036', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects036] START');
       await CommonFunc.sleep(1000);
@@ -899,6 +1187,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects037
+     * @tc.number testImageEffects037
+     * @tc.desc   testImageEffects037
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects037', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects037] START');
       await CommonFunc.sleep(1000);
@@ -926,6 +1222,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects038
+     * @tc.number testImageEffects038
+     * @tc.desc   testImageEffects038
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects038', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects038] START');
       await CommonFunc.sleep(1000);
@@ -953,6 +1257,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects039
+     * @tc.number testImageEffects039
+     * @tc.desc   testImageEffects039
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects039', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects039] START');
       await CommonFunc.sleep(1000);
@@ -980,6 +1292,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects040
+     * @tc.number testImageEffects040
+     * @tc.desc   testImageEffects040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects040', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects040] START');
       await CommonFunc.sleep(1000);
@@ -1007,6 +1327,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects041
+     * @tc.number testImageEffects041
+     * @tc.desc   testImageEffects041
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects041', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects041] START');
       await CommonFunc.sleep(1000);
@@ -1034,6 +1362,14 @@ export default function imageEffectsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testImageEffects042
+     * @tc.number testImageEffects042
+     * @tc.desc   testImageEffects042
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testImageEffects042', Level.LEVEL2, async (done: Function) => {
       console.info('[testImageEffects042] START');
       await CommonFunc.sleep(1000);

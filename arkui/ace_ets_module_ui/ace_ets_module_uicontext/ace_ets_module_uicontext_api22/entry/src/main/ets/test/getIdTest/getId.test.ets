@@ -40,12 +40,12 @@ export default function getIdTest() {
       done();
     });
     /**
-     * @tc.number    getIdTest_0100
-     * @tc.name      getIdTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getIdTest_0100
+     * @tc.number getIdTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getIdTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('getIdTest_0100 START');

@@ -139,12 +139,12 @@ export default function pixelMapOpacityTest() {
     });
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0001
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0001
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0001
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0001
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0001';
@@ -157,12 +157,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0002
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0002
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0002
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0002
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0002';
@@ -175,12 +175,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_SUB_MEDIA_0003
-     * @tc.name     SUB_MEDIA_SUB_MEDIA_0003
-     * @tc.desc     opacity
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0003
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0003
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0003';
@@ -193,12 +193,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0004
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0004
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0004
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0004
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0004';
@@ -211,12 +211,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0005
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0005
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0005
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0005
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0005';
@@ -229,12 +229,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0006
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0006
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0006
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0006
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0006';
@@ -247,12 +247,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0007
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0007
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0007
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0007
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0007';
@@ -265,12 +265,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0008
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0008
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0008
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0008
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0008';
@@ -283,12 +283,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0009
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0009
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0009
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0009
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0009';
@@ -302,12 +302,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0010
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0010
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0010
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0010
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0010';
@@ -321,12 +321,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0011
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0011
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0011
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0011
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0011';
@@ -339,12 +339,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0012
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0012
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0012
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0012
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0012';
@@ -357,12 +357,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0013
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0013
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0013
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0013
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0013';
@@ -375,12 +375,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0014
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0014
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0014
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0014
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0014';
@@ -393,12 +393,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0015
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0015
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0015
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0015
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0015';
@@ -411,12 +411,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0016
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0016
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0016
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0016
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0016';
@@ -429,12 +429,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0017
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0017
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0017
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0017
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0017', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0017';
@@ -447,12 +447,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0018
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0018
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0018
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0018
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0018', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0018';
@@ -465,12 +465,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0019
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0019
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0019
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0019
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0019', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0019';
@@ -484,12 +484,12 @@ export default function pixelMapOpacityTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_SUB_MEDIA_0020
-     * @tc.name      SUB_MEDIA_SUB_MEDIA_0020
-     * @tc.desc      opacity
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_SUB_MEDIA_0020
+     * @tc.number SUB_MEDIA_SUB_MEDIA_0020
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_SUB_MEDIA_0020', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_SUB_MEDIA_0020';

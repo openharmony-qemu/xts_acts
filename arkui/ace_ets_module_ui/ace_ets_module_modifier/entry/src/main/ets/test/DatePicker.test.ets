@@ -42,12 +42,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0021
      * @tc.number testDatePicker0021
-     * @tc.name Test the properties of components
-     * @tc.desc Set lunar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set lunar values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDatePicker0021', Level.LEVEL0, async (done: Function) => {
       console.info('[testDatePicker0021] START');
@@ -59,12 +59,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0022
      * @tc.number testDatePicker0022
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedTextStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedTextStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDatePicker0022', Level.LEVEL0, async (done: Function) => {
       console.info('[testDatePicker0022] START');
@@ -79,12 +79,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0023
      * @tc.number testDatePicker0023
-     * @tc.name Test the properties of components
-     * @tc.desc Set textStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDatePicker0023', Level.LEVEL0, async (done: Function) => {
       console.info('[testDatePicker0023] START');
@@ -100,12 +100,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0024
      * @tc.number testDatePicker0024
-     * @tc.name Test the properties of components
-     * @tc.desc Set disappearTextStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set disappearTextStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDatePicker0024', Level.LEVEL0, async (done: Function) => {
       console.info('[testDatePicker0024] START');
@@ -121,12 +121,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0025
      * @tc.number testDatePicker0025
-     * @tc.name Test the properties of components
-     * @tc.desc Change textStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change textStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDatePicker0025', Level.LEVEL0, async (done: Function) => {
       console.info('testDatePicker0025 START');

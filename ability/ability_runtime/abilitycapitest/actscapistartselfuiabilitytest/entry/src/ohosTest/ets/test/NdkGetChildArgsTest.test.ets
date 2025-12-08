@@ -27,12 +27,12 @@ export default function ndkTest() {
     
     
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetCurrentChildProcess_0100
      * @tc.number SUB_Ability_AbilityRuntime_GetCurrentChildProcess_0100
-     * @tc.name SUB_Ability_AbilityRuntime_GetCurrentChildProcess_0100
-     * @tc.desc To verify use OH_Ability_CreateNativeChildProcess in childprocess.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   To verify use OH_Ability_CreateNativeChildProcess in childprocess.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetCurrentChildProcess_0100', Level.LEVEL3, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_0100`;
@@ -48,12 +48,12 @@ export default function ndkTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetCurrentChildProcess_0700
      * @tc.number SUB_Ability_AbilityRuntime_GetCurrentChildProcess_0700
-     * @tc.name SUB_Ability_AbilityRuntime_GetCurrentChildProcess_0700
-     * @tc.desc To verify use OH_Ability_CreateNativeChildProcess in MainThread return nullptr.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   To verify use OH_Ability_CreateNativeChildProcess in MainThread return nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetCurrentChildProcess_0700', Level.LEVEL3, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_0100`;

@@ -47,9 +47,12 @@ export default function AlignStart_AddAlign() {
     });
 
     /**
+     * @tc.name   textFlexAlignStartAlignBottomEnd
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_0800
-     * @tc.name textFlexAlignStartAlignBottomEnd
-     * @tc.desc Setting generic properties does not take effect, and owned properties take precedence
+     * @tc.desc   Setting generic properties does not take effect, and owned properties take precedence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textFlexAlignStartAlignBottomEnd',  Level.LEVEL0, async () => {
       console.info('[textFlexAlignStartAlignBottomEnd] START');

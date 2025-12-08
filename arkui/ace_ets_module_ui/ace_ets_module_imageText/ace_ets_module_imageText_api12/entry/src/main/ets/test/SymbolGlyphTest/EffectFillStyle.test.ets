@@ -43,13 +43,13 @@ export default function EffectFillStyle() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_EffectFillStyle_0100
-     * @tc.name      EffectFillStyle_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   EffectFillStyle_0100
+     * @tc.number SUB_ACE_EffectFillStyle_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EffectFillStyle_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('EffectFillStyle_0100 START');
@@ -63,12 +63,12 @@ export default function EffectFillStyle() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EffectFillStyle_0200
-     * @tc.name      EffectFillStyle_0200
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   EffectFillStyle_0200
+     * @tc.number SUB_ACE_EffectFillStyle_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EffectFillStyle_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('EffectFillStyle_0100 START');

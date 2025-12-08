@@ -22,14 +22,12 @@ export default function fileIOStreamClose() {
 describe('fileIO_fs_stream_close', function () {
 
   /**
+   * @tc.name   fileIO_test_stream_close_sync_000
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_SYNC_0000
-   * @tc.name fileIO_test_stream_close_sync_000
-   * @tc.desc Test the closeSync() interface of class Stream.
-   * Open a file stream, close file stream.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the closeSync() interface of class Stream.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_stream_close_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_stream_close_sync_000');
@@ -47,14 +45,12 @@ describe('fileIO_fs_stream_close', function () {
   })
 
   /**
+   * @tc.name   fileIO_test_stream_close_sync_001
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_SYNC_0100
-   * @tc.name fileIO_test_stream_close_sync_001
-   * @tc.desc Test the closeSync() interface of class Stream.
-   * Invalid parameter, don't requrie any parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the closeSync() interface of class Stream.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_stream_close_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_stream_close_sync_001');
@@ -74,14 +70,12 @@ describe('fileIO_fs_stream_close', function () {
   })
 
   /**
+   * @tc.name   fileIO_test_stream_close_sync_002
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_SYNC_0200
-   * @tc.name fileIO_test_stream_close_sync_002
-   * @tc.desc Test the closeSync() interface of class Stream.
-   * The file stream has been closed.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the closeSync() interface of class Stream.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_stream_close_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_stream_close_sync_002');
@@ -101,14 +95,12 @@ describe('fileIO_fs_stream_close', function () {
   })
 
   /**
+   * @tc.name   fileIO_test_stream_close_async_000
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_ASYNC_0000
-   * @tc.name fileIO_test_stream_close_async_000
-   * @tc.desc Test the close() interface of class Stream. Promise.
-   * Open a file stream, close file stream.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 1
-   * @tc.require
+   * @tc.desc   Test the close() interface of class Stream. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_stream_close_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_stream_close_async_000');
@@ -127,14 +119,12 @@ describe('fileIO_fs_stream_close', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_stream_close_async_001
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_ASYNC_0100
-   * @tc.name fileIO_test_stream_close_async_001
-   * @tc.desc Test the close() interface of class Stream. Callback.
-   * Open a file stream, close file stream.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 1
-   * @tc.require
+   * @tc.desc   Test the close() interface of class Stream. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_stream_close_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_stream_close_async_001');
@@ -158,14 +148,12 @@ describe('fileIO_fs_stream_close', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_stream_close_async_002
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_ASYNC_0200
-   * @tc.name fileIO_test_stream_close_async_002
-   * @tc.desc Test the close() interface of class Stream. Promise.
-   * The file stream has been closed.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the close() interface of class Stream. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_stream_close_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_stream_close_async_002');
@@ -186,14 +174,12 @@ describe('fileIO_fs_stream_close', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_stream_close_async_003
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_ASYNC_0300
-   * @tc.name fileIO_test_stream_close_async_003
-   * @tc.desc Test the close() interface of class Stream. Promise.
-   * Invalid parameter, don't requrie any parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the close() interface of class Stream. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_stream_close_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_stream_close_async_003');

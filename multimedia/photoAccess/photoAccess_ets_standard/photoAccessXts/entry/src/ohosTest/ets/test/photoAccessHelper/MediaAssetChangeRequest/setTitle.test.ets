@@ -107,12 +107,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_001
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_001
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_001
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_001';
@@ -121,12 +121,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_002
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_002
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_002
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_002';
@@ -135,12 +135,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_003
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_003
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_003
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_003
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_003';
@@ -149,12 +149,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_004
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_004
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_004
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_004
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_004';
@@ -163,12 +163,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_005
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_005
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_005
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_005
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_005';
@@ -177,12 +177,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_006
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_006
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_006
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_006
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_006';
@@ -191,12 +191,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_007
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_007
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_007
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_007
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_007';
@@ -205,12 +205,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_008
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_008
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_008
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_008
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_008';
@@ -219,12 +219,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_009  //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_promise_009
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_promise_009
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_009  //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetChangeRequest_setTitle_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_promise_009';
@@ -233,12 +233,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })*/
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_010 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_001
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_010 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_001';
@@ -247,12 +247,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_011 //TODO 可设置多个空格
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_002
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_011 //TODO 可设置多个空格
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetChangeRequest_setTitle_Abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_002';
@@ -261,12 +261,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })*/
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_012 //TODO 可设置多个空格
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_003
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_003
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_012 //TODO 可设置多个空格
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_003';
@@ -275,12 +275,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_013 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_004
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_004
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_013 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_004';
@@ -289,12 +289,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_014 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_005
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_005
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_014 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_005';
@@ -303,12 +303,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_015 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_006
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_006
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_015 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_006';
@@ -317,12 +317,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_016 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_007
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_007
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_016 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_007';
@@ -331,12 +331,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_017 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_008
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_008
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_017 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_008';
@@ -345,12 +345,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_018 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_009
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_009
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_018 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_009';
@@ -359,12 +359,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_019 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_010
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_010
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_019 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_010';
@@ -373,12 +373,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_020 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_011
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_011
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_020 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_011';
@@ -387,12 +387,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_021 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_012
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_012
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_021 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_012';
@@ -401,12 +401,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_022 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_013
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_013
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_022 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_013';
@@ -415,12 +415,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_023 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_014
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_014
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_023 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_014';
@@ -429,12 +429,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_024 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_015
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_015
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_024 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_015';
@@ -443,12 +443,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_025 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_016
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_016
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_025 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_016';
@@ -457,12 +457,12 @@ export default function MediaAssetChangeRequestSetTitleTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_026 //TODO 401
-     * @tc.name      : MediaAssetChangeRequest_setTitle_Abnormal_promise_017
-     * @tc.desc      : setTitle
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setTitle_Abnormal_promise_017
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_TITLE_026 //TODO 401
+     * @tc.desc   setTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setTitle_Abnormal_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setTitle_Abnormal_promise_017';

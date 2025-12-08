@@ -59,9 +59,12 @@ describe('aceJsApiAndAttr', function () {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-     * @tc.name      testVideoComponent
-     * @tc.desc      ACE
+     * @tc.name   testVideoComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVideoComponent', Level.LEVEL0, async function (done) {
         let result;
@@ -82,10 +85,13 @@ describe('aceJsApiAndAttr', function () {
     });
 
     /**
-      * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0200
-      * @tc.name      testAnimateComponent
-      * @tc.desc      ACE
-      */
+     * @tc.name   testAnimateComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0200
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAnimateComponent', Level.LEVEL0, async function (done) {
         let result;
         let options = {
@@ -106,10 +112,13 @@ describe('aceJsApiAndAttr', function () {
 
 
     /**
-      * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0300
-      * @tc.name      testCameraComponent
-      * @tc.desc      ACE
-      */
+     * @tc.name   testCameraComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0300
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCameraComponent', Level.LEVEL0, async function (done) {
         let result;
         let options = {
@@ -130,10 +139,13 @@ describe('aceJsApiAndAttr', function () {
 
 
     /**
-      * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0400
-      * @tc.name      testCanvasComponent
-      * @tc.desc      ACE
-      */
+     * @tc.name   testCanvasComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0400
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCanvasComponent', Level.LEVEL0, async function (done) {
         let result;
         let options = {
@@ -153,10 +165,13 @@ describe('aceJsApiAndAttr', function () {
     });
 
     /**
-      * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0500
-      * @tc.name      testDivComponent
-      * @tc.desc      ACE
-      */
+     * @tc.name   testDivComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0500
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDivComponent', Level.LEVEL0, async function (done) {
         let result;
         let options = {
@@ -177,10 +192,13 @@ describe('aceJsApiAndAttr', function () {
 
 
     /**
-      * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0600
-      * @tc.name      testInputComponent
-      * @tc.desc      ACE
-      */
+     * @tc.name   testInputComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0600
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testInputComponent', Level.LEVEL0, async function (done) {
         let result;
         let options = {
@@ -200,10 +218,13 @@ describe('aceJsApiAndAttr', function () {
     });
 
     /**
-      * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0700
-      * @tc.name      testListComponent
-      * @tc.desc      ACE
-      */
+     * @tc.name   testListComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0700
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testListComponent', Level.LEVEL0, async function (done) {
         let result;
         let options = {
@@ -223,10 +244,13 @@ describe('aceJsApiAndAttr', function () {
     });
 
     /**
-      * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0800
-      * @tc.name      testTextComponent
-      * @tc.desc      ACE
-      */
+     * @tc.name   testTextComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0800
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTextComponent', Level.LEVEL0, async function (done) {
         let result;
         let options = {

@@ -21,6 +21,7 @@ group("WebLoad") {
       "load_status:ActsWebLoadStatusTest",
       "network_interception:ActsWebNetworkInterceptionTest",
       "network_proxy:ActsWebNetworkProxyTest",
+      "network_proxy_static:ActsWebNetworkProxyStaticTest",
       "open_web_page:ActsWebOpenWebPageTest",
       "preload_link_rending:ActsWebPreloadLinkRendingTest",
       "resource_interception:ActsWebResourceInterceptionTest",

@@ -26,26 +26,26 @@ export default function textAreaLineHeightTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_LINEHEIGHT_0100
-     * @tc.name: testTextAreaLineHeight001
-     * @tc.desc: testing lineHeight for textArea with value of 40vp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaLineHeight001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_LINEHEIGHT_0100
+     * @tc.desc   testing lineHeight for textArea with value of 40vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaLineHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaLineHeight001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_LINEHEIGHT_0200
-     * @tc.name: testTextAreaLineHeight002
-     * @tc.desc: testing lineHeight for textArea with value of 0vp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaLineHeight002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_LINEHEIGHT_0200
+     * @tc.desc   testing lineHeight for textArea with value of 0vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaLineHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaLineHeight002()).assertEqual(0)

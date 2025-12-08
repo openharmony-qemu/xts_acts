@@ -237,7 +237,6 @@ export default function UsbApiTransferCompatEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat001
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1000
      * @tc.desc   Negative test: send data, pipe busNum +1000
@@ -274,7 +273,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat002
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1100
      * @tc.desc   Negative test: send data, pipe devAddress +1000
@@ -310,7 +308,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat003
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1200
      * @tc.desc   Negative test: send data, pipe busNum -1
@@ -346,7 +343,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat004
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1300
      * @tc.desc   Negative test: send data, pipe devAddress -1
@@ -382,7 +378,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat005
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1400
      * @tc.desc   Negative test: send data, endpoint address +10
@@ -418,7 +413,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat006
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1500
      * @tc.desc   Negative test: send data, endpoint number +10
@@ -454,7 +448,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat007
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1600
      * @tc.desc   Negative test: send data, endpoint type +10
@@ -490,7 +483,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat008
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1700
      * @tc.desc   Negative test: send data, endpoint address -1
@@ -526,7 +518,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat009
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1800
      * @tc.desc   Negative test: send data, endpoint number -1
@@ -562,7 +553,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat010
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1900
      * @tc.desc   Negative test: send data, endpoint type -1
@@ -598,7 +588,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat011
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2000
      * @tc.desc   Negative test: send data, endpoint attributes +10
@@ -634,7 +623,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat012
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2100
      * @tc.desc   Negative test: send data, endpoint attributes -1
@@ -670,7 +658,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat013
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2200
      * @tc.desc   Negative test: send data, endpoint interval +10
@@ -706,7 +693,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat014
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2300
      * @tc.desc   Negative test: send data, endpoint interval -1
@@ -742,7 +728,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat015
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2400
      * @tc.desc   Negative test: send data, endpoint maxPacketSize +10
@@ -778,7 +763,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat016
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2500
      * @tc.desc   Negative test: send data, endpoint maxPacketSize -1
@@ -814,7 +798,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat017
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2600
      * @tc.desc   Negative test: send data, endpoint direction +10
@@ -852,7 +835,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat018
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2700
      * @tc.desc   Negative test: send data, endpoint direction -1
@@ -890,7 +872,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat019
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2800
      * @tc.desc   Negative test: send data, endpoint interfaceId +10
@@ -926,7 +907,6 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferCompat020
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2900
      * @tc.desc   Negative test: send data, endpoint interfaceId -1

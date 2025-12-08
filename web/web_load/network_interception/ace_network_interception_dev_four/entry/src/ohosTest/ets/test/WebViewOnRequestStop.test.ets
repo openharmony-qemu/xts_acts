@@ -58,14 +58,14 @@ export default function webViewOnRequestStop() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBDEAULTONREQUESTSTOP_0100
-    * @tc.name       : defaultOnRequestStop0100
-    * @tc.desc       : test WebdefaultOnRequestStop
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   defaultOnRequestStop0100
+     * @tc.number SUB_WEB_WEBDEAULTONREQUESTSTOP_0100
+     * @tc.desc   test WebdefaultOnRequestStop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('defaultOnRequestStop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStop0100", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -78,14 +78,14 @@ export default function webViewOnRequestStop() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBDEAULTONREQUESTSTOP_0200
-    * @tc.name       : defaultOnRequestStop0200
-    * @tc.desc       : test WebdefaultOnRequestStop
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   defaultOnRequestStop0200
+     * @tc.number SUB_WEB_WEBDEAULTONREQUESTSTOP_0200
+     * @tc.desc   test WebdefaultOnRequestStop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('defaultOnRequestStop0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStop0200", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -98,14 +98,14 @@ export default function webViewOnRequestStop() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBDEAULTONREQUESTSTOP_0300
-    * @tc.name       : defaultOnRequestStop0300
-    * @tc.desc       : test WebdefaultOnRequestStop
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   defaultOnRequestStop0300
+     * @tc.number SUB_WEB_WEBDEAULTONREQUESTSTOP_0300
+     * @tc.desc   test WebdefaultOnRequestStop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('defaultOnRequestStop0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStop0300", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

@@ -570,10 +570,13 @@ void GetCameraId(CameraKit *cameraKit, list<string> &cameraList, string &cameraI
 }
 
 /* start camera kit interface test */
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0100
- * @tc.name      : Get Instance
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetInstance_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetInstance_001, Level1)
 {
@@ -582,6 +585,14 @@ HWTEST_F(CameraLiteTest, Test_GetInstance_001, Level1)
 }
 
 
+/**
+ * @tc.name   PrfTest_GetInstance_001
+ * @tc.number PrfTest_GetInstance_001
+ * @tc.desc   PrfTest_GetInstance_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetInstance_001, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -600,10 +611,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetInstance_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0200
- * @tc.name      : Get cameraIDs
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetCameraIds_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetCameraIds_001, Level1)
 {
@@ -612,6 +626,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraIds_001, Level1)
     EXPECT_TRUE(cameraList.size() > 0);
 }
 
+/**
+ * @tc.name   PrfTest_GetCameraIds_001
+ * @tc.number PrfTest_GetCameraIds_001
+ * @tc.desc   PrfTest_GetCameraIds_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetCameraIds_001, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -631,10 +653,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetCameraIds_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0300
- * @tc.name      : Get cameraAbility
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetCameraAbility_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetCameraAbility_001, Level1)
 {
@@ -644,6 +669,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraAbility_001, Level1)
     EXPECT_NE(ability, nullptr);
 }
 
+/**
+ * @tc.name   Test_GetCameraAbility_002
+ * @tc.number Test_GetCameraAbility_002
+ * @tc.desc   Test_GetCameraAbility_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetCameraAbility_002, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -652,6 +685,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraAbility_002, Level1)
     EXPECT_EQ(ability, nullptr);
 }
 
+/**
+ * @tc.name   Test_GetCameraAbility_003
+ * @tc.number Test_GetCameraAbility_003
+ * @tc.desc   Test_GetCameraAbility_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetCameraAbility_003, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -660,6 +701,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraAbility_003, Level1)
     EXPECT_EQ(ability, nullptr);
 }
 
+/**
+ * @tc.name   PrfTest_GetCameraAbility_001
+ * @tc.number PrfTest_GetCameraAbility_001
+ * @tc.desc   PrfTest_GetCameraAbility_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetCameraAbility_001, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -680,10 +729,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetCameraAbility_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0400
- * @tc.name      : CameraKit get Info
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetCameraInfo_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetCameraInfo_001, Level1)
 {
@@ -695,6 +747,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraInfo_001, Level1)
     }
 }
 
+/**
+ * @tc.name   Test_GetCameraInfo_002
+ * @tc.number Test_GetCameraInfo_002
+ * @tc.desc   Test_GetCameraInfo_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetCameraInfo_002, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -703,6 +763,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraInfo_002, Level1)
     EXPECT_EQ(cameraInfo, nullptr);
 }
 
+/**
+ * @tc.name   Test_GetCameraInfo_003
+ * @tc.number Test_GetCameraInfo_003
+ * @tc.desc   Test_GetCameraInfo_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetCameraInfo_003, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -711,6 +779,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraInfo_003, Level1)
     EXPECT_EQ(cameraInfo, nullptr);
 }
 
+/**
+ * @tc.name   PrfTest_GetCameraInfo_001
+ * @tc.number PrfTest_GetCameraInfo_001
+ * @tc.desc   PrfTest_GetCameraInfo_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetCameraInfo_001, Level1)
 {
     struct timespec tv1 = {0};
@@ -730,10 +806,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetCameraInfo_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0500
- * @tc.name      : Register Camera device callback
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_RegisterCameraDeviceCallback_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_RegisterCameraDeviceCallback_001, Level1)
 {
@@ -750,6 +829,14 @@ HWTEST_F(CameraLiteTest, Test_RegisterCameraDeviceCallback_001, Level1)
     EXPECT_TRUE(g_onCameraAvailableFlag);
 }
 
+/**
+ * @tc.name   PrfTest_RegisterCameraDeviceCallback_001
+ * @tc.number PrfTest_RegisterCameraDeviceCallback_001
+ * @tc.desc   PrfTest_RegisterCameraDeviceCallback_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_RegisterCameraDeviceCallback_001, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -774,10 +861,13 @@ HWTEST_F(CameraLiteTest, PrfTest_RegisterCameraDeviceCallback_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0600
- * @tc.name      : Unregister Camera Device Callback
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_UnregisterCameraDeviceCallback_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_UnregisterCameraDeviceCallback_001, Level1)
 {
@@ -797,6 +887,14 @@ HWTEST_F(CameraLiteTest, Test_UnregisterCameraDeviceCallback_001, Level1)
     EXPECT_EQ(g_onCameraAvailableFlag, false);
 }
 
+/**
+ * @tc.name   PrfTest_UnregisterCameraDeviceCallback_001
+ * @tc.number PrfTest_UnregisterCameraDeviceCallback_001
+ * @tc.desc   PrfTest_UnregisterCameraDeviceCallback_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_UnregisterCameraDeviceCallback_001, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -822,10 +920,13 @@ HWTEST_F(CameraLiteTest, PrfTest_UnregisterCameraDeviceCallback_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0700
- * @tc.name      : Create Camera
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_CreateCamera_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_CreateCamera_001, Level1)
 {
@@ -841,6 +942,14 @@ HWTEST_F(CameraLiteTest, Test_CreateCamera_001, Level1)
     EXPECT_EQ(g_onCreateFailedFlag, false);
 }
 
+/**
+ * @tc.name   Test_CreateCamera_002
+ * @tc.number Test_CreateCamera_002
+ * @tc.desc   Test_CreateCamera_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_CreateCamera_002, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -855,6 +964,14 @@ HWTEST_F(CameraLiteTest, Test_CreateCamera_002, Level1)
     EXPECT_EQ(g_onCreateFailedFlag, true);
 }
 
+/**
+ * @tc.name   Test_CreateCamera_003
+ * @tc.number Test_CreateCamera_003
+ * @tc.desc   Test_CreateCamera_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_CreateCamera_003, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -870,6 +987,14 @@ HWTEST_F(CameraLiteTest, Test_CreateCamera_003, Level1)
     EXPECT_EQ(g_onCreatedFlag, true);
 }
 
+/**
+ * @tc.name   Test_CreateCamera_004
+ * @tc.number Test_CreateCamera_004
+ * @tc.desc   Test_CreateCamera_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_CreateCamera_004, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -887,6 +1012,14 @@ HWTEST_F(CameraLiteTest, Test_CreateCamera_004, Level1)
     EXPECT_EQ(g_onCreateFailedFlag, true);
 }
 
+/**
+ * @tc.name   PrfTest_CreateCamera_001
+ * @tc.number PrfTest_CreateCamera_001
+ * @tc.desc   PrfTest_CreateCamera_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_CreateCamera_001, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -909,10 +1042,13 @@ HWTEST_F(CameraLiteTest, PrfTest_CreateCamera_001, Level1)
 } /* end camera kit interface test */
 
 /* start camera ability interface test */
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0800
- * @tc.name      : Get cameraKit supported Size
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetSupportedSizes_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetSupportedSizes_001, Level1)
 {
@@ -925,6 +1061,14 @@ HWTEST_F(CameraLiteTest, Test_GetSupportedSizes_001, Level1)
     }
 }
 
+/**
+ * @tc.name   PrfTest_GetSupportedSizes_001
+ * @tc.number PrfTest_GetSupportedSizes_001
+ * @tc.desc   PrfTest_GetSupportedSizes_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetSupportedSizes_001, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -945,10 +1089,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSupportedSizes_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_0900
- * @tc.name      : Get supported AfModes
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetSupportedAfModes_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetSupportedAfModes_001, Level1)
 {
@@ -961,6 +1108,14 @@ HWTEST_F(CameraLiteTest, Test_GetSupportedAfModes_001, Level1)
     }
 }
 
+/**
+ * @tc.name   PrfTest_GetSupportedAfModes_001
+ * @tc.number PrfTest_GetSupportedAfModes_001
+ * @tc.desc   PrfTest_GetSupportedAfModes_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetSupportedAfModes_001, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -981,10 +1136,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSupportedAfModes_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1000
- * @tc.name      : Get supported AeModes
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetSupportedAeModes_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetSupportedAeModes_001, Level1)
 {
@@ -997,6 +1155,14 @@ HWTEST_F(CameraLiteTest, Test_GetSupportedAeModes_001, Level1)
     }
 }
 
+/**
+ * @tc.name   PrfTest_GetSupportedAeModes_001
+ * @tc.number PrfTest_GetSupportedAeModes_001
+ * @tc.desc   PrfTest_GetSupportedAeModes_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetSupportedAeModes_001, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1018,10 +1184,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSupportedAeModes_001, Level1)
 } /* end camera ability interface test*/
 
 /* start camera state callback test */
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1100
- * @tc.name      : On Create
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_OnCreate_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_OnCreate_001, Level1)
 {
@@ -1037,6 +1206,14 @@ HWTEST_F(CameraLiteTest, Test_OnCreate_001, Level1)
     EXPECT_EQ(g_onCreateFailedFlag, false);
 }
 
+/**
+ * @tc.name   Test_OnCreate_002
+ * @tc.number Test_OnCreate_002
+ * @tc.desc   Test_OnCreate_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_OnCreate_002, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1052,10 +1229,13 @@ HWTEST_F(CameraLiteTest, Test_OnCreate_002, Level1)
     EXPECT_NE(g_onCreateFailedFlag, true);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1200
- * @tc.name      : On Create Failed
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_OnCreateFailed_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_OnCreateFailed_001, Level1)
 {
@@ -1069,6 +1249,14 @@ HWTEST_F(CameraLiteTest, Test_OnCreateFailed_001, Level1)
     EXPECT_EQ(g_onCreateFailedFlag, true);
 }
 
+/**
+ * @tc.name   Test_OnCreateFailed_002
+ * @tc.number Test_OnCreateFailed_002
+ * @tc.desc   Test_OnCreateFailed_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_OnCreateFailed_002, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1082,10 +1270,13 @@ HWTEST_F(CameraLiteTest, Test_OnCreateFailed_002, Level1)
 } /* end camera state callback test */
 
 /* start frame config & frame state call back interface test */
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1300
- * @tc.name      : Frame Config
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_FrameConfig_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_FrameConfig_001, Level1)
 {
@@ -1093,24 +1284,56 @@ HWTEST_F(CameraLiteTest, Test_FrameConfig_001, Level1)
     EXPECT_NE(frameConfig.get(), nullptr);
 }
 
+/**
+ * @tc.name   Test_FrameConfig_002
+ * @tc.number Test_FrameConfig_002
+ * @tc.desc   Test_FrameConfig_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_FrameConfig_002, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_RECORD);
     EXPECT_NE(frameConfig.get(), nullptr);
 }
 
+/**
+ * @tc.name   Test_FrameConfig_003
+ * @tc.number Test_FrameConfig_003
+ * @tc.desc   Test_FrameConfig_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_FrameConfig_003, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CAPTURE);
     EXPECT_NE(frameConfig.get(), nullptr);
 }
 
+/**
+ * @tc.name   Test_FrameConfig_004
+ * @tc.number Test_FrameConfig_004
+ * @tc.desc   Test_FrameConfig_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_FrameConfig_004, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CALLBACK);
     EXPECT_NE(frameConfig.get(), nullptr);
 }
 
+/**
+ * @tc.name   PrfTest_Frameconfig_001
+ * @tc.number PrfTest_Frameconfig_001
+ * @tc.desc   PrfTest_Frameconfig_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_001, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = nullptr;
@@ -1129,6 +1352,14 @@ HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
+/**
+ * @tc.name   PrfTest_Frameconfig_002
+ * @tc.number PrfTest_Frameconfig_002
+ * @tc.desc   PrfTest_Frameconfig_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_002, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = nullptr;
@@ -1147,6 +1378,14 @@ HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_002, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
+/**
+ * @tc.name   PrfTest_Frameconfig_003
+ * @tc.number PrfTest_Frameconfig_003
+ * @tc.desc   PrfTest_Frameconfig_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_003, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = nullptr;
@@ -1165,6 +1404,14 @@ HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_003, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
+/**
+ * @tc.name   PrfTest_Frameconfig_004
+ * @tc.number PrfTest_Frameconfig_004
+ * @tc.desc   PrfTest_Frameconfig_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_004, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = nullptr;
@@ -1183,10 +1430,13 @@ HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_004, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1400
- * @tc.name      : Get Frame Configure Type
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetFrameConfigureType_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_001, Level1)
 {
@@ -1202,6 +1452,14 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_001, Level1)
     EXPECT_EQ(g_onGetFrameConfigureType, true);
 }
 
+/**
+ * @tc.name   Test_GetFrameConfigureType_002
+ * @tc.number Test_GetFrameConfigureType_002
+ * @tc.desc   Test_GetFrameConfigureType_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_002, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1217,6 +1475,14 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_002, Level1)
     EXPECT_EQ(g_onGetFrameConfigureType, true);
 }
 
+/**
+ * @tc.name   Test_GetFrameConfigureType_003
+ * @tc.number Test_GetFrameConfigureType_003
+ * @tc.desc   Test_GetFrameConfigureType_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_003, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1232,6 +1498,14 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_003, Level1)
     EXPECT_EQ(g_onGetFrameConfigureType, false);
 }
 
+/**
+ * @tc.name   Test_GetFrameConfigureType_004
+ * @tc.number Test_GetFrameConfigureType_004
+ * @tc.desc   Test_GetFrameConfigureType_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_004, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1249,6 +1523,14 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_004, Level1)
     EXPECT_EQ(g_onGetFrameConfigureType, true);
 }
 
+/**
+ * @tc.name   Test_GetFrameConfigureType_005
+ * @tc.number Test_GetFrameConfigureType_005
+ * @tc.desc   Test_GetFrameConfigureType_005
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_005, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1266,10 +1548,13 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_005, Level1)
     EXPECT_EQ(g_onGetFrameConfigureType, true);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1500
- * @tc.name      : Set Vendor Parameter
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_SetVendorParameter_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_SetVendorParameter_001, Level1)
 {
@@ -1284,6 +1569,14 @@ HWTEST_F(CameraLiteTest, Test_SetVendorParameter_001, Level1)
     delete[] privateTagTemp;
 }
 
+/**
+ * @tc.name   Test_SetVendorParameter_002
+ * @tc.number Test_SetVendorParameter_002
+ * @tc.desc   Test_SetVendorParameter_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_SetVendorParameter_002, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CAPTURE);
@@ -1297,6 +1590,14 @@ HWTEST_F(CameraLiteTest, Test_SetVendorParameter_002, Level1)
     delete[] privateTagTemp;
 }
 
+/**
+ * @tc.name   Test_SetVendorParameter_003
+ * @tc.number Test_SetVendorParameter_003
+ * @tc.desc   Test_SetVendorParameter_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_SetVendorParameter_003, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_RECORD);
@@ -1310,6 +1611,14 @@ HWTEST_F(CameraLiteTest, Test_SetVendorParameter_003, Level1)
     delete[] privateTagTemp;
 }
 
+/**
+ * @tc.name   Test_SetVendorParameter_004
+ * @tc.number Test_SetVendorParameter_004
+ * @tc.desc   Test_SetVendorParameter_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_SetVendorParameter_004, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CALLBACK);
@@ -1323,6 +1632,14 @@ HWTEST_F(CameraLiteTest, Test_SetVendorParameter_004, Level1)
     delete[] privateTagTemp;
 }
 
+/**
+ * @tc.name   PrfTest_SetVendorParameter_001
+ * @tc.number PrfTest_SetVendorParameter_001
+ * @tc.desc   PrfTest_SetVendorParameter_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_001, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1344,6 +1661,14 @@ HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_001, Level1)
     delete[] privateTag;
 }
 
+/**
+ * @tc.name   PrfTest_SetVendorParameter_002
+ * @tc.number PrfTest_SetVendorParameter_002
+ * @tc.desc   PrfTest_SetVendorParameter_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_002, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CAPTURE);
@@ -1365,6 +1690,14 @@ HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_002, Level1)
     delete[] privateTag;
 }
 
+/**
+ * @tc.name   PrfTest_SetVendorParameter_003
+ * @tc.number PrfTest_SetVendorParameter_003
+ * @tc.desc   PrfTest_SetVendorParameter_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_003, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_RECORD);
@@ -1386,6 +1719,14 @@ HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_003, Level1)
     delete[] privateTag;
 }
 
+/**
+ * @tc.name   PrfTest_SetVendorParameter_004
+ * @tc.number PrfTest_SetVendorParameter_004
+ * @tc.desc   PrfTest_SetVendorParameter_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_004, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CALLBACK);
@@ -1407,10 +1748,13 @@ HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_004, Level1)
     delete[] privateTag;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1600
- * @tc.name      : Get Vendor Parameter
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   PrfTest_GetVendorParameter_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_001, Level1)
 {
@@ -1436,6 +1780,14 @@ HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_001, Level1)
     delete[] privateTagTemp;
 }
 
+/**
+ * @tc.name   PrfTest_GetVendorParameter_002
+ * @tc.number PrfTest_GetVendorParameter_002
+ * @tc.desc   PrfTest_GetVendorParameter_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_002, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CAPTURE);
@@ -1460,6 +1812,14 @@ HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_002, Level1)
     delete[] privateTagTemp;
 }
 
+/**
+ * @tc.name   PrfTest_GetVendorParameter_003
+ * @tc.number PrfTest_GetVendorParameter_003
+ * @tc.desc   PrfTest_GetVendorParameter_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_003, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_RECORD);
@@ -1484,6 +1844,14 @@ HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_003, Level1)
     delete[] privateTagTemp;
 }
 
+/**
+ * @tc.name   PrfTest_GetVendorParameter_004
+ * @tc.number PrfTest_GetVendorParameter_004
+ * @tc.desc   PrfTest_GetVendorParameter_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_004, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CALLBACK);
@@ -1508,10 +1876,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_004, Level1)
     delete[] privateTagTemp;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1700
- * @tc.name      : Get Surface
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetSurface_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetSurface_001, Level1)
 {
@@ -1530,6 +1901,14 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_001, Level1)
     EXPECT_EQ(1080, surface->GetHeight());
 }
 
+/**
+ * @tc.name   Test_GetSurface_002
+ * @tc.number Test_GetSurface_002
+ * @tc.desc   Test_GetSurface_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetSurface_002, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -1547,6 +1926,14 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_002, Level1)
     EXPECT_EQ(360, surface->GetHeight());
 }
 
+/**
+ * @tc.name   Test_GetSurface_003
+ * @tc.number Test_GetSurface_003
+ * @tc.desc   Test_GetSurface_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetSurface_003, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -1564,6 +1951,14 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_003, Level1)
     EXPECT_FALSE(frameConfig->GetSurfaces().size() == 0);
 }
 
+/**
+ * @tc.name   Test_GetSurface_004
+ * @tc.number Test_GetSurface_004
+ * @tc.desc   Test_GetSurface_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetSurface_004, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1574,6 +1969,14 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_004, Level1)
     EXPECT_TRUE(list.size() == 0);
 }
 
+/**
+ * @tc.name   Test_GetSurface_005
+ * @tc.number Test_GetSurface_005
+ * @tc.desc   Test_GetSurface_005
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetSurface_005, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_RECORD);
@@ -1583,6 +1986,14 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_005, Level1)
     EXPECT_TRUE(list.size() == 1);
 }
 
+/**
+ * @tc.name   Test_GetSurface_006
+ * @tc.number Test_GetSurface_006
+ * @tc.desc   Test_GetSurface_006
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_GetSurface_006, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CALLBACK);
@@ -1592,6 +2003,14 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_006, Level1)
     EXPECT_TRUE(list.size() == 1);
 }
 
+/**
+ * @tc.name   PrfTest_GetSurfaces_001
+ * @tc.number PrfTest_GetSurfaces_001
+ * @tc.desc   PrfTest_GetSurfaces_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_001, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1612,6 +2031,14 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
+/**
+ * @tc.name   PrfTest_GetSurfaces_002
+ * @tc.number PrfTest_GetSurfaces_002
+ * @tc.desc   PrfTest_GetSurfaces_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_002, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CAPTURE);
@@ -1632,6 +2059,14 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_002, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
+/**
+ * @tc.name   PrfTest_GetSurfaces_003
+ * @tc.number PrfTest_GetSurfaces_003
+ * @tc.desc   PrfTest_GetSurfaces_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_003, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_RECORD);
@@ -1652,6 +2087,14 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_003, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
+/**
+ * @tc.name   PrfTest_GetSurfaces_004
+ * @tc.number PrfTest_GetSurfaces_004
+ * @tc.desc   PrfTest_GetSurfaces_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_004, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_CALLBACK);
@@ -1672,10 +2115,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_004, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1800
- * @tc.name      : On Frame Progressed
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_OnFrameProgressed_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_OnFrameProgressed_001, Level1)
 {
@@ -1693,10 +2139,13 @@ HWTEST_F(CameraLiteTest, Test_OnFrameProgressed_001, Level1)
     EXPECT_EQ(g_onFrameProgressedFlag, true);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_1900
- * @tc.name      : On Frame Completed
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_OnFrameCompletedFlag_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_OnFrameCompletedFlag_001, Level1)
 {
@@ -1713,10 +2162,13 @@ HWTEST_F(CameraLiteTest, Test_OnFrameCompletedFlag_001, Level1)
     EXPECT_EQ(g_onFrameFinishedFlag, true);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_2000
- * @tc.name      : On Frame Error
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_OnFrameErrorFlag_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_OnFrameErrorFlag_001, Level1)
 {
@@ -1733,10 +2185,13 @@ HWTEST_F(CameraLiteTest, Test_OnFrameErrorFlag_001, Level1)
     EXPECT_NE(g_onFrameErrorFlag, true);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_2100
- * @tc.name      : Add Surface
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_AddSurface_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_AddSurface_001, Level1)
 {
@@ -1747,6 +2202,14 @@ HWTEST_F(CameraLiteTest, Test_AddSurface_001, Level1)
     EXPECT_TRUE(list.size() == 1);
 }
 
+/**
+ * @tc.name   Test_AddSurface_002
+ * @tc.number Test_AddSurface_002
+ * @tc.desc   Test_AddSurface_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_AddSurface_002, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1757,6 +2220,14 @@ HWTEST_F(CameraLiteTest, Test_AddSurface_002, Level1)
     EXPECT_TRUE(list.size() == 1);
 }
 
+/**
+ * @tc.name   Test_AddSurface_003
+ * @tc.number Test_AddSurface_003
+ * @tc.desc   Test_AddSurface_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_AddSurface_003, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1768,6 +2239,14 @@ HWTEST_F(CameraLiteTest, Test_AddSurface_003, Level1)
     EXPECT_TRUE(list.size() == 1);
 }
 
+/**
+ * @tc.name   PrfTest_AddSurface_001
+ * @tc.number PrfTest_AddSurface_001
+ * @tc.desc   PrfTest_AddSurface_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_AddSurface_001, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1787,10 +2266,13 @@ HWTEST_F(CameraLiteTest, PrfTest_AddSurface_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_2200
- * @tc.name      : Remove Surface
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_RemoveSurface_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_RemoveSurface_001, Level1)
 {
@@ -1802,6 +2284,14 @@ HWTEST_F(CameraLiteTest, Test_RemoveSurface_001, Level1)
     EXPECT_TRUE(list.size() == 0);
 }
 
+/**
+ * @tc.name   Test_RemoveSurface_002
+ * @tc.number Test_RemoveSurface_002
+ * @tc.desc   Test_RemoveSurface_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_RemoveSurface_002, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1814,6 +2304,14 @@ HWTEST_F(CameraLiteTest, Test_RemoveSurface_002, Level1)
     EXPECT_TRUE(list.size() == 1);
 }
 
+/**
+ * @tc.name   Test_RemoveSurface_003
+ * @tc.number Test_RemoveSurface_003
+ * @tc.desc   Test_RemoveSurface_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_RemoveSurface_003, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1827,6 +2325,14 @@ HWTEST_F(CameraLiteTest, Test_RemoveSurface_003, Level1)
     EXPECT_TRUE(list.size() == 0);
 }
 
+/**
+ * @tc.name   PrfTest_RemoveSurface_001
+ * @tc.number PrfTest_RemoveSurface_001
+ * @tc.desc   PrfTest_RemoveSurface_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_RemoveSurface_001, Level1)
 {
     shared_ptr<FrameConfig> frameConfig = make_shared<FrameConfig>(FRAME_CONFIG_PREVIEW);
@@ -1847,10 +2353,13 @@ HWTEST_F(CameraLiteTest, PrfTest_RemoveSurface_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_2300
- * @tc.name      : Capture
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_Capture_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_Capture_001, Level1)
 {
@@ -1870,6 +2379,14 @@ HWTEST_F(CameraLiteTest, Test_Capture_001, Level1)
     EXPECT_EQ(g_onCaptureTriggerCompletedFlag, true);
 }
 
+/**
+ * @tc.name   Test_Capture_002
+ * @tc.number Test_Capture_002
+ * @tc.desc   Test_Capture_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Capture_002, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1890,6 +2407,14 @@ HWTEST_F(CameraLiteTest, Test_Capture_002, Level1)
     EXPECT_EQ(g_onCaptureTriggerCompletedFlag, true);
 }
 
+/**
+ * @tc.name   Test_Capture_003
+ * @tc.number Test_Capture_003
+ * @tc.desc   Test_Capture_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Capture_003, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -1908,6 +2433,14 @@ HWTEST_F(CameraLiteTest, Test_Capture_003, Level1)
     EXPECT_EQ(g_onCaptureTriggerCompletedFlag, false);
 }
 
+/**
+ * @tc.name   Test_Capture_004
+ * @tc.number Test_Capture_004
+ * @tc.desc   Test_Capture_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Capture_004, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -1928,6 +2461,14 @@ HWTEST_F(CameraLiteTest, Test_Capture_004, Level1)
     EXPECT_EQ(g_onCaptureTriggerCompletedFlag, true);
 }
 
+/**
+ * @tc.name   Test_Capture_005
+ * @tc.number Test_Capture_005
+ * @tc.desc   Test_Capture_005
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Capture_005, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -1948,6 +2489,14 @@ HWTEST_F(CameraLiteTest, Test_Capture_005, Level1)
     EXPECT_EQ(g_onCaptureTriggerCompletedFlag, true);
 }
 
+/**
+ * @tc.name   Test_Capture_006
+ * @tc.number Test_Capture_006
+ * @tc.desc   Test_Capture_006
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Capture_006, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -1968,6 +2517,14 @@ HWTEST_F(CameraLiteTest, Test_Capture_006, Level1)
     EXPECT_TRUE(g_onCaptureTriggerCompletedFlag);
 }
 
+/**
+ * @tc.name   Test_Capture_007
+ * @tc.number Test_Capture_007
+ * @tc.desc   Test_Capture_007
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Capture_007, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -1988,6 +2545,14 @@ HWTEST_F(CameraLiteTest, Test_Capture_007, Level1)
     EXPECT_TRUE(g_onCaptureTriggerCompletedFlag);
 }
 
+/**
+ * @tc.name   Test_Capture_008
+ * @tc.number Test_Capture_008
+ * @tc.desc   Test_Capture_008
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Capture_008, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -2010,10 +2575,13 @@ HWTEST_F(CameraLiteTest, Test_Capture_008, Level1)
     EXPECT_EQ(g_onCaptureTriggerCompletedFlag, true);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_2400
- * @tc.name      : Preview
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_Preview_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_Preview_001, Level1)
 {
@@ -2031,6 +2599,14 @@ HWTEST_F(CameraLiteTest, Test_Preview_001, Level1)
     camStateMng.Stop();
 }
 
+/**
+ * @tc.name   Test_Preview_002
+ * @tc.number Test_Preview_002
+ * @tc.desc   Test_Preview_002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Preview_002, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -2047,6 +2623,14 @@ HWTEST_F(CameraLiteTest, Test_Preview_002, Level1)
     EXPECT_FALSE(g_onPreviewFlag);
 }
 
+/**
+ * @tc.name   Test_Preview_003
+ * @tc.number Test_Preview_003
+ * @tc.desc   Test_Preview_003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Preview_003, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -2065,6 +2649,14 @@ HWTEST_F(CameraLiteTest, Test_Preview_003, Level1)
     EXPECT_TRUE(g_onPreviewFlag);
 }
 
+/**
+ * @tc.name   Test_Preview_004
+ * @tc.number Test_Preview_004
+ * @tc.desc   Test_Preview_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Preview_004, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -2084,6 +2676,14 @@ HWTEST_F(CameraLiteTest, Test_Preview_004, Level1)
     EXPECT_FALSE(g_onPreviewFlag);
 }
 
+/**
+ * @tc.name   Test_Preview_005
+ * @tc.number Test_Preview_005
+ * @tc.desc   Test_Preview_005
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Preview_005, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -2104,6 +2704,14 @@ HWTEST_F(CameraLiteTest, Test_Preview_005, Level1)
     camStateMng.Stop();
 }
 
+/**
+ * @tc.name   Test_Preview_006
+ * @tc.number Test_Preview_006
+ * @tc.desc   Test_Preview_006
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, Test_Preview_006, Level1)
 {
     CameraKit *cameraKit = nullptr;
@@ -2123,10 +2731,13 @@ HWTEST_F(CameraLiteTest, Test_Preview_006, Level1)
 } /* end frame config & frame state call back interface test */
 
 /* start camera info interface test */
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_2500
- * @tc.name      : Get Camera Type
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetCameraType_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetCameraType_001, Level1)
 {
@@ -2138,6 +2749,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraType_001, Level1)
     EXPECT_TRUE(cameraType >= 0);
 }
 
+/**
+ * @tc.name   PrfTest_GetCameraType_001
+ * @tc.number PrfTest_GetCameraType_001
+ * @tc.desc   PrfTest_GetCameraType_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetCameraType_001, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();
@@ -2158,10 +2777,13 @@ HWTEST_F(CameraLiteTest, PrfTest_GetCameraType_001, Level1)
     EXPECT_TRUE(totalTime <= expectTime * performanceTestTimes);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_CAMERA_DEV_2600
- * @tc.name      : Get Camera Facing Type
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   Test_GetCameraFacingType_001
+ * @tc.number SUB_MEDIA_CAMERA_DEV_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CameraLiteTest, Test_GetCameraFacingType_001, Level1)
 {
@@ -2173,6 +2795,14 @@ HWTEST_F(CameraLiteTest, Test_GetCameraFacingType_001, Level1)
     EXPECT_TRUE(cameraFacingType >= 0);
 }
 
+/**
+ * @tc.name   PrfTest_GetCameraFacingType_001
+ * @tc.number PrfTest_GetCameraFacingType_001
+ * @tc.desc   PrfTest_GetCameraFacingType_001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(CameraLiteTest, PrfTest_GetCameraFacingType_001, Level1)
 {
     CameraKit *cameraKit = CameraKit::GetInstance();

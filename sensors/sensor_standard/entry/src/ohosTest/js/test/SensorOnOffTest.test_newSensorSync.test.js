@@ -54,13 +54,13 @@ describe("SensorJsTest_sensor_64", function () {
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     const CODEARR = [14500101, 14500102]
 
-    /*
-     * @tc.name: SensorSyncTest_001
-     * @tc.desc: verify sensor sync interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     * @tc.number: SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0010
+    /**
+     * @tc.name   SensorSyncTest_001
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0010
+     * @tc.desc   verify sensor sync interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorSyncTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SensorSyncTest_001---------------------------');
@@ -77,13 +77,13 @@ describe("SensorJsTest_sensor_64", function () {
         }
     })
 
-    /*
-     * @tc.name: SensorSyncTest_002
-     * @tc.desc: verify sensor sync interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     * @tc.number: SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0020
+    /**
+     * @tc.name   SensorSyncTest_002
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0020
+     * @tc.desc   verify sensor sync interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorSyncTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SensorSyncTest_002---------------------------');
@@ -100,13 +100,13 @@ describe("SensorJsTest_sensor_64", function () {
         }
     })
 
-    /*
-     * @tc.name: SensorSyncTest_003
-     * @tc.desc: verify sensor sync interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     * @tc.number: SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0030
+    /**
+     * @tc.name   SensorSyncTest_003
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0030
+     * @tc.desc   verify sensor sync interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorSyncTest_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SensorSyncTest_003---------------------------');
@@ -123,13 +123,13 @@ describe("SensorJsTest_sensor_64", function () {
         }
     })
 
-    /*
-     * @tc.name: SensorSyncTest_004
-     * @tc.desc: verify sensor sync interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     * @tc.number: SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0040
+    /**
+     * @tc.name   SensorSyncTest_004
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0040
+     * @tc.desc   verify sensor sync interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorSyncTest_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SensorSyncTest_004---------------------------');
@@ -146,13 +146,13 @@ describe("SensorJsTest_sensor_64", function () {
         }
     })
 
-    /*
-     * @tc.name: SensorSyncTest_005
-     * @tc.desc: verify sensor sync interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     * @tc.number: SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0050
+    /**
+     * @tc.name   SensorSyncTest_005
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0050
+     * @tc.desc   verify sensor sync interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorSyncTest_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SensorSyncTest_005---------------------------');
@@ -172,13 +172,13 @@ describe("SensorJsTest_sensor_64", function () {
         }
     })
 
-    /*
-     * @tc.name: SensorSyncTest_006
-     * @tc.desc: Allow redundant parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     * @tc.number: SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0060
+    /**
+     * @tc.name   SensorSyncTest_006
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0060
+     * @tc.desc   Allow redundant parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorSyncTest_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SensorSyncTest_006---------------------------');
@@ -195,13 +195,13 @@ describe("SensorJsTest_sensor_64", function () {
         }
     })
 
-    /*
-     * @tc.name: SensorSyncTest_007
-     * @tc.desc: Allow redundant parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     * @tc.number: SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0070
+    /**
+     * @tc.name   SensorSyncTest_007
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0070
+     * @tc.desc   Allow redundant parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorSyncTest_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SensorSyncTest_007---------------------------');

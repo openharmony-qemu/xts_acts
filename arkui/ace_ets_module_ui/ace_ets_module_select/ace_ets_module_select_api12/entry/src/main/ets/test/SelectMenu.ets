@@ -41,12 +41,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0100
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0100
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.Start
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0100 start");
@@ -68,12 +68,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0200
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0200
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.Center
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.Center
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0200', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0200 start");
@@ -95,12 +95,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0300
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0300
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.End
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0300', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0300 start");
@@ -122,12 +122,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0400
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0400
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.Start,{dx:10,dy:10}
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.Start,{dx:10,dy:10}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0400', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0400 start");
@@ -159,12 +159,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0500
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0500
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.Center,{dx:-10,dy:0}
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.Center,{dx:-10,dy:0}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0500', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0500 start");
@@ -196,12 +196,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0600
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0600
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.END,{dx:-20,dy:-50}
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.END,{dx:-20,dy:-50}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0600', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0600 start");
@@ -233,12 +233,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0700
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0700
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.END,{dx:0,dy:0}
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.END,{dx:0,dy:0}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0700', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0700 start");
@@ -270,12 +270,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0800
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0800
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to null
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0800', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0800 start");
@@ -307,12 +307,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_0900
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_0900
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to undefined
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_0900', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0900 start");
@@ -344,12 +344,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_1000
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_1000
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to 'menuAlign'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to 'menuAlign'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_1000', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1000 start");
@@ -381,12 +381,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_1100
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_1100
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to ''
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_1100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1100 start");
@@ -418,13 +418,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_1200
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_1200
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.CENTER
-     *               and set MenuAlign property parameter to MenuAlignType.END again
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_1200', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1200 start");
@@ -456,13 +455,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_1300
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_1300
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.CENTER
-     *               and set MenuAlign property parameter to null
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to MenuAlignType.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_1300', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1300 start");
@@ -494,13 +492,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_1400
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_1400
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc set MenuAlign property parameter to null
-     *               and set MenuAlign property parameter to MenuAlignType.CENTER,{dx:-5,dy:-5}
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   set MenuAlign property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_1400', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1400 start");
@@ -532,12 +529,12 @@ export default function selectmenuTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_1500
      * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_1500
-     * @tc.name Tests the MenuAlign property of the select and menu components
-     * @tc.desc menuAlign property parameter not set to obtain default value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.desc   menuAlign property parameter not set to obtain default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_Select_Menu_MenuAlign_1500', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1500 start");

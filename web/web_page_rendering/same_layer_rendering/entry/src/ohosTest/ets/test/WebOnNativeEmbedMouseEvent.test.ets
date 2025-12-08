@@ -54,13 +54,13 @@ export default function webViewControllerPart2() {
       done();
     })
 
-   /*
-    * @tc.number     : SUB_WEB_EMITONNATIVEEMBEDMOUSEEVENT_0100
-    * @tc.name       : testOnNativeEmbedMouseEvent001
-    * @tc.desc       : OnNativeEmbedMouseEvent
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+   /**
+    * @tc.name   testOnNativeEmbedMouseEvent001
+    * @tc.number SUB_WEB_EMITONNATIVEEMBEDMOUSEEVENT_0100
+    * @tc.desc   OnNativeEmbedMouseEvent
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
     */
    it('testOnNativeEmbedMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
     Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 153530)

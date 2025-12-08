@@ -43,12 +43,12 @@ export default function AddColorStopErrorCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_AddColorStopErrorCodeTest_0100
-     * @tc.name: AddColorStopErrorCodeTest_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   AddColorStopErrorCodeTest_0100
+     * @tc.number SUB_ARKUI_API_AddColorStopErrorCodeTest_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AddColorStopErrorCodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[AddColorStopErrorCodeTest_0100] START');

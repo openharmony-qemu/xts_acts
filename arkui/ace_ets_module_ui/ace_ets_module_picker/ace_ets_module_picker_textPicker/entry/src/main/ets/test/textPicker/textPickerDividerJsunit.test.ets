@@ -42,12 +42,12 @@ export default function textPickerDividerJsunitTest() {
     })
 
     /**
+     * @tc.name   ArkUI_TextPicker_DividerJsunit_1000
      * @tc.number ArkUI_TextPicker_DividerJsunit_1000
-     * @tc.name   Tests the controlSize property of the textPicker component
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_TextPicker_DividerJsunit_1000', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_TextPicker_DividerJsunit_1000] START');

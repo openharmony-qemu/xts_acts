@@ -47,9 +47,12 @@ export default function flexExceed_BaselineJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignBaselineSetMarPad
      * @tc.number SUB_ACE_FLEXALIGNITEMS_BASELINE_0600
-     * @tc.name testFlexItemAlignBaselineSetMarPad
-     * @tc.desc Subcomponent inside when parent component set margin and padding.
+     * @tc.desc   Subcomponent inside when parent component set margin and padding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignBaselineSetMarPad',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignBaselineSetMarPad START');
@@ -91,9 +94,12 @@ export default function flexExceed_BaselineJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignBaselineSetMarPadExceed
      * @tc.number SUB_ACE_FLEXALIGNITEMS_BASELINE_0700
-     * @tc.name testFlexItemAlignBaselineSetMarPadExceed
-     * @tc.desc Subcomponent outside when parent component set margin and padding.
+     * @tc.desc   Subcomponent outside when parent component set margin and padding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignBaselineSetMarPadExceed',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignBaselineSetMarPadExceed START');

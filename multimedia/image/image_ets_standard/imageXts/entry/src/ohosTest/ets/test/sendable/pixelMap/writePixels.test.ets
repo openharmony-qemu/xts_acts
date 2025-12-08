@@ -92,12 +92,12 @@ export default function sendableWritePixelsTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_001
-     * @tc.name      : writePixels_sendable_promise_001
-     * @tc.desc      : writePixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixels_sendable_promise_001
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_001
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixels_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixels_sendable_promise_001';
@@ -111,12 +111,12 @@ export default function sendableWritePixelsTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_002
-     * @tc.name      : writePixels_sendable_promise_002
-     * @tc.desc      : writePixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixels_sendable_promise_002
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_002
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixels_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixels_sendable_promise_002';
@@ -130,12 +130,12 @@ export default function sendableWritePixelsTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_003
-     * @tc.name      : writePixels_abnormal_sendable_promise_001
-     * @tc.desc      : writePixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixels_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_003
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixels_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixels_abnormal_sendable_promise_001';
@@ -149,12 +149,12 @@ export default function sendableWritePixelsTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_004
-     * @tc.name      : writePixels_abnormal_sendable_promise_002
-     * @tc.desc      : writePixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixels_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_004
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixels_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixels_abnormal_sendable_promise_002';

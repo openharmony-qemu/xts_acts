@@ -30,12 +30,12 @@ export default function deviceControlTest() {
 
 function testOperateDevice() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0001
-   * @tc.name      : test_operate_device_0001
-   * @tc.desc      : test deviceControl operateDevice without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0001
+   * @tc.desc   test deviceControl operateDevice without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -48,12 +48,12 @@ function testOperateDevice() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0002
-   * @tc.name      : test_operate_device_0002
-   * @tc.desc      : test deviceControl operateDevice with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0002
+   * @tc.desc   test deviceControl operateDevice with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -69,12 +69,12 @@ function testOperateDevice() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0003
-   * @tc.name      : test_operate_device_0003
-   * @tc.desc      : test deviceControl operateDevice unsupported item
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0003
+   * @tc.desc   test deviceControl operateDevice unsupported item
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -90,12 +90,12 @@ function testOperateDevice() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0004
-   * @tc.name      : test_operate_device_0004
-   * @tc.desc      : test deviceControl operateDevice with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0004
+   * @tc.desc   test deviceControl operateDevice with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -111,12 +111,12 @@ function testOperateDevice() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0005
-   * @tc.name      : test_operate_device_0005
-   * @tc.desc      : test deviceControl operateDevice without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0005
+   * @tc.desc   test deviceControl operateDevice without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0005", Level.LEVEL2, async (done: Function) => {
     try {
@@ -129,12 +129,12 @@ function testOperateDevice() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0006
-   * @tc.name      : test_operate_device_0006
-   * @tc.desc      : test deviceControl operateDevice with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0006
+   * @tc.desc   test deviceControl operateDevice with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -150,12 +150,12 @@ function testOperateDevice() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0007
-   * @tc.name      : test_operate_device_0007
-   * @tc.desc      : test deviceControl operateDevice with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0007
+   * @tc.desc   test deviceControl operateDevice with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);

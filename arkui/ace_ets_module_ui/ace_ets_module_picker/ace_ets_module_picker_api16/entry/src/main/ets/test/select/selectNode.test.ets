@@ -48,12 +48,12 @@ export default function selectNodeTest() {
     })
    
     /**
-     * @tc.number    selectNode0100
-     * @tc.name      selectNode0100
-     * @tc.desc      frameNode: createNodeselectToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   selectNode0100
+     * @tc.number selectNode0100
+     * @tc.desc   frameNode: createNodeselectToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('selectNode0100', Level.LEVEL1, async (done: Function) => {
       let tagName = 'selectNode0100';

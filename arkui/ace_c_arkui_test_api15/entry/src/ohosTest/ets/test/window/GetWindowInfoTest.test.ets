@@ -25,13 +25,13 @@ export default function getWindowInfoTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GETWINDOW_INFO_0100
-     * @tc.name       : testGetWindowInfo001
-     * @tc.desc       : testing Window Info
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGetWindowInfo001
+     * @tc.number SUB_ARKUI_CAPI_GETWINDOW_INFO_0100
+     * @tc.desc   testing Window Info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowInfo001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestGetWindowInfo';
@@ -54,13 +54,13 @@ export default function getWindowInfoTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GETWINDOW_INFO_0200
-     * @tc.name       : testHostWindowInfoGetName002
-     * @tc.desc       : testing Window Info Get Name
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testHostWindowInfoGetName002
+     * @tc.number SUB_ARKUI_CAPI_GETWINDOW_INFO_0200
+     * @tc.desc   testing Window Info Get Name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHostWindowInfoGetName002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestHostWindowInfoGetName';
@@ -75,13 +75,13 @@ export default function getWindowInfoTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GETWINDOW_INFO_0300
-     * @tc.name       : testHostWindowInfoDestroy003
-     * @tc.desc       : testing Host Window Info Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testHostWindowInfoDestroy003
+     * @tc.number SUB_ARKUI_CAPI_GETWINDOW_INFO_0300
+     * @tc.desc   testing Host Window Info Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHostWindowInfoDestroy003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestHostWindowInfoDestroy';

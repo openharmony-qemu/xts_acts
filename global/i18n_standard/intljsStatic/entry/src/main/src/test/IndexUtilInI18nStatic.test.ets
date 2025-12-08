@@ -53,7 +53,6 @@ export default function IndexUtilInI18nTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_indexutil_static_0100
      * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_static_0100
      * @tc.desc   test getIndex interface
@@ -70,7 +69,6 @@ export default function IndexUtilInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_indexutil_static_0200
      * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_static_0200
      * @tc.desc   test getIndexList interface
@@ -88,7 +86,6 @@ export default function IndexUtilInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_indexutil_static_0300
      * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_static_0300
      * @tc.desc   test addLocale interface
@@ -106,7 +103,6 @@ export default function IndexUtilInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_indexutil_static_0400
      * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_static_0400
      * @tc.desc   test getInstance interface with zh locale

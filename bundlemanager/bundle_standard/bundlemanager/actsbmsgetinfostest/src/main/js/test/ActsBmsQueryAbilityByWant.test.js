@@ -37,12 +37,14 @@ export default function ActsBmsQueryAbilityByWant() {
             })
         });
 
-        /*
-        * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_6420
-        * @tc.name: queryAbilityByWantThirdApp
-        * @tc.desc: 1.queryAbilityByWant callback
-        *           2.queryAbilityByWant for third app
-        */
+        /**
+         * @tc.name   queryAbilityByWantThirdApp
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6420
+         * @tc.desc   1.queryAbilityByWant callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('queryAbilityByWantThirdApp', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             await bundle.queryAbilityByWant({
                 action: ACTION_NAME,
@@ -66,12 +68,14 @@ export default function ActsBmsQueryAbilityByWant() {
                 });
         });
 
-        /*
-        * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_6400
-        * @tc.name: queryAbilityByWantSystemApp
-        * @tc.desc: 1.queryAbilityByWant callback
-        *           2.queryAbilityByWant for systemapp
-        */
+        /**
+         * @tc.name   queryAbilityByWantSystemApp
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6400
+         * @tc.desc   1.queryAbilityByWant callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('queryAbilityByWantSystemApp', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             await bundle.queryAbilityByWant(
                 {
@@ -106,11 +110,14 @@ export default function ActsBmsQueryAbilityByWant() {
                 });
         });
 
-        /*
-        * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_4000
-        * @tc.name: queryAbilityByWantImplicitByEntities
-        * @tc.desc: The entities in the parameter want pass in the new field, and use the implicit query to get abilitInfos
-        */
+        /**
+         * @tc.name   queryAbilityByWantImplicitByEntities
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_4000
+         * @tc.desc   The entities in the parameter want pass in the new field, and use the implicit query to get abilitInfos
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('queryAbilityByWantImplicitByEntities', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             let dataInfos = await bundle.queryAbilityByWant({
                 action: ACTION_NAME,

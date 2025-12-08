@@ -40,13 +40,13 @@ export default function AttachDetachRebindTest() {
       done();
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_AttachDetachRebindTest_0100
-     * @tc.name: AttachDetachRebindTest_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+    /**
+     * @tc.name   AttachDetachRebindTest_0100
+     * @tc.number SUB_ARKUI_API_AttachDetachRebindTest_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AttachDetachRebindTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('AttachDetachRebindTest_0100 START');

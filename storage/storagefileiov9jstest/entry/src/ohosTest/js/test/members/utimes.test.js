@@ -22,14 +22,12 @@ export default function fileIOUtimes() {
   describe('fileIO_fileIO_utimes', function () {
 
   /**
+   * @tc.name   fileIO_test_utimes_async_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0100
-   * @tc.name fileIO_test_utimes_async_001
-   * @tc.desc Test utimes() interfaces.
-   * Modify File Last Access Time attribute,verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_utimes_async_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_utimes_async_001');
@@ -49,14 +47,12 @@ export default function fileIOUtimes() {
   });
 
   /**
+   * @tc.name   fileIO_test_utimes_async_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0200
-   * @tc.name fileIO_test_utimes_async_002
-   * @tc.desc Test utimes() interfaces.
-   * Modify the time(minus 10s) of the file,Verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_utimes_async_002', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_utimes_async_002');
@@ -76,14 +72,12 @@ export default function fileIOUtimes() {
   });
 
   /**
+   * @tc.name   fileIO_test_utimes_async_003
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0300
-   * @tc.name fileIO_test_utimes_async_003
-   * @tc.desc Test utimes() interfaces.
-   * Modify the time(add 3s) of the file, verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_utimes_async_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_utimes_async_003');
@@ -103,14 +97,12 @@ export default function fileIOUtimes() {
   });
 
   /**
+   * @tc.name   fileIO_test_utimes_async_004
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0400
-   * @tc.name fileIO_test_utimes_async_004
-   * @tc.desc Test utimes() interfaces.
-   * The path point to nothing, no such file.   
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_utimes_async_004', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_utimes_async_004');
@@ -125,14 +117,12 @@ export default function fileIOUtimes() {
   });
 
   /**
+   * @tc.name   fileIO_test_utimes_async_005
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0500
-   * @tc.name fileIO_test_utimes_async_005
-   * @tc.desc Test utimes() interfaces.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_utimes_async_005', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_utimes_async_005');
@@ -148,14 +138,12 @@ export default function fileIOUtimes() {
   });
 
   /**
+   * @tc.name   fileIO_test_utimes_async_006
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0600
-   * @tc.name fileIO_test_utimes_async_006
-   * @tc.desc Test utimes() interfaces.
-   * Invalid parameter -1
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_utimes_async_006', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_utimes_async_006');

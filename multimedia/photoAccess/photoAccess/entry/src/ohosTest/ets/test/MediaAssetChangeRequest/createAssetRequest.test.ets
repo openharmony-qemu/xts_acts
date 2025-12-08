@@ -34,12 +34,12 @@ export default function createAssetRequestTest() {
 
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0000
-     * @tc.name      : create_asset_request_000
-     * @tc.desc      : create image without options
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   create_asset_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0000
+     * @tc.desc   create image without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('create_asset_request_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'create_asset_request_000';
@@ -66,12 +66,12 @@ export default function createAssetRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0100
-     * @tc.name      : create_asset_request_001
-     * @tc.desc      : create image with options
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   create_asset_request_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0100
+     * @tc.desc   create image with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('create_asset_request_001', Level.LEVEL2, async (done: Function) => {
       let testNum = 'create_asset_request_001';
@@ -101,12 +101,12 @@ export default function createAssetRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0200
-     * @tc.name      : create_asset_request_002
-     * @tc.desc      : create video without options
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   create_asset_request_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0200
+     * @tc.desc   create video without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('create_asset_request_002', Level.LEVEL2, async (done: Function) => {
       let testNum = 'create_asset_request_002';
@@ -133,12 +133,12 @@ export default function createAssetRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0300
-     * @tc.name      : create_asset_request_003
-     * @tc.desc      : create video with options
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   create_asset_request_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0300
+     * @tc.desc   create video with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('create_asset_request_003', Level.LEVEL2, async (done: Function) => {
       let testNum = 'create_asset_request_003';
@@ -167,14 +167,14 @@ export default function createAssetRequestTest() {
       }
     }) 
 
-    /**
-    * @tc.number    : SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0400
-    * @tc.name      : create_asset_request_004
-    * @tc.desc      : create image with extension as ''
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+      /**
+       * @tc.name   create_asset_request_004
+       * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_0400
+       * @tc.desc   create image with extension as ''
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('create_asset_request_004', Level.LEVEL2, async (done: Function) => {
         let testNum = 'create_asset_request_004';
         try {

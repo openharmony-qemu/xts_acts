@@ -37,12 +37,12 @@ export default function UIShowDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogBlurStyleOptions_0100
-     * @tc.name      UIShowDialogBlurStyleOptions_0100
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogBlurStyleOptions_0100
+     * @tc.number UIShowDialogBlurStyleOptions_0100
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function UIShowDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogBlurStyleOptions_0200
-     * @tc.name      UIShowDialogBlurStyleOptions_0200
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogBlurStyleOptions_0200
+     * @tc.number UIShowDialogBlurStyleOptions_0200
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function UIShowDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogBlurStyleOptions_0300
-     * @tc.name      UIShowDialogBlurStyleOptions_0300
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogBlurStyleOptions_0300
+     * @tc.number UIShowDialogBlurStyleOptions_0300
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogBlurStyleOptions_0300';

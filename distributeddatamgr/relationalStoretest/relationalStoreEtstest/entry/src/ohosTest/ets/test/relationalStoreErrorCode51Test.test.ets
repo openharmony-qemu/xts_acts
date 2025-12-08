@@ -60,7 +60,6 @@ export default function relationalStoreErrorCode51Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   setDistributedTablesTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -80,7 +79,6 @@ export default function relationalStoreErrorCode51Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   setDistributedTablesTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -100,7 +98,6 @@ export default function relationalStoreErrorCode51Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   setDistributedTablesTest003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback

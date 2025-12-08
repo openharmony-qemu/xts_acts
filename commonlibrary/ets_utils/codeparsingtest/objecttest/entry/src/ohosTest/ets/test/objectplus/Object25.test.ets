@@ -44,12 +44,12 @@ export default function Object25Test() {
     })
 
     /**
+     * @tc.name   Object25Test001
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_0100
-     * @tc.name Object25Test001
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -60,12 +60,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test002
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_0200
-     * @tc.name Object25Test002
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn02_preventPrototypeReassignment();
@@ -73,12 +73,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test003
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_0300
-     * @tc.name Object25Test003
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn03_nonObjectParameterBehavior();
@@ -86,12 +86,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test004
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_0400
-     * @tc.name Object25Test004
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn04_verifyIsExtensibleReturnsFalse();
@@ -99,12 +99,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test005
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_0500
-     * @tc.name Object25Test005
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn05_verifyReflectIsExtensibleReturnsFalse();
@@ -112,12 +112,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test006
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_0600
-     * @tc.name Object25Test006
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn06_defineNewPropWithDefinePropertyThrows();
@@ -125,12 +125,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test007
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_0700
-     * @tc.name Object25Test007
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn07_modifyExistingWritablePropSucceeds();
@@ -138,12 +138,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test009
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_0900
-     * @tc.name Object25Test009
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn09_shrinkExtensibleArrayLengthSucceeds();
@@ -151,12 +151,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test010
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1000
-     * @tc.name Object25Test010
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn10_expandExtensibleArrayLengthFails();
@@ -164,12 +164,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test011
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1100
-     * @tc.name Object25Test011
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn11_sealExtensibleObjRemainsNonExtensible();
@@ -177,12 +177,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test012
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1200
-     * @tc.name Object25Test012
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn12_frozenObjPreventExtensionsReturnsSelf();
@@ -190,12 +190,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test013
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1300
-     * @tc.name Object25Test013
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn13_reflectDefineNewPropOnExtensibleObjThrows();
@@ -203,12 +203,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test014
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1400
-     * @tc.name Object25Test014
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -219,12 +219,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test015
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1500
-     * @tc.name Object25Test015
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn15_deleteOwnPropOnExtensibleObjSucceeds();
@@ -232,12 +232,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test016
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1600
-     * @tc.name Object25Test016
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn16_extensibleArrayPopSucceeds();
@@ -245,12 +245,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test017
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1700
-     * @tc.name Object25Test017
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn17_extensibleArrayShiftSucceeds();
@@ -258,12 +258,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test019
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_1900
-     * @tc.name Object25Test019
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn19_assignNewPropToExtensibleObjFails();
@@ -271,12 +271,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test020
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2000
-     * @tc.name Object25Test020
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn20_assignUpdateExistingPropToExtensibleObjSucceeds();
@@ -284,12 +284,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test021
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2100
-     * @tc.name Object25Test021
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn21_spreadExtensibleObjNoNewProp();
@@ -297,12 +297,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test022
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2200
-     * @tc.name Object25Test022
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -313,12 +313,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test023
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2300
-     * @tc.name Object25Test023
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn23_modifyExistingSymbolPropSucceeds();
@@ -326,12 +326,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test024
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2400
-     * @tc.name Object25Test024
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn24_addNonEnumerablePropToExtensibleObjThrows();
@@ -339,12 +339,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test025
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2500
-     * @tc.name Object25Test025
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -355,12 +355,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test026
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2600
-     * @tc.name Object25Test026
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn26_forInExtensibleObjIncludesInherited();
@@ -368,12 +368,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test027
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2700
-     * @tc.name Object25Test027
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn27_objectKeysExtensibleObjOnlyOwn();
@@ -381,12 +381,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test028
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2800
-     * @tc.name Object25Test028
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn28_objectValuesExtensibleObjOnlyOwn();
@@ -394,12 +394,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test029
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_2900
-     * @tc.name Object25Test029
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn29_jsonStringifyExtensibleObjWorks();
@@ -407,12 +407,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test030
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3000
-     * @tc.name Object25Test030
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn30_preventExtensionsIdempotent();
@@ -420,12 +420,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test031
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3100
-     * @tc.name Object25Test031
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn31_reflectPreventExtensionsIdempotent();
@@ -433,12 +433,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test032
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3200
-     * @tc.name Object25Test032
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -450,12 +450,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test033
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3300
-     * @tc.name Object25Test033
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -467,12 +467,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test034
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3400
-     * @tc.name Object25Test034
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -484,12 +484,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test035
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3500
-     * @tc.name Object25Test035
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -501,12 +501,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test036
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3600
-     * @tc.name Object25Test036
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -518,12 +518,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test037
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3700
-     * @tc.name Object25Test037
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -535,12 +535,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test038
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3800
-     * @tc.name Object25Test038
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn38_childOfExtensibleProtoRemainsExtensible();
@@ -548,12 +548,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test039
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_3900
-     * @tc.name Object25Test039
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn39_childOfExtensibleProtoCantChangeProto();
@@ -561,12 +561,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test040
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_4000
-     * @tc.name Object25Test040
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn40_getPrototypeOfExtensibleObjWorks();
@@ -574,12 +574,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test041
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_4100
-     * @tc.name Object25Test041
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn41_reflectGetPrototypeOfExtensibleObjWorks();
@@ -587,12 +587,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test042
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_4200
-     * @tc.name Object25Test042
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn42_weakMapUseExtensibleObjAsKey();
@@ -600,12 +600,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test043
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_4300
-     * @tc.name Object25Test043
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn43_weakSetAddExtensibleObj();
@@ -613,12 +613,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test046
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_4600
-     * @tc.name Object25Test046
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn46_getOwnPropertyDescriptorsExtensibleObjWorks();
@@ -626,12 +626,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test047
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_4700
-     * @tc.name Object25Test047
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -642,12 +642,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test048
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_4800
-     * @tc.name Object25Test048
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn48_cantDeleteNonConfigurablePropOnExtensibleObj();
@@ -655,12 +655,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test050
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5000
-     * @tc.name Object25Test050
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn50_extensibleArraySpliceDeleteSucceeds();
@@ -668,12 +668,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test051
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5100
-     * @tc.name Object25Test051
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn51_strictModeAddPropToExtensibleObjThrows();
@@ -681,12 +681,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test052
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5200
-     * @tc.name Object25Test052
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn52_strictModeChangeProtoOfExtensibleObjThrows();
@@ -694,12 +694,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test053
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5300
-     * @tc.name Object25Test053
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn53_extensibleObjGetterWorks();
@@ -707,12 +707,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test054
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5400
-     * @tc.name Object25Test054
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn54_extensibleObjSetterWorks();
@@ -720,12 +720,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test055
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5500
-     * @tc.name Object25Test055
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn55_addGetterToExtensibleObjThrows();
@@ -733,12 +733,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test056
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5600
-     * @tc.name Object25Test056
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn56_modifyGetterToDataOnExtensibleObjThrows();
@@ -746,12 +746,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test057
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5700
-     * @tc.name Object25Test057
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn57_getOwnPropertySymbolsExtensibleObjWorks();
@@ -759,12 +759,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test058
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5800
-     * @tc.name Object25Test058
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn58_getOwnPropertyNamesExtensibleObjWorks();
@@ -772,12 +772,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test059
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_5900
-     * @tc.name Object25Test059
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn59_extensibleArrayFillWorks();
@@ -785,12 +785,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test060
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6000
-     * @tc.name Object25Test060
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn60_extensibleArrayReverseWorks();
@@ -798,12 +798,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test061
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6100
-     * @tc.name Object25Test061
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn61_extensibleArraySortWorks();
@@ -811,12 +811,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test062
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6200
-     * @tc.name Object25Test062
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn62_mapUseExtensibleObjAsKey();
@@ -824,12 +824,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test063
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6300
-     * @tc.name Object25Test063
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn63_setAddExtensibleObj();
@@ -837,12 +837,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test064
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6400
-     * @tc.name Object25Test064
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn64_objectIsExtensibleObjWithSelf();
@@ -850,12 +850,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test066
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6600
-     * @tc.name Object25Test066
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -866,12 +866,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test067
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6700
-     * @tc.name Object25Test067
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn67_sealedPropOnExtensibleObjCantDelete();
@@ -879,12 +879,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test068
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6800
-     * @tc.name Object25Test068
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn68_extensibleObjToStringWorks();
@@ -892,12 +892,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test069
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_6900
-     * @tc.name Object25Test069
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn69_extensibleObjValueOfWorks();
@@ -905,12 +905,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test070
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7000
-     * @tc.name Object25Test070
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn70_extensibleObjHasOwnPropertyWorks();
@@ -918,12 +918,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test071
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7100
-     * @tc.name Object25Test071
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn71_extensibleObjPropertyIsEnumerableWorks();
@@ -931,12 +931,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test072
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7200
-     * @tc.name Object25Test072
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn72_nonEnumerablePropIsNotEnumerable();
@@ -944,12 +944,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test073
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7300
-     * @tc.name Object25Test073
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn73_forOfExtensibleArrayWorks();
@@ -957,12 +957,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test074
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7400
-     * @tc.name Object25Test074
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn74_forOfNonIterableExtensibleObjThrows();
@@ -970,12 +970,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test075
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7500
-     * @tc.name Object25Test075
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn75_objectEntriesExtensibleObjWorks();
@@ -983,12 +983,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test076
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7600
-     * @tc.name Object25Test076
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -999,12 +999,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test077
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7700
-     * @tc.name Object25Test077
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn77_stringifyExtensibleObjWithReplacer();
@@ -1012,12 +1012,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test078
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7800
-     * @tc.name Object25Test078
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn78_parseExtensibleObjWithReviver();
@@ -1025,12 +1025,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test079
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_7900
-     * @tc.name Object25Test079
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1041,12 +1041,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test080
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8000
-     * @tc.name Object25Test080
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1057,12 +1057,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test081
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8100
-     * @tc.name Object25Test081
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn81_reflectDeleteOwnPropOnExtensibleObj();
@@ -1070,12 +1070,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test082
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8200
-     * @tc.name Object25Test082
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn82_reflectDeleteNonExistentPropOnExtensibleObj();
@@ -1083,12 +1083,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test083
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8300
-     * @tc.name Object25Test083
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn83_modifyInheritedPropOnExtensibleObj();
@@ -1096,12 +1096,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test084
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8400
-     * @tc.name Object25Test084
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1112,12 +1112,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test085
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8500
-     * @tc.name Object25Test085
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1128,12 +1128,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test086
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8600
-     * @tc.name Object25Test086
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1144,12 +1144,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test087
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8700
-     * @tc.name Object25Test087
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn87_deleteConfigurablePropOnExtensibleObj();
@@ -1157,12 +1157,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test088
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8800
-     * @tc.name Object25Test088
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn88_cantDeleteNonConfigurableProp();
@@ -1170,12 +1170,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test089
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_8900
-     * @tc.name Object25Test089
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn89_nonEnumerablePropNotInForIn();
@@ -1183,12 +1183,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test090
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9000
-     * @tc.name Object25Test090
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1199,12 +1199,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test091
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9100
-     * @tc.name Object25Test091
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1215,12 +1215,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test092
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9200
-     * @tc.name Object25Test092
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn92_definePropertiesAddNewOnExtensibleObjThrows();
@@ -1228,12 +1228,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test093
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9300
-     * @tc.name Object25Test093
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn93_proxyOfExtensibleObjNoNewProp();
@@ -1241,12 +1241,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test094
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9400
-     * @tc.name Object25Test094
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn94_proxyOfExtensibleObjModifyExistingProp();
@@ -1254,12 +1254,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test095
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9500
-     * @tc.name Object25Test095
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1270,12 +1270,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test096
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9600
-     * @tc.name Object25Test096
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn96_proxyDefinePropertyTrapBlockNewProp();
@@ -1283,12 +1283,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test097
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9700
-     * @tc.name Object25Test097
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1299,12 +1299,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test098
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9800
-     * @tc.name Object25Test098
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn98_modifyPrimitiveWrapperExtensibleObj();
@@ -1312,12 +1312,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test099
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_9900
-     * @tc.name Object25Test099
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn99_extensibleObjIsNotSealed();
@@ -1325,12 +1325,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test100
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10000
-     * @tc.name Object25Test100
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn100_extensibleObjIsNotFrozen();
@@ -1338,12 +1338,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test101
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10100
-     * @tc.name Object25Test101
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn101_extensibleObjSealedAfterSeal();
@@ -1351,12 +1351,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test102
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10200
-     * @tc.name Object25Test102
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn102_extensibleObjFrozenAfterFreeze();
@@ -1364,12 +1364,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test103
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10300
-     * @tc.name Object25Test103
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn103_modifyLengthOnNonArrayExtensibleObj();
@@ -1377,12 +1377,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test104
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10400
-     * @tc.name Object25Test104
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1393,12 +1393,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test105
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10500
-     * @tc.name Object25Test105
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1409,12 +1409,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test106
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10600
-     * @tc.name Object25Test106
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1425,12 +1425,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test107
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10700
-     * @tc.name Object25Test107
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1441,12 +1441,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test108
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10800
-     * @tc.name Object25Test108
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1457,12 +1457,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test109
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_10900
-     * @tc.name Object25Test109
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1473,12 +1473,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test110
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11000
-     * @tc.name Object25Test110
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1489,12 +1489,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test111
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11100
-     * @tc.name Object25Test111
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn111_extensibleIterableObjIteratorWorks();
@@ -1502,12 +1502,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test112
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11200
-     * @tc.name Object25Test112
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn112_extensibleObjWithGenerator();
@@ -1515,12 +1515,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test113
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11300
-     * @tc.name Object25Test113
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn113_extensibleObjWithAsyncFunc();
@@ -1528,12 +1528,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test115
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11500
-     * @tc.name Object25Test115
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1544,12 +1544,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test116
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11600
-     * @tc.name Object25Test116
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1560,12 +1560,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test117
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11700
-     * @tc.name Object25Test117
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1576,12 +1576,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test118
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11800
-     * @tc.name Object25Test118
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn118_extensibleObjInArrowFuncThis();
@@ -1589,12 +1589,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test119
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_11900
-     * @tc.name Object25Test119
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1605,12 +1605,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test120
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12000
-     * @tc.name Object25Test120
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1621,12 +1621,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test121
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12100
-     * @tc.name Object25Test121
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn121_extensibleObjWithLocalStorage();
@@ -1634,24 +1634,24 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test122
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12200
-     * @tc.name Object25Test122
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn122_extensibleObjWithSessionStorage();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object25Test123
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12300
-     * @tc.name Object25Test123
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1662,12 +1662,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test124
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12400
-     * @tc.name Object25Test124
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1678,12 +1678,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test125
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12500
-     * @tc.name Object25Test125
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1694,12 +1694,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test126
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12600
-     * @tc.name Object25Test126
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1710,12 +1710,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test128
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12800
-     * @tc.name Object25Test128
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn128_proxySetPrototypeOfTrapOnExtensibleObj();
@@ -1723,12 +1723,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test129
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_12900
-     * @tc.name Object25Test129
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn129_isExtensibleConsistentOnExtensibleObj();
@@ -1736,12 +1736,12 @@ export default function Object25Test() {
     });
 
     /**
+     * @tc.name   Object25Test130
      * @tc.number SUB_BUILTINS_OBJECT25_TEST_13000
-     * @tc.name Object25Test130
-     * @tc.desc test object preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object25Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Object25.Fn130_reflectIsExtensibleConsistentOnExtensibleObj();

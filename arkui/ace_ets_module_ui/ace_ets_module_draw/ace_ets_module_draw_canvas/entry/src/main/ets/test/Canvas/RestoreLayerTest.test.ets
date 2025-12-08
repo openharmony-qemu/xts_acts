@@ -46,12 +46,12 @@ export default function RestoreLayerTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_RestoreLayerTest_001
-     * @tc.name: RestoreLayerTest_001
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 3
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   RestoreLayerTest_001
+     * @tc.number SUB_ARKUI_API_RestoreLayerTest_001
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RestoreLayerTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RestoreLayerTest_001] START');

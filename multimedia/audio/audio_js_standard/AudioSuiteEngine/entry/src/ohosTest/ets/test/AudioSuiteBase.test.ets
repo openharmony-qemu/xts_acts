@@ -27,12 +27,12 @@ export default function AudioSuiteBaseTest() {
     })
 
     /**
-     * @tc.number    : AudioSuiteEngineCreateTest_0001
-     * @tc.name      : AudioSuiteEngine create test
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineCreateTest_0001
+     * @tc.number AudioSuiteEngineCreateTest_0001
+     * @tc.desc   AudioSuiteEngine create test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineCreateTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -42,12 +42,12 @@ export default function AudioSuiteBaseTest() {
     })
 
     /**
-     * @tc.number    : AudioSuiteEngineCreateTest_0002
-     * @tc.name      : AudioSuiteEngine create test
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineCreateTest_0002
+     * @tc.number AudioSuiteEngineCreateTest_0002
+     * @tc.desc   AudioSuiteEngine create test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineCreateTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -57,6 +57,5 @@ export default function AudioSuiteBaseTest() {
       console.info('=====> AudioSuiteEngineCreateTest_0002 end ====>');
       done();
     })
-    
   })
 }

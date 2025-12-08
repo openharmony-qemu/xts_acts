@@ -40,12 +40,12 @@ export default function builtinsConcatArraySliceTest() {
     })
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1001
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0100
-     * @tc.name builtinsConcatArraySliceTest1001
-     * @tc.desc Test basic slice with start and end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test basic slice with start and end
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsConcatArraySliceTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
@@ -53,12 +53,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1002
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0200
-     * @tc.name builtinsConcatArraySliceTest1002
-     * @tc.desc Test single parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test single parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
@@ -66,12 +66,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1003
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0300
-     * @tc.name builtinsConcatArraySliceTest1003
-     * @tc.desc Test negative indexes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test negative indexes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
@@ -79,12 +79,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1004
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0400
-     * @tc.name builtinsConcatArraySliceTest1004
-     * @tc.desc Test sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest<number | undefined>([1, , 3])
@@ -95,12 +95,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1005
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0500
-     * @tc.name builtinsConcatArraySliceTest1005
-     * @tc.desc Test out-of-bound indexes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test out-of-bound indexes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3])
@@ -108,12 +108,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1006
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0600
-     * @tc.name builtinsConcatArraySliceTest1006
-     * @tc.desc Test same start and end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test same start and end
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3])
@@ -121,12 +121,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1007
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0700
-     * @tc.name builtinsConcatArraySliceTest1007
-     * @tc.desc Test invalid parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
@@ -137,12 +137,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1008
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0800
-     * @tc.name builtinsConcatArraySliceTest1008
-     * @tc.desc Test string array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<string>(['a', 'b', 'c', 'd']);
@@ -150,12 +150,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1009
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_0900
-     * @tc.name builtinsConcatArraySliceTest1009
-     * @tc.desc Test object array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test object array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let objArr = new ConcatArrayTest<TestA | TestB | TestC>([{
@@ -175,12 +175,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1010
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_1000
-     * @tc.name builtinsConcatArraySliceTest1010
-     * @tc.desc Test nested array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test nested array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let nestedArr = new ConcatArrayTest<number[]>([[1, 2], [3, 4], [5, 6]])
@@ -188,12 +188,12 @@ export default function builtinsConcatArraySliceTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArraySliceTest1011
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_1100
-     * @tc.name builtinsConcatArraySliceTest1011
-     * @tc.desc Test special number parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test special number parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])

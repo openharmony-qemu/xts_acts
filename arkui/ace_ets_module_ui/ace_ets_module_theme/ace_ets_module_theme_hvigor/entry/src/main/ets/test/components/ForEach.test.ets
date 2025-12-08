@@ -80,14 +80,13 @@ export default function forEachTest() {
       }
     });
     /**
-      * @tc.number    : ActsForEachThemeColors_0100
-      * @tc.name      : ActsForEachThemeColors_0100
-      * @tc.desc      : check system colors values of the LazyForEach component
-      *                 isLunar = false
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsForEachThemeColors_0100
+     * @tc.number ActsForEachThemeColors_0100
+     * @tc.desc   check system colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsForEachThemeColors_0100`, Level.LEVEL0, async () => {
       await sleep(frameTime);
       const CASE: string = `ActsForEachThemeColors_0100`;
@@ -103,13 +102,13 @@ export default function forEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsForEachThemeColors_0200
-      * @tc.name      : ActsForEachThemeColors_0200
-      * @tc.desc      : check custom colors values of the LazyForEach component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsForEachThemeColors_0200
+     * @tc.number ActsForEachThemeColors_0200
+     * @tc.desc   check custom colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsForEachThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsForEachThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -125,14 +124,13 @@ export default function forEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsForEachThemeColors_0300
-      * @tc.name      : ActsForEachThemeColors_0300
-      * @tc.desc      : check system colors values of the LazyForEach component
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsForEachThemeColors_0300
+     * @tc.number ActsForEachThemeColors_0300
+     * @tc.desc   check system colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsForEachThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsForEachThemeColors_0300`
       console.info(`${SUITE} ${CASE} START`);
@@ -150,13 +148,13 @@ export default function forEachTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-      * @tc.number    : ActsForEachThemeColors_0400
-      * @tc.name      : ActsForEachThemeColors_0400
-      * @tc.desc      : check system colors values of the LazyForEach component with ListGroup
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsForEachThemeColors_0400
+     * @tc.number ActsForEachThemeColors_0400
+     * @tc.desc   check system colors values of the LazyForEach component with ListGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsForEachThemeColors_0400`, Level.LEVEL0, async () => {
       await sleep(frameTime);;
       const CASE: string = `ActsForEachThemeColors_0400`;
@@ -172,13 +170,13 @@ export default function forEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsForEachThemeColors_0500
-      * @tc.name      : ActsForEachThemeColors_0500
-      * @tc.desc      : check custom colors values of the LazyForEach component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsForEachThemeColors_0500
+     * @tc.number ActsForEachThemeColors_0500
+     * @tc.desc   check custom colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsForEachThemeColors_0500`, Level.LEVEL2, () => {
       const CASE: string = `ActsForEachThemeColors_0500`;
       console.info(`${SUITE} ${CASE} START`);
@@ -194,14 +192,13 @@ export default function forEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsForEachThemeColors_0600
-      * @tc.name      : ActsForEachThemeColors_0600
-      * @tc.desc      : check system colors values of the LazyForEach component
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsForEachThemeColors_0600
+     * @tc.number ActsForEachThemeColors_0600
+     * @tc.desc   check system colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsForEachThemeColors_0600`, Level.LEVEL0, async () => {
       const CASE: string = `ActsForEachThemeColors_0600`;
       console.info(`${SUITE} ${CASE} START`);

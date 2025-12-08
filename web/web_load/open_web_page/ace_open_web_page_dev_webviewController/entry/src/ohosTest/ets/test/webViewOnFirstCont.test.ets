@@ -56,10 +56,13 @@ export default function webViewOnFirstCont() {
       done();
     })
 
-    /*
+    /**
+     * @tc.name   testOnfirstcontentfulpaint
      * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR5_API_0100
-     * @tc.name testOnfirstcontentfulpaint
-     * @tc.desc onfirstcontentfulpaint with web src null
+     * @tc.desc   onfirstcontentfulpaint with web src null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnfirstcontentfulpaint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const emitKey = "emitOnfirstcontentfulpaint";

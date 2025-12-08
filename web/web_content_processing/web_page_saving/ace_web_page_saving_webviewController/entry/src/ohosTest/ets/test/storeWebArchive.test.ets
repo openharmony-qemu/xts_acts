@@ -62,11 +62,14 @@ export default function storeWebArchive() {
     })
 
 
-    /*
-   *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_003
-   *tc.name testStoreWebArchiveCallback
-   *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is ture.
-   */
+    /**
+     * @tc.name   testStoreWebArchiveCallback
+     * @tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_003
+     * @tc.desc   testStoreWebArchiveCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testStoreWebArchiveCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitStoreWebArchiveCallback", 132180);
       Utils.registerBaseEvent("testStoreWebArchiveCallback","/data/storage/el3/base/index.html.mht",
@@ -77,11 +80,14 @@ export default function storeWebArchive() {
       await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
-    /*
-   *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_004
-   *tc.name testStoreWebArchiveCallbackFalse
-   *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is false.
-   */
+    /**
+     * @tc.name   testStoreWebArchiveCallbackFalse
+     * @tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_004
+     * @tc.desc   testStoreWebArchiveCallbackFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testStoreWebArchiveCallbackFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitStoreWebArchiveCallbackFalse", 132180);
       Utils.registerBaseEvent("testStoreWebArchiveCallbackFalse","/data/storage/el3/base/index.html.mht",
@@ -92,10 +98,13 @@ export default function storeWebArchive() {
       await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_005
-     *tc.name testStoreWebArchivePromise
-     *tc.desic test storeWebArchive interface when choose Promise mode and autoName parameter is ture.
+    /**
+     * @tc.name   testStoreWebArchivePromise
+     * @tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_005
+     * @tc.desc   testStoreWebArchivePromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchivePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitStoreWebArchivePromise", 132180);
@@ -107,10 +116,13 @@ export default function storeWebArchive() {
       await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_006
-     *tc.name testStoreWebArchivePromiseFalse
-     *tc.desic test storeWebArchive interface when choose Promise mode and autoName parameter is false.
+    /**
+     * @tc.name   testStoreWebArchivePromiseFalse
+     * @tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_006
+     * @tc.desc   testStoreWebArchivePromiseFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchivePromiseFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent('emitStoreWebArchivePromiseFlase', 132180);

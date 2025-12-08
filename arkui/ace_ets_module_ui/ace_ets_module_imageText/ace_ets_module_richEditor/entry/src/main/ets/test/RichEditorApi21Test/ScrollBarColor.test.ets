@@ -42,12 +42,12 @@ export default function RichEditorScrollBarColorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorScrollBarColorTest_0010
-     * @tc.name      RichEditorScrollBarColorTest_0010
-     * @tc.desc      test the attr of RichEditor: scrollBarColor(ColorMetrics.resourceColor)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorScrollBarColorTest_0010
+     * @tc.number SUB_ACE_RichEditorScrollBarColorTest_0010
+     * @tc.desc   test the attr of RichEditor: scrollBarColor(ColorMetrics.resourceColor)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorScrollBarColorTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorScrollBarColorTest_0010] START');
@@ -60,12 +60,12 @@ export default function RichEditorScrollBarColorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorScrollBarColorTest_0020
-     * @tc.name      RichEditorScrollBarColorTest_0020
-     * @tc.desc      test the attr of RichEditor: scrollBarColor(ColorMetrics.rgba)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorScrollBarColorTest_0020
+     * @tc.number SUB_ACE_RichEditorScrollBarColorTest_0020
+     * @tc.desc   test the attr of RichEditor: scrollBarColor(ColorMetrics.rgba)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorScrollBarColorTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorScrollBarColorTest_0020] START');
@@ -78,12 +78,12 @@ export default function RichEditorScrollBarColorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorScrollBarColorTest_0030
-     * @tc.name      RichEditorScrollBarColorTest_0030
-     * @tc.desc      test the attr of RichEditor: scrollBarColor(default)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorScrollBarColorTest_0030
+     * @tc.number SUB_ACE_RichEditorScrollBarColorTest_0030
+     * @tc.desc   test the attr of RichEditor: scrollBarColor(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorScrollBarColorTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorScrollBarColorTest_0030] START');
@@ -96,12 +96,12 @@ export default function RichEditorScrollBarColorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorScrollBarColorTest_0040
-     * @tc.name      RichEditorScrollBarColorTest_0040
-     * @tc.desc      test the attr of RichEditor: scrollBarColor(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorScrollBarColorTest_0040
+     * @tc.number SUB_ACE_RichEditorScrollBarColorTest_0040
+     * @tc.desc   test the attr of RichEditor: scrollBarColor(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorScrollBarColorTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorScrollBarColorTest_0040] START');
@@ -114,12 +114,12 @@ export default function RichEditorScrollBarColorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorScrollBarColorTest_0050
-     * @tc.name      RichEditorScrollBarColorTest_0050
-     * @tc.desc      test the attr of RichEditor: scrollBarColor(null)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorScrollBarColorTest_0050
+     * @tc.number SUB_ACE_RichEditorScrollBarColorTest_0050
+     * @tc.desc   test the attr of RichEditor: scrollBarColor(null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorScrollBarColorTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorScrollBarColorTest_0050] START');

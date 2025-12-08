@@ -44,12 +44,12 @@ export default function symbolSpeciesTestTest() {
     })
 
     /**
+     * @tc.name   ArrayDefaultSymbolSpeciesTest001
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_001
-     * @tc.name ArrayDefaultSymbolSpeciesTest001
-     * @tc.desc Verify Array's default Symbol.species returns Array instance via map()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array's default Symbol.species returns Array instance via map()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayDefaultSymbolSpeciesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test001_ArrayDefaultSymbolSpecies();
@@ -57,12 +57,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   SubclassOverrideSpeciesReturnParentTest002
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_002
-     * @tc.name SubclassOverrideSpeciesReturnParentTest002
-     * @tc.desc Verify subclass overrides Symbol.species to return parent Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass overrides Symbol.species to return parent Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubclassOverrideSpeciesReturnParentTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test002_SubclassOverrideSpeciesReturnParent();
@@ -70,12 +70,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   SubclassRetainSpeciesAsSelfTest003
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_003
-     * @tc.name SubclassRetainSpeciesAsSelfTest003
-     * @tc.desc Verify subclass retains Symbol.species as self, returns subclass instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass retains Symbol.species as self, returns subclass instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubclassRetainSpeciesAsSelfTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test003_SubclassRetainSpeciesAsSelf();
@@ -83,12 +83,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   NonFunctionSpeciesThrowsTest004
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_004
-     * @tc.name NonFunctionSpeciesThrowsTest004
-     * @tc.desc Verify non-function Symbol.species throws TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify non-function Symbol.species throws TypeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonFunctionSpeciesThrowsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test004_NonFunctionSpeciesThrows();
@@ -96,12 +96,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   PromiseDefaultSymbolSpeciesTest005
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_005
-     * @tc.name PromiseDefaultSymbolSpeciesTest005
-     * @tc.desc Verify Promise's default Symbol.species returns Promise instance via then()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Promise's default Symbol.species returns Promise instance via then()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseDefaultSymbolSpeciesTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test005_PromiseDefaultSymbolSpecies();
@@ -109,12 +109,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   InheritedSymbolSpeciesTest006
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_006
-     * @tc.name InheritedSymbolSpeciesTest006
-     * @tc.desc Verify subclass inherits Symbol.species from parent
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass inherits Symbol.species from parent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InheritedSymbolSpeciesTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test006_InheritedSymbolSpecies();
@@ -122,12 +122,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   SpeciesReturnsUnrelatedConstructorTest007
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_007
-     * @tc.name SpeciesReturnsUnrelatedConstructorTest007
-     * @tc.desc Verify Symbol.species returns unrelated constructor, changes derived object type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.species returns unrelated constructor, changes derived object type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SpeciesReturnsUnrelatedConstructorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test007_SpeciesReturnsUnrelatedConstructor();
@@ -138,12 +138,12 @@ export default function symbolSpeciesTestTest() {
 
 
     /**
+     * @tc.name   MapDefaultSymbolSpeciesTest013
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_013
-     * @tc.name MapDefaultSymbolSpeciesTest013
-     * @tc.desc Verify Map's default Symbol.species returns Map instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map's default Symbol.species returns Map instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapDefaultSymbolSpeciesTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test013_MapDefaultSymbolSpecies();
@@ -153,12 +153,12 @@ export default function symbolSpeciesTestTest() {
 
 
     /**
+     * @tc.name   FrozenSubclassSpeciesTest016
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_016
-     * @tc.name FrozenSubclassSpeciesTest016
-     * @tc.desc Verify frozen subclass retains Symbol.species functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify frozen subclass retains Symbol.species functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrozenSubclassSpeciesTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test016_FrozenSubclassSpecies();
@@ -169,12 +169,12 @@ export default function symbolSpeciesTestTest() {
 
 
     /**
+     * @tc.name   SpeciesReturnsDeepSubclassTest019
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_019
-     * @tc.name SpeciesReturnsDeepSubclassTest019
-     * @tc.desc Verify Symbol.species returns deep subclass (subclass of subclass)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.species returns deep subclass (subclass of subclass)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SpeciesReturnsDeepSubclassTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test019_SpeciesReturnsDeepSubclass();
@@ -182,12 +182,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   AsyncIteratorDefaultSpeciesTest020
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_020
-     * @tc.name AsyncIteratorDefaultSpeciesTest020
-     * @tc.desc Verify AsyncIterator's default Symbol.species returns valid AsyncIterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify AsyncIterator's default Symbol.species returns valid AsyncIterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AsyncIteratorDefaultSpeciesTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test020_AsyncIteratorDefaultSpecies();
@@ -195,12 +195,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   ParameterizedSpeciesConstructorTest021
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_021
-     * @tc.name ParameterizedSpeciesConstructorTest021
-     * @tc.desc Verify parameterized Symbol.species constructor receives correct arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify parameterized Symbol.species constructor receives correct arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ParameterizedSpeciesConstructorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test021_ParameterizedSpeciesConstructor();
@@ -208,12 +208,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   RepeatedDerivedMethodCallsTest022
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_022
-     * @tc.name RepeatedDerivedMethodCallsTest022
-     * @tc.desc Verify repeated derived method calls retain consistent species behavior
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify repeated derived method calls retain consistent species behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RepeatedDerivedMethodCallsTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test022_RepeatedDerivedMethodCalls();
@@ -221,12 +221,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   SpeciesReturnsSealedConstructorTest023
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_023
-     * @tc.name SpeciesReturnsSealedConstructorTest023
-     * @tc.desc Verify sealed constructor as Symbol.species can create derived objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify sealed constructor as Symbol.species can create derived objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SpeciesReturnsSealedConstructorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test023_SpeciesReturnsSealedConstructor();
@@ -234,12 +234,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   RegExpSubclassSpeciesTest024
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_024
-     * @tc.name RegExpSubclassSpeciesTest024
-     * @tc.desc Verify RegExp subclass overrides Symbol.species to return parent RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify RegExp subclass overrides Symbol.species to return parent RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpSubclassSpeciesTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test024_RegExpSubclassSpecies();
@@ -250,12 +250,12 @@ export default function symbolSpeciesTestTest() {
 
 
     /**
+     * @tc.name   SpeciesInheritanceAfterDeleteTest028
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_028
-     * @tc.name SpeciesInheritanceAfterDeleteTest028
-     * @tc.desc Verify deleting subclass Symbol.species triggers parent inheritance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify deleting subclass Symbol.species triggers parent inheritance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SpeciesInheritanceAfterDeleteTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test028_SpeciesInheritanceAfterDelete();
@@ -263,12 +263,12 @@ export default function symbolSpeciesTestTest() {
     });
 
     /**
+     * @tc.name   NonInstantiableSpeciesTest029
      * @tc.number SUB_SYMBOL_SPECIES_STANDALONE_TEST_029
-     * @tc.name NonInstantiableSpeciesTest029
-     * @tc.desc Verify non-instantiable function as Symbol.species throws TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify non-instantiable function as Symbol.species throws TypeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonInstantiableSpeciesTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSpeciesStandaloneTestUtils.test029_NonInstantiableSpecies();

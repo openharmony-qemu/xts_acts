@@ -59,14 +59,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONTITLERECEIVE_0100
-    * @tc.name        : testOnTitleReceive001
-    * @tc.desc        : test onTitleReceive normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnTitleReceive001
+     * @tc.number SUB_WEB_ONTITLERECEIVE_0100
+     * @tc.desc   test onTitleReceive normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnTitleReceive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnTitleReceive001", EVENT_ID_SET_EMIT_KEY)
       let isReturn = false;
@@ -76,14 +76,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONTITLERECEIVE_0200
-    * @tc.name        : testOnTitleReceive002
-    * @tc.desc        : test onTitleReceive when js changed
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnTitleReceive002
+     * @tc.number SUB_WEB_ONTITLERECEIVE_0200
+     * @tc.desc   test onTitleReceive when js changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnTitleReceive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnTitleReceive002", EVENT_ID_SET_EMIT_KEY)
       let isReturn = false;
@@ -92,14 +92,14 @@ export default function webAttributeTest() {
       await Utils.waitForExist(() => isReturn, 'emitOnTitleReceive002' + '_returnCheck', true, 1000);
       done();
     })
-    /*
-    * @tc.number      : SUB_WEB_USERAGENT_0100
-    * @tc.name        : testUserAgent001
-    * @tc.desc        : test userAgent normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testUserAgent001
+     * @tc.number SUB_WEB_USERAGENT_0100
+     * @tc.desc   test userAgent normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testUserAgent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitUserAgent001", EVENT_ID_SET_EMIT_KEY)
       let isReturn = false;

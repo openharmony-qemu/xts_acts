@@ -57,7 +57,6 @@ describe('CalendarInI18nTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:58
       * @tc.name   i18n_calendar_test_0100
       * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0100
       * @tc.desc   get the isWeekend value
@@ -74,7 +73,6 @@ describe('CalendarInI18nTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:58
       * @tc.name   i18n_calendar_test_0200
       * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0200
       * @tc.desc   get the getCalendar value
@@ -103,7 +101,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_0300
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0300
      * @tc.desc   get the getCalendar value
@@ -120,7 +117,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_0400
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0400
      * @tc.desc   get the getCalendar value
@@ -137,7 +133,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_0500
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0500
      * @tc.desc   get the getDisplayName value
@@ -154,7 +149,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_0600
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0600
      * @tc.desc   get the getDisplayName value
@@ -171,7 +165,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_0700
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0700
      * @tc.desc   get the get value
@@ -188,7 +181,6 @@ describe('CalendarInI18nTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:58
       * @tc.name   i18n_calendar_test_0800
       * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0800
       * @tc.desc   get the get value
@@ -207,7 +199,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_0900
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0900
      * @tc.desc   get the get value
@@ -224,7 +215,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1000
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1000
      * @tc.desc   get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
@@ -242,7 +232,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1100
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1100
      * @tc.desc   get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
@@ -260,7 +249,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1200
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1200
      * @tc.desc   get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
@@ -278,7 +266,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1300
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1300
      * @tc.desc   get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
@@ -296,7 +283,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1400
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1400
      * @tc.desc   get the setFirstDayOfWeek and getFirstDayOfWeek value
@@ -314,7 +300,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1500
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1500
      * @tc.desc   get the setFirstDayOfWeek and getFirstDayOfWeek value
@@ -332,7 +317,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1600
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1600
      * @tc.desc   get the setFirstDayOfWeek and getFirstDayOfWeek value
@@ -350,7 +334,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1700
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1700
      * @tc.desc   get the setFirstDayOfWeek and getFirstDayOfWeek value
@@ -368,7 +351,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1800
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1800
      * @tc.desc   get the setTimeZone and getTimeZone value
@@ -386,7 +368,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_1900
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1900
      * @tc.desc   get the setTimeZone and getTimeZone value
@@ -404,7 +385,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_2000
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2000
      * @tc.desc   get the set value
@@ -422,7 +402,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_2100
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2100
      * @tc.desc   get the set value
@@ -440,7 +419,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_2200
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2200
      * @tc.desc   get the set value
@@ -458,7 +436,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_2300
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2300
      * @tc.desc   get the setTime value
@@ -478,7 +455,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_2400
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2400
      * @tc.desc   get the setTime value
@@ -497,7 +473,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   i18n_calendar_test_2500
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2500
      * @tc.desc   get the setTime value
@@ -515,7 +490,6 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_0010
      * @tc.number SUB_GLOBAL_I18N_SR000IFGNH_0010
      * @tc.desc   HolidayManager

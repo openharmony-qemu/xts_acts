@@ -40,10 +40,13 @@ export default function CanvasAPIUnitTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Canvas_API_Unit_0100
-     *tc.name   Attribute font support unit 'vp' and putImageData support unit 'px'
-     *tc.desc   Attribute font support unit 'vp' and putImageData support unit 'px'
+    /**
+     * @tc.name   ArkUI_Canvas_API_Unit_0100
+     * @tc.number ArkUI_Canvas_API_Unit_0100
+     * @tc.desc   Attribute font support unit 'vp' and putImageData support unit 'px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Canvas_API_Unit_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Canvas_API_Unit_0100'

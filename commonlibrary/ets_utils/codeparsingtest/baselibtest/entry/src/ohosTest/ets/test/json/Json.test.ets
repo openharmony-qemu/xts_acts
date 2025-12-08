@@ -47,12 +47,12 @@ export default function JsonTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0100
-     * @tc.name       : testParse0001
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0100
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0001";
@@ -68,12 +68,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0300
-     * @tc.name       : testParse0003
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0300
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0003";
@@ -88,12 +88,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0400
-     * @tc.name       : testParse0004
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0400
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0004";
@@ -108,12 +108,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0500
-     * @tc.name       : testParse0005
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0500
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0005";
@@ -128,12 +128,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0600
-     * @tc.name       : testParse0006
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0600
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0006";
@@ -148,12 +148,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0700
-     * @tc.name       : testParse0007
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0700
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0007";
@@ -168,12 +168,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0800
-     * @tc.name       : testParse0008
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0800
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0008";
@@ -194,12 +194,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0900
-     * @tc.name       : testParse0009
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_0900
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0009";
@@ -214,12 +214,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1000
-     * @tc.name       : testParse0010
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParse0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1000
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParse0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParse0010";
@@ -235,12 +235,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1100
-     * @tc.name       : testParse0011
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1100
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0011";
@@ -256,12 +256,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1200
-     * @tc.name       : testParse0012
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1200
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0012";
@@ -276,12 +276,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1300
-     * @tc.name       : testParse0013
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1300
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0013";
@@ -297,12 +297,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1400
-     * @tc.name       : testParse0014
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1400
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0014";
@@ -318,12 +318,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1500
-     * @tc.name       : testParse0015
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1500
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0015";
@@ -338,12 +338,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1600
-     * @tc.name       : testParse0016
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1600
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0016";
@@ -361,12 +361,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1700
-     * @tc.name       : testParse0017
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1700
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0017";
@@ -384,12 +384,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1800
-     * @tc.name       : testParse0018
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1800
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0018";
@@ -407,12 +407,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1900
-     * @tc.name       : testParse0019
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_1900
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0019";
@@ -430,12 +430,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2000
-     * @tc.name       : testParse0020
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2000
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0020";
@@ -453,12 +453,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2100
-     * @tc.name       : testParse0021
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2100
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0021";
@@ -476,12 +476,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2200
-     * @tc.name       : testParse0022
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2200
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0022";
@@ -499,12 +499,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2300
-     * @tc.name       : testParse0023
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2300
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0023";
@@ -522,12 +522,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2400
-     * @tc.name       : testParse0024
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2400
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0024";
@@ -541,12 +541,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2500
-     * @tc.name       : testParse0025
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2500
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0025";
@@ -560,12 +560,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2600
-     * @tc.name       : testParse0026
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2600
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0026";
@@ -579,12 +579,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2700
-     * @tc.name       : testParse0027
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2700
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0027";
@@ -598,12 +598,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2800
-     * @tc.name       : testParse0028
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2800
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0028";
@@ -618,12 +618,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2900
-     * @tc.name       : testParse0029
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_2900
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0029";
@@ -638,12 +638,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3000
-     * @tc.name       : testParse0030
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3000
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0030";
@@ -658,12 +658,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3100
-     * @tc.name       : testParse0031
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3100
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0031";
@@ -677,12 +677,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3200
-     * @tc.name       : testParse0032
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3200
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0032";
@@ -696,12 +696,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3300
-     * @tc.name       : testParse0033
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3300
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0033";
@@ -715,12 +715,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3400
-     * @tc.name       : testParse0034
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3400
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0034";
@@ -734,12 +734,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3500
-     * @tc.name       : testParse0035
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3500
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0035";
@@ -753,12 +753,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3600
-     * @tc.name       : testParse0036
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONPARSE_3600
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParse0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParse0036";
@@ -772,12 +772,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0100
-     * @tc.name       : testStringify0001
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0100
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0001";
@@ -791,12 +791,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0200
-     * @tc.name       : testStringify0002
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0200
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0002";
@@ -812,12 +812,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0300
-     * @tc.name       : testStringify0003
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0300
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0003";
@@ -833,12 +833,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0400
-     * @tc.name       : testStringify0004
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0400
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0004";
@@ -854,12 +854,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0500
-     * @tc.name       : testStringify0005
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0500
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0005";
@@ -875,12 +875,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0600
-     * @tc.name       : testStringify0006
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0600
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0006";
@@ -896,12 +896,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0700
-     * @tc.name       : testStringify0007
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0700
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0007";
@@ -917,12 +917,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0800
-     * @tc.name       : testStringify0008
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0800
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0008";
@@ -936,12 +936,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0900
-     * @tc.name       : testStringify0009
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_0900
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0009";
@@ -956,12 +956,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1000
-     * @tc.name       : testStringify0010
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1000
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0010";
@@ -976,12 +976,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1100
-     * @tc.name       : testStringify0011
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1100
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0011";
@@ -996,12 +996,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1200
-     * @tc.name       : testStringify0012
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1200
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0012";
@@ -1018,12 +1018,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1300
-     * @tc.name       : testStringify0013
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1300
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0013";
@@ -1040,12 +1040,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1400
-     * @tc.name       : testStringify0014
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1400
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0014";
@@ -1063,12 +1063,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1500
-     * @tc.name       : testStringify0015
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1500
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0015";
@@ -1085,12 +1085,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1600
-     * @tc.name       : testStringify0016
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1600
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0016";
@@ -1107,12 +1107,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1700
-     * @tc.name       : testStringify0017
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1700
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0017";
@@ -1131,12 +1131,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1800
-     * @tc.name       : testStringify0018
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1800
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0018";
@@ -1153,12 +1153,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1900
-     * @tc.name       : testStringify0019
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_1900
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0019";
@@ -1175,12 +1175,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_2000
-     * @tc.name       : testStringify0020
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_2000
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0020";
@@ -1197,12 +1197,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_2100
-     * @tc.name       : testStringify0021
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_2100
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0021";
@@ -1219,12 +1219,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_2200
-     * @tc.name       : testStringify0022
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_2200
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStringify0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testStringify0022";
@@ -1245,12 +1245,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_2300
-     * @tc.name       : testStringify0023
-     * @tc.desc       : Testing JSON testStringify function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONSTRINGIFY_2300
+     * @tc.desc   Testing JSON testStringify function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testStringify0023',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //   const TAG = "testStringify0023";
@@ -1268,12 +1268,12 @@ export default function JsonTest() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0100
-     * @tc.name       : testHas0001
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0100
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0001";
@@ -1289,12 +1289,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0200
-     * @tc.name       : testHas0002
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0200
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0002";
@@ -1310,12 +1310,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0300
-     * @tc.name       : testHas0003
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0300
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0003";
@@ -1331,12 +1331,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0400
-     * @tc.name       : testHas0004
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0400
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0004";
@@ -1352,12 +1352,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0500
-     * @tc.name       : testHas0005
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0500
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0005";
@@ -1373,12 +1373,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0600
-     * @tc.name       : testHas0006
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0600
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0006";
@@ -1394,12 +1394,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0700
-     * @tc.name       : testHas0007
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0700
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0007";
@@ -1415,12 +1415,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0800
-     * @tc.name       : testHas0008
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0800
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0008";
@@ -1436,12 +1436,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0900
-     * @tc.name       : testHas0009
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_0900
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0009";
@@ -1457,12 +1457,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_1000
-     * @tc.name       : testHas0010
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_1000
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0010";
@@ -1478,12 +1478,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_1100
-     * @tc.name       : testHas0011
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_1100
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0011";
@@ -1499,12 +1499,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_1200
-     * @tc.name       : testHas0012
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_1200
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0012";
@@ -1521,12 +1521,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_1300
-     * @tc.name       : testHas0013
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONHAS_1300
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0013";
@@ -1543,12 +1543,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0100
-     * @tc.name       : testRemove0001
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0100
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0001";
@@ -1565,12 +1565,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0200
-     * @tc.name       : testRemove0002
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0200
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0002";
@@ -1587,12 +1587,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0200
-     * @tc.name       : testRemove0003
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0200
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0003";
@@ -1609,12 +1609,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0400
-     * @tc.name       : testRemove0004
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0400
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0004";
@@ -1631,12 +1631,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0500
-     * @tc.name       : testRemove0005
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0500
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0005";
@@ -1653,12 +1653,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0600
-     * @tc.name       : testRemove0006
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0600
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0006";
@@ -1675,12 +1675,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0700
-     * @tc.name       : testRemove0007
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0700
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0007";
@@ -1696,12 +1696,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0800
-     * @tc.name       : testRemove0008
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0800
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0008";
@@ -1717,12 +1717,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0900
-     * @tc.name       : testRemove0009
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_0900
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0009";
@@ -1738,12 +1738,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1000
-     * @tc.name       : testRemove0010
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1000
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0010";
@@ -1759,12 +1759,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1100
-     * @tc.name       : testRemove0011
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1100
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0011";
@@ -1781,12 +1781,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1200
-     * @tc.name       : testRemove0012
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1200
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0012";
@@ -1804,12 +1804,12 @@ export default function JsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1300
-     * @tc.name       : testRemove0013
-     * @tc.desc       : Testing JSON testHas function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1300
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0013";

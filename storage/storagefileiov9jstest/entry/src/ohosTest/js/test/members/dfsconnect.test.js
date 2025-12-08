@@ -22,13 +22,12 @@ export default function fileIODfsConnect() {
   describe('fileIO_test_DfsConnect', function () {
 
   /**
+   * @tc.name   fileIO_test_connectDfs_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_connectDfs_0100
-   * @tc.name fileIO_test_connectDfs_001
-   * @tc.desc Test connectDfs() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test connectDfs() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_connectDfs_001', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_connectDfs_001';
@@ -54,13 +53,12 @@ export default function fileIODfsConnect() {
   });
 
   /**
+   * @tc.name   fileIO_test_connectDfs_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_connectDfs_0200
-   * @tc.name fileIO_test_connectDfs_002
-   * @tc.desc Test disconnectDfs() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test disconnectDfs() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_connectDfs_002', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_connectDfs_002';

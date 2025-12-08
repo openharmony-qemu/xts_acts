@@ -64,6 +64,20 @@ export default function AddResourceChangeRequestSuppTest() {
           done();
         }
       }
+    const testInvalidResourceDataIMAGE1 =
+      async (testNum: string, done: Function, fun: () => void, callback: (errCode: ESObject) => void) => {
+        try {
+          console.info(TAG, testNum, 'Start');
+          fun();
+          console.info(TAG, testNum, 'Success testInvalidResourceDataIMAGE');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(TAG, testNum, `Failed testInvalidResourceDataIMAGE`, error.code, JSON.stringify(error));
+          callback(error);
+          done();
+        }
+      }
     const testInvalidResourceDataVIDEO =
       async (testNum: string, resourceType: photoAccessHelper.ResourceType, resourceData: ArrayBuffer,
         done: Function, callback: (errCode: ESObject) => void) => {
@@ -79,6 +93,20 @@ export default function AddResourceChangeRequestSuppTest() {
           done();
         } catch (error) {
           console.error(TAG, testNum, `Failed testInvalidResourceDataVIDEO`, error.code, JSON.stringify(error));
+          callback(error);
+          done();
+        }
+      }
+    const testInvalidResourceDataIVIDEO1 =
+      async (testNum: string, done: Function, fun: () => void, callback: (errCode: ESObject) => void) => {
+        try {
+          console.info(TAG, testNum, 'Start');
+          fun();
+          console.info(TAG, testNum, 'Success testInvalidResourceDataIMAGE');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(TAG, testNum, `Failed testInvalidResourceDataIMAGE`, error.code, JSON.stringify(error));
           callback(error);
           done();
         }
@@ -127,12 +155,12 @@ export default function AddResourceChangeRequestSuppTest() {
       }
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100', null as ESObject,
@@ -143,12 +171,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200',
@@ -158,12 +186,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(photoAccessHelper.ResourceType) + 1;
@@ -174,12 +202,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400', 0,
@@ -189,12 +217,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500', -1,
@@ -204,12 +232,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600',
@@ -220,12 +248,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700', null as ESObject,
@@ -235,12 +263,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800',
@@ -250,12 +278,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(photoAccessHelper.ResourceType) + 1;
@@ -266,12 +294,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000', 0,
@@ -281,12 +309,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100', -1,
@@ -296,12 +324,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200',
@@ -311,12 +339,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300',
@@ -326,12 +354,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400',
@@ -341,12 +369,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500',
@@ -356,12 +384,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600',
@@ -372,12 +400,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700',
@@ -387,12 +415,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800',
@@ -402,12 +430,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900',
@@ -417,12 +445,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000',
@@ -433,12 +461,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100',
@@ -448,12 +476,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200',
@@ -463,12 +491,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300',
@@ -478,12 +506,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400',
@@ -494,12 +522,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500',
@@ -509,12 +537,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600',
@@ -525,12 +553,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700',
@@ -540,12 +568,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800',
@@ -556,12 +584,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900',
@@ -571,12 +599,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000',
@@ -587,12 +615,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100',
@@ -602,12 +630,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200',
@@ -618,12 +646,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300',
@@ -633,12 +661,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400',
@@ -648,12 +676,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500',
@@ -663,12 +691,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600',
@@ -679,12 +707,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700',
@@ -694,12 +722,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800',
@@ -709,12 +737,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900',
@@ -724,12 +752,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000',
@@ -740,12 +768,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100',
@@ -755,12 +783,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200',
@@ -770,12 +798,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300',
@@ -785,12 +813,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400',
@@ -801,12 +829,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500',
@@ -816,12 +844,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600',
@@ -832,12 +860,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700',
@@ -847,12 +875,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800',
@@ -863,12 +891,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900',
@@ -878,12 +906,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000',
@@ -894,12 +922,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100',
@@ -909,12 +937,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200',
@@ -925,12 +953,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300',
@@ -941,12 +969,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400',
@@ -957,12 +985,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500',
@@ -973,12 +1001,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600',
@@ -989,12 +1017,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700',
@@ -1005,12 +1033,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800',
@@ -1021,12 +1049,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900',
@@ -1037,12 +1065,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000',
@@ -1053,12 +1081,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100',
@@ -1069,12 +1097,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200',
@@ -1085,12 +1113,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300',
@@ -1101,12 +1129,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400',
@@ -1117,12 +1145,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500',
@@ -1133,12 +1161,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600',
@@ -1149,12 +1177,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700', Level.LEVEL2, async (done: Function) => {
       await testInvalidIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700',
@@ -1165,12 +1193,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800',
@@ -1181,12 +1209,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900',
@@ -1197,12 +1225,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000',
@@ -1213,12 +1241,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100',
@@ -1229,12 +1257,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200',
@@ -1245,12 +1273,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300',
@@ -1261,12 +1289,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400',
@@ -1277,12 +1305,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500',
@@ -1293,12 +1321,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600',
@@ -1309,12 +1337,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700',
@@ -1325,12 +1353,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800',
@@ -1341,12 +1369,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900',
@@ -1357,12 +1385,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000',
@@ -1373,12 +1401,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100',
@@ -1389,12 +1417,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200', Level.LEVEL2, async (done: Function) => {
       await testInvalidVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200',
@@ -1405,12 +1433,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8300
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8300
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8300
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8300', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8300', -1000,
@@ -1420,12 +1448,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8400
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8400
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8400
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8400', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8400', 1000,
@@ -1435,12 +1463,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8500
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8500
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8500', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8500',
@@ -1451,12 +1479,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8600
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8600
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8600
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8600', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8600', -1000,
@@ -1466,12 +1494,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8700
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8700
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8700', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8700', 1000,
@@ -1481,12 +1509,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8800
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8800
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8800', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8800',
@@ -1497,12 +1525,12 @@ export default function AddResourceChangeRequestSuppTest() {
 
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9000
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9000
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9000',
@@ -1513,12 +1541,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9300
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9300
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9300
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9300', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9300',
@@ -1529,12 +1557,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9500
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9500
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9500', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9500',
@@ -1545,12 +1573,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9600
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9600
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9600
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9600', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9600',
@@ -1561,12 +1589,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9700
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9700
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9700', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9700',
@@ -1577,12 +1605,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9800
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9800
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9800', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataIMAGE('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9800',
@@ -1593,12 +1621,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9900
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9900
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9900
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9900', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_9900',
@@ -1609,12 +1637,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_10000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_10000
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_10000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_10000
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_10000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_10000',
@@ -1625,12 +1653,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_15000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_15000
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_15000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_15000
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_15000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_15000',
@@ -1641,12 +1669,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_16000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_16000
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_16000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_16000
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_16000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_16000',
@@ -1657,12 +1685,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_17000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_17000
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_17000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_17000
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_17000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_17000',
@@ -1673,12 +1701,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_18000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_18000
-     * @tc.desc    add resource by invalid
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_18000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_18000
+     * @tc.desc   add resource by invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_18000', Level.LEVEL2, async (done: Function) => {
       await testInvalidResourceDataVIDEO('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_18000',
@@ -1686,6 +1714,526 @@ export default function AddResourceChangeRequestSuppTest() {
         (errCode: ESObject) => {
           expect(errCode.code).assertEqual('401');
         });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PHOTO_PROXY, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PHOTO_PROXY, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PHOTO_PROXY, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PHOTO_PROXY, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
     });
   });
 }

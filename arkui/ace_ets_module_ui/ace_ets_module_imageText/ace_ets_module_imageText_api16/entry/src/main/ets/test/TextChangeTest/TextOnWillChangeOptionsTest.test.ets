@@ -46,13 +46,13 @@ export default function TextOnWillChangeOptionsTest() {
       console.info("TextOnWillChangeOptionsTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         TextOnWillChangeOptionsTest0001
-    * @tc.desic        Test search Add text
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    /**
+     * @tc.name   TextOnWillChangeOptionsTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   TextOnWillChangeOptionsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextOnWillChangeOptionsTest0001', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -111,13 +111,13 @@ export default function TextOnWillChangeOptionsTest() {
     });
 
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         TextOnWillChangeOptionsTest0002
-    * @tc.desic        Test search delete text
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    /**
+     * @tc.name   TextOnWillChangeOptionsTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   TextOnWillChangeOptionsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextOnWillChangeOptionsTest0002', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -176,13 +176,13 @@ export default function TextOnWillChangeOptionsTest() {
     });
 
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         TextOnWillChangeOptionsTest0003
-    * @tc.desic        Test TextArea Add text
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    /**
+     * @tc.name   TextOnWillChangeOptionsTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   TextOnWillChangeOptionsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextOnWillChangeOptionsTest0003', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -241,13 +241,13 @@ export default function TextOnWillChangeOptionsTest() {
     });
 
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-    * @tc.name         TextOnWillChangeOptionsTest0004
-    * @tc.desic        Test TextArea delete text
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    /**
+     * @tc.name   TextOnWillChangeOptionsTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   TextOnWillChangeOptionsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextOnWillChangeOptionsTest0004', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -306,13 +306,13 @@ export default function TextOnWillChangeOptionsTest() {
     });
 
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-    * @tc.name         TextOnWillChangeOptionsTest0005
-    * @tc.desic        Test TextInput Add text
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    /**
+     * @tc.name   TextOnWillChangeOptionsTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   TextOnWillChangeOptionsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextOnWillChangeOptionsTest0005', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -371,13 +371,13 @@ export default function TextOnWillChangeOptionsTest() {
     });
 
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-    * @tc.name         TextOnWillChangeOptionsTest0006
-    * @tc.desic        Test TextInput delete text
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    /**
+     * @tc.name   TextOnWillChangeOptionsTest0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   TextOnWillChangeOptionsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextOnWillChangeOptionsTest0006', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();

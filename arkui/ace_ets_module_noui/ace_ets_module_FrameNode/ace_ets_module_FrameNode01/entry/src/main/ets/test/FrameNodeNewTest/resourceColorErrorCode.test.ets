@@ -47,12 +47,12 @@ export default function resourceColorErrorCodeTest() {
     });
 
     /**
-     * @tc.number    resourceColorErrorCodeTest_0100
-     * @tc.name      resourceColorErrorCodeTest_0100
-     * @tc.desc      frameNode: resource Color Error Code
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   resourceColorErrorCodeTest_0100
+     * @tc.number resourceColorErrorCodeTest_0100
+     * @tc.desc   frameNode: resource Color Error Code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('resourceColorErrorCodeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('resourceColorErrorCodeTest_0100 START');

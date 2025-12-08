@@ -37,15 +37,15 @@ export default function nativeApiImageJsunit() {
       console.info('afterAll case');
     })
 
-    /* *
-        * @tc.number    : TC_001
-        * @tc.name      : Test OH_GetImageInfo, OH_AccessPixels, OH_UnAccessPixels
-        * @tc.desc      :
-        * @tc.size      :
-        * @tc.type      : Functional
-        * @tc.level     : FWK Layer
-    */
 
+    /**
+     * @tc.name   TC_001
+     * @tc.number TC_001
+     * @tc.desc   TC_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TC_001', Level.LEVEL0, async (done: Function) => {
       const color = new ArrayBuffer(96);
       let opts: image.InitializationOptions = {

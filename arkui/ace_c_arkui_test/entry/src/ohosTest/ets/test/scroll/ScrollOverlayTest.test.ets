@@ -26,117 +26,117 @@ export default function scrollOverlayTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0100
-     * @tc.name       : testScrollOverlay001
-     * @tc.desc       : testing overlay for scroll with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0100
+     * @tc.desc   testing overlay for scroll with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0200
-     * @tc.name       : testScrollOverlay002
-     * @tc.desc       : testing overlay for scroll with top value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0200
+     * @tc.desc   testing overlay for scroll with top value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0300
-     * @tc.name       : testScrollOverlay003
-     * @tc.desc       : testing overlay for scroll with topEnd value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0300
+     * @tc.desc   testing overlay for scroll with topEnd value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0400
-     * @tc.name       : testScrollOverlay004
-     * @tc.desc       : testing overlay for scroll with start value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0400
+     * @tc.desc   testing overlay for scroll with start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0500
-     * @tc.name       : testScrollOverlay005
-     * @tc.desc       : testing overlay for scroll with center value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0500
+     * @tc.desc   testing overlay for scroll with center value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay005()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0600
-     * @tc.name       : testScrollOverlay006
-     * @tc.desc       : testing overlay for scroll with end value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay006
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0600
+     * @tc.desc   testing overlay for scroll with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay006()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0700
-     * @tc.name       : testScrollOverlay007
-     * @tc.desc       : testing overlay for scroll with bottomStart value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay007
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0700
+     * @tc.desc   testing overlay for scroll with bottomStart value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay007()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0800
-     * @tc.name       : testScrollOverlay008
-     * @tc.desc       : testing overlay for scroll with bottom value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay008
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0800
+     * @tc.desc   testing overlay for scroll with bottom value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay008()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_OVERLAY_0900
-     * @tc.name       : testScrollOverlay009
-     * @tc.desc       : testing overlay for scroll with bottomEnd value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOverlay009
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_OVERLAY_0900
+     * @tc.desc   testing overlay for scroll with bottomEnd value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOverlay009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollOverlay009()).assertEqual(0)

@@ -45,10 +45,13 @@ export default function copyOptionJsunit() {
       console.info("copyOption after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testcopyOption0001
-     * @tc.desic         acecopyOptionEtsTest0001
+    /**
+     * @tc.name   testcopyOption0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testcopyOption0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testcopyOption0001', Level.LEVEL1, async (done: Function) => {
       console.info('hoverEffect testcopyOption0001 START');
@@ -61,10 +64,13 @@ export default function copyOptionJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testcopyOption0002
-     * @tc.desic         acecopyOptionEtsTest0002
+    /**
+     * @tc.name   testcopyOption0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testcopyOption0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testcopyOption0002', Level.LEVEL1, async (done: Function) => {
       console.info('hoverEffect testcopyOption0002 START');

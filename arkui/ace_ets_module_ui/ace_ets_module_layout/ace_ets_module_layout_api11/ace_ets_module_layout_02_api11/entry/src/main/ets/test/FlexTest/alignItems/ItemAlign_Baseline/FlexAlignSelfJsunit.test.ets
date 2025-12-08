@@ -46,9 +46,12 @@ export default function flexAlignSelf_BaselineJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignBaselineSetAlignSelf
      * @tc.number SUB_ACE_FLEXALIGNITEMS_BASELINE_1300
-     * @tc.name testFlexItemAlignBaselineSetAlignSelf
-     * @tc.desc The first subcomponent set ItemAlign.End attribute.
+     * @tc.desc   The first subcomponent set ItemAlign.End attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignBaselineSetAlignSelf',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignBaselineSetAlignSelf START');

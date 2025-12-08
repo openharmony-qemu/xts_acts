@@ -86,12 +86,12 @@ export default function getSupportedSceneModesTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_SCENE_MODES_001
-     * @tc.name      : getSupportedSceneModes_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedSceneModes_001
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_SCENE_MODES_001
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedSceneModes_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedSceneModes_001';
@@ -116,12 +116,12 @@ export default function getSupportedSceneModesTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_SCENE_MODES_002
-     * @tc.name      : getSupportedSceneModes_abnormal_001
-     * @tc.desc      : sceneMode->invalid mode -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getSupportedSceneModes_abnormal_001
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_SCENE_MODES_002
+     * @tc.desc   sceneMode->invalid mode -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getSupportedSceneModes_abnormal_001', Level.LEVEL2, (done: Function) => {
       const testName = 'getSupportedSceneModes_abnormal_001';
@@ -129,12 +129,12 @@ export default function getSupportedSceneModesTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_SCENE_MODES_003
-     * @tc.name      : getSupportedSceneModes_abnormal_002
-     * @tc.desc      : sceneMode->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getSupportedSceneModes_abnormal_002
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_SCENE_MODES_003
+     * @tc.desc   sceneMode->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getSupportedSceneModes_abnormal_002', Level.LEVEL2, (done: Function) => {
       const testName = 'getSupportedSceneModes_abnormal_002';
@@ -142,12 +142,12 @@ export default function getSupportedSceneModesTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_SCENE_MODES_004
-     * @tc.name      : getSupportedSceneModes_abnormal_003
-     * @tc.desc      : sceneMode->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getSupportedSceneModes_abnormal_003
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_SCENE_MODES_004
+     * @tc.desc   sceneMode->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getSupportedSceneModes_abnormal_003', Level.LEVEL2, (done: Function) => {
       const testName = 'getSupportedSceneModes_abnormal_003';

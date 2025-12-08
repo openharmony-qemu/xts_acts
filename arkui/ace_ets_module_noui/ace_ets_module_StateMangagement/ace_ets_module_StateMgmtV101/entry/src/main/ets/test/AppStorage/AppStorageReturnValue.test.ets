@@ -46,12 +46,12 @@ export default function AppStorageReturnValue() {
     });
 
     /**
-     * @tc.number    AppStorageReturnValue_001
-     * @tc.name      AppStorageReturnValue_001
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   AppStorageReturnValue_001
+     * @tc.number AppStorageReturnValue_001
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_001', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_001] START');
@@ -64,12 +64,12 @@ export default function AppStorageReturnValue() {
     });
 
     /**
-     * @tc.number    AppStorageReturnValue_002
-     * @tc.name      AppStorageReturnValue_002
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   AppStorageReturnValue_002
+     * @tc.number AppStorageReturnValue_002
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_002', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_002] START');
@@ -87,12 +87,12 @@ export default function AppStorageReturnValue() {
     });
 
     /**
-     * @tc.number    AppStorageReturnValue_003
-     * @tc.name      AppStorageReturnValue_003
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   AppStorageReturnValue_003
+     * @tc.number AppStorageReturnValue_003
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_003', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_003] START');
@@ -110,12 +110,12 @@ export default function AppStorageReturnValue() {
     });
 
     /**
-     * @tc.number    AppStorageReturnValue_004
-     * @tc.name      AppStorageReturnValue_004
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   AppStorageReturnValue_004
+     * @tc.number AppStorageReturnValue_004
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_004', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_004] START');
@@ -133,12 +133,12 @@ export default function AppStorageReturnValue() {
     });
 
     /**
-     * @tc.number    AppStorageReturnValue_005
-     * @tc.name      AppStorageReturnValue_005
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   AppStorageReturnValue_005
+     * @tc.number AppStorageReturnValue_005
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_005', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_005] START');
@@ -156,12 +156,12 @@ export default function AppStorageReturnValue() {
     });
    
     /**
-     * @tc.number    AppStorageReturnValue_006
-     * @tc.name      AppStorageReturnValue_006
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   AppStorageReturnValue_006
+     * @tc.number AppStorageReturnValue_006
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_006', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_006] START');
@@ -178,12 +178,12 @@ export default function AppStorageReturnValue() {
     });
 
     /**
-     * @tc.number    AppStorageReturnValue_007
-     * @tc.name      AppStorageReturnValue_007
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   AppStorageReturnValue_007
+     * @tc.number AppStorageReturnValue_007
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_007', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_007] START');
@@ -198,13 +198,13 @@ export default function AppStorageReturnValue() {
       console.info('[AppStorageReturnValue_007] END');
       done();
     });
-     /**
-     * @tc.number    AppStorageReturnValue_008
-     * @tc.name      AppStorageReturnValue_008
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+    /**
+     * @tc.name   AppStorageReturnValue_008
+     * @tc.number AppStorageReturnValue_008
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_008', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_008] START');
@@ -221,13 +221,13 @@ export default function AppStorageReturnValue() {
       console.info('[AppStorageReturnValue_008] END');
       done();
     });
-       /**
-     * @tc.number    AppStorageReturnValue_009
-     * @tc.name      AppStorageReturnValue_009
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+    /**
+     * @tc.name   AppStorageReturnValue_009
+     * @tc.number AppStorageReturnValue_009
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_009', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_009] START');
@@ -246,12 +246,12 @@ export default function AppStorageReturnValue() {
     });
 
     /**
-     * @tc.number    AppStorageReturnValue_010
-     * @tc.name      AppStorageReturnValue_010
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   AppStorageReturnValue_010
+     * @tc.number AppStorageReturnValue_010
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_010', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_010] START');
@@ -266,12 +266,12 @@ export default function AppStorageReturnValue() {
     });
 
     /**
-     * @tc.number    AppStorageReturnValue_011
-     * @tc.name      AppStorageReturnValue_011
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   AppStorageReturnValue_011
+     * @tc.number AppStorageReturnValue_011
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AppStorageReturnValue_011', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_011] START');

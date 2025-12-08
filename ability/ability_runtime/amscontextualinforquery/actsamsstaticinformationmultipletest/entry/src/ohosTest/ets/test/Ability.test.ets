@@ -28,10 +28,13 @@ let subscriberInfo:commonEventManager.CommonEventSubscribeInfo = {
 export default function abilityTest() {
   describe('ActsAbilityMultipleTest', () => {
 
-    /*
-     * @tc.number: ACTS_getAbilityInfo_0500
-     * @tc.name: Starting singleton ability the second time does triggers onNewWant.
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+    /**
+     * @tc.name   ACTS_getAbilityInfo_0500
+     * @tc.number ACTS_getAbilityInfo_0500
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_getAbilityInfo_0500', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_getAbilityInfo_0500 --- start")

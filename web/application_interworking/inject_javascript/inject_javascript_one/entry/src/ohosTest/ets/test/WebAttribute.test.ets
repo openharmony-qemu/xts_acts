@@ -56,14 +56,14 @@ export default function webAttribute() {
       console.info('webAttribute beforeEach start');
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_JAVASCRIPTACCESS_0100
-    * @tc.name       : testJavaScriptAccess001
-    * @tc.desc       : test javaScriptAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testJavaScriptAccess001
+     * @tc.number SUB_WEB_JAVASCRIPTACCESS_0100
+     * @tc.desc   test javaScriptAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJavaScriptAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptAccess001", 172160)
       Utils.registerEvent("testJavaScriptAccess001", true, 172170, done);

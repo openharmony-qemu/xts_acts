@@ -35,6 +35,7 @@ export default function TextParagraphTest() {
     let globalStructStyle: text.StrutStyle;
     let globalCanvas: drawing.Canvas;
     let checkFontStyle: text.FontStyle;
+    let globalParagraph: text.Paragraph;
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
@@ -42,7 +43,12 @@ export default function TextParagraphTest() {
         globalFontCollection = text.FontCollection.getGlobalInstance()
         globalFontCollection.loadFontSync('myFamilyName', 'file:///system/fonts/HarmonyOS_Sans.ttf')
         let myFontFamily: Array<string> = ["myFamilyName"]
-        let myColor: common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
+        let myColor: common2D.Color = { 
+          alpha: 255, 
+          red: 255, 
+          green: 0, 
+          blue: 0 
+        };
 
         let fontFeatures: Array<text.FontFeature> = new Array<text.FontFeature>(2);
         fontFeatures[0] = { name: "liga", value: 1 };
@@ -128,19 +134,39 @@ export default function TextParagraphTest() {
           textHeightBehavior: text.TextHeightBehavior.DISABLE_LAST_ASCENT,
           tab: textTab
         };
-        expect(true).assertTrue();
+
+        let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection);
+        expect(paragraphBuilder !== undefined).assertTrue();
+        paragraphBuilder.pushStyle(globalTextStyle);
+        paragraphBuilder.addText('The quick brown fox jumps over the lazy dog.');
+        globalParagraph = paragraphBuilder.build();
+        expect(globalParagraph !== undefined).assertTrue();
+        
+        const opts: image.InitializationOptions = {
+          size: { width: 480, height: 360 },
+          editable: true,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+        };
+        let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+        if (pixelMap == null ){
+          console.info('www data create image.createPixelMapSync failed');
+          return;
+        }
+        console.info('www data create image.createPixelMapSync success');
+        globalCanvas = new drawing.Canvas(pixelMap);
+        expect(globalCanvas !== undefined).assertTrue();
       } catch (err) {
         hilog.error(domain, tag, `Failed in ParagraphTest init global params. Cause:${JSON.stringify(err)}`);
       }
     })
 
     /**
-     * @tc.number    : testCreateParagraphStatic
-     * @tc.name      : testCreateParagraphStatic
-     * @tc.desc      : To test create a paragraph.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testCreateParagraphStatic
+     * @tc.number testCreateParagraphStatic
+     * @tc.desc   To test create a paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -160,12 +186,239 @@ export default function TextParagraphTest() {
       })
 
     /**
-     * @tc.number    : testGetLongestLineStatic
-     * @tc.name      : testGetLongestLineStatic
-     * @tc.desc      : To test method getLongestLine for paragraph.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testGetMaxWidthStatic
+     * @tc.number testGetMaxWidthStatic
+     * @tc.desc   To test method getMaxWidth for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetMaxWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let maxWidth = globalParagraph.getMaxWidth();
+          expect(maxWidth).assertEqual(100);
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getMaxWidth. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetHeightStatic
+     * @tc.number testGetHeightStatic
+     * @tc.desc   To test method getHeight for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetHeightStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let height = globalParagraph.getHeight();
+          expect(height).assertEqual(4068);
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getHeight. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetLongestLineStatic_001
+     * @tc.number testGetLongestLineStatic_001
+     * @tc.desc   To test method getLongestLine for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetLongestLineStatic_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let longestLine = globalParagraph.getLongestLine();
+          expect(Math.round(longestLine * 100) / 100).assertEqual(163.51);
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getLongestLine. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetLongestLineWithIndentStatic
+     * @tc.number testGetLongestLineWithIndentStatic
+     * @tc.desc   To test method getLongestLineWithIndent for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetLongestLineWithIndentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let width = globalParagraph.getLongestLineWithIndent();
+          expect(Math.round(width * 100) / 100).assertEqual(163.51);
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getLongestLineWithIndent. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetMinIntrinsicWidthStatic
+     * @tc.number testGetMinIntrinsicWidthStatic
+     * @tc.desc   To test method getMinIntrinsicWidth for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetMinIntrinsicWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let width = globalParagraph.getMinIntrinsicWidth();
+          expect(Math.round(width * 100) / 100).assertEqual(257.22);
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getMinIntrinsicWidth. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetMaxIntrinsicWidthStatic
+     * @tc.number testGetMaxIntrinsicWidthStatic
+     * @tc.desc   To test method getMaxIntrinsicWidth for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetMaxIntrinsicWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let width = globalParagraph.getMaxIntrinsicWidth();
+          expect(Math.round(width * 100) / 100).assertEqual(2302.72);
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getMaxIntrinsicWidth. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetAlphabeticBaselineStatic
+     * @tc.number testGetAlphabeticBaselineStatic
+     * @tc.desc   To test method getAlphabeticBaseline for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetAlphabeticBaselineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let alphabeticBaseline = globalParagraph.getAlphabeticBaseline();
+          expect(Math.round(alphabeticBaseline * 100) / 100).assertEqual(303.39);
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getAlphabeticBaseline. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetRectsForRangeStatic
+     * @tc.number testGetRectsForRangeStatic
+     * @tc.desc   To test method getRectsForRange for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetRectsForRangeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let range: text.Range = { start: 0, end: 10 };
+          let boxArray: Array<text.TextBox> = 
+            globalParagraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.MAX);
+          for (let i = 0; i < boxArray.length; i++) {
+            hilog.info(domain, tag, `TEXT_LOG RectsForRange [${i}]: ${JSON.stringify(boxArray[i])}`);
+          }
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getRectsForRange. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetRectsForPlaceholdersStatic
+     * @tc.number testGetRectsForPlaceholdersStatic
+     * @tc.desc   To test method getRectsForPlaceholders for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetRectsForPlaceholdersStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let placeHolders: Array<text.TextBox> = globalParagraph.getRectsForPlaceholders();
+          for(let i = 0; i < placeHolders.length; i++){
+            const item = placeHolders[i];
+            hilog.info(domain, tag, 'Text_LOG RectsForPlaceholders:%{public}s', JSON.stringify(item));
+          }
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getRectsForPlaceholders. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetGlyphPositionAtCoordinateStatic
+     * @tc.number testGetGlyphPositionAtCoordinateStatic
+     * @tc.desc   To test method getGlyphPositionAtCoordinate for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetGlyphPositionAtCoordinateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          globalParagraph.layoutSync(100);
+          let position: text.PositionWithAffinity = globalParagraph.getGlyphPositionAtCoordinate(10, 1);
+          console.info('www data GlyphPositionAtCoordinate ' + JSON.stringify(position));
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `Failed in getGlyphPositionAtCoordinate. Cause:${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetLongestLineStatic
+     * @tc.number testGetLongestLineStatic
+     * @tc.desc   To test method getLongestLine for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLongestLineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -179,7 +432,6 @@ export default function TextParagraphTest() {
           paragraph.layoutSync(100);
           let longestLine = paragraph.getLongestLine();
           console.info('www data lxt ' + JSON.stringify(longestLine));
-          expect(true).assertTrue();
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLongestLine. Cause:${JSON.stringify(err)}`);
@@ -189,12 +441,12 @@ export default function TextParagraphTest() {
       })
 
     /**
-     * @tc.number    : testGetLineMetricsStatic
-     * @tc.name      : testGetLineMetricsStatic
-     * @tc.desc      : To test method getLineMetrics for paragraph.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testGetLineMetricsStatic
+     * @tc.number testGetLineMetricsStatic
+     * @tc.desc   To test method getLineMetrics for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLineMetricsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -210,11 +462,10 @@ export default function TextParagraphTest() {
           let lineMetrics: Array<text.LineMetrics> = paragraph.getLineMetrics();
           console.info('www data lxt ' + JSON.stringify(lineMetrics))
           console.info('www data lxt ' + JSON.stringify(lineMetrics.length))
-          expect(true).assertTrue();
 
-          let preBaseLine: double = 0;
-          let preHeight: double = 0;
-          let tempHeight: double = 0;
+          let preBaseLine: number = 0;
+          let preHeight: number = 0;
+          let tempHeight: number = 0;
           for (let i = 0; i < lineMetrics.length; i++) {
             const item = lineMetrics[i];
             hilog.error(0x0000, 'Text', 'MM_LOG line metrics info [%{public}d] data: %{public}s', i,
@@ -274,13 +525,13 @@ export default function TextParagraphTest() {
                 expect(Math.round(fontMetrics.descent * 100) / 100).assertEqual(7.81)
                 expect(Math.round(fontMetrics.top * 100) / 100).assertEqual(-33.79)
                 expect(Math.round(fontMetrics.bottom * 100) / 100).assertEqual(8.67)
-                // expect(Math.round(fontMetrics.leading * 100) / 100).assertEqual(0)
+                expect(Math.round(fontMetrics.leading * 100) / 100).assertEqual(0)
               } else if ((Math.round(fontMetrics.ascent * 100) / 100) == -29.65) {
                 expect(Math.round(fontMetrics.ascent * 100) / 100).assertEqual(-29.65)
                 expect(Math.round(fontMetrics.descent * 100) / 100).assertEqual(7.93)
                 expect(Math.round(fontMetrics.top * 100) / 100).assertEqual(-29.65)
                 expect(Math.round(fontMetrics.bottom * 100) / 100).assertEqual(7.93)
-                // expect(Math.round(fontMetrics.leading * 100) / 100).assertEqual(0)
+                expect(Math.round(fontMetrics.leading * 100) / 100).assertEqual(0)
               } else {
                 hilog.error(0x0000, 'Text', 'MM_LOG fontMetrics.ascent: %{public}d',
                   (Math.round(fontMetrics.ascent * 100) / 100));
@@ -297,12 +548,12 @@ export default function TextParagraphTest() {
       })
 
     /**
-     * @tc.number    : testGetLineMetricsAtStatic
-     * @tc.name      : testGetLineMetricsAtStatic
-     * @tc.desc      : To test method getLineMetricsAt for paragraph.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testGetLineMetricsAtStatic
+     * @tc.number testGetLineMetricsAtStatic
+     * @tc.desc   To test method getLineMetricsAt for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLineMetricsAtStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -369,7 +620,7 @@ export default function TextParagraphTest() {
                 expect(Math.round(fontMetrics.descent * 100) / 100).assertEqual(7.81)
                 expect(Math.round(fontMetrics.top * 100) / 100).assertEqual(-33.79)
                 expect(Math.round(fontMetrics.bottom * 100) / 100).assertEqual(8.67)
-                // expect(Math.round(fontMetrics.leading * 100) / 100).assertEqual(0)
+                expect(Math.round(fontMetrics.leading * 100) / 100).assertEqual(0)
               })
             }
           }
@@ -383,12 +634,12 @@ export default function TextParagraphTest() {
       })
 
     /**
-     * @tc.number    : testPaintStatic
-     * @tc.name      : testPaintStatic
-     * @tc.desc      : To test method paint for paragraph.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testPaintStatic
+     * @tc.number testPaintStatic
+     * @tc.desc   To test method paint for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPaintStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -401,7 +652,7 @@ export default function TextParagraphTest() {
           let paragraph = paragraphBuilder.build();
           expect(paragraph !== undefined).assertTrue()
           paragraph.layoutSync(100);
-          expect(true).assertTrue();
+          paragraph.paint(globalCanvas, 0, 0);
           done()
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLineMetricsAt. Cause:${JSON.stringify(err)}`);
@@ -411,12 +662,12 @@ export default function TextParagraphTest() {
       })
 
     /**
-     * @tc.number    : testPaintOnPathStatic_01
-     * @tc.name      : testPaintOnPathStatic_01
-     * @tc.desc      : To test method paintOnPath for paragraph.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testPaintOnPathStatic_01
+     * @tc.number testPaintOnPathStatic_01
+     * @tc.desc   To test method paintOnPath for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPaintOnPathStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -434,7 +685,6 @@ export default function TextParagraphTest() {
           expect(paragraph !== undefined).assertTrue()
           paragraph.layoutSync(100);
           console.info('www data text ', 5555)
-          expect(true).assertTrue();
           done()
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLineMetricsAt. Cause:${JSON.stringify(err)}`);

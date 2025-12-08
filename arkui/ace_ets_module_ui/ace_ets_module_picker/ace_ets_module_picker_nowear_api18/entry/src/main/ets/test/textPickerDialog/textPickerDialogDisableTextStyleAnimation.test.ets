@@ -40,12 +40,14 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       console.info('textPickerDialogDisableTextStyleAnimationTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: textPickerDialogDisableTextStyleAnimationTest_001
-    * @tc.name  : textPickerDialogDisableTextStyleAnimationTest_001
-    * @tc.desc  : To test the disableTextStyleAnimation true
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textPickerDialogDisableTextStyleAnimationTest_001
+     * @tc.number textPickerDialogDisableTextStyleAnimationTest_001
+     * @tc.desc   To test the disableTextStyleAnimation true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerDialogDisableTextStyleAnimationTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisableTextStyleAnimationTest_001 START');
       let driver = Driver.create();
@@ -68,12 +70,14 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       done();
     });
 
-    /* *
-    * @tc.number: textPickerDialogDisableTextStyleAnimationTest_002
-    * @tc.name  : textPickerDialogDisableTextStyleAnimationTest_002
-    * @tc.desc  : To test the disableTextStyleAnimation false
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textPickerDialogDisableTextStyleAnimationTest_002
+     * @tc.number textPickerDialogDisableTextStyleAnimationTest_002
+     * @tc.desc   To test the disableTextStyleAnimation false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerDialogDisableTextStyleAnimationTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisableTextStyleAnimationTest_001 START');
       let driver = Driver.create();
@@ -96,12 +100,14 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       done();
     });
 
-    /* *
-    * @tc.number: textPickerDialogDisableTextStyleAnimationTest_003
-    * @tc.name  : textPickerDialogDisableTextStyleAnimationTest_003
-    * @tc.desc  : To test the disableTextStyleAnimation undefined
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textPickerDialogDisableTextStyleAnimationTest_003
+     * @tc.number textPickerDialogDisableTextStyleAnimationTest_003
+     * @tc.desc   To test the disableTextStyleAnimation undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerDialogDisableTextStyleAnimationTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisableTextStyleAnimationTest_003 START');
       let driver = Driver.create();
@@ -124,12 +130,14 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       done();
     });
 
-    /* *
-    * @tc.number: textPickerDialogDisableTextStyleAnimationTest_004
-    * @tc.name  : textPickerDialogDisableTextStyleAnimationTest_004
-    * @tc.desc  : To test the disableTextStyleAnimation null
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textPickerDialogDisableTextStyleAnimationTest_004
+     * @tc.number textPickerDialogDisableTextStyleAnimationTest_004
+     * @tc.desc   To test the disableTextStyleAnimation null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerDialogDisableTextStyleAnimationTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisableTextStyleAnimationTest_004 START');
       let driver = Driver.create();

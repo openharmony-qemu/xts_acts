@@ -28,13 +28,13 @@ export default function DragActionCreateDragActionTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragActionCreateDragAction_0100
-     * @tc.name       : DragActionCreateDragActionTest001
-     * @tc.desc       : testing DragActionCreateDragAction
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionCreateDragActionTest001
+     * @tc.number SUB_ARKUI_CAPI_DragActionCreateDragAction_0100
+     * @tc.desc   testing DragActionCreateDragAction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionCreateDragActionTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragActionCreateDragActionTest001 START');

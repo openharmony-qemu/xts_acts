@@ -81,7 +81,6 @@ export default function relationalStoreDifferenceCustomDirMultipleTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   DifferenceCustomDirMultiple0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DifferenceCustomDirMultipleJsAPITest_0100
      * @tc.desc   RelationalStore store getRdbStore test
@@ -152,7 +151,6 @@ export default function relationalStoreDifferenceCustomDirMultipleTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   DifferenceCustomDirMultiple0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DifferenceCustomDirMultipleJsAPITest_0200
      * @tc.desc   RelationalStore store getRdbStore test
@@ -183,7 +181,6 @@ export default function relationalStoreDifferenceCustomDirMultipleTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   DifferenceCustomDirMultiple0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DifferenceCustomDirMultipleJsAPITest_0300
      * @tc.desc   RelationalStore store getRdbStore test
@@ -214,7 +211,6 @@ export default function relationalStoreDifferenceCustomDirMultipleTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   DifferenceCustomDirMultiple0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DifferenceCustomDirMultipleJsAPITest_0400
      * @tc.desc   RelationalStore store getRdbStore test

@@ -31,12 +31,12 @@ export default function vmOpsTest() {
     }
 
     /**
-     * @tc.number    SUB_ANI_ATTACH_CURRENT_THREAD_DETACH_CURRENT_THREAD_0100
-     * @tc.name      AttachCurrentThreadAndDetachCurrentThread_0001
-     * @tc.desc      test attach current thread and detach thread
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   AttachCurrentThreadAndDetachCurrentThread_0001
+     * @tc.number SUB_ANI_ATTACH_CURRENT_THREAD_DETACH_CURRENT_THREAD_0100
+     * @tc.desc   test attach current thread and detach thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("AttachCurrentThreadAndDetachCurrentThread_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

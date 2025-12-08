@@ -40,12 +40,12 @@ export default function createNodeText() {
       done();
     });
     /**
-     * @tc.number    createNodeText_0100
-     * @tc.name      createNodeText_0100
-     * @tc.desc      frameNode: createNodeTextToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeText_0100
+     * @tc.number createNodeText_0100
+     * @tc.desc   frameNode: createNodeTextToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeText_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeText_0100 START');

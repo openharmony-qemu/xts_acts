@@ -48,12 +48,12 @@ export default function richEditorTest() {
 
    
     /**
+     * @tc.name   testRichEditorCopyOptions01
      * @tc.number testRichEditorCopyOptions01
-     * @tc.name   Test the CopyOptions property of the RichEditor component
      * @tc.desc   set the CopyOptions property value is  CopyOptions.None
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRichEditorCopyOptions01', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testRichEditorCopyOptions01';
@@ -90,13 +90,13 @@ export default function richEditorTest() {
     });
 
     /**
+     * @tc.name   testRichEditorCopyOptions02
      * @tc.number testRichEditorCopyOptions02
-     * @tc.name   Test the CopyOptions property of the RichEditor component
      * @tc.desc   set the CopyOptions property value is  CopyOptions.InApp
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */     
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRichEditorCopyOptions02', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testRichEditorCopyOptions02';
       console.info('[' + tagName + '] START============================');
@@ -128,13 +128,13 @@ export default function richEditorTest() {
     });
 
     /**
+     * @tc.name   testRichEditorCopyOptions03
      * @tc.number testRichEditorCopyOptions03
-     * @tc.name   Test the CopyOptions property of the RichEditor component
      * @tc.desc   set the CopyOptions property value is  CopyOptions.LocalDevice
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */       
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRichEditorCopyOptions03', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testRichEditorCopyOptions03';
       console.info('[' + tagName + '] START============================');
@@ -167,13 +167,13 @@ export default function richEditorTest() {
     });
 
     /**
+     * @tc.name   testRichEditorCopyOptions04
      * @tc.number testRichEditorCopyOptions04
-     * @tc.name   Test the CopyOptions property of the RichEditor component
      * @tc.desc   set the CopyOptions property value is  CopyOptions.CROSS_DEVICE
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */      
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRichEditorCopyOptions04', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testRichEditorCopyOptions04';
       console.info('[' + tagName + '] START============================');

@@ -51,42 +51,42 @@ export default function webControllerZoom() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTROLLERZOOM_0100
-    * @tc.name       : testWebControllerZoom001
-    * @tc.desc       : test WebControllerZoom
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebControllerZoom001
+     * @tc.number SUB_WEB_WEBCONTROLLERZOOM_0100
+     * @tc.desc   test WebControllerZoom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebControllerZoom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebControllerZoom001", 153040)
       Utils.registerEvent("testWebControllerZoom001", true, 153050, done);
       sendEventByKey('WebControllerZoom', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTROLLERZOOMMAX_0100
-    * @tc.name       : testWebControllerZoomMax001
-    * @tc.desc       : test WebControllerZoomMax
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebControllerZoomMax001
+     * @tc.number SUB_WEB_WEBCONTROLLERZOOMMAX_0100
+     * @tc.desc   test WebControllerZoomMax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebControllerZoomMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebControllerZoomMax001", 153040)
       Utils.registerEvent("testWebControllerZoomMax001", true, 153060, done);
       sendEventByKey('WebControllerZoom', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTROLLERZOOMMIN_0100
-    * @tc.name       : testWebControllerZoomMin001
-    * @tc.desc       : test WebControllerZoomMin
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebControllerZoomMin001
+     * @tc.number SUB_WEB_WEBCONTROLLERZOOMMIN_0100
+     * @tc.desc   test WebControllerZoomMin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebControllerZoomMin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebControllerZoomMin001", 153040)
       Utils.registerEvent("testWebControllerZoomMin001", true, 153070, done);

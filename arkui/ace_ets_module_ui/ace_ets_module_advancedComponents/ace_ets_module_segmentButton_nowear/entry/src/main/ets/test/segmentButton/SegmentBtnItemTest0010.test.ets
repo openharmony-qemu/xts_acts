@@ -53,12 +53,12 @@ export default function SegmentBtnItemTest0010() {
     });
 
     /**
+     * @tc.name   SegmentBtnItem0010_0100
      * @tc.number SegmentBtnItem0010_0100
-     * @tc.name SegmentBtnItem0010_0100
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentBtnItem0010_0100', Level.LEVEL0, async (done: Function) => {
       console.log("SegmentBtnItem0010_0100 ", "START");
@@ -92,12 +92,12 @@ export default function SegmentBtnItemTest0010() {
       done();
     });
     /**
+     * @tc.name   SegmentBtnItem0010_0200
      * @tc.number SegmentBtnItem0010_0200
-     * @tc.name SegmentBtnItem0010_0200
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentBtnItem0010_0200', Level.LEVEL0, async (done: Function) => {
       console.log("SegmentBtnItem0010_0200 ", "START");
@@ -144,12 +144,12 @@ export default function SegmentBtnItemTest0010() {
       done();
     });
     /**
+     * @tc.name   SegmentBtnItem0010_0300
      * @tc.number SegmentBtnItem0010_0300
-     * @tc.name SegmentBtnItem0010_0300
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentBtnItem0010_0300', Level.LEVEL0, async (done: Function) => {
       console.log("SegmentBtnItem0010_0300 ", "START");
@@ -193,12 +193,12 @@ export default function SegmentBtnItemTest0010() {
       done();
     });
     /**
+     * @tc.name   SegmentBtnItem0010_0400
      * @tc.number SegmentBtnItem0010_0400
-     * @tc.name SegmentBtnItem0010_0400
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentBtnItem0010_0400', Level.LEVEL0, async (done: Function) => {
       console.log("SegmentBtnItem0010_0400 ", "START");

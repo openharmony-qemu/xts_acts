@@ -43,12 +43,12 @@ export default function focusWrapWrap() {
     });
 
     /**
-     * @tc.number    focusWrapWrap_001
-     * @tc.name      focusWrapWrap_0100
-     * @tc.desc      Set the focus mode to cross axis direction key to allow line breaks.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusWrapWrap_0100
+     * @tc.number focusWrapWrap_001
+     * @tc.desc   Set the focus mode to cross axis direction key to allow line breaks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('focusWrapWrap_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[focusWrapWrap_0100] START');

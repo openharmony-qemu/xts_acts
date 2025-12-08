@@ -45,12 +45,12 @@ export default function common9Jsunit() {
     })
 
     /**
+     * @tc.name   common_focusable
      * @tc.number common_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set focusable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set focusable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_focusable', Level.LEVEL0, async (done: Function) => {
       console.info('[common_focusable] START');
@@ -62,12 +62,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_tabIndex
      * @tc.number common_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set tabIndex values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set tabIndex values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_tabIndex', Level.LEVEL0, async (done: Function) => {
       console.info('[common_tabIndex] START');
@@ -80,12 +80,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_defaultFocus
      * @tc.number common_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set defaultFocus values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set defaultFocus values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_defaultFocus', Level.LEVEL0, async (done: Function) => {
       console.info('[common_defaultFocus] START');
@@ -98,12 +98,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_groupDefaultFocus
      * @tc.number common_0004
-     * @tc.name Test the properties of components
-     * @tc.desc Set groupDefaultFocus values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set groupDefaultFocus values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_groupDefaultFocus', Level.LEVEL0, async (done: Function) => {
       console.info('[common_groupDefaultFocus] START');
@@ -116,12 +116,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_focusOnTouch
      * @tc.number common_0005
-     * @tc.name Test the properties of components
-     * @tc.desc Set focusOnTouch values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set focusOnTouch values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_focusOnTouch', Level.LEVEL0, async (done: Function) => {
       console.info('[common_focusOnTouch] START');
@@ -134,12 +134,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_brightness
      * @tc.number common_0006
-     * @tc.name Test the properties of components
-     * @tc.desc Set brightness values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set brightness values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_brightness', Level.LEVEL0, async (done: Function) => {
       console.info('[common_brightness] START');
@@ -152,12 +152,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_contrast
      * @tc.number common_0007
-     * @tc.name Test the properties of components
-     * @tc.desc Set contrast values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set contrast values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_contrast', Level.LEVEL0, async (done: Function) => {
       console.info('[common_contrast] START');
@@ -170,12 +170,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_grayscale
      * @tc.number common_0008
-     * @tc.name Test the properties of components
-     * @tc.desc Set grayscale values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set grayscale values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_grayscale', Level.LEVEL0, async (done: Function) => {
       console.info('[common_grayscale] START');
@@ -188,12 +188,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_colorBlend
      * @tc.number common_0009
-     * @tc.name Test the properties of components
-     * @tc.desc Set colorBlend values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set colorBlend values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_colorBlend', Level.LEVEL0, async (done: Function) => {
       console.info('[common_colorBlend] START');
@@ -206,12 +206,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_saturate
      * @tc.number common_0010
-     * @tc.name Test the properties of components
-     * @tc.desc Set saturate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set saturate values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_saturate', Level.LEVEL0, async (done: Function) => {
       console.info('[common_saturate] START');
@@ -224,12 +224,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_foregroundColor
      * @tc.number common_0011
-     * @tc.name Test the properties of components
-     * @tc.desc Set foregroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set foregroundColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_foregroundColor', Level.LEVEL0, async (done: Function) => {
       console.info('[common_foregroundColor] START');
@@ -242,12 +242,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_borderImage
      * @tc.number common_0012
-     * @tc.name Test the properties of components
-     * @tc.desc Set borderImage values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set borderImage values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_borderImage', Level.LEVEL0, async (done: Function) => {
       console.info('[common_borderImage] START');
@@ -261,12 +261,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_borderWidth
      * @tc.number common_0013
-     * @tc.name Test the properties of components
-     * @tc.desc Set borderWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set borderWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_borderWidth', Level.LEVEL0, async (done: Function) => {
       console.info('[common_borderWidth] START');
@@ -282,12 +282,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_borderColor
      * @tc.number common_0014
-     * @tc.name Test the properties of components
-     * @tc.desc Set borderColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set borderColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_borderColor', Level.LEVEL0, async (done: Function) => {
       console.info('[common_borderColor] START');
@@ -303,12 +303,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_borderStyle
      * @tc.number common_0015
-     * @tc.name Test the properties of components
-     * @tc.desc Set borderStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set borderStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_borderStyle', Level.LEVEL0, async (done: Function) => {
       console.info('[common_borderStyle] START');
@@ -321,12 +321,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_borderRadius
      * @tc.number common_0016
-     * @tc.name Test the properties of components
-     * @tc.desc Set borderRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set borderRadius values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_borderRadius', Level.LEVEL0, async (done: Function) => {
       console.info('[common_borderRadius] START');
@@ -342,12 +342,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_border
      * @tc.number common_0017
-     * @tc.name Test the properties of components
-     * @tc.desc Set border values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set border values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_border', Level.LEVEL0, async (done: Function) => {
       console.info('[common_border] START');
@@ -387,12 +387,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_backgroundBlurStyle
      * @tc.number common_0018
-     * @tc.name Test the properties of components
-     * @tc.desc Set backgroundBlurStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backgroundBlurStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_backgroundBlurStyle', Level.LEVEL0, async (done: Function) => {
       console.info('[common_backgroundBlurStyle] START');
@@ -411,12 +411,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_monopolizeEvents
      * @tc.number common_0019
-     * @tc.name Test the properties of components
-     * @tc.desc Set monopolizeEvents values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set monopolizeEvents values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_monopolizeEvents', Level.LEVEL0, async (done: Function) => {
       console.info('[common_monopolizeEvents] START');
@@ -429,12 +429,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_backgroundImage
      * @tc.number common_0020
-     * @tc.name Test the properties of components
-     * @tc.desc Set backgroundImage values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backgroundImage values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_backgroundImage', Level.LEVEL0, async (done: Function) => {
       console.info('[common_backgroundImage] START');
@@ -447,12 +447,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_backgroundImageSize
      * @tc.number common_0021
-     * @tc.name Test the properties of components
-     * @tc.desc Set backgroundImageSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backgroundImageSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_backgroundImageSize', Level.LEVEL0, async (done: Function) => {
       console.info('[common_backgroundImageSize] START');
@@ -467,12 +467,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_backgroundImagePosition
      * @tc.number common_0022
-     * @tc.name Test the properties of components
-     * @tc.desc Set backgroundImagePosition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backgroundImagePosition values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_backgroundImagePosition', Level.LEVEL0, async (done: Function) => {
       console.info('[common_backgroundImagePosition] START');
@@ -486,12 +486,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_size
      * @tc.number common_0023
-     * @tc.name Test the properties of components
-     * @tc.desc Set size values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set size values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_size', Level.LEVEL0, async (done: Function) => {
       console.info('[common_size] START');
@@ -506,12 +506,12 @@ export default function common9Jsunit() {
 
 
     /**
+     * @tc.name   common_pixelStretchEffect
      * @tc.number common_0024
-     * @tc.name Test the properties of components
-     * @tc.desc Set pixelStretchEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set pixelStretchEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_pixelStretchEffect', Level.LEVEL0, async (done: Function) => {
       console.info('[common_pixelStretchEffect] START');
@@ -528,12 +528,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_backgroundBrightness
      * @tc.number common_0025
-     * @tc.name Test the properties of components
-     * @tc.desc Set backgroundBrightness values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backgroundBrightness values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_backgroundBrightness', Level.LEVEL0, async (done: Function) => {
       console.info('[common_backgroundBrightness] START');
@@ -547,12 +547,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_dragPreviewOptions
      * @tc.number common_0026
-     * @tc.name Test the properties of components
-     * @tc.desc Set dragPreviewOptions values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set dragPreviewOptions values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_dragPreviewOptions', Level.LEVEL0, async (done: Function) => {
       console.info('[common_dragPreviewOptions] START');
@@ -566,12 +566,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_layoutWeight
      * @tc.number common_0027
-     * @tc.name Test the properties of components
-     * @tc.desc Set layoutWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set layoutWeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_layoutWeight', Level.LEVEL0, async (done: Function) => {
       console.info('[common_layoutWeight] START');
@@ -584,12 +584,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_constraintSize
      * @tc.number common_0028
-     * @tc.name Test the properties of components
-     * @tc.desc Set constraintSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set constraintSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_constraintSize', Level.LEVEL0, async (done: Function) => {
       console.info('[common_constraintSize] START');
@@ -603,12 +603,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_useEffect
      * @tc.number common_0029
-     * @tc.name Test the properties of components
-     * @tc.desc Set useEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set useEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_useEffect', Level.LEVEL0, async (done: Function) => {
       console.info('[common_useEffect] START');
@@ -621,12 +621,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_sphericalEffect
      * @tc.number common_0030
-     * @tc.name Test the properties of components
-     * @tc.desc Set sphericalEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set sphericalEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_sphericalEffect', Level.LEVEL0, async (done: Function) => {
       console.info('[common_sphericalEffect] START');
@@ -639,12 +639,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_hitTestBehavior
      * @tc.number common_0031
-     * @tc.name Test the properties of components
-     * @tc.desc Set hitTestBehavior values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set hitTestBehavior values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_hitTestBehavior', Level.LEVEL0, async (done: Function) => {
       console.info('[common_hitTestBehavior] START');
@@ -658,12 +658,12 @@ export default function common9Jsunit() {
 
 
     /**
+     * @tc.name   common_lightUpEffect
      * @tc.number common_0032
-     * @tc.name Test the properties of components
-     * @tc.desc Set lightUpEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set lightUpEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_lightUpEffect', Level.LEVEL0, async (done: Function) => {
       console.info('[common_lightUpEffect] START');
@@ -676,12 +676,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_width
      * @tc.number common_0033
-     * @tc.name Test the properties of components
-     * @tc.desc Set width values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set width values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_width', Level.LEVEL0, async (done: Function) => {
       console.info('[common_width] START');
@@ -694,12 +694,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_height
      * @tc.number common_0034
-     * @tc.name Test the properties of components
-     * @tc.desc Set height values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set height values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_height', Level.LEVEL0, async (done: Function) => {
       console.info('[common_height] START');
@@ -712,12 +712,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_expandSafeArea
      * @tc.number common_0035
-     * @tc.name Test the properties of components
-     * @tc.desc Set expandSafeArea values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set expandSafeArea values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_expandSafeArea', Level.LEVEL0, async (done: Function) => {
       console.info('[common_expandSafeArea] START');
@@ -730,12 +730,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_responseRegion
      * @tc.number common_0036
-     * @tc.name Test the properties of components
-     * @tc.desc Set responseRegion values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set responseRegion values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_responseRegion', Level.LEVEL0, async (done: Function) => {
       console.info('[common_responseRegion] START');
@@ -749,12 +749,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_visibility
      * @tc.number common_0037
-     * @tc.name Test the properties of components
-     * @tc.desc Set visibility values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set visibility values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_visibility', Level.LEVEL0, async (done: Function) => {
       console.info('[common_visibility] START');
@@ -767,12 +767,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_opacity
      * @tc.number common_0038
-     * @tc.name Test the properties of components
-     * @tc.desc Set opacity values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set opacity values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_opacity', Level.LEVEL0, async (done: Function) => {
       console.info('[common_opacity] START');
@@ -785,12 +785,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_margin
      * @tc.number common_0039
-     * @tc.name Test the properties of components
-     * @tc.desc Set margin values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set margin values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_margin', Level.LEVEL0, async (done: Function) => {
       console.info('[common_margin] START');
@@ -803,12 +803,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_padding
      * @tc.number common_0040
-     * @tc.name Test the properties of components
-     * @tc.desc Set padding values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set padding values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_padding', Level.LEVEL0, async (done: Function) => {
       console.info('[common_padding] START');
@@ -821,12 +821,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_backgroundColor
      * @tc.number common_0041
-     * @tc.name Test the properties of components
-     * @tc.desc Set backgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backgroundColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_backgroundColor', Level.LEVEL0, async (done: Function) => {
       console.info('[common_backgroundColor] START');
@@ -839,12 +839,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_linearGradient
      * @tc.number common_0042
-     * @tc.name Test the properties of components
-     * @tc.desc Set linearGradient values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set linearGradient values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_linearGradient', Level.LEVEL0, async (done: Function) => {
       console.info('[common_linearGradient] START');
@@ -857,12 +857,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_linearGradientBlur
      * @tc.number common_0043
-     * @tc.name Test the properties of components
-     * @tc.desc Set linearGradientBlur values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set linearGradientBlur values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_linearGradientBlur', Level.LEVEL0, async (done: Function) => {
       console.info('[common_linearGradientBlur] START');
@@ -876,12 +876,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_blendMode
      * @tc.number common_0044
-     * @tc.name Test the properties of components
-     * @tc.desc Set blendMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set blendMode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_blendMode', Level.LEVEL0, async (done: Function) => {
       console.info('[common_blendMode] START');
@@ -893,12 +893,12 @@ export default function common9Jsunit() {
       done();
     });
     /**
+     * @tc.name   common_accessibilityLevel
      * @tc.number common_0045
-     * @tc.name Test the properties of components
-     * @tc.desc Set accessibilityLevel values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set accessibilityLevel values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_accessibilityLevel', Level.LEVEL0, async (done: Function) => {
       console.info('[common_accessibilityLevel] START');
@@ -911,12 +911,12 @@ export default function common9Jsunit() {
       done();
     });
     /**
+     * @tc.name   common_accessibilityDescription
      * @tc.number common_0046
-     * @tc.name Test the properties of components
-     * @tc.desc Set accessibilityDescription values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set accessibilityDescription values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_accessibilityDescription', Level.LEVEL0, async (done: Function) => {
       console.info('[common_accessibilityDescription] START');
@@ -930,12 +930,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_accessibilityText
      * @tc.number common_0047
-     * @tc.name Test the properties of components
-     * @tc.desc Set accessibilityText values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set accessibilityText values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_accessibilityText', Level.LEVEL0, async (done: Function) => {
       console.info('[common_accessibilityText] START');
@@ -948,12 +948,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_accessibilityGroup
      * @tc.number common_0048
-     * @tc.name Test the properties of components
-     * @tc.desc Set accessibilityGroup values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set accessibilityGroup values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_accessibilityGroup', Level.LEVEL0, async (done: Function) => {
       console.info('[common_accessibilityGroup] START');
@@ -967,12 +967,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_restoreId
      * @tc.number common_0049
-     * @tc.name Test the properties of components
-     * @tc.desc Set restoreId values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set restoreId values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_restoreId', Level.LEVEL0, async (done: Function) => {
       console.info('[common_restoreId] START');
@@ -985,12 +985,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_allowDrop
      * @tc.number common_0050
-     * @tc.name Test the properties of components
-     * @tc.desc Set allowDrop values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set allowDrop values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_allowDrop', Level.LEVEL0, async (done: Function) => {
       console.info('[common_allowDrop] START');
@@ -1003,12 +1003,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_alignRules
      * @tc.number common_0051
-     * @tc.name Test the properties of components
-     * @tc.desc Set alignRules values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set alignRules values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_alignRules', Level.LEVEL0, async (done: Function) => {
       console.info('[common_alignRules] START');
@@ -1021,12 +1021,12 @@ export default function common9Jsunit() {
     });
 
     /**
+     * @tc.name   common_foregroundBlurStyle
      * @tc.number common_0052
-     * @tc.name Test the properties of components
-     * @tc.desc Set foregroundBlurStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set foregroundBlurStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('common_foregroundBlurStyle', Level.LEVEL0, async (done: Function) => {
       console.info('[common_foregroundBlurStyle] START');

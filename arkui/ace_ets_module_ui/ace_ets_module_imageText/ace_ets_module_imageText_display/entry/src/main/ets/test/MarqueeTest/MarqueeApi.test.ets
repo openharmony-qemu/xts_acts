@@ -42,15 +42,15 @@ export default function MarqueeApi() {
       console.info("MarqueeApi after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_MarqueeApi_001
-     * @tc.name      MarqueeApi_001
-     * @tc.desc      styled_string test
-     * @tc.size      MediumTest
-     * @tc.level     Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   MarqueeApi_001
+     * @tc.number MarqueeApi_001
+     * @tc.desc   MarqueeApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MarqueeApi_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[MarqueeApi_001] START');
 

@@ -46,9 +46,12 @@ export default function flexShrink_Part() {
     });
 
     /**
-     * @tc.number    SUB_ACE_flexShrink_Part_TEST_0100
-     * @tc.name      testflexShrink
-     * @tc.desc      colum2、colum3 set flexShrink(1)
+     * @tc.name   SUB_ACE_flexShrink_Part_TEST_0100
+     * @tc.number SUB_ACE_flexShrink_Part_TEST_0100
+     * @tc.desc   colum2、colum3 set flexShrink(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexShrink_Part_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexShrink_Part_TEST_0100] START');
@@ -85,9 +88,12 @@ export default function flexShrink_Part() {
       console.info('[SUB_ACE_flexShrink_Part_TEST_0100] END');
     });
     /**
-     * @tc.number    SUB_ACE_flexShrink_Part_TEST_0200
-     * @tc.name      testflexShrink
-     * @tc.desc     colum2、colum3 set flexShrink(2)
+     * @tc.name   SUB_ACE_flexShrink_Part_TEST_0200
+     * @tc.number SUB_ACE_flexShrink_Part_TEST_0200
+     * @tc.desc   colum2、colum3 set flexShrink(2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexShrink_Part_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexShrink_Part_TEST_0200] START');

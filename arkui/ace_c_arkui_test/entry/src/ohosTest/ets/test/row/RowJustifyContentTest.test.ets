@@ -26,91 +26,91 @@ export default function rowJustifyContentTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0100
-     * @tc.name: testRowJustifyContent001
-     * @tc.desc: testing justifyContent for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowJustifyContent001
+     * @tc.number SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0100
+     * @tc.desc   testing justifyContent for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowJustifyContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowJustifyContent001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0200
-     * @tc.name: testRowJustifyContent002
-     * @tc.desc: testing justifyContent for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowJustifyContent002
+     * @tc.number SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0200
+     * @tc.desc   testing justifyContent for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowJustifyContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowJustifyContent002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0300
-     * @tc.name: testRowJustifyContent003
-     * @tc.desc: testing justifyContent for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowJustifyContent003
+     * @tc.number SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0300
+     * @tc.desc   testing justifyContent for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowJustifyContent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowJustifyContent003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0400
-     * @tc.name: testRowJustifyContent004
-     * @tc.desc: testing justifyContent for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowJustifyContent004
+     * @tc.number SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0400
+     * @tc.desc   testing justifyContent for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowJustifyContent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowJustifyContent004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0500
-     * @tc.name: testRowJustifyContent005
-     * @tc.desc: testing justifyContent for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowJustifyContent005
+     * @tc.number SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0500
+     * @tc.desc   testing justifyContent for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowJustifyContent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowJustifyContent005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0600
-     * @tc.name: testRowJustifyContent006
-     * @tc.desc: testing justifyContent for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowJustifyContent006
+     * @tc.number SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0600
+     * @tc.desc   testing justifyContent for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowJustifyContent006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowJustifyContent006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0700
-     * @tc.name: testRowJustifyContent007
-     * @tc.desc: testing justifyContent for row with unnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowJustifyContent007
+     * @tc.number SUB_ARKUI_CAPI_ROW_JUSTIFYCONTENT_0700
+     * @tc.desc   testing justifyContent for row with unnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowJustifyContent007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowJustifyContent007()).assertEqual(0)

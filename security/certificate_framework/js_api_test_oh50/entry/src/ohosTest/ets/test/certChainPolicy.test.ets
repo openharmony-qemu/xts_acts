@@ -55,12 +55,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0100
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0100
-     * @tc.name check X509CertChain validate with POLICY_X509
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0100';
@@ -83,12 +83,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0200
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0200
-     * @tc.name check X509CertChain validate with POLICY_SSL (param sslHostname matches Cert's Subject CN)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0200';
@@ -113,12 +113,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0300
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0300
-     * @tc.name check X509CertChain validate with POLICY_SSL (param sslHostname doesn't match Cert's Subject CN)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0300';
@@ -141,12 +141,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0400
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0400
-     * @tc.name check X509CertChain validate with POLICY_SSL (normal param sslHostname,Cert doesn't contain Subject CN)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0400';
@@ -169,12 +169,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0500
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0500
-     * @tc.name check X509CertChain validate with POLICY_SSL (param sslHostname matches Cert's dnsName)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0500';
@@ -198,12 +198,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0600
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0600
-     * @tc.name check X509CertChain validate with POLICY_SSL (param sslHostname doesn't match Cert's dnsName)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0600';
@@ -226,12 +226,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0700
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0700
-     * @tc.name check X509CertChain validate with POLICY_SSL (normal param sslHostname,Cert doesn't contain dnsName)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0700';
@@ -254,12 +254,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0800
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0800
-     * @tc.name check X509CertChain validate with POLICY_SSL (empty param sslHostname)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0800';
@@ -282,12 +282,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_0900
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_0900
-     * @tc.name check X509CertChain validate withPOLICY_X509 & param sslHostname
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0900';
@@ -312,12 +312,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1000
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1000
-     * @tc.name check X509CertChain validate without POLICY_SSL, but has param sslHostname
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1000';
@@ -341,12 +341,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1100
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1100
-     * @tc.name check X509CertChain validate without sslHostname, but has param POLICY_SSL
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1100';
@@ -368,12 +368,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1200
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1200
-     * @tc.name check X509CertChain validate with KeyUsageType (param keyUsage matches Cert)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1200';
@@ -399,12 +399,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1300
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1300
-     * @tc.name check X509CertChain validate with KeyUsageType (param keyUsage types don't match Cert)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1300';
@@ -429,12 +429,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1400
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1400
-     * @tc.name check X509CertChain validate with KeyUsageType (param keyUsage length < Cert)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1400';
@@ -459,12 +459,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1500
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1500
-     * @tc.name check X509CertChain validate with KeyUsageType (param keyUsage length > Cert)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1500';
@@ -496,12 +496,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1600
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1600
-     * @tc.name check X509CertChain validate with KeyUsageType (empty param keyUsage)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1600';
@@ -523,12 +523,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1700
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1700
-     * @tc.name check X509CertChain validate with param policy (invalid value)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1700';
@@ -550,12 +550,12 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Policy_Func_1800
      * @tc.number SUB_Security_Cert_Framework_CertChain_Policy_Func_1800
-     * @tc.name check X509CertChain validate with param keyUsage (invalid value)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Policy_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1800';

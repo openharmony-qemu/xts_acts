@@ -64,6 +64,14 @@ export default function SecurityHuksAgreeECDHCallbackJsunit() {
             };
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_ECDH_001
+         * @tc.number Security_HUKS_Agree_API8_ECDH_001
+         * @tc.desc   Security_HUKS_Agree_API8_ECDH_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_ECDH_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliasFirst = 'testAgreeECDHSize256Finish63KBAgreeKeyAlias_01_001';
             const srcKeyAliasSecond = 'testAgreeECDHSize256Finish63KBAgreeKeyAlias_02_001';
@@ -103,6 +111,14 @@ export default function SecurityHuksAgreeECDHCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_ECDH_002
+         * @tc.number Security_HUKS_Agree_API8_ECDH_002
+         * @tc.desc   Security_HUKS_Agree_API8_ECDH_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_ECDH_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliasFirst = 'testAgreeECDHSize256Abort63KBAgreeKeyAlias_01_001';
             const srcKeyAliasSecond = 'testAgreeECDHSize256Abort63KBAgreeKeyAlias_02_001';
@@ -127,6 +143,14 @@ export default function SecurityHuksAgreeECDHCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_ECDH_Size256AbortAgree_001
+         * @tc.number Security_HUKS_Agree_API8_ECDH_Size256AbortAgree_001
+         * @tc.desc   Security_HUKS_Agree_API8_ECDH_Size256AbortAgree_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_ECDH_Size256AbortAgree_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliasFirst = 'testAgreeECDHSize256Abort65KBAgreeKeyAlias_01_001';
             const srcKeyAliasSecond = 'testAgreeECDHSize256Abort65KBAgreeKeyAlias_02_001';
@@ -147,6 +171,14 @@ export default function SecurityHuksAgreeECDHCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_ECDH_Size256FinishAgree_001
+         * @tc.number Security_HUKS_Agree_API8_ECDH_Size256FinishAgree_001
+         * @tc.desc   Security_HUKS_Agree_API8_ECDH_Size256FinishAgree_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_ECDH_Size256FinishAgree_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliasFirst = 'testAgreeECDHSize256Finish65KBAgreeKeyAlias_01_001';
             const srcKeyAliasSecond = 'testAgreeECDHSize256Finish65KBAgreeKeyAlias_02_001';

@@ -65,12 +65,12 @@ export default function requestPhotoUrisReadPermissionTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_REQUEST_PHOTO_URIS_READ_PERMISSION_001
-     * @tc.name      : requestPhotoUrisReadPermission_promise_001
-     * @tc.desc      : requestPhotoUrisReadPermission
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   requestPhotoUrisReadPermission_promise_001
+     * @tc.number PHOTO_ACCESS_HELPER_REQUEST_PHOTO_URIS_READ_PERMISSION_001
+     * @tc.desc   requestPhotoUrisReadPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('requestPhotoUrisReadPermission_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'requestPhotoUrisReadPermission_promise_001';

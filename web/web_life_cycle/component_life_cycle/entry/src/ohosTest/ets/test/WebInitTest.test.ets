@@ -61,28 +61,28 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONCE_0100
-    * @tc.name        : testOnce001
-    * @tc.desc        : test once webInit should be called
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnce001
+     * @tc.number SUB_WEB_ONCE_0100
+     * @tc.desc   test once webInit should be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnce001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitOnce001', 138300)
       Utils.registerEvent('testOnce001', true, 138310, done);
       await Utils.waitAndClickComponent(driver, 'WebInitTestButton', 'emitOnce001');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONCE_0200
-    * @tc.name        : testOnce002
-    * @tc.desc        : test once webCreated should not be called
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnce002
+     * @tc.number SUB_WEB_ONCE_0200
+     * @tc.desc   test once webCreated should not be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnce002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitOnce002', 138300)
       Utils.registerEvent('testOnce002', false, 138320, done);

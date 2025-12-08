@@ -44,10 +44,13 @@ export default function animationAdd() {
       console.info('animationAdd after each called');
     });
 
-    /*
-     * @tc.number       animationAdd_0100
-     * @tc.name         animationAdd_0100
-     * @tc.desc        test AnimatableArithmetic equals return boolean
+    /**
+     * @tc.name   animationAdd_0100
+     * @tc.number animationAdd_0100
+     * @tc.desc   test AnimatableArithmetic equals return boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animationAdd_0100', Level.LEVEL0, async (done: Function) => {
       console.info('animationAdd_0100 START');

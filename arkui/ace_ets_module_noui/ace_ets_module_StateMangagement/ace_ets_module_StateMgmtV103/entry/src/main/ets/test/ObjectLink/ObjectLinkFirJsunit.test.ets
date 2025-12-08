@@ -62,14 +62,14 @@ export default function ObjectLinkFirJsunit() {
       });
     });
 
-		/**
-		 * @tc.number    ObjectLinkFirJsunit_0100
-		 * @tc.name      ObjectLinkFirJsunit_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   ObjectLinkFirJsunit_0100
+     * @tc.number ObjectLinkFirJsunit_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkFirJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkFirJsunit_0100 START');
@@ -82,14 +82,14 @@ export default function ObjectLinkFirJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    ObjectLinkFirJsunit_0200
-		 * @tc.name      ObjectLinkFirJsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   ObjectLinkFirJsunit_0200
+     * @tc.number ObjectLinkFirJsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkFirJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkFirJsunit_0200 START');
@@ -102,14 +102,14 @@ export default function ObjectLinkFirJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    ObjectLinkFirJsunit_0300
-		 * @tc.name      ObjectLinkFirJsunit_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   ObjectLinkFirJsunit_0300
+     * @tc.number ObjectLinkFirJsunit_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkFirJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkFirJsunit_0300 START');
@@ -127,14 +127,14 @@ export default function ObjectLinkFirJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    ObjectLinkFirJsunit_0400
-		 * @tc.name      ObjectLinkFirJsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   ObjectLinkFirJsunit_0400
+     * @tc.number ObjectLinkFirJsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkFirJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkFirJsunit_0400 START');

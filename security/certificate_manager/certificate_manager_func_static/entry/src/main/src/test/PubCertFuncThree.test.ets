@@ -35,12 +35,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0100
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0100
-     * @tc.name SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0100
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let uri: string = 'test'; /* 业务安装凭据，返回唯一标识符，此处省略 */
@@ -57,12 +57,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0101
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0101
-     * @tc.name SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0101
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let uri: string = 'test';
@@ -88,12 +88,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0102
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0102
-     * @tc.name SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0102
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let uri: string = 'oh:t=ak;o=appCertAliasDemoRsa;u=100;a=20010045';
@@ -110,12 +110,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0103
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0103
-     * @tc.name SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0103
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmResult2: certManager.CMResult;
@@ -141,12 +141,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0110
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0110
-     * @tc.name SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0110
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let uri: string = 'oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA;u=0;a=20010044';
@@ -163,12 +163,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallPrivateCertificate_Func_Static_0200
      * @tc.number SUB_Security_CertManager_InstallPrivateCertificate_Func_Static_0200
-     * @tc.name SUB_Security_CertManager_InstallPrivateCertificate_Func_Static_0200
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_InstallPrivateCertificate_Func_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keystore: Uint8Array = priRsaCredData;

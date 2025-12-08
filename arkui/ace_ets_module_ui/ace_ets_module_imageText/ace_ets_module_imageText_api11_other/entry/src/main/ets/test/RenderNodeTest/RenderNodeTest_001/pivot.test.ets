@@ -41,12 +41,12 @@ export default function pivot() {
     });
     
     /**
-     * @tc.number    SUB_ACE_pivot_0100
-     * @tc.name      pivot_0100
-     * @tc.desc      getPivot api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   pivot_0100
+     * @tc.number SUB_ACE_pivot_0100
+     * @tc.desc   getPivot api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pivot_0100', Level.LEVEL2, async (done: Function) => {
       console.info('pivot_0100 START');
@@ -65,12 +65,12 @@ export default function pivot() {
     });
     
     /**
-     * @tc.number    SUB_ACE_pivot_0200
-     * @tc.name      pivot_0200
-     * @tc.desc      setPivot api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   pivot_0200
+     * @tc.number SUB_ACE_pivot_0200
+     * @tc.desc   setPivot api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pivot_0200', Level.LEVEL2, async (done: Function) => {
       console.info('pivot_0200 START');

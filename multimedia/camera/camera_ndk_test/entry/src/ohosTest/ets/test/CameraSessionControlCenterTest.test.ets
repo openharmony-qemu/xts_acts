@@ -259,12 +259,12 @@ export default function CameraSessionControlCenterTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_ISCONTROLCENTERSUPPORTED100
-     * @tc.name      : testOHSessionIsControlCenterSupportedTest100
-     * @tc.desc      : Checks if videoSession support control center.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionIsControlCenterSupportedTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_ISCONTROLCENTERSUPPORTED100
+     * @tc.desc   Checks if videoSession support control center.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionIsControlCenterSupportedTest100', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionIsControlCenterSupportedTest100--------------");
@@ -283,12 +283,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_GETSUPPORTEDEFFECTTYPES100
-     * @tc.name      : testOHSessionGetSupportedEffectTypeTest100
-     * @tc.desc      : Check if get supported effect types successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionGetSupportedEffectTypeTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_GETSUPPORTEDEFFECTTYPES100
+     * @tc.desc   Check if get supported effect types successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionGetSupportedEffectTypeTest100', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionGetSupportedEffectTypeTest100--------------");
@@ -305,12 +305,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_GETSUPPORTEDEFFECTTYPES200
-     * @tc.name      : testOHSessionGetSupportedEffectTypeTest200
-     * @tc.desc      : Check if get supported effect types successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionGetSupportedEffectTypeTest200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_GETSUPPORTEDEFFECTTYPES200
+     * @tc.desc   Check if get supported effect types successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionGetSupportedEffectTypeTest200', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionGetSupportedEffectTypeTest200--------------");
@@ -323,12 +323,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_GETSUPPORTEDEFFECTTYPES300
-     * @tc.name      : testOHSessionGetSupportedEffectTypeTest300
-     * @tc.desc      : Check if get supported effect types successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionGetSupportedEffectTypeTest300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_GETSUPPORTEDEFFECTTYPES300
+     * @tc.desc   Check if get supported effect types successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionGetSupportedEffectTypeTest300', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionGetSupportedEffectTypeTest300--------------");
@@ -341,12 +341,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_GETSUPPORTEDEFFECTTYPES400
-     * @tc.name      : testOHSessionGetSupportedEffectTypeTest400
-     * @tc.desc      : Check if get supported effect types successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionGetSupportedEffectTypeTest400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_GETSUPPORTEDEFFECTTYPES400
+     * @tc.desc   Check if get supported effect types successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionGetSupportedEffectTypeTest400', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionGetSupportedEffectTypeTest400--------------");
@@ -359,12 +359,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_DELETESUPPORTEDEFFECTTYPES100
-     * @tc.name      : testOHSessionDeleteSupportedEffectTypeTest100
-     * @tc.desc      : Check if delete supported effect types successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionDeleteSupportedEffectTypeTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_DELETESUPPORTEDEFFECTTYPES100
+     * @tc.desc   Check if delete supported effect types successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionDeleteSupportedEffectTypeTest100', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionDeleteSupportedEffectTypeTest100--------------");
@@ -380,12 +380,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_DELETESUPPORTEDEFFECTTYPES200
-     * @tc.name      : testOHSessionDeleteSupportedEffectTypeTest200
-     * @tc.desc      : Check if delete supported effect types successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionDeleteSupportedEffectTypeTest200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_DELETESUPPORTEDEFFECTTYPES200
+     * @tc.desc   Check if delete supported effect types successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionDeleteSupportedEffectTypeTest200', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionDeleteSupportedEffectTypeTest200--------------");
@@ -398,12 +398,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_DELETESUPPORTEDEFFECTTYPES300
-     * @tc.name      : testOHSessionDeleteSupportedEffectTypeTest300
-     * @tc.desc      : Check if delete supported effect types successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionDeleteSupportedEffectTypeTest300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_DELETESUPPORTEDEFFECTTYPES300
+     * @tc.desc   Check if delete supported effect types successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionDeleteSupportedEffectTypeTest300', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionDeleteSupportedEffectTypeTest300--------------");
@@ -416,12 +416,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_ENABLECONTROLCENTER100
-     * @tc.name      : testOHSessionEnableControlCenterTest100
-     * @tc.desc      : Enables or disables control center.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionEnableControlCenterTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_ENABLECONTROLCENTER100
+     * @tc.desc   Enables or disables control center.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionEnableControlCenterTest100', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHSessionEnableControlCenterTest100--------------");
@@ -437,12 +437,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_REGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK100
-     * @tc.name      : testOHSessionRegisterControlCenterEffectStatusTest100
-     * @tc.desc      : Checks if register controlCenterEffectStatusChange successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterControlCenterEffectStatusTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_REGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK100
+     * @tc.desc   Checks if register controlCenterEffectStatusChange successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterControlCenterEffectStatusTest100', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionRegisterControlCenterEffectStatusTest100--------------");
@@ -453,12 +453,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_REGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK200
-     * @tc.name      : testOHSessionRegisterControlCenterEffectStatusTest200
-     * @tc.desc      : Checks if register controlCenterEffectStatusChange successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterControlCenterEffectStatusTest200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_REGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK200
+     * @tc.desc   Checks if register controlCenterEffectStatusChange successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterControlCenterEffectStatusTest200', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionRegisterControlCenterEffectStatusTest200--------------");
@@ -469,12 +469,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_REGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK300
-     * @tc.name      : testOHSessionRegisterControlCenterEffectStatusTest300
-     * @tc.desc      : Checks if register controlCenterEffectStatusChange successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterControlCenterEffectStatusTest300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_REGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK300
+     * @tc.desc   Checks if register controlCenterEffectStatusChange successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterControlCenterEffectStatusTest300', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionRegisterControlCenterEffectStatusTest300--------------");
@@ -485,12 +485,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_UNREGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK100
-     * @tc.name      : testOHSessionUnregisterControlCenterEffectStatusTest100
-     * @tc.desc      : Checks if unregister controlCenterEffectStatusChange successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterControlCenterEffectStatusTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_UNREGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK100
+     * @tc.desc   Checks if unregister controlCenterEffectStatusChange successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterControlCenterEffectStatusTest100', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionUnregisterControlCenterEffectStatusTest100--------------");
@@ -501,12 +501,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_UNREGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK200
-     * @tc.name      : testOHSessionUnregisterControlCenterEffectStatusTest200
-     * @tc.desc      : Checks if unregister controlCenterEffectStatusChange successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterControlCenterEffectStatusTest200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_UNREGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK200
+     * @tc.desc   Checks if unregister controlCenterEffectStatusChange successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterControlCenterEffectStatusTest200', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionUnregisterControlCenterEffectStatusTest200--------------");
@@ -517,12 +517,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_UNREGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK300
-     * @tc.name      : testOHSessionUnregisterControlCenterEffectStatusTest300
-     * @tc.desc      : Checks if unregister controlCenterEffectStatusChange successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterControlCenterEffectStatusTest300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OH_CAPTURESESSION_UNREGISTERCONTROLCENTEREFFECTSTATUSCHANGECALLBACK300
+     * @tc.desc   Checks if unregister controlCenterEffectStatusChange successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterControlCenterEffectStatusTest300', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionUnregisterControlCenterEffectStatusTest300--------------");

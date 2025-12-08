@@ -50,13 +50,15 @@ export default function AlignContent_End_FlexP_fixed() {
       console.info("AlignContent_End_FlexP_fixed after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_0800
-     * @tc.name testAlignContentEndFlexFixedSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End, and set the height of the
-     *               subcomponent to meet the height requirements of the subcomponent in the container.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexFixedSatisfy
+     * @tc.number testAlignContentEndFlexFixedSatisfy
+     * @tc.desc   testAlignContentEndFlexFixedSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexFixedSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexFixedSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -105,13 +107,15 @@ export default function AlignContent_End_FlexP_fixed() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_0900
-     * @tc.name testAlignContentEndFlexFixedNoSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End, and set the height of the
-     *               subcomponent to meet the height requirements of the subcomponent in the container.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexFixedNoSatisfy
+     * @tc.number testAlignContentEndFlexFixedNoSatisfy
+     * @tc.desc   testAlignContentEndFlexFixedNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexFixedNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexFixedNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

@@ -22,12 +22,6 @@
 #include "log.h"
 #include "hctest.h"
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is dfx
- * @param        : module name is dfxlite
- * @param        : test suit name is DfxFuncTestSuite
- */
 LITE_TEST_SUIT(dfx, dfxlite, DfxFuncTestSuite);
 
 /**
@@ -50,12 +44,12 @@ static BOOL DfxFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_DFX_DFT_Hilog_0100
- * @tc.name      : DebugLog print test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 0
+ * @tc.name   subDfxDftHilog0100
+ * @tc.number SUB_DFX_DFT_Hilog_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0100, LEVEL0)
 {
@@ -64,12 +58,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0100, LEVEL0)
 
 
 /**
- * @tc.number    : SUB_DFX_DFT_Hilog_0200
- * @tc.name      : InfoLog print test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 1
+ * @tc.name   subDfxDftHilog0200
+ * @tc.number SUB_DFX_DFT_Hilog_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0200, LEVEL1)
 {
@@ -77,12 +71,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0200, LEVEL1)
 };
 
 /**
- * @tc.number    : SUB_DFX_DFT_Hilog_0300
- * @tc.name      : DebugLog print test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 1
+ * @tc.name   subDfxDftHilog0300
+ * @tc.number SUB_DFX_DFT_Hilog_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0300, LEVEL1)
 {
@@ -90,12 +84,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0300, LEVEL1)
 };
 
 /**
- * @tc.number    : SUB_DFX_DFT_Hilog_0400
- * @tc.name      : ErrorLog print test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 1
+ * @tc.name   subDfxDftHilog0400
+ * @tc.number SUB_DFX_DFT_Hilog_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0400, LEVEL1)
 {
@@ -103,12 +97,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0400, LEVEL1)
 };
 
 /**
- * @tc.number    : SUB_DFX_DFT_Hilog_0500
- * @tc.name      : FatalLog print test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 1
+ * @tc.name   subDfxDftHilog0500
+ * @tc.number SUB_DFX_DFT_Hilog_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0500, LEVEL1)
 {
@@ -116,12 +110,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0500, LEVEL1)
 };
 
 /**
- * @tc.number    : SUB_DFX_DFT_Hilog_0600
- * @tc.name      : HiLogRegisterModule test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 0
+ * @tc.name   subDfxDftHilog0600
+ * @tc.number SUB_DFX_DFT_Hilog_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0600, LEVEL0)
 {
@@ -131,12 +125,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0600, LEVEL0)
 };
 
 /**
- * @tc.number    : SUB_DFX_DFT_Hilog_0700
- * @tc.name      : HiLogGetModuleName test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 0
+ * @tc.name   subDfxDftHilog0700
+ * @tc.number SUB_DFX_DFT_Hilog_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0700, LEVEL0)
 {

@@ -47,16 +47,16 @@ export default function addGestureApplyGesture() {
       console.info("addGestureApplyGesture after each called");
     });
 
+
+
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_API_0100
-     * @tc.name      testGetImageAttr010
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   addGestureApplyGesture_0100
+     * @tc.number addGestureApplyGesture_0100
+     * @tc.desc   addGestureApplyGesture_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('addGestureApplyGesture_0100', Level.LEVEL0, async (done: Function) => {
       console.info('addGestureApplyGesture_0100 START');
       let driver = await Driver.create()

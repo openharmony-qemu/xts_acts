@@ -37,12 +37,12 @@ export default function calendarPickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    calendarPickerDialogBackgroundEffectTest_0100
-     * @tc.name      calendarPickerDialogBackgroundEffectTest_0100
-     * @tc.desc      createCalendarPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   calendarPickerDialogBackgroundEffectTest_0100
+     * @tc.number calendarPickerDialogBackgroundEffectTest_0100
+     * @tc.desc   createCalendarPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('calendarPickerDialogBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'calendarPickerDialogBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function calendarPickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    calendarPickerDialogBackgroundEffectTest_0200
-     * @tc.name      calendarPickerDialogBackgroundEffectTest_0200
-     * @tc.desc      createCalendarPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   calendarPickerDialogBackgroundEffectTest_0200
+     * @tc.number calendarPickerDialogBackgroundEffectTest_0200
+     * @tc.desc   createCalendarPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('calendarPickerDialogBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'calendarPickerDialogBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function calendarPickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    calendarPickerDialogBackgroundEffectTest_0300
-     * @tc.name      calendarPickerDialogBackgroundEffectTest_0300
-     * @tc.desc      createCalendarPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   calendarPickerDialogBackgroundEffectTest_0300
+     * @tc.number calendarPickerDialogBackgroundEffectTest_0300
+     * @tc.desc   createCalendarPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('calendarPickerDialogBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'calendarPickerDialogBackgroundEffectTest_0300';

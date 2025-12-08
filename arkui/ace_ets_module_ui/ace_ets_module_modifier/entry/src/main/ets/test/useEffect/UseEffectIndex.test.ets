@@ -43,12 +43,12 @@ export default function UseEffectIndexTest() {
     });
 
     /**
-     * @tc.number
-    * @tc.name      GetWindowWidthBreakpoint_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UseEffectIndex_0100
+     * @tc.number UseEffectIndex_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UseEffectIndex_0100', Level.LEVEL2, async (done: Function) => {
 

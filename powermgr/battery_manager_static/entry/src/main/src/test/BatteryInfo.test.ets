@@ -26,7 +26,6 @@ export default function BatteryInfoTest() {
   describe("BatteryInfoTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'BatteryInfoTest start');
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0010
      * @tc.desc   Battery acquisition kit
@@ -54,7 +53,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0020
      * @tc.desc   Battery charging kit
@@ -80,7 +78,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0030
      * @tc.desc   Get Battery Health Get KIT
@@ -106,7 +103,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0040
      * @tc.desc   Obtaining the SUB Connection Type KIT
@@ -132,7 +128,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0050
      * @tc.desc   Obtaining the Voltage Interface KIT
@@ -159,7 +154,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0060
      * @tc.desc   Obtaining the Battery Technology Interface KIT
@@ -185,7 +179,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0700
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0070
      * @tc.desc   BatteryTemperature values Interface Test
@@ -212,7 +205,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0800
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0080
      * @tc.desc   isBatteryPresent values Interface Test
@@ -238,7 +230,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_0900
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0090
      * @tc.desc   batteryCapacityLevel values Interface Test
@@ -264,7 +255,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1000
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0100
      * @tc.desc   nowCurrent values Interface Test
@@ -292,7 +282,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0110
      * @tc.desc   totalEnergy values Interface Test
@@ -319,7 +308,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0120
      * @tc.desc   estimatedRemainingChargeTime values Interface Test
@@ -348,7 +336,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0130
      * @tc.desc   remainingEnergy values Interface Test
@@ -375,7 +362,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0140
      * @tc.desc   BatteryPluggedType values Interface Test
@@ -400,7 +386,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0150
      * @tc.desc   BatteryPluggedType values Interface Test
@@ -425,7 +410,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0160
      * @tc.desc   BatteryPluggedType values Interface Test
@@ -450,7 +434,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1700
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0170
      * @tc.desc   BatteryPluggedType values Interface Test
@@ -475,7 +458,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1800
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0180
      * @tc.desc   BatteryChargeState values Interface Test
@@ -500,7 +482,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_1900
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0190
      * @tc.desc   BatteryChargeState values Interface Test
@@ -525,7 +506,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2000
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0200
      * @tc.desc   BatteryChargeState values Interface Test
@@ -550,7 +530,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0210
      * @tc.desc   BatteryChargeState values Interface Test
@@ -575,7 +554,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0220
      * @tc.desc   BatteryHealthState values Interface Test
@@ -600,7 +578,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0230
      * @tc.desc   BatteryHealthState values Interface Test
@@ -625,7 +602,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0240
      * @tc.desc   BatteryHealthState values Interface Test
@@ -650,7 +626,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0250
      * @tc.desc   BatteryHealthState values Interface Test
@@ -676,7 +651,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0260
      * @tc.desc   BatteryHealthState values Interface Test
@@ -701,7 +675,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2700
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0270
      * @tc.desc   BatteryHealthState values Interface Test
@@ -726,7 +699,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2710
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0271
      * @tc.desc   BatteryHealthState values Interface Test
@@ -751,7 +723,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2800
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0280
      * @tc.desc   BatteryHealthState values Interface Test
@@ -776,7 +747,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_2900
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0290
      * @tc.desc   BatteryCapacityLevel Interface Test
@@ -801,7 +771,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3000
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0300
      * @tc.desc   BatteryCapacityLevel Interface Test
@@ -826,7 +795,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0310
      * @tc.desc   BatteryCapacityLevel Interface Test
@@ -851,7 +819,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0320
      * @tc.desc   BatteryCapacityLevel Interface Test
@@ -876,7 +843,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0330
      * @tc.desc   BatteryCapacityLevel Interface Test
@@ -902,7 +868,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0340
      * @tc.desc   BatteryCapacityLevel Interface Test
@@ -928,7 +893,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0350
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -954,7 +918,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0360
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -981,7 +944,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3700
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0370
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -1008,7 +970,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3800
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0380
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -1035,7 +996,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_3900
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0390
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -1061,7 +1021,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_4000
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0400
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -1088,7 +1047,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_4100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0410
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -1115,7 +1073,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_4200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0420
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -1141,7 +1098,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_4300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0430
      * @tc.desc   CommonEventBatteryChangedKey Interface Test
@@ -1168,7 +1124,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_4400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0440
      * @tc.desc   setBatteryConfig Interface Test
@@ -1192,7 +1147,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_4500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0450
      * @tc.desc   getBatteryConfig Interface Test
@@ -1215,7 +1169,6 @@ export default function BatteryInfoTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryInfoTest_static_4600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0460
      * @tc.desc   isBatteryConfigSupported Interface Test

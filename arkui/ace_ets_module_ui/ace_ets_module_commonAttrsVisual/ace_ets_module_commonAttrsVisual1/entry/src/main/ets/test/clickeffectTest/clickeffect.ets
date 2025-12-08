@@ -41,9 +41,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0100
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0100
-     * @tc.desc      Set the parameter to Light level with default scale
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0100
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0100
+     * @tc.desc   Set the parameter to Light level with default scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0100', Level.LEVEL2, async   (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_0100 start');
@@ -63,9 +66,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0200
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0200
-     * @tc.desc      Set the parameter to Middle level with default scale
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0200
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0200
+     * @tc.desc   Set the parameter to Middle level with default scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0200', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_0200 start');
@@ -85,9 +91,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0300
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0300
-     * @tc.desc      Set the parameter to Heavy level with default scale
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0300
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0300
+     * @tc.desc   Set the parameter to Heavy level with default scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0300', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_0300 start');
@@ -107,9 +116,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0400
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0400
-     * @tc.desc      Set the level to Light and set scale to 0
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0400
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0400
+     * @tc.desc   Set the level to Light and set scale to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0400', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_0400 start');
@@ -129,9 +141,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0500
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0500
-     * @tc.desc      Set the level to Light and set scale to 1
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0500
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0500
+     * @tc.desc   Set the level to Light and set scale to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0500', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_0500 start');
@@ -151,9 +166,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0600
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0600
-     * @tc.desc      Set the level to Light and set scale to 0.5
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0600
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0600
+     * @tc.desc   Set the level to Light and set scale to 0.5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0600', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Options_0600 start');
@@ -173,9 +191,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0700
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0700
-     * @tc.desc      Set the level to Light and set scale to 0.8
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0700
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0700
+     * @tc.desc   Set the level to Light and set scale to 0.8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0700', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_0700 start');
@@ -195,9 +216,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0800
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0800
-     * @tc.desc      Set the level to Light and set scale to -1
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0800
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0800
+     * @tc.desc   Set the level to Light and set scale to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0800', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_0800 start');
@@ -217,9 +241,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_0900
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_0900
-     * @tc.desc      Set the level to null and set scale to 0.1
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_0900
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_0900
+     * @tc.desc   Set the level to null and set scale to 0.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_0900', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_0900 start');
@@ -239,9 +266,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_1000
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_1000
-     * @tc.desc      Set the level to undefine and set scale to 0
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_1000
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_1000
+     * @tc.desc   Set the level to undefine and set scale to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_1000', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_1000 start');
@@ -261,10 +291,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_1100
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_1100
-     * @tc.desc      First Set the level to Middle, set the scale to 0.2
-     *               Second Set the level to Heavy, set the scale to 0.1
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_1100
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_1100
+     * @tc.desc   First Set the level to Middle, set the scale to 0.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_1100', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Options_01000 start');
@@ -284,10 +316,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_1200
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_1200
-     * @tc.desc      First Set the level to Middle
-     *               Second Set the level to null
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_1200
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_1200
+     * @tc.desc   First Set the level to Middle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_1200', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_1200 start');
@@ -307,10 +341,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_1300
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_1300
-     * @tc.desc      First Set the level to null
-     *               Second Set the level to Middle
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_1300
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_1300
+     * @tc.desc   First Set the level to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_1300', Level.LEVEL2, async   (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_1300 start');
@@ -330,9 +366,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_1400
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_1400
-     * @tc.desc      First Set the level to Heavy and set the scale to null
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_1400
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_1400
+     * @tc.desc   First Set the level to Heavy and set the scale to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_1400', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_1400 start');
@@ -352,9 +391,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_1500
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_1500
-     * @tc.desc      First Set the level to Middle and set the scale to undefined
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_1500
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_1500
+     * @tc.desc   First Set the level to Middle and set the scale to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_1500', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_1500 start');
@@ -374,9 +416,12 @@ export default function clickeffectTest() {
     });
 
     /**
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_1600
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_1600
-     * @tc.desc      First Set the level to undefined and set the scale to null
+     * @tc.name   ArkUXII_Stage_ClickEffect_Toggle_1600
+     * @tc.number ArkUXII_Stage_ClickEffect_Toggle_1600
+     * @tc.desc   First Set the level to undefined and set the scale to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUXII_Stage_ClickEffect_Toggle_1600', Level.LEVEL0, async (done:Function)=> {
       console.info('ArkUXII_Stage_ClickEffect_Toggle_1600 start');

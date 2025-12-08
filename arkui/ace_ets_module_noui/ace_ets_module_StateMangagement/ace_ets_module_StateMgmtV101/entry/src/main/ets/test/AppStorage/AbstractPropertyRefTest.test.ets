@@ -42,12 +42,12 @@ export default function AbstractPropertyRefTest() {
       done();
     });
     /**
-     * @tc.number: AbstractPropertyRefTest_0100
-     * @tc.name: AbstractPropertyRefTest_0100
-     * @tc.desc: aceEtsTest_ref
-     * @tc.level: Level 2
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   AbstractPropertyRefTest_0100
+     * @tc.number AbstractPropertyRefTest_0100
+     * @tc.desc   aceEtsTest_ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AbstractPropertyRefTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('AbstractPropertyRefTest001 START');

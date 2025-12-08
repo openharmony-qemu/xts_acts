@@ -213,12 +213,12 @@ export default function CameraErrorCodeUsecaseTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0100
-     * @tc.name      : createCameraInput api
-     * @tc.desc      : createCameraInput api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0100
+     * @tc.desc   createCameraInput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0100--------------");
@@ -231,12 +231,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_COMMITCONFIG_0200
-     * @tc.name      : commitConfig api
-     * @tc.desc      : commitConfig api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_COMMITCONFIG_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_COMMITCONFIG_0200
+     * @tc.desc   commitConfig api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_COMMITCONFIG_0200', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_COMMITCONFIG_0200--------------");
@@ -250,12 +250,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ADD_OUTPUT_0300
-     * @tc.name      : addOutput api
-     * @tc.desc      : addOutput api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ADD_OUTPUT_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ADD_OUTPUT_0300
+     * @tc.desc   addOutput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ADD_OUTPUT_0300', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ADD_OUTPUT_0300--------------");
@@ -270,12 +270,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_REMOVE_OUTPUT_0300
-     * @tc.name      : removeOutput api
-     * @tc.desc      : removeOutput api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_REMOVE_OUTPUT_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_REMOVE_OUTPUT_0300
+     * @tc.desc   removeOutput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_REMOVE_OUTPUT_0300', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_REMOVE_OUTPUT_0300--------------");
@@ -290,12 +290,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_START_0100
-     * @tc.name      : capturesession start api
-     * @tc.desc      : capturesession start api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_START_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_START_0100
+     * @tc.desc   capturesession start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_START_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_START_0100--------------");
@@ -314,12 +314,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_0100
-     * @tc.name      : capturesession sessionHasFlash api
-     * @tc.desc      : capturesession sessionHasFlash api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_0100
+     * @tc.desc   capturesession sessionHasFlash api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_0100--------------");
@@ -339,12 +339,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_0100
-     * @tc.name      : capturesession sessionIsFlashModeSupported api
-     * @tc.desc      : capturesession sessionIsFlashModeSupported api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_0100
+     * @tc.desc   capturesession sessionIsFlashModeSupported api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_0100--------------");
@@ -364,12 +364,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_0100
-     * @tc.name      : capturesession sessionGetFlashMode api
-     * @tc.desc      : capturesession sessionGetFlashMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_0100
+     * @tc.desc   capturesession sessionGetFlashMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_0100--------------");
@@ -388,12 +388,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_0100
-     * @tc.name      : capturesession sessionSetFlashMode api
-     * @tc.desc      : capturesession sessionSetFlashMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_0100
+     * @tc.desc   capturesession sessionSetFlashMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_0100--------------");
@@ -411,12 +411,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_0101
-     * @tc.name      : capturesession sessionSetFlashMode api
-     * @tc.desc      : capturesession sessionSetFlashMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SESSIONSTART_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_0101
+     * @tc.desc   capturesession sessionSetFlashMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SESSIONSTART_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SESSIONSTART_0100--------------");
@@ -434,12 +434,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_0100
-     * @tc.name      : capturesession isExposureModeSupported api
-     * @tc.desc      : capturesession isExposureModeSupported api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_0100
+     * @tc.desc   capturesession isExposureModeSupported api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_0100--------------");
@@ -456,12 +456,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_0100
-     * @tc.name      : capturesession getExposureMode api
-     * @tc.desc      : capturesession getExposureMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_0100
+     * @tc.desc   capturesession getExposureMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_0100--------------");
@@ -478,12 +478,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0100
-     * @tc.name      : capturesession setExposureMode api
-     * @tc.desc      : capturesession setExposureMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0100
+     * @tc.desc   capturesession setExposureMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0100--------------");
@@ -500,12 +500,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0101
-     * @tc.name      : capturesession setExposureMode api
-     * @tc.desc      : capturesession setExposureMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0101
+     * @tc.desc   capturesession setExposureMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0101', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_0101--------------");
@@ -525,12 +525,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_0100
-     * @tc.name      : capturesession getMeteringPoint api
-     * @tc.desc      : capturesession getMeteringPoint api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_0100
+     * @tc.desc   capturesession getMeteringPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_0100--------------");
@@ -547,12 +547,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0100
-     * @tc.name      : capturesession setMeteringPoint api
-     * @tc.desc      : capturesession setMeteringPoint api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0100
+     * @tc.desc   capturesession setMeteringPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0100--------------");
@@ -571,12 +571,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0101
-     * @tc.name      : capturesession setMeteringPoint api
-     * @tc.desc      : capturesession setMeteringPoint api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0101
+     * @tc.desc   capturesession setMeteringPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0101', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_0101--------------");
@@ -596,12 +596,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_0100
-     * @tc.name      : capturesession getExposureBiasRange api
-     * @tc.desc      : capturesession getExposureBiasRange api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_0100
+     * @tc.desc   capturesession getExposureBiasRange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_0100--------------");
@@ -618,12 +618,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0100
-     * @tc.name      : capturesession setExposureBias api
-     * @tc.desc      : capturesession setExposureBias api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0100
+     * @tc.desc   capturesession setExposureBias api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0100--------------");
@@ -643,12 +643,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0101
-     * @tc.name      : capturesession setExposureBias api
-     * @tc.desc      : capturesession setExposureBias api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0101
+     * @tc.desc   capturesession setExposureBias api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0101', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_0101--------------");
@@ -666,12 +666,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_0100
-     * @tc.name      : capturesession getExposureValue api
-     * @tc.desc      : capturesession getExposureValue api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_0100
+     * @tc.desc   capturesession getExposureValue api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_0100--------------");
@@ -688,12 +688,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_0100
-     * @tc.name      : capturesession sessionIsFocusModeSupported api
-     * @tc.desc      : capturesession sessionIsFocusModeSupported api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_0100
+     * @tc.desc   capturesession sessionIsFocusModeSupported api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_0100--------------");
@@ -710,12 +710,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_0100
-     * @tc.name      : capturesession sessionGetFocusMode api
-     * @tc.desc      : capturesession sessionGetFocusMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_0100
+     * @tc.desc   capturesession sessionGetFocusMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_0100--------------");
@@ -732,12 +732,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0100
-     * @tc.name      : capturesession sessionSetFocusMode api
-     * @tc.desc      : capturesession sessionSetFocusMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0100
+     * @tc.desc   capturesession sessionSetFocusMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0100--------------");
@@ -754,12 +754,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0101
-     * @tc.name      : capturesession sessionSetFocusMode api
-     * @tc.desc      : capturesession sessionSetFocusMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0101
+     * @tc.desc   capturesession sessionSetFocusMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0101', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_0101--------------");
@@ -777,12 +777,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0100
-     * @tc.name      : capturesession sessionSetFocusPoint api
-     * @tc.desc      : capturesession sessionSetFocusPoint api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0100
+     * @tc.desc   capturesession sessionSetFocusPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0100--------------");
@@ -801,12 +801,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0101
-     * @tc.name      : capturesession sessionSetFocusPoint api
-     * @tc.desc      : capturesession sessionSetFocusPoint api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0101
+     * @tc.desc   capturesession sessionSetFocusPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0101', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_0101--------------");
@@ -826,12 +826,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_0100
-     * @tc.name      : capturesession sessionGetFocusPoint api
-     * @tc.desc      : capturesession sessionGetFocusPoint api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_0100
+     * @tc.desc   capturesession sessionGetFocusPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_0100--------------");
@@ -850,14 +850,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_0100
-     * @tc.name      : capturesession sessionGetZoomRatioRange api
-     * @tc.desc      : capturesession sessionGetZoomRatioRange api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     *
-     *
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_0100
+     * @tc.desc   capturesession sessionGetZoomRatioRange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_0100--------------");
@@ -879,12 +877,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_0100
-     * @tc.name      : capturesession sessionGetZoomRatio api
-     * @tc.desc      : capturesession sessionGetZoomRatio api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_0100
+     * @tc.desc   capturesession sessionGetZoomRatio api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_0100--------------");
@@ -902,12 +900,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0100
-     * @tc.name      : capturesession sessionSetZoomRatio api
-     * @tc.desc      : capturesession sessionSetZoomRatio api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0100
+     * @tc.desc   capturesession sessionSetZoomRatio api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0100--------------");
@@ -926,12 +924,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0101
-     * @tc.name      : capturesession sessionSetZoomRatio api
-     * @tc.desc      : capturesession sessionSetZoomRatio api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0101
+     * @tc.desc   capturesession sessionSetZoomRatio api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0101', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_0101--------------");
@@ -949,12 +947,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_0100
-     * @tc.name      : capturesession sessionIsVideoStabilizationModeSupported api
-     * @tc.desc      : capturesession sessionIsVideoStabilizationModeSupported api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_0100
+     * @tc.desc   capturesession sessionIsVideoStabilizationModeSupported api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_0100--------------");
@@ -972,12 +970,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_0100
-     * @tc.name      : capturesession sessionGetVideoStabilizationMode api
-     * @tc.desc      : capturesession sessionGetVideoStabilizationMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_0100
+     * @tc.desc   capturesession sessionGetVideoStabilizationMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_0100--------------");
@@ -996,12 +994,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0100
-     * @tc.name      : capturesession sessionSetVideoStabilizationMode api
-     * @tc.desc      : capturesession sessionSetVideoStabilizationMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0100
+     * @tc.desc   capturesession sessionSetVideoStabilizationMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0100--------------");
@@ -1019,12 +1017,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0101
-     * @tc.name      : capturesession sessionSetVideoStabilizationMode api
-     * @tc.desc      : capturesession sessionSetVideoStabilizationMode api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0101
+     * @tc.desc   capturesession sessionSetVideoStabilizationMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0101', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_0101--------------");
@@ -1043,12 +1041,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PREVIEW_START_0100
-     * @tc.name      : PreviewOutput  start api
-     * @tc.desc      : PreviewOutput  start api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PREVIEW_START_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PREVIEW_START_0100
+     * @tc.desc   PreviewOutput  start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PREVIEW_START_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PREVIEW_START_0100--------------");
@@ -1066,12 +1064,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_VIDEO_START_0100
-     * @tc.name      : videooutput  start api
-     * @tc.desc      : videooutput  start api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_VIDEO_START_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_VIDEO_START_0100
+     * @tc.desc   videooutput  start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_VIDEO_START_0100', Level.LEVEL0, async () => {
       let ret = createCameraSessionInstance();
@@ -1083,12 +1081,12 @@ export default function CameraErrorCodeUsecaseTest() {
       cameraObj.sessionAddPreviewOutput();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_0100
-     * @tc.name      : photoOutput capture api
-     * @tc.desc      : photoOutput capture api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_0100
+     * @tc.desc   photoOutput capture api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_0100--------------");
@@ -1107,12 +1105,12 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_BEGINCONFIG_0100
-     * @tc.name      : capturesession beginConfig api
-     * @tc.desc      : capturesession beginConfig api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_BEGINCONFIG_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_BEGINCONFIG_0100
+     * @tc.desc   capturesession beginConfig api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_BEGINCONFIG_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_BEGINCONFIG_0100--------------");
@@ -1125,14 +1123,14 @@ export default function CameraErrorCodeUsecaseTest() {
         expect(true).assertTrue();
       }
     });
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ORIENTATION_0100
-     * @tc.name      : capturesession beginConfig api
-     * @tc.desc      : capturesession beginConfig api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ORIENTATION_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ORIENTATION_0100
+      * @tc.desc   capturesession beginConfig api
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ORIENTATION_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_ORIENTATION_0100--------------");
       mCameraSession = cameraObj.createSession();
@@ -1144,14 +1142,14 @@ export default function CameraErrorCodeUsecaseTest() {
         expect(true).assertTrue();
       }
     });
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_0100
-     * @tc.name      : cameraManager getHostMessage api
-     * @tc.desc      : cameraManager getHostMessage api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_0100
+      * @tc.desc   cameraManager getHostMessage api
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_0100--------------");
       mCameraSession = cameraObj.createSession();
@@ -1162,14 +1160,14 @@ export default function CameraErrorCodeUsecaseTest() {
         expect(false).assertTrue();
       }
     });
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_0100
-     * @tc.name      : cameraManager getHostMessage api
-     * @tc.desc      : cameraManager getHostMessage api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_0100
+      * @tc.desc   cameraManager getHostMessage api
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_0100--------------");
       mCameraSession = cameraObj.createSession();
@@ -1181,14 +1179,14 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
 
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_ERROR_PARAMETER_0100
-     * @tc.name      : test getHostName api with error code CAMERA_INVALID_ARGUMENT
-     * @tc.desc      : test getHostName api with error code CAMERA_INVALID_ARGUMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_ERROR_PARAMETER_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_ERROR_PARAMETER_0100
+      * @tc.desc   test getHostName api with error code CAMERA_INVALID_ARGUMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_ERROR_PARAMETER_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_ERROR_PARAMETER_0100--------------");
       mCameraSession = cameraObj.createSession();
@@ -1198,14 +1196,14 @@ export default function CameraErrorCodeUsecaseTest() {
       expect(ret == Camera_ErrorCode.CAMERA_INVALID_ARGUMENT).assertTrue();
     });
 
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_ERROR_PARAMETER_0100
-     * @tc.name      : test getCameraHostType api with error code CAMERA_INVALID_ARGUMENT
-     * @tc.desc      : test getCameraHostType api with error code CAMERA_INVALID_ARGUMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_ERROR_PARAMETER_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_ERROR_PARAMETER_0100
+      * @tc.desc   test getCameraHostType api with error code CAMERA_INVALID_ARGUMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_ERROR_PARAMETER_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_ERROR_PARAMETER_0100--------------");
       mCameraSession = cameraObj.createSession();
@@ -1215,14 +1213,14 @@ export default function CameraErrorCodeUsecaseTest() {
       expect(ret == Camera_ErrorCode.CAMERA_INVALID_ARGUMENT).assertTrue();
     });
 
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_INSPECTION_0100
-     * @tc.name      : test getHostName api Camera check
-     * @tc.desc      : test getHostName api Camera check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_INSPECTION_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_INSPECTION_0100
+      * @tc.desc   test getHostName api Camera check
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_INSPECTION_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_NAME_INSPECTION_0100--------------");
       mCameraSession = cameraObj.createSession();
@@ -1234,14 +1232,14 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     });
 
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_INSPECTION_0100
-     * @tc.name      : test getCameraHostType api Camera check
-     * @tc.desc      : test getCameraHostType api Camera check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_INSPECTION_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_INSPECTION_0100
+      * @tc.desc   test getCameraHostType api Camera check
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_INSPECTION_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_HOST_TYPE_INSPECTION_0100--------------");
       mCameraSession = cameraObj.createSession();
@@ -1254,12 +1252,12 @@ export default function CameraErrorCodeUsecaseTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_WHITEBALANCE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_WHITEBALANCE_0100
-     * @tc.desc      : photoOutput capture api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_WHITEBALANCE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_WHITEBALANCE_0100
+     * @tc.desc   photoOutput capture api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_WHITEBALANCE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ERROR_CODE_USECASE_WHITEBALANCE_0100--------------");
@@ -1279,12 +1277,12 @@ export default function CameraErrorCodeUsecaseTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_006
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_006
-     * @tc.desc      : capturesession sessionEnableMacro api errorcode 7400103
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_006
+     * @tc.desc   capturesession sessionEnableMacro api errorcode 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_006', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_006--------------");

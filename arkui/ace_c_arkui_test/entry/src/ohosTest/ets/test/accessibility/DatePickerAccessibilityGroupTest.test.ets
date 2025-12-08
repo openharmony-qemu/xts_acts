@@ -26,52 +26,52 @@ export default function datePickerAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testDatePickerAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testDatePickerAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testDatePickerAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for DatePicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testDatePickerAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for DatePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testDatePickerAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for DatePicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testDatePickerAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for DatePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerAccessibilityGroup004()).assertEqual(0)

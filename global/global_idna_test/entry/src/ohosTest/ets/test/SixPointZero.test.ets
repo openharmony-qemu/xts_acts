@@ -25,7 +25,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0100
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0100
      * @tc.desc   ubrk_setUText with {0x41,0x42, 0x20,0}
@@ -38,7 +37,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0200
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0200
      * @tc.desc   ubrk_setUText with {0x41,0x42, 0x43, 0x44, 0x45, 0}
@@ -51,7 +49,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0300
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0300
      * @tc.desc   ubrk_setUText with 'he's from'
@@ -64,7 +61,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0400
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0400
      * @tc.desc   ubrk_setUText with 'Couldn't open'
@@ -77,7 +73,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0500
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0500
      * @tc.desc   ubrk_setUText with 'Cloned Iterator failed'
@@ -90,7 +85,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0600
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0600
      * @tc.desc   ubrk_setUText with NULL
@@ -103,7 +97,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0700
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0700
      * @tc.desc   ubrk_setUText with '马到成功'
@@ -116,7 +109,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0800
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0800
      * @tc.desc   ubrk_setUText with '不知道我的国家'
@@ -129,7 +121,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_0900
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_0900
      * @tc.desc   ubrk_setUText with '我的国家'
@@ -142,7 +133,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_setUText_1000
      * @tc.number SUB_GLOBAL_I18n_testubrk_setUText_1000
      * @tc.desc   ubrk_setUText with '我我我我我'
@@ -155,7 +145,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_clone_0100
      * @tc.number SUB_GLOBAL_I18n_testubrk_clone_0100
      * @tc.desc   ubrk_clone with 'he's from Africa. Mr.'
@@ -168,7 +157,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_clone_0200
      * @tc.number SUB_GLOBAL_I18n_testubrk_clone_0200
      * @tc.desc   ubrk_clone with 'he's from Africa. Mr.'*2
@@ -181,7 +169,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testubrk_clone_0300
      * @tc.number SUB_GLOBAL_I18n_testubrk_clone_0300
      * @tc.desc   ubrk_clone with NULL
@@ -194,7 +181,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_getUnicodeVersion
      * @tc.number SUB_GLOBAL_Icu_testU_getUnicodeVersion_0100
      * @tc.desc   u_getUnicodeVersion with {0 ,0 ,0, 0}
@@ -207,7 +193,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_charAge
      * @tc.number SUB_GLOBAL_Icu_testU_charAge_0100
      * @tc.desc   charAge with {7, 2, 0, 0}
@@ -220,7 +205,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_localeDisplayName
      * @tc.number SUB_GLOBAL_Icu_testuldn_localeDisplayName_0100
      * @tc.desc   uldn_localeDisplayName with U_ZERO_ERROR
@@ -233,7 +217,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testUldn_getLocale
      * @tc.number SUB_GLOBAL_Icu_testUldn_getLocale_0100
      * @tc.desc   uldn_getLocale with U_ZERO_ERROR
@@ -246,7 +229,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testUldn_getDialectHandling
      * @tc.number SUB_GLOBAL_Icu_testUldn_getDialectHandling_0100
      * @tc.desc   uldn_getDialectHandling with U_ZERO_ERROR
@@ -259,7 +241,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_languageDisplayName
      * @tc.number SUB_GLOBAL_Icu_testuldn_languageDisplayName_0100
      * @tc.desc   uldn_languageDisplayName with U_ZERO_ERROR
@@ -272,7 +253,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_scriptDisplayName
      * @tc.number SUB_GLOBAL_Icu_testuldn_scriptDisplayName_0100
      * @tc.desc   uldn_scriptDisplayName with U_ZERO_ERROR
@@ -285,7 +265,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_scriptaCodeDisplayName
      * @tc.number SUB_GLOBAL_Icu_testuldn_scriptaCodeDisplayName_0100
      * @tc.desc   uldn_scriptaCodeDisplayName with U_ZERO_ERROR
@@ -298,7 +277,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_regionDisplayName
      * @tc.number SUB_GLOBAL_Icu_testuldn_regionDisplayName_0100
      * @tc.desc   uldn_regionDisplayName with U_ZERO_ERROR
@@ -311,7 +289,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_variantDisplayName
      * @tc.number SUB_GLOBAL_Icu_testuldn_variantDisplayName_0100
      * @tc.desc   uldn_variantDisplayName with U_ZERO_ERROR
@@ -324,7 +301,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_keyDisplayName
      * @tc.number SUB_GLOBAL_Icu_testuldn_keyDisplayName_0100
      * @tc.desc   uldn_keyDisplayName with U_ZERO_ERROR
@@ -337,7 +313,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_keyValueDisplayName
      * @tc.number SUB_GLOBAL_Icu_testuldn_keyValueDisplayName_0100
      * @tc.desc   uldn_keyValueDisplayName with U_ZERO_ERROR
@@ -350,7 +325,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuldn_openForContext
      * @tc.number SUB_GLOBAL_Icu_testuldn_openForContext_0100
      * @tc.desc   uldn_openForContext with item.displayLocale, contexts, 3,  &status
@@ -363,7 +337,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testulocdata_getCLDRVersion
      * @tc.number SUB_GLOBAL_Icu_testulocdata_getCLDRVersion_0100
      * @tc.desc   uldn_getCLDRVersion with U_ZERO_ERROR
@@ -376,7 +349,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_UNICODE_NONCHAR
      * @tc.number SUB_GLOBAL_Icu_testU_IS_UNICODE_NONCHAR_0100
      * @tc.desc   uldn_IS_UNICODE_NONCHAR with 0xfdd0
@@ -389,7 +361,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_UNICODE_CHAR
      * @tc.number SUB_GLOBAL_Icu_testU_IS_UNICODE_CHAR_0100
      * @tc.desc   uldn_IS_UNICODE_CHAR with 0xd700
@@ -402,7 +373,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_BMP
      * @tc.number SUB_GLOBAL_Icu_testU_IS_BMP_0100
      * @tc.desc   U_IS_BMP with 0xfdd0
@@ -415,7 +385,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_SUPPLEMENTARY
      * @tc.number SUB_GLOBAL_Icu_testU_IS_SUPPLEMENTARY_0100
      * @tc.desc   U_IS_SUPPLEMENTARY with 0x10005
@@ -428,7 +397,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_LEAD
      * @tc.number SUB_GLOBAL_Icu_testU_IS_LEAD_0100
      * @tc.desc   U_IS_LEAD with 0x0000d966
@@ -441,7 +409,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_TRAIL
      * @tc.number SUB_GLOBAL_Icu_testU_IS_TRAIL_0100
      * @tc.desc   U_IS_TRAIL with 0xdc00
@@ -454,7 +421,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_SURROGATE
      * @tc.number SUB_GLOBAL_Icu_testU_IS_SURROGATE_0100
      * @tc.desc   U_IS_SURROGATE with 0xd800
@@ -467,7 +433,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_SURROGATE_LEAD
      * @tc.number SUB_GLOBAL_Icu_testU_IS_SURROGATE_LEAD_0100
      * @tc.desc   U_IS_SURROGATE_LEAD with 0x0df
@@ -480,7 +445,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU_IS_SURROGATE_TRAIL
      * @tc.number SUB_GLOBAL_Icu_testU_IS_SURROGATE_TRAIL_0100
      * @tc.desc   U_IS_SURROGATE_TRAIL with 0xfdd0
@@ -493,7 +457,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_IS_SINGLE
      * @tc.number SUB_GLOBAL_Icu_testU16_IS_SINGLE_0100
      * @tc.desc   U16_IS_SINGLE with 0xd830
@@ -506,7 +469,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_IS_LEAD
      * @tc.number SUB_GLOBAL_Icu_testU16_IS_LEAD_0100
      * @tc.desc   U16_IS_LEAD with 0xd900
@@ -519,7 +481,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_IS_TRAIL
      * @tc.number SUB_GLOBAL_Icu_testU16_IS_TRAIL_0100
      * @tc.desc   U16_IS_TRAIL with 0xdd00
@@ -532,7 +493,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_IS_SURROGATE
      * @tc.number SUB_GLOBAL_Icu_testU16_IS_SURROGATE_0100
      * @tc.desc   U16_IS_SURROGATE with '0x0000d966'
@@ -545,7 +505,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_IS_SURROGATE_LEAD
      * @tc.number SUB_GLOBAL_Icu_testU16_IS_SURROGATE_LEAD_0100
      * @tc.desc   U16_IS_SURROGATE_LEAD with 0xd830
@@ -558,7 +517,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_IS_SURROGATE_TRAIL
      * @tc.number SUB_GLOBAL_Icu_testU16_IS_SURROGATE_TRAIL_0100
      * @tc.desc   U16_IS_SURROGATE_TRAIL with 0x401
@@ -571,7 +529,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_LEAD
      * @tc.number SUB_GLOBAL_Icu_testU16_LEAD_0100
      * @tc.desc   U16_LEAD with 0xd800
@@ -584,7 +541,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_TRAIL
      * @tc.number SUB_GLOBAL_Icu_testU16_TRAIL_0100
      * @tc.desc   U16_TRAIL with 0xd830
@@ -597,7 +553,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_LENGTH
      * @tc.number SUB_GLOBAL_Icu_testU16_LENGTH_0100
      * @tc.desc   U16_LENGTH with 0xd800
@@ -610,7 +565,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_GET_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_GET_UNSAFE_0100
      * @tc.desc   U16_GET_UNSAFE with UChar input[]
@@ -623,7 +577,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_GET
      * @tc.number SUB_GLOBAL_Icu_testU16_GET_0100
      * @tc.desc   U16_GET with UChar input[]
@@ -636,7 +589,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_GET_OR_FFFD
      * @tc.number SUB_GLOBAL_Icu_testU16_GET_OR_FFFD_0100
      * @tc.desc   U16_GET_OR_FFFD with UChar input[]
@@ -649,7 +601,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_NEXT_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_NEXT_UNSAFE_0100
      * @tc.desc   U16_NEXT_UNSAFE with UChar input[]
@@ -662,7 +613,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_NEXT
      * @tc.number SUB_GLOBAL_Icu_testU16_NEXT_0100
      * @tc.desc   U16_NEXT with UChar input[]
@@ -675,7 +625,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_NEXT_OR_FFFD
      * @tc.number SUB_GLOBAL_Icu_testU16_NEXT_OR_FFFD_0100
      * @tc.desc   U16_NEXT_OR_FFFD with UChar input[]
@@ -688,7 +637,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_APPEND_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_APPEND_UNSAFE_0100
      * @tc.desc   U16_APPEND_UNSAFE with UChar input[]
@@ -701,7 +649,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testu_versionFromString
      * @tc.number SUB_GLOBAL_Icu_testu_versionFromString_0100
      * @tc.desc   u_versionFromString with ver[40] = "72.1"
@@ -714,7 +661,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testu_versionToString
      * @tc.number SUB_GLOBAL_Icu_testu_versionToString_0100
      * @tc.desc   u_versionToString with {72, 1, 0, 0}
@@ -727,7 +673,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testu_getVersion
      * @tc.number SUB_GLOBAL_Icu_testu_getVersion_0100
      * @tc.desc   u_getVersion with icuVersion
@@ -740,7 +685,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testu_versionFromUString
      * @tc.number SUB_GLOBAL_Icu_testu_versionFromUString_0100
      * @tc.desc   u_versionFromUString with str[] = u"72.1"
@@ -753,7 +697,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testUCPMapValueFilter
      * @tc.number SUB_GLOBAL_Icu_testUCPMapValueFilter_0100
      * @tc.desc   UCPMapValueFilter with value = 233
@@ -766,7 +709,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_APPEND
      * @tc.number SUB_GLOBAL_Icu_testU16_APPEND_0100
      * @tc.desc   U16_APPEND with 0xdbff
@@ -779,7 +721,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_FWD_1_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_FWD_1_UNSAFE_0100
      * @tc.desc   U16_FWD_1_UNSAFE with input[]
@@ -792,7 +733,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_FWD_1
      * @tc.number SUB_GLOBAL_Icu_testU16_FWD_1_0100
      * @tc.desc   U16_FWD_1 with input[]
@@ -805,7 +745,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_FWD_N_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_FWD_N_UNSAFE_0100
      * @tc.desc   U16_FWD_N_UNSAFE with input[]
@@ -818,7 +757,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_FWD_N
      * @tc.number SUB_GLOBAL_Icu_testU16_FWD_N_0100
      * @tc.desc   U16_FWD_N with input[]
@@ -831,7 +769,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_SET_CP_START_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_SET_CP_START_UNSAFE_0100
      * @tc.desc   U16_SET_CP_START_UNSAFE with input[]
@@ -844,7 +781,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_SET_CP_START
      * @tc.number SUB_GLOBAL_Icu_testU16_SET_CP_START_0100
      * @tc.desc   U16_SET_CP_START with input[]
@@ -857,7 +793,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_PREV_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_PREV_UNSAFE_0100
      * @tc.desc   U16_PREV_UNSAFE with input[]
@@ -870,7 +805,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_PREV
      * @tc.number SUB_GLOBAL_Icu_testU16_PREV_0100
      * @tc.desc   U16_PREV with input[]
@@ -883,7 +817,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_PREV_OR_FFFD
      * @tc.number SUB_GLOBAL_Icu_testU16_PREV_OR_FFFD_0100
      * @tc.desc   U16_PREV_OR_FFFD with input[]
@@ -896,7 +829,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_BACK_1_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_BACK_1_UNSAFE_0100
      * @tc.desc   U16_BACK_1_UNSAFE with input[]
@@ -909,7 +841,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_BACK_1
      * @tc.number SUB_GLOBAL_Icu_testU16_BACK_1_0100
      * @tc.desc   U16_BACK_1 with input[]
@@ -922,7 +853,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_BACK_N_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_BACK_N_UNSAFE_0100
      * @tc.desc   U16_BACK_N_UNSAFE with input[]
@@ -935,7 +865,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_BACK_N
      * @tc.number SUB_GLOBAL_Icu_testU16_BACK_N_0100
      * @tc.desc   U16_BACK_N with input[]
@@ -948,7 +877,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_SET_CP_LIMIT_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU16_SET_CP_LIMIT_UNSAFE_0100
      * @tc.desc   U16_SET_CP_LIMIT_UNSAFE with input[]
@@ -961,7 +889,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU16_SET_CP_LIMIT
      * @tc.number SUB_GLOBAL_Icu_testU16_SET_CP_LIMIT_0100
      * @tc.desc   U16_SET_CP_LIMIT with input[]
@@ -974,7 +901,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_IS_SINGLE
      * @tc.number SUB_GLOBAL_Icu_testU8_IS_SINGLE_0100
      * @tc.desc   U8_IS_SINGLE with 0x7a
@@ -987,7 +913,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_IS_LEAD
      * @tc.number SUB_GLOBAL_Icu_testU8_IS_LEAD_0100
      * @tc.desc   U8_IS_LEAD with 0xc2
@@ -1000,7 +925,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_IS_TRAIL
      * @tc.number SUB_GLOBAL_Icu_testU8_IS_TRAIL_0100
      * @tc.desc   U8_IS_TRAIL with 0x80
@@ -1013,7 +937,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_LENGTH
      * @tc.number SUB_GLOBAL_Icu_testU8_LENGTH_0100
      * @tc.desc   U8_LENGTH with 0x80
@@ -1026,7 +949,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_GET_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_GET_UNSAFE_0100
      * @tc.desc   U8_GET_UNSAFE with input[]
@@ -1039,7 +961,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_GET
      * @tc.number SUB_GLOBAL_Icu_testU8_GET_0100
      * @tc.desc   U8_GET with input[]
@@ -1052,7 +973,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_GET_OR_FFFD
      * @tc.number SUB_GLOBAL_Icu_testU8_GET_OR_FFFD_0100
      * @tc.desc   U8_GET_OR_FFFD with input[]
@@ -1065,7 +985,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_NEXT_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_NEXT_UNSAFE_0100
      * @tc.desc   U8_NEXT_UNSAFE with input[]
@@ -1078,7 +997,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_NEXT
      * @tc.number SUB_GLOBAL_Icu_testU8_NEXT_0100
      * @tc.desc   U8_NEXT with input[]
@@ -1091,7 +1009,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_NEXT_OR_FFFD
      * @tc.number SUB_GLOBAL_Icu_testU8_NEXT_OR_FFFD_0100
      * @tc.desc   U8_NEXT_OR_FFFD with input[]
@@ -1104,7 +1021,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_APPEND_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_APPEND_UNSAFE_0100
      * @tc.desc   U8_APPEND_UNSAFE with input[]
@@ -1117,7 +1033,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_APPEND
      * @tc.number SUB_GLOBAL_Icu_testU8_APPEND_0100
      * @tc.desc   U8_APPEND with 0x8d
@@ -1130,7 +1045,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_FWD_1_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_FWD_1_UNSAFE_0100
      * @tc.desc   U8_FWD_1_UNSAFE with input[]
@@ -1143,7 +1057,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_FWD_1
      * @tc.number SUB_GLOBAL_Icu_testU8_FWD_1_0100
      * @tc.desc   U8_FWD_1 with input[]
@@ -1156,7 +1069,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_FWD_N_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_FWD_N_UNSAFE_0100
      * @tc.desc   U8_FWD_N_UNSAFE with input[]
@@ -1169,7 +1081,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_FWD_N
      * @tc.number SUB_GLOBAL_Icu_testU8_FWD_N_0100
      * @tc.desc   U8_FWD_N with input[]
@@ -1182,7 +1093,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_SET_CP_START_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_SET_CP_START_UNSAFE_0100
      * @tc.desc   U8_SET_CP_START_UNSAFE with input[]
@@ -1195,7 +1105,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_SET_CP_START
      * @tc.number SUB_GLOBAL_Icu_testU8_SET_CP_START_0100
      * @tc.desc   U8_SET_CP_START with input[]
@@ -1208,7 +1117,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_TRUNCATE_IF_INCOMPLETE
      * @tc.number SUB_GLOBAL_Icu_testU8_TRUNCATE_IF_INCOMPLETE_0100
      * @tc.desc   U8_TRUNCATE_IF_INCOMPLETE with "\xED\xA0"
@@ -1221,7 +1129,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_PREV_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_PREV_UNSAFE_0100
      * @tc.desc   U8_PREV_UNSAFE with input[]
@@ -1234,7 +1141,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_PREV
      * @tc.number SUB_GLOBAL_Icu_testU8_PREV_0100
      * @tc.desc   U8_PREV with input[]
@@ -1247,7 +1153,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_PREV_OR_FFFD
      * @tc.number SUB_GLOBAL_Icu_testU8_PREV_OR_FFFD_0100
      * @tc.desc   U8_PREV_OR_FFFD with input[]
@@ -1260,7 +1165,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_BACK_1_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_BACK_1_UNSAFE_0100
      * @tc.desc   U8_BACK_1_UNSAFE with uint8_t s[]
@@ -1273,7 +1177,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_BACK_1
      * @tc.number SUB_GLOBAL_Icu_testU8_BACK_1_0100
      * @tc.desc   U8_BACK_1 with uint8_t s[]
@@ -1286,7 +1189,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_BACK_N_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_BACK_N_UNSAFE_0100
      * @tc.desc   U8_BACK_N_UNSAFE with uint8_t s[]
@@ -1299,7 +1201,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_BACK_N
      * @tc.number SUB_GLOBAL_Icu_testU8_BACK_N_0100
      * @tc.desc   U8_BACK_N with uint8_t s[]
@@ -1312,7 +1213,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_SET_CP_LIMIT_UNSAFE
      * @tc.number SUB_GLOBAL_Icu_testU8_SET_CP_LIMIT_UNSAFE_0100
      * @tc.desc   U8_SET_CP_LIMIT_UNSAFE uint8_t s[]
@@ -1325,7 +1225,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testU8_SET_CP_LIMIT
      * @tc.number SUB_GLOBAL_Icu_testU8_SET_CP_LIMIT_0100
      * @tc.desc   U8_SET_CP_LIMIT uint8_t s[]
@@ -1338,7 +1237,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testutf8_back1SafeBody
      * @tc.number SUB_GLOBAL_Icu_testutf8_back1SafeBody_0100
      * @tc.desc   utf8_back1SafeBody uint8_t input[]
@@ -1351,7 +1249,6 @@ export default function SixPointZeroTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testutf8_prevCharSafeBody
      * @tc.number SUB_GLOBAL_Icu_testutf8_prevCharSafeBody_0100
      * @tc.desc   utf8_prevCharSafeBody uint8_t input[]

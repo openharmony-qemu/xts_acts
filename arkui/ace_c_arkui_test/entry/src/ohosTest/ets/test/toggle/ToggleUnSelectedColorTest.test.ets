@@ -26,52 +26,52 @@ export default function toggleUnSelectedColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_UNSELECTED_COLOR_0100
-     * @tc.name       : testToggleUnSelectedColor001
-     * @tc.desc       : testing unSelectedColor for toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleUnSelectedColor001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_UNSELECTED_COLOR_0100
+     * @tc.desc   testing unSelectedColor for toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleUnSelectedColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleUnSelectedColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_UNSELECTED_COLOR_0200
-     * @tc.name       : testToggleUnSelectedColor002
-     * @tc.desc       : testing unSelectedColor for toggle with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleUnSelectedColor002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_UNSELECTED_COLOR_0200
+     * @tc.desc   testing unSelectedColor for toggle with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleUnSelectedColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleUnSelectedColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_UNSELECTED_COLOR_0300
-     * @tc.name       : testToggleUnSelectedColor003
-     * @tc.desc       : testing unSelectedColor for toggle with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleUnSelectedColor003
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_UNSELECTED_COLOR_0300
+     * @tc.desc   testing unSelectedColor for toggle with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleUnSelectedColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleUnSelectedColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_UNSELECTED_COLOR_0400
-     * @tc.name       : testToggleUnSelectedColor004
-     * @tc.desc       : testing unSelectedColor for toggle with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleUnSelectedColor004
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_UNSELECTED_COLOR_0400
+     * @tc.desc   testing unSelectedColor for toggle with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleUnSelectedColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleUnSelectedColor004()).assertEqual(0)

@@ -29,12 +29,12 @@ export default function getAlbumChangeRequestTest() {
       await sleep(1000);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_ALBUM_CHANGE_REQUEST_0000
-     * @tc.name      : get_album_change_request_000
-     * @tc.desc      : get album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_album_change_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_ALBUM_CHANGE_REQUEST_0000
+     * @tc.desc   get album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_album_change_request_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'get_album_change_request_000';

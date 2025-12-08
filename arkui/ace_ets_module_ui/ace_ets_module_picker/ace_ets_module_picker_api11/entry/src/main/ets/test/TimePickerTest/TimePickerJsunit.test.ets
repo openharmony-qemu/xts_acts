@@ -55,6 +55,14 @@ export default function TimePickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TimePickerJsunit_0100
+     * @tc.number TimePickerJsunit_0100
+     * @tc.desc   TimePickerJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Verify 12-hour function of TimePicker component
       // switch 12-hour
@@ -107,6 +115,14 @@ export default function TimePickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TimePickerJsunit_0200
+     * @tc.number TimePickerJsunit_0200
+     * @tc.desc   TimePickerJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Verify switch 12-hour/24-hour system of TimePicker component
       console.info('[TimePickerJsunit_0200] START');
@@ -131,6 +147,14 @@ export default function TimePickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TimePickerJsunit_0300
+     * @tc.number TimePickerJsunit_0300
+     * @tc.desc   TimePickerJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Verify 24-hour function of TimePicker component
       console.info('[TimePickerJsunit_0300] START');

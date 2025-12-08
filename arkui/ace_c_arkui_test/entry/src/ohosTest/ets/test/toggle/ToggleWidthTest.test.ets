@@ -26,39 +26,39 @@ export default function toggleWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_WIDTH_0100
-     * @tc.name       : testToggleWidth001
-     * @tc.desc       : testing width for toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleWidth001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_WIDTH_0100
+     * @tc.desc   testing width for toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_WIDTH_0200
-     * @tc.name       : testToggleWidth002
-     * @tc.desc       : testing width for toggle with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleWidth002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_WIDTH_0200
+     * @tc.desc   testing width for toggle with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_WIDTH_0300
-     * @tc.name       : testToggleWidth003
-     * @tc.desc       : testing width for toggle with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testToggleWidth003
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_WIDTH_0300
+     * @tc.desc   testing width for toggle with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleWidth003()).assertEqual(0)

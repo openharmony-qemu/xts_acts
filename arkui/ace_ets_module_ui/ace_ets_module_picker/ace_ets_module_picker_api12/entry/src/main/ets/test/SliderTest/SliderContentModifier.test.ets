@@ -47,12 +47,14 @@ export default function SliderContentModifier() {
     });
 
 
-    /*
-    * @tc.number      SliderContentModifier_001
-    * @tc.name        SliderContentModifier_001
-    * @tc.desc        Testing TriggerChange to Trigger Slider Changes
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   SliderContentModifier_001
+     * @tc.number SliderContentModifier_001
+     * @tc.desc   Testing TriggerChange to Trigger Slider Changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SliderContentModifier_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderContentModifier_001] START');
       await Utils.sleep(1000);

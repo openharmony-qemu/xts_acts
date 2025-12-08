@@ -20,12 +20,12 @@ export default function ActsShortTimeTaskNdkTest() {
   describe('ActsShortTimeTaskNdkTest', () => {
 
     /**
-     * @tc.number  : SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelay_0100
-     * @tc.name    : test Res_ShortTimeTask_RequestSuspendDelay Test Normal Scene
-     * @tc.desc    : Apply for a normal short-time task.
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelay_0100
+     * @tc.number SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelay_0100
+     * @tc.desc   Apply for a normal short-time task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelay_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -42,12 +42,12 @@ export default function ActsShortTimeTaskNdkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0100
-     * @tc.name    : test Res_ShortTimeTask_GetRemainingDelayTime Test Normal Scene
-     * @tc.desc    : Apply for a normal short-time task.
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0100
+     * @tc.number SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0100
+     * @tc.desc   Apply for a normal short-time task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -63,12 +63,12 @@ export default function ActsShortTimeTaskNdkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_ShortTimeTask_CancelSuspendDelay_0100
-     * @tc.name    : test Res_ShortTimeTask_CancelSuspendDelay Test Normal Scene
-     * @tc.desc    : Apply for a normal short-time task.
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_ShortTimeTask_CancelSuspendDelay_0100
+     * @tc.number SUB_Resourceschedule_ShortTimeTask_CancelSuspendDelay_0100
+     * @tc.desc   Apply for a normal short-time task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_ShortTimeTask_CancelSuspendDelay_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -84,12 +84,12 @@ export default function ActsShortTimeTaskNdkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_ShortTimeTask_GetTransientTaskInfo_0100
-     * @tc.name    : test Res_ShortTimeTask_GetTransientTaskInfo Test Normal Scene
-     * @tc.desc    : Test GetTransientTaskInfo native function.
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_ShortTimeTask_GetTransientTaskInfo_0100
+     * @tc.number SUB_Resourceschedule_ShortTimeTask_GetTransientTaskInfo_0100
+     * @tc.desc   Test GetTransientTaskInfo native function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_ShortTimeTask_GetTransientTaskInfo_0100', Level.LEVEL3, async (done: Function) => {
       try {

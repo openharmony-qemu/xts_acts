@@ -26,52 +26,52 @@ export default function xComponentSourceIdTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_SOURCEID_0100
-     * @tc.name       : testXComponentSourceId001
-     * @tc.desc       : testing sourceId for XComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentSourceId001
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_SOURCEID_0100
+     * @tc.desc   testing sourceId for XComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentSourceId001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentSourceId001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_SOURCEID_0200
-     * @tc.name       : testXComponentSourceId002
-     * @tc.desc       : testing sourceId for XComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testXComponentSourceId002
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_SOURCEID_0200
+     * @tc.desc   testing sourceId for XComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentSourceId002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentSourceId002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_SOURCEID_0300
-     * @tc.name       : testXComponentSourceId003
-     * @tc.desc       : testing sourceId for XComponent with null value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testXComponentSourceId003
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_SOURCEID_0300
+     * @tc.desc   testing sourceId for XComponent with null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentSourceId003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentSourceId003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_SOURCEID_0400
-     * @tc.name       : testXComponentSourceId004
-     * @tc.desc       : testing sourceId for XComponent with NULL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testXComponentSourceId004
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_SOURCEID_0400
+     * @tc.desc   testing sourceId for XComponent with NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentSourceId004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentSourceId004()).assertEqual(0)

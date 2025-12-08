@@ -40,12 +40,12 @@ export default function HttpFlushTest() {
     let XTS_TEST_SECOND_HTTP_URL: string = 'http://httpbin.org/anything';
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_0100
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush0100
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0100
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0100
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush0100';
@@ -81,12 +81,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_0200
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush0200
-     * @tc.desc   : Write cached data to the file system.Use Promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0200
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0200
+     * @tc.desc   Write cached data to the file system.Use Promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush0200';
@@ -119,12 +119,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_0300
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush0300
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0300
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0300
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush0300';
@@ -180,12 +180,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_0400
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush0400
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0400
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0400
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush0400';
@@ -251,12 +251,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_0500
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush0500
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0500
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0500
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush0500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush0500';
@@ -332,12 +332,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_0600
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush0600
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0600
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0600
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush0600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush0600';
@@ -422,12 +422,12 @@ export default function HttpFlushTest() {
     });
     
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_0800
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush0800
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0800
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0800
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush0800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush0800';
@@ -473,12 +473,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_0900
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush0900
-     * @tc.desc   : Write cached data to the file system.Use Promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0900
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0900
+     * @tc.desc   Write cached data to the file system.Use Promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush0900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush0900';
@@ -532,12 +532,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1000
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1000
-     * @tc.desc   : Write cached data to the file system.Use Promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1000
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1000
+     * @tc.desc   Write cached data to the file system.Use Promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1000';
@@ -601,12 +601,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1100
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1100
-     * @tc.desc   : Write cached data to the file system.Use Promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1100
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1100
+     * @tc.desc   Write cached data to the file system.Use Promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1100';
@@ -680,12 +680,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1200
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1200
-     * @tc.desc   : Write cached data to the file system.Use Promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1200
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1200
+     * @tc.desc   Write cached data to the file system.Use Promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1200';
@@ -769,12 +769,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1300
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1300
-     * @tc.desc   : Write cached data to the file system.Use Promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1300
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1300
+     * @tc.desc   Write cached data to the file system.Use Promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1300';
@@ -836,12 +836,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1400
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1400
-     * @tc.desc   : Write cached data to the file system.Use Promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1400
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1400
+     * @tc.desc   Write cached data to the file system.Use Promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1400';
@@ -891,12 +891,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1500
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1500
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1500
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1500
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1500';
@@ -950,12 +950,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1600
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1600
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1600
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1600
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1600';
@@ -1019,12 +1019,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1700
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1700
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1700
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1700
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1700';
@@ -1083,12 +1083,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1800
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1800
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1800
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1800
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1800';
@@ -1145,12 +1145,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_1900
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush1900
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1900
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_1900
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush1900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1900';
@@ -1204,12 +1204,12 @@ export default function HttpFlushTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Flush_2000
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheFlush2000
-     * @tc.desc   : Write cached data to the file system.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush2000
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_2000
+     * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheFlush2000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush2000';

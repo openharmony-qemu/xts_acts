@@ -26,39 +26,39 @@ export default function swiperLoopTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_LOOP_0100
-     * @tc.name       : testSwiperLoop001
-     * @tc.desc       : testing loop for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperLoop001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_LOOP_0100
+     * @tc.desc   testing loop for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperLoop001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperLoop001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_LOOP_0200
-     * @tc.name       : testSwiperLoop002
-     * @tc.desc       : testing loop for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperLoop002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_LOOP_0200
+     * @tc.desc   testing loop for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperLoop002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperLoop002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_LOOP_0300
-     * @tc.name       : testSwiperLoop003
-     * @tc.desc       : testing loop for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperLoop003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_LOOP_0300
+     * @tc.desc   testing loop for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperLoop003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperLoop003()).assertEqual(0)

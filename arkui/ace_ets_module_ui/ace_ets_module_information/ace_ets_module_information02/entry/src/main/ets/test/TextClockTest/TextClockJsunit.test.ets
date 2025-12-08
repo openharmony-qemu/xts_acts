@@ -45,12 +45,12 @@ export default function TextClockJsunit() {
       console.info("TextClockJsunit after each called");
     });
     /**
-     * @tc.number    textClockTest01
-     * @tc.name      textClockTest01
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   textClockTest01
+     * @tc.number textClockTest01
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textClockTest01', Level.LEVEL2, async (done: Function) => {
       console.info('textClockTest01 START');
@@ -61,13 +61,13 @@ export default function TextClockJsunit() {
       await CommonFunc.sleep(1000);
       done();
     });
-     /**
-     * @tc.number    textClockTest02
-     * @tc.name      textClockTest02
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textClockTest02
+     * @tc.number textClockTest02
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textClockTest02', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest02] START');
@@ -93,13 +93,13 @@ export default function TextClockJsunit() {
       expect(JSON.parse(strJsonNew).$attrs.fontSize).assertEqual('30.00fp');
       done();
     });
-     /**
-     * @tc.number    textClockTest03
-     * @tc.name      textClockTest03
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textClockTest03
+     * @tc.number textClockTest03
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textClockTest03', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest03] START');
@@ -111,13 +111,13 @@ export default function TextClockJsunit() {
       expect(JSON.parse(strJson).$attrs.fontColor).assertEqual('#FFFF0000');
       done();
     });
-     /**
-     * @tc.number    textClockTest04
-     * @tc.name      textClockTest04
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textClockTest04
+     * @tc.number textClockTest04
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textClockTest04', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest04] START');
@@ -144,13 +144,13 @@ export default function TextClockJsunit() {
       expect(JSON.parse(strJson).$attrs.fontColor).assertEqual('#FF000990');
       done();
     });
-     /**
-     * @tc.number    textClockTest05
-     * @tc.name      textClockTest05
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textClockTest05
+     * @tc.number textClockTest05
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textClockTest05', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest05] START');
@@ -162,13 +162,13 @@ export default function TextClockJsunit() {
       console.info('textClockTest05 END');
       done();
     });
-     /**
-     * @tc.number    textClockTest06
-     * @tc.name      textClockTest06
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textClockTest06
+     * @tc.number textClockTest06
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textClockTest06', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest06] START');

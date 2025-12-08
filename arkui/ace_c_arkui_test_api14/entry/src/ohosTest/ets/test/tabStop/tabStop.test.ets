@@ -25,15 +25,15 @@ export default function tabStop(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TABSTOP_0100
-     * @tc.name       : tabStop_001
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   tabStop_001
+     * @tc.number tabStop_001
+     * @tc.desc   tabStop_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('tabStop_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.tabStop_001()).assertEqual(0)
       done()

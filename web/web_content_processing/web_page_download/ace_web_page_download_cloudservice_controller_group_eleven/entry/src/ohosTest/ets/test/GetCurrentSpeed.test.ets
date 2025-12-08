@@ -58,12 +58,12 @@ export default function GetCurrentSpeed() {
     })
 
     /**
+     * @tc.name   testWebView_getCurrentSpeed1000
      * @tc.number SUB_ACE_WEB_getCurrentSpeed_1001
-     * @tc.name testWebView_getCurrentSpeed1000
-     * @tc.desc test getCurrentSpeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test getCurrentSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_getCurrentSpeed1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       router.pushUrl({
@@ -79,12 +79,12 @@ export default function GetCurrentSpeed() {
     })
 
     /**
+     * @tc.name   testWebView_getCurrentSpeed1001
      * @tc.number SUB_ACE_WEB_getCurrentSpeed_1002
-     * @tc.name testWebView_getCurrentSpeed1001
-     * @tc.desc test getCurrentSpeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getCurrentSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getCurrentSpeed1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -100,12 +100,12 @@ export default function GetCurrentSpeed() {
     })
 
     /**
+     * @tc.name   testWebView_getCurrentSpeed1002
      * @tc.number SUB_ACE_WEB_getCurrentSpeed_1003
-     * @tc.name testWebView_getCurrentSpeed1002
-     * @tc.desc test getCurrentSpeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getCurrentSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getCurrentSpeed1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -121,12 +121,12 @@ export default function GetCurrentSpeed() {
     })
 
     /**
+     * @tc.name   testWebView_getCurrentSpeed1003
      * @tc.number SUB_ACE_WEB_getCurrentSpeed_1004
-     * @tc.name testWebView_getCurrentSpeed1003
-     * @tc.desc test getCurrentSpeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getCurrentSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getCurrentSpeed1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({

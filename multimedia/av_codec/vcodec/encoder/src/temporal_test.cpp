@@ -98,9 +98,12 @@ void HwEncTemporalNdkTest::TearDown()
 }
 namespace {
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0020
- * @tc.name      : OOH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_REFERENCE_MODE error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0020
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0020
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0020, TestSize.Level2)
 {
@@ -132,9 +135,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0020, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0030
- * @tc.name      : OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_SIZE para error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0030
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0030
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0030, TestSize.Level2)
 {
@@ -166,9 +172,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0030, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0010
- * @tc.name      : 调用使能接口
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0010
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0010, TestSize.Level1)
 {
@@ -196,9 +205,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0010, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0020
- * @tc.name      : 未使能，配置相邻模式分层编码,h264 buffer
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0020
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0020
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0020, TestSize.Level1)
 {
@@ -222,9 +234,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0020, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0030
- * @tc.name      : 未使能，配置相邻模式分层编码,h265 surf
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0030
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0030
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0030, TestSize.Level1)
 {
@@ -249,9 +264,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0030, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0040
- * @tc.name      : 配置跨帧模式分层编码,默认gopsize,h265 surf
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0040
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0040
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0040, TestSize.Level1)
 {
@@ -277,9 +295,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0040, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0440
- * @tc.name      : 配置相邻模式分层编码,默认gopsize,h265 surf
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0440
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0440
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0440, TestSize.Level1)
 {
@@ -304,9 +325,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0440, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0050
- * @tc.name      : h265，surf相邻参考模式分层编码。时域gop size为2
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0050
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0050
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0050, TestSize.Level1)
 {
@@ -331,9 +355,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0050, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0060
- * @tc.name      : h265，surf相邻参考模式分层编码。时域gop size为I帧间隔-1
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0060
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0060
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0060, TestSize.Level1)
 {
@@ -359,9 +386,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0060, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0070
- * @tc.name      : h265，surf跨帧参考模式分层编码。时域gop size为2
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0070
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0070
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0070, TestSize.Level1)
 {
@@ -387,9 +417,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0070, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0080
- * @tc.name      : h265，surf跨帧参考模式分层编码  时域gop size为I帧间隔-1
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0080
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0080
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0080, TestSize.Level1)
 {
@@ -415,9 +448,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0080, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0090
- * @tc.name      : h264 buffer 相邻参考模式分层编码 时域gop size为任意合法值
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0090
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0090
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0090, TestSize.Level1)
 {
@@ -441,9 +477,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0090, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0100
- * @tc.name      : h264 buffer 跨帧参考模式分层编码 时域gop size为任意合法值
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0100
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0100, TestSize.Level1)
 {
@@ -468,9 +507,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0100, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0110
- * @tc.name      : h264 surf 相邻参考模式分层编码 时域gop size为任意合法值
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0110
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0110
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0110, TestSize.Level1)
 {
@@ -495,9 +537,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0110, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0120
- * @tc.name      : h264 surf 跨帧参考模式分层编码 时域gop size为5
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0120
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0120
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0120, TestSize.Level1)
 {
@@ -523,9 +568,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0120, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0130
- * @tc.name      : h265 buffer 相邻参考模式分层编码 时域gop size为任意合法值
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0130
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0130
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0130, TestSize.Level1)
 {
@@ -549,9 +597,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0130, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0140
- * @tc.name      : h265 buffer 跨帧参考模式分层编码 时域gop size为8
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0140
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0140
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0140, TestSize.Level1)
 {
@@ -576,9 +627,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0140, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0150
- * @tc.name      : h265 surf 相邻参考模式分层编码 时域gop size为任意合法值
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0150
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0150
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0150, TestSize.Level1)
 {
@@ -603,9 +657,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0150, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0160
- * @tc.name      : h265 surf 跨帧参考模式分层编码 时域gop size为12
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0160
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0160
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0160, TestSize.Level1)
 {
@@ -631,9 +688,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0160, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0170
- * @tc.name      : h265 surf分层编码过程中强制I帧，检查相邻分层结构是否刷新
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0170
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0170
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0170, TestSize.Level1)
 {
@@ -659,9 +719,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0170, TestSize.Lev
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_FUNCTION_0180
- * @tc.name      : h265 surf分层编码过程中强制I帧，检查跨帧分层结构是否刷新
- * @tc.desc      : function test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_FUNCTION_0180
+ * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0180
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0180, TestSize.Level1)
 {
@@ -688,9 +751,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_FUNCTION_0180, TestSize.Lev
 }
 
 /**
- * @tc.number    : LTR_FUNC_001
- * @tc.name      : LTR count设置为非法值
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_001
+ * @tc.number LTR_FUNC_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_001, TestSize.Level0)
 {
@@ -715,9 +781,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_001, TestSize.Level0)
 }
 
 /**
- * @tc.number    : LTR_FUNC_002
- * @tc.name      : 能力查询是否支持LTR
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_002
+ * @tc.number LTR_FUNC_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_002, TestSize.Level0)
 {
@@ -731,9 +800,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_002, TestSize.Level0)
 }
 
 /**
- * @tc.number    : LTR_FUNC_004
- * @tc.name      : h265 surf模式 count 1 ,mark 第5帧 ,后续帧标记use
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_004
+ * @tc.number LTR_FUNC_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_004, TestSize.Level0)
 {
@@ -758,9 +830,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_004, TestSize.Level0)
 }
 
 /**
- * @tc.number    : LTR_FUNC_005
- * @tc.name      : h265 surf模式 count 1 ,mark 第5帧 ,后续帧标记use 但poc错误
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_005
+ * @tc.number LTR_FUNC_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_005, TestSize.Level1)
 {
@@ -786,9 +861,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_005, TestSize.Level1)
 }
 
 /**
- * @tc.number    : LTR_FUNC_006
- * @tc.name      : h265 surf模式 count 10 ,每隔5帧mark一帧,每个参考帧后面都正确use当前参考帧
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_006
+ * @tc.number LTR_FUNC_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_006, TestSize.Level0)
 {
@@ -815,9 +893,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_006, TestSize.Level0)
 }
 
 /**
- * @tc.number    : LTR_FUNC_007
- * @tc.name      : h265 surf模式 count 10 ,每隔5帧mark一帧,不设置use帧
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_007
+ * @tc.number LTR_FUNC_007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_007, TestSize.Level2)
 {
@@ -843,9 +924,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_007, TestSize.Level2)
 }
 
 /**
- * @tc.number    : LTR_FUNC_008
- * @tc.name      : h265 surf模式 count 2 ,每隔5帧mark一帧,所有帧都use第一个参考帧
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_008
+ * @tc.number LTR_FUNC_008
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_008, TestSize.Level1)
 {
@@ -872,9 +956,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_008, TestSize.Level1)
 }
 
 /**
- * @tc.number    : LTR_FUNC_009
- * @tc.name      : h265 surf模式 ,不设置count ,mark一个参考帧 ,一个被标记为use ,poc正确
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_009
+ * @tc.number LTR_FUNC_009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_009, TestSize.Level2)
 {
@@ -899,9 +986,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_009, TestSize.Level2)
 }
 
 /**
- * @tc.number    : LTR_FUNC_010
- * @tc.name      : h265 surf模式,分层编码 和LTR同时设置
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_010
+ * @tc.number LTR_FUNC_010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_010, TestSize.Level1)
 {
@@ -927,9 +1017,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : LTR_FUNC_011
- * @tc.name      : count为5,h264 buffer,每隔5帧mark参考帧,且都被正确use
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_011
+ * @tc.number LTR_FUNC_011
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_011, TestSize.Level0)
 {
@@ -958,9 +1051,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_011, TestSize.Level0)
 }
 
 /**
- * @tc.number    : LTR_FUNC_012
- * @tc.name      : h264 surf模式 每隔5帧mark参考帧
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_012
+ * @tc.number LTR_FUNC_012
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_012, TestSize.Level0)
 {
@@ -987,9 +1083,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_012, TestSize.Level0)
 }
 
 /**
- * @tc.number    : LTR_FUNC_013
- * @tc.name      : count为5,h265 buffer,每隔5帧mark参考帧,且都被正确use
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_013
+ * @tc.number LTR_FUNC_013
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_013, TestSize.Level0)
 {
@@ -1018,9 +1117,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_013, TestSize.Level0)
 }
 
 /**
- * @tc.number    : LTR_FUNC_014
- * @tc.name      : h265 surf模式 每隔5帧mark参考帧
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_014
+ * @tc.number LTR_FUNC_014
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_014, TestSize.Level0)
 {
@@ -1047,9 +1149,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_014, TestSize.Level0)
 }
 
 /**
- * @tc.number    : LTR_FUNC_015
- * @tc.name      : count为5,h264 buffer,每隔5帧mark参考帧,且use自己
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_015
+ * @tc.number LTR_FUNC_015
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_015, TestSize.Level1)
 {
@@ -1077,9 +1182,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_015, TestSize.Level1)
 }
 
 /**
- * @tc.number    : LTR_FUNC_016
- * @tc.name      : count为5,h265 buffer,每隔5帧mark参考帧,且use自己
- * @tc.desc      : function test
+ * @tc.name   LTR_FUNC_016
+ * @tc.number LTR_FUNC_016
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_016, TestSize.Level1)
 {
@@ -1107,9 +1215,12 @@ HWTEST_F(HwEncTemporalNdkTest, LTR_FUNC_016, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0100
- * @tc.name      : uniformly temporal buffer 264 encode,tgop 2
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0100
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0100
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0100, TestSize.Level0)
 {
@@ -1137,9 +1248,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0100, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0200
- * @tc.name      : uniformly temporal buffer 264 encode,tgop 3
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0200
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0200
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0200, TestSize.Level1)
 {
@@ -1161,9 +1275,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0200, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0300
- * @tc.name      : uniformly temporal buffer 265 encode,tgop 2
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0300
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0300
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0300, TestSize.Level1)
 {
@@ -1188,9 +1305,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0300, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0400
- * @tc.name      : uniformly temporal buffer 265 encode,tgop 4
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0400
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0400
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0400, TestSize.Level1)
 {
@@ -1215,9 +1335,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0400, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0500
- * @tc.name      : uniformly temporal buffer 265 encode,tgop 5
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0500
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0500
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0500, TestSize.Level1)
 {
@@ -1239,9 +1362,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0500, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0600
- * @tc.name      : uniformly temporal surface 264 encode,tgop 2
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0600
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0600
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0600, TestSize.Level0)
 {
@@ -1266,9 +1392,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0600, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0700
- * @tc.name      : uniformly temporal surface 264 encode,tgop 3
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0700
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0700
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0700, TestSize.Level1)
 {
@@ -1290,9 +1419,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0700, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0800
- * @tc.name      : uniformly temporal surface 265 encode,tgop 2
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0800
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0800
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0800, TestSize.Level1)
 {
@@ -1317,9 +1449,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0800, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_0900
- * @tc.name      : uniformly temporal surface 265 encode,tgop 4
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_0900
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0900
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0900, TestSize.Level1)
 {
@@ -1344,9 +1479,12 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_0900, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_UNIFORMLY_ENCODE_FUNCTION_1000
- * @tc.name      : uniformly temporal buffer 265 encode,tgop 5
- * @tc.desc      : func test
+ * @tc.name   VIDEO_UNIFORMLY_ENCODE_FUNCTION_1000
+ * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_1000
+ * @tc.desc   func test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_UNIFORMLY_ENCODE_FUNCTION_1000, TestSize.Level1)
 {
