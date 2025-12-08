@@ -67,6 +67,7 @@ group("ability_runtime") {
       "actscrosscall:actscrosscall",
       "actsdataabilityaccessdatasharetest:dataabilityaccessdatashare",
       "actsdelegatorfaabilitytest:ActsDelegatorFAAbilityTest",
+      "actssetmissionwindowiconteststatic:ActsSetMissionWindowIconTestStatic",
       "actsfaabilitydisplayorientationtest:ActsFAAbilityDisplayOrientationTest",
       "actsfwkdataaccessortest:dataability",
       "actsgetapplicationnewtest:ActsGetApplicationNewTest",
