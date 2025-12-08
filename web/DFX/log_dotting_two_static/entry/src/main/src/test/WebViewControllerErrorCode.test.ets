@@ -40,6 +40,7 @@ export default function webViewControllerErrorCode() {
      */
     it('testPageUpError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
+      await Utils.msSleep(4000);
       Utils.emitEvent("testPageUpError001", 10)
       await Utils.msSleep(5000);
       Utils.registerEvent("testPageUpError001", "17100001", 20265, done);
@@ -106,5 +107,22 @@ export default function webViewControllerErrorCode() {
       done();
     })
 
+    /*
+    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
+    * @tc.name       : SwitchNextPageStatic
+    * @tc.desc       : test PAGE_REDIRECT
+    * @tc.size       : MEDIUM
+    * @tc.type       : Function
+    * @tc.level      : Level 3
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
   })
 }
